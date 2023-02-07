@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalCondition;
 import org.schema.model.Drug;
 
@@ -22,6 +23,14 @@ public interface Patient extends MedicalAudience, Person {
      * @return {@link MedicalCondition}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalCondition> getHealthConditionList();
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalCondition getHealthCondition();
 
     /**
@@ -30,7 +39,15 @@ public interface Patient extends MedicalAudience, Person {
      * @param healthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setHealthCondition(MedicalCondition healthCondition);
+    void addHealthCondition(MedicalCondition healthCondition);
+
+    /**
+     * Specifying a drug or medicine used in a medication procedure.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Drug> getDrugList();
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
@@ -46,7 +63,15 @@ public interface Patient extends MedicalAudience, Person {
      * @param drug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrug(Drug drug);
+    void addDrug(Drug drug);
+
+    /**
+     * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getDiagnosisList();
 
     /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
@@ -62,5 +87,5 @@ public interface Patient extends MedicalAudience, Person {
      * @param diagnosis MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDiagnosis(MedicalCondition diagnosis);
+    void addDiagnosis(MedicalCondition diagnosis);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTest;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalTestPanel extends MedicalTest {
      * @return {@link MedicalTest}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalTest> getSubTestList();
+
+    /**
+     * A component test of the panel.
+     *
+     * @return {@link MedicalTest}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalTest getSubTest();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalTestPanel extends MedicalTest {
      * @param subTest MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSubTest(MedicalTest subTest);
+    void addSubTest(MedicalTest subTest);
 }

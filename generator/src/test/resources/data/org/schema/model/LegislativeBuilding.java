@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A legislative building&#x2014;for example, the state capitol.

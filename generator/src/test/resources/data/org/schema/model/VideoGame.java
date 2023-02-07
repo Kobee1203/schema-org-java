@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.VideoObject;
 import org.schema.model.datatype.Text;
@@ -27,6 +28,13 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @return {@link Person}
      */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
     Person getDirector();
 
     /**
@@ -34,7 +42,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -48,7 +63,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The trailer of a movie or tv/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -62,7 +84,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject trailer);
+    void addTrailer(VideoObject trailer);
+
+    /**
+     * The edition of a video game.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getGameEditionList();
 
     /**
      * The edition of a video game.
@@ -76,7 +105,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param gameEdition Text value to set.
      */
-    void setGameEdition(Text gameEdition);
+    void addGameEdition(Text gameEdition);
+
+    /**
+     * Cheat codes to the game.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getCheatCodeList();
 
     /**
      * Cheat codes to the game.
@@ -90,7 +126,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param cheatCode CreativeWork value to set.
      */
-    void setCheatCode(CreativeWork cheatCode);
+    void addCheatCode(CreativeWork cheatCode);
+
+    /**
+     * The server on which  it is possible to play the game.
+     *
+     * @return {@link GameServer}
+     */
+    List<GameServer> getGameServerList();
 
     /**
      * The server on which  it is possible to play the game.
@@ -104,7 +147,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param gameServer GameServer value to set.
      */
-    void setGameServer(GameServer gameServer);
+    void addGameServer(GameServer gameServer);
+
+    /**
+     * Links to tips, tactics, etc.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getGameTipList();
 
     /**
      * Links to tips, tactics, etc.
@@ -118,7 +168,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param gameTip CreativeWork value to set.
      */
-    void setGameTip(CreativeWork gameTip);
+    void addGameTip(CreativeWork gameTip);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -132,7 +189,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param actors Person value to set.
      */
-    void setActors(Person actors);
+    void addActors(Person actors);
+
+    /**
+     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
+     *
+     * @return {@link GamePlayMode}
+     */
+    List<GamePlayMode> getPlayModeList();
 
     /**
      * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
@@ -146,7 +210,14 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param playMode GamePlayMode value to set.
      */
-    void setPlayMode(GamePlayMode playMode);
+    void addPlayMode(GamePlayMode playMode);
+
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @return {@link Text} or {@link URL} or {@link Thing}
+     */
+    <T> List<T> getGamePlatformList();
 
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
@@ -160,19 +231,26 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param gamePlatform Text value to set.
      */
-    void setGamePlatform(Text gamePlatform);
+    void addGamePlatform(Text gamePlatform);
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
      * @param gamePlatform URL value to set.
      */
-    void setGamePlatform(URL gamePlatform);
+    void addGamePlatform(URL gamePlatform);
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
      * @param gamePlatform Thing value to set.
      */
-    void setGamePlatform(Thing gamePlatform);
+    void addGamePlatform(Thing gamePlatform);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getMusicByList();
 
     /**
      * The composer of the soundtrack.
@@ -186,13 +264,20 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param musicBy Person value to set.
      */
-    void setMusicBy(Person musicBy);
+    void addMusicBy(Person musicBy);
     /**
      * The composer of the soundtrack.
      *
      * @param musicBy MusicGroup value to set.
      */
-    void setMusicBy(MusicGroup musicBy);
+    void addMusicBy(MusicGroup musicBy);
+
+    /**
+     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -206,5 +291,5 @@ public interface VideoGame extends SoftwareApplication, Game {
      *
      * @param directors Person value to set.
      */
-    void setDirectors(Person directors);
+    void addDirectors(Person directors);
 }

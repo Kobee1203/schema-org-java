@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.EUEnergyEfficiencyEnumeration;
 import org.schema.model.EnergyEfficiencyEnumeration;
 
@@ -24,6 +25,15 @@ public interface EnergyConsumptionDetails extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
+    List<EUEnergyEfficiencyEnumeration> getEnergyEfficiencyScaleMinList();
+
+    /**
+     * Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
+     *
+     * @return {@link EUEnergyEfficiencyEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
     EUEnergyEfficiencyEnumeration getEnergyEfficiencyScaleMin();
 
     /**
@@ -33,7 +43,16 @@ public interface EnergyConsumptionDetails extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
-    void setEnergyEfficiencyScaleMin(EUEnergyEfficiencyEnumeration energyEfficiencyScaleMin);
+    void addEnergyEfficiencyScaleMin(EUEnergyEfficiencyEnumeration energyEfficiencyScaleMin);
+
+    /**
+     * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
+     *
+     * @return {@link EnergyEfficiencyEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    List<EnergyEfficiencyEnumeration> getHasEnergyEfficiencyCategoryList();
 
     /**
      * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
@@ -51,7 +70,16 @@ public interface EnergyConsumptionDetails extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
-    void setHasEnergyEfficiencyCategory(EnergyEfficiencyEnumeration hasEnergyEfficiencyCategory);
+    void addHasEnergyEfficiencyCategory(EnergyEfficiencyEnumeration hasEnergyEfficiencyCategory);
+
+    /**
+     * Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
+     *
+     * @return {@link EUEnergyEfficiencyEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    List<EUEnergyEfficiencyEnumeration> getEnergyEfficiencyScaleMaxList();
 
     /**
      * Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
@@ -69,5 +97,5 @@ public interface EnergyConsumptionDetails extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
-    void setEnergyEfficiencyScaleMax(EUEnergyEfficiencyEnumeration energyEfficiencyScaleMax);
+    void addEnergyEfficiencyScaleMax(EUEnergyEfficiencyEnumeration energyEfficiencyScaleMax);
 }

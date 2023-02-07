@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A medical procedure intended primarily for palliative purposes, aimed at relieving the symptoms of an underlying health condition.

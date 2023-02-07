@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Offer;
 import org.schema.model.ActionAccessSpecification;
 
@@ -21,6 +22,14 @@ public interface ConsumeAction extends Action {
      * @return {@link Offer}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
+    List<Offer> getExpectsAcceptanceOfList();
+
+    /**
+     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
     Offer getExpectsAcceptanceOf();
 
     /**
@@ -29,7 +38,15 @@ public interface ConsumeAction extends Action {
      * @param expectsAcceptanceOf Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setExpectsAcceptanceOf(Offer expectsAcceptanceOf);
+    void addExpectsAcceptanceOf(Offer expectsAcceptanceOf);
+
+    /**
+     * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
+     *
+     * @return {@link ActionAccessSpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    List<ActionAccessSpecification> getActionAccessibilityRequirementList();
 
     /**
      * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
@@ -45,5 +62,5 @@ public interface ConsumeAction extends Action {
      * @param actionAccessibilityRequirement ActionAccessSpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setActionAccessibilityRequirement(ActionAccessSpecification actionAccessibilityRequirement);
+    void addActionAccessibilityRequirement(ActionAccessSpecification actionAccessibilityRequirement);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Product;
 import org.schema.model.datatype.Text;
 import org.schema.model.DefinedTerm;
@@ -27,6 +28,15 @@ public interface ProductGroup extends Product {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
+    List<Product> getHasVariantList();
+
+    /**
+     * Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]).
+     *
+     * @return {@link Product}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
     Product getHasVariant();
 
     /**
@@ -36,7 +46,16 @@ public interface ProductGroup extends Product {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setHasVariant(Product hasVariant);
+    void addHasVariant(Product hasVariant);
+
+    /**
+     * Indicates a textual identifier for a ProductGroup.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    List<Text> getProductGroupIDList();
 
     /**
      * Indicates a textual identifier for a ProductGroup.
@@ -54,7 +73,16 @@ public interface ProductGroup extends Product {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setProductGroupID(Text productGroupID);
+    void addProductGroupID(Text productGroupID);
+
+    /**
+     * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    <T> List<T> getVariesByList();
 
     /**
      * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
@@ -72,7 +100,7 @@ public interface ProductGroup extends Product {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setVariesBy(Text variesBy);
+    void addVariesBy(Text variesBy);
     /**
      * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
      *
@@ -80,5 +108,5 @@ public interface ProductGroup extends Product {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setVariesBy(DefinedTerm variesBy);
+    void addVariesBy(DefinedTerm variesBy);
 }

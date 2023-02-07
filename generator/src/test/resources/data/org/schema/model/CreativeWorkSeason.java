@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
 import org.schema.model.Person;
@@ -28,6 +29,14 @@ public interface CreativeWorkSeason extends CreativeWork {
      * @return {@link DateTime} or {@link Date}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
+    <T> List<T> getStartDateList();
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
     <T> T getStartDate();
 
     /**
@@ -36,14 +45,21 @@ public interface CreativeWorkSeason extends CreativeWork {
      * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(DateTime startDate);
+    void addStartDate(DateTime startDate);
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
      * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(Date startDate);
+    void addStartDate(Date startDate);
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -57,7 +73,14 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -71,7 +94,14 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The trailer of a movie or tv/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -85,7 +115,15 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject trailer);
+    void addTrailer(VideoObject trailer);
+
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    <T> List<T> getEndDateList();
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -101,14 +139,21 @@ public interface CreativeWorkSeason extends CreativeWork {
      * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Date endDate);
+    void addEndDate(Date endDate);
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
      * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(DateTime endDate);
+    void addEndDate(DateTime endDate);
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodesList();
 
     /**
      * An episode of a TV/radio series or season.
@@ -122,7 +167,14 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param episodes Episode value to set.
      */
-    void setEpisodes(Episode episodes);
+    void addEpisodes(Episode episodes);
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfEpisodesList();
 
     /**
      * The number of episodes in this season or series.
@@ -136,7 +188,14 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param numberOfEpisodes Integer value to set.
      */
-    void setNumberOfEpisodes(Integer numberOfEpisodes);
+    void addNumberOfEpisodes(Integer numberOfEpisodes);
+
+    /**
+     * The series to which this episode or season belongs.
+     *
+     * @return {@link CreativeWorkSeries}
+     */
+    List<CreativeWorkSeries> getPartOfSeriesList();
 
     /**
      * The series to which this episode or season belongs.
@@ -150,7 +209,14 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param partOfSeries CreativeWorkSeries value to set.
      */
-    void setPartOfSeries(CreativeWorkSeries partOfSeries);
+    void addPartOfSeries(CreativeWorkSeries partOfSeries);
+
+    /**
+     * The production company or studio responsible for the item e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -164,7 +230,14 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization productionCompany);
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * Position of the season within an ordered group of seasons.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> List<T> getSeasonNumberList();
 
     /**
      * Position of the season within an ordered group of seasons.
@@ -178,13 +251,20 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param seasonNumber Text value to set.
      */
-    void setSeasonNumber(Text seasonNumber);
+    void addSeasonNumber(Text seasonNumber);
     /**
      * Position of the season within an ordered group of seasons.
      *
      * @param seasonNumber Integer value to set.
      */
-    void setSeasonNumber(Integer seasonNumber);
+    void addSeasonNumber(Integer seasonNumber);
+
+    /**
+     * An episode of a tv, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodeList();
 
     /**
      * An episode of a tv, radio or game media within a series or season.
@@ -198,5 +278,5 @@ public interface CreativeWorkSeason extends CreativeWork {
      *
      * @param episode Episode value to set.
      */
-    void setEpisode(Episode episode);
+    void addEpisode(Episode episode);
 }

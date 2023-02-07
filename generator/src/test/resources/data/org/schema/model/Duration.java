@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Quantity: Duration (use [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601)).

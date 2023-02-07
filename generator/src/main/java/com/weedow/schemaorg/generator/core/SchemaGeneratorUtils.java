@@ -42,6 +42,7 @@ public final class SchemaGeneratorUtils {
             if (type.getAllProperties().stream().anyMatch(property -> property.getTypes().size() > 1)) {
                 imports.add(JsonLdFieldTypes.class.getName());
             }
+            imports.add(java.util.List.class.getName());
             return imports;
         });
         // Copy the Set to prevent the modifications in the cached Set

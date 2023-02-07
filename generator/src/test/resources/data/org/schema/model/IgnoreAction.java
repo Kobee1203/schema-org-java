@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of intentionally disregarding the object. An agent ignores an object.

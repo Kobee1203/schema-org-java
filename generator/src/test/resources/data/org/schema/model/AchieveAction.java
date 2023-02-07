@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.

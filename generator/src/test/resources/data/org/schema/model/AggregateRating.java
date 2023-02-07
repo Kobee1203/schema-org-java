@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Thing;
 import org.schema.model.datatype.Integer;
 
@@ -20,6 +21,13 @@ public interface AggregateRating extends Rating {
      *
      * @return {@link Thing}
      */
+    List<Thing> getItemReviewedList();
+
+    /**
+     * The item that is being reviewed/rated.
+     *
+     * @return {@link Thing}
+     */
     Thing getItemReviewed();
 
     /**
@@ -27,7 +35,14 @@ public interface AggregateRating extends Rating {
      *
      * @param itemReviewed Thing value to set.
      */
-    void setItemReviewed(Thing itemReviewed);
+    void addItemReviewed(Thing itemReviewed);
+
+    /**
+     * The count of total number of reviews.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getReviewCountList();
 
     /**
      * The count of total number of reviews.
@@ -41,7 +56,14 @@ public interface AggregateRating extends Rating {
      *
      * @param reviewCount Integer value to set.
      */
-    void setReviewCount(Integer reviewCount);
+    void addReviewCount(Integer reviewCount);
+
+    /**
+     * The count of total number of ratings.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getRatingCountList();
 
     /**
      * The count of total number of ratings.
@@ -55,5 +77,5 @@ public interface AggregateRating extends Rating {
      *
      * @param ratingCount Integer value to set.
      */
-    void setRatingCount(Integer ratingCount);
+    void addRatingCount(Integer ratingCount);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Vital signs are measures of various physiological functions in order to assess the most basic body functions.

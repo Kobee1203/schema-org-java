@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Enumeration;
 import org.schema.model.Class;
 import org.schema.model.Property;
@@ -22,6 +23,14 @@ public interface Enumeration extends Intangible {
      * @return {@link Enumeration} or {@link Class} or {@link Property}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
+    <T> List<T> getSupersededByList();
+
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @return {@link Enumeration} or {@link Class} or {@link Property}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
     <T> T getSupersededBy();
 
     /**
@@ -30,19 +39,19 @@ public interface Enumeration extends Intangible {
      * @param supersededBy Enumeration value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Enumeration supersededBy);
+    void addSupersededBy(Enumeration supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
      * @param supersededBy Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Class supersededBy);
+    void addSupersededBy(Class supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
      * @param supersededBy Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Property supersededBy);
+    void addSupersededBy(Property supersededBy);
 }

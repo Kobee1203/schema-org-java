@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of finding an object.<br/><br/>Related actions:<br/><br/>* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily.

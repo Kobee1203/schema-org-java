@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.DateTime;
 
 /**
@@ -19,6 +20,13 @@ public interface PlanAction extends OrganizeAction {
      *
      * @return {@link DateTime}
      */
+    List<DateTime> getScheduledTimeList();
+
+    /**
+     * The time the object is scheduled to.
+     *
+     * @return {@link DateTime}
+     */
     DateTime getScheduledTime();
 
     /**
@@ -26,5 +34,5 @@ public interface PlanAction extends OrganizeAction {
      *
      * @param scheduledTime DateTime value to set.
      */
-    void setScheduledTime(DateTime scheduledTime);
+    void addScheduledTime(DateTime scheduledTime);
 }

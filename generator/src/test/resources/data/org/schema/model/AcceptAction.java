@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of committing to/adopting an object.<br/><br/>Related actions:<br/><br/>* [[RejectAction]]: The antonym of AcceptAction.

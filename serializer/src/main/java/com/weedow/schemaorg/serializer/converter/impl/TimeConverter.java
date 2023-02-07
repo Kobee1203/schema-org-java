@@ -2,7 +2,6 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
-import java.lang.reflect.Type;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -15,8 +14,8 @@ public class TimeConverter extends AbstractConverter {
 
     @Override
     @SuppressWarnings("java:S1872")
-    public boolean supports(Class<?> sourceType, Class<? extends JsonLdDataType<?>> jsonLdDataType, Type javaType) {
-        return (LocalTime.class.isAssignableFrom(sourceType) || String.class.isAssignableFrom(sourceType)) && jsonLdDataType.getSimpleName().equals("Time");
+    public boolean supports(Class<? extends JsonLdDataType<?>> jsonLdDataType, Class<?> targetType) {
+        return (LocalTime.class.isAssignableFrom(targetType) || String.class.isAssignableFrom(targetType)) && jsonLdDataType.getSimpleName().equals("Time");
     }
 
     @Override

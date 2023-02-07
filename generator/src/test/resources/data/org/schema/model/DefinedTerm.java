@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 import org.schema.model.DefinedTermSet;
@@ -25,6 +26,15 @@ public interface DefinedTerm extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
+    List<Text> getTermCodeList();
+
+    /**
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
     Text getTermCode();
 
     /**
@@ -34,7 +44,16 @@ public interface DefinedTerm extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setTermCode(Text termCode);
+    void addTermCode(Text termCode);
+
+    /**
+     * A [[DefinedTermSet]] that contains this term.
+     *
+     * @return {@link URL} or {@link DefinedTermSet}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    <T> List<T> getInDefinedTermSetList();
 
     /**
      * A [[DefinedTermSet]] that contains this term.
@@ -52,7 +71,7 @@ public interface DefinedTerm extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInDefinedTermSet(URL inDefinedTermSet);
+    void addInDefinedTermSet(URL inDefinedTermSet);
     /**
      * A [[DefinedTermSet]] that contains this term.
      *
@@ -60,5 +79,5 @@ public interface DefinedTerm extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInDefinedTermSet(DefinedTermSet inDefinedTermSet);
+    void addInDefinedTermSet(DefinedTermSet inDefinedTermSet);
 }

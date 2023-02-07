@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.CreativeWork;
 
 /**
@@ -19,6 +20,13 @@ public interface SocialMediaPosting extends Article {
      *
      * @return {@link CreativeWork}
      */
+    List<CreativeWork> getSharedContentList();
+
+    /**
+     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
+     *
+     * @return {@link CreativeWork}
+     */
     CreativeWork getSharedContent();
 
     /**
@@ -26,5 +34,5 @@ public interface SocialMediaPosting extends Article {
      *
      * @param sharedContent CreativeWork value to set.
      */
-    void setSharedContent(CreativeWork sharedContent);
+    void addSharedContent(CreativeWork sharedContent);
 }

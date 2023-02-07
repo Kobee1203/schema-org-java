@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.datatype.Number;
@@ -25,6 +26,13 @@ public interface MonetaryGrant extends Grant {
      *
      * @return {@link Organization} or {@link Person}
      */
+    <T> List<T> getFunderList();
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
     <T> T getFunder();
 
     /**
@@ -32,13 +40,22 @@ public interface MonetaryGrant extends Grant {
      *
      * @param funder Organization value to set.
      */
-    void setFunder(Organization funder);
+    void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
      */
-    void setFunder(Person funder);
+    void addFunder(Person funder);
+
+    /**
+     * The amount of money.
+     *
+     * @return {@link Number} or {@link MonetaryAmount}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    <T> List<T> getAmountList();
 
     /**
      * The amount of money.
@@ -56,7 +73,7 @@ public interface MonetaryGrant extends Grant {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Number amount);
+    void addAmount(Number amount);
     /**
      * The amount of money.
      *
@@ -64,5 +81,5 @@ public interface MonetaryGrant extends Grant {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(MonetaryAmount amount);
+    void addAmount(MonetaryAmount amount);
 }

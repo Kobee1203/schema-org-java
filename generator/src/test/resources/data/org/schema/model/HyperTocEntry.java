@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.HyperTocEntry;
 import org.schema.model.MediaObject;
 import org.schema.model.datatype.Text;
@@ -25,6 +26,15 @@ public interface HyperTocEntry extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
+    List<HyperTocEntry> getTocContinuationList();
+
+    /**
+     * A [[HyperTocEntry]] can have a [[tocContinuation]] indicated, which is another [[HyperTocEntry]] that would be the default next item to play or render.
+     *
+     * @return {@link HyperTocEntry}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
+     */
     HyperTocEntry getTocContinuation();
 
     /**
@@ -34,7 +44,14 @@ public interface HyperTocEntry extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
-    void setTocContinuation(HyperTocEntry tocContinuation);
+    void addTocContinuation(HyperTocEntry tocContinuation);
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getAssociatedMediaList();
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -48,7 +65,16 @@ public interface HyperTocEntry extends CreativeWork {
      *
      * @param associatedMedia MediaObject value to set.
      */
-    void setAssociatedMedia(MediaObject associatedMedia);
+    void addAssociatedMedia(MediaObject associatedMedia);
+
+    /**
+     * Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
+     */
+    List<Text> getUtterancesList();
 
     /**
      * Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]].
@@ -66,5 +92,5 @@ public interface HyperTocEntry extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
-    void setUtterances(Text utterances);
+    void addUtterances(Text utterances);
 }

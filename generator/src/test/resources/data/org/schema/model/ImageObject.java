@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.MediaObject;
@@ -25,6 +26,15 @@ public interface ImageObject extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
+    List<Text> getEmbeddedTextCaptionList();
+
+    /**
+     * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
     Text getEmbeddedTextCaption();
 
     /**
@@ -34,7 +44,14 @@ public interface ImageObject extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text embeddedTextCaption);
+    void addEmbeddedTextCaption(Text embeddedTextCaption);
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getRepresentativeOfPageList();
 
     /**
      * Indicates whether this image is representative of the content of the page.
@@ -48,7 +65,14 @@ public interface ImageObject extends MediaObject {
      *
      * @param representativeOfPage Boolean value to set.
      */
-    void setRepresentativeOfPage(Boolean representativeOfPage);
+    void addRepresentativeOfPage(Boolean representativeOfPage);
+
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @return {@link Text} or {@link MediaObject}
+     */
+    <T> List<T> getCaptionList();
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -62,13 +86,20 @@ public interface ImageObject extends MediaObject {
      *
      * @param caption Text value to set.
      */
-    void setCaption(Text caption);
+    void addCaption(Text caption);
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
      * @param caption MediaObject value to set.
      */
-    void setCaption(MediaObject caption);
+    void addCaption(MediaObject caption);
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    List<ImageObject> getThumbnailList();
 
     /**
      * Thumbnail image for an image or video.
@@ -82,7 +113,14 @@ public interface ImageObject extends MediaObject {
      *
      * @param thumbnail ImageObject value to set.
      */
-    void setThumbnail(ImageObject thumbnail);
+    void addThumbnail(ImageObject thumbnail);
+
+    /**
+     * exif data for this object.
+     *
+     * @return {@link PropertyValue} or {@link Text}
+     */
+    <T> List<T> getExifDataList();
 
     /**
      * exif data for this object.
@@ -96,11 +134,11 @@ public interface ImageObject extends MediaObject {
      *
      * @param exifData PropertyValue value to set.
      */
-    void setExifData(PropertyValue exifData);
+    void addExifData(PropertyValue exifData);
     /**
      * exif data for this object.
      *
      * @param exifData Text value to set.
      */
-    void setExifData(Text exifData);
+    void addExifData(Text exifData);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTherapy;
 import org.schema.model.MedicalEntity;
 import org.schema.model.datatype.Text;
@@ -24,6 +25,14 @@ public interface MedicalTherapy extends TherapeuticProcedure {
      * @return {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalTherapy> getDuplicateTherapyList();
+
+    /**
+     * A therapy that duplicates or overlaps this one.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalTherapy getDuplicateTherapy();
 
     /**
@@ -32,7 +41,15 @@ public interface MedicalTherapy extends TherapeuticProcedure {
      * @param duplicateTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDuplicateTherapy(MedicalTherapy duplicateTherapy);
+    void addDuplicateTherapy(MedicalTherapy duplicateTherapy);
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getSeriousAdverseOutcomeList();
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
@@ -48,7 +65,15 @@ public interface MedicalTherapy extends TherapeuticProcedure {
      * @param seriousAdverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
+    void addSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @return {@link Text} or {@link MedicalContraindication}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getContraindicationList();
 
     /**
      * A contraindication for this therapy.
@@ -64,12 +89,12 @@ public interface MedicalTherapy extends TherapeuticProcedure {
      * @param contraindication Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setContraindication(Text contraindication);
+    void addContraindication(Text contraindication);
     /**
      * A contraindication for this therapy.
      *
      * @param contraindication MedicalContraindication value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setContraindication(MedicalContraindication contraindication);
+    void addContraindication(MedicalContraindication contraindication);
 }

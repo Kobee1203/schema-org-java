@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Audience;
 import org.schema.model.Event;
 
@@ -20,6 +21,13 @@ public interface PlayAction extends Action {
      *
      * @return {@link Audience}
      */
+    List<Audience> getAudienceList();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
     Audience getAudience();
 
     /**
@@ -27,7 +35,14 @@ public interface PlayAction extends Action {
      *
      * @param audience Audience value to set.
      */
-    void setAudience(Audience audience);
+    void addAudience(Audience audience);
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventList();
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -41,5 +56,5 @@ public interface PlayAction extends Action {
      *
      * @param event Event value to set.
      */
-    void setEvent(Event event);
+    void addEvent(Event event);
 }

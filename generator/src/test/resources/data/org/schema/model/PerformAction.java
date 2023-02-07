@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.EntertainmentBusiness;
 
 /**
@@ -19,6 +20,13 @@ public interface PerformAction extends PlayAction {
      *
      * @return {@link EntertainmentBusiness}
      */
+    List<EntertainmentBusiness> getEntertainmentBusinessList();
+
+    /**
+     * A sub property of location. The entertainment business where the action occurred.
+     *
+     * @return {@link EntertainmentBusiness}
+     */
     EntertainmentBusiness getEntertainmentBusiness();
 
     /**
@@ -26,5 +34,5 @@ public interface PerformAction extends PlayAction {
      *
      * @param entertainmentBusiness EntertainmentBusiness value to set.
      */
-    void setEntertainmentBusiness(EntertainmentBusiness entertainmentBusiness);
+    void addEntertainmentBusiness(EntertainmentBusiness entertainmentBusiness);
 }

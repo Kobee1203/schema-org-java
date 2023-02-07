@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.MediaObject;
 
@@ -23,6 +24,15 @@ public interface AudioObject extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
+    List<Text> getEmbeddedTextCaptionList();
+
+    /**
+     * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
     Text getEmbeddedTextCaption();
 
     /**
@@ -32,7 +42,14 @@ public interface AudioObject extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text embeddedTextCaption);
+    void addEmbeddedTextCaption(Text embeddedTextCaption);
+
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @return {@link Text} or {@link MediaObject}
+     */
+    <T> List<T> getCaptionList();
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -46,13 +63,20 @@ public interface AudioObject extends MediaObject {
      *
      * @param caption Text value to set.
      */
-    void setCaption(Text caption);
+    void addCaption(Text caption);
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
      * @param caption MediaObject value to set.
      */
-    void setCaption(MediaObject caption);
+    void addCaption(MediaObject caption);
+
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTranscriptList();
 
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
@@ -66,5 +90,5 @@ public interface AudioObject extends MediaObject {
      *
      * @param transcript Text value to set.
      */
-    void setTranscript(Text transcript);
+    void addTranscript(Text transcript);
 }

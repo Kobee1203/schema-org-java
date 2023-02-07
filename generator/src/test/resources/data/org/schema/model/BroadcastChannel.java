@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
 import org.schema.model.BroadcastFrequencySpecification;
@@ -23,6 +24,13 @@ public interface BroadcastChannel extends Intangible {
      *
      * @return {@link URL} or {@link Text}
      */
+    <T> List<T> getGenreList();
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link URL} or {@link Text}
+     */
     <T> T getGenre();
 
     /**
@@ -30,13 +38,21 @@ public interface BroadcastChannel extends Intangible {
      *
      * @param genre URL value to set.
      */
-    void setGenre(URL genre);
+    void addGenre(URL genre);
     /**
      * Genre of the creative work, broadcast channel or group.
      *
      * @param genre Text value to set.
      */
-    void setGenre(Text genre);
+    void addGenre(Text genre);
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link BroadcastFrequencySpecification} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> List<T> getBroadcastFrequencyList();
 
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
@@ -52,14 +68,21 @@ public interface BroadcastChannel extends Intangible {
      * @param broadcastFrequency BroadcastFrequencySpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
+    void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
      * @param broadcastFrequency Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequency(Text broadcastFrequency);
+    void addBroadcastFrequency(Text broadcastFrequency);
+
+    /**
+     * The BroadcastService offered on this channel.
+     *
+     * @return {@link BroadcastService}
+     */
+    List<BroadcastService> getProvidesBroadcastServiceList();
 
     /**
      * The BroadcastService offered on this channel.
@@ -73,7 +96,14 @@ public interface BroadcastChannel extends Intangible {
      *
      * @param providesBroadcastService BroadcastService value to set.
      */
-    void setProvidesBroadcastService(BroadcastService providesBroadcastService);
+    void addProvidesBroadcastService(BroadcastService providesBroadcastService);
+
+    /**
+     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBroadcastChannelIdList();
 
     /**
      * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
@@ -87,7 +117,14 @@ public interface BroadcastChannel extends Intangible {
      *
      * @param broadcastChannelId Text value to set.
      */
-    void setBroadcastChannelId(Text broadcastChannelId);
+    void addBroadcastChannelId(Text broadcastChannelId);
+
+    /**
+     * The CableOrSatelliteService offering the channel.
+     *
+     * @return {@link CableOrSatelliteService}
+     */
+    List<CableOrSatelliteService> getInBroadcastLineupList();
 
     /**
      * The CableOrSatelliteService offering the channel.
@@ -101,7 +138,14 @@ public interface BroadcastChannel extends Intangible {
      *
      * @param inBroadcastLineup CableOrSatelliteService value to set.
      */
-    void setInBroadcastLineup(CableOrSatelliteService inBroadcastLineup);
+    void addInBroadcastLineup(CableOrSatelliteService inBroadcastLineup);
+
+    /**
+     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBroadcastServiceTierList();
 
     /**
      * The type of service required to have access to the channel (e.g. Standard or Premium).
@@ -115,5 +159,5 @@ public interface BroadcastChannel extends Intangible {
      *
      * @param broadcastServiceTier Text value to set.
      */
-    void setBroadcastServiceTier(Text broadcastServiceTier);
+    void addBroadcastServiceTier(Text broadcastServiceTier);
 }

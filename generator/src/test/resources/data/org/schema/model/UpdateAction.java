@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Thing;
 
 /**
@@ -19,6 +20,13 @@ public interface UpdateAction extends Action {
      *
      * @return {@link Thing}
      */
+    List<Thing> getTargetCollectionList();
+
+    /**
+     * A sub property of object. The collection target of the action.
+     *
+     * @return {@link Thing}
+     */
     Thing getTargetCollection();
 
     /**
@@ -26,7 +34,14 @@ public interface UpdateAction extends Action {
      *
      * @param targetCollection Thing value to set.
      */
-    void setTargetCollection(Thing targetCollection);
+    void addTargetCollection(Thing targetCollection);
+
+    /**
+     * A sub property of object. The collection target of the action.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getCollectionList();
 
     /**
      * A sub property of object. The collection target of the action.
@@ -40,5 +55,5 @@ public interface UpdateAction extends Action {
      *
      * @param collection Thing value to set.
      */
-    void setCollection(Thing collection);
+    void addCollection(Thing collection);
 }

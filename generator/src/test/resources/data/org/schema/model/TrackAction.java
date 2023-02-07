@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.DeliveryMethod;
 
 /**
@@ -19,6 +20,13 @@ public interface TrackAction extends FindAction {
      *
      * @return {@link DeliveryMethod}
      */
+    List<DeliveryMethod> getDeliveryMethodList();
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @return {@link DeliveryMethod}
+     */
     DeliveryMethod getDeliveryMethod();
 
     /**
@@ -26,5 +34,5 @@ public interface TrackAction extends FindAction {
      *
      * @param deliveryMethod DeliveryMethod value to set.
      */
-    void setDeliveryMethod(DeliveryMethod deliveryMethod);
+    void addDeliveryMethod(DeliveryMethod deliveryMethod);
 }

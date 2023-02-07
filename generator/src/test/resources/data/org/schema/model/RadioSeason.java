@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Season dedicated to radio broadcast and associated online delivery.

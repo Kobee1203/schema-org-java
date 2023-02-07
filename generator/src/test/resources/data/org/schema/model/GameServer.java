@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.GameServerStatus;
 import org.schema.model.VideoGame;
 import org.schema.model.datatype.Integer;
@@ -21,6 +22,13 @@ public interface GameServer extends Intangible {
      *
      * @return {@link GameServerStatus}
      */
+    List<GameServerStatus> getServerStatusList();
+
+    /**
+     * Status of a game server.
+     *
+     * @return {@link GameServerStatus}
+     */
     GameServerStatus getServerStatus();
 
     /**
@@ -28,7 +36,14 @@ public interface GameServer extends Intangible {
      *
      * @param serverStatus GameServerStatus value to set.
      */
-    void setServerStatus(GameServerStatus serverStatus);
+    void addServerStatus(GameServerStatus serverStatus);
+
+    /**
+     * Video game which is played on this server.
+     *
+     * @return {@link VideoGame}
+     */
+    List<VideoGame> getGameList();
 
     /**
      * Video game which is played on this server.
@@ -42,7 +57,14 @@ public interface GameServer extends Intangible {
      *
      * @param game VideoGame value to set.
      */
-    void setGame(VideoGame game);
+    void addGame(VideoGame game);
+
+    /**
+     * Number of players on the server.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getPlayersOnlineList();
 
     /**
      * Number of players on the server.
@@ -56,5 +78,5 @@ public interface GameServer extends Intangible {
      *
      * @param playersOnline Integer value to set.
      */
-    void setPlayersOnline(Integer playersOnline);
+    void addPlayersOnline(Integer playersOnline);
 }

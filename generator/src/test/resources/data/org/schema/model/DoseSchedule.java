@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
 import org.schema.model.QualitativeValue;
@@ -23,6 +24,14 @@ public interface DoseSchedule extends MedicalIntangible {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getTargetPopulationList();
+
+    /**
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getTargetPopulation();
 
     /**
@@ -31,7 +40,15 @@ public interface DoseSchedule extends MedicalIntangible {
      * @param targetPopulation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTargetPopulation(Text targetPopulation);
+    void addTargetPopulation(Text targetPopulation);
+
+    /**
+     * How often the dose is taken, e.g. 'daily'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getFrequencyList();
 
     /**
      * How often the dose is taken, e.g. 'daily'.
@@ -47,7 +64,15 @@ public interface DoseSchedule extends MedicalIntangible {
      * @param frequency Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFrequency(Text frequency);
+    void addFrequency(Text frequency);
+
+    /**
+     * The unit of the dose, e.g. 'mg'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getDoseUnitList();
 
     /**
      * The unit of the dose, e.g. 'mg'.
@@ -63,7 +88,15 @@ public interface DoseSchedule extends MedicalIntangible {
      * @param doseUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseUnit(Text doseUnit);
+    void addDoseUnit(Text doseUnit);
+
+    /**
+     * The value of the dose, e.g. 500.
+     *
+     * @return {@link Number} or {@link QualitativeValue}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getDoseValueList();
 
     /**
      * The value of the dose, e.g. 500.
@@ -79,12 +112,12 @@ public interface DoseSchedule extends MedicalIntangible {
      * @param doseValue Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseValue(Number doseValue);
+    void addDoseValue(Number doseValue);
     /**
      * The value of the dose, e.g. 500.
      *
      * @param doseValue QualitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseValue(QualitativeValue doseValue);
+    void addDoseValue(QualitativeValue doseValue);
 }

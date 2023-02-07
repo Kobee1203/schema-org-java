@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.WarrantyScope;
 import org.schema.model.QuantitativeValue;
 
@@ -22,6 +23,14 @@ public interface WarrantyPromise extends StructuredValue {
      * @return {@link WarrantyScope}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
+    List<WarrantyScope> getWarrantyScopeList();
+
+    /**
+     * The scope of the warranty promise.
+     *
+     * @return {@link WarrantyScope}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
     WarrantyScope getWarrantyScope();
 
     /**
@@ -30,7 +39,15 @@ public interface WarrantyPromise extends StructuredValue {
      * @param warrantyScope WarrantyScope value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setWarrantyScope(WarrantyScope warrantyScope);
+    void addWarrantyScope(WarrantyScope warrantyScope);
+
+    /**
+     * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<QuantitativeValue> getDurationOfWarrantyList();
 
     /**
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
@@ -46,5 +63,5 @@ public interface WarrantyPromise extends StructuredValue {
      * @param durationOfWarranty QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDurationOfWarranty(QuantitativeValue durationOfWarranty);
+    void addDurationOfWarranty(QuantitativeValue durationOfWarranty);
 }

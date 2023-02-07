@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.MediaManipulationRatingEnumeration;
 import org.schema.model.datatype.URL;
@@ -30,6 +31,15 @@ public interface MediaReview extends Review {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
+    List<Text> getOriginalMediaContextDescriptionList();
+
+    /**
+     * Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
     Text getOriginalMediaContextDescription();
 
     /**
@@ -39,7 +49,16 @@ public interface MediaReview extends Review {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaContextDescription(Text originalMediaContextDescription);
+    void addOriginalMediaContextDescription(Text originalMediaContextDescription);
+
+    /**
+     * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
+     *
+     * @return {@link MediaManipulationRatingEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    List<MediaManipulationRatingEnumeration> getMediaAuthenticityCategoryList();
 
     /**
      * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
@@ -57,7 +76,16 @@ public interface MediaReview extends Review {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setMediaAuthenticityCategory(MediaManipulationRatingEnumeration mediaAuthenticityCategory);
+    void addMediaAuthenticityCategory(MediaManipulationRatingEnumeration mediaAuthenticityCategory);
+
+    /**
+     * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
+     *
+     * @return {@link URL} or {@link MediaObject} or {@link WebPage}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    <T> List<T> getOriginalMediaLinkList();
 
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
@@ -75,7 +103,7 @@ public interface MediaReview extends Review {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaLink(URL originalMediaLink);
+    void addOriginalMediaLink(URL originalMediaLink);
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
      *
@@ -83,7 +111,7 @@ public interface MediaReview extends Review {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaLink(MediaObject originalMediaLink);
+    void addOriginalMediaLink(MediaObject originalMediaLink);
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
      *
@@ -91,5 +119,5 @@ public interface MediaReview extends Review {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaLink(WebPage originalMediaLink);
+    void addOriginalMediaLink(WebPage originalMediaLink);
 }

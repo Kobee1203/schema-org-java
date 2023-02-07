@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Level of evidence for a medical guideline. Enumerated type.

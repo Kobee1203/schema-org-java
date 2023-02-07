@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A series of [[Event]]s. Included events can relate with the series using the [[superEvent]] property.

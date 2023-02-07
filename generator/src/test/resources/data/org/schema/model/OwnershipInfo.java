@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.Product;
 import org.schema.model.Service;
@@ -25,6 +26,14 @@ public interface OwnershipInfo extends StructuredValue {
      * @return {@link DateTime}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
+    List<DateTime> getOwnedFromList();
+
+    /**
+     * The date and time of obtaining the product.
+     *
+     * @return {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
     DateTime getOwnedFrom();
 
     /**
@@ -33,7 +42,15 @@ public interface OwnershipInfo extends StructuredValue {
      * @param ownedFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOwnedFrom(DateTime ownedFrom);
+    void addOwnedFrom(DateTime ownedFrom);
+
+    /**
+     * The product that this structured value is referring to.
+     *
+     * @return {@link Product} or {@link Service}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getTypeOfGoodList();
 
     /**
      * The product that this structured value is referring to.
@@ -49,14 +66,22 @@ public interface OwnershipInfo extends StructuredValue {
      * @param typeOfGood Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setTypeOfGood(Product typeOfGood);
+    void addTypeOfGood(Product typeOfGood);
     /**
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setTypeOfGood(Service typeOfGood);
+    void addTypeOfGood(Service typeOfGood);
+
+    /**
+     * The organization or person from which the product was acquired.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getAcquiredFromList();
 
     /**
      * The organization or person from which the product was acquired.
@@ -72,14 +97,22 @@ public interface OwnershipInfo extends StructuredValue {
      * @param acquiredFrom Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAcquiredFrom(Organization acquiredFrom);
+    void addAcquiredFrom(Organization acquiredFrom);
     /**
      * The organization or person from which the product was acquired.
      *
      * @param acquiredFrom Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAcquiredFrom(Person acquiredFrom);
+    void addAcquiredFrom(Person acquiredFrom);
+
+    /**
+     * The date and time of giving up ownership on the product.
+     *
+     * @return {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<DateTime> getOwnedThroughList();
 
     /**
      * The date and time of giving up ownership on the product.
@@ -95,5 +128,5 @@ public interface OwnershipInfo extends StructuredValue {
      * @param ownedThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOwnedThrough(DateTime ownedThrough);
+    void addOwnedThrough(DateTime ownedThrough);
 }

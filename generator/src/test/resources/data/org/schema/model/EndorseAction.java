@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Organization;
 
@@ -20,6 +21,13 @@ public interface EndorseAction extends ReactAction {
      *
      * @return {@link Person} or {@link Organization}
      */
+    <T> List<T> getEndorseeList();
+
+    /**
+     * A sub property of participant. The person/organization being supported.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
     <T> T getEndorsee();
 
     /**
@@ -27,11 +35,11 @@ public interface EndorseAction extends ReactAction {
      *
      * @param endorsee Person value to set.
      */
-    void setEndorsee(Person endorsee);
+    void addEndorsee(Person endorsee);
     /**
      * A sub property of participant. The person/organization being supported.
      *
      * @param endorsee Organization value to set.
      */
-    void setEndorsee(Organization endorsee);
+    void addEndorsee(Organization endorsee);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.BusStop;
 import org.schema.model.BusStation;
 import org.schema.model.datatype.Text;
@@ -21,6 +22,13 @@ public interface BusTrip extends Trip {
      *
      * @return {@link BusStop} or {@link BusStation}
      */
+    <T> List<T> getDepartureBusStopList();
+
+    /**
+     * The stop or station from which the bus departs.
+     *
+     * @return {@link BusStop} or {@link BusStation}
+     */
     <T> T getDepartureBusStop();
 
     /**
@@ -28,13 +36,20 @@ public interface BusTrip extends Trip {
      *
      * @param departureBusStop BusStop value to set.
      */
-    void setDepartureBusStop(BusStop departureBusStop);
+    void addDepartureBusStop(BusStop departureBusStop);
     /**
      * The stop or station from which the bus departs.
      *
      * @param departureBusStop BusStation value to set.
      */
-    void setDepartureBusStop(BusStation departureBusStop);
+    void addDepartureBusStop(BusStation departureBusStop);
+
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBusNameList();
 
     /**
      * The name of the bus (e.g. Bolt Express).
@@ -48,7 +63,14 @@ public interface BusTrip extends Trip {
      *
      * @param busName Text value to set.
      */
-    void setBusName(Text busName);
+    void addBusName(Text busName);
+
+    /**
+     * The stop or station from which the bus arrives.
+     *
+     * @return {@link BusStation} or {@link BusStop}
+     */
+    <T> List<T> getArrivalBusStopList();
 
     /**
      * The stop or station from which the bus arrives.
@@ -62,13 +84,20 @@ public interface BusTrip extends Trip {
      *
      * @param arrivalBusStop BusStation value to set.
      */
-    void setArrivalBusStop(BusStation arrivalBusStop);
+    void addArrivalBusStop(BusStation arrivalBusStop);
     /**
      * The stop or station from which the bus arrives.
      *
      * @param arrivalBusStop BusStop value to set.
      */
-    void setArrivalBusStop(BusStop arrivalBusStop);
+    void addArrivalBusStop(BusStop arrivalBusStop);
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBusNumberList();
 
     /**
      * The unique identifier for the bus.
@@ -82,5 +111,5 @@ public interface BusTrip extends Trip {
      *
      * @param busNumber Text value to set.
      */
-    void setBusNumber(Text busNumber);
+    void addBusNumber(Text busNumber);
 }

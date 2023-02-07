@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * EventStatusType is an enumeration type whose instances represent several states that an Event may be in.

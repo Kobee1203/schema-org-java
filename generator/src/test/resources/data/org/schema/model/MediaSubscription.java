@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Offer;
 import org.schema.model.Organization;
 
@@ -22,6 +23,14 @@ public interface MediaSubscription extends Intangible {
      * @return {@link Offer}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
+    List<Offer> getExpectsAcceptanceOfList();
+
+    /**
+     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
     Offer getExpectsAcceptanceOf();
 
     /**
@@ -30,7 +39,15 @@ public interface MediaSubscription extends Intangible {
      * @param expectsAcceptanceOf Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setExpectsAcceptanceOf(Offer expectsAcceptanceOf);
+    void addExpectsAcceptanceOf(Offer expectsAcceptanceOf);
+
+    /**
+     * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    List<Organization> getAuthenticatorList();
 
     /**
      * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
@@ -46,5 +63,5 @@ public interface MediaSubscription extends Intangible {
      * @param authenticator Organization value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setAuthenticator(Organization authenticator);
+    void addAuthenticator(Organization authenticator);
 }

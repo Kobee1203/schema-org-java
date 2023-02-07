@@ -23,6 +23,7 @@ import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.ContactPoint;
@@ -37,7 +38,18 @@ import org.schema.model.PostalAddress;
 public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PostalAddress {
 
     @JsonLdFieldTypes({ Country.class, Text.class })
-    private Object addressCountry;
+    private List<Object> addressCountry;
+
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public <T> List<T> getAddressCountryList() {
+        return (List<T>) addressCountry;
+    }
 
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
@@ -47,7 +59,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getAddressCountry() {
-        return (T) addressCountry;
+        return (T) getFirst(addressCountry);
     }
 
     /**
@@ -57,8 +69,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setAddressCountry(Country addressCountry) {
-        this.addressCountry = addressCountry;
+    public void addAddressCountry(Country addressCountry) {
+        this.addressCountry = add(this.addressCountry, addressCountry);
     }
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
@@ -67,11 +79,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setAddressCountry(Text addressCountry) {
-        this.addressCountry = addressCountry;
+    public void addAddressCountry(Text addressCountry) {
+        this.addressCountry = add(this.addressCountry, addressCountry);
     }
 
-    private Text addressRegion;
+    private List<Text> addressRegion;
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<Text> getAddressRegionList() {
+        return addressRegion;
+    }
 
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
@@ -81,7 +104,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getAddressRegion() {
-        return addressRegion;
+        return getFirst(addressRegion);
     }
 
     /**
@@ -91,11 +114,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setAddressRegion(Text addressRegion) {
-        this.addressRegion = addressRegion;
+    public void addAddressRegion(Text addressRegion) {
+        this.addressRegion = add(this.addressRegion, addressRegion);
     }
 
-    private Text addressLocality;
+    private List<Text> addressLocality;
+
+    /**
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAddressLocalityList() {
+        return addressLocality;
+    }
 
     /**
      * The locality in which the street address is, and which is in the region. For example, Mountain View.
@@ -104,7 +137,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getAddressLocality() {
-        return addressLocality;
+        return getFirst(addressLocality);
     }
 
     /**
@@ -113,11 +146,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param addressLocality Text value to set.
      */
     @Override
-    public void setAddressLocality(Text addressLocality) {
-        this.addressLocality = addressLocality;
+    public void addAddressLocality(Text addressLocality) {
+        this.addressLocality = add(this.addressLocality, addressLocality);
     }
 
-    private Text postalCode;
+    private List<Text> postalCode;
+
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<Text> getPostalCodeList() {
+        return postalCode;
+    }
 
     /**
      * The postal code. For example, 94043.
@@ -127,7 +171,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getPostalCode() {
-        return postalCode;
+        return getFirst(postalCode);
     }
 
     /**
@@ -137,11 +181,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setPostalCode(Text postalCode) {
-        this.postalCode = postalCode;
+    public void addPostalCode(Text postalCode) {
+        this.postalCode = add(this.postalCode, postalCode);
     }
 
-    private Text postOfficeBoxNumber;
+    private List<Text> postOfficeBoxNumber;
+
+    /**
+     * The post office box number for PO box addresses.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPostOfficeBoxNumberList() {
+        return postOfficeBoxNumber;
+    }
 
     /**
      * The post office box number for PO box addresses.
@@ -150,7 +204,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getPostOfficeBoxNumber() {
-        return postOfficeBoxNumber;
+        return getFirst(postOfficeBoxNumber);
     }
 
     /**
@@ -159,11 +213,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param postOfficeBoxNumber Text value to set.
      */
     @Override
-    public void setPostOfficeBoxNumber(Text postOfficeBoxNumber) {
-        this.postOfficeBoxNumber = postOfficeBoxNumber;
+    public void addPostOfficeBoxNumber(Text postOfficeBoxNumber) {
+        this.postOfficeBoxNumber = add(this.postOfficeBoxNumber, postOfficeBoxNumber);
     }
 
-    private Text streetAddress;
+    private List<Text> streetAddress;
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getStreetAddressList() {
+        return streetAddress;
+    }
 
     /**
      * The street address. For example, 1600 Amphitheatre Pkwy.
@@ -172,7 +236,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getStreetAddress() {
-        return streetAddress;
+        return getFirst(streetAddress);
     }
 
     /**
@@ -181,11 +245,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param streetAddress Text value to set.
      */
     @Override
-    public void setStreetAddress(Text streetAddress) {
-        this.streetAddress = streetAddress;
+    public void addStreetAddress(Text streetAddress) {
+        this.streetAddress = add(this.streetAddress, streetAddress);
     }
 
-    private Text telephone;
+    private List<Text> telephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTelephoneList() {
+        return telephone;
+    }
 
     /**
      * The telephone number.
@@ -194,7 +268,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getTelephone() {
-        return telephone;
+        return getFirst(telephone);
     }
 
     /**
@@ -203,11 +277,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param telephone Text value to set.
      */
     @Override
-    public void setTelephone(Text telephone) {
-        this.telephone = telephone;
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
-    private OpeningHoursSpecification hoursAvailable;
+    private List<OpeningHoursSpecification> hoursAvailable;
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public List<OpeningHoursSpecification> getHoursAvailableList() {
+        return hoursAvailable;
+    }
 
     /**
      * The hours during which this service or contact is available.
@@ -216,7 +300,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public OpeningHoursSpecification getHoursAvailable() {
-        return hoursAvailable;
+        return getFirst(hoursAvailable);
     }
 
     /**
@@ -225,11 +309,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param hoursAvailable OpeningHoursSpecification value to set.
      */
     @Override
-    public void setHoursAvailable(OpeningHoursSpecification hoursAvailable) {
-        this.hoursAvailable = hoursAvailable;
+    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
+        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
     }
 
-    private Text email;
+    private List<Text> email;
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getEmailList() {
+        return email;
+    }
 
     /**
      * Email address.
@@ -238,7 +332,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getEmail() {
-        return email;
+        return getFirst(email);
     }
 
     /**
@@ -247,11 +341,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param email Text value to set.
      */
     @Override
-    public void setEmail(Text email) {
-        this.email = email;
+    public void addEmail(Text email) {
+        this.email = add(this.email, email);
     }
 
-    private ContactPointOption contactOption;
+    private List<ContactPointOption> contactOption;
+
+    /**
+     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+     *
+     * @return {@link ContactPointOption}
+     */
+    @Override
+    public List<ContactPointOption> getContactOptionList() {
+        return contactOption;
+    }
 
     /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
@@ -260,7 +364,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public ContactPointOption getContactOption() {
-        return contactOption;
+        return getFirst(contactOption);
     }
 
     /**
@@ -269,12 +373,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param contactOption ContactPointOption value to set.
      */
     @Override
-    public void setContactOption(ContactPointOption contactOption) {
-        this.contactOption = contactOption;
+    public void addContactOption(ContactPointOption contactOption) {
+        this.contactOption = add(this.contactOption, contactOption);
     }
 
     @JsonLdFieldTypes({ Text.class, Language.class })
-    private Object availableLanguage;
+    private List<Object> availableLanguage;
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @return {@link Text} or {@link Language}
+     */
+    @Override
+    public <T> List<T> getAvailableLanguageList() {
+        return (List<T>) availableLanguage;
+    }
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -283,7 +397,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getAvailableLanguage() {
-        return (T) availableLanguage;
+        return (T) getFirst(availableLanguage);
     }
 
     /**
@@ -292,8 +406,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param availableLanguage Text value to set.
      */
     @Override
-    public void setAvailableLanguage(Text availableLanguage) {
-        this.availableLanguage = availableLanguage;
+    public void addAvailableLanguage(Text availableLanguage) {
+        this.availableLanguage = add(this.availableLanguage, availableLanguage);
     }
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -301,12 +415,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param availableLanguage Language value to set.
      */
     @Override
-    public void setAvailableLanguage(Language availableLanguage) {
-        this.availableLanguage = availableLanguage;
+    public void addAvailableLanguage(Language availableLanguage) {
+        this.availableLanguage = add(this.availableLanguage, availableLanguage);
     }
 
     @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
-    private Object serviceArea;
+    private List<Object> serviceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getServiceAreaList() {
+        return (List<T>) serviceArea;
+    }
 
     /**
      * The geographic area where the service is provided.
@@ -315,7 +439,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getServiceArea() {
-        return (T) serviceArea;
+        return (T) getFirst(serviceArea);
     }
 
     /**
@@ -324,8 +448,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param serviceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(GeoShape serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(GeoShape serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
     /**
      * The geographic area where the service is provided.
@@ -333,8 +457,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param serviceArea AdministrativeArea value to set.
      */
     @Override
-    public void setServiceArea(AdministrativeArea serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
     /**
      * The geographic area where the service is provided.
@@ -342,12 +466,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param serviceArea Place value to set.
      */
     @Override
-    public void setServiceArea(Place serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(Place serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
 
     @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
-    private Object areaServed;
+    private List<Object> areaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
+    }
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -356,7 +490,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getAreaServed() {
-        return (T) areaServed;
+        return (T) getFirst(areaServed);
     }
 
     /**
@@ -365,8 +499,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -374,8 +508,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param areaServed GeoShape value to set.
      */
     @Override
-    public void setAreaServed(GeoShape areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -383,8 +517,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param areaServed Text value to set.
      */
     @Override
-    public void setAreaServed(Text areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -392,11 +526,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param areaServed Place value to set.
      */
     @Override
-    public void setAreaServed(Place areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
 
-    private Text contactType;
+    private List<Text> contactType;
+
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getContactTypeList() {
+        return contactType;
+    }
 
     /**
      * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
@@ -405,7 +549,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getContactType() {
-        return contactType;
+        return getFirst(contactType);
     }
 
     /**
@@ -414,12 +558,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param contactType Text value to set.
      */
     @Override
-    public void setContactType(Text contactType) {
-        this.contactType = contactType;
+    public void addContactType(Text contactType) {
+        this.contactType = add(this.contactType, contactType);
     }
 
     @JsonLdFieldTypes({ Text.class, Product.class })
-    private Object productSupported;
+    private List<Object> productSupported;
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @return {@link Text} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getProductSupportedList() {
+        return (List<T>) productSupported;
+    }
 
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
@@ -428,7 +582,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getProductSupported() {
-        return (T) productSupported;
+        return (T) getFirst(productSupported);
     }
 
     /**
@@ -437,8 +591,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param productSupported Text value to set.
      */
     @Override
-    public void setProductSupported(Text productSupported) {
-        this.productSupported = productSupported;
+    public void addProductSupported(Text productSupported) {
+        this.productSupported = add(this.productSupported, productSupported);
     }
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
@@ -446,11 +600,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param productSupported Product value to set.
      */
     @Override
-    public void setProductSupported(Product productSupported) {
-        this.productSupported = productSupported;
+    public void addProductSupported(Product productSupported) {
+        this.productSupported = add(this.productSupported, productSupported);
     }
 
-    private Text faxNumber;
+    private List<Text> faxNumber;
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFaxNumberList() {
+        return faxNumber;
+    }
 
     /**
      * The fax number.
@@ -459,7 +623,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getFaxNumber() {
-        return faxNumber;
+        return getFirst(faxNumber);
     }
 
     /**
@@ -468,12 +632,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param faxNumber Text value to set.
      */
     @Override
-    public void setFaxNumber(Text faxNumber) {
-        this.faxNumber = faxNumber;
+    public void addFaxNumber(Text faxNumber) {
+        this.faxNumber = add(this.faxNumber, faxNumber);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -482,7 +656,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -491,8 +665,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -500,11 +674,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -513,7 +697,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -522,11 +706,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -535,7 +729,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -544,11 +738,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -557,7 +761,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -566,12 +770,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -580,7 +794,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -589,8 +803,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -598,11 +812,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -611,7 +835,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -620,11 +844,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -633,7 +867,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -642,12 +876,23 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -657,7 +902,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -667,8 +912,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -677,11 +922,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -690,7 +945,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -699,11 +954,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -712,7 +977,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -721,11 +986,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -734,7 +1009,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -743,12 +1018,23 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -758,7 +1044,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -768,8 +1054,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -778,8 +1064,8 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -788,7 +1074,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

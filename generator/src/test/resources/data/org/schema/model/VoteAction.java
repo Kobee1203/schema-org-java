@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 
 /**
@@ -19,6 +20,13 @@ public interface VoteAction extends ChooseAction {
      *
      * @return {@link Person}
      */
+    List<Person> getCandidateList();
+
+    /**
+     * A sub property of object. The candidate subject of this action.
+     *
+     * @return {@link Person}
+     */
     Person getCandidate();
 
     /**
@@ -26,5 +34,5 @@ public interface VoteAction extends ChooseAction {
      *
      * @param candidate Person value to set.
      */
-    void setCandidate(Person candidate);
+    void addCandidate(Person candidate);
 }

@@ -2,8 +2,6 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
-import java.lang.reflect.Type;
-
 public class XPathTypeConverter extends AbstractConverter {
 
     public static final XPathTypeConverter INSTANCE = new XPathTypeConverter();
@@ -13,8 +11,8 @@ public class XPathTypeConverter extends AbstractConverter {
 
     @Override
     @SuppressWarnings("java:S1872")
-    public boolean supports(Class<?> sourceType, Class<? extends JsonLdDataType<?>> jsonLdDataType, Type javaType) {
-        return String.class.isAssignableFrom(sourceType) && jsonLdDataType.getSimpleName().equals("XPathType");
+    public boolean supports(Class<? extends JsonLdDataType<?>> jsonLdDataType, Class<?> targetType) {
+        return String.class.isAssignableFrom(targetType) && jsonLdDataType.getSimpleName().equals("XPathType");
     }
 
     @Override

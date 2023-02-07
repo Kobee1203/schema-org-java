@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.<br/><br/>Related actions:<br/><br/>* [[GiveAction]]: The reciprocal of TakeAction.<br/>* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transfered.

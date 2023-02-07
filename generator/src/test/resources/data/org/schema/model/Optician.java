@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A store that sells reading glasses and similar devices for improving vision.

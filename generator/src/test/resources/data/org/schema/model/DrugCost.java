@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.AdministrativeArea;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
@@ -25,6 +26,14 @@ public interface DrugCost extends MedicalEntity {
      * @return {@link AdministrativeArea}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<AdministrativeArea> getApplicableLocationList();
+
+    /**
+     * The location in which the status applies.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     AdministrativeArea getApplicableLocation();
 
     /**
@@ -33,7 +42,15 @@ public interface DrugCost extends MedicalEntity {
      * @param applicableLocation AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setApplicableLocation(AdministrativeArea applicableLocation);
+    void addApplicableLocation(AdministrativeArea applicableLocation);
+
+    /**
+     * The cost per unit of the drug.
+     *
+     * @return {@link Number} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getCostPerUnitList();
 
     /**
      * The cost per unit of the drug.
@@ -49,21 +66,29 @@ public interface DrugCost extends MedicalEntity {
      * @param costPerUnit Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCostPerUnit(Number costPerUnit);
+    void addCostPerUnit(Number costPerUnit);
     /**
      * The cost per unit of the drug.
      *
      * @param costPerUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCostPerUnit(Text costPerUnit);
+    void addCostPerUnit(Text costPerUnit);
     /**
      * The cost per unit of the drug.
      *
      * @param costPerUnit QualitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCostPerUnit(QualitativeValue costPerUnit);
+    void addCostPerUnit(QualitativeValue costPerUnit);
+
+    /**
+     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
+     *
+     * @return {@link DrugCostCategory}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<DrugCostCategory> getCostCategoryList();
 
     /**
      * The category of cost, such as wholesale, retail, reimbursement cap, etc.
@@ -79,7 +104,15 @@ public interface DrugCost extends MedicalEntity {
      * @param costCategory DrugCostCategory value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCostCategory(DrugCostCategory costCategory);
+    void addCostCategory(DrugCostCategory costCategory);
+
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getDrugUnitList();
 
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
@@ -95,7 +128,15 @@ public interface DrugCost extends MedicalEntity {
      * @param drugUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrugUnit(Text drugUnit);
+    void addDrugUnit(Text drugUnit);
+
+    /**
+     * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getCostCurrencyList();
 
     /**
      * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
@@ -111,7 +152,15 @@ public interface DrugCost extends MedicalEntity {
      * @param costCurrency Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCostCurrency(Text costCurrency);
+    void addCostCurrency(Text costCurrency);
+
+    /**
+     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getCostOriginList();
 
     /**
      * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
@@ -127,5 +176,5 @@ public interface DrugCost extends MedicalEntity {
      * @param costOrigin Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCostOrigin(Text costOrigin);
+    void addCostOrigin(Text costOrigin);
 }

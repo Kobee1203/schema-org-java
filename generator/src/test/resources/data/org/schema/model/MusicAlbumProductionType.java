@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.

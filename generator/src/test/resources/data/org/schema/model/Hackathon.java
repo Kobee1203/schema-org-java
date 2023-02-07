@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.

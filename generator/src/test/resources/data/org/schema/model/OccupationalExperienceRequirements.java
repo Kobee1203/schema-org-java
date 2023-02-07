@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 
 /**
@@ -23,6 +24,15 @@ public interface OccupationalExperienceRequirements extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
+    List<Number> getMonthsOfExperienceList();
+
+    /**
+     * Indicates the minimal number of months of experience required for a position.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
     Number getMonthsOfExperience();
 
     /**
@@ -32,5 +42,5 @@ public interface OccupationalExperienceRequirements extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
-    void setMonthsOfExperience(Number monthsOfExperience);
+    void addMonthsOfExperience(Number monthsOfExperience);
 }

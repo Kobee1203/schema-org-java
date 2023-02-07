@@ -36,6 +36,8 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserDownloads;
 
@@ -47,7 +49,17 @@ import org.schema.model.UserDownloads;
 @JsonLdTypeName("UserDownloads")
 public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserDownloads {
 
-    private Event superEvent;
+    private List<Event> superEvent;
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getSuperEventList() {
+        return superEvent;
+    }
 
     /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
@@ -56,7 +68,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Event getSuperEvent() {
-        return superEvent;
+        return getFirst(superEvent);
     }
 
     /**
@@ -65,11 +77,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param superEvent Event value to set.
      */
     @Override
-    public void setSuperEvent(Event superEvent) {
-        this.superEvent = superEvent;
+    public void addSuperEvent(Event superEvent) {
+        this.superEvent = add(this.superEvent, superEvent);
     }
 
-    private EventAttendanceModeEnumeration eventAttendanceMode;
+    private List<EventAttendanceModeEnumeration> eventAttendanceMode;
+
+    /**
+     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
+     *
+     * @return {@link EventAttendanceModeEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public List<EventAttendanceModeEnumeration> getEventAttendanceModeList() {
+        return eventAttendanceMode;
+    }
 
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
@@ -80,7 +104,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public EventAttendanceModeEnumeration getEventAttendanceMode() {
-        return eventAttendanceMode;
+        return getFirst(eventAttendanceMode);
     }
 
     /**
@@ -91,11 +115,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode) {
-        this.eventAttendanceMode = eventAttendanceMode;
+    public void addEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode) {
+        this.eventAttendanceMode = add(this.eventAttendanceMode, eventAttendanceMode);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -104,7 +138,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -113,11 +147,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
-    private Object translator;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> translator;
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getTranslatorList() {
+        return (List<T>) translator;
+    }
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -126,7 +171,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getTranslator() {
-        return (T) translator;
+        return (T) getFirst(translator);
     }
 
     /**
@@ -135,8 +180,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param translator Person value to set.
      */
     @Override
-    public void setTranslator(Person translator) {
-        this.translator = translator;
+    public void addTranslator(Person translator) {
+        this.translator = add(this.translator, translator);
     }
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -144,11 +189,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param translator Organization value to set.
      */
     @Override
-    public void setTranslator(Organization translator) {
-        this.translator = translator;
+    public void addTranslator(Organization translator) {
+        this.translator = add(this.translator, translator);
     }
 
-    private Object startDate;
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> startDate;
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> List<T> getStartDateList() {
+        return (List<T>) startDate;
+    }
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -158,7 +215,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getStartDate() {
-        return (T) startDate;
+        return (T) getFirst(startDate);
     }
 
     /**
@@ -168,8 +225,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(DateTime startDate) {
-        this.startDate = startDate;
+    public void addStartDate(DateTime startDate) {
+        this.startDate = add(this.startDate, startDate);
     }
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -178,11 +235,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void addStartDate(Date startDate) {
+        this.startDate = add(this.startDate, startDate);
     }
 
-    private Object composer;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> composer;
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public <T> List<T> getComposerList() {
+        return (List<T>) composer;
+    }
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -192,7 +261,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getComposer() {
-        return (T) composer;
+        return (T) getFirst(composer);
     }
 
     /**
@@ -202,8 +271,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setComposer(Organization composer) {
-        this.composer = composer;
+    public void addComposer(Organization composer) {
+        this.composer = add(this.composer, composer);
     }
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -212,11 +281,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setComposer(Person composer) {
-        this.composer = composer;
+    public void addComposer(Person composer) {
+        this.composer = add(this.composer, composer);
     }
 
-    private Integer maximumAttendeeCapacity;
+    private List<Integer> maximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getMaximumAttendeeCapacityList() {
+        return maximumAttendeeCapacity;
+    }
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -225,7 +304,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Integer getMaximumAttendeeCapacity() {
-        return maximumAttendeeCapacity;
+        return getFirst(maximumAttendeeCapacity);
     }
 
     /**
@@ -234,11 +313,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
-        this.maximumAttendeeCapacity = maximumAttendeeCapacity;
+    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
     }
 
-    private Integer maximumVirtualAttendeeCapacity;
+    private List<Integer> maximumVirtualAttendeeCapacity;
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public List<Integer> getMaximumVirtualAttendeeCapacityList() {
+        return maximumVirtualAttendeeCapacity;
+    }
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -249,7 +340,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Integer getMaximumVirtualAttendeeCapacity() {
-        return maximumVirtualAttendeeCapacity;
+        return getFirst(maximumVirtualAttendeeCapacity);
     }
 
     /**
@@ -260,11 +351,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity) {
-        this.maximumVirtualAttendeeCapacity = maximumVirtualAttendeeCapacity;
+    public void addMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity) {
+        this.maximumVirtualAttendeeCapacity = add(this.maximumVirtualAttendeeCapacity, maximumVirtualAttendeeCapacity);
     }
 
-    private Person director;
+    private List<Person> director;
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getDirectorList() {
+        return director;
+    }
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -273,7 +374,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Person getDirector() {
-        return director;
+        return getFirst(director);
     }
 
     /**
@@ -282,11 +383,24 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param director Person value to set.
      */
     @Override
-    public void setDirector(Person director) {
-        this.director = director;
+    public void addDirector(Person director) {
+        this.director = add(this.director, director);
     }
 
-    private Grant funding;
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -298,7 +412,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Grant getFunding() {
-        return funding;
+        return getFirst(funding);
     }
 
     /**
@@ -310,11 +424,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant funding) {
-        this.funding = funding;
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
-    private Object keywords;
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -323,7 +448,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getKeywords() {
-        return (T) keywords;
+        return (T) getFirst(keywords);
     }
 
     /**
@@ -332,8 +457,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm keywords) {
-        this.keywords = keywords;
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -341,8 +466,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text keywords) {
-        this.keywords = keywords;
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -350,11 +475,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(URL keywords) {
-        this.keywords = keywords;
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
-    private Audience audience;
+    private List<Audience> audience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -363,7 +498,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Audience getAudience() {
-        return audience;
+        return getFirst(audience);
     }
 
     /**
@@ -372,11 +507,24 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience audience) {
-        this.audience = audience;
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
 
-    private Object offers;
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -387,7 +535,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getOffers() {
-        return (T) offers;
+        return (T) getFirst(offers);
     }
 
     /**
@@ -398,8 +546,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer offers) {
-        this.offers = offers;
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -409,11 +557,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand offers) {
-        this.offers = offers;
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
     }
 
-    private Event subEvent;
+    private List<Event> subEvent;
+
+    /**
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getSubEventList() {
+        return subEvent;
+    }
 
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
@@ -422,7 +580,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Event getSubEvent() {
-        return subEvent;
+        return getFirst(subEvent);
     }
 
     /**
@@ -431,11 +589,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param subEvent Event value to set.
      */
     @Override
-    public void setSubEvent(Event subEvent) {
-        this.subEvent = subEvent;
+    public void addSubEvent(Event subEvent) {
+        this.subEvent = add(this.subEvent, subEvent);
     }
 
-    private Person actor;
+    private List<Person> actor;
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getActorList() {
+        return actor;
+    }
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -444,7 +612,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Person getActor() {
-        return actor;
+        return getFirst(actor);
     }
 
     /**
@@ -453,11 +621,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param actor Person value to set.
      */
     @Override
-    public void setActor(Person actor) {
-        this.actor = actor;
+    public void addActor(Person actor) {
+        this.actor = add(this.actor, actor);
     }
 
-    private EventStatusType eventStatus;
+    private List<EventStatusType> eventStatus;
+
+    /**
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     *
+     * @return {@link EventStatusType}
+     */
+    @Override
+    public List<EventStatusType> getEventStatusList() {
+        return eventStatus;
+    }
 
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
@@ -466,7 +644,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public EventStatusType getEventStatus() {
-        return eventStatus;
+        return getFirst(eventStatus);
     }
 
     /**
@@ -475,11 +653,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param eventStatus EventStatusType value to set.
      */
     @Override
-    public void setEventStatus(EventStatusType eventStatus) {
-        this.eventStatus = eventStatus;
+    public void addEventStatus(EventStatusType eventStatus) {
+        this.eventStatus = add(this.eventStatus, eventStatus);
     }
 
-    private Object endDate;
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> endDate;
+
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> List<T> getEndDateList() {
+        return (List<T>) endDate;
+    }
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -489,7 +679,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getEndDate() {
-        return (T) endDate;
+        return (T) getFirst(endDate);
     }
 
     /**
@@ -499,8 +689,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void addEndDate(Date endDate) {
+        this.endDate = add(this.endDate, endDate);
     }
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -509,11 +699,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(DateTime endDate) {
-        this.endDate = endDate;
+    public void addEndDate(DateTime endDate) {
+        this.endDate = add(this.endDate, endDate);
     }
 
-    private Object funder;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> funder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getFunderList() {
+        return (List<T>) funder;
+    }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -522,7 +723,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getFunder() {
-        return (T) funder;
+        return (T) getFirst(funder);
     }
 
     /**
@@ -531,8 +732,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Organization funder) {
-        this.funder = funder;
+    public void addFunder(Organization funder) {
+        this.funder = add(this.funder, funder);
     }
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -540,11 +741,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param funder Person value to set.
      */
     @Override
-    public void setFunder(Person funder) {
-        this.funder = funder;
+    public void addFunder(Person funder) {
+        this.funder = add(this.funder, funder);
     }
 
-    private Object performer;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> performer;
+
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getPerformerList() {
+        return (List<T>) performer;
+    }
 
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
@@ -553,7 +765,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getPerformer() {
-        return (T) performer;
+        return (T) getFirst(performer);
     }
 
     /**
@@ -562,8 +774,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param performer Organization value to set.
      */
     @Override
-    public void setPerformer(Organization performer) {
-        this.performer = performer;
+    public void addPerformer(Organization performer) {
+        this.performer = add(this.performer, performer);
     }
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
@@ -571,11 +783,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param performer Person value to set.
      */
     @Override
-    public void setPerformer(Person performer) {
-        this.performer = performer;
+    public void addPerformer(Person performer) {
+        this.performer = add(this.performer, performer);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -584,7 +806,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -593,11 +815,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
-    private Text typicalAgeRange;
+    private List<Text> typicalAgeRange;
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTypicalAgeRangeList() {
+        return typicalAgeRange;
+    }
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -606,7 +838,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getTypicalAgeRange() {
-        return typicalAgeRange;
+        return getFirst(typicalAgeRange);
     }
 
     /**
@@ -615,11 +847,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param typicalAgeRange Text value to set.
      */
     @Override
-    public void setTypicalAgeRange(Text typicalAgeRange) {
-        this.typicalAgeRange = typicalAgeRange;
+    public void addTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = add(this.typicalAgeRange, typicalAgeRange);
     }
 
-    private Object location;
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
+    private List<Object> location;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    @Override
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
+    }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -628,7 +871,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getLocation() {
-        return (T) location;
+        return (T) getFirst(location);
     }
 
     /**
@@ -637,8 +880,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(PostalAddress location) {
-        this.location = location;
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -646,8 +889,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param location Text value to set.
      */
     @Override
-    public void setLocation(Text location) {
-        this.location = location;
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -655,8 +898,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param location Place value to set.
      */
     @Override
-    public void setLocation(Place location) {
-        this.location = location;
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -664,11 +907,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param location VirtualLocation value to set.
      */
     @Override
-    public void setLocation(VirtualLocation location) {
-        this.location = location;
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
     }
 
-    private Object performers;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> performers;
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getPerformersList() {
+        return (List<T>) performers;
+    }
 
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
@@ -677,7 +931,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getPerformers() {
-        return (T) performers;
+        return (T) getFirst(performers);
     }
 
     /**
@@ -686,8 +940,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param performers Person value to set.
      */
     @Override
-    public void setPerformers(Person performers) {
-        this.performers = performers;
+    public void addPerformers(Person performers) {
+        this.performers = add(this.performers, performers);
     }
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
@@ -695,11 +949,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param performers Organization value to set.
      */
     @Override
-    public void setPerformers(Organization performers) {
-        this.performers = performers;
+    public void addPerformers(Organization performers) {
+        this.performers = add(this.performers, performers);
     }
 
-    private Duration duration;
+    private List<Duration> duration;
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public List<Duration> getDurationList() {
+        return duration;
+    }
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -710,7 +976,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Duration getDuration() {
-        return duration;
+        return getFirst(duration);
     }
 
     /**
@@ -721,11 +987,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void addDuration(Duration duration) {
+        this.duration = add(this.duration, duration);
     }
 
-    private Object organizer;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> organizer;
+
+    /**
+     * An organizer of an Event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getOrganizerList() {
+        return (List<T>) organizer;
+    }
 
     /**
      * An organizer of an Event.
@@ -734,7 +1011,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getOrganizer() {
-        return (T) organizer;
+        return (T) getFirst(organizer);
     }
 
     /**
@@ -743,8 +1020,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param organizer Person value to set.
      */
     @Override
-    public void setOrganizer(Person organizer) {
-        this.organizer = organizer;
+    public void addOrganizer(Person organizer) {
+        this.organizer = add(this.organizer, organizer);
     }
     /**
      * An organizer of an Event.
@@ -752,11 +1029,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param organizer Organization value to set.
      */
     @Override
-    public void setOrganizer(Organization organizer) {
-        this.organizer = organizer;
+    public void addOrganizer(Organization organizer) {
+        this.organizer = add(this.organizer, organizer);
     }
 
-    private Object sponsor;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> sponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getSponsorList() {
+        return (List<T>) sponsor;
+    }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -765,7 +1053,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getSponsor() {
-        return (T) sponsor;
+        return (T) getFirst(sponsor);
     }
 
     /**
@@ -774,8 +1062,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Organization sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Organization sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -783,11 +1071,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param sponsor Person value to set.
      */
     @Override
-    public void setSponsor(Person sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Person sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
 
-    private Date previousStartDate;
+    private List<Date> previousStartDate;
+
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getPreviousStartDateList() {
+        return previousStartDate;
+    }
 
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
@@ -796,7 +1094,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Date getPreviousStartDate() {
-        return previousStartDate;
+        return getFirst(previousStartDate);
     }
 
     /**
@@ -805,11 +1103,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param previousStartDate Date value to set.
      */
     @Override
-    public void setPreviousStartDate(Date previousStartDate) {
-        this.previousStartDate = previousStartDate;
+    public void addPreviousStartDate(Date previousStartDate) {
+        this.previousStartDate = add(this.previousStartDate, previousStartDate);
     }
 
-    private Boolean isAccessibleForFree;
+    private List<Boolean> isAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsAccessibleForFreeList() {
+        return isAccessibleForFree;
+    }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -818,7 +1126,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return isAccessibleForFree;
+        return getFirst(isAccessibleForFree);
     }
 
     /**
@@ -827,11 +1135,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
-        this.isAccessibleForFree = isAccessibleForFree;
+    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
     }
 
-    private Integer remainingAttendeeCapacity;
+    private List<Integer> remainingAttendeeCapacity;
+
+    /**
+     * The number of attendee places for an event that remain unallocated.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getRemainingAttendeeCapacityList() {
+        return remainingAttendeeCapacity;
+    }
 
     /**
      * The number of attendee places for an event that remain unallocated.
@@ -840,7 +1158,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Integer getRemainingAttendeeCapacity() {
-        return remainingAttendeeCapacity;
+        return getFirst(remainingAttendeeCapacity);
     }
 
     /**
@@ -849,11 +1167,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param remainingAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setRemainingAttendeeCapacity(Integer remainingAttendeeCapacity) {
-        this.remainingAttendeeCapacity = remainingAttendeeCapacity;
+    public void addRemainingAttendeeCapacity(Integer remainingAttendeeCapacity) {
+        this.remainingAttendeeCapacity = add(this.remainingAttendeeCapacity, remainingAttendeeCapacity);
     }
 
-    private Event subEvents;
+    private List<Event> subEvents;
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getSubEventsList() {
+        return subEvents;
+    }
 
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
@@ -862,7 +1190,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Event getSubEvents() {
-        return subEvents;
+        return getFirst(subEvents);
     }
 
     /**
@@ -871,11 +1199,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param subEvents Event value to set.
      */
     @Override
-    public void setSubEvents(Event subEvents) {
-        this.subEvents = subEvents;
+    public void addSubEvents(Event subEvents) {
+        this.subEvents = add(this.subEvents, subEvents);
     }
 
-    private CreativeWork workPerformed;
+    private List<CreativeWork> workPerformed;
+
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public List<CreativeWork> getWorkPerformedList() {
+        return workPerformed;
+    }
 
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
@@ -884,7 +1222,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public CreativeWork getWorkPerformed() {
-        return workPerformed;
+        return getFirst(workPerformed);
     }
 
     /**
@@ -893,11 +1231,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param workPerformed CreativeWork value to set.
      */
     @Override
-    public void setWorkPerformed(CreativeWork workPerformed) {
-        this.workPerformed = workPerformed;
+    public void addWorkPerformed(CreativeWork workPerformed) {
+        this.workPerformed = add(this.workPerformed, workPerformed);
     }
 
-    private Object doorTime;
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
+    private List<Object> doorTime;
+
+    /**
+     * The time admission will commence.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getDoorTimeList() {
+        return (List<T>) doorTime;
+    }
 
     /**
      * The time admission will commence.
@@ -906,7 +1255,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getDoorTime() {
-        return (T) doorTime;
+        return (T) getFirst(doorTime);
     }
 
     /**
@@ -915,8 +1264,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param doorTime Time value to set.
      */
     @Override
-    public void setDoorTime(Time doorTime) {
-        this.doorTime = doorTime;
+    public void addDoorTime(Time doorTime) {
+        this.doorTime = add(this.doorTime, doorTime);
     }
     /**
      * The time admission will commence.
@@ -924,11 +1273,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param doorTime DateTime value to set.
      */
     @Override
-    public void setDoorTime(DateTime doorTime) {
-        this.doorTime = doorTime;
+    public void addDoorTime(DateTime doorTime) {
+        this.doorTime = add(this.doorTime, doorTime);
     }
 
-    private Object inLanguage;
+    @JsonLdFieldTypes({ Text.class, Language.class })
+    private List<Object> inLanguage;
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public <T> List<T> getInLanguageList() {
+        return (List<T>) inLanguage;
+    }
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -938,7 +1299,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getInLanguage() {
-        return (T) inLanguage;
+        return (T) getFirst(inLanguage);
     }
 
     /**
@@ -948,8 +1309,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Text inLanguage) {
-        this.inLanguage = inLanguage;
+    public void addInLanguage(Text inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
     }
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -958,11 +1319,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Language inLanguage) {
-        this.inLanguage = inLanguage;
+    public void addInLanguage(Language inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
     }
 
-    private Thing about;
+    private List<Thing> about;
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public List<Thing> getAboutList() {
+        return about;
+    }
 
     /**
      * The subject matter of the content.
@@ -972,7 +1344,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Thing getAbout() {
-        return about;
+        return getFirst(about);
     }
 
     /**
@@ -982,11 +1354,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setAbout(Thing about) {
-        this.about = about;
+    public void addAbout(Thing about) {
+        this.about = add(this.about, about);
     }
 
-    private CreativeWork recordedIn;
+    private List<CreativeWork> recordedIn;
+
+    /**
+     * The CreativeWork that captured all or part of this Event.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public List<CreativeWork> getRecordedInList() {
+        return recordedIn;
+    }
 
     /**
      * The CreativeWork that captured all or part of this Event.
@@ -995,7 +1377,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public CreativeWork getRecordedIn() {
-        return recordedIn;
+        return getFirst(recordedIn);
     }
 
     /**
@@ -1004,11 +1386,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param recordedIn CreativeWork value to set.
      */
     @Override
-    public void setRecordedIn(CreativeWork recordedIn) {
-        this.recordedIn = recordedIn;
+    public void addRecordedIn(CreativeWork recordedIn) {
+        this.recordedIn = add(this.recordedIn, recordedIn);
     }
 
-    private Integer maximumPhysicalAttendeeCapacity;
+    private List<Integer> maximumPhysicalAttendeeCapacity;
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public List<Integer> getMaximumPhysicalAttendeeCapacityList() {
+        return maximumPhysicalAttendeeCapacity;
+    }
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -1019,7 +1413,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Integer getMaximumPhysicalAttendeeCapacity() {
-        return maximumPhysicalAttendeeCapacity;
+        return getFirst(maximumPhysicalAttendeeCapacity);
     }
 
     /**
@@ -1030,11 +1424,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity) {
-        this.maximumPhysicalAttendeeCapacity = maximumPhysicalAttendeeCapacity;
+    public void addMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity) {
+        this.maximumPhysicalAttendeeCapacity = add(this.maximumPhysicalAttendeeCapacity, maximumPhysicalAttendeeCapacity);
     }
 
-    private Object attendee;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> attendee;
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getAttendeeList() {
+        return (List<T>) attendee;
+    }
 
     /**
      * A person or organization attending the event.
@@ -1043,7 +1448,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getAttendee() {
-        return (T) attendee;
+        return (T) getFirst(attendee);
     }
 
     /**
@@ -1052,8 +1457,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param attendee Person value to set.
      */
     @Override
-    public void setAttendee(Person attendee) {
-        this.attendee = attendee;
+    public void addAttendee(Person attendee) {
+        this.attendee = add(this.attendee, attendee);
     }
     /**
      * A person or organization attending the event.
@@ -1061,11 +1466,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param attendee Organization value to set.
      */
     @Override
-    public void setAttendee(Organization attendee) {
-        this.attendee = attendee;
+    public void addAttendee(Organization attendee) {
+        this.attendee = add(this.attendee, attendee);
     }
 
-    private CreativeWork workFeatured;
+    private List<CreativeWork> workFeatured;
+
+    /**
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public List<CreativeWork> getWorkFeaturedList() {
+        return workFeatured;
+    }
 
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
@@ -1075,7 +1491,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public CreativeWork getWorkFeatured() {
-        return workFeatured;
+        return getFirst(workFeatured);
     }
 
     /**
@@ -1085,11 +1501,28 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param workFeatured CreativeWork value to set.
      */
     @Override
-    public void setWorkFeatured(CreativeWork workFeatured) {
-        this.workFeatured = workFeatured;
+    public void addWorkFeatured(CreativeWork workFeatured) {
+        this.workFeatured = add(this.workFeatured, workFeatured);
     }
 
-    private Schedule eventSchedule;
+    private List<Schedule> eventSchedule;
+
+    /**
+     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
+     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
+     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
+     *
+     * @return {@link Schedule}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public List<Schedule> getEventScheduleList() {
+        return eventSchedule;
+    }
 
     /**
      * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
@@ -1105,7 +1538,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Schedule getEventSchedule() {
-        return eventSchedule;
+        return getFirst(eventSchedule);
     }
 
     /**
@@ -1121,11 +1554,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setEventSchedule(Schedule eventSchedule) {
-        this.eventSchedule = eventSchedule;
+    public void addEventSchedule(Schedule eventSchedule) {
+        this.eventSchedule = add(this.eventSchedule, eventSchedule);
     }
 
-    private Object contributor;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> contributor;
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getContributorList() {
+        return (List<T>) contributor;
+    }
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -1134,7 +1578,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getContributor() {
-        return (T) contributor;
+        return (T) getFirst(contributor);
     }
 
     /**
@@ -1143,8 +1587,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param contributor Organization value to set.
      */
     @Override
-    public void setContributor(Organization contributor) {
-        this.contributor = contributor;
+    public void addContributor(Organization contributor) {
+        this.contributor = add(this.contributor, contributor);
     }
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -1152,11 +1596,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param contributor Person value to set.
      */
     @Override
-    public void setContributor(Person contributor) {
-        this.contributor = contributor;
+    public void addContributor(Person contributor) {
+        this.contributor = add(this.contributor, contributor);
     }
 
-    private Object attendees;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> attendees;
+
+    /**
+     * A person attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getAttendeesList() {
+        return (List<T>) attendees;
+    }
 
     /**
      * A person attending the event.
@@ -1165,7 +1620,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getAttendees() {
-        return (T) attendees;
+        return (T) getFirst(attendees);
     }
 
     /**
@@ -1174,8 +1629,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param attendees Person value to set.
      */
     @Override
-    public void setAttendees(Person attendees) {
-        this.attendees = attendees;
+    public void addAttendees(Person attendees) {
+        this.attendees = add(this.attendees, attendees);
     }
     /**
      * A person attending the event.
@@ -1183,11 +1638,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param attendees Organization value to set.
      */
     @Override
-    public void setAttendees(Organization attendees) {
-        this.attendees = attendees;
+    public void addAttendees(Organization attendees) {
+        this.attendees = add(this.attendees, attendees);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1196,7 +1662,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -1205,8 +1671,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1214,11 +1680,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -1227,7 +1703,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -1236,11 +1712,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -1249,7 +1735,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -1258,11 +1744,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1271,7 +1767,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -1280,11 +1776,22 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1293,7 +1800,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -1302,8 +1809,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1311,11 +1818,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -1324,7 +1841,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -1333,11 +1850,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -1346,7 +1873,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -1355,11 +1882,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1369,7 +1908,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -1379,8 +1918,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -1389,11 +1928,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1402,7 +1951,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -1411,11 +1960,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1424,7 +1983,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -1433,11 +1992,21 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1446,7 +2015,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -1455,11 +2024,23 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1469,7 +2050,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1479,8 +2060,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1489,8 +2070,8 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1499,7 +2080,7 @@ public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

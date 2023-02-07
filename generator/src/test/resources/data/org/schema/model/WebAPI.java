@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.CreativeWork;
 import org.schema.model.datatype.URL;
 
@@ -24,6 +25,15 @@ public interface WebAPI extends Service {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
+    <T> List<T> getDocumentationList();
+
+    /**
+     * Further documentation describing the Web API in more detail.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
     <T> T getDocumentation();
 
     /**
@@ -33,7 +43,7 @@ public interface WebAPI extends Service {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    void setDocumentation(CreativeWork documentation);
+    void addDocumentation(CreativeWork documentation);
     /**
      * Further documentation describing the Web API in more detail.
      *
@@ -41,5 +51,5 @@ public interface WebAPI extends Service {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    void setDocumentation(URL documentation);
+    void addDocumentation(URL documentation);
 }

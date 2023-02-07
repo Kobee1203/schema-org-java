@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Distance;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.DateTime;
@@ -27,6 +28,13 @@ public interface Flight extends Trip {
      *
      * @return {@link Distance} or {@link Text}
      */
+    <T> List<T> getFlightDistanceList();
+
+    /**
+     * The distance of the flight.
+     *
+     * @return {@link Distance} or {@link Text}
+     */
     <T> T getFlightDistance();
 
     /**
@@ -34,13 +42,20 @@ public interface Flight extends Trip {
      *
      * @param flightDistance Distance value to set.
      */
-    void setFlightDistance(Distance flightDistance);
+    void addFlightDistance(Distance flightDistance);
     /**
      * The distance of the flight.
      *
      * @param flightDistance Text value to set.
      */
-    void setFlightDistance(Text flightDistance);
+    void addFlightDistance(Text flightDistance);
+
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getWebCheckinTimeList();
 
     /**
      * The time when a passenger can check into the flight online.
@@ -54,7 +69,14 @@ public interface Flight extends Trip {
      *
      * @param webCheckinTime DateTime value to set.
      */
-    void setWebCheckinTime(DateTime webCheckinTime);
+    void addWebCheckinTime(DateTime webCheckinTime);
+
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @return {@link Vehicle} or {@link Text}
+     */
+    <T> List<T> getAircraftList();
 
     /**
      * The kind of aircraft (e.g., "Boeing 747").
@@ -68,13 +90,20 @@ public interface Flight extends Trip {
      *
      * @param aircraft Vehicle value to set.
      */
-    void setAircraft(Vehicle aircraft);
+    void addAircraft(Vehicle aircraft);
     /**
      * The kind of aircraft (e.g., "Boeing 747").
      *
      * @param aircraft Text value to set.
      */
-    void setAircraft(Text aircraft);
+    void addAircraft(Text aircraft);
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSellerList();
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -88,13 +117,20 @@ public interface Flight extends Trip {
      *
      * @param seller Organization value to set.
      */
-    void setSeller(Organization seller);
+    void addSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
      */
-    void setSeller(Person seller);
+    void addSeller(Person seller);
+
+    /**
+     * The airport where the flight terminates.
+     *
+     * @return {@link Airport}
+     */
+    List<Airport> getArrivalAirportList();
 
     /**
      * The airport where the flight terminates.
@@ -108,7 +144,14 @@ public interface Flight extends Trip {
      *
      * @param arrivalAirport Airport value to set.
      */
-    void setArrivalAirport(Airport arrivalAirport);
+    void addArrivalAirport(Airport arrivalAirport);
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getArrivalTerminalList();
 
     /**
      * Identifier of the flight's arrival terminal.
@@ -122,7 +165,14 @@ public interface Flight extends Trip {
      *
      * @param arrivalTerminal Text value to set.
      */
-    void setArrivalTerminal(Text arrivalTerminal);
+    void addArrivalTerminal(Text arrivalTerminal);
+
+    /**
+     * The airport where the flight originates.
+     *
+     * @return {@link Airport}
+     */
+    List<Airport> getDepartureAirportList();
 
     /**
      * The airport where the flight originates.
@@ -136,7 +186,14 @@ public interface Flight extends Trip {
      *
      * @param departureAirport Airport value to set.
      */
-    void setDepartureAirport(Airport departureAirport);
+    void addDepartureAirport(Airport departureAirport);
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getArrivalGateList();
 
     /**
      * Identifier of the flight's arrival gate.
@@ -150,7 +207,14 @@ public interface Flight extends Trip {
      *
      * @param arrivalGate Text value to set.
      */
-    void setArrivalGate(Text arrivalGate);
+    void addArrivalGate(Text arrivalGate);
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDepartureTerminalList();
 
     /**
      * Identifier of the flight's departure terminal.
@@ -164,7 +228,14 @@ public interface Flight extends Trip {
      *
      * @param departureTerminal Text value to set.
      */
-    void setDepartureTerminal(Text departureTerminal);
+    void addDepartureTerminal(Text departureTerminal);
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getCarrierList();
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -178,7 +249,14 @@ public interface Flight extends Trip {
      *
      * @param carrier Organization value to set.
      */
-    void setCarrier(Organization carrier);
+    void addCarrier(Organization carrier);
+
+    /**
+     * The estimated time the flight will take.
+     *
+     * @return {@link Text} or {@link Duration}
+     */
+    <T> List<T> getEstimatedFlightDurationList();
 
     /**
      * The estimated time the flight will take.
@@ -192,13 +270,20 @@ public interface Flight extends Trip {
      *
      * @param estimatedFlightDuration Text value to set.
      */
-    void setEstimatedFlightDuration(Text estimatedFlightDuration);
+    void addEstimatedFlightDuration(Text estimatedFlightDuration);
     /**
      * The estimated time the flight will take.
      *
      * @param estimatedFlightDuration Duration value to set.
      */
-    void setEstimatedFlightDuration(Duration estimatedFlightDuration);
+    void addEstimatedFlightDuration(Duration estimatedFlightDuration);
+
+    /**
+     * Identifier of the flight's departure gate.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDepartureGateList();
 
     /**
      * Identifier of the flight's departure gate.
@@ -212,7 +297,14 @@ public interface Flight extends Trip {
      *
      * @param departureGate Text value to set.
      */
-    void setDepartureGate(Text departureGate);
+    void addDepartureGate(Text departureGate);
+
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFlightNumberList();
 
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
@@ -226,7 +318,14 @@ public interface Flight extends Trip {
      *
      * @param flightNumber Text value to set.
      */
-    void setFlightNumber(Text flightNumber);
+    void addFlightNumber(Text flightNumber);
+
+    /**
+     * Description of the meals that will be provided or available for purchase.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getMealServiceList();
 
     /**
      * Description of the meals that will be provided or available for purchase.
@@ -240,7 +339,14 @@ public interface Flight extends Trip {
      *
      * @param mealService Text value to set.
      */
-    void setMealService(Text mealService);
+    void addMealService(Text mealService);
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     * @return {@link BoardingPolicyType}
+     */
+    List<BoardingPolicyType> getBoardingPolicyList();
 
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -254,5 +360,5 @@ public interface Flight extends Trip {
      *
      * @param boardingPolicy BoardingPolicyType value to set.
      */
-    void setBoardingPolicy(BoardingPolicyType boardingPolicy);
+    void addBoardingPolicy(BoardingPolicyType boardingPolicy);
 }

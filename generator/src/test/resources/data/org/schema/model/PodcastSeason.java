@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.

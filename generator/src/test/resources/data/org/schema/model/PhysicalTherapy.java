@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A process of progressive physical care and rehabilitation aimed at improving a health condition.

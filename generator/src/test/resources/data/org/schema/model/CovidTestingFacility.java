@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A CovidTestingFacility is a [[MedicalClinic]] where testing for the COVID-19 Coronavirus

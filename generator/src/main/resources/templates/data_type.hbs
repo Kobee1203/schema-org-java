@@ -25,14 +25,14 @@ public class {{this.name}}{{#if this.parents}} extends {{#each this.parents}}{{t
 
 {{#with this.accessor}}
     {{> templates/fragment/javadoc_getter}}
-    public {{&this.returnFieldType}} {{this.methodName}}() {
+    public {{&this.returnFieldType}} {{this.getterMethod}}() {
         return {{#if this.cast}}{{&this.cast}} {{/if}}{{../this.field.fieldName}};
     }
 {{/with}}
 
 {{#each this.mutators}}
     {{> templates/fragment/javadoc_setter}}
-    public void {{this.methodName}}({{this.paramType}} {{../this.field.fieldName}}) {
+    public void {{this.setterMethod}}({{&this.paramType}} {{../this.field.fieldName}}) {
         this.{{../this.field.fieldName}} = {{this.paramValue}};
     }
 {{/each}}

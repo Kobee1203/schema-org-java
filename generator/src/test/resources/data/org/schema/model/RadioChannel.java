@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.

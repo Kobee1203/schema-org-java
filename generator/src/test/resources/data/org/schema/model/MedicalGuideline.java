@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalEvidenceLevel;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalEntity;
@@ -24,6 +25,14 @@ public interface MedicalGuideline extends MedicalEntity {
      * @return {@link MedicalEvidenceLevel}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalEvidenceLevel> getEvidenceLevelList();
+
+    /**
+     * Strength of evidence of the data used to formulate the guideline (enumerated).
+     *
+     * @return {@link MedicalEvidenceLevel}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalEvidenceLevel getEvidenceLevel();
 
     /**
@@ -32,7 +41,15 @@ public interface MedicalGuideline extends MedicalEntity {
      * @param evidenceLevel MedicalEvidenceLevel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEvidenceLevel(MedicalEvidenceLevel evidenceLevel);
+    void addEvidenceLevel(MedicalEvidenceLevel evidenceLevel);
+
+    /**
+     * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getEvidenceOriginList();
 
     /**
      * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
@@ -48,7 +65,15 @@ public interface MedicalGuideline extends MedicalEntity {
      * @param evidenceOrigin Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEvidenceOrigin(Text evidenceOrigin);
+    void addEvidenceOrigin(Text evidenceOrigin);
+
+    /**
+     * The medical conditions, treatments, etc. that are the subject of the guideline.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getGuidelineSubjectList();
 
     /**
      * The medical conditions, treatments, etc. that are the subject of the guideline.
@@ -64,7 +89,15 @@ public interface MedicalGuideline extends MedicalEntity {
      * @param guidelineSubject MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setGuidelineSubject(MedicalEntity guidelineSubject);
+    void addGuidelineSubject(MedicalEntity guidelineSubject);
+
+    /**
+     * Date on which this guideline's recommendation was made.
+     *
+     * @return {@link Date}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Date> getGuidelineDateList();
 
     /**
      * Date on which this guideline's recommendation was made.
@@ -80,5 +113,5 @@ public interface MedicalGuideline extends MedicalEntity {
      * @param guidelineDate Date value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setGuidelineDate(Date guidelineDate);
+    void addGuidelineDate(Date guidelineDate);
 }

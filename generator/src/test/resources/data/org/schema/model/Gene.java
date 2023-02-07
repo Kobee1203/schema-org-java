@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Gene;
 import org.schema.model.datatype.Text;
 import org.schema.model.BioChemEntity;
@@ -26,6 +27,14 @@ public interface Gene extends BioChemEntity {
      * @return {@link Gene}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
+    List<Gene> getAlternativeOfList();
+
+    /**
+     * Another gene which is a variation of this one.
+     *
+     * @return {@link Gene}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
     Gene getAlternativeOf();
 
     /**
@@ -34,7 +43,15 @@ public interface Gene extends BioChemEntity {
      * @param alternativeOf Gene value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setAlternativeOf(Gene alternativeOf);
+    void addAlternativeOf(Gene alternativeOf);
+
+    /**
+     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<Text> getHasBioPolymerSequenceList();
 
     /**
      * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
@@ -50,7 +67,15 @@ public interface Gene extends BioChemEntity {
      * @param hasBioPolymerSequence Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setHasBioPolymerSequence(Text hasBioPolymerSequence);
+    void addHasBioPolymerSequence(Text hasBioPolymerSequence);
+
+    /**
+     * Another BioChemEntity encoded by this one. 
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<BioChemEntity> getEncodesBioChemEntityList();
 
     /**
      * Another BioChemEntity encoded by this one. 
@@ -66,7 +91,15 @@ public interface Gene extends BioChemEntity {
      * @param encodesBioChemEntity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setEncodesBioChemEntity(BioChemEntity encodesBioChemEntity);
+    void addEncodesBioChemEntity(BioChemEntity encodesBioChemEntity);
+
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @return {@link AnatomicalStructure} or {@link BioChemEntity} or {@link DefinedTerm} or {@link AnatomicalSystem}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    <T> List<T> getExpressedInList();
 
     /**
      * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
@@ -82,26 +115,26 @@ public interface Gene extends BioChemEntity {
      * @param expressedIn AnatomicalStructure value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setExpressedIn(AnatomicalStructure expressedIn);
+    void addExpressedIn(AnatomicalStructure expressedIn);
     /**
      * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
      *
      * @param expressedIn BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setExpressedIn(BioChemEntity expressedIn);
+    void addExpressedIn(BioChemEntity expressedIn);
     /**
      * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
      *
      * @param expressedIn DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setExpressedIn(DefinedTerm expressedIn);
+    void addExpressedIn(DefinedTerm expressedIn);
     /**
      * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
      *
      * @param expressedIn AnatomicalSystem value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setExpressedIn(AnatomicalSystem expressedIn);
+    void addExpressedIn(AnatomicalSystem expressedIn);
 }

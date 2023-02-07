@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Language;
 import org.schema.model.datatype.Text;
 import org.schema.model.Movie;
@@ -23,6 +24,15 @@ public interface ScreeningEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
+    <T> List<T> getSubtitleLanguageList();
+
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
     <T> T getSubtitleLanguage();
 
     /**
@@ -32,7 +42,7 @@ public interface ScreeningEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Language subtitleLanguage);
+    void addSubtitleLanguage(Language subtitleLanguage);
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
@@ -40,7 +50,14 @@ public interface ScreeningEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Text subtitleLanguage);
+    void addSubtitleLanguage(Text subtitleLanguage);
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getVideoFormatList();
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -54,7 +71,14 @@ public interface ScreeningEvent extends Event {
      *
      * @param videoFormat Text value to set.
      */
-    void setVideoFormat(Text videoFormat);
+    void addVideoFormat(Text videoFormat);
+
+    /**
+     * The movie presented during this event.
+     *
+     * @return {@link Movie}
+     */
+    List<Movie> getWorkPresentedList();
 
     /**
      * The movie presented during this event.
@@ -68,5 +92,5 @@ public interface ScreeningEvent extends Event {
      *
      * @param workPresented Movie value to set.
      */
-    void setWorkPresented(Movie workPresented);
+    void addWorkPresented(Movie workPresented);
 }

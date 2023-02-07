@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Organization;
 import org.schema.model.CreativeWork;
@@ -31,6 +32,16 @@ public interface Claim extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
+    <T> List<T> getClaimInterpreterList();
+
+    /**
+     * For a [[Claim]] interpreted from [[MediaObject]] content
+     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
     <T> T getClaimInterpreter();
 
     /**
@@ -41,7 +52,7 @@ public interface Claim extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setClaimInterpreter(Person claimInterpreter);
+    void addClaimInterpreter(Person claimInterpreter);
     /**
      * For a [[Claim]] interpreted from [[MediaObject]] content
      *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
@@ -50,7 +61,16 @@ public interface Claim extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setClaimInterpreter(Organization claimInterpreter);
+    void addClaimInterpreter(Organization claimInterpreter);
+
+    /**
+     * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     */
+    List<CreativeWork> getFirstAppearanceList();
 
     /**
      * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
@@ -68,7 +88,16 @@ public interface Claim extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */
-    void setFirstAppearance(CreativeWork firstAppearance);
+    void addFirstAppearance(CreativeWork firstAppearance);
+
+    /**
+     * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     */
+    List<CreativeWork> getAppearanceList();
 
     /**
      * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
@@ -86,5 +115,5 @@ public interface Claim extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */
-    void setAppearance(CreativeWork appearance);
+    void addAppearance(CreativeWork appearance);
 }

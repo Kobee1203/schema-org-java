@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
@@ -23,6 +24,15 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
+    <T> List<T> getTeachesList();
+
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
     <T> T getTeaches();
 
     /**
@@ -32,7 +42,7 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(DefinedTerm teaches);
+    void addTeaches(DefinedTerm teaches);
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
@@ -40,7 +50,16 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(Text teaches);
+    void addTeaches(Text teaches);
+
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    <T> List<T> getEducationalLevelList();
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -58,7 +77,7 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(URL educationalLevel);
+    void addEducationalLevel(URL educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
@@ -66,7 +85,7 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(DefinedTerm educationalLevel);
+    void addEducationalLevel(DefinedTerm educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
@@ -74,7 +93,16 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(Text educationalLevel);
+    void addEducationalLevel(Text educationalLevel);
+
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    <T> List<T> getAssessesList();
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -92,7 +120,7 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(Text assesses);
+    void addAssesses(Text assesses);
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
@@ -100,5 +128,5 @@ public interface EducationEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(DefinedTerm assesses);
+    void addAssesses(DefinedTerm assesses);
 }

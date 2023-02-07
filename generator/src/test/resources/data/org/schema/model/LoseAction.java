@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 
 /**
@@ -19,6 +20,13 @@ public interface LoseAction extends AchieveAction {
      *
      * @return {@link Person}
      */
+    List<Person> getWinnerList();
+
+    /**
+     * A sub property of participant. The winner of the action.
+     *
+     * @return {@link Person}
+     */
     Person getWinner();
 
     /**
@@ -26,5 +34,5 @@ public interface LoseAction extends AchieveAction {
      *
      * @param winner Person value to set.
      */
-    void setWinner(Person winner);
+    void addWinner(Person winner);
 }

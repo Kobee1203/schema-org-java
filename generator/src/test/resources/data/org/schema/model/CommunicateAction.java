@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Audience;
 import org.schema.model.ContactPoint;
@@ -25,6 +26,13 @@ public interface CommunicateAction extends InteractAction {
      *
      * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
      */
+    <T> List<T> getRecipientList();
+
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
+     */
     <T> T getRecipient();
 
     /**
@@ -32,25 +40,33 @@ public interface CommunicateAction extends InteractAction {
      *
      * @param recipient Person value to set.
      */
-    void setRecipient(Person recipient);
+    void addRecipient(Person recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Audience value to set.
      */
-    void setRecipient(Audience recipient);
+    void addRecipient(Audience recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient ContactPoint value to set.
      */
-    void setRecipient(ContactPoint recipient);
+    void addRecipient(ContactPoint recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Organization value to set.
      */
-    void setRecipient(Organization recipient);
+    void addRecipient(Organization recipient);
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> List<T> getInLanguageList();
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -66,14 +82,21 @@ public interface CommunicateAction extends InteractAction {
      * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text inLanguage);
+    void addInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
      * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Language inLanguage);
+    void addInLanguage(Language inLanguage);
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @return {@link Language}
+     */
+    List<Language> getLanguageList();
 
     /**
      * A sub property of instrument. The language used on this action.
@@ -87,7 +110,15 @@ public interface CommunicateAction extends InteractAction {
      *
      * @param language Language value to set.
      */
-    void setLanguage(Language language);
+    void addLanguage(Language language);
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    List<Thing> getAboutList();
 
     /**
      * The subject matter of the content.
@@ -103,5 +134,5 @@ public interface CommunicateAction extends InteractAction {
      * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setAbout(Thing about);
+    void addAbout(Thing about);
 }

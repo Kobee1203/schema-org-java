@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Short story or tale. A brief work of literature, usually written in narrative prose.

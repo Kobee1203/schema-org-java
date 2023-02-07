@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Mass;
 import org.schema.model.datatype.Text;
 import org.schema.model.Energy;
@@ -21,6 +22,13 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @return {@link Mass}
      */
+    List<Mass> getFatContentList();
+
+    /**
+     * The number of grams of fat.
+     *
+     * @return {@link Mass}
+     */
     Mass getFatContent();
 
     /**
@@ -28,7 +36,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param fatContent Mass value to set.
      */
-    void setFatContent(Mass fatContent);
+    void addFatContent(Mass fatContent);
+
+    /**
+     * The serving size, in terms of the number of volume or mass.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getServingSizeList();
 
     /**
      * The serving size, in terms of the number of volume or mass.
@@ -42,7 +57,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param servingSize Text value to set.
      */
-    void setServingSize(Text servingSize);
+    void addServingSize(Text servingSize);
+
+    /**
+     * The number of grams of protein.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getProteinContentList();
 
     /**
      * The number of grams of protein.
@@ -56,7 +78,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param proteinContent Mass value to set.
      */
-    void setProteinContent(Mass proteinContent);
+    void addProteinContent(Mass proteinContent);
+
+    /**
+     * The number of calories.
+     *
+     * @return {@link Energy}
+     */
+    List<Energy> getCaloriesList();
 
     /**
      * The number of calories.
@@ -70,7 +99,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param calories Energy value to set.
      */
-    void setCalories(Energy calories);
+    void addCalories(Energy calories);
+
+    /**
+     * The number of milligrams of sodium.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getSodiumContentList();
 
     /**
      * The number of milligrams of sodium.
@@ -84,7 +120,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param sodiumContent Mass value to set.
      */
-    void setSodiumContent(Mass sodiumContent);
+    void addSodiumContent(Mass sodiumContent);
+
+    /**
+     * The number of milligrams of cholesterol.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getCholesterolContentList();
 
     /**
      * The number of milligrams of cholesterol.
@@ -98,7 +141,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param cholesterolContent Mass value to set.
      */
-    void setCholesterolContent(Mass cholesterolContent);
+    void addCholesterolContent(Mass cholesterolContent);
+
+    /**
+     * The number of grams of sugar.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getSugarContentList();
 
     /**
      * The number of grams of sugar.
@@ -112,7 +162,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param sugarContent Mass value to set.
      */
-    void setSugarContent(Mass sugarContent);
+    void addSugarContent(Mass sugarContent);
+
+    /**
+     * The number of grams of carbohydrates.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getCarbohydrateContentList();
 
     /**
      * The number of grams of carbohydrates.
@@ -126,7 +183,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param carbohydrateContent Mass value to set.
      */
-    void setCarbohydrateContent(Mass carbohydrateContent);
+    void addCarbohydrateContent(Mass carbohydrateContent);
+
+    /**
+     * The number of grams of trans fat.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getTransFatContentList();
 
     /**
      * The number of grams of trans fat.
@@ -140,7 +204,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param transFatContent Mass value to set.
      */
-    void setTransFatContent(Mass transFatContent);
+    void addTransFatContent(Mass transFatContent);
+
+    /**
+     * The number of grams of fiber.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getFiberContentList();
 
     /**
      * The number of grams of fiber.
@@ -154,7 +225,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param fiberContent Mass value to set.
      */
-    void setFiberContent(Mass fiberContent);
+    void addFiberContent(Mass fiberContent);
+
+    /**
+     * The number of grams of unsaturated fat.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getUnsaturatedFatContentList();
 
     /**
      * The number of grams of unsaturated fat.
@@ -168,7 +246,14 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param unsaturatedFatContent Mass value to set.
      */
-    void setUnsaturatedFatContent(Mass unsaturatedFatContent);
+    void addUnsaturatedFatContent(Mass unsaturatedFatContent);
+
+    /**
+     * The number of grams of saturated fat.
+     *
+     * @return {@link Mass}
+     */
+    List<Mass> getSaturatedFatContentList();
 
     /**
      * The number of grams of saturated fat.
@@ -182,5 +267,5 @@ public interface NutritionInformation extends StructuredValue {
      *
      * @param saturatedFatContent Mass value to set.
      */
-    void setSaturatedFatContent(Mass saturatedFatContent);
+    void addSaturatedFatContent(Mass saturatedFatContent);
 }

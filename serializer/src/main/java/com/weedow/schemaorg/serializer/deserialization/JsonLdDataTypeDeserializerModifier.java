@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.annotation.NoClass;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
+import com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer;
+import com.fasterxml.jackson.databind.type.CollectionType;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.deserialization.datatype.EnumDeserializer;
 import com.weedow.schemaorg.serializer.deserialization.spec.DataTypeSpecificationService;
@@ -13,6 +15,7 @@ import com.weedow.schemaorg.serializer.utils.SerializerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,12 +28,22 @@ public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier
     private Class<?> enumerationClass;
 
     @Override
+    public JsonDeserializer<?> modifyCollectionDeserializer(DeserializationConfig config, CollectionType type, BeanDescription beanDesc, JsonDeserializer<?> deserializer) {
+        JsonDeserializer<?> singleValueDeserializer = getJsonDeserializer(config, deserializer, beanDesc.getType());
+        return new JsonLdCollectionDeserializer(config, beanDesc, deserializer, singleValueDeserializer);
+    }
+
+    @Override
     public JsonDeserializer<?> modifyDeserializer(DeserializationConfig config, BeanDescription beanDesc, JsonDeserializer<?> deserializer) {
-        final JavaType type = beanDesc.getType();
+        JsonDeserializer<?> jsonDeserializer = getJsonDeserializer(config, deserializer, beanDesc.getType());
+        return jsonDeserializer != null ? jsonDeserializer : super.modifyDeserializer(config, beanDesc, deserializer);
+    }
+
+    private JsonDeserializer<?> getJsonDeserializer(DeserializationConfig config, JsonDeserializer<?> deserializer, JavaType type) {
         final Class<?> rawClass = type.getRawClass();
         if (JsonLdDataType.class.isAssignableFrom(rawClass)) {
             return cache.computeIfAbsent(rawClass, clazz -> {
-                JsonDeserializer<?> des = DataTypeSpecificationService.getInstance().getDeserializer(rawClass).apply(type, deserializer);
+                JsonDeserializer<?> des = DataTypeSpecificationService.getInstance().getDeserializer(rawClass);
                 if (des == null) {
                     LOG.warn("Could not find the Json-LD DataType Deserializer for class {}", rawClass);
                     des = deserializer;
@@ -40,12 +53,19 @@ public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier
         } else if (getEnumerationClass(config).isAssignableFrom(rawClass)) {
             Class<?> enumClass = SerializerUtils.findClass(rawClass.getSimpleName(), config.getTypeFactory());
             if (enumClass != null) {
-                return cache.computeIfAbsent(rawClass, clazz -> new EnumDeserializer(enumClass, type, deserializer));
+                return cache.computeIfAbsent(rawClass, clazz -> new EnumDeserializer(enumClass));
             } else {
                 LOG.warn("Could not find the Class from class name {}", rawClass);
             }
+        } else if (Collection.class.isAssignableFrom(rawClass)) {
+            JavaType contentType = type.getContentType();
+            if (contentType.hasRawClass(Object.class)) {
+                return new UntypedObjectDeserializer(null, null);
+            } else {
+                return getJsonDeserializer(config, deserializer, contentType);
+            }
         }
-        return super.modifyDeserializer(config, beanDesc, deserializer);
+        return null;
     }
 
     private Class<?> getEnumerationClass(DeserializationConfig config) {

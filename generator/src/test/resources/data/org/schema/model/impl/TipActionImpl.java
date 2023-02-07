@@ -27,6 +27,8 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.TradeAction;
 import org.schema.model.TipAction;
 
@@ -38,7 +40,18 @@ import org.schema.model.TipAction;
 @JsonLdTypeName("TipAction")
 public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TipAction {
 
-    private Object recipient;
+    @JsonLdFieldTypes({ Person.class, Audience.class, ContactPoint.class, Organization.class })
+    private List<Object> recipient;
+
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getRecipientList() {
+        return (List<T>) recipient;
+    }
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
@@ -47,7 +60,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getRecipient() {
-        return (T) recipient;
+        return (T) getFirst(recipient);
     }
 
     /**
@@ -56,8 +69,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param recipient Person value to set.
      */
     @Override
-    public void setRecipient(Person recipient) {
-        this.recipient = recipient;
+    public void addRecipient(Person recipient) {
+        this.recipient = add(this.recipient, recipient);
     }
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
@@ -65,8 +78,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param recipient Audience value to set.
      */
     @Override
-    public void setRecipient(Audience recipient) {
-        this.recipient = recipient;
+    public void addRecipient(Audience recipient) {
+        this.recipient = add(this.recipient, recipient);
     }
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
@@ -74,8 +87,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param recipient ContactPoint value to set.
      */
     @Override
-    public void setRecipient(ContactPoint recipient) {
-        this.recipient = recipient;
+    public void addRecipient(ContactPoint recipient) {
+        this.recipient = add(this.recipient, recipient);
     }
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
@@ -83,11 +96,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param recipient Organization value to set.
      */
     @Override
-    public void setRecipient(Organization recipient) {
-        this.recipient = recipient;
+    public void addRecipient(Organization recipient) {
+        this.recipient = add(this.recipient, recipient);
     }
 
-    private Text priceCurrency;
+    private List<Text> priceCurrency;
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPriceCurrencyList() {
+        return priceCurrency;
+    }
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -96,7 +119,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getPriceCurrency() {
-        return priceCurrency;
+        return getFirst(priceCurrency);
     }
 
     /**
@@ -105,11 +128,22 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param priceCurrency Text value to set.
      */
     @Override
-    public void setPriceCurrency(Text priceCurrency) {
-        this.priceCurrency = priceCurrency;
+    public void addPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = add(this.priceCurrency, priceCurrency);
     }
 
-    private PriceSpecification priceSpecification;
+    private List<PriceSpecification> priceSpecification;
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<PriceSpecification> getPriceSpecificationList() {
+        return priceSpecification;
+    }
 
     /**
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
@@ -119,7 +153,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public PriceSpecification getPriceSpecification() {
-        return priceSpecification;
+        return getFirst(priceSpecification);
     }
 
     /**
@@ -129,11 +163,23 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setPriceSpecification(PriceSpecification priceSpecification) {
-        this.priceSpecification = priceSpecification;
+    public void addPriceSpecification(PriceSpecification priceSpecification) {
+        this.priceSpecification = add(this.priceSpecification, priceSpecification);
     }
 
-    private Object price;
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> price;
+
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     *       
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getPriceList() {
+        return (List<T>) price;
+    }
 
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -143,7 +189,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getPrice() {
-        return (T) price;
+        return (T) getFirst(price);
     }
 
     /**
@@ -153,8 +199,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param price Number value to set.
      */
     @Override
-    public void setPrice(Number price) {
-        this.price = price;
+    public void addPrice(Number price) {
+        this.price = add(this.price, price);
     }
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -163,11 +209,22 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param price Text value to set.
      */
     @Override
-    public void setPrice(Text price) {
-        this.price = price;
+    public void addPrice(Text price) {
+        this.price = add(this.price, price);
     }
 
-    private Object agent;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> agent;
+
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getAgentList() {
+        return (List<T>) agent;
+    }
 
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
@@ -176,7 +233,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getAgent() {
-        return (T) agent;
+        return (T) getFirst(agent);
     }
 
     /**
@@ -185,8 +242,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param agent Organization value to set.
      */
     @Override
-    public void setAgent(Organization agent) {
-        this.agent = agent;
+    public void addAgent(Organization agent) {
+        this.agent = add(this.agent, agent);
     }
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
@@ -194,11 +251,23 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param agent Person value to set.
      */
     @Override
-    public void setAgent(Person agent) {
-        this.agent = agent;
+    public void addAgent(Person agent) {
+        this.agent = add(this.agent, agent);
     }
 
-    private Object startTime;
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> startTime;
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getStartTimeList() {
+        return (List<T>) startTime;
+    }
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -208,7 +277,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getStartTime() {
-        return (T) startTime;
+        return (T) getFirst(startTime);
     }
 
     /**
@@ -218,8 +287,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(DateTime startTime) {
-        this.startTime = startTime;
+    public void addStartTime(DateTime startTime) {
+        this.startTime = add(this.startTime, startTime);
     }
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -228,11 +297,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(Time startTime) {
-        this.startTime = startTime;
+    public void addStartTime(Time startTime) {
+        this.startTime = add(this.startTime, startTime);
     }
 
-    private ActionStatusType actionStatus;
+    private List<ActionStatusType> actionStatus;
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     * @return {@link ActionStatusType}
+     */
+    @Override
+    public List<ActionStatusType> getActionStatusList() {
+        return actionStatus;
+    }
 
     /**
      * Indicates the current disposition of the Action.
@@ -241,7 +320,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public ActionStatusType getActionStatus() {
-        return actionStatus;
+        return getFirst(actionStatus);
     }
 
     /**
@@ -250,11 +329,25 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param actionStatus ActionStatusType value to set.
      */
     @Override
-    public void setActionStatus(ActionStatusType actionStatus) {
-        this.actionStatus = actionStatus;
+    public void addActionStatus(ActionStatusType actionStatus) {
+        this.actionStatus = add(this.actionStatus, actionStatus);
     }
 
-    private Object provider;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -266,7 +359,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getProvider() {
-        return (T) provider;
+        return (T) getFirst(provider);
     }
 
     /**
@@ -278,8 +371,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization provider) {
-        this.provider = provider;
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -290,11 +383,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person provider) {
-        this.provider = provider;
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
     }
 
-    private Thing result;
+    private List<Thing> result;
+
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getResultList() {
+        return result;
+    }
 
     /**
      * The result produced in the action. e.g. John wrote *a book*.
@@ -303,7 +406,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getResult() {
-        return result;
+        return getFirst(result);
     }
 
     /**
@@ -312,11 +415,22 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param result Thing value to set.
      */
     @Override
-    public void setResult(Thing result) {
-        this.result = result;
+    public void addResult(Thing result) {
+        this.result = add(this.result, result);
     }
 
-    private Object location;
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
+    private List<Object> location;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    @Override
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
+    }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -325,7 +439,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getLocation() {
-        return (T) location;
+        return (T) getFirst(location);
     }
 
     /**
@@ -334,8 +448,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(PostalAddress location) {
-        this.location = location;
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -343,8 +457,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param location Text value to set.
      */
     @Override
-    public void setLocation(Text location) {
-        this.location = location;
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -352,8 +466,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param location Place value to set.
      */
     @Override
-    public void setLocation(Place location) {
-        this.location = location;
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -361,11 +475,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param location VirtualLocation value to set.
      */
     @Override
-    public void setLocation(VirtualLocation location) {
-        this.location = location;
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
     }
 
-    private Thing object;
+    private List<Thing> object;
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getObjectList() {
+        return object;
+    }
 
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
@@ -374,7 +498,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getObject() {
-        return object;
+        return getFirst(object);
     }
 
     /**
@@ -383,11 +507,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param object Thing value to set.
      */
     @Override
-    public void setObject(Thing object) {
-        this.object = object;
+    public void addObject(Thing object) {
+        this.object = add(this.object, object);
     }
 
-    private EntryPoint target;
+    private List<EntryPoint> target;
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     * @return {@link EntryPoint}
+     */
+    @Override
+    public List<EntryPoint> getTargetList() {
+        return target;
+    }
 
     /**
      * Indicates a target EntryPoint for an Action.
@@ -396,7 +530,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public EntryPoint getTarget() {
-        return target;
+        return getFirst(target);
     }
 
     /**
@@ -405,11 +539,23 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param target EntryPoint value to set.
      */
     @Override
-    public void setTarget(EntryPoint target) {
-        this.target = target;
+    public void addTarget(EntryPoint target) {
+        this.target = add(this.target, target);
     }
 
-    private Object endTime;
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> endTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getEndTimeList() {
+        return (List<T>) endTime;
+    }
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -419,7 +565,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getEndTime() {
-        return (T) endTime;
+        return (T) getFirst(endTime);
     }
 
     /**
@@ -429,8 +575,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(DateTime endTime) {
-        this.endTime = endTime;
+    public void addEndTime(DateTime endTime) {
+        this.endTime = add(this.endTime, endTime);
     }
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -439,11 +585,22 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(Time endTime) {
-        this.endTime = endTime;
+    public void addEndTime(Time endTime) {
+        this.endTime = add(this.endTime, endTime);
     }
 
-    private Object participant;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> participant;
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getParticipantList() {
+        return (List<T>) participant;
+    }
 
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
@@ -452,7 +609,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getParticipant() {
-        return (T) participant;
+        return (T) getFirst(participant);
     }
 
     /**
@@ -461,8 +618,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param participant Organization value to set.
      */
     @Override
-    public void setParticipant(Organization participant) {
-        this.participant = participant;
+    public void addParticipant(Organization participant) {
+        this.participant = add(this.participant, participant);
     }
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
@@ -470,11 +627,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param participant Person value to set.
      */
     @Override
-    public void setParticipant(Person participant) {
-        this.participant = participant;
+    public void addParticipant(Person participant) {
+        this.participant = add(this.participant, participant);
     }
 
-    private Thing instrument;
+    private List<Thing> instrument;
+
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getInstrumentList() {
+        return instrument;
+    }
 
     /**
      * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
@@ -483,7 +650,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getInstrument() {
-        return instrument;
+        return getFirst(instrument);
     }
 
     /**
@@ -492,11 +659,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param instrument Thing value to set.
      */
     @Override
-    public void setInstrument(Thing instrument) {
-        this.instrument = instrument;
+    public void addInstrument(Thing instrument) {
+        this.instrument = add(this.instrument, instrument);
     }
 
-    private Thing error;
+    private List<Thing> error;
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getErrorList() {
+        return error;
+    }
 
     /**
      * For failed actions, more information on the cause of the failure.
@@ -505,7 +682,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getError() {
-        return error;
+        return getFirst(error);
     }
 
     /**
@@ -514,11 +691,22 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param error Thing value to set.
      */
     @Override
-    public void setError(Thing error) {
-        this.error = error;
+    public void addError(Thing error) {
+        this.error = add(this.error, error);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -527,7 +715,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -536,8 +724,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -545,11 +733,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -558,7 +756,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -567,11 +765,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -580,7 +788,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -589,11 +797,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -602,7 +820,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -611,11 +829,22 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -624,7 +853,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -633,8 +862,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -642,11 +871,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -655,7 +894,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -664,11 +903,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -677,7 +926,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -686,11 +935,23 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -700,7 +961,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -710,8 +971,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -720,11 +981,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -733,7 +1004,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -742,11 +1013,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -755,7 +1036,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -764,11 +1045,21 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -777,7 +1068,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -786,11 +1077,23 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -800,7 +1103,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -810,8 +1113,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -820,8 +1123,8 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -830,7 +1133,7 @@ public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

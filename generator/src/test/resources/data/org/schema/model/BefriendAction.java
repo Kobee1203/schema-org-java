@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.<br/><br/>Related actions:<br/><br/>* [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.

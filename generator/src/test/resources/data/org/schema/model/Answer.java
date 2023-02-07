@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.WebContent;
 import org.schema.model.Comment;
 
@@ -23,6 +24,15 @@ public interface Answer extends Comment {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
+    <T> List<T> getAnswerExplanationList();
+
+    /**
+     * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
+     *
+     * @return {@link WebContent} or {@link Comment}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
     <T> T getAnswerExplanation();
 
     /**
@@ -32,7 +42,7 @@ public interface Answer extends Comment {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
-    void setAnswerExplanation(WebContent answerExplanation);
+    void addAnswerExplanation(WebContent answerExplanation);
     /**
      * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
      *
@@ -40,5 +50,5 @@ public interface Answer extends Comment {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
-    void setAnswerExplanation(Comment answerExplanation);
+    void addAnswerExplanation(Comment answerExplanation);
 }

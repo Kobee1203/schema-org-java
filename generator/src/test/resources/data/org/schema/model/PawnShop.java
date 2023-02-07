@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A shop that will buy, or lend money against the security of, personal possessions.

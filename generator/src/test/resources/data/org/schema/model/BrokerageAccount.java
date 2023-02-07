@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.

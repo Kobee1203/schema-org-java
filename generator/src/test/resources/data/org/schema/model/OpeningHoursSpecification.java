@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Time;
 import org.schema.model.DayOfWeek;
 import org.schema.model.datatype.DateTime;
@@ -26,6 +27,14 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @return {@link Time}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
+    List<Time> getClosesList();
+
+    /**
+     * The closing hour of the place or service on the given day(s) of the week.
+     *
+     * @return {@link Time}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
     Time getCloses();
 
     /**
@@ -34,7 +43,15 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @param closes Time value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setCloses(Time closes);
+    void addCloses(Time closes);
+
+    /**
+     * The day of the week for which these opening hours are valid.
+     *
+     * @return {@link DayOfWeek}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<DayOfWeek> getDayOfWeekList();
 
     /**
      * The day of the week for which these opening hours are valid.
@@ -50,7 +67,15 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @param dayOfWeek DayOfWeek value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDayOfWeek(DayOfWeek dayOfWeek);
+    void addDayOfWeek(DayOfWeek dayOfWeek);
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getValidFromList();
 
     /**
      * The date when the item becomes valid.
@@ -66,14 +91,22 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @param validFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(DateTime validFrom);
+    void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(Date validFrom);
+    void addValidFrom(Date validFrom);
+
+    /**
+     * The opening hour of the place or service on the given day(s) of the week.
+     *
+     * @return {@link Time}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Time> getOpensList();
 
     /**
      * The opening hour of the place or service on the given day(s) of the week.
@@ -89,7 +122,15 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @param opens Time value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOpens(Time opens);
+    void addOpens(Time opens);
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getValidThroughList();
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -105,12 +146,12 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @param validThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(DateTime validThrough);
+    void addValidThrough(DateTime validThrough);
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(Date validThrough);
+    void addValidThrough(Date validThrough);
 }

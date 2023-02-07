@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.HyperTocEntry;
 import org.schema.model.MediaObject;
 
@@ -24,6 +25,15 @@ public interface HyperToc extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
+    List<HyperTocEntry> getTocEntryList();
+
+    /**
+     * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
+     *
+     * @return {@link HyperTocEntry}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
+     */
     HyperTocEntry getTocEntry();
 
     /**
@@ -33,7 +43,14 @@ public interface HyperToc extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
-    void setTocEntry(HyperTocEntry tocEntry);
+    void addTocEntry(HyperTocEntry tocEntry);
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getAssociatedMediaList();
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -47,5 +64,5 @@ public interface HyperToc extends CreativeWork {
      *
      * @param associatedMedia MediaObject value to set.
      */
-    void setAssociatedMedia(MediaObject associatedMedia);
+    void addAssociatedMedia(MediaObject associatedMedia);
 }

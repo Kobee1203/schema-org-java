@@ -17,6 +17,7 @@ import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.NutritionInformation;
@@ -29,7 +30,17 @@ import org.schema.model.NutritionInformation;
 @JsonLdTypeName("NutritionInformation")
 public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NutritionInformation {
 
-    private Mass fatContent;
+    private List<Mass> fatContent;
+
+    /**
+     * The number of grams of fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getFatContentList() {
+        return fatContent;
+    }
 
     /**
      * The number of grams of fat.
@@ -38,7 +49,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getFatContent() {
-        return fatContent;
+        return getFirst(fatContent);
     }
 
     /**
@@ -47,11 +58,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param fatContent Mass value to set.
      */
     @Override
-    public void setFatContent(Mass fatContent) {
-        this.fatContent = fatContent;
+    public void addFatContent(Mass fatContent) {
+        this.fatContent = add(this.fatContent, fatContent);
     }
 
-    private Text servingSize;
+    private List<Text> servingSize;
+
+    /**
+     * The serving size, in terms of the number of volume or mass.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getServingSizeList() {
+        return servingSize;
+    }
 
     /**
      * The serving size, in terms of the number of volume or mass.
@@ -60,7 +81,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getServingSize() {
-        return servingSize;
+        return getFirst(servingSize);
     }
 
     /**
@@ -69,11 +90,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param servingSize Text value to set.
      */
     @Override
-    public void setServingSize(Text servingSize) {
-        this.servingSize = servingSize;
+    public void addServingSize(Text servingSize) {
+        this.servingSize = add(this.servingSize, servingSize);
     }
 
-    private Mass proteinContent;
+    private List<Mass> proteinContent;
+
+    /**
+     * The number of grams of protein.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getProteinContentList() {
+        return proteinContent;
+    }
 
     /**
      * The number of grams of protein.
@@ -82,7 +113,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getProteinContent() {
-        return proteinContent;
+        return getFirst(proteinContent);
     }
 
     /**
@@ -91,11 +122,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param proteinContent Mass value to set.
      */
     @Override
-    public void setProteinContent(Mass proteinContent) {
-        this.proteinContent = proteinContent;
+    public void addProteinContent(Mass proteinContent) {
+        this.proteinContent = add(this.proteinContent, proteinContent);
     }
 
-    private Energy calories;
+    private List<Energy> calories;
+
+    /**
+     * The number of calories.
+     *
+     * @return {@link Energy}
+     */
+    @Override
+    public List<Energy> getCaloriesList() {
+        return calories;
+    }
 
     /**
      * The number of calories.
@@ -104,7 +145,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Energy getCalories() {
-        return calories;
+        return getFirst(calories);
     }
 
     /**
@@ -113,11 +154,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param calories Energy value to set.
      */
     @Override
-    public void setCalories(Energy calories) {
-        this.calories = calories;
+    public void addCalories(Energy calories) {
+        this.calories = add(this.calories, calories);
     }
 
-    private Mass sodiumContent;
+    private List<Mass> sodiumContent;
+
+    /**
+     * The number of milligrams of sodium.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getSodiumContentList() {
+        return sodiumContent;
+    }
 
     /**
      * The number of milligrams of sodium.
@@ -126,7 +177,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getSodiumContent() {
-        return sodiumContent;
+        return getFirst(sodiumContent);
     }
 
     /**
@@ -135,11 +186,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param sodiumContent Mass value to set.
      */
     @Override
-    public void setSodiumContent(Mass sodiumContent) {
-        this.sodiumContent = sodiumContent;
+    public void addSodiumContent(Mass sodiumContent) {
+        this.sodiumContent = add(this.sodiumContent, sodiumContent);
     }
 
-    private Mass cholesterolContent;
+    private List<Mass> cholesterolContent;
+
+    /**
+     * The number of milligrams of cholesterol.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getCholesterolContentList() {
+        return cholesterolContent;
+    }
 
     /**
      * The number of milligrams of cholesterol.
@@ -148,7 +209,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getCholesterolContent() {
-        return cholesterolContent;
+        return getFirst(cholesterolContent);
     }
 
     /**
@@ -157,11 +218,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param cholesterolContent Mass value to set.
      */
     @Override
-    public void setCholesterolContent(Mass cholesterolContent) {
-        this.cholesterolContent = cholesterolContent;
+    public void addCholesterolContent(Mass cholesterolContent) {
+        this.cholesterolContent = add(this.cholesterolContent, cholesterolContent);
     }
 
-    private Mass sugarContent;
+    private List<Mass> sugarContent;
+
+    /**
+     * The number of grams of sugar.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getSugarContentList() {
+        return sugarContent;
+    }
 
     /**
      * The number of grams of sugar.
@@ -170,7 +241,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getSugarContent() {
-        return sugarContent;
+        return getFirst(sugarContent);
     }
 
     /**
@@ -179,11 +250,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param sugarContent Mass value to set.
      */
     @Override
-    public void setSugarContent(Mass sugarContent) {
-        this.sugarContent = sugarContent;
+    public void addSugarContent(Mass sugarContent) {
+        this.sugarContent = add(this.sugarContent, sugarContent);
     }
 
-    private Mass carbohydrateContent;
+    private List<Mass> carbohydrateContent;
+
+    /**
+     * The number of grams of carbohydrates.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getCarbohydrateContentList() {
+        return carbohydrateContent;
+    }
 
     /**
      * The number of grams of carbohydrates.
@@ -192,7 +273,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getCarbohydrateContent() {
-        return carbohydrateContent;
+        return getFirst(carbohydrateContent);
     }
 
     /**
@@ -201,11 +282,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param carbohydrateContent Mass value to set.
      */
     @Override
-    public void setCarbohydrateContent(Mass carbohydrateContent) {
-        this.carbohydrateContent = carbohydrateContent;
+    public void addCarbohydrateContent(Mass carbohydrateContent) {
+        this.carbohydrateContent = add(this.carbohydrateContent, carbohydrateContent);
     }
 
-    private Mass transFatContent;
+    private List<Mass> transFatContent;
+
+    /**
+     * The number of grams of trans fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getTransFatContentList() {
+        return transFatContent;
+    }
 
     /**
      * The number of grams of trans fat.
@@ -214,7 +305,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getTransFatContent() {
-        return transFatContent;
+        return getFirst(transFatContent);
     }
 
     /**
@@ -223,11 +314,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param transFatContent Mass value to set.
      */
     @Override
-    public void setTransFatContent(Mass transFatContent) {
-        this.transFatContent = transFatContent;
+    public void addTransFatContent(Mass transFatContent) {
+        this.transFatContent = add(this.transFatContent, transFatContent);
     }
 
-    private Mass fiberContent;
+    private List<Mass> fiberContent;
+
+    /**
+     * The number of grams of fiber.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getFiberContentList() {
+        return fiberContent;
+    }
 
     /**
      * The number of grams of fiber.
@@ -236,7 +337,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getFiberContent() {
-        return fiberContent;
+        return getFirst(fiberContent);
     }
 
     /**
@@ -245,11 +346,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param fiberContent Mass value to set.
      */
     @Override
-    public void setFiberContent(Mass fiberContent) {
-        this.fiberContent = fiberContent;
+    public void addFiberContent(Mass fiberContent) {
+        this.fiberContent = add(this.fiberContent, fiberContent);
     }
 
-    private Mass unsaturatedFatContent;
+    private List<Mass> unsaturatedFatContent;
+
+    /**
+     * The number of grams of unsaturated fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getUnsaturatedFatContentList() {
+        return unsaturatedFatContent;
+    }
 
     /**
      * The number of grams of unsaturated fat.
@@ -258,7 +369,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getUnsaturatedFatContent() {
-        return unsaturatedFatContent;
+        return getFirst(unsaturatedFatContent);
     }
 
     /**
@@ -267,11 +378,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param unsaturatedFatContent Mass value to set.
      */
     @Override
-    public void setUnsaturatedFatContent(Mass unsaturatedFatContent) {
-        this.unsaturatedFatContent = unsaturatedFatContent;
+    public void addUnsaturatedFatContent(Mass unsaturatedFatContent) {
+        this.unsaturatedFatContent = add(this.unsaturatedFatContent, unsaturatedFatContent);
     }
 
-    private Mass saturatedFatContent;
+    private List<Mass> saturatedFatContent;
+
+    /**
+     * The number of grams of saturated fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getSaturatedFatContentList() {
+        return saturatedFatContent;
+    }
 
     /**
      * The number of grams of saturated fat.
@@ -280,7 +401,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Mass getSaturatedFatContent() {
-        return saturatedFatContent;
+        return getFirst(saturatedFatContent);
     }
 
     /**
@@ -289,12 +410,22 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param saturatedFatContent Mass value to set.
      */
     @Override
-    public void setSaturatedFatContent(Mass saturatedFatContent) {
-        this.saturatedFatContent = saturatedFatContent;
+    public void addSaturatedFatContent(Mass saturatedFatContent) {
+        this.saturatedFatContent = add(this.saturatedFatContent, saturatedFatContent);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -303,7 +434,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -312,8 +443,8 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -321,11 +452,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -334,7 +475,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -343,11 +484,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -356,7 +507,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -365,11 +516,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -378,7 +539,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -387,12 +548,22 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -401,7 +572,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -410,8 +581,8 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -419,11 +590,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -432,7 +613,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -441,11 +622,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -454,7 +645,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -463,12 +654,23 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -478,7 +680,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -488,8 +690,8 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -498,11 +700,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -511,7 +723,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -520,11 +732,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -533,7 +755,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -542,11 +764,21 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -555,7 +787,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -564,12 +796,23 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -579,7 +822,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -589,8 +832,8 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -599,8 +842,8 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -609,7 +852,7 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

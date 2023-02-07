@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.DefinedTerm;
 
@@ -22,6 +23,14 @@ public interface ChemicalSubstance extends BioChemEntity {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
+    List<Text> getChemicalCompositionList();
+
+    /**
+     * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
     Text getChemicalComposition();
 
     /**
@@ -30,7 +39,15 @@ public interface ChemicalSubstance extends BioChemEntity {
      * @param chemicalComposition Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChemicalComposition(Text chemicalComposition);
+    void addChemicalComposition(Text chemicalComposition);
+
+    /**
+     * Intended use of the BioChemEntity by humans.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<DefinedTerm> getPotentialUseList();
 
     /**
      * Intended use of the BioChemEntity by humans.
@@ -46,7 +63,15 @@ public interface ChemicalSubstance extends BioChemEntity {
      * @param potentialUse DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setPotentialUse(DefinedTerm potentialUse);
+    void addPotentialUse(DefinedTerm potentialUse);
+
+    /**
+     * A role played by the BioChemEntity within a chemical context.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<DefinedTerm> getChemicalRoleList();
 
     /**
      * A role played by the BioChemEntity within a chemical context.
@@ -62,5 +87,5 @@ public interface ChemicalSubstance extends BioChemEntity {
      * @param chemicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChemicalRole(DefinedTerm chemicalRole);
+    void addChemicalRole(DefinedTerm chemicalRole);
 }

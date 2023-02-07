@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Event;
 
 /**
@@ -19,6 +20,13 @@ public interface LeaveAction extends InteractAction {
      *
      * @return {@link Event}
      */
+    List<Event> getEventList();
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
     Event getEvent();
 
     /**
@@ -26,5 +34,5 @@ public interface LeaveAction extends InteractAction {
      *
      * @param event Event value to set.
      */
-    void setEvent(Event event);
+    void addEvent(Event event);
 }

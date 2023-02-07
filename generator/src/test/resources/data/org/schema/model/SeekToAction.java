@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 import org.schema.model.HyperTocEntry;
 
@@ -24,6 +25,15 @@ public interface SeekToAction extends Action {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
+    <T> List<T> getStartOffsetList();
+
+    /**
+     * The start time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @return {@link Number} or {@link HyperTocEntry}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
     <T> T getStartOffset();
 
     /**
@@ -33,7 +43,7 @@ public interface SeekToAction extends Action {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setStartOffset(Number startOffset);
+    void addStartOffset(Number startOffset);
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
      *
@@ -41,5 +51,5 @@ public interface SeekToAction extends Action {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setStartOffset(HyperTocEntry startOffset);
+    void addStartOffset(HyperTocEntry startOffset);
 }

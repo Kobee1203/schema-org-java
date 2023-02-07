@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Text;
 
@@ -24,6 +25,15 @@ public interface HealthPlanFormulary extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
+    List<Boolean> getOffersPrescriptionByMailList();
+
+    /**
+     * Whether prescriptions can be delivered by mail.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
     Boolean getOffersPrescriptionByMail();
 
     /**
@@ -33,7 +43,16 @@ public interface HealthPlanFormulary extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setOffersPrescriptionByMail(Boolean offersPrescriptionByMail);
+    void addOffersPrescriptionByMail(Boolean offersPrescriptionByMail);
+
+    /**
+     * The tier(s) of drugs offered by this formulary or insurance plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Text> getHealthPlanDrugTierList();
 
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
@@ -51,7 +70,16 @@ public interface HealthPlanFormulary extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanDrugTier(Text healthPlanDrugTier);
+    void addHealthPlanDrugTier(Text healthPlanDrugTier);
+
+    /**
+     * Whether The costs to the patient for services under this network or formulary.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Boolean> getHealthPlanCostSharingList();
 
     /**
      * Whether The costs to the patient for services under this network or formulary.
@@ -69,5 +97,5 @@ public interface HealthPlanFormulary extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCostSharing(Boolean healthPlanCostSharing);
+    void addHealthPlanCostSharing(Boolean healthPlanCostSharing);
 }

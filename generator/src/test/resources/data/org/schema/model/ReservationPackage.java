@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Reservation;
 
 /**
@@ -19,6 +20,13 @@ public interface ReservationPackage extends Reservation {
      *
      * @return {@link Reservation}
      */
+    List<Reservation> getSubReservationList();
+
+    /**
+     * The individual reservations included in the package. Typically a repeated property.
+     *
+     * @return {@link Reservation}
+     */
     Reservation getSubReservation();
 
     /**
@@ -26,5 +34,5 @@ public interface ReservationPackage extends Reservation {
      *
      * @param subReservation Reservation value to set.
      */
-    void setSubReservation(Reservation subReservation);
+    void addSubReservation(Reservation subReservation);
 }

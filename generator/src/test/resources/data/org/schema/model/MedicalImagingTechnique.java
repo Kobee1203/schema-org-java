@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Any medical imaging modality typically used for diagnostic purposes. Enumerated type.

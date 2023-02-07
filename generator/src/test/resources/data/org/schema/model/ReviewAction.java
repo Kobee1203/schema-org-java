@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Review;
 
 /**
@@ -19,6 +20,13 @@ public interface ReviewAction extends AssessAction {
      *
      * @return {@link Review}
      */
+    List<Review> getResultReviewList();
+
+    /**
+     * A sub property of result. The review that resulted in the performing of the action.
+     *
+     * @return {@link Review}
+     */
     Review getResultReview();
 
     /**
@@ -26,5 +34,5 @@ public interface ReviewAction extends AssessAction {
      *
      * @param resultReview Review value to set.
      */
-    void setResultReview(Review resultReview);
+    void addResultReview(Review resultReview);
 }

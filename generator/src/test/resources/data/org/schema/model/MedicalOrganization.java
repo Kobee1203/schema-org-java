@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalSpecialty;
@@ -23,6 +24,15 @@ public interface MedicalOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
+    List<Boolean> getIsAcceptingNewPatientsList();
+
+    /**
+     * Whether the provider is accepting new patients.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
     Boolean getIsAcceptingNewPatients();
 
     /**
@@ -32,7 +42,16 @@ public interface MedicalOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setIsAcceptingNewPatients(Boolean isAcceptingNewPatients);
+    void addIsAcceptingNewPatients(Boolean isAcceptingNewPatients);
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Text> getHealthPlanNetworkIdList();
 
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
@@ -50,7 +69,15 @@ public interface MedicalOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanNetworkId(Text healthPlanNetworkId);
+    void addHealthPlanNetworkId(Text healthPlanNetworkId);
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSpecialty> getMedicalSpecialtyList();
 
     /**
      * A medical specialty of the provider.
@@ -66,5 +93,5 @@ public interface MedicalOrganization extends Organization {
      * @param medicalSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicalSpecialty(MedicalSpecialty medicalSpecialty);
+    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 }

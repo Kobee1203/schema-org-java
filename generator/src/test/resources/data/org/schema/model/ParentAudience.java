@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 
 /**
@@ -19,6 +20,13 @@ public interface ParentAudience extends PeopleAudience {
      *
      * @return {@link Number}
      */
+    List<Number> getChildMaxAgeList();
+
+    /**
+     * Maximal age of the child.
+     *
+     * @return {@link Number}
+     */
     Number getChildMaxAge();
 
     /**
@@ -26,7 +34,14 @@ public interface ParentAudience extends PeopleAudience {
      *
      * @param childMaxAge Number value to set.
      */
-    void setChildMaxAge(Number childMaxAge);
+    void addChildMaxAge(Number childMaxAge);
+
+    /**
+     * Minimal age of the child.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getChildMinAgeList();
 
     /**
      * Minimal age of the child.
@@ -40,5 +55,5 @@ public interface ParentAudience extends PeopleAudience {
      *
      * @param childMinAge Number value to set.
      */
-    void setChildMinAge(Number childMinAge);
+    void addChildMinAge(Number childMinAge);
 }

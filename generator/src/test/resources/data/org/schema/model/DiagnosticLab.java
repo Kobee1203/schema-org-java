@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTest;
 
 /**
@@ -21,6 +22,14 @@ public interface DiagnosticLab extends MedicalOrganization {
      * @return {@link MedicalTest}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalTest> getAvailableTestList();
+
+    /**
+     * A diagnostic test or procedure offered by this lab.
+     *
+     * @return {@link MedicalTest}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalTest getAvailableTest();
 
     /**
@@ -29,5 +38,5 @@ public interface DiagnosticLab extends MedicalOrganization {
      * @param availableTest MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableTest(MedicalTest availableTest);
+    void addAvailableTest(MedicalTest availableTest);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalGuidelineRecommendation extends MedicalGuideline {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getRecommendationStrengthList();
+
+    /**
+     * Strength of the guideline's recommendation (e.g. 'class I').
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getRecommendationStrength();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalGuidelineRecommendation extends MedicalGuideline {
      * @param recommendationStrength Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRecommendationStrength(Text recommendationStrength);
+    void addRecommendationStrength(Text recommendationStrength);
 }

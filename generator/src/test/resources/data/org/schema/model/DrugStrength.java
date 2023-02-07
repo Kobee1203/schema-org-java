@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.AdministrativeArea;
 import org.schema.model.datatype.Text;
 import org.schema.model.MaximumDoseSchedule;
@@ -24,6 +25,14 @@ public interface DrugStrength extends MedicalIntangible {
      * @return {@link AdministrativeArea}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<AdministrativeArea> getAvailableInList();
+
+    /**
+     * The location in which the strength is available.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     AdministrativeArea getAvailableIn();
 
     /**
@@ -32,7 +41,15 @@ public interface DrugStrength extends MedicalIntangible {
      * @param availableIn AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableIn(AdministrativeArea availableIn);
+    void addAvailableIn(AdministrativeArea availableIn);
+
+    /**
+     * The units of an active ingredient's strength, e.g. mg.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getStrengthUnitList();
 
     /**
      * The units of an active ingredient's strength, e.g. mg.
@@ -48,7 +65,15 @@ public interface DrugStrength extends MedicalIntangible {
      * @param strengthUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStrengthUnit(Text strengthUnit);
+    void addStrengthUnit(Text strengthUnit);
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MaximumDoseSchedule> getMaximumIntakeList();
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -64,7 +89,15 @@ public interface DrugStrength extends MedicalIntangible {
      * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMaximumIntake(MaximumDoseSchedule maximumIntake);
+    void addMaximumIntake(MaximumDoseSchedule maximumIntake);
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getActiveIngredientList();
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -80,7 +113,15 @@ public interface DrugStrength extends MedicalIntangible {
      * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActiveIngredient(Text activeIngredient);
+    void addActiveIngredient(Text activeIngredient);
+
+    /**
+     * The value of an active ingredient's strength, e.g. 325.
+     *
+     * @return {@link Number}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Number> getStrengthValueList();
 
     /**
      * The value of an active ingredient's strength, e.g. 325.
@@ -96,5 +137,5 @@ public interface DrugStrength extends MedicalIntangible {
      * @param strengthValue Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStrengthValue(Number strengthValue);
+    void addStrengthValue(Number strengthValue);
 }

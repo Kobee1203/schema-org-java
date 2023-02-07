@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).

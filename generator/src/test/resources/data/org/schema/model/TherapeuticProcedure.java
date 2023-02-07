@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalEntity;
 import org.schema.model.Drug;
 import org.schema.model.DoseSchedule;
@@ -23,6 +24,14 @@ public interface TherapeuticProcedure extends MedicalProcedure {
      * @return {@link MedicalEntity}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalEntity> getAdverseOutcomeList();
+
+    /**
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalEntity getAdverseOutcome();
 
     /**
@@ -31,7 +40,15 @@ public interface TherapeuticProcedure extends MedicalProcedure {
      * @param adverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAdverseOutcome(MedicalEntity adverseOutcome);
+    void addAdverseOutcome(MedicalEntity adverseOutcome);
+
+    /**
+     * Specifying a drug or medicine used in a medication procedure.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Drug> getDrugList();
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
@@ -47,7 +64,15 @@ public interface TherapeuticProcedure extends MedicalProcedure {
      * @param drug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrug(Drug drug);
+    void addDrug(Drug drug);
+
+    /**
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     *
+     * @return {@link DoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<DoseSchedule> getDoseScheduleList();
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
@@ -63,5 +88,5 @@ public interface TherapeuticProcedure extends MedicalProcedure {
      * @param doseSchedule DoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseSchedule(DoseSchedule doseSchedule);
+    void addDoseSchedule(DoseSchedule doseSchedule);
 }

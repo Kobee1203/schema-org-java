@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface MobileApplication extends SoftwareApplication {
      *
      * @return {@link Text}
      */
+    List<Text> getCarrierRequirementsList();
+
+    /**
+     * Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
+     *
+     * @return {@link Text}
+     */
     Text getCarrierRequirements();
 
     /**
@@ -26,5 +34,5 @@ public interface MobileApplication extends SoftwareApplication {
      *
      * @param carrierRequirements Text value to set.
      */
-    void setCarrierRequirements(Text carrierRequirements);
+    void addCarrierRequirements(Text carrierRequirements);
 }

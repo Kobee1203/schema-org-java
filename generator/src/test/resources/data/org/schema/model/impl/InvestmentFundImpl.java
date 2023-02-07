@@ -36,6 +36,8 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 import org.schema.model.InvestmentOrDeposit;
@@ -52,7 +54,20 @@ import org.schema.model.InvestmentFund;
 @JsonLdTypeName("InvestmentFund")
 public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InvestmentFund {
 
-    private Object amount;
+    @JsonLdFieldTypes({ Number.class, MonetaryAmount.class })
+    private List<Object> amount;
+
+    /**
+     * The amount of money.
+     *
+     * @return {@link Number} or {@link MonetaryAmount}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public <T> List<T> getAmountList() {
+        return (List<T>) amount;
+    }
 
     /**
      * The amount of money.
@@ -63,7 +78,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAmount() {
-        return (T) amount;
+        return (T) getFirst(amount);
     }
 
     /**
@@ -74,8 +89,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
     @Override
-    public void setAmount(Number amount) {
-        this.amount = amount;
+    public void addAmount(Number amount) {
+        this.amount = add(this.amount, amount);
     }
     /**
      * The amount of money.
@@ -85,11 +100,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
     @Override
-    public void setAmount(MonetaryAmount amount) {
-        this.amount = amount;
+    public void addAmount(MonetaryAmount amount) {
+        this.amount = add(this.amount, amount);
     }
 
-    private Object annualPercentageRate;
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
+    private List<Object> annualPercentageRate;
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> List<T> getAnnualPercentageRateList() {
+        return (List<T>) annualPercentageRate;
+    }
 
     /**
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
@@ -99,7 +126,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAnnualPercentageRate() {
-        return (T) annualPercentageRate;
+        return (T) getFirst(annualPercentageRate);
     }
 
     /**
@@ -109,8 +136,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setAnnualPercentageRate(Number annualPercentageRate) {
-        this.annualPercentageRate = annualPercentageRate;
+    public void addAnnualPercentageRate(Number annualPercentageRate) {
+        this.annualPercentageRate = add(this.annualPercentageRate, annualPercentageRate);
     }
     /**
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
@@ -119,11 +146,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
-        this.annualPercentageRate = annualPercentageRate;
+    public void addAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
+        this.annualPercentageRate = add(this.annualPercentageRate, annualPercentageRate);
     }
 
-    private Object feesAndCommissionsSpecification;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> feesAndCommissionsSpecification;
+
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> List<T> getFeesAndCommissionsSpecificationList() {
+        return (List<T>) feesAndCommissionsSpecification;
+    }
 
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
@@ -133,7 +172,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getFeesAndCommissionsSpecification() {
-        return (T) feesAndCommissionsSpecification;
+        return (T) getFirst(feesAndCommissionsSpecification);
     }
 
     /**
@@ -143,8 +182,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
-        this.feesAndCommissionsSpecification = feesAndCommissionsSpecification;
+    public void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
+        this.feesAndCommissionsSpecification = add(this.feesAndCommissionsSpecification, feesAndCommissionsSpecification);
     }
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
@@ -153,11 +192,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
-        this.feesAndCommissionsSpecification = feesAndCommissionsSpecification;
+    public void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
+        this.feesAndCommissionsSpecification = add(this.feesAndCommissionsSpecification, feesAndCommissionsSpecification);
     }
 
-    private Object interestRate;
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
+    private List<Object> interestRate;
+
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> List<T> getInterestRateList() {
+        return (List<T>) interestRate;
+    }
 
     /**
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
@@ -167,7 +218,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getInterestRate() {
-        return (T) interestRate;
+        return (T) getFirst(interestRate);
     }
 
     /**
@@ -177,8 +228,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setInterestRate(Number interestRate) {
-        this.interestRate = interestRate;
+    public void addInterestRate(Number interestRate) {
+        this.interestRate = add(this.interestRate, interestRate);
     }
     /**
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
@@ -187,11 +238,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setInterestRate(QuantitativeValue interestRate) {
-        this.interestRate = interestRate;
+    public void addInterestRate(QuantitativeValue interestRate) {
+        this.interestRate = add(this.interestRate, interestRate);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -200,7 +261,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -209,11 +270,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
-    private Text award;
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
 
     /**
      * An award won by or for this item.
@@ -222,7 +293,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getAward() {
-        return award;
+        return getFirst(award);
     }
 
     /**
@@ -231,11 +302,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param award Text value to set.
      */
     @Override
-    public void setAward(Text award) {
-        this.award = award;
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
     }
 
-    private Audience serviceAudience;
+    private List<Audience> serviceAudience;
+
+    /**
+     * The audience eligible for this service.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getServiceAudienceList() {
+        return serviceAudience;
+    }
 
     /**
      * The audience eligible for this service.
@@ -244,7 +325,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Audience getServiceAudience() {
-        return serviceAudience;
+        return getFirst(serviceAudience);
     }
 
     /**
@@ -253,11 +334,24 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param serviceAudience Audience value to set.
      */
     @Override
-    public void setServiceAudience(Audience serviceAudience) {
-        this.serviceAudience = serviceAudience;
+    public void addServiceAudience(Audience serviceAudience) {
+        this.serviceAudience = add(this.serviceAudience, serviceAudience);
     }
 
-    private Object category;
+    @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
+    private List<Object> category;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> List<T> getCategoryList() {
+        return (List<T>) category;
+    }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -268,7 +362,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getCategory() {
-        return (T) category;
+        return (T) getFirst(category);
     }
 
     /**
@@ -279,8 +373,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(URL category) {
-        this.category = category;
+    public void addCategory(URL category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -290,8 +384,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Text category) {
-        this.category = category;
+    public void addCategory(Text category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -301,8 +395,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(PhysicalActivityCategory category) {
-        this.category = category;
+    public void addCategory(PhysicalActivityCategory category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -312,8 +406,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Thing category) {
-        this.category = category;
+    public void addCategory(Thing category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -323,11 +417,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(CategoryCode category) {
-        this.category = category;
+    public void addCategory(CategoryCode category) {
+        this.category = add(this.category, category);
     }
 
-    private OpeningHoursSpecification hoursAvailable;
+    private List<OpeningHoursSpecification> hoursAvailable;
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public List<OpeningHoursSpecification> getHoursAvailableList() {
+        return hoursAvailable;
+    }
 
     /**
      * The hours during which this service or contact is available.
@@ -336,7 +440,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public OpeningHoursSpecification getHoursAvailable() {
-        return hoursAvailable;
+        return getFirst(hoursAvailable);
     }
 
     /**
@@ -345,11 +449,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param hoursAvailable OpeningHoursSpecification value to set.
      */
     @Override
-    public void setHoursAvailable(OpeningHoursSpecification hoursAvailable) {
-        this.hoursAvailable = hoursAvailable;
+    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
+        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
     }
 
-    private Audience audience;
+    private List<Audience> audience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -358,7 +472,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Audience getAudience() {
-        return audience;
+        return getFirst(audience);
     }
 
     /**
@@ -367,11 +481,24 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience audience) {
-        this.audience = audience;
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
 
-    private Object offers;
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -382,7 +509,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getOffers() {
-        return (T) offers;
+        return (T) getFirst(offers);
     }
 
     /**
@@ -393,8 +520,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer offers) {
-        this.offers = offers;
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -404,11 +531,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand offers) {
-        this.offers = offers;
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
     }
 
-    private Thing serviceOutput;
+    private List<Thing> serviceOutput;
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getServiceOutputList() {
+        return serviceOutput;
+    }
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -417,7 +554,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Thing getServiceOutput() {
-        return serviceOutput;
+        return getFirst(serviceOutput);
     }
 
     /**
@@ -426,11 +563,25 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param serviceOutput Thing value to set.
      */
     @Override
-    public void setServiceOutput(Thing serviceOutput) {
-        this.serviceOutput = serviceOutput;
+    public void addServiceOutput(Thing serviceOutput) {
+        this.serviceOutput = add(this.serviceOutput, serviceOutput);
     }
 
-    private Object provider;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -442,7 +593,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getProvider() {
-        return (T) provider;
+        return (T) getFirst(provider);
     }
 
     /**
@@ -454,8 +605,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization provider) {
-        this.provider = provider;
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -466,11 +617,24 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person provider) {
-        this.provider = provider;
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
     }
 
-    private Object termsOfService;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> termsOfService;
+
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    @Override
+    public <T> List<T> getTermsOfServiceList() {
+        return (List<T>) termsOfService;
+    }
 
     /**
      * Human-readable terms of service documentation.
@@ -481,7 +645,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getTermsOfService() {
-        return (T) termsOfService;
+        return (T) getFirst(termsOfService);
     }
 
     /**
@@ -492,8 +656,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setTermsOfService(URL termsOfService) {
-        this.termsOfService = termsOfService;
+    public void addTermsOfService(URL termsOfService) {
+        this.termsOfService = add(this.termsOfService, termsOfService);
     }
     /**
      * Human-readable terms of service documentation.
@@ -503,11 +667,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setTermsOfService(Text termsOfService) {
-        this.termsOfService = termsOfService;
+    public void addTermsOfService(Text termsOfService) {
+        this.termsOfService = add(this.termsOfService, termsOfService);
     }
 
-    private Text providerMobility;
+    private List<Text> providerMobility;
+
+    /**
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getProviderMobilityList() {
+        return providerMobility;
+    }
 
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
@@ -516,7 +690,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getProviderMobility() {
-        return providerMobility;
+        return getFirst(providerMobility);
     }
 
     /**
@@ -525,11 +699,22 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param providerMobility Text value to set.
      */
     @Override
-    public void setProviderMobility(Text providerMobility) {
-        this.providerMobility = providerMobility;
+    public void addProviderMobility(Text providerMobility) {
+        this.providerMobility = add(this.providerMobility, providerMobility);
     }
 
-    private Object broker;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> broker;
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getBrokerList() {
+        return (List<T>) broker;
+    }
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -538,7 +723,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getBroker() {
-        return (T) broker;
+        return (T) getFirst(broker);
     }
 
     /**
@@ -547,8 +732,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param broker Person value to set.
      */
     @Override
-    public void setBroker(Person broker) {
-        this.broker = broker;
+    public void addBroker(Person broker) {
+        this.broker = add(this.broker, broker);
     }
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -556,11 +741,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param broker Organization value to set.
      */
     @Override
-    public void setBroker(Organization broker) {
-        this.broker = broker;
+    public void addBroker(Organization broker) {
+        this.broker = add(this.broker, broker);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -569,7 +764,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -578,11 +773,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
-    private Object isSimilarTo;
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isSimilarTo;
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsSimilarToList() {
+        return (List<T>) isSimilarTo;
+    }
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -592,7 +799,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getIsSimilarTo() {
-        return (T) isSimilarTo;
+        return (T) getFirst(isSimilarTo);
     }
 
     /**
@@ -602,8 +809,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Service isSimilarTo) {
-        this.isSimilarTo = isSimilarTo;
+    public void addIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
     }
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -612,11 +819,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Product isSimilarTo) {
-        this.isSimilarTo = isSimilarTo;
+    public void addIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
     }
 
-    private ServiceChannel availableChannel;
+    private List<ServiceChannel> availableChannel;
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @return {@link ServiceChannel}
+     */
+    @Override
+    public List<ServiceChannel> getAvailableChannelList() {
+        return availableChannel;
+    }
 
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
@@ -625,7 +842,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public ServiceChannel getAvailableChannel() {
-        return availableChannel;
+        return getFirst(availableChannel);
     }
 
     /**
@@ -634,11 +851,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param availableChannel ServiceChannel value to set.
      */
     @Override
-    public void setAvailableChannel(ServiceChannel availableChannel) {
-        this.availableChannel = availableChannel;
+    public void addAvailableChannel(ServiceChannel availableChannel) {
+        this.availableChannel = add(this.availableChannel, availableChannel);
     }
 
-    private Text slogan;
+    private List<Text> slogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
+    }
 
     /**
      * A slogan or motto associated with the item.
@@ -647,7 +874,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getSlogan() {
-        return slogan;
+        return getFirst(slogan);
     }
 
     /**
@@ -656,11 +883,22 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text slogan) {
-        this.slogan = slogan;
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
     }
 
-    private Object brand;
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
+    private List<Object> brand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -669,7 +907,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getBrand() {
-        return (T) brand;
+        return (T) getFirst(brand);
     }
 
     /**
@@ -678,8 +916,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization brand) {
-        this.brand = brand;
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -687,11 +925,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
     }
 
-    private Object logo;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> logo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
 
     /**
      * An associated logo.
@@ -701,7 +951,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getLogo() {
-        return (T) logo;
+        return (T) getFirst(logo);
     }
 
     /**
@@ -711,8 +961,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL logo) {
-        this.logo = logo;
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
     }
     /**
      * An associated logo.
@@ -721,11 +971,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(ImageObject logo) {
-        this.logo = logo;
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
     }
 
-    private Thing produces;
+    private List<Thing> produces;
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getProducesList() {
+        return produces;
+    }
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -734,7 +994,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Thing getProduces() {
-        return produces;
+        return getFirst(produces);
     }
 
     /**
@@ -743,11 +1003,22 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param produces Thing value to set.
      */
     @Override
-    public void setProduces(Thing produces) {
-        this.produces = produces;
+    public void addProduces(Thing produces) {
+        this.produces = add(this.produces, produces);
     }
 
-    private Object serviceArea;
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
+    private List<Object> serviceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getServiceAreaList() {
+        return (List<T>) serviceArea;
+    }
 
     /**
      * The geographic area where the service is provided.
@@ -756,7 +1027,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getServiceArea() {
-        return (T) serviceArea;
+        return (T) getFirst(serviceArea);
     }
 
     /**
@@ -765,8 +1036,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param serviceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(GeoShape serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(GeoShape serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
     /**
      * The geographic area where the service is provided.
@@ -774,8 +1045,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param serviceArea AdministrativeArea value to set.
      */
     @Override
-    public void setServiceArea(AdministrativeArea serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
     /**
      * The geographic area where the service is provided.
@@ -783,11 +1054,22 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param serviceArea Place value to set.
      */
     @Override
-    public void setServiceArea(Place serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(Place serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
 
-    private Object serviceType;
+    @JsonLdFieldTypes({ GovernmentBenefitsType.class, Text.class })
+    private List<Object> serviceType;
+
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @return {@link GovernmentBenefitsType} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getServiceTypeList() {
+        return (List<T>) serviceType;
+    }
 
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
@@ -796,7 +1078,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getServiceType() {
-        return (T) serviceType;
+        return (T) getFirst(serviceType);
     }
 
     /**
@@ -805,8 +1087,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param serviceType GovernmentBenefitsType value to set.
      */
     @Override
-    public void setServiceType(GovernmentBenefitsType serviceType) {
-        this.serviceType = serviceType;
+    public void addServiceType(GovernmentBenefitsType serviceType) {
+        this.serviceType = add(this.serviceType, serviceType);
     }
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
@@ -814,11 +1096,22 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param serviceType Text value to set.
      */
     @Override
-    public void setServiceType(Text serviceType) {
-        this.serviceType = serviceType;
+    public void addServiceType(Text serviceType) {
+        this.serviceType = add(this.serviceType, serviceType);
     }
 
-    private Object areaServed;
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
+    private List<Object> areaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
+    }
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -827,7 +1120,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAreaServed() {
-        return (T) areaServed;
+        return (T) getFirst(areaServed);
     }
 
     /**
@@ -836,8 +1129,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -845,8 +1138,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed GeoShape value to set.
      */
     @Override
-    public void setAreaServed(GeoShape areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -854,8 +1147,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed Text value to set.
      */
     @Override
-    public void setAreaServed(Text areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -863,11 +1156,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed Place value to set.
      */
     @Override
-    public void setAreaServed(Place areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
 
-    private Object isRelatedTo;
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isRelatedTo;
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsRelatedToList() {
+        return (List<T>) isRelatedTo;
+    }
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -877,7 +1182,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getIsRelatedTo() {
-        return (T) isRelatedTo;
+        return (T) getFirst(isRelatedTo);
     }
 
     /**
@@ -887,8 +1192,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Service isRelatedTo) {
-        this.isRelatedTo = isRelatedTo;
+    public void addIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
     }
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -897,11 +1202,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Product isRelatedTo) {
-        this.isRelatedTo = isRelatedTo;
+    public void addIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
     }
 
-    private OfferCatalog hasOfferCatalog;
+    private List<OfferCatalog> hasOfferCatalog;
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public List<OfferCatalog> getHasOfferCatalogList() {
+        return hasOfferCatalog;
+    }
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -910,7 +1225,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public OfferCatalog getHasOfferCatalog() {
-        return hasOfferCatalog;
+        return getFirst(hasOfferCatalog);
     }
 
     /**
@@ -919,11 +1234,22 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param hasOfferCatalog OfferCatalog value to set.
      */
     @Override
-    public void setHasOfferCatalog(OfferCatalog hasOfferCatalog) {
-        this.hasOfferCatalog = hasOfferCatalog;
+    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -932,7 +1258,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -941,8 +1267,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -950,11 +1276,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -963,7 +1299,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -972,11 +1308,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -985,7 +1331,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -994,11 +1340,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1007,7 +1363,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -1016,11 +1372,22 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1029,7 +1396,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -1038,8 +1405,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1047,11 +1414,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -1060,7 +1437,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -1069,11 +1446,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -1082,7 +1469,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -1091,11 +1478,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1105,7 +1504,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -1115,8 +1514,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -1125,11 +1524,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1138,7 +1547,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -1147,11 +1556,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1160,7 +1579,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -1169,11 +1588,21 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1182,7 +1611,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -1191,11 +1620,23 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1205,7 +1646,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1215,8 +1656,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1225,8 +1666,8 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1235,7 +1676,7 @@ public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

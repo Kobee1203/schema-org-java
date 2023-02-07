@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 import org.schema.model.CreativeWork;
@@ -24,6 +25,13 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @return {@link Text}
      */
+    List<Text> getCountriesSupportedList();
+
+    /**
+     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @return {@link Text}
+     */
     Text getCountriesSupported();
 
     /**
@@ -31,7 +39,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param countriesSupported Text value to set.
      */
-    void setCountriesSupported(Text countriesSupported);
+    void addCountriesSupported(Text countriesSupported);
+
+    /**
+     * URL at which the app may be installed, if different from the URL of the item.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getInstallUrlList();
 
     /**
      * URL at which the app may be installed, if different from the URL of the item.
@@ -45,7 +60,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param installUrl URL value to set.
      */
-    void setInstallUrl(URL installUrl);
+    void addInstallUrl(URL installUrl);
+
+    /**
+     * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOperatingSystemList();
 
     /**
      * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
@@ -59,7 +81,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param operatingSystem Text value to set.
      */
-    void setOperatingSystem(Text operatingSystem);
+    void addOperatingSystem(Text operatingSystem);
+
+    /**
+     * Minimum memory requirements.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getMemoryRequirementsList();
 
     /**
      * Minimum memory requirements.
@@ -73,13 +102,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param memoryRequirements Text value to set.
      */
-    void setMemoryRequirements(Text memoryRequirements);
+    void addMemoryRequirements(Text memoryRequirements);
     /**
      * Minimum memory requirements.
      *
      * @param memoryRequirements URL value to set.
      */
-    void setMemoryRequirements(URL memoryRequirements);
+    void addMemoryRequirements(URL memoryRequirements);
+
+    /**
+     * Version of the software instance.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSoftwareVersionList();
 
     /**
      * Version of the software instance.
@@ -93,7 +129,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param softwareVersion Text value to set.
      */
-    void setSoftwareVersion(Text softwareVersion);
+    void addSoftwareVersion(Text softwareVersion);
+
+    /**
+     * Storage requirements (free space required).
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getStorageRequirementsList();
 
     /**
      * Storage requirements (free space required).
@@ -107,13 +150,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param storageRequirements URL value to set.
      */
-    void setStorageRequirements(URL storageRequirements);
+    void addStorageRequirements(URL storageRequirements);
     /**
      * Storage requirements (free space required).
      *
      * @param storageRequirements Text value to set.
      */
-    void setStorageRequirements(Text storageRequirements);
+    void addStorageRequirements(Text storageRequirements);
+
+    /**
+     * Software application help.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getSoftwareHelpList();
 
     /**
      * Software application help.
@@ -127,7 +177,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param softwareHelp CreativeWork value to set.
      */
-    void setSoftwareHelp(CreativeWork softwareHelp);
+    void addSoftwareHelp(CreativeWork softwareHelp);
+
+    /**
+     * Subcategory of the application, e.g. 'Arcade Game'.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getApplicationSubCategoryList();
 
     /**
      * Subcategory of the application, e.g. 'Arcade Game'.
@@ -141,13 +198,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param applicationSubCategory URL value to set.
      */
-    void setApplicationSubCategory(URL applicationSubCategory);
+    void addApplicationSubCategory(URL applicationSubCategory);
     /**
      * Subcategory of the application, e.g. 'Arcade Game'.
      *
      * @param applicationSubCategory Text value to set.
      */
-    void setApplicationSubCategory(Text applicationSubCategory);
+    void addApplicationSubCategory(Text applicationSubCategory);
+
+    /**
+     * If the file can be downloaded, URL to download the binary.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getDownloadUrlList();
 
     /**
      * If the file can be downloaded, URL to download the binary.
@@ -161,7 +225,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param downloadUrl URL value to set.
      */
-    void setDownloadUrl(URL downloadUrl);
+    void addDownloadUrl(URL downloadUrl);
+
+    /**
+     * Type of software application, e.g. 'Game, Multimedia'.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getApplicationCategoryList();
 
     /**
      * Type of software application, e.g. 'Game, Multimedia'.
@@ -175,13 +246,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param applicationCategory Text value to set.
      */
-    void setApplicationCategory(Text applicationCategory);
+    void addApplicationCategory(Text applicationCategory);
     /**
      * Type of software application, e.g. 'Game, Multimedia'.
      *
      * @param applicationCategory URL value to set.
      */
-    void setApplicationCategory(URL applicationCategory);
+    void addApplicationCategory(URL applicationCategory);
+
+    /**
+     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCountriesNotSupportedList();
 
     /**
      * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
@@ -195,7 +273,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param countriesNotSupported Text value to set.
      */
-    void setCountriesNotSupported(Text countriesNotSupported);
+    void addCountriesNotSupported(Text countriesNotSupported);
+
+    /**
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getSoftwareRequirementsList();
 
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
@@ -209,13 +294,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param softwareRequirements URL value to set.
      */
-    void setSoftwareRequirements(URL softwareRequirements);
+    void addSoftwareRequirements(URL softwareRequirements);
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
      *
      * @param softwareRequirements Text value to set.
      */
-    void setSoftwareRequirements(Text softwareRequirements);
+    void addSoftwareRequirements(Text softwareRequirements);
+
+    /**
+     * Additional content for a software application.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    List<SoftwareApplication> getSoftwareAddOnList();
 
     /**
      * Additional content for a software application.
@@ -229,7 +321,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param softwareAddOn SoftwareApplication value to set.
      */
-    void setSoftwareAddOn(SoftwareApplication softwareAddOn);
+    void addSoftwareAddOn(SoftwareApplication softwareAddOn);
+
+    /**
+     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getApplicationSuiteList();
 
     /**
      * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
@@ -243,7 +342,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param applicationSuite Text value to set.
      */
-    void setApplicationSuite(Text applicationSuite);
+    void addApplicationSuite(Text applicationSuite);
+
+    /**
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getRequirementsList();
 
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
@@ -257,13 +363,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param requirements URL value to set.
      */
-    void setRequirements(URL requirements);
+    void addRequirements(URL requirements);
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
      *
      * @param requirements Text value to set.
      */
-    void setRequirements(Text requirements);
+    void addRequirements(Text requirements);
+
+    /**
+     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPermissionsList();
 
     /**
      * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
@@ -277,7 +390,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param permissions Text value to set.
      */
-    void setPermissions(Text permissions);
+    void addPermissions(Text permissions);
+
+    /**
+     * Processor architecture required to run the application (e.g. IA64).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProcessorRequirementsList();
 
     /**
      * Processor architecture required to run the application (e.g. IA64).
@@ -291,7 +411,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param processorRequirements Text value to set.
      */
-    void setProcessorRequirements(Text processorRequirements);
+    void addProcessorRequirements(Text processorRequirements);
+
+    /**
+     * A link to a screenshot image of the app.
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    <T> List<T> getScreenshotList();
 
     /**
      * A link to a screenshot image of the app.
@@ -305,13 +432,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param screenshot ImageObject value to set.
      */
-    void setScreenshot(ImageObject screenshot);
+    void addScreenshot(ImageObject screenshot);
     /**
      * A link to a screenshot image of the app.
      *
      * @param screenshot URL value to set.
      */
-    void setScreenshot(URL screenshot);
+    void addScreenshot(URL screenshot);
+
+    /**
+     * Features or modules provided by this application (and possibly required by other applications).
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getFeatureListList();
 
     /**
      * Features or modules provided by this application (and possibly required by other applications).
@@ -325,13 +459,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param featureList Text value to set.
      */
-    void setFeatureList(Text featureList);
+    void addFeatureList(Text featureList);
     /**
      * Features or modules provided by this application (and possibly required by other applications).
      *
      * @param featureList URL value to set.
      */
-    void setFeatureList(URL featureList);
+    void addFeatureList(URL featureList);
+
+    /**
+     * Description of what changed in this version.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getReleaseNotesList();
 
     /**
      * Description of what changed in this version.
@@ -345,13 +486,20 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param releaseNotes URL value to set.
      */
-    void setReleaseNotes(URL releaseNotes);
+    void addReleaseNotes(URL releaseNotes);
     /**
      * Description of what changed in this version.
      *
      * @param releaseNotes Text value to set.
      */
-    void setReleaseNotes(Text releaseNotes);
+    void addReleaseNotes(Text releaseNotes);
+
+    /**
+     * Supporting data for a SoftwareApplication.
+     *
+     * @return {@link DataFeed}
+     */
+    List<DataFeed> getSupportingDataList();
 
     /**
      * Supporting data for a SoftwareApplication.
@@ -365,7 +513,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param supportingData DataFeed value to set.
      */
-    void setSupportingData(DataFeed supportingData);
+    void addSupportingData(DataFeed supportingData);
+
+    /**
+     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFileSizeList();
 
     /**
      * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
@@ -379,7 +534,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param fileSize Text value to set.
      */
-    void setFileSize(Text fileSize);
+    void addFileSize(Text fileSize);
+
+    /**
+     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDeviceList();
 
     /**
      * Device required to run the application. Used in cases where a specific make/model is required to run the application.
@@ -393,7 +555,14 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param device Text value to set.
      */
-    void setDevice(Text device);
+    void addDevice(Text device);
+
+    /**
+     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAvailableOnDeviceList();
 
     /**
      * Device required to run the application. Used in cases where a specific make/model is required to run the application.
@@ -407,5 +576,5 @@ public interface SoftwareApplication extends CreativeWork {
      *
      * @param availableOnDevice Text value to set.
      */
-    void setAvailableOnDevice(Text availableOnDevice);
+    void addAvailableOnDevice(Text availableOnDevice);
 }

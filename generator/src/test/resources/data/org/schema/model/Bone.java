@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Rigid connective tissue that comprises up the skeletal structure of the human body.

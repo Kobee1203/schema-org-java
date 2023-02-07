@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * An agent quotes/estimates/appraises an object/product/service with a price at a location/store.

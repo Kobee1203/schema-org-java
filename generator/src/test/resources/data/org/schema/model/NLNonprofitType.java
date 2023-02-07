@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * NLNonprofitType: Non-profit organization type originating from the Netherlands.

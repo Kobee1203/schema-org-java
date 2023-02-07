@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.ParcelDelivery;
 import org.schema.model.OrderStatus;
 import org.schema.model.datatype.Number;
@@ -25,6 +26,13 @@ public interface OrderItem extends Intangible {
      *
      * @return {@link ParcelDelivery}
      */
+    List<ParcelDelivery> getOrderDeliveryList();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
     ParcelDelivery getOrderDelivery();
 
     /**
@@ -32,7 +40,14 @@ public interface OrderItem extends Intangible {
      *
      * @param orderDelivery ParcelDelivery value to set.
      */
-    void setOrderDelivery(ParcelDelivery orderDelivery);
+    void addOrderDelivery(ParcelDelivery orderDelivery);
+
+    /**
+     * The current status of the order item.
+     *
+     * @return {@link OrderStatus}
+     */
+    List<OrderStatus> getOrderItemStatusList();
 
     /**
      * The current status of the order item.
@@ -46,7 +61,14 @@ public interface OrderItem extends Intangible {
      *
      * @param orderItemStatus OrderStatus value to set.
      */
-    void setOrderItemStatus(OrderStatus orderItemStatus);
+    void addOrderItemStatus(OrderStatus orderItemStatus);
+
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getOrderQuantityList();
 
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
@@ -60,7 +82,14 @@ public interface OrderItem extends Intangible {
      *
      * @param orderQuantity Number value to set.
      */
-    void setOrderQuantity(Number orderQuantity);
+    void addOrderQuantity(Number orderQuantity);
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOrderItemNumberList();
 
     /**
      * The identifier of the order item.
@@ -74,7 +103,14 @@ public interface OrderItem extends Intangible {
      *
      * @param orderItemNumber Text value to set.
      */
-    void setOrderItemNumber(Text orderItemNumber);
+    void addOrderItemNumber(Text orderItemNumber);
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Service} or {@link OrderItem} or {@link Product}
+     */
+    <T> List<T> getOrderedItemList();
 
     /**
      * The item ordered.
@@ -88,17 +124,17 @@ public interface OrderItem extends Intangible {
      *
      * @param orderedItem Service value to set.
      */
-    void setOrderedItem(Service orderedItem);
+    void addOrderedItem(Service orderedItem);
     /**
      * The item ordered.
      *
      * @param orderedItem OrderItem value to set.
      */
-    void setOrderedItem(OrderItem orderedItem);
+    void addOrderedItem(OrderItem orderedItem);
     /**
      * The item ordered.
      *
      * @param orderedItem Product value to set.
      */
-    void setOrderedItem(Product orderedItem);
+    void addOrderedItem(Product orderedItem);
 }

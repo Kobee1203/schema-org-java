@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.datatype.Text;
 
@@ -27,6 +28,14 @@ public interface ComicIssue extends PublicationIssue {
      * @return {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
+    List<Person> getLettererList();
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
     Person getLetterer();
 
     /**
@@ -35,7 +44,15 @@ public interface ComicIssue extends PublicationIssue {
      * @param letterer Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setLetterer(Person letterer);
+    void addLetterer(Person letterer);
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getColoristList();
 
     /**
      * The individual who adds color to inked drawings.
@@ -51,7 +68,17 @@ public interface ComicIssue extends PublicationIssue {
      * @param colorist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setColorist(Person colorist);
+    void addColorist(Person colorist);
+
+    /**
+     * A description of the variant cover
+     *     	for the issue, if the issue is a variant printing. For example, "Bryan Hitch
+     *     	Variant Cover" or "2nd Printing Variant".
+     *
+     * @return {@link Text}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Text> getVariantCoverList();
 
     /**
      * A description of the variant cover
@@ -71,7 +98,15 @@ public interface ComicIssue extends PublicationIssue {
      * @param variantCover Text value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setVariantCover(Text variantCover);
+    void addVariantCover(Text variantCover);
+
+    /**
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getInkerList();
 
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
@@ -87,7 +122,15 @@ public interface ComicIssue extends PublicationIssue {
      * @param inker Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setInker(Person inker);
+    void addInker(Person inker);
+
+    /**
+     * The individual who draws the primary narrative artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getPencilerList();
 
     /**
      * The individual who draws the primary narrative artwork.
@@ -103,7 +146,17 @@ public interface ComicIssue extends PublicationIssue {
      * @param penciler Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPenciler(Person penciler);
+    void addPenciler(Person penciler);
+
+    /**
+     * The primary artist for a work
+     *     	in a medium other than pencils or digital line art--for example, if the
+     *     	primary artwork is done in watercolors or digital paints.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getArtistList();
 
     /**
      * The primary artist for a work
@@ -123,5 +176,5 @@ public interface ComicIssue extends PublicationIssue {
      * @param artist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setArtist(Person artist);
+    void addArtist(Person artist);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.AlignmentObject;
 import org.schema.model.Course;
@@ -26,6 +27,13 @@ public interface Course extends LearningResource, CreativeWork {
      *
      * @return {@link Text} or {@link AlignmentObject} or {@link Course}
      */
+    <T> List<T> getCoursePrerequisitesList();
+
+    /**
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     *
+     * @return {@link Text} or {@link AlignmentObject} or {@link Course}
+     */
     <T> T getCoursePrerequisites();
 
     /**
@@ -33,19 +41,27 @@ public interface Course extends LearningResource, CreativeWork {
      *
      * @param coursePrerequisites Text value to set.
      */
-    void setCoursePrerequisites(Text coursePrerequisites);
+    void addCoursePrerequisites(Text coursePrerequisites);
     /**
      * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      *
      * @param coursePrerequisites AlignmentObject value to set.
      */
-    void setCoursePrerequisites(AlignmentObject coursePrerequisites);
+    void addCoursePrerequisites(AlignmentObject coursePrerequisites);
     /**
      * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      *
      * @param coursePrerequisites Course value to set.
      */
-    void setCoursePrerequisites(Course coursePrerequisites);
+    void addCoursePrerequisites(Course coursePrerequisites);
+
+    /**
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @return {@link URL} or {@link EducationalOccupationalCredential} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getEducationalCredentialAwardedList();
 
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
@@ -61,21 +77,30 @@ public interface Course extends LearningResource, CreativeWork {
      * @param educationalCredentialAwarded URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setEducationalCredentialAwarded(URL educationalCredentialAwarded);
+    void addEducationalCredentialAwarded(URL educationalCredentialAwarded);
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      *
      * @param educationalCredentialAwarded EducationalOccupationalCredential value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setEducationalCredentialAwarded(EducationalOccupationalCredential educationalCredentialAwarded);
+    void addEducationalCredentialAwarded(EducationalOccupationalCredential educationalCredentialAwarded);
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      *
      * @param educationalCredentialAwarded Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setEducationalCredentialAwarded(Text educationalCredentialAwarded);
+    void addEducationalCredentialAwarded(Text educationalCredentialAwarded);
+
+    /**
+     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
+     *
+     * @return {@link Integer} or {@link StructuredValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    <T> List<T> getNumberOfCreditsList();
 
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
@@ -93,7 +118,7 @@ public interface Course extends LearningResource, CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setNumberOfCredits(Integer numberOfCredits);
+    void addNumberOfCredits(Integer numberOfCredits);
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
      *
@@ -101,7 +126,16 @@ public interface Course extends LearningResource, CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setNumberOfCredits(StructuredValue numberOfCredits);
+    void addNumberOfCredits(StructuredValue numberOfCredits);
+
+    /**
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @return {@link EducationalOccupationalCredential} or {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getOccupationalCredentialAwardedList();
 
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
@@ -119,7 +153,7 @@ public interface Course extends LearningResource, CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOccupationalCredentialAwarded(EducationalOccupationalCredential occupationalCredentialAwarded);
+    void addOccupationalCredentialAwarded(EducationalOccupationalCredential occupationalCredentialAwarded);
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      *
@@ -127,7 +161,7 @@ public interface Course extends LearningResource, CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOccupationalCredentialAwarded(Text occupationalCredentialAwarded);
+    void addOccupationalCredentialAwarded(Text occupationalCredentialAwarded);
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      *
@@ -135,7 +169,14 @@ public interface Course extends LearningResource, CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOccupationalCredentialAwarded(URL occupationalCredentialAwarded);
+    void addOccupationalCredentialAwarded(URL occupationalCredentialAwarded);
+
+    /**
+     * The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCourseCodeList();
 
     /**
      * The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).
@@ -149,7 +190,14 @@ public interface Course extends LearningResource, CreativeWork {
      *
      * @param courseCode Text value to set.
      */
-    void setCourseCode(Text courseCode);
+    void addCourseCode(Text courseCode);
+
+    /**
+     * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
+     *
+     * @return {@link CourseInstance}
+     */
+    List<CourseInstance> getHasCourseInstanceList();
 
     /**
      * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
@@ -163,5 +211,5 @@ public interface Course extends LearningResource, CreativeWork {
      *
      * @param hasCourseInstance CourseInstance value to set.
      */
-    void setHasCourseInstance(CourseInstance hasCourseInstance);
+    void addHasCourseInstance(CourseInstance hasCourseInstance);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.

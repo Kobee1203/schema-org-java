@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Country;
 import org.schema.model.Person;
 import org.schema.model.datatype.URL;
@@ -31,6 +32,17 @@ public interface Movie extends CreativeWork {
      *
      * @return {@link Country}
      */
+    List<Country> getCountryOfOriginList();
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
     Country getCountryOfOrigin();
 
     /**
@@ -42,7 +54,14 @@ public interface Movie extends CreativeWork {
      *
      * @param countryOfOrigin Country value to set.
      */
-    void setCountryOfOrigin(Country countryOfOrigin);
+    void addCountryOfOrigin(Country countryOfOrigin);
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -56,7 +75,20 @@ public interface Movie extends CreativeWork {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    <T> List<T> getTitleEIDRList();
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
@@ -82,7 +114,7 @@ public interface Movie extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
-    void setTitleEIDR(URL titleEIDR);
+    void addTitleEIDR(URL titleEIDR);
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
      * 
@@ -94,7 +126,16 @@ public interface Movie extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
-    void setTitleEIDR(Text titleEIDR);
+    void addTitleEIDR(Text titleEIDR);
+
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    <T> List<T> getSubtitleLanguageList();
 
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
@@ -112,7 +153,7 @@ public interface Movie extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Language subtitleLanguage);
+    void addSubtitleLanguage(Language subtitleLanguage);
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
@@ -120,7 +161,14 @@ public interface Movie extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Text subtitleLanguage);
+    void addSubtitleLanguage(Text subtitleLanguage);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -134,7 +182,14 @@ public interface Movie extends CreativeWork {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The trailer of a movie or tv/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -148,7 +203,16 @@ public interface Movie extends CreativeWork {
      *
      * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject trailer);
+    void addTrailer(VideoObject trailer);
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    List<Duration> getDurationList();
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -166,7 +230,14 @@ public interface Movie extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration duration);
+    void addDuration(Duration duration);
+
+    /**
+     * The production company or studio responsible for the item e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -180,7 +251,14 @@ public interface Movie extends CreativeWork {
      *
      * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization productionCompany);
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -194,7 +272,14 @@ public interface Movie extends CreativeWork {
      *
      * @param actors Person value to set.
      */
-    void setActors(Person actors);
+    void addActors(Person actors);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getMusicByList();
 
     /**
      * The composer of the soundtrack.
@@ -208,13 +293,20 @@ public interface Movie extends CreativeWork {
      *
      * @param musicBy Person value to set.
      */
-    void setMusicBy(Person musicBy);
+    void addMusicBy(Person musicBy);
     /**
      * The composer of the soundtrack.
      *
      * @param musicBy MusicGroup value to set.
      */
-    void setMusicBy(MusicGroup musicBy);
+    void addMusicBy(MusicGroup musicBy);
+
+    /**
+     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -228,5 +320,5 @@ public interface Movie extends CreativeWork {
      *
      * @param directors Person value to set.
      */
-    void setDirectors(Person directors);
+    void addDirectors(Person directors);
 }

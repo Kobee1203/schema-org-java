@@ -150,7 +150,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         applyTemplate(
                 "templates/type_interface",
                 modelFolder.resolve(type.getName() + JAVA_EXTENSION),
-                new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.emptyList()))
+                new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.singletonList(java.util.List.class.getName())))
         );
 
         Set<String> allImports = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
@@ -169,7 +169,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         applyTemplate(
                 "templates/type_interface",
                 modelFolder.resolve(type.getName() + JAVA_EXTENSION),
-                new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.emptyList()))
+                new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.singletonList(java.util.List.class.getName())))
         );
 
         applyTemplate(

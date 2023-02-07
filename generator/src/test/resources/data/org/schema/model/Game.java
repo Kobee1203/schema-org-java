@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Thing;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.Place;
@@ -23,6 +24,13 @@ public interface Game extends CreativeWork {
      *
      * @return {@link Thing}
      */
+    List<Thing> getCharacterAttributeList();
+
+    /**
+     * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
+     *
+     * @return {@link Thing}
+     */
     Thing getCharacterAttribute();
 
     /**
@@ -30,7 +38,14 @@ public interface Game extends CreativeWork {
      *
      * @param characterAttribute Thing value to set.
      */
-    void setCharacterAttribute(Thing characterAttribute);
+    void addCharacterAttribute(Thing characterAttribute);
+
+    /**
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getGameItemList();
 
     /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
@@ -44,7 +59,14 @@ public interface Game extends CreativeWork {
      *
      * @param gameItem Thing value to set.
      */
-    void setGameItem(Thing gameItem);
+    void addGameItem(Thing gameItem);
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getNumberOfPlayersList();
 
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
@@ -58,7 +80,14 @@ public interface Game extends CreativeWork {
      *
      * @param numberOfPlayers QuantitativeValue value to set.
      */
-    void setNumberOfPlayers(QuantitativeValue numberOfPlayers);
+    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getQuestList();
 
     /**
      * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
@@ -72,7 +101,14 @@ public interface Game extends CreativeWork {
      *
      * @param quest Thing value to set.
      */
-    void setQuest(Thing quest);
+    void addQuest(Thing quest);
+
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @return {@link Place} or {@link URL} or {@link PostalAddress}
+     */
+    <T> List<T> getGameLocationList();
 
     /**
      * Real or fictional location of the game (or part of game).
@@ -86,17 +122,17 @@ public interface Game extends CreativeWork {
      *
      * @param gameLocation Place value to set.
      */
-    void setGameLocation(Place gameLocation);
+    void addGameLocation(Place gameLocation);
     /**
      * Real or fictional location of the game (or part of game).
      *
      * @param gameLocation URL value to set.
      */
-    void setGameLocation(URL gameLocation);
+    void addGameLocation(URL gameLocation);
     /**
      * Real or fictional location of the game (or part of game).
      *
      * @param gameLocation PostalAddress value to set.
      */
-    void setGameLocation(PostalAddress gameLocation);
+    void addGameLocation(PostalAddress gameLocation);
 }

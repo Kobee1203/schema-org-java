@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.TrainStation;
 
@@ -20,6 +21,13 @@ public interface TrainTrip extends Trip {
      *
      * @return {@link Text}
      */
+    List<Text> getTrainNameList();
+
+    /**
+     * The name of the train (e.g. The Orient Express).
+     *
+     * @return {@link Text}
+     */
     Text getTrainName();
 
     /**
@@ -27,7 +35,14 @@ public interface TrainTrip extends Trip {
      *
      * @param trainName Text value to set.
      */
-    void setTrainName(Text trainName);
+    void addTrainName(Text trainName);
+
+    /**
+     * The station from which the train departs.
+     *
+     * @return {@link TrainStation}
+     */
+    List<TrainStation> getDepartureStationList();
 
     /**
      * The station from which the train departs.
@@ -41,7 +56,14 @@ public interface TrainTrip extends Trip {
      *
      * @param departureStation TrainStation value to set.
      */
-    void setDepartureStation(TrainStation departureStation);
+    void addDepartureStation(TrainStation departureStation);
+
+    /**
+     * The platform from which the train departs.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDeparturePlatformList();
 
     /**
      * The platform from which the train departs.
@@ -55,7 +77,14 @@ public interface TrainTrip extends Trip {
      *
      * @param departurePlatform Text value to set.
      */
-    void setDeparturePlatform(Text departurePlatform);
+    void addDeparturePlatform(Text departurePlatform);
+
+    /**
+     * The unique identifier for the train.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTrainNumberList();
 
     /**
      * The unique identifier for the train.
@@ -69,7 +98,14 @@ public interface TrainTrip extends Trip {
      *
      * @param trainNumber Text value to set.
      */
-    void setTrainNumber(Text trainNumber);
+    void addTrainNumber(Text trainNumber);
+
+    /**
+     * The platform where the train arrives.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getArrivalPlatformList();
 
     /**
      * The platform where the train arrives.
@@ -83,7 +119,14 @@ public interface TrainTrip extends Trip {
      *
      * @param arrivalPlatform Text value to set.
      */
-    void setArrivalPlatform(Text arrivalPlatform);
+    void addArrivalPlatform(Text arrivalPlatform);
+
+    /**
+     * The station where the train trip ends.
+     *
+     * @return {@link TrainStation}
+     */
+    List<TrainStation> getArrivalStationList();
 
     /**
      * The station where the train trip ends.
@@ -97,5 +140,5 @@ public interface TrainTrip extends Trip {
      *
      * @param arrivalStation TrainStation value to set.
      */
-    void setArrivalStation(TrainStation arrivalStation);
+    void addArrivalStation(TrainStation arrivalStation);
 }

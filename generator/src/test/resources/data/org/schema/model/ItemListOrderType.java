@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.

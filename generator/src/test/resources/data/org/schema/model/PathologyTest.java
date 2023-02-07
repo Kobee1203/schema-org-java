@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,6 +22,14 @@ public interface PathologyTest extends MedicalTest {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getTissueSampleList();
+
+    /**
+     * The type of tissue sample required for the test.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getTissueSample();
 
     /**
@@ -29,5 +38,5 @@ public interface PathologyTest extends MedicalTest {
      * @param tissueSample Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTissueSample(Text tissueSample);
+    void addTissueSample(Text tissueSample);
 }

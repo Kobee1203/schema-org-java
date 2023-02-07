@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTrialDesign;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalTrial extends MedicalStudy {
      * @return {@link MedicalTrialDesign}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalTrialDesign> getTrialDesignList();
+
+    /**
+     * Specifics about the trial design (enumerated).
+     *
+     * @return {@link MedicalTrialDesign}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalTrialDesign getTrialDesign();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalTrial extends MedicalStudy {
      * @param trialDesign MedicalTrialDesign value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTrialDesign(MedicalTrialDesign trialDesign);
+    void addTrialDesign(MedicalTrialDesign trialDesign);
 }

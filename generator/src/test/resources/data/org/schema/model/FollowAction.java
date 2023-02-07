@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 
@@ -20,6 +21,13 @@ public interface FollowAction extends InteractAction {
      *
      * @return {@link Organization} or {@link Person}
      */
+    <T> List<T> getFolloweeList();
+
+    /**
+     * A sub property of object. The person or organization being followed.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
     <T> T getFollowee();
 
     /**
@@ -27,11 +35,11 @@ public interface FollowAction extends InteractAction {
      *
      * @param followee Organization value to set.
      */
-    void setFollowee(Organization followee);
+    void addFollowee(Organization followee);
     /**
      * A sub property of object. The person or organization being followed.
      *
      * @param followee Person value to set.
      */
-    void setFollowee(Person followee);
+    void addFollowee(Person followee);
 }

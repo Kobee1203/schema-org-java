@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Text;
@@ -23,6 +24,13 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @return {@link Number}
      */
+    List<Number> getValueMaxLengthList();
+
+    /**
+     * Specifies the allowed range for number of characters in a literal value.
+     *
+     * @return {@link Number}
+     */
     Number getValueMaxLength();
 
     /**
@@ -30,7 +38,14 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param valueMaxLength Number value to set.
      */
-    void setValueMaxLength(Number valueMaxLength);
+    void addValueMaxLength(Number valueMaxLength);
+
+    /**
+     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getReadonlyValueList();
 
     /**
      * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
@@ -44,7 +59,15 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param readonlyValue Boolean value to set.
      */
-    void setReadonlyValue(Boolean readonlyValue);
+    void addReadonlyValue(Boolean readonlyValue);
+
+    /**
+     * The upper value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Number> getMaxValueList();
 
     /**
      * The upper value of some characteristic or property.
@@ -60,7 +83,14 @@ public interface PropertyValueSpecification extends Intangible {
      * @param maxValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMaxValue(Number maxValue);
+    void addMaxValue(Number maxValue);
+
+    /**
+     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getValueNameList();
 
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
@@ -74,7 +104,14 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param valueName Text value to set.
      */
-    void setValueName(Text valueName);
+    void addValueName(Text valueName);
+
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     *
+     * @return {@link Text} or {@link Thing}
+     */
+    <T> List<T> getDefaultValueList();
 
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
@@ -88,13 +125,20 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param defaultValue Text value to set.
      */
-    void setDefaultValue(Text defaultValue);
+    void addDefaultValue(Text defaultValue);
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
      * @param defaultValue Thing value to set.
      */
-    void setDefaultValue(Thing defaultValue);
+    void addDefaultValue(Thing defaultValue);
+
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getValueMinLengthList();
 
     /**
      * Specifies the minimum allowed range for number of characters in a literal value.
@@ -108,7 +152,14 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param valueMinLength Number value to set.
      */
-    void setValueMinLength(Number valueMinLength);
+    void addValueMinLength(Number valueMinLength);
+
+    /**
+     * Whether the property must be filled in to complete the action.  Default is false.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getValueRequiredList();
 
     /**
      * Whether the property must be filled in to complete the action.  Default is false.
@@ -122,7 +173,15 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param valueRequired Boolean value to set.
      */
-    void setValueRequired(Boolean valueRequired);
+    void addValueRequired(Boolean valueRequired);
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Number> getMinValueList();
 
     /**
      * The lower value of some characteristic or property.
@@ -138,7 +197,14 @@ public interface PropertyValueSpecification extends Intangible {
      * @param minValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMinValue(Number minValue);
+    void addMinValue(Number minValue);
+
+    /**
+     * Specifies a regular expression for testing literal values according to the HTML spec.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getValuePatternList();
 
     /**
      * Specifies a regular expression for testing literal values according to the HTML spec.
@@ -152,7 +218,14 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param valuePattern Text value to set.
      */
-    void setValuePattern(Text valuePattern);
+    void addValuePattern(Text valuePattern);
+
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getStepValueList();
 
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
@@ -166,7 +239,14 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param stepValue Number value to set.
      */
-    void setStepValue(Number stepValue);
+    void addStepValue(Number stepValue);
+
+    /**
+     * Whether multiple values are allowed for the property.  Default is false.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getMultipleValuesList();
 
     /**
      * Whether multiple values are allowed for the property.  Default is false.
@@ -180,5 +260,5 @@ public interface PropertyValueSpecification extends Intangible {
      *
      * @param multipleValues Boolean value to set.
      */
-    void setMultipleValues(Boolean multipleValues);
+    void addMultipleValues(Boolean multipleValues);
 }

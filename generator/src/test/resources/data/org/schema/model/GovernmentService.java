@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.AdministrativeArea;
 import org.schema.model.Organization;
@@ -23,6 +24,15 @@ public interface GovernmentService extends Service {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
+    <T> List<T> getJurisdictionList();
+
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @return {@link Text} or {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
     <T> T getJurisdiction();
 
     /**
@@ -32,7 +42,7 @@ public interface GovernmentService extends Service {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void setJurisdiction(Text jurisdiction);
+    void addJurisdiction(Text jurisdiction);
     /**
      * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
@@ -40,7 +50,14 @@ public interface GovernmentService extends Service {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void setJurisdiction(AdministrativeArea jurisdiction);
+    void addJurisdiction(AdministrativeArea jurisdiction);
+
+    /**
+     * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getServiceOperatorList();
 
     /**
      * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
@@ -54,5 +71,5 @@ public interface GovernmentService extends Service {
      *
      * @param serviceOperator Organization value to set.
      */
-    void setServiceOperator(Organization serviceOperator);
+    void addServiceOperator(Organization serviceOperator);
 }

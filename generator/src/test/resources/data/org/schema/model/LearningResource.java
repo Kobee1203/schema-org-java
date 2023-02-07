@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
@@ -30,6 +31,15 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
+    <T> List<T> getTeachesList();
+
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
     <T> T getTeaches();
 
     /**
@@ -39,7 +49,7 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(DefinedTerm teaches);
+    void addTeaches(DefinedTerm teaches);
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
@@ -47,7 +57,16 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(Text teaches);
+    void addTeaches(Text teaches);
+
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    <T> List<T> getEducationalLevelList();
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -65,7 +84,7 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(URL educationalLevel);
+    void addEducationalLevel(URL educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
@@ -73,7 +92,7 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(DefinedTerm educationalLevel);
+    void addEducationalLevel(DefinedTerm educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
@@ -81,7 +100,16 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(Text educationalLevel);
+    void addEducationalLevel(Text educationalLevel);
+
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    <T> List<T> getAssessesList();
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -99,7 +127,7 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(Text assesses);
+    void addAssesses(Text assesses);
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
@@ -107,7 +135,14 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(DefinedTerm assesses);
+    void addAssesses(DefinedTerm assesses);
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    <T> List<T> getEducationalUseList();
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -121,13 +156,22 @@ public interface LearningResource extends CreativeWork {
      *
      * @param educationalUse DefinedTerm value to set.
      */
-    void setEducationalUse(DefinedTerm educationalUse);
+    void addEducationalUse(DefinedTerm educationalUse);
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
      * @param educationalUse Text value to set.
      */
-    void setEducationalUse(Text educationalUse);
+    void addEducationalUse(Text educationalUse);
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @return {@link AlignmentObject}
+     */
+    List<AlignmentObject> getEducationalAlignmentList();
 
     /**
      * An alignment to an established educational framework.
@@ -145,7 +189,16 @@ public interface LearningResource extends CreativeWork {
      *
      * @param educationalAlignment AlignmentObject value to set.
      */
-    void setEducationalAlignment(AlignmentObject educationalAlignment);
+    void addEducationalAlignment(AlignmentObject educationalAlignment);
+
+    /**
+     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    <T> List<T> getCompetencyRequiredList();
 
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
@@ -163,7 +216,7 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(Text competencyRequired);
+    void addCompetencyRequired(Text competencyRequired);
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
@@ -171,7 +224,7 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(DefinedTerm competencyRequired);
+    void addCompetencyRequired(DefinedTerm competencyRequired);
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
@@ -179,7 +232,14 @@ public interface LearningResource extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(URL competencyRequired);
+    void addCompetencyRequired(URL competencyRequired);
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    <T> List<T> getLearningResourceTypeList();
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -193,11 +253,11 @@ public interface LearningResource extends CreativeWork {
      *
      * @param learningResourceType DefinedTerm value to set.
      */
-    void setLearningResourceType(DefinedTerm learningResourceType);
+    void addLearningResourceType(DefinedTerm learningResourceType);
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
      * @param learningResourceType Text value to set.
      */
-    void setLearningResourceType(Text learningResourceType);
+    void addLearningResourceType(Text learningResourceType);
 }

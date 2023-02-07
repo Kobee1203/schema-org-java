@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.QuantitativeValue;
 
 /**
@@ -21,6 +22,14 @@ public interface SomeProducts extends Product {
      * @return {@link QuantitativeValue}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
+    List<QuantitativeValue> getInventoryLevelList();
+
+    /**
+     * The current approximate inventory level for the item or items.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
     QuantitativeValue getInventoryLevel();
 
     /**
@@ -29,5 +38,5 @@ public interface SomeProducts extends Product {
      * @param inventoryLevel QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setInventoryLevel(QuantitativeValue inventoryLevel);
+    void addInventoryLevel(QuantitativeValue inventoryLevel);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A business that provide Heating, Ventilation and Air Conditioning services.

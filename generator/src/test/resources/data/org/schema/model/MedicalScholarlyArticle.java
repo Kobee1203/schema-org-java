@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalScholarlyArticle extends ScholarlyArticle {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getPublicationTypeList();
+
+    /**
+     * The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getPublicationType();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalScholarlyArticle extends ScholarlyArticle {
      * @param publicationType Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPublicationType(Text publicationType);
+    void addPublicationType(Text publicationType);
 }

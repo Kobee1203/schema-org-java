@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.Organization;
@@ -25,6 +26,15 @@ public interface ProgramMembership extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
      */
+    <T> List<T> getMembershipPointsEarnedList();
+
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
     <T> T getMembershipPointsEarned();
 
     /**
@@ -34,7 +44,7 @@ public interface ProgramMembership extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
      */
-    void setMembershipPointsEarned(Number membershipPointsEarned);
+    void addMembershipPointsEarned(Number membershipPointsEarned);
     /**
      * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
      *
@@ -42,7 +52,14 @@ public interface ProgramMembership extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
      */
-    void setMembershipPointsEarned(QuantitativeValue membershipPointsEarned);
+    void addMembershipPointsEarned(QuantitativeValue membershipPointsEarned);
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getMemberList();
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -56,13 +73,20 @@ public interface ProgramMembership extends Intangible {
      *
      * @param member Organization value to set.
      */
-    void setMember(Organization member);
+    void addMember(Organization member);
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
      * @param member Person value to set.
      */
-    void setMember(Person member);
+    void addMember(Person member);
+
+    /**
+     * A unique identifier for the membership.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getMembershipNumberList();
 
     /**
      * A unique identifier for the membership.
@@ -76,7 +100,14 @@ public interface ProgramMembership extends Intangible {
      *
      * @param membershipNumber Text value to set.
      */
-    void setMembershipNumber(Text membershipNumber);
+    void addMembershipNumber(Text membershipNumber);
+
+    /**
+     * The organization (airline, travelers' club, etc.) the membership is made with.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getHostingOrganizationList();
 
     /**
      * The organization (airline, travelers' club, etc.) the membership is made with.
@@ -90,7 +121,14 @@ public interface ProgramMembership extends Intangible {
      *
      * @param hostingOrganization Organization value to set.
      */
-    void setHostingOrganization(Organization hostingOrganization);
+    void addHostingOrganization(Organization hostingOrganization);
+
+    /**
+     * The program providing the membership.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProgramNameList();
 
     /**
      * The program providing the membership.
@@ -104,7 +142,14 @@ public interface ProgramMembership extends Intangible {
      *
      * @param programName Text value to set.
      */
-    void setProgramName(Text programName);
+    void addProgramName(Text programName);
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getMembersList();
 
     /**
      * A member of this organization.
@@ -118,11 +163,11 @@ public interface ProgramMembership extends Intangible {
      *
      * @param members Person value to set.
      */
-    void setMembers(Person members);
+    void addMembers(Person members);
     /**
      * A member of this organization.
      *
      * @param members Organization value to set.
      */
-    void setMembers(Organization members);
+    void addMembers(Organization members);
 }

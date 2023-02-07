@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
 import org.schema.model.MedicalCondition;
@@ -24,6 +25,13 @@ public interface PeopleAudience extends Audience {
      *
      * @return {@link Integer}
      */
+    List<Integer> getRequiredMinAgeList();
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @return {@link Integer}
+     */
     Integer getRequiredMinAge();
 
     /**
@@ -31,7 +39,14 @@ public interface PeopleAudience extends Audience {
      *
      * @param requiredMinAge Integer value to set.
      */
-    void setRequiredMinAge(Integer requiredMinAge);
+    void addRequiredMinAge(Integer requiredMinAge);
+
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getSuggestedMaxAgeList();
 
     /**
      * Maximum recommended age in years for the audience or user.
@@ -45,7 +60,15 @@ public interface PeopleAudience extends Audience {
      *
      * @param suggestedMaxAge Number value to set.
      */
-    void setSuggestedMaxAge(Number suggestedMaxAge);
+    void addSuggestedMaxAge(Number suggestedMaxAge);
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getHealthConditionList();
 
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
@@ -61,7 +84,16 @@ public interface PeopleAudience extends Audience {
      * @param healthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setHealthCondition(MedicalCondition healthCondition);
+    void addHealthCondition(MedicalCondition healthCondition);
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    List<QuantitativeValue> getSuggestedMeasurementList();
 
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
@@ -79,7 +111,16 @@ public interface PeopleAudience extends Audience {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    void setSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
+    void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    List<QuantitativeValue> getSuggestedAgeList();
 
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
@@ -97,7 +138,14 @@ public interface PeopleAudience extends Audience {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    void setSuggestedAge(QuantitativeValue suggestedAge);
+    void addSuggestedAge(QuantitativeValue suggestedAge);
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getRequiredMaxAgeList();
 
     /**
      * Audiences defined by a person's maximum age.
@@ -111,7 +159,14 @@ public interface PeopleAudience extends Audience {
      *
      * @param requiredMaxAge Integer value to set.
      */
-    void setRequiredMaxAge(Integer requiredMaxAge);
+    void addRequiredMaxAge(Integer requiredMaxAge);
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getSuggestedMinAgeList();
 
     /**
      * Minimum recommended age in years for the audience or user.
@@ -125,7 +180,14 @@ public interface PeopleAudience extends Audience {
      *
      * @param suggestedMinAge Number value to set.
      */
-    void setSuggestedMinAge(Number suggestedMinAge);
+    void addSuggestedMinAge(Number suggestedMinAge);
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRequiredGenderList();
 
     /**
      * Audiences defined by a person's gender.
@@ -139,7 +201,14 @@ public interface PeopleAudience extends Audience {
      *
      * @param requiredGender Text value to set.
      */
-    void setRequiredGender(Text requiredGender);
+    void addRequiredGender(Text requiredGender);
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    <T> List<T> getSuggestedGenderList();
 
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
@@ -153,11 +222,11 @@ public interface PeopleAudience extends Audience {
      *
      * @param suggestedGender GenderType value to set.
      */
-    void setSuggestedGender(GenderType suggestedGender);
+    void addSuggestedGender(GenderType suggestedGender);
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
      * @param suggestedGender Text value to set.
      */
-    void setSuggestedGender(Text suggestedGender);
+    void addSuggestedGender(Text suggestedGender);
 }

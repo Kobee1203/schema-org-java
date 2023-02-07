@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 import org.schema.model.MonetaryAmount;
 
@@ -23,6 +24,15 @@ public interface InvestmentOrDeposit extends FinancialProduct {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
+    <T> List<T> getAmountList();
+
+    /**
+     * The amount of money.
+     *
+     * @return {@link Number} or {@link MonetaryAmount}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
     <T> T getAmount();
 
     /**
@@ -32,7 +42,7 @@ public interface InvestmentOrDeposit extends FinancialProduct {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Number amount);
+    void addAmount(Number amount);
     /**
      * The amount of money.
      *
@@ -40,5 +50,5 @@ public interface InvestmentOrDeposit extends FinancialProduct {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(MonetaryAmount amount);
+    void addAmount(MonetaryAmount amount);
 }

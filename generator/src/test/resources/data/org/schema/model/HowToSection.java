@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.ItemList;
 import org.schema.model.CreativeWork;
 import org.schema.model.datatype.Text;
@@ -21,6 +22,13 @@ public interface HowToSection extends ListItem, CreativeWork, ItemList {
      *
      * @return {@link ItemList} or {@link CreativeWork} or {@link Text}
      */
+    <T> List<T> getStepsList();
+
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
+     *
+     * @return {@link ItemList} or {@link CreativeWork} or {@link Text}
+     */
     <T> T getSteps();
 
     /**
@@ -28,17 +36,17 @@ public interface HowToSection extends ListItem, CreativeWork, ItemList {
      *
      * @param steps ItemList value to set.
      */
-    void setSteps(ItemList steps);
+    void addSteps(ItemList steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
      * @param steps CreativeWork value to set.
      */
-    void setSteps(CreativeWork steps);
+    void addSteps(CreativeWork steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
      * @param steps Text value to set.
      */
-    void setSteps(Text steps);
+    void addSteps(Text steps);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Class;
 import org.schema.model.Enumeration;
 import org.schema.model.Property;
@@ -23,6 +24,14 @@ public interface Property extends Intangible {
      * @return {@link Class}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
+    List<Class> getDomainIncludesList();
+
+    /**
+     * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
+     *
+     * @return {@link Class}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
     Class getDomainIncludes();
 
     /**
@@ -31,7 +40,15 @@ public interface Property extends Intangible {
      * @param domainIncludes Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setDomainIncludes(Class domainIncludes);
+    void addDomainIncludes(Class domainIncludes);
+
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @return {@link Enumeration} or {@link Class} or {@link Property}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    <T> List<T> getSupersededByList();
 
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
@@ -47,21 +64,29 @@ public interface Property extends Intangible {
      * @param supersededBy Enumeration value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Enumeration supersededBy);
+    void addSupersededBy(Enumeration supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
      * @param supersededBy Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Class supersededBy);
+    void addSupersededBy(Class supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
      * @param supersededBy Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Property supersededBy);
+    void addSupersededBy(Property supersededBy);
+
+    /**
+     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @return {@link Class}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    List<Class> getRangeIncludesList();
 
     /**
      * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
@@ -77,7 +102,15 @@ public interface Property extends Intangible {
      * @param rangeIncludes Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setRangeIncludes(Class rangeIncludes);
+    void addRangeIncludes(Class rangeIncludes);
+
+    /**
+     * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
+     *
+     * @return {@link Property}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    List<Property> getInverseOfList();
 
     /**
      * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
@@ -93,5 +126,5 @@ public interface Property extends Intangible {
      * @param inverseOf Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setInverseOf(Property inverseOf);
+    void addInverseOf(Property inverseOf);
 }

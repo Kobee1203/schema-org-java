@@ -1,7 +1,6 @@
 package com.weedow.schemaorg.commons.model;
 
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
 /**
  * Implementation of {@link JsonLdNode}.
@@ -39,6 +38,18 @@ public class JsonLdNodeImpl implements JsonLdNode {
         final Class<? extends JsonLdNodeImpl> objectClass = getClass();
         final JsonLdTypeName jsonLdTypeName = objectClass.getAnnotation(JsonLdTypeName.class);
         return jsonLdTypeName != null && !jsonLdTypeName.value().isEmpty() ? jsonLdTypeName.value() : objectClass.getSimpleName();
+    }
+
+    protected static <T> List<T> add(List<T> list, T item) {
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        list.add(item);
+        return list;
+    }
+
+    protected static <T> T getFirst(List<T> list) {
+        return list != null && !list.isEmpty() ? list.get(0) : null;
     }
 
     @Override

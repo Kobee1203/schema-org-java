@@ -29,6 +29,7 @@ import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.MerchantReturnPolicy;
 
@@ -42,7 +43,19 @@ import org.schema.model.MerchantReturnPolicy;
 @JsonLdTypeName("MerchantReturnPolicy")
 public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MerchantReturnPolicy {
 
-    private MerchantReturnEnumeration returnPolicyCategory;
+    private List<MerchantReturnEnumeration> returnPolicyCategory;
+
+    /**
+     * Specifies an applicable return policy (from an enumeration).
+     *
+     * @return {@link MerchantReturnEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<MerchantReturnEnumeration> getReturnPolicyCategoryList() {
+        return returnPolicyCategory;
+    }
 
     /**
      * Specifies an applicable return policy (from an enumeration).
@@ -53,7 +66,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public MerchantReturnEnumeration getReturnPolicyCategory() {
-        return returnPolicyCategory;
+        return getFirst(returnPolicyCategory);
     }
 
     /**
@@ -64,12 +77,24 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory) {
-        this.returnPolicyCategory = returnPolicyCategory;
+    public void addReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory) {
+        this.returnPolicyCategory = add(this.returnPolicyCategory, returnPolicyCategory);
     }
 
     @JsonLdFieldTypes({ Country.class, Text.class })
-    private Object returnPolicyCountry;
+    private List<Object> returnPolicyCountry;
+
+    /**
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public <T> List<T> getReturnPolicyCountryList() {
+        return (List<T>) returnPolicyCountry;
+    }
 
     /**
      * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
@@ -80,7 +105,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getReturnPolicyCountry() {
-        return (T) returnPolicyCountry;
+        return (T) getFirst(returnPolicyCountry);
     }
 
     /**
@@ -91,8 +116,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setReturnPolicyCountry(Country returnPolicyCountry) {
-        this.returnPolicyCountry = returnPolicyCountry;
+    public void addReturnPolicyCountry(Country returnPolicyCountry) {
+        this.returnPolicyCountry = add(this.returnPolicyCountry, returnPolicyCountry);
     }
     /**
      * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
@@ -102,11 +127,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setReturnPolicyCountry(Text returnPolicyCountry) {
-        this.returnPolicyCountry = returnPolicyCountry;
+    public void addReturnPolicyCountry(Text returnPolicyCountry) {
+        this.returnPolicyCountry = add(this.returnPolicyCountry, returnPolicyCountry);
     }
 
-    private URL merchantReturnLink;
+    private List<URL> merchantReturnLink;
+
+    /**
+     * Specifies a Web page or service by URL, for product returns.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<URL> getMerchantReturnLinkList() {
+        return merchantReturnLink;
+    }
 
     /**
      * Specifies a Web page or service by URL, for product returns.
@@ -117,7 +154,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getMerchantReturnLink() {
-        return merchantReturnLink;
+        return getFirst(merchantReturnLink);
     }
 
     /**
@@ -128,12 +165,24 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setMerchantReturnLink(URL merchantReturnLink) {
-        this.merchantReturnLink = merchantReturnLink;
+    public void addMerchantReturnLink(URL merchantReturnLink) {
+        this.merchantReturnLink = add(this.merchantReturnLink, merchantReturnLink);
     }
 
     @JsonLdFieldTypes({ MonetaryAmount.class, Number.class })
-    private Object restockingFee;
+    private List<Object> restockingFee;
+
+    /**
+     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+     *
+     * @return {@link MonetaryAmount} or {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public <T> List<T> getRestockingFeeList() {
+        return (List<T>) restockingFee;
+    }
 
     /**
      * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
@@ -144,7 +193,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getRestockingFee() {
-        return (T) restockingFee;
+        return (T) getFirst(restockingFee);
     }
 
     /**
@@ -155,8 +204,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setRestockingFee(MonetaryAmount restockingFee) {
-        this.restockingFee = restockingFee;
+    public void addRestockingFee(MonetaryAmount restockingFee) {
+        this.restockingFee = add(this.restockingFee, restockingFee);
     }
     /**
      * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
@@ -166,11 +215,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setRestockingFee(Number restockingFee) {
-        this.restockingFee = restockingFee;
+    public void addRestockingFee(Number restockingFee) {
+        this.restockingFee = add(this.restockingFee, restockingFee);
     }
 
-    private MonetaryAmount itemDefectReturnShippingFeesAmount;
+    private List<MonetaryAmount> itemDefectReturnShippingFeesAmount;
+
+    /**
+     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<MonetaryAmount> getItemDefectReturnShippingFeesAmountList() {
+        return itemDefectReturnShippingFeesAmount;
+    }
 
     /**
      * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
@@ -181,7 +242,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public MonetaryAmount getItemDefectReturnShippingFeesAmount() {
-        return itemDefectReturnShippingFeesAmount;
+        return getFirst(itemDefectReturnShippingFeesAmount);
     }
 
     /**
@@ -192,11 +253,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setItemDefectReturnShippingFeesAmount(MonetaryAmount itemDefectReturnShippingFeesAmount) {
-        this.itemDefectReturnShippingFeesAmount = itemDefectReturnShippingFeesAmount;
+    public void addItemDefectReturnShippingFeesAmount(MonetaryAmount itemDefectReturnShippingFeesAmount) {
+        this.itemDefectReturnShippingFeesAmount = add(this.itemDefectReturnShippingFeesAmount, itemDefectReturnShippingFeesAmount);
     }
 
-    private ReturnFeesEnumeration itemDefectReturnFees;
+    private List<ReturnFeesEnumeration> itemDefectReturnFees;
+
+    /**
+     * The type of return fees for returns of defect products.
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<ReturnFeesEnumeration> getItemDefectReturnFeesList() {
+        return itemDefectReturnFees;
+    }
 
     /**
      * The type of return fees for returns of defect products.
@@ -207,7 +280,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ReturnFeesEnumeration getItemDefectReturnFees() {
-        return itemDefectReturnFees;
+        return getFirst(itemDefectReturnFees);
     }
 
     /**
@@ -218,11 +291,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setItemDefectReturnFees(ReturnFeesEnumeration itemDefectReturnFees) {
-        this.itemDefectReturnFees = itemDefectReturnFees;
+    public void addItemDefectReturnFees(ReturnFeesEnumeration itemDefectReturnFees) {
+        this.itemDefectReturnFees = add(this.itemDefectReturnFees, itemDefectReturnFees);
     }
 
-    private Boolean inStoreReturnsOffered;
+    private List<Boolean> inStoreReturnsOffered;
+
+    /**
+     * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<Boolean> getInStoreReturnsOfferedList() {
+        return inStoreReturnsOffered;
+    }
 
     /**
      * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
@@ -233,7 +318,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Boolean getInStoreReturnsOffered() {
-        return inStoreReturnsOffered;
+        return getFirst(inStoreReturnsOffered);
     }
 
     /**
@@ -244,11 +329,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setInStoreReturnsOffered(Boolean inStoreReturnsOffered) {
-        this.inStoreReturnsOffered = inStoreReturnsOffered;
+    public void addInStoreReturnsOffered(Boolean inStoreReturnsOffered) {
+        this.inStoreReturnsOffered = add(this.inStoreReturnsOffered, inStoreReturnsOffered);
     }
 
-    private OfferItemCondition itemCondition;
+    private List<OfferItemCondition> itemCondition;
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    @Override
+    public List<OfferItemCondition> getItemConditionList() {
+        return itemCondition;
+    }
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -257,7 +352,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public OfferItemCondition getItemCondition() {
-        return itemCondition;
+        return getFirst(itemCondition);
     }
 
     /**
@@ -266,11 +361,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param itemCondition OfferItemCondition value to set.
      */
     @Override
-    public void setItemCondition(OfferItemCondition itemCondition) {
-        this.itemCondition = itemCondition;
+    public void addItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = add(this.itemCondition, itemCondition);
     }
 
-    private ReturnLabelSourceEnumeration itemDefectReturnLabelSource;
+    private List<ReturnLabelSourceEnumeration> itemDefectReturnLabelSource;
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
+     *
+     * @return {@link ReturnLabelSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<ReturnLabelSourceEnumeration> getItemDefectReturnLabelSourceList() {
+        return itemDefectReturnLabelSource;
+    }
 
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
@@ -281,7 +388,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ReturnLabelSourceEnumeration getItemDefectReturnLabelSource() {
-        return itemDefectReturnLabelSource;
+        return getFirst(itemDefectReturnLabelSource);
     }
 
     /**
@@ -292,11 +399,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setItemDefectReturnLabelSource(ReturnLabelSourceEnumeration itemDefectReturnLabelSource) {
-        this.itemDefectReturnLabelSource = itemDefectReturnLabelSource;
+    public void addItemDefectReturnLabelSource(ReturnLabelSourceEnumeration itemDefectReturnLabelSource) {
+        this.itemDefectReturnLabelSource = add(this.itemDefectReturnLabelSource, itemDefectReturnLabelSource);
     }
 
-    private ReturnLabelSourceEnumeration returnLabelSource;
+    private List<ReturnLabelSourceEnumeration> returnLabelSource;
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
+     *
+     * @return {@link ReturnLabelSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<ReturnLabelSourceEnumeration> getReturnLabelSourceList() {
+        return returnLabelSource;
+    }
 
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
@@ -307,7 +426,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ReturnLabelSourceEnumeration getReturnLabelSource() {
-        return returnLabelSource;
+        return getFirst(returnLabelSource);
     }
 
     /**
@@ -318,11 +437,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setReturnLabelSource(ReturnLabelSourceEnumeration returnLabelSource) {
-        this.returnLabelSource = returnLabelSource;
+    public void addReturnLabelSource(ReturnLabelSourceEnumeration returnLabelSource) {
+        this.returnLabelSource = add(this.returnLabelSource, returnLabelSource);
     }
 
-    private MonetaryAmount customerRemorseReturnShippingFeesAmount;
+    private List<MonetaryAmount> customerRemorseReturnShippingFeesAmount;
+
+    /**
+     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<MonetaryAmount> getCustomerRemorseReturnShippingFeesAmountList() {
+        return customerRemorseReturnShippingFeesAmount;
+    }
 
     /**
      * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
@@ -333,7 +464,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public MonetaryAmount getCustomerRemorseReturnShippingFeesAmount() {
-        return customerRemorseReturnShippingFeesAmount;
+        return getFirst(customerRemorseReturnShippingFeesAmount);
     }
 
     /**
@@ -344,11 +475,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setCustomerRemorseReturnShippingFeesAmount(MonetaryAmount customerRemorseReturnShippingFeesAmount) {
-        this.customerRemorseReturnShippingFeesAmount = customerRemorseReturnShippingFeesAmount;
+    public void addCustomerRemorseReturnShippingFeesAmount(MonetaryAmount customerRemorseReturnShippingFeesAmount) {
+        this.customerRemorseReturnShippingFeesAmount = add(this.customerRemorseReturnShippingFeesAmount, customerRemorseReturnShippingFeesAmount);
     }
 
-    private RefundTypeEnumeration refundType;
+    private List<RefundTypeEnumeration> refundType;
+
+    /**
+     * A refund type, from an enumerated list.
+     *
+     * @return {@link RefundTypeEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<RefundTypeEnumeration> getRefundTypeList() {
+        return refundType;
+    }
 
     /**
      * A refund type, from an enumerated list.
@@ -359,7 +502,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public RefundTypeEnumeration getRefundType() {
-        return refundType;
+        return getFirst(refundType);
     }
 
     /**
@@ -370,11 +513,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setRefundType(RefundTypeEnumeration refundType) {
-        this.refundType = refundType;
+    public void addRefundType(RefundTypeEnumeration refundType) {
+        this.refundType = add(this.refundType, refundType);
     }
 
-    private MonetaryAmount returnShippingFeesAmount;
+    private List<MonetaryAmount> returnShippingFeesAmount;
+
+    /**
+     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<MonetaryAmount> getReturnShippingFeesAmountList() {
+        return returnShippingFeesAmount;
+    }
 
     /**
      * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
@@ -385,7 +540,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public MonetaryAmount getReturnShippingFeesAmount() {
-        return returnShippingFeesAmount;
+        return getFirst(returnShippingFeesAmount);
     }
 
     /**
@@ -396,12 +551,24 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount) {
-        this.returnShippingFeesAmount = returnShippingFeesAmount;
+    public void addReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount) {
+        this.returnShippingFeesAmount = add(this.returnShippingFeesAmount, returnShippingFeesAmount);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Integer.class, Date.class })
-    private Object merchantReturnDays;
+    private List<Object> merchantReturnDays;
+
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @return {@link DateTime} or {@link Integer} or {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public <T> List<T> getMerchantReturnDaysList() {
+        return (List<T>) merchantReturnDays;
+    }
 
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -412,7 +579,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getMerchantReturnDays() {
-        return (T) merchantReturnDays;
+        return (T) getFirst(merchantReturnDays);
     }
 
     /**
@@ -423,8 +590,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setMerchantReturnDays(DateTime merchantReturnDays) {
-        this.merchantReturnDays = merchantReturnDays;
+    public void addMerchantReturnDays(DateTime merchantReturnDays) {
+        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
     }
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -434,8 +601,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setMerchantReturnDays(Integer merchantReturnDays) {
-        this.merchantReturnDays = merchantReturnDays;
+    public void addMerchantReturnDays(Integer merchantReturnDays) {
+        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
     }
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -445,11 +612,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setMerchantReturnDays(Date merchantReturnDays) {
-        this.merchantReturnDays = merchantReturnDays;
+    public void addMerchantReturnDays(Date merchantReturnDays) {
+        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
     }
 
-    private ReturnMethodEnumeration returnMethod;
+    private List<ReturnMethodEnumeration> returnMethod;
+
+    /**
+     * The type of return method offered, specified from an enumeration.
+     *
+     * @return {@link ReturnMethodEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<ReturnMethodEnumeration> getReturnMethodList() {
+        return returnMethod;
+    }
 
     /**
      * The type of return method offered, specified from an enumeration.
@@ -460,7 +639,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ReturnMethodEnumeration getReturnMethod() {
-        return returnMethod;
+        return getFirst(returnMethod);
     }
 
     /**
@@ -471,11 +650,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setReturnMethod(ReturnMethodEnumeration returnMethod) {
-        this.returnMethod = returnMethod;
+    public void addReturnMethod(ReturnMethodEnumeration returnMethod) {
+        this.returnMethod = add(this.returnMethod, returnMethod);
     }
 
-    private PropertyValue additionalProperty;
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -484,7 +673,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return additionalProperty;
+        return getFirst(additionalProperty);
     }
 
     /**
@@ -493,11 +682,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = additionalProperty;
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
-    private ReturnLabelSourceEnumeration customerRemorseReturnLabelSource;
+    private List<ReturnLabelSourceEnumeration> customerRemorseReturnLabelSource;
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+     *
+     * @return {@link ReturnLabelSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<ReturnLabelSourceEnumeration> getCustomerRemorseReturnLabelSourceList() {
+        return customerRemorseReturnLabelSource;
+    }
 
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
@@ -508,7 +709,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ReturnLabelSourceEnumeration getCustomerRemorseReturnLabelSource() {
-        return customerRemorseReturnLabelSource;
+        return getFirst(customerRemorseReturnLabelSource);
     }
 
     /**
@@ -519,11 +720,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration customerRemorseReturnLabelSource) {
-        this.customerRemorseReturnLabelSource = customerRemorseReturnLabelSource;
+    public void addCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration customerRemorseReturnLabelSource) {
+        this.customerRemorseReturnLabelSource = add(this.customerRemorseReturnLabelSource, customerRemorseReturnLabelSource);
     }
 
-    private ReturnFeesEnumeration customerRemorseReturnFees;
+    private List<ReturnFeesEnumeration> customerRemorseReturnFees;
+
+    /**
+     * The type of return fees if the product is returned due to customer remorse.
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<ReturnFeesEnumeration> getCustomerRemorseReturnFeesList() {
+        return customerRemorseReturnFees;
+    }
 
     /**
      * The type of return fees if the product is returned due to customer remorse.
@@ -534,7 +747,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ReturnFeesEnumeration getCustomerRemorseReturnFees() {
-        return customerRemorseReturnFees;
+        return getFirst(customerRemorseReturnFees);
     }
 
     /**
@@ -545,11 +758,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setCustomerRemorseReturnFees(ReturnFeesEnumeration customerRemorseReturnFees) {
-        this.customerRemorseReturnFees = customerRemorseReturnFees;
+    public void addCustomerRemorseReturnFees(ReturnFeesEnumeration customerRemorseReturnFees) {
+        this.customerRemorseReturnFees = add(this.customerRemorseReturnFees, customerRemorseReturnFees);
     }
 
-    private MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride;
+    private List<MerchantReturnPolicySeasonalOverride> returnPolicySeasonalOverride;
+
+    /**
+     * Seasonal override of a return policy.
+     *
+     * @return {@link MerchantReturnPolicySeasonalOverride}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public List<MerchantReturnPolicySeasonalOverride> getReturnPolicySeasonalOverrideList() {
+        return returnPolicySeasonalOverride;
+    }
 
     /**
      * Seasonal override of a return policy.
@@ -560,7 +785,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public MerchantReturnPolicySeasonalOverride getReturnPolicySeasonalOverride() {
-        return returnPolicySeasonalOverride;
+        return getFirst(returnPolicySeasonalOverride);
     }
 
     /**
@@ -571,12 +796,24 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride) {
-        this.returnPolicySeasonalOverride = returnPolicySeasonalOverride;
+    public void addReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride) {
+        this.returnPolicySeasonalOverride = add(this.returnPolicySeasonalOverride, returnPolicySeasonalOverride);
     }
 
     @JsonLdFieldTypes({ Text.class, Country.class })
-    private Object applicableCountry;
+    private List<Object> applicableCountry;
+
+    /**
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @return {@link Text} or {@link Country}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    @Override
+    public <T> List<T> getApplicableCountryList() {
+        return (List<T>) applicableCountry;
+    }
 
     /**
      * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
@@ -587,7 +824,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getApplicableCountry() {
-        return (T) applicableCountry;
+        return (T) getFirst(applicableCountry);
     }
 
     /**
@@ -598,8 +835,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
      */
     @Override
-    public void setApplicableCountry(Text applicableCountry) {
-        this.applicableCountry = applicableCountry;
+    public void addApplicableCountry(Text applicableCountry) {
+        this.applicableCountry = add(this.applicableCountry, applicableCountry);
     }
     /**
      * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
@@ -609,11 +846,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
      */
     @Override
-    public void setApplicableCountry(Country applicableCountry) {
-        this.applicableCountry = applicableCountry;
+    public void addApplicableCountry(Country applicableCountry) {
+        this.applicableCountry = add(this.applicableCountry, applicableCountry);
     }
 
-    private ReturnFeesEnumeration returnFees;
+    private List<ReturnFeesEnumeration> returnFees;
+
+    /**
+     * The type of return fees for purchased products (for any return reason)
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<ReturnFeesEnumeration> getReturnFeesList() {
+        return returnFees;
+    }
 
     /**
      * The type of return fees for purchased products (for any return reason)
@@ -624,7 +873,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ReturnFeesEnumeration getReturnFees() {
-        return returnFees;
+        return getFirst(returnFees);
     }
 
     /**
@@ -635,12 +884,22 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setReturnFees(ReturnFeesEnumeration returnFees) {
-        this.returnFees = returnFees;
+    public void addReturnFees(ReturnFeesEnumeration returnFees) {
+        this.returnFees = add(this.returnFees, returnFees);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -649,7 +908,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -658,8 +917,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -667,11 +926,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -680,7 +949,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -689,11 +958,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -702,7 +981,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -711,11 +990,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -724,7 +1013,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -733,12 +1022,22 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -747,7 +1046,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -756,8 +1055,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -765,11 +1064,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -778,7 +1087,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -787,11 +1096,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -800,7 +1119,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -809,12 +1128,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -824,7 +1154,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -834,8 +1164,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -844,11 +1174,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -857,7 +1197,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -866,11 +1206,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -879,7 +1229,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -888,11 +1238,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -901,7 +1261,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -910,12 +1270,23 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -925,7 +1296,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -935,8 +1306,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -945,8 +1316,8 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -955,7 +1326,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }
