@@ -2,6 +2,7 @@ package com.weedow.schemaorg.generator.model.field;
 
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
+import lombok.NonNull;
 import lombok.Value;
 
 import java.util.List;
@@ -15,7 +16,9 @@ public class Field {
     String name;
 
     String fieldName;
+    @NonNull
     Supplier<String> fieldType;
+    @NonNull
     Supplier<String> fieldTypeAsList;
 
     public Field(String name, List<Type> types) {

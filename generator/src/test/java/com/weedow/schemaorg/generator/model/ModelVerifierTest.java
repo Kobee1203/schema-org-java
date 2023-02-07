@@ -53,10 +53,7 @@ class ModelVerifierTest {
                 .withIgnoredFields(
                         "parents",
                         "subTypes",
-                        "types",
-                        "fieldType",
-                        "fieldTypeLinks", "returnFieldType", "cast",
-                        "paramType", "paramValue"
+                        "types"
                 )
                 .verify();
     }
