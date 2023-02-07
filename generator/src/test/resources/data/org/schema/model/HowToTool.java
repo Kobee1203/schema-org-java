@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A tool used (but not consumed) when performing instructions for how to achieve a result.

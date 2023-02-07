@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.AboutPage;
 import org.schema.model.datatype.Text;
@@ -55,6 +56,16 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
+    <T> List<T> getOwnershipFundingInfoList();
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @return {@link URL} or {@link AboutPage} or {@link Text} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
     <T> T getOwnershipFundingInfo();
 
     /**
@@ -65,7 +76,7 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setOwnershipFundingInfo(URL ownershipFundingInfo);
+    void addOwnershipFundingInfo(URL ownershipFundingInfo);
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
@@ -74,7 +85,7 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setOwnershipFundingInfo(AboutPage ownershipFundingInfo);
+    void addOwnershipFundingInfo(AboutPage ownershipFundingInfo);
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
@@ -83,7 +94,7 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setOwnershipFundingInfo(Text ownershipFundingInfo);
+    void addOwnershipFundingInfo(Text ownershipFundingInfo);
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
@@ -92,7 +103,16 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setOwnershipFundingInfo(CreativeWork ownershipFundingInfo);
+    void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo);
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    List<EducationalOccupationalCredential> getHasCredentialList();
 
     /**
      * A credential awarded to the Person or Organization.
@@ -110,7 +130,14 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setHasCredential(EducationalOccupationalCredential hasCredential);
+    void addHasCredential(EducationalOccupationalCredential hasCredential);
+
+    /**
+     * A person who founded this organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getFoundersList();
 
     /**
      * A person who founded this organization.
@@ -124,7 +151,14 @@ public interface Organization extends Thing {
      *
      * @param founders Person value to set.
      */
-    void setFounders(Person founders);
+    void addFounders(Person founders);
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTelephoneList();
 
     /**
      * The telephone number.
@@ -138,7 +172,14 @@ public interface Organization extends Thing {
      *
      * @param telephone Text value to set.
      */
-    void setTelephone(Text telephone);
+    void addTelephone(Text telephone);
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewList();
 
     /**
      * A review of the item.
@@ -152,7 +193,17 @@ public interface Organization extends Thing {
      *
      * @param review Review value to set.
      */
-    void setReview(Review review);
+    void addReview(Review review);
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @return {@link URL} or {@link Text} or {@link Thing}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    <T> List<T> getKnowsAboutList();
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -172,7 +223,7 @@ public interface Organization extends Thing {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
-    void setKnowsAbout(URL knowsAbout);
+    void addKnowsAbout(URL knowsAbout);
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
@@ -181,7 +232,7 @@ public interface Organization extends Thing {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
-    void setKnowsAbout(Text knowsAbout);
+    void addKnowsAbout(Text knowsAbout);
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
@@ -190,7 +241,14 @@ public interface Organization extends Thing {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
-    void setKnowsAbout(Thing knowsAbout);
+    void addKnowsAbout(Thing knowsAbout);
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardList();
 
     /**
      * An award won by or for this item.
@@ -204,7 +262,14 @@ public interface Organization extends Thing {
      *
      * @param award Text value to set.
      */
-    void setAward(Text award);
+    void addAward(Text award);
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getMemberList();
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -218,13 +283,20 @@ public interface Organization extends Thing {
      *
      * @param member Organization value to set.
      */
-    void setMember(Organization member);
+    void addMember(Organization member);
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
      * @param member Person value to set.
      */
-    void setMember(Person member);
+    void addMember(Person member);
+
+    /**
+     * Someone working for this organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getEmployeeList();
 
     /**
      * Someone working for this organization.
@@ -238,7 +310,14 @@ public interface Organization extends Thing {
      *
      * @param employee Person value to set.
      */
-    void setEmployee(Person employee);
+    void addEmployee(Person employee);
+
+    /**
+     * The date that this organization was dissolved.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getDissolutionDateList();
 
     /**
      * The date that this organization was dissolved.
@@ -252,7 +331,17 @@ public interface Organization extends Thing {
      *
      * @param dissolutionDate Date value to set.
      */
-    void setDissolutionDate(Date dissolutionDate);
+    void addDissolutionDate(Date dissolutionDate);
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    List<Grant> getFundingList();
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -272,7 +361,15 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setFunding(Grant funding);
+    void addFunding(Grant funding);
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getVatIDList();
 
     /**
      * The Value-added Tax ID of the organization or person.
@@ -288,7 +385,15 @@ public interface Organization extends Thing {
      * @param vatID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setVatID(Text vatID);
+    void addVatID(Text vatID);
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getGlobalLocationNumberList();
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -304,7 +409,14 @@ public interface Organization extends Thing {
      * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGlobalLocationNumber(Text globalLocationNumber);
+    void addGlobalLocationNumber(Text globalLocationNumber);
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    <T> List<T> getKeywordsList();
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -318,19 +430,26 @@ public interface Organization extends Thing {
      *
      * @param keywords DefinedTerm value to set.
      */
-    void setKeywords(DefinedTerm keywords);
+    void addKeywords(DefinedTerm keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
      * @param keywords Text value to set.
      */
-    void setKeywords(Text keywords);
+    void addKeywords(Text keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
      * @param keywords URL value to set.
      */
-    void setKeywords(URL keywords);
+    void addKeywords(URL keywords);
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getContactPointsList();
 
     /**
      * A contact point for a person or organization.
@@ -344,7 +463,14 @@ public interface Organization extends Thing {
      *
      * @param contactPoints ContactPoint value to set.
      */
-    void setContactPoints(ContactPoint contactPoints);
+    void addContactPoints(ContactPoint contactPoints);
+
+    /**
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getSubOrganizationList();
 
     /**
      * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
@@ -358,7 +484,14 @@ public interface Organization extends Thing {
      *
      * @param subOrganization Organization value to set.
      */
-    void setSubOrganization(Organization subOrganization);
+    void addSubOrganization(Organization subOrganization);
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardsList();
 
     /**
      * Awards won by or for this item.
@@ -372,7 +505,14 @@ public interface Organization extends Thing {
      *
      * @param awards Text value to set.
      */
-    void setAwards(Text awards);
+    void addAwards(Text awards);
+
+    /**
+     * The number of employees in an organization e.g. business.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getNumberOfEmployeesList();
 
     /**
      * The number of employees in an organization e.g. business.
@@ -386,7 +526,14 @@ public interface Organization extends Thing {
      *
      * @param numberOfEmployees QuantitativeValue value to set.
      */
-    void setNumberOfEmployees(QuantitativeValue numberOfEmployees);
+    void addNumberOfEmployees(QuantitativeValue numberOfEmployees);
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getFunderList();
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -400,13 +547,21 @@ public interface Organization extends Thing {
      *
      * @param funder Organization value to set.
      */
-    void setFunder(Organization funder);
+    void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
      */
-    void setFunder(Person funder);
+    void addFunder(Person funder);
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Offer> getMakesOfferList();
 
     /**
      * A pointer to products or services offered by the organization or person.
@@ -422,7 +577,15 @@ public interface Organization extends Thing {
      * @param makesOffer Offer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMakesOffer(Offer makesOffer);
+    void addMakesOffer(Offer makesOffer);
+
+    /**
+     * The official name of the organization, e.g. the registered company name.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getLegalNameList();
 
     /**
      * The official name of the organization, e.g. the registered company name.
@@ -438,7 +601,17 @@ public interface Organization extends Thing {
      * @param legalName Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLegalName(Text legalName);
+    void addLegalName(Text legalName);
+
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    <T> List<T> getCorrectionsPolicyList();
 
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
@@ -458,7 +631,7 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setCorrectionsPolicy(URL correctionsPolicy);
+    void addCorrectionsPolicy(URL correctionsPolicy);
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
      *
@@ -467,7 +640,14 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setCorrectionsPolicy(CreativeWork correctionsPolicy);
+    void addCorrectionsPolicy(CreativeWork correctionsPolicy);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -481,7 +661,15 @@ public interface Organization extends Thing {
      *
      * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating aggregateRating);
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    List<InteractionCounter> getInteractionStatisticList();
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -497,7 +685,14 @@ public interface Organization extends Thing {
      * @param interactionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
-    void setInteractionStatistic(InteractionCounter interactionStatistic);
+    void addInteractionStatistic(InteractionCounter interactionStatistic);
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    <T> List<T> getLocationList();
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -511,25 +706,32 @@ public interface Organization extends Thing {
      *
      * @param location PostalAddress value to set.
      */
-    void setLocation(PostalAddress location);
+    void addLocation(PostalAddress location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location Text value to set.
      */
-    void setLocation(Text location);
+    void addLocation(Text location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location Place value to set.
      */
-    void setLocation(Place location);
+    void addLocation(Place location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location VirtualLocation value to set.
      */
-    void setLocation(VirtualLocation location);
+    void addLocation(VirtualLocation location);
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    <T> List<T> getAddressList();
 
     /**
      * Physical address of the item.
@@ -543,13 +745,20 @@ public interface Organization extends Thing {
      *
      * @param address Text value to set.
      */
-    void setAddress(Text address);
+    void addAddress(Text address);
     /**
      * Physical address of the item.
      *
      * @param address PostalAddress value to set.
      */
-    void setAddress(PostalAddress address);
+    void addAddress(PostalAddress address);
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization}
+     */
+    <T> List<T> getMemberOfList();
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -563,13 +772,22 @@ public interface Organization extends Thing {
      *
      * @param memberOf ProgramMembership value to set.
      */
-    void setMemberOf(ProgramMembership memberOf);
+    void addMemberOf(ProgramMembership memberOf);
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
      * @param memberOf Organization value to set.
      */
-    void setMemberOf(Organization memberOf);
+    void addMemberOf(Organization memberOf);
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    <T> List<T> getPublishingPrinciplesList();
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -587,7 +805,7 @@ public interface Organization extends Thing {
      *
      * @param publishingPrinciples URL value to set.
      */
-    void setPublishingPrinciples(URL publishingPrinciples);
+    void addPublishingPrinciples(URL publishingPrinciples);
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
      * 
@@ -595,7 +813,17 @@ public interface Organization extends Thing {
      *
      * @param publishingPrinciples CreativeWork value to set.
      */
-    void setPublishingPrinciples(CreativeWork publishingPrinciples);
+    void addPublishingPrinciples(CreativeWork publishingPrinciples);
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @return {@link URL} or {@link Article}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    <T> List<T> getDiversityStaffingReportList();
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
@@ -615,7 +843,7 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setDiversityStaffingReport(URL diversityStaffingReport);
+    void addDiversityStaffingReport(URL diversityStaffingReport);
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
@@ -624,7 +852,17 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setDiversityStaffingReport(Article diversityStaffingReport);
+    void addDiversityStaffingReport(Article diversityStaffingReport);
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    <T> List<T> getDiversityPolicyList();
 
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
@@ -644,7 +882,7 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setDiversityPolicy(CreativeWork diversityPolicy);
+    void addDiversityPolicy(CreativeWork diversityPolicy);
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
      *
@@ -653,7 +891,14 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setDiversityPolicy(URL diversityPolicy);
+    void addDiversityPolicy(URL diversityPolicy);
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEmailList();
 
     /**
      * Email address.
@@ -667,7 +912,14 @@ public interface Organization extends Thing {
      *
      * @param email Text value to set.
      */
-    void setEmail(Text email);
+    void addEmail(Text email);
+
+    /**
+     * People working for this organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getEmployeesList();
 
     /**
      * People working for this organization.
@@ -681,7 +933,16 @@ public interface Organization extends Thing {
      *
      * @param employees Person value to set.
      */
-    void setEmployees(Person employees);
+    void addEmployees(Person employees);
+
+    /**
+     * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
+     *
+     * @return {@link NonprofitType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
+     */
+    List<NonprofitType> getNonprofitStatusList();
 
     /**
      * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
@@ -699,7 +960,14 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
-    void setNonprofitStatus(NonprofitType nonprofitStatus);
+    void addNonprofitStatus(NonprofitType nonprofitStatus);
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSloganList();
 
     /**
      * A slogan or motto associated with the item.
@@ -713,7 +981,16 @@ public interface Organization extends Thing {
      *
      * @param slogan Text value to set.
      */
-    void setSlogan(Text slogan);
+    void addSlogan(Text slogan);
+
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    <T> List<T> getEthicsPolicyList();
 
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
@@ -731,7 +1008,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setEthicsPolicy(URL ethicsPolicy);
+    void addEthicsPolicy(URL ethicsPolicy);
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
      *
@@ -739,7 +1016,14 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setEthicsPolicy(CreativeWork ethicsPolicy);
+    void addEthicsPolicy(CreativeWork ethicsPolicy);
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    <T> List<T> getBrandList();
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -753,13 +1037,20 @@ public interface Organization extends Thing {
      *
      * @param brand Organization value to set.
      */
-    void setBrand(Organization brand);
+    void addBrand(Organization brand);
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
      * @param brand Brand value to set.
      */
-    void setBrand(Brand brand);
+    void addBrand(Brand brand);
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSponsorList();
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -773,13 +1064,21 @@ public interface Organization extends Thing {
      *
      * @param sponsor Organization value to set.
      */
-    void setSponsor(Organization sponsor);
+    void addSponsor(Organization sponsor);
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @param sponsor Person value to set.
      */
-    void setSponsor(Person sponsor);
+    void addSponsor(Person sponsor);
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getLogoList();
 
     /**
      * An associated logo.
@@ -795,14 +1094,24 @@ public interface Organization extends Thing {
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(URL logo);
+    void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(ImageObject logo);
+    void addLogo(ImageObject logo);
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    <T> List<T> getActionableFeedbackPolicyList();
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -822,7 +1131,7 @@ public interface Organization extends Thing {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setActionableFeedbackPolicy(URL actionableFeedbackPolicy);
+    void addActionableFeedbackPolicy(URL actionableFeedbackPolicy);
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
      *
@@ -831,7 +1140,15 @@ public interface Organization extends Thing {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy);
+    void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy);
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getNaicsList();
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -847,7 +1164,14 @@ public interface Organization extends Thing {
      * @param naics Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setNaics(Text naics);
+    void addNaics(Text naics);
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getContactPointList();
 
     /**
      * A contact point for a person or organization.
@@ -861,7 +1185,14 @@ public interface Organization extends Thing {
      *
      * @param contactPoint ContactPoint value to set.
      */
-    void setContactPoint(ContactPoint contactPoint);
+    void addContactPoint(ContactPoint contactPoint);
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     */
+    <T> List<T> getServiceAreaList();
 
     /**
      * The geographic area where the service is provided.
@@ -875,19 +1206,27 @@ public interface Organization extends Thing {
      *
      * @param serviceArea GeoShape value to set.
      */
-    void setServiceArea(GeoShape serviceArea);
+    void addServiceArea(GeoShape serviceArea);
     /**
      * The geographic area where the service is provided.
      *
      * @param serviceArea AdministrativeArea value to set.
      */
-    void setServiceArea(AdministrativeArea serviceArea);
+    void addServiceArea(AdministrativeArea serviceArea);
     /**
      * The geographic area where the service is provided.
      *
      * @param serviceArea Place value to set.
      */
-    void setServiceArea(Place serviceArea);
+    void addServiceArea(Place serviceArea);
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getIsicV4List();
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -903,7 +1242,16 @@ public interface Organization extends Thing {
      * @param isicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsicV4(Text isicV4);
+    void addIsicV4(Text isicV4);
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    List<MerchantReturnPolicy> getHasMerchantReturnPolicyList();
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -921,7 +1269,15 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy);
+    void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy);
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Place> getHasPOSList();
 
     /**
      * Points-of-Sales operated by the organization or person.
@@ -937,7 +1293,14 @@ public interface Organization extends Thing {
      * @param hasPOS Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setHasPOS(Place hasPOS);
+    void addHasPOS(Place hasPOS);
+
+    /**
+     * A person who founded this organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getFounderList();
 
     /**
      * A person who founded this organization.
@@ -951,7 +1314,17 @@ public interface Organization extends Thing {
      *
      * @param founder Person value to set.
      */
-    void setFounder(Person founder);
+    void addFounder(Person founder);
+
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    <T> List<T> getUnnamedSourcesPolicyList();
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -971,7 +1344,7 @@ public interface Organization extends Thing {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
+    void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
@@ -980,7 +1353,14 @@ public interface Organization extends Thing {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
+    void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getFoundingLocationList();
 
     /**
      * The place where the Organization was founded.
@@ -994,7 +1374,15 @@ public interface Organization extends Thing {
      *
      * @param foundingLocation Place value to set.
      */
-    void setFoundingLocation(Place foundingLocation);
+    void addFoundingLocation(Place foundingLocation);
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getDunsList();
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
@@ -1010,7 +1398,14 @@ public interface Organization extends Thing {
      * @param duns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDuns(Text duns);
+    void addDuns(Text duns);
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getParentOrganizationList();
 
     /**
      * The larger organization that this organization is a [[subOrganization]] of, if any.
@@ -1024,7 +1419,14 @@ public interface Organization extends Thing {
      *
      * @param parentOrganization Organization value to set.
      */
-    void setParentOrganization(Organization parentOrganization);
+    void addParentOrganization(Organization parentOrganization);
+
+    /**
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getAlumniList();
 
     /**
      * Alumni of an organization.
@@ -1038,7 +1440,16 @@ public interface Organization extends Thing {
      *
      * @param alumni Person value to set.
      */
-    void setAlumni(Person alumni);
+    void addAlumni(Person alumni);
+
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
+     */
+    List<Text> getLeiCodeList();
 
     /**
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
@@ -1056,7 +1467,14 @@ public interface Organization extends Thing {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      */
-    void setLeiCode(Text leiCode);
+    void addLeiCode(Text leiCode);
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    <T> List<T> getAreaServedList();
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -1070,25 +1488,32 @@ public interface Organization extends Thing {
      *
      * @param areaServed AdministrativeArea value to set.
      */
-    void setAreaServed(AdministrativeArea areaServed);
+    void addAreaServed(AdministrativeArea areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
      * @param areaServed GeoShape value to set.
      */
-    void setAreaServed(GeoShape areaServed);
+    void addAreaServed(GeoShape areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
      * @param areaServed Text value to set.
      */
-    void setAreaServed(Text areaServed);
+    void addAreaServed(Text areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
      * @param areaServed Place value to set.
      */
-    void setAreaServed(Place areaServed);
+    void addAreaServed(Place areaServed);
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getFoundingDateList();
 
     /**
      * The date that this organization was founded.
@@ -1102,7 +1527,17 @@ public interface Organization extends Thing {
      *
      * @param foundingDate Date value to set.
      */
-    void setFoundingDate(Date foundingDate);
+    void addFoundingDate(Date foundingDate);
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    <T> List<T> getKnowsLanguageList();
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
@@ -1122,7 +1557,7 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setKnowsLanguage(Language knowsLanguage);
+    void addKnowsLanguage(Language knowsLanguage);
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
@@ -1131,7 +1566,14 @@ public interface Organization extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setKnowsLanguage(Text knowsLanguage);
+    void addKnowsLanguage(Text knowsLanguage);
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewsList();
 
     /**
      * Review of the item.
@@ -1145,7 +1587,15 @@ public interface Organization extends Thing {
      *
      * @param reviews Review value to set.
      */
-    void setReviews(Review reviews);
+    void addReviews(Review reviews);
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Demand> getSeeksList();
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
@@ -1161,7 +1611,15 @@ public interface Organization extends Thing {
      * @param seeks Demand value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setSeeks(Demand seeks);
+    void addSeeks(Demand seeks);
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getTaxIDList();
 
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
@@ -1177,7 +1635,15 @@ public interface Organization extends Thing {
      * @param taxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setTaxID(Text taxID);
+    void addTaxID(Text taxID);
+
+    /**
+     * Products owned by the organization or person.
+     *
+     * @return {@link Product} or {@link OwnershipInfo}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getOwnsList();
 
     /**
      * Products owned by the organization or person.
@@ -1193,14 +1659,21 @@ public interface Organization extends Thing {
      * @param owns Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOwns(Product owns);
+    void addOwns(Product owns);
     /**
      * Products owned by the organization or person.
      *
      * @param owns OwnershipInfo value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOwns(OwnershipInfo owns);
+    void addOwns(OwnershipInfo owns);
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    List<OfferCatalog> getHasOfferCatalogList();
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -1214,7 +1687,14 @@ public interface Organization extends Thing {
      *
      * @param hasOfferCatalog OfferCatalog value to set.
      */
-    void setHasOfferCatalog(OfferCatalog hasOfferCatalog);
+    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getMembersList();
 
     /**
      * A member of this organization.
@@ -1228,13 +1708,20 @@ public interface Organization extends Thing {
      *
      * @param members Person value to set.
      */
-    void setMembers(Person members);
+    void addMembers(Person members);
     /**
      * A member of this organization.
      *
      * @param members Organization value to set.
      */
-    void setMembers(Organization members);
+    void addMembers(Organization members);
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventsList();
 
     /**
      * Upcoming or past events associated with this place or organization.
@@ -1248,7 +1735,16 @@ public interface Organization extends Thing {
      *
      * @param events Event value to set.
      */
-    void setEvents(Event events);
+    void addEvents(Event events);
+
+    /**
+     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
+     */
+    List<Text> getIso6523CodeList();
 
     /**
      * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
@@ -1266,7 +1762,14 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
-    void setIso6523Code(Text iso6523Code);
+    void addIso6523Code(Text iso6523Code);
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getDepartmentList();
 
     /**
      * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
@@ -1280,7 +1783,14 @@ public interface Organization extends Thing {
      *
      * @param department Organization value to set.
      */
-    void setDepartment(Organization department);
+    void addDepartment(Organization department);
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFaxNumberList();
 
     /**
      * The fax number.
@@ -1294,7 +1804,14 @@ public interface Organization extends Thing {
      *
      * @param faxNumber Text value to set.
      */
-    void setFaxNumber(Text faxNumber);
+    void addFaxNumber(Text faxNumber);
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventList();
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -1308,5 +1825,5 @@ public interface Organization extends Thing {
      *
      * @param event Event value to set.
      */
-    void setEvent(Event event);
+    void addEvent(Event event);
 }

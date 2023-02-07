@@ -40,6 +40,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 
 /**
  * Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.
@@ -50,7 +51,18 @@ import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 @JsonLdTypeName("Product")
 public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Product {
 
-    private Product isAccessoryOrSparePartFor;
+    private List<Product> isAccessoryOrSparePartFor;
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
+     *
+     * @return {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Product> getIsAccessoryOrSparePartForList() {
+        return isAccessoryOrSparePartFor;
+    }
 
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
@@ -60,7 +72,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Product getIsAccessoryOrSparePartFor() {
-        return isAccessoryOrSparePartFor;
+        return getFirst(isAccessoryOrSparePartFor);
     }
 
     /**
@@ -70,11 +82,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
-        this.isAccessoryOrSparePartFor = isAccessoryOrSparePartFor;
+    public void addIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
+        this.isAccessoryOrSparePartFor = add(this.isAccessoryOrSparePartFor, isAccessoryOrSparePartFor);
     }
 
-    private AdultOrientedEnumeration hasAdultConsideration;
+    private List<AdultOrientedEnumeration> hasAdultConsideration;
+
+    /**
+     * Used to tag an item to be intended or suitable for consumption or use by adults only.
+     *
+     * @return {@link AdultOrientedEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
+     */
+    @Override
+    public List<AdultOrientedEnumeration> getHasAdultConsiderationList() {
+        return hasAdultConsideration;
+    }
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
@@ -85,7 +109,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public AdultOrientedEnumeration getHasAdultConsideration() {
-        return hasAdultConsideration;
+        return getFirst(hasAdultConsideration);
     }
 
     /**
@@ -96,11 +120,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
     @Override
-    public void setHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
-        this.hasAdultConsideration = hasAdultConsideration;
+    public void addHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
+        this.hasAdultConsideration = add(this.hasAdultConsideration, hasAdultConsideration);
     }
 
-    private Text gtin12;
+    private List<Text> gtin12;
+
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getGtin12List() {
+        return gtin12;
+    }
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -109,7 +143,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin12() {
-        return gtin12;
+        return getFirst(gtin12);
     }
 
     /**
@@ -118,11 +152,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param gtin12 Text value to set.
      */
     @Override
-    public void setGtin12(Text gtin12) {
-        this.gtin12 = gtin12;
+    public void addGtin12(Text gtin12) {
+        this.gtin12 = add(this.gtin12, gtin12);
     }
 
-    private Text nsn;
+    private List<Text> nsn;
+
+    /**
+     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     */
+    @Override
+    public List<Text> getNsnList() {
+        return nsn;
+    }
 
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
@@ -133,7 +179,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getNsn() {
-        return nsn;
+        return getFirst(nsn);
     }
 
     /**
@@ -144,12 +190,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
     @Override
-    public void setNsn(Text nsn) {
-        this.nsn = nsn;
+    public void addNsn(Text nsn) {
+        this.nsn = add(this.nsn, nsn);
     }
 
     @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
-    private Object material;
+    private List<Object> material;
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Text} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getMaterialList() {
+        return (List<T>) material;
+    }
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -158,7 +214,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMaterial() {
-        return (T) material;
+        return (T) getFirst(material);
     }
 
     /**
@@ -167,8 +223,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param material Text value to set.
      */
     @Override
-    public void setMaterial(Text material) {
-        this.material = material;
+    public void addMaterial(Text material) {
+        this.material = add(this.material, material);
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -176,8 +232,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param material URL value to set.
      */
     @Override
-    public void setMaterial(URL material) {
-        this.material = material;
+    public void addMaterial(URL material) {
+        this.material = add(this.material, material);
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -185,11 +241,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param material Product value to set.
      */
     @Override
-    public void setMaterial(Product material) {
-        this.material = material;
+    public void addMaterial(Product material) {
+        this.material = add(this.material, material);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -198,7 +264,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -207,11 +273,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
-    private Text award;
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
 
     /**
      * An award won by or for this item.
@@ -220,7 +296,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAward() {
-        return award;
+        return getFirst(award);
     }
 
     /**
@@ -229,12 +305,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param award Text value to set.
      */
     @Override
-    public void setAward(Text award) {
-        this.award = award;
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
     }
 
     @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
-    private Object width;
+    private List<Object> width;
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
+    @Override
+    public <T> List<T> getWidthList() {
+        return (List<T>) width;
+    }
 
     /**
      * The width of the item.
@@ -243,7 +329,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getWidth() {
-        return (T) width;
+        return (T) getFirst(width);
     }
 
     /**
@@ -252,8 +338,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param width QuantitativeValue value to set.
      */
     @Override
-    public void setWidth(QuantitativeValue width) {
-        this.width = width;
+    public void addWidth(QuantitativeValue width) {
+        this.width = add(this.width, width);
     }
     /**
      * The width of the item.
@@ -261,11 +347,25 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param width Distance value to set.
      */
     @Override
-    public void setWidth(Distance width) {
-        this.width = width;
+    public void addWidth(Distance width) {
+        this.width = add(this.width, width);
     }
 
-    private Country countryOfOrigin;
+    private List<Country> countryOfOrigin;
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public List<Country> getCountryOfOriginList() {
+        return countryOfOrigin;
+    }
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -278,7 +378,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Country getCountryOfOrigin() {
-        return countryOfOrigin;
+        return getFirst(countryOfOrigin);
     }
 
     /**
@@ -291,12 +391,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param countryOfOrigin Country value to set.
      */
     @Override
-    public void setCountryOfOrigin(Country countryOfOrigin) {
-        this.countryOfOrigin = countryOfOrigin;
+    public void addCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = add(this.countryOfOrigin, countryOfOrigin);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private Object pattern;
+    private List<Object> pattern;
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> List<T> getPatternList() {
+        return (List<T>) pattern;
+    }
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -307,7 +419,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPattern() {
-        return (T) pattern;
+        return (T) getFirst(pattern);
     }
 
     /**
@@ -318,8 +430,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(DefinedTerm pattern) {
-        this.pattern = pattern;
+    public void addPattern(DefinedTerm pattern) {
+        this.pattern = add(this.pattern, pattern);
     }
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -329,12 +441,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Text pattern) {
-        this.pattern = pattern;
+    public void addPattern(Text pattern) {
+        this.pattern = add(this.pattern, pattern);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
-    private Object category;
+    private List<Object> category;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> List<T> getCategoryList() {
+        return (List<T>) category;
+    }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -345,7 +469,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCategory() {
-        return (T) category;
+        return (T) getFirst(category);
     }
 
     /**
@@ -356,8 +480,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(URL category) {
-        this.category = category;
+    public void addCategory(URL category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -367,8 +491,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Text category) {
-        this.category = category;
+    public void addCategory(Text category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -378,8 +502,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(PhysicalActivityCategory category) {
-        this.category = category;
+    public void addCategory(PhysicalActivityCategory category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -389,8 +513,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Thing category) {
-        this.category = category;
+    public void addCategory(Thing category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -400,11 +524,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(CategoryCode category) {
-        this.category = category;
+    public void addCategory(CategoryCode category) {
+        this.category = add(this.category, category);
     }
 
-    private Grant funding;
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -416,7 +553,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Grant getFunding() {
-        return funding;
+        return getFirst(funding);
     }
 
     /**
@@ -428,11 +565,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant funding) {
-        this.funding = funding;
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
-    private Text mpn;
+    private List<Text> mpn;
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getMpnList() {
+        return mpn;
+    }
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -442,7 +590,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getMpn() {
-        return mpn;
+        return getFirst(mpn);
     }
 
     /**
@@ -452,12 +600,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMpn(Text mpn) {
-        this.mpn = mpn;
+    public void addMpn(Text mpn) {
+        this.mpn = add(this.mpn, mpn);
     }
 
     @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
-    private Object height;
+    private List<Object> height;
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     */
+    @Override
+    public <T> List<T> getHeightList() {
+        return (List<T>) height;
+    }
 
     /**
      * The height of the item.
@@ -466,7 +624,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getHeight() {
-        return (T) height;
+        return (T) getFirst(height);
     }
 
     /**
@@ -475,8 +633,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param height Distance value to set.
      */
     @Override
-    public void setHeight(Distance height) {
-        this.height = height;
+    public void addHeight(Distance height) {
+        this.height = add(this.height, height);
     }
     /**
      * The height of the item.
@@ -484,12 +642,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param height QuantitativeValue value to set.
      */
     @Override
-    public void setHeight(QuantitativeValue height) {
-        this.height = height;
+    public void addHeight(QuantitativeValue height) {
+        this.height = add(this.height, height);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
-    private Object keywords;
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -498,7 +666,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getKeywords() {
-        return (T) keywords;
+        return (T) getFirst(keywords);
     }
 
     /**
@@ -507,8 +675,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm keywords) {
-        this.keywords = keywords;
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -516,8 +684,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text keywords) {
-        this.keywords = keywords;
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -525,11 +693,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(URL keywords) {
-        this.keywords = keywords;
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
-    private Date purchaseDate;
+    private List<Date> purchaseDate;
+
+    /**
+     * The date the item e.g. vehicle was purchased by the current owner.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Date> getPurchaseDateList() {
+        return purchaseDate;
+    }
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
@@ -539,7 +718,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getPurchaseDate() {
-        return purchaseDate;
+        return getFirst(purchaseDate);
     }
 
     /**
@@ -549,11 +728,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setPurchaseDate(Date purchaseDate) {
-        this.purchaseDate = purchaseDate;
+    public void addPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = add(this.purchaseDate, purchaseDate);
     }
 
-    private EnergyConsumptionDetails hasEnergyConsumptionDetails;
+    private List<EnergyConsumptionDetails> hasEnergyConsumptionDetails;
+
+    /**
+     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
+     *
+     * @return {@link EnergyConsumptionDetails}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    @Override
+    public List<EnergyConsumptionDetails> getHasEnergyConsumptionDetailsList() {
+        return hasEnergyConsumptionDetails;
+    }
 
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
@@ -564,7 +755,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
-        return hasEnergyConsumptionDetails;
+        return getFirst(hasEnergyConsumptionDetails);
     }
 
     /**
@@ -575,11 +766,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
     @Override
-    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
-        this.hasEnergyConsumptionDetails = hasEnergyConsumptionDetails;
+    public void addHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
+        this.hasEnergyConsumptionDetails = add(this.hasEnergyConsumptionDetails, hasEnergyConsumptionDetails);
     }
 
-    private Audience audience;
+    private List<Audience> audience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -588,7 +789,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Audience getAudience() {
-        return audience;
+        return getFirst(audience);
     }
 
     /**
@@ -597,12 +798,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience audience) {
-        this.audience = audience;
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
 
     @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private Object offers;
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -613,7 +826,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getOffers() {
-        return (T) offers;
+        return (T) getFirst(offers);
     }
 
     /**
@@ -624,8 +837,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer offers) {
-        this.offers = offers;
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -635,11 +848,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand offers) {
-        this.offers = offers;
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
     }
 
-    private Date productionDate;
+    private List<Date> productionDate;
+
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Date> getProductionDateList() {
+        return productionDate;
+    }
 
     /**
      * The date of production of the item, e.g. vehicle.
@@ -649,7 +873,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getProductionDate() {
-        return productionDate;
+        return getFirst(productionDate);
     }
 
     /**
@@ -659,11 +883,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setProductionDate(Date productionDate) {
-        this.productionDate = productionDate;
+    public void addProductionDate(Date productionDate) {
+        this.productionDate = add(this.productionDate, productionDate);
     }
 
-    private OfferItemCondition itemCondition;
+    private List<OfferItemCondition> itemCondition;
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    @Override
+    public List<OfferItemCondition> getItemConditionList() {
+        return itemCondition;
+    }
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -672,7 +906,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public OfferItemCondition getItemCondition() {
-        return itemCondition;
+        return getFirst(itemCondition);
     }
 
     /**
@@ -681,11 +915,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param itemCondition OfferItemCondition value to set.
      */
     @Override
-    public void setItemCondition(OfferItemCondition itemCondition) {
-        this.itemCondition = itemCondition;
+    public void addItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = add(this.itemCondition, itemCondition);
     }
 
-    private Text awards;
+    private List<Text> awards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
 
     /**
      * Awards won by or for this item.
@@ -694,7 +938,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAwards() {
-        return awards;
+        return getFirst(awards);
     }
 
     /**
@@ -703,11 +947,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text awards) {
-        this.awards = awards;
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
     }
 
-    private Text gtin;
+    private List<Text> gtin;
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<Text> getGtinList() {
+        return gtin;
+    }
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
@@ -719,7 +976,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin() {
-        return gtin;
+        return getFirst(gtin);
     }
 
     /**
@@ -731,11 +988,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setGtin(Text gtin) {
-        this.gtin = gtin;
+    public void addGtin(Text gtin) {
+        this.gtin = add(this.gtin, gtin);
     }
 
-    private Text productID;
+    private List<Text> productID;
+
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getProductIDList() {
+        return productID;
+    }
 
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
@@ -744,7 +1011,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getProductID() {
-        return productID;
+        return getFirst(productID);
     }
 
     /**
@@ -753,11 +1020,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param productID Text value to set.
      */
     @Override
-    public void setProductID(Text productID) {
-        this.productID = productID;
+    public void addProductID(Text productID) {
+        this.productID = add(this.productID, productID);
     }
 
-    private Text countryOfAssembly;
+    private List<Text> countryOfAssembly;
+
+    /**
+     * The place where the product was assembled.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public List<Text> getCountryOfAssemblyList() {
+        return countryOfAssembly;
+    }
 
     /**
      * The place where the product was assembled.
@@ -768,7 +1047,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCountryOfAssembly() {
-        return countryOfAssembly;
+        return getFirst(countryOfAssembly);
     }
 
     /**
@@ -779,11 +1058,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfAssembly(Text countryOfAssembly) {
-        this.countryOfAssembly = countryOfAssembly;
+    public void addCountryOfAssembly(Text countryOfAssembly) {
+        this.countryOfAssembly = add(this.countryOfAssembly, countryOfAssembly);
     }
 
-    private Text color;
+    private List<Text> color;
+
+    /**
+     * The color of the product.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getColorList() {
+        return color;
+    }
 
     /**
      * The color of the product.
@@ -793,7 +1083,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getColor() {
-        return color;
+        return getFirst(color);
     }
 
     /**
@@ -803,11 +1093,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setColor(Text color) {
-        this.color = color;
+    public void addColor(Text color) {
+        this.color = add(this.color, color);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -816,7 +1116,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -825,12 +1125,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
     @JsonLdFieldTypes({ Service.class, Product.class })
-    private Object isSimilarTo;
+    private List<Object> isSimilarTo;
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsSimilarToList() {
+        return (List<T>) isSimilarTo;
+    }
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -840,7 +1151,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsSimilarTo() {
-        return (T) isSimilarTo;
+        return (T) getFirst(isSimilarTo);
     }
 
     /**
@@ -850,8 +1161,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Service isSimilarTo) {
-        this.isSimilarTo = isSimilarTo;
+    public void addIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
     }
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -860,12 +1171,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Product isSimilarTo) {
-        this.isSimilarTo = isSimilarTo;
+    public void addIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
     }
 
     @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
-    private Object depth;
+    private List<Object> depth;
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getDepthList() {
+        return (List<T>) depth;
+    }
 
     /**
      * The depth of the item.
@@ -875,7 +1197,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getDepth() {
-        return (T) depth;
+        return (T) getFirst(depth);
     }
 
     /**
@@ -885,8 +1207,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(Distance depth) {
-        this.depth = depth;
+    public void addDepth(Distance depth) {
+        this.depth = add(this.depth, depth);
     }
     /**
      * The depth of the item.
@@ -895,11 +1217,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(QuantitativeValue depth) {
-        this.depth = depth;
+    public void addDepth(QuantitativeValue depth) {
+        this.depth = add(this.depth, depth);
     }
 
-    private Text countryOfLastProcessing;
+    private List<Text> countryOfLastProcessing;
+
+    /**
+     * The place where the item (typically [[Product]]) was last processed and tested before importation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public List<Text> getCountryOfLastProcessingList() {
+        return countryOfLastProcessing;
+    }
 
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
@@ -910,7 +1244,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCountryOfLastProcessing() {
-        return countryOfLastProcessing;
+        return getFirst(countryOfLastProcessing);
     }
 
     /**
@@ -921,12 +1255,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfLastProcessing(Text countryOfLastProcessing) {
-        this.countryOfLastProcessing = countryOfLastProcessing;
+    public void addCountryOfLastProcessing(Text countryOfLastProcessing) {
+        this.countryOfLastProcessing = add(this.countryOfLastProcessing, countryOfLastProcessing);
     }
 
     @JsonLdFieldTypes({ ProductModel.class, ProductGroup.class })
-    private Object isVariantOf;
+    private List<Object> isVariantOf;
+
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsVariantOfList() {
+        return (List<T>) isVariantOf;
+    }
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -936,7 +1281,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsVariantOf() {
-        return (T) isVariantOf;
+        return (T) getFirst(isVariantOf);
     }
 
     /**
@@ -946,8 +1291,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(ProductModel isVariantOf) {
-        this.isVariantOf = isVariantOf;
+    public void addIsVariantOf(ProductModel isVariantOf) {
+        this.isVariantOf = add(this.isVariantOf, isVariantOf);
     }
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -956,11 +1301,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(ProductGroup isVariantOf) {
-        this.isVariantOf = isVariantOf;
+    public void addIsVariantOf(ProductGroup isVariantOf) {
+        this.isVariantOf = add(this.isVariantOf, isVariantOf);
     }
 
-    private Text slogan;
+    private List<Text> slogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
+    }
 
     /**
      * A slogan or motto associated with the item.
@@ -969,7 +1324,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getSlogan() {
-        return slogan;
+        return getFirst(slogan);
     }
 
     /**
@@ -978,12 +1333,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text slogan) {
-        this.slogan = slogan;
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
     }
 
     @JsonLdFieldTypes({ Organization.class, Brand.class })
-    private Object brand;
+    private List<Object> brand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -992,7 +1357,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getBrand() {
-        return (T) brand;
+        return (T) getFirst(brand);
     }
 
     /**
@@ -1001,8 +1366,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization brand) {
-        this.brand = brand;
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1010,11 +1375,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
     }
 
-    private Organization manufacturer;
+    private List<Organization> manufacturer;
+
+    /**
+     * The manufacturer of the product.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getManufacturerList() {
+        return manufacturer;
+    }
 
     /**
      * The manufacturer of the product.
@@ -1023,7 +1398,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Organization getManufacturer() {
-        return manufacturer;
+        return getFirst(manufacturer);
     }
 
     /**
@@ -1032,11 +1407,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param manufacturer Organization value to set.
      */
     @Override
-    public void setManufacturer(Organization manufacturer) {
-        this.manufacturer = manufacturer;
+    public void addManufacturer(Organization manufacturer) {
+        this.manufacturer = add(this.manufacturer, manufacturer);
     }
 
-    private QuantitativeValue hasMeasurement;
+    private List<QuantitativeValue> hasMeasurement;
+
+    /**
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public List<QuantitativeValue> getHasMeasurementList() {
+        return hasMeasurement;
+    }
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -1047,7 +1434,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getHasMeasurement() {
-        return hasMeasurement;
+        return getFirst(hasMeasurement);
     }
 
     /**
@@ -1058,11 +1445,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setHasMeasurement(QuantitativeValue hasMeasurement) {
-        this.hasMeasurement = hasMeasurement;
+    public void addHasMeasurement(QuantitativeValue hasMeasurement) {
+        this.hasMeasurement = add(this.hasMeasurement, hasMeasurement);
     }
 
-    private Product isConsumableFor;
+    private List<Product> isConsumableFor;
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is a consumable.
+     *
+     * @return {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Product> getIsConsumableForList() {
+        return isConsumableFor;
+    }
 
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
@@ -1072,7 +1470,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Product getIsConsumableFor() {
-        return isConsumableFor;
+        return getFirst(isConsumableFor);
     }
 
     /**
@@ -1082,12 +1480,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsConsumableFor(Product isConsumableFor) {
-        this.isConsumableFor = isConsumableFor;
+    public void addIsConsumableFor(Product isConsumableFor) {
+        this.isConsumableFor = add(this.isConsumableFor, isConsumableFor);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object logo;
+    private List<Object> logo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
 
     /**
      * An associated logo.
@@ -1097,7 +1506,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getLogo() {
-        return (T) logo;
+        return (T) getFirst(logo);
     }
 
     /**
@@ -1107,8 +1516,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL logo) {
-        this.logo = logo;
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
     }
     /**
      * An associated logo.
@@ -1117,11 +1526,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(ImageObject logo) {
-        this.logo = logo;
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
     }
 
-    private Text gtin8;
+    private List<Text> gtin8;
+
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin8List() {
+        return gtin8;
+    }
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1131,7 +1551,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin8() {
-        return gtin8;
+        return getFirst(gtin8);
     }
 
     /**
@@ -1141,11 +1561,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin8(Text gtin8) {
-        this.gtin8 = gtin8;
+    public void addGtin8(Text gtin8) {
+        this.gtin8 = add(this.gtin8, gtin8);
     }
 
-    private Text sku;
+    private List<Text> sku;
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getSkuList() {
+        return sku;
+    }
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -1155,7 +1586,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getSku() {
-        return sku;
+        return getFirst(sku);
     }
 
     /**
@@ -1165,11 +1596,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSku(Text sku) {
-        this.sku = sku;
+    public void addSku(Text sku) {
+        this.sku = add(this.sku, sku);
     }
 
-    private Text inProductGroupWithID;
+    private List<Text> inProductGroupWithID;
+
+    /**
+     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public List<Text> getInProductGroupWithIDList() {
+        return inProductGroupWithID;
+    }
 
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
@@ -1180,7 +1623,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getInProductGroupWithID() {
-        return inProductGroupWithID;
+        return getFirst(inProductGroupWithID);
     }
 
     /**
@@ -1191,12 +1634,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setInProductGroupWithID(Text inProductGroupWithID) {
-        this.inProductGroupWithID = inProductGroupWithID;
+    public void addInProductGroupWithID(Text inProductGroupWithID) {
+        this.inProductGroupWithID = add(this.inProductGroupWithID, inProductGroupWithID);
     }
 
     @JsonLdFieldTypes({ ProductModel.class, Text.class })
-    private Object model;
+    private List<Object> model;
+
+    /**
+     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+     *
+     * @return {@link ProductModel} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getModelList() {
+        return (List<T>) model;
+    }
 
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -1205,7 +1658,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getModel() {
-        return (T) model;
+        return (T) getFirst(model);
     }
 
     /**
@@ -1214,8 +1667,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param model ProductModel value to set.
      */
     @Override
-    public void setModel(ProductModel model) {
-        this.model = model;
+    public void addModel(ProductModel model) {
+        this.model = add(this.model, model);
     }
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -1223,11 +1676,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param model Text value to set.
      */
     @Override
-    public void setModel(Text model) {
-        this.model = model;
+    public void addModel(Text model) {
+        this.model = add(this.model, model);
     }
 
-    private MerchantReturnPolicy hasMerchantReturnPolicy;
+    private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<MerchantReturnPolicy> getHasMerchantReturnPolicyList() {
+        return hasMerchantReturnPolicy;
+    }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -1238,7 +1703,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return hasMerchantReturnPolicy;
+        return getFirst(hasMerchantReturnPolicy);
     }
 
     /**
@@ -1249,11 +1714,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
-        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
+    public void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
     }
 
-    private Date releaseDate;
+    private List<Date> releaseDate;
+
+    /**
+     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Date> getReleaseDateList() {
+        return releaseDate;
+    }
 
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
@@ -1263,7 +1739,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getReleaseDate() {
-        return releaseDate;
+        return getFirst(releaseDate);
     }
 
     /**
@@ -1273,11 +1749,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
+    public void addReleaseDate(Date releaseDate) {
+        this.releaseDate = add(this.releaseDate, releaseDate);
     }
 
-    private Text gtin14;
+    private List<Text> gtin14;
+
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin14List() {
+        return gtin14;
+    }
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1287,7 +1774,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin14() {
-        return gtin14;
+        return getFirst(gtin14);
     }
 
     /**
@@ -1297,11 +1784,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin14(Text gtin14) {
-        this.gtin14 = gtin14;
+    public void addGtin14(Text gtin14) {
+        this.gtin14 = add(this.gtin14, gtin14);
     }
 
-    private QuantitativeValue weight;
+    private List<QuantitativeValue> weight;
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getWeightList() {
+        return weight;
+    }
 
     /**
      * The weight of the product or person.
@@ -1311,7 +1809,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getWeight() {
-        return weight;
+        return getFirst(weight);
     }
 
     /**
@@ -1321,12 +1819,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setWeight(QuantitativeValue weight) {
-        this.weight = weight;
+    public void addWeight(QuantitativeValue weight) {
+        this.weight = add(this.weight, weight);
     }
 
     @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
-    private Object size;
+    private List<Object> size;
+
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @return {@link QuantitativeValue} or {@link DefinedTerm} or {@link Text} or {@link SizeSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> List<T> getSizeList() {
+        return (List<T>) size;
+    }
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -1337,7 +1847,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSize() {
-        return (T) size;
+        return (T) getFirst(size);
     }
 
     /**
@@ -1348,8 +1858,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(QuantitativeValue size) {
-        this.size = size;
+    public void addSize(QuantitativeValue size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -1359,8 +1869,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(DefinedTerm size) {
-        this.size = size;
+    public void addSize(DefinedTerm size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -1370,8 +1880,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Text size) {
-        this.size = size;
+    public void addSize(Text size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -1381,11 +1891,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(SizeSpecification size) {
-        this.size = size;
+    public void addSize(SizeSpecification size) {
+        this.size = add(this.size, size);
     }
 
-    private PropertyValue additionalProperty;
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -1394,7 +1914,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return additionalProperty;
+        return getFirst(additionalProperty);
     }
 
     /**
@@ -1403,11 +1923,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = additionalProperty;
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
-    private Text gtin13;
+    private List<Text> gtin13;
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin13List() {
+        return gtin13;
+    }
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1417,7 +1948,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin13() {
-        return gtin13;
+        return getFirst(gtin13);
     }
 
     /**
@@ -1427,11 +1958,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin13(Text gtin13) {
-        this.gtin13 = gtin13;
+    public void addGtin13(Text gtin13) {
+        this.gtin13 = add(this.gtin13, gtin13);
     }
 
-    private Review reviews;
+    private List<Review> reviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
 
     /**
      * Review of the item.
@@ -1440,7 +1981,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Review getReviews() {
-        return reviews;
+        return getFirst(reviews);
     }
 
     /**
@@ -1449,11 +1990,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review reviews) {
-        this.reviews = reviews;
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
-    private Boolean isFamilyFriendly;
+    private List<Boolean> isFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsFamilyFriendlyList() {
+        return isFamilyFriendly;
+    }
 
     /**
      * Indicates whether this content is family friendly.
@@ -1462,7 +2013,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Boolean getIsFamilyFriendly() {
-        return isFamilyFriendly;
+        return getFirst(isFamilyFriendly);
     }
 
     /**
@@ -1471,12 +2022,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param isFamilyFriendly Boolean value to set.
      */
     @Override
-    public void setIsFamilyFriendly(Boolean isFamilyFriendly) {
-        this.isFamilyFriendly = isFamilyFriendly;
+    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
     }
 
     @JsonLdFieldTypes({ Service.class, Product.class })
-    private Object isRelatedTo;
+    private List<Object> isRelatedTo;
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsRelatedToList() {
+        return (List<T>) isRelatedTo;
+    }
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -1486,7 +2048,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsRelatedTo() {
-        return (T) isRelatedTo;
+        return (T) getFirst(isRelatedTo);
     }
 
     /**
@@ -1496,8 +2058,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Service isRelatedTo) {
-        this.isRelatedTo = isRelatedTo;
+    public void addIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
     }
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -1506,12 +2068,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Product isRelatedTo) {
-        this.isRelatedTo = isRelatedTo;
+    public void addIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1520,7 +2092,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -1529,8 +2101,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1538,11 +2110,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -1551,7 +2133,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -1560,11 +2142,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -1573,7 +2165,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -1582,11 +2174,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1595,7 +2197,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -1604,12 +2206,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1618,7 +2230,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -1627,8 +2239,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1636,11 +2248,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -1649,7 +2271,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -1658,11 +2280,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -1671,7 +2303,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -1680,12 +2312,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1695,7 +2338,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -1705,8 +2348,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -1715,11 +2358,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1728,7 +2381,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -1737,11 +2390,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1750,7 +2413,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -1759,11 +2422,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1772,7 +2445,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -1781,12 +2454,23 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1796,7 +2480,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1806,8 +2490,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1816,8 +2500,8 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1826,7 +2510,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

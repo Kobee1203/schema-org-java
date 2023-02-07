@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.

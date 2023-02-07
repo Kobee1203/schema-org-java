@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.AdministrativeArea;
 
 /**
@@ -21,6 +22,14 @@ public interface DrugLegalStatus extends MedicalIntangible {
      * @return {@link AdministrativeArea}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<AdministrativeArea> getApplicableLocationList();
+
+    /**
+     * The location in which the status applies.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     AdministrativeArea getApplicableLocation();
 
     /**
@@ -29,5 +38,5 @@ public interface DrugLegalStatus extends MedicalIntangible {
      * @param applicableLocation AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setApplicableLocation(AdministrativeArea applicableLocation);
+    void addApplicableLocation(AdministrativeArea applicableLocation);
 }

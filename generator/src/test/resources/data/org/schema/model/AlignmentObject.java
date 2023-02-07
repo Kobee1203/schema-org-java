@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
@@ -23,6 +24,13 @@ public interface AlignmentObject extends Intangible {
      *
      * @return {@link Text}
      */
+    List<Text> getAlignmentTypeList();
+
+    /**
+     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+     *
+     * @return {@link Text}
+     */
     Text getAlignmentType();
 
     /**
@@ -30,7 +38,14 @@ public interface AlignmentObject extends Intangible {
      *
      * @param alignmentType Text value to set.
      */
-    void setAlignmentType(Text alignmentType);
+    void addAlignmentType(Text alignmentType);
+
+    /**
+     * The framework to which the resource being described is aligned.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEducationalFrameworkList();
 
     /**
      * The framework to which the resource being described is aligned.
@@ -44,7 +59,14 @@ public interface AlignmentObject extends Intangible {
      *
      * @param educationalFramework Text value to set.
      */
-    void setEducationalFramework(Text educationalFramework);
+    void addEducationalFramework(Text educationalFramework);
+
+    /**
+     * The description of a node in an established educational framework.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTargetDescriptionList();
 
     /**
      * The description of a node in an established educational framework.
@@ -58,7 +80,14 @@ public interface AlignmentObject extends Intangible {
      *
      * @param targetDescription Text value to set.
      */
-    void setTargetDescription(Text targetDescription);
+    void addTargetDescription(Text targetDescription);
+
+    /**
+     * The name of a node in an established educational framework.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTargetNameList();
 
     /**
      * The name of a node in an established educational framework.
@@ -72,7 +101,14 @@ public interface AlignmentObject extends Intangible {
      *
      * @param targetName Text value to set.
      */
-    void setTargetName(Text targetName);
+    void addTargetName(Text targetName);
+
+    /**
+     * The URL of a node in an established educational framework.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getTargetUrlList();
 
     /**
      * The URL of a node in an established educational framework.
@@ -86,5 +122,5 @@ public interface AlignmentObject extends Intangible {
      *
      * @param targetUrl URL value to set.
      */
-    void setTargetUrl(URL targetUrl);
+    void addTargetUrl(URL targetUrl);
 }

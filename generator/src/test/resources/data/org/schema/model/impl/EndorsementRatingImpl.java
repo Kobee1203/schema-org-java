@@ -17,6 +17,8 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.Rating;
 import org.schema.model.EndorsementRating;
@@ -35,7 +37,18 @@ import org.schema.model.EndorsementRating;
 @JsonLdTypeName("EndorsementRating")
 public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EndorsementRating {
 
-    private Text reviewAspect;
+    private List<Text> reviewAspect;
+
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     */
+    @Override
+    public List<Text> getReviewAspectList() {
+        return reviewAspect;
+    }
 
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
@@ -45,7 +58,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getReviewAspect() {
-        return reviewAspect;
+        return getFirst(reviewAspect);
     }
 
     /**
@@ -55,11 +68,22 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
     @Override
-    public void setReviewAspect(Text reviewAspect) {
-        this.reviewAspect = reviewAspect;
+    public void addReviewAspect(Text reviewAspect) {
+        this.reviewAspect = add(this.reviewAspect, reviewAspect);
     }
 
-    private Object worstRating;
+    @JsonLdFieldTypes({ Text.class, Number.class })
+    private List<Object> worstRating;
+
+    /**
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> List<T> getWorstRatingList() {
+        return (List<T>) worstRating;
+    }
 
     /**
      * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
@@ -68,7 +92,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getWorstRating() {
-        return (T) worstRating;
+        return (T) getFirst(worstRating);
     }
 
     /**
@@ -77,8 +101,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param worstRating Text value to set.
      */
     @Override
-    public void setWorstRating(Text worstRating) {
-        this.worstRating = worstRating;
+    public void addWorstRating(Text worstRating) {
+        this.worstRating = add(this.worstRating, worstRating);
     }
     /**
      * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
@@ -86,11 +110,22 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param worstRating Number value to set.
      */
     @Override
-    public void setWorstRating(Number worstRating) {
-        this.worstRating = worstRating;
+    public void addWorstRating(Number worstRating) {
+        this.worstRating = add(this.worstRating, worstRating);
     }
 
-    private Object author;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> author;
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getAuthorList() {
+        return (List<T>) author;
+    }
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -99,7 +134,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAuthor() {
-        return (T) author;
+        return (T) getFirst(author);
     }
 
     /**
@@ -108,8 +143,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param author Person value to set.
      */
     @Override
-    public void setAuthor(Person author) {
-        this.author = author;
+    public void addAuthor(Person author) {
+        this.author = add(this.author, author);
     }
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -117,11 +152,22 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param author Organization value to set.
      */
     @Override
-    public void setAuthor(Organization author) {
-        this.author = author;
+    public void addAuthor(Organization author) {
+        this.author = add(this.author, author);
     }
 
-    private Object bestRating;
+    @JsonLdFieldTypes({ Text.class, Number.class })
+    private List<Object> bestRating;
+
+    /**
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> List<T> getBestRatingList() {
+        return (List<T>) bestRating;
+    }
 
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
@@ -130,7 +176,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getBestRating() {
-        return (T) bestRating;
+        return (T) getFirst(bestRating);
     }
 
     /**
@@ -139,8 +185,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param bestRating Text value to set.
      */
     @Override
-    public void setBestRating(Text bestRating) {
-        this.bestRating = bestRating;
+    public void addBestRating(Text bestRating) {
+        this.bestRating = add(this.bestRating, bestRating);
     }
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
@@ -148,11 +194,22 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param bestRating Number value to set.
      */
     @Override
-    public void setBestRating(Number bestRating) {
-        this.bestRating = bestRating;
+    public void addBestRating(Number bestRating) {
+        this.bestRating = add(this.bestRating, bestRating);
     }
 
-    private Object ratingValue;
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> ratingValue;
+
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getRatingValueList() {
+        return (List<T>) ratingValue;
+    }
 
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -161,7 +218,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getRatingValue() {
-        return (T) ratingValue;
+        return (T) getFirst(ratingValue);
     }
 
     /**
@@ -170,8 +227,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param ratingValue Number value to set.
      */
     @Override
-    public void setRatingValue(Number ratingValue) {
-        this.ratingValue = ratingValue;
+    public void addRatingValue(Number ratingValue) {
+        this.ratingValue = add(this.ratingValue, ratingValue);
     }
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -179,11 +236,23 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param ratingValue Text value to set.
      */
     @Override
-    public void setRatingValue(Text ratingValue) {
-        this.ratingValue = ratingValue;
+    public void addRatingValue(Text ratingValue) {
+        this.ratingValue = add(this.ratingValue, ratingValue);
     }
 
-    private Text ratingExplanation;
+    private List<Text> ratingExplanation;
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    @Override
+    public List<Text> getRatingExplanationList() {
+        return ratingExplanation;
+    }
 
     /**
      * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
@@ -194,7 +263,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getRatingExplanation() {
-        return ratingExplanation;
+        return getFirst(ratingExplanation);
     }
 
     /**
@@ -205,11 +274,22 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
      */
     @Override
-    public void setRatingExplanation(Text ratingExplanation) {
-        this.ratingExplanation = ratingExplanation;
+    public void addRatingExplanation(Text ratingExplanation) {
+        this.ratingExplanation = add(this.ratingExplanation, ratingExplanation);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -218,7 +298,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -227,8 +307,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -236,11 +316,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -249,7 +339,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -258,11 +348,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -271,7 +371,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -280,11 +380,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -293,7 +403,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -302,11 +412,22 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -315,7 +436,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -324,8 +445,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -333,11 +454,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -346,7 +477,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -355,11 +486,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -368,7 +509,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -377,11 +518,23 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -391,7 +544,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -401,8 +554,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -411,11 +564,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -424,7 +587,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -433,11 +596,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -446,7 +619,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -455,11 +628,21 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -468,7 +651,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -477,11 +660,23 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -491,7 +686,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -501,8 +696,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -511,8 +706,8 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -521,7 +716,7 @@ public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.Js
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.LegalValueLevel;
 
 /**
@@ -25,6 +26,16 @@ public interface LegislationObject extends Legislation, MediaObject {
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
+    List<LegalValueLevel> getLegislationLegalValueList();
+
+    /**
+     * The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a "stronger" legal value than the HTML file of the same act.
+     *
+     * @return {@link LegalValueLevel}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     */
     LegalValueLevel getLegislationLegalValue();
 
     /**
@@ -35,5 +46,5 @@ public interface LegislationObject extends Legislation, MediaObject {
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationLegalValue(LegalValueLevel legislationLegalValue);
+    void addLegislationLegalValue(LegalValueLevel legislationLegalValue);
 }

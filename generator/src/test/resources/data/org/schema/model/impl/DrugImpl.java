@@ -33,6 +33,7 @@ import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.MedicalEntity;
 import org.schema.model.Substance;
 
@@ -45,7 +46,18 @@ import org.schema.model.Substance;
 @JsonLdTypeName("Drug")
 public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Drug {
 
-    private DrugPregnancyCategory pregnancyCategory;
+    private List<DrugPregnancyCategory> pregnancyCategory;
+
+    /**
+     * Pregnancy category of this drug.
+     *
+     * @return {@link DrugPregnancyCategory}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<DrugPregnancyCategory> getPregnancyCategoryList() {
+        return pregnancyCategory;
+    }
 
     /**
      * Pregnancy category of this drug.
@@ -55,7 +67,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DrugPregnancyCategory getPregnancyCategory() {
-        return pregnancyCategory;
+        return getFirst(pregnancyCategory);
     }
 
     /**
@@ -65,11 +77,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPregnancyCategory(DrugPregnancyCategory pregnancyCategory) {
-        this.pregnancyCategory = pregnancyCategory;
+    public void addPregnancyCategory(DrugPregnancyCategory pregnancyCategory) {
+        this.pregnancyCategory = add(this.pregnancyCategory, pregnancyCategory);
     }
 
-    private Text overdosage;
+    private List<Text> overdosage;
+
+    /**
+     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getOverdosageList() {
+        return overdosage;
+    }
 
     /**
      * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
@@ -79,7 +102,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getOverdosage() {
-        return overdosage;
+        return getFirst(overdosage);
     }
 
     /**
@@ -89,12 +112,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setOverdosage(Text overdosage) {
-        this.overdosage = overdosage;
+    public void addOverdosage(Text overdosage) {
+        this.overdosage = add(this.overdosage, overdosage);
     }
 
     @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
-    private Object legalStatus;
+    private List<Object> legalStatus;
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> List<T> getLegalStatusList() {
+        return (List<T>) legalStatus;
+    }
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -104,7 +138,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getLegalStatus() {
-        return (T) legalStatus;
+        return (T) getFirst(legalStatus);
     }
 
     /**
@@ -114,8 +148,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(DrugLegalStatus legalStatus) {
-        this.legalStatus = legalStatus;
+    public void addLegalStatus(DrugLegalStatus legalStatus) {
+        this.legalStatus = add(this.legalStatus, legalStatus);
     }
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -124,8 +158,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Text legalStatus) {
-        this.legalStatus = legalStatus;
+    public void addLegalStatus(Text legalStatus) {
+        this.legalStatus = add(this.legalStatus, legalStatus);
     }
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -134,11 +168,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(MedicalEnumeration legalStatus) {
-        this.legalStatus = legalStatus;
+    public void addLegalStatus(MedicalEnumeration legalStatus) {
+        this.legalStatus = add(this.legalStatus, legalStatus);
     }
 
-    private Text mechanismOfAction;
+    private List<Text> mechanismOfAction;
+
+    /**
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getMechanismOfActionList() {
+        return mechanismOfAction;
+    }
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
@@ -148,7 +193,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getMechanismOfAction() {
-        return mechanismOfAction;
+        return getFirst(mechanismOfAction);
     }
 
     /**
@@ -158,11 +203,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMechanismOfAction(Text mechanismOfAction) {
-        this.mechanismOfAction = mechanismOfAction;
+    public void addMechanismOfAction(Text mechanismOfAction) {
+        this.mechanismOfAction = add(this.mechanismOfAction, mechanismOfAction);
     }
 
-    private Text clinicalPharmacology;
+    private List<Text> clinicalPharmacology;
+
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getClinicalPharmacologyList() {
+        return clinicalPharmacology;
+    }
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -172,7 +228,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getClinicalPharmacology() {
-        return clinicalPharmacology;
+        return getFirst(clinicalPharmacology);
     }
 
     /**
@@ -182,11 +238,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setClinicalPharmacology(Text clinicalPharmacology) {
-        this.clinicalPharmacology = clinicalPharmacology;
+    public void addClinicalPharmacology(Text clinicalPharmacology) {
+        this.clinicalPharmacology = add(this.clinicalPharmacology, clinicalPharmacology);
     }
 
-    private Text rxcui;
+    private List<Text> rxcui;
+
+    /**
+     * The RxCUI drug identifier from RXNORM.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public List<Text> getRxcuiList() {
+        return rxcui;
+    }
 
     /**
      * The RxCUI drug identifier from RXNORM.
@@ -197,7 +265,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getRxcui() {
-        return rxcui;
+        return getFirst(rxcui);
     }
 
     /**
@@ -208,11 +276,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     @Override
-    public void setRxcui(Text rxcui) {
-        this.rxcui = rxcui;
+    public void addRxcui(Text rxcui) {
+        this.rxcui = add(this.rxcui, rxcui);
     }
 
-    private Drug interactingDrug;
+    private List<Drug> interactingDrug;
+
+    /**
+     * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Drug> getInteractingDrugList() {
+        return interactingDrug;
+    }
 
     /**
      * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
@@ -222,7 +301,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Drug getInteractingDrug() {
-        return interactingDrug;
+        return getFirst(interactingDrug);
     }
 
     /**
@@ -232,11 +311,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setInteractingDrug(Drug interactingDrug) {
-        this.interactingDrug = interactingDrug;
+    public void addInteractingDrug(Drug interactingDrug) {
+        this.interactingDrug = add(this.interactingDrug, interactingDrug);
     }
 
-    private Text dosageForm;
+    private List<Text> dosageForm;
+
+    /**
+     * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getDosageFormList() {
+        return dosageForm;
+    }
 
     /**
      * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
@@ -246,7 +336,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDosageForm() {
-        return dosageForm;
+        return getFirst(dosageForm);
     }
 
     /**
@@ -256,11 +346,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDosageForm(Text dosageForm) {
-        this.dosageForm = dosageForm;
+    public void addDosageForm(Text dosageForm) {
+        this.dosageForm = add(this.dosageForm, dosageForm);
     }
 
-    private URL labelDetails;
+    private List<URL> labelDetails;
+
+    /**
+     * Link to the drug's label details.
+     *
+     * @return {@link URL}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<URL> getLabelDetailsList() {
+        return labelDetails;
+    }
 
     /**
      * Link to the drug's label details.
@@ -270,7 +371,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getLabelDetails() {
-        return labelDetails;
+        return getFirst(labelDetails);
     }
 
     /**
@@ -280,11 +381,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLabelDetails(URL labelDetails) {
-        this.labelDetails = labelDetails;
+    public void addLabelDetails(URL labelDetails) {
+        this.labelDetails = add(this.labelDetails, labelDetails);
     }
 
-    private MaximumDoseSchedule maximumIntake;
+    private List<MaximumDoseSchedule> maximumIntake;
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MaximumDoseSchedule> getMaximumIntakeList() {
+        return maximumIntake;
+    }
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -294,7 +406,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MaximumDoseSchedule getMaximumIntake() {
-        return maximumIntake;
+        return getFirst(maximumIntake);
     }
 
     /**
@@ -304,11 +416,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMaximumIntake(MaximumDoseSchedule maximumIntake) {
-        this.maximumIntake = maximumIntake;
+    public void addMaximumIntake(MaximumDoseSchedule maximumIntake) {
+        this.maximumIntake = add(this.maximumIntake, maximumIntake);
     }
 
-    private Text activeIngredient;
+    private List<Text> activeIngredient;
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getActiveIngredientList() {
+        return activeIngredient;
+    }
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -318,7 +441,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getActiveIngredient() {
-        return activeIngredient;
+        return getFirst(activeIngredient);
     }
 
     /**
@@ -328,11 +451,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setActiveIngredient(Text activeIngredient) {
-        this.activeIngredient = activeIngredient;
+    public void addActiveIngredient(Text activeIngredient) {
+        this.activeIngredient = add(this.activeIngredient, activeIngredient);
     }
 
-    private Drug relatedDrug;
+    private List<Drug> relatedDrug;
+
+    /**
+     * Any other drug related to this one, for example commonly-prescribed alternatives.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Drug> getRelatedDrugList() {
+        return relatedDrug;
+    }
 
     /**
      * Any other drug related to this one, for example commonly-prescribed alternatives.
@@ -342,7 +476,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Drug getRelatedDrug() {
-        return relatedDrug;
+        return getFirst(relatedDrug);
     }
 
     /**
@@ -352,11 +486,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelatedDrug(Drug relatedDrug) {
-        this.relatedDrug = relatedDrug;
+    public void addRelatedDrug(Drug relatedDrug) {
+        this.relatedDrug = add(this.relatedDrug, relatedDrug);
     }
 
-    private Text administrationRoute;
+    private List<Text> administrationRoute;
+
+    /**
+     * A route by which this drug may be administered, e.g. 'oral'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getAdministrationRouteList() {
+        return administrationRoute;
+    }
 
     /**
      * A route by which this drug may be administered, e.g. 'oral'.
@@ -366,7 +511,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAdministrationRoute() {
-        return administrationRoute;
+        return getFirst(administrationRoute);
     }
 
     /**
@@ -376,11 +521,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAdministrationRoute(Text administrationRoute) {
-        this.administrationRoute = administrationRoute;
+    public void addAdministrationRoute(Text administrationRoute) {
+        this.administrationRoute = add(this.administrationRoute, administrationRoute);
     }
 
-    private Text drugUnit;
+    private List<Text> drugUnit;
+
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getDrugUnitList() {
+        return drugUnit;
+    }
 
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
@@ -390,7 +546,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDrugUnit() {
-        return drugUnit;
+        return getFirst(drugUnit);
     }
 
     /**
@@ -400,11 +556,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDrugUnit(Text drugUnit) {
-        this.drugUnit = drugUnit;
+    public void addDrugUnit(Text drugUnit) {
+        this.drugUnit = add(this.drugUnit, drugUnit);
     }
 
-    private Text foodWarning;
+    private List<Text> foodWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getFoodWarningList() {
+        return foodWarning;
+    }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
@@ -414,7 +581,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getFoodWarning() {
-        return foodWarning;
+        return getFirst(foodWarning);
     }
 
     /**
@@ -424,12 +591,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setFoodWarning(Text foodWarning) {
-        this.foodWarning = foodWarning;
+    public void addFoodWarning(Text foodWarning) {
+        this.foodWarning = add(this.foodWarning, foodWarning);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class })
-    private Object warning;
+    private List<Object> warning;
+
+    /**
+     * Any FDA or other warnings about the drug (text or URL).
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> List<T> getWarningList() {
+        return (List<T>) warning;
+    }
 
     /**
      * Any FDA or other warnings about the drug (text or URL).
@@ -439,7 +617,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getWarning() {
-        return (T) warning;
+        return (T) getFirst(warning);
     }
 
     /**
@@ -449,8 +627,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setWarning(URL warning) {
-        this.warning = warning;
+    public void addWarning(URL warning) {
+        this.warning = add(this.warning, warning);
     }
     /**
      * Any FDA or other warnings about the drug (text or URL).
@@ -459,12 +637,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setWarning(Text warning) {
-        this.warning = warning;
+    public void addWarning(Text warning) {
+        this.warning = add(this.warning, warning);
     }
 
     @JsonLdFieldTypes({ DrugPrescriptionStatus.class, Text.class })
-    private Object prescriptionStatus;
+    private List<Object> prescriptionStatus;
+
+    /**
+     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
+     *
+     * @return {@link DrugPrescriptionStatus} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> List<T> getPrescriptionStatusList() {
+        return (List<T>) prescriptionStatus;
+    }
 
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
@@ -474,7 +663,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getPrescriptionStatus() {
-        return (T) prescriptionStatus;
+        return (T) getFirst(prescriptionStatus);
     }
 
     /**
@@ -484,8 +673,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPrescriptionStatus(DrugPrescriptionStatus prescriptionStatus) {
-        this.prescriptionStatus = prescriptionStatus;
+    public void addPrescriptionStatus(DrugPrescriptionStatus prescriptionStatus) {
+        this.prescriptionStatus = add(this.prescriptionStatus, prescriptionStatus);
     }
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
@@ -494,11 +683,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPrescriptionStatus(Text prescriptionStatus) {
-        this.prescriptionStatus = prescriptionStatus;
+    public void addPrescriptionStatus(Text prescriptionStatus) {
+        this.prescriptionStatus = add(this.prescriptionStatus, prescriptionStatus);
     }
 
-    private Text proprietaryName;
+    private List<Text> proprietaryName;
+
+    /**
+     * Proprietary name given to the diet plan, typically by its originator or creator.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getProprietaryNameList() {
+        return proprietaryName;
+    }
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
@@ -508,7 +708,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getProprietaryName() {
-        return proprietaryName;
+        return getFirst(proprietaryName);
     }
 
     /**
@@ -518,11 +718,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setProprietaryName(Text proprietaryName) {
-        this.proprietaryName = proprietaryName;
+    public void addProprietaryName(Text proprietaryName) {
+        this.proprietaryName = add(this.proprietaryName, proprietaryName);
     }
 
-    private DrugClass drugClass;
+    private List<DrugClass> drugClass;
+
+    /**
+     * The class of drug this belongs to (e.g., statins).
+     *
+     * @return {@link DrugClass}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<DrugClass> getDrugClassList() {
+        return drugClass;
+    }
 
     /**
      * The class of drug this belongs to (e.g., statins).
@@ -532,7 +743,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DrugClass getDrugClass() {
-        return drugClass;
+        return getFirst(drugClass);
     }
 
     /**
@@ -542,11 +753,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDrugClass(DrugClass drugClass) {
-        this.drugClass = drugClass;
+    public void addDrugClass(DrugClass drugClass) {
+        this.drugClass = add(this.drugClass, drugClass);
     }
 
-    private URL prescribingInfo;
+    private List<URL> prescribingInfo;
+
+    /**
+     * Link to prescribing information for the drug.
+     *
+     * @return {@link URL}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<URL> getPrescribingInfoList() {
+        return prescribingInfo;
+    }
 
     /**
      * Link to prescribing information for the drug.
@@ -556,7 +778,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getPrescribingInfo() {
-        return prescribingInfo;
+        return getFirst(prescribingInfo);
     }
 
     /**
@@ -566,11 +788,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPrescribingInfo(URL prescribingInfo) {
-        this.prescribingInfo = prescribingInfo;
+    public void addPrescribingInfo(URL prescribingInfo) {
+        this.prescribingInfo = add(this.prescribingInfo, prescribingInfo);
     }
 
-    private HealthInsurancePlan includedInHealthInsurancePlan;
+    private List<HealthInsurancePlan> includedInHealthInsurancePlan;
+
+    /**
+     * The insurance plans that cover this drug.
+     *
+     * @return {@link HealthInsurancePlan}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public List<HealthInsurancePlan> getIncludedInHealthInsurancePlanList() {
+        return includedInHealthInsurancePlan;
+    }
 
     /**
      * The insurance plans that cover this drug.
@@ -581,7 +815,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public HealthInsurancePlan getIncludedInHealthInsurancePlan() {
-        return includedInHealthInsurancePlan;
+        return getFirst(includedInHealthInsurancePlan);
     }
 
     /**
@@ -592,11 +826,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     @Override
-    public void setIncludedInHealthInsurancePlan(HealthInsurancePlan includedInHealthInsurancePlan) {
-        this.includedInHealthInsurancePlan = includedInHealthInsurancePlan;
+    public void addIncludedInHealthInsurancePlan(HealthInsurancePlan includedInHealthInsurancePlan) {
+        this.includedInHealthInsurancePlan = add(this.includedInHealthInsurancePlan, includedInHealthInsurancePlan);
     }
 
-    private Text nonProprietaryName;
+    private List<Text> nonProprietaryName;
+
+    /**
+     * The generic name of this drug or supplement.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getNonProprietaryNameList() {
+        return nonProprietaryName;
+    }
 
     /**
      * The generic name of this drug or supplement.
@@ -606,7 +851,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getNonProprietaryName() {
-        return nonProprietaryName;
+        return getFirst(nonProprietaryName);
     }
 
     /**
@@ -616,11 +861,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setNonProprietaryName(Text nonProprietaryName) {
-        this.nonProprietaryName = nonProprietaryName;
+    public void addNonProprietaryName(Text nonProprietaryName) {
+        this.nonProprietaryName = add(this.nonProprietaryName, nonProprietaryName);
     }
 
-    private Organization manufacturer;
+    private List<Organization> manufacturer;
+
+    /**
+     * The manufacturer of the product.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getManufacturerList() {
+        return manufacturer;
+    }
 
     /**
      * The manufacturer of the product.
@@ -629,7 +884,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Organization getManufacturer() {
-        return manufacturer;
+        return getFirst(manufacturer);
     }
 
     /**
@@ -638,11 +893,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param manufacturer Organization value to set.
      */
     @Override
-    public void setManufacturer(Organization manufacturer) {
-        this.manufacturer = manufacturer;
+    public void addManufacturer(Organization manufacturer) {
+        this.manufacturer = add(this.manufacturer, manufacturer);
     }
 
-    private Boolean isProprietary;
+    private List<Boolean> isProprietary;
+
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Boolean> getIsProprietaryList() {
+        return isProprietary;
+    }
 
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
@@ -652,7 +918,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getIsProprietary() {
-        return isProprietary;
+        return getFirst(isProprietary);
     }
 
     /**
@@ -662,11 +928,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setIsProprietary(Boolean isProprietary) {
-        this.isProprietary = isProprietary;
+    public void addIsProprietary(Boolean isProprietary) {
+        this.isProprietary = add(this.isProprietary, isProprietary);
     }
 
-    private Text clincalPharmacology;
+    private List<Text> clincalPharmacology;
+
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getClincalPharmacologyList() {
+        return clincalPharmacology;
+    }
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -676,7 +953,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getClincalPharmacology() {
-        return clincalPharmacology;
+        return getFirst(clincalPharmacology);
     }
 
     /**
@@ -686,11 +963,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setClincalPharmacology(Text clincalPharmacology) {
-        this.clincalPharmacology = clincalPharmacology;
+    public void addClincalPharmacology(Text clincalPharmacology) {
+        this.clincalPharmacology = add(this.clincalPharmacology, clincalPharmacology);
     }
 
-    private Boolean isAvailableGenerically;
+    private List<Boolean> isAvailableGenerically;
+
+    /**
+     * True if the drug is available in a generic form (regardless of name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Boolean> getIsAvailableGenericallyList() {
+        return isAvailableGenerically;
+    }
 
     /**
      * True if the drug is available in a generic form (regardless of name).
@@ -700,7 +988,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getIsAvailableGenerically() {
-        return isAvailableGenerically;
+        return getFirst(isAvailableGenerically);
     }
 
     /**
@@ -710,11 +998,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setIsAvailableGenerically(Boolean isAvailableGenerically) {
-        this.isAvailableGenerically = isAvailableGenerically;
+    public void addIsAvailableGenerically(Boolean isAvailableGenerically) {
+        this.isAvailableGenerically = add(this.isAvailableGenerically, isAvailableGenerically);
     }
 
-    private Text breastfeedingWarning;
+    private List<Text> breastfeedingWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getBreastfeedingWarningList() {
+        return breastfeedingWarning;
+    }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
@@ -724,7 +1023,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getBreastfeedingWarning() {
-        return breastfeedingWarning;
+        return getFirst(breastfeedingWarning);
     }
 
     /**
@@ -734,11 +1033,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setBreastfeedingWarning(Text breastfeedingWarning) {
-        this.breastfeedingWarning = breastfeedingWarning;
+    public void addBreastfeedingWarning(Text breastfeedingWarning) {
+        this.breastfeedingWarning = add(this.breastfeedingWarning, breastfeedingWarning);
     }
 
-    private Text pregnancyWarning;
+    private List<Text> pregnancyWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getPregnancyWarningList() {
+        return pregnancyWarning;
+    }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
@@ -748,7 +1058,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getPregnancyWarning() {
-        return pregnancyWarning;
+        return getFirst(pregnancyWarning);
     }
 
     /**
@@ -758,11 +1068,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPregnancyWarning(Text pregnancyWarning) {
-        this.pregnancyWarning = pregnancyWarning;
+    public void addPregnancyWarning(Text pregnancyWarning) {
+        this.pregnancyWarning = add(this.pregnancyWarning, pregnancyWarning);
     }
 
-    private Text alcoholWarning;
+    private List<Text> alcoholWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getAlcoholWarningList() {
+        return alcoholWarning;
+    }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
@@ -772,7 +1093,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAlcoholWarning() {
-        return alcoholWarning;
+        return getFirst(alcoholWarning);
     }
 
     /**
@@ -782,11 +1103,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAlcoholWarning(Text alcoholWarning) {
-        this.alcoholWarning = alcoholWarning;
+    public void addAlcoholWarning(Text alcoholWarning) {
+        this.alcoholWarning = add(this.alcoholWarning, alcoholWarning);
     }
 
-    private DoseSchedule doseSchedule;
+    private List<DoseSchedule> doseSchedule;
+
+    /**
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     *
+     * @return {@link DoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<DoseSchedule> getDoseScheduleList() {
+        return doseSchedule;
+    }
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
@@ -796,7 +1128,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DoseSchedule getDoseSchedule() {
-        return doseSchedule;
+        return getFirst(doseSchedule);
     }
 
     /**
@@ -806,11 +1138,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDoseSchedule(DoseSchedule doseSchedule) {
-        this.doseSchedule = doseSchedule;
+    public void addDoseSchedule(DoseSchedule doseSchedule) {
+        this.doseSchedule = add(this.doseSchedule, doseSchedule);
     }
 
-    private DrugStrength availableStrength;
+    private List<DrugStrength> availableStrength;
+
+    /**
+     * An available dosage strength for the drug.
+     *
+     * @return {@link DrugStrength}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<DrugStrength> getAvailableStrengthList() {
+        return availableStrength;
+    }
 
     /**
      * An available dosage strength for the drug.
@@ -820,7 +1163,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DrugStrength getAvailableStrength() {
-        return availableStrength;
+        return getFirst(availableStrength);
     }
 
     /**
@@ -830,11 +1173,24 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAvailableStrength(DrugStrength availableStrength) {
-        this.availableStrength = availableStrength;
+    public void addAvailableStrength(DrugStrength availableStrength) {
+        this.availableStrength = add(this.availableStrength, availableStrength);
     }
 
-    private Grant funding;
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -846,7 +1202,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Grant getFunding() {
-        return funding;
+        return getFirst(funding);
     }
 
     /**
@@ -858,11 +1214,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant funding) {
-        this.funding = funding;
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
-    private MedicalStudy study;
+    private List<MedicalStudy> study;
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalStudy> getStudyList() {
+        return study;
+    }
 
     /**
      * A medical study or trial related to this entity.
@@ -872,7 +1239,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalStudy getStudy() {
-        return study;
+        return getFirst(study);
     }
 
     /**
@@ -882,11 +1249,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setStudy(MedicalStudy study) {
-        this.study = study;
+    public void addStudy(MedicalStudy study) {
+        this.study = add(this.study, study);
     }
 
-    private MedicalCode code;
+    private List<MedicalCode> code;
+
+    /**
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     *
+     * @return {@link MedicalCode}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalCode> getCodeList() {
+        return code;
+    }
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
@@ -896,7 +1274,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalCode getCode() {
-        return code;
+        return getFirst(code);
     }
 
     /**
@@ -906,11 +1284,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCode(MedicalCode code) {
-        this.code = code;
+    public void addCode(MedicalCode code) {
+        this.code = add(this.code, code);
     }
 
-    private MedicalGuideline guideline;
+    private List<MedicalGuideline> guideline;
+
+    /**
+     * A medical guideline related to this entity.
+     *
+     * @return {@link MedicalGuideline}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalGuideline> getGuidelineList() {
+        return guideline;
+    }
 
     /**
      * A medical guideline related to this entity.
@@ -920,7 +1309,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalGuideline getGuideline() {
-        return guideline;
+        return getFirst(guideline);
     }
 
     /**
@@ -930,11 +1319,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setGuideline(MedicalGuideline guideline) {
-        this.guideline = guideline;
+    public void addGuideline(MedicalGuideline guideline) {
+        this.guideline = add(this.guideline, guideline);
     }
 
-    private Organization recognizingAuthority;
+    private List<Organization> recognizingAuthority;
+
+    /**
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Organization> getRecognizingAuthorityList() {
+        return recognizingAuthority;
+    }
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
@@ -944,7 +1344,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Organization getRecognizingAuthority() {
-        return recognizingAuthority;
+        return getFirst(recognizingAuthority);
     }
 
     /**
@@ -954,11 +1354,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization recognizingAuthority) {
-        this.recognizingAuthority = recognizingAuthority;
+    public void addRecognizingAuthority(Organization recognizingAuthority) {
+        this.recognizingAuthority = add(this.recognizingAuthority, recognizingAuthority);
     }
 
-    private MedicineSystem medicineSystem;
+    private List<MedicineSystem> medicineSystem;
+
+    /**
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     *
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicineSystem> getMedicineSystemList() {
+        return medicineSystem;
+    }
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -968,7 +1379,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicineSystem getMedicineSystem() {
-        return medicineSystem;
+        return getFirst(medicineSystem);
     }
 
     /**
@@ -978,11 +1389,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMedicineSystem(MedicineSystem medicineSystem) {
-        this.medicineSystem = medicineSystem;
+    public void addMedicineSystem(MedicineSystem medicineSystem) {
+        this.medicineSystem = add(this.medicineSystem, medicineSystem);
     }
 
-    private MedicalSpecialty relevantSpecialty;
+    private List<MedicalSpecialty> relevantSpecialty;
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalSpecialty> getRelevantSpecialtyList() {
+        return relevantSpecialty;
+    }
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
@@ -992,7 +1414,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalSpecialty getRelevantSpecialty() {
-        return relevantSpecialty;
+        return getFirst(relevantSpecialty);
     }
 
     /**
@@ -1002,12 +1424,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelevantSpecialty(MedicalSpecialty relevantSpecialty) {
-        this.relevantSpecialty = relevantSpecialty;
+    public void addRelevantSpecialty(MedicalSpecialty relevantSpecialty) {
+        this.relevantSpecialty = add(this.relevantSpecialty, relevantSpecialty);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1016,7 +1448,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -1025,8 +1457,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1034,11 +1466,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -1047,7 +1489,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -1056,11 +1498,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -1069,7 +1521,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -1078,11 +1530,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1091,7 +1553,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -1100,12 +1562,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1114,7 +1586,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -1123,8 +1595,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1132,11 +1604,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -1145,7 +1627,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -1154,11 +1636,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -1167,7 +1659,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -1176,12 +1668,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1191,7 +1694,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -1201,8 +1704,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -1211,11 +1714,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1224,7 +1737,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -1233,11 +1746,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1246,7 +1769,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -1255,11 +1778,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1268,7 +1801,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -1277,12 +1810,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1292,7 +1836,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1302,8 +1846,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1312,8 +1856,8 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1322,7 +1866,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

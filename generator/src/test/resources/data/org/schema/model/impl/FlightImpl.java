@@ -28,6 +28,8 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.Flight;
 
@@ -39,7 +41,18 @@ import org.schema.model.Flight;
 @JsonLdTypeName("Flight")
 public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Flight {
 
-    private Object flightDistance;
+    @JsonLdFieldTypes({ Distance.class, Text.class })
+    private List<Object> flightDistance;
+
+    /**
+     * The distance of the flight.
+     *
+     * @return {@link Distance} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getFlightDistanceList() {
+        return (List<T>) flightDistance;
+    }
 
     /**
      * The distance of the flight.
@@ -48,7 +61,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getFlightDistance() {
-        return (T) flightDistance;
+        return (T) getFirst(flightDistance);
     }
 
     /**
@@ -57,8 +70,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param flightDistance Distance value to set.
      */
     @Override
-    public void setFlightDistance(Distance flightDistance) {
-        this.flightDistance = flightDistance;
+    public void addFlightDistance(Distance flightDistance) {
+        this.flightDistance = add(this.flightDistance, flightDistance);
     }
     /**
      * The distance of the flight.
@@ -66,11 +79,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param flightDistance Text value to set.
      */
     @Override
-    public void setFlightDistance(Text flightDistance) {
-        this.flightDistance = flightDistance;
+    public void addFlightDistance(Text flightDistance) {
+        this.flightDistance = add(this.flightDistance, flightDistance);
     }
 
-    private DateTime webCheckinTime;
+    private List<DateTime> webCheckinTime;
+
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public List<DateTime> getWebCheckinTimeList() {
+        return webCheckinTime;
+    }
 
     /**
      * The time when a passenger can check into the flight online.
@@ -79,7 +102,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public DateTime getWebCheckinTime() {
-        return webCheckinTime;
+        return getFirst(webCheckinTime);
     }
 
     /**
@@ -88,11 +111,22 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param webCheckinTime DateTime value to set.
      */
     @Override
-    public void setWebCheckinTime(DateTime webCheckinTime) {
-        this.webCheckinTime = webCheckinTime;
+    public void addWebCheckinTime(DateTime webCheckinTime) {
+        this.webCheckinTime = add(this.webCheckinTime, webCheckinTime);
     }
 
-    private Object aircraft;
+    @JsonLdFieldTypes({ Vehicle.class, Text.class })
+    private List<Object> aircraft;
+
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @return {@link Vehicle} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAircraftList() {
+        return (List<T>) aircraft;
+    }
 
     /**
      * The kind of aircraft (e.g., "Boeing 747").
@@ -101,7 +135,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getAircraft() {
-        return (T) aircraft;
+        return (T) getFirst(aircraft);
     }
 
     /**
@@ -110,8 +144,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param aircraft Vehicle value to set.
      */
     @Override
-    public void setAircraft(Vehicle aircraft) {
-        this.aircraft = aircraft;
+    public void addAircraft(Vehicle aircraft) {
+        this.aircraft = add(this.aircraft, aircraft);
     }
     /**
      * The kind of aircraft (e.g., "Boeing 747").
@@ -119,11 +153,22 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param aircraft Text value to set.
      */
     @Override
-    public void setAircraft(Text aircraft) {
-        this.aircraft = aircraft;
+    public void addAircraft(Text aircraft) {
+        this.aircraft = add(this.aircraft, aircraft);
     }
 
-    private Object seller;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> seller;
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getSellerList() {
+        return (List<T>) seller;
+    }
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -132,7 +177,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getSeller() {
-        return (T) seller;
+        return (T) getFirst(seller);
     }
 
     /**
@@ -141,8 +186,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param seller Organization value to set.
      */
     @Override
-    public void setSeller(Organization seller) {
-        this.seller = seller;
+    public void addSeller(Organization seller) {
+        this.seller = add(this.seller, seller);
     }
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -150,11 +195,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param seller Person value to set.
      */
     @Override
-    public void setSeller(Person seller) {
-        this.seller = seller;
+    public void addSeller(Person seller) {
+        this.seller = add(this.seller, seller);
     }
 
-    private Airport arrivalAirport;
+    private List<Airport> arrivalAirport;
+
+    /**
+     * The airport where the flight terminates.
+     *
+     * @return {@link Airport}
+     */
+    @Override
+    public List<Airport> getArrivalAirportList() {
+        return arrivalAirport;
+    }
 
     /**
      * The airport where the flight terminates.
@@ -163,7 +218,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Airport getArrivalAirport() {
-        return arrivalAirport;
+        return getFirst(arrivalAirport);
     }
 
     /**
@@ -172,11 +227,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param arrivalAirport Airport value to set.
      */
     @Override
-    public void setArrivalAirport(Airport arrivalAirport) {
-        this.arrivalAirport = arrivalAirport;
+    public void addArrivalAirport(Airport arrivalAirport) {
+        this.arrivalAirport = add(this.arrivalAirport, arrivalAirport);
     }
 
-    private Text arrivalTerminal;
+    private List<Text> arrivalTerminal;
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getArrivalTerminalList() {
+        return arrivalTerminal;
+    }
 
     /**
      * Identifier of the flight's arrival terminal.
@@ -185,7 +250,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getArrivalTerminal() {
-        return arrivalTerminal;
+        return getFirst(arrivalTerminal);
     }
 
     /**
@@ -194,11 +259,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param arrivalTerminal Text value to set.
      */
     @Override
-    public void setArrivalTerminal(Text arrivalTerminal) {
-        this.arrivalTerminal = arrivalTerminal;
+    public void addArrivalTerminal(Text arrivalTerminal) {
+        this.arrivalTerminal = add(this.arrivalTerminal, arrivalTerminal);
     }
 
-    private Airport departureAirport;
+    private List<Airport> departureAirport;
+
+    /**
+     * The airport where the flight originates.
+     *
+     * @return {@link Airport}
+     */
+    @Override
+    public List<Airport> getDepartureAirportList() {
+        return departureAirport;
+    }
 
     /**
      * The airport where the flight originates.
@@ -207,7 +282,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Airport getDepartureAirport() {
-        return departureAirport;
+        return getFirst(departureAirport);
     }
 
     /**
@@ -216,11 +291,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param departureAirport Airport value to set.
      */
     @Override
-    public void setDepartureAirport(Airport departureAirport) {
-        this.departureAirport = departureAirport;
+    public void addDepartureAirport(Airport departureAirport) {
+        this.departureAirport = add(this.departureAirport, departureAirport);
     }
 
-    private Text arrivalGate;
+    private List<Text> arrivalGate;
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getArrivalGateList() {
+        return arrivalGate;
+    }
 
     /**
      * Identifier of the flight's arrival gate.
@@ -229,7 +314,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getArrivalGate() {
-        return arrivalGate;
+        return getFirst(arrivalGate);
     }
 
     /**
@@ -238,11 +323,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param arrivalGate Text value to set.
      */
     @Override
-    public void setArrivalGate(Text arrivalGate) {
-        this.arrivalGate = arrivalGate;
+    public void addArrivalGate(Text arrivalGate) {
+        this.arrivalGate = add(this.arrivalGate, arrivalGate);
     }
 
-    private Text departureTerminal;
+    private List<Text> departureTerminal;
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDepartureTerminalList() {
+        return departureTerminal;
+    }
 
     /**
      * Identifier of the flight's departure terminal.
@@ -251,7 +346,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDepartureTerminal() {
-        return departureTerminal;
+        return getFirst(departureTerminal);
     }
 
     /**
@@ -260,11 +355,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param departureTerminal Text value to set.
      */
     @Override
-    public void setDepartureTerminal(Text departureTerminal) {
-        this.departureTerminal = departureTerminal;
+    public void addDepartureTerminal(Text departureTerminal) {
+        this.departureTerminal = add(this.departureTerminal, departureTerminal);
     }
 
-    private Organization carrier;
+    private List<Organization> carrier;
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getCarrierList() {
+        return carrier;
+    }
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -273,7 +378,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Organization getCarrier() {
-        return carrier;
+        return getFirst(carrier);
     }
 
     /**
@@ -282,11 +387,22 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param carrier Organization value to set.
      */
     @Override
-    public void setCarrier(Organization carrier) {
-        this.carrier = carrier;
+    public void addCarrier(Organization carrier) {
+        this.carrier = add(this.carrier, carrier);
     }
 
-    private Object estimatedFlightDuration;
+    @JsonLdFieldTypes({ Text.class, Duration.class })
+    private List<Object> estimatedFlightDuration;
+
+    /**
+     * The estimated time the flight will take.
+     *
+     * @return {@link Text} or {@link Duration}
+     */
+    @Override
+    public <T> List<T> getEstimatedFlightDurationList() {
+        return (List<T>) estimatedFlightDuration;
+    }
 
     /**
      * The estimated time the flight will take.
@@ -295,7 +411,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getEstimatedFlightDuration() {
-        return (T) estimatedFlightDuration;
+        return (T) getFirst(estimatedFlightDuration);
     }
 
     /**
@@ -304,8 +420,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param estimatedFlightDuration Text value to set.
      */
     @Override
-    public void setEstimatedFlightDuration(Text estimatedFlightDuration) {
-        this.estimatedFlightDuration = estimatedFlightDuration;
+    public void addEstimatedFlightDuration(Text estimatedFlightDuration) {
+        this.estimatedFlightDuration = add(this.estimatedFlightDuration, estimatedFlightDuration);
     }
     /**
      * The estimated time the flight will take.
@@ -313,11 +429,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param estimatedFlightDuration Duration value to set.
      */
     @Override
-    public void setEstimatedFlightDuration(Duration estimatedFlightDuration) {
-        this.estimatedFlightDuration = estimatedFlightDuration;
+    public void addEstimatedFlightDuration(Duration estimatedFlightDuration) {
+        this.estimatedFlightDuration = add(this.estimatedFlightDuration, estimatedFlightDuration);
     }
 
-    private Text departureGate;
+    private List<Text> departureGate;
+
+    /**
+     * Identifier of the flight's departure gate.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDepartureGateList() {
+        return departureGate;
+    }
 
     /**
      * Identifier of the flight's departure gate.
@@ -326,7 +452,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDepartureGate() {
-        return departureGate;
+        return getFirst(departureGate);
     }
 
     /**
@@ -335,11 +461,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param departureGate Text value to set.
      */
     @Override
-    public void setDepartureGate(Text departureGate) {
-        this.departureGate = departureGate;
+    public void addDepartureGate(Text departureGate) {
+        this.departureGate = add(this.departureGate, departureGate);
     }
 
-    private Text flightNumber;
+    private List<Text> flightNumber;
+
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFlightNumberList() {
+        return flightNumber;
+    }
 
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
@@ -348,7 +484,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getFlightNumber() {
-        return flightNumber;
+        return getFirst(flightNumber);
     }
 
     /**
@@ -357,11 +493,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param flightNumber Text value to set.
      */
     @Override
-    public void setFlightNumber(Text flightNumber) {
-        this.flightNumber = flightNumber;
+    public void addFlightNumber(Text flightNumber) {
+        this.flightNumber = add(this.flightNumber, flightNumber);
     }
 
-    private Text mealService;
+    private List<Text> mealService;
+
+    /**
+     * Description of the meals that will be provided or available for purchase.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getMealServiceList() {
+        return mealService;
+    }
 
     /**
      * Description of the meals that will be provided or available for purchase.
@@ -370,7 +516,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getMealService() {
-        return mealService;
+        return getFirst(mealService);
     }
 
     /**
@@ -379,11 +525,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param mealService Text value to set.
      */
     @Override
-    public void setMealService(Text mealService) {
-        this.mealService = mealService;
+    public void addMealService(Text mealService) {
+        this.mealService = add(this.mealService, mealService);
     }
 
-    private BoardingPolicyType boardingPolicy;
+    private List<BoardingPolicyType> boardingPolicy;
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     * @return {@link BoardingPolicyType}
+     */
+    @Override
+    public List<BoardingPolicyType> getBoardingPolicyList() {
+        return boardingPolicy;
+    }
 
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -392,7 +548,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public BoardingPolicyType getBoardingPolicy() {
-        return boardingPolicy;
+        return getFirst(boardingPolicy);
     }
 
     /**
@@ -401,11 +557,22 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param boardingPolicy BoardingPolicyType value to set.
      */
     @Override
-    public void setBoardingPolicy(BoardingPolicyType boardingPolicy) {
-        this.boardingPolicy = boardingPolicy;
+    public void addBoardingPolicy(BoardingPolicyType boardingPolicy) {
+        this.boardingPolicy = add(this.boardingPolicy, boardingPolicy);
     }
 
-    private Object arrivalTime;
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
+    private List<Object> arrivalTime;
+
+    /**
+     * The expected arrival time.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getArrivalTimeList() {
+        return (List<T>) arrivalTime;
+    }
 
     /**
      * The expected arrival time.
@@ -414,7 +581,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getArrivalTime() {
-        return (T) arrivalTime;
+        return (T) getFirst(arrivalTime);
     }
 
     /**
@@ -423,8 +590,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param arrivalTime Time value to set.
      */
     @Override
-    public void setArrivalTime(Time arrivalTime) {
-        this.arrivalTime = arrivalTime;
+    public void addArrivalTime(Time arrivalTime) {
+        this.arrivalTime = add(this.arrivalTime, arrivalTime);
     }
     /**
      * The expected arrival time.
@@ -432,11 +599,24 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param arrivalTime DateTime value to set.
      */
     @Override
-    public void setArrivalTime(DateTime arrivalTime) {
-        this.arrivalTime = arrivalTime;
+    public void addArrivalTime(DateTime arrivalTime) {
+        this.arrivalTime = add(this.arrivalTime, arrivalTime);
     }
 
-    private Object offers;
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -447,7 +627,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getOffers() {
-        return (T) offers;
+        return (T) getFirst(offers);
     }
 
     /**
@@ -458,8 +638,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer offers) {
-        this.offers = offers;
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -469,11 +649,22 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand offers) {
-        this.offers = offers;
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
     }
 
-    private Object departureTime;
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
+    private List<Object> departureTime;
+
+    /**
+     * The expected departure time.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getDepartureTimeList() {
+        return (List<T>) departureTime;
+    }
 
     /**
      * The expected departure time.
@@ -482,7 +673,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getDepartureTime() {
-        return (T) departureTime;
+        return (T) getFirst(departureTime);
     }
 
     /**
@@ -491,8 +682,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param departureTime Time value to set.
      */
     @Override
-    public void setDepartureTime(Time departureTime) {
-        this.departureTime = departureTime;
+    public void addDepartureTime(Time departureTime) {
+        this.departureTime = add(this.departureTime, departureTime);
     }
     /**
      * The expected departure time.
@@ -500,11 +691,25 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param departureTime DateTime value to set.
      */
     @Override
-    public void setDepartureTime(DateTime departureTime) {
-        this.departureTime = departureTime;
+    public void addDepartureTime(DateTime departureTime) {
+        this.departureTime = add(this.departureTime, departureTime);
     }
 
-    private Object provider;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -516,7 +721,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getProvider() {
-        return (T) provider;
+        return (T) getFirst(provider);
     }
 
     /**
@@ -528,8 +733,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization provider) {
-        this.provider = provider;
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -540,11 +745,24 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person provider) {
-        this.provider = provider;
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
     }
 
-    private Trip subTrip;
+    private List<Trip> subTrip;
+
+    /**
+     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     *
+     * @return {@link Trip}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    @Override
+    public List<Trip> getSubTripList() {
+        return subTrip;
+    }
 
     /**
      * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
@@ -556,7 +774,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Trip getSubTrip() {
-        return subTrip;
+        return getFirst(subTrip);
     }
 
     /**
@@ -568,11 +786,25 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setSubTrip(Trip subTrip) {
-        this.subTrip = subTrip;
+    public void addSubTrip(Trip subTrip) {
+        this.subTrip = add(this.subTrip, subTrip);
     }
 
-    private Object itinerary;
+    @JsonLdFieldTypes({ ItemList.class, Place.class })
+    private List<Object> itinerary;
+
+    /**
+     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
+     *
+     * @return {@link ItemList} or {@link Place}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    @Override
+    public <T> List<T> getItineraryList() {
+        return (List<T>) itinerary;
+    }
 
     /**
      * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
@@ -584,7 +816,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getItinerary() {
-        return (T) itinerary;
+        return (T) getFirst(itinerary);
     }
 
     /**
@@ -596,8 +828,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setItinerary(ItemList itinerary) {
-        this.itinerary = itinerary;
+    public void addItinerary(ItemList itinerary) {
+        this.itinerary = add(this.itinerary, itinerary);
     }
     /**
      * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
@@ -608,11 +840,24 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setItinerary(Place itinerary) {
-        this.itinerary = itinerary;
+    public void addItinerary(Place itinerary) {
+        this.itinerary = add(this.itinerary, itinerary);
     }
 
-    private Trip partOfTrip;
+    private List<Trip> partOfTrip;
+
+    /**
+     * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     *
+     * @return {@link Trip}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    @Override
+    public List<Trip> getPartOfTripList() {
+        return partOfTrip;
+    }
 
     /**
      * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
@@ -624,7 +869,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Trip getPartOfTrip() {
-        return partOfTrip;
+        return getFirst(partOfTrip);
     }
 
     /**
@@ -636,11 +881,22 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setPartOfTrip(Trip partOfTrip) {
-        this.partOfTrip = partOfTrip;
+    public void addPartOfTrip(Trip partOfTrip) {
+        this.partOfTrip = add(this.partOfTrip, partOfTrip);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -649,7 +905,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -658,8 +914,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -667,11 +923,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -680,7 +946,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -689,11 +955,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -702,7 +978,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -711,11 +987,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -724,7 +1010,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -733,11 +1019,22 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -746,7 +1043,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -755,8 +1052,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -764,11 +1061,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -777,7 +1084,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -786,11 +1093,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -799,7 +1116,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -808,11 +1125,23 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -822,7 +1151,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -832,8 +1161,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -842,11 +1171,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -855,7 +1194,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -864,11 +1203,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -877,7 +1226,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -886,11 +1235,21 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -899,7 +1258,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -908,11 +1267,23 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -922,7 +1293,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -932,8 +1303,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -942,8 +1313,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -952,7 +1323,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

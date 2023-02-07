@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.

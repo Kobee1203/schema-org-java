@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A FundingAgency is an organization that implements one or more [[FundingScheme]]s and manages

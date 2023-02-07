@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Enumerates different price types, for example list price, invoice price, and sale price.

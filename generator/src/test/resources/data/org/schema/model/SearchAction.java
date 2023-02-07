@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface SearchAction extends Action {
      *
      * @return {@link Text}
      */
+    List<Text> getQueryList();
+
+    /**
+     * A sub property of instrument. The query used on this action.
+     *
+     * @return {@link Text}
+     */
     Text getQuery();
 
     /**
@@ -26,5 +34,5 @@ public interface SearchAction extends Action {
      *
      * @param query Text value to set.
      */
-    void setQuery(Text query);
+    void addQuery(Text query);
 }

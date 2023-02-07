@@ -30,6 +30,8 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.PlayAction;
 import org.schema.model.ExerciseAction;
 
@@ -41,7 +43,17 @@ import org.schema.model.ExerciseAction;
 @JsonLdTypeName("ExerciseAction")
 public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExerciseAction {
 
-    private SportsTeam sportsTeam;
+    private List<SportsTeam> sportsTeam;
+
+    /**
+     * A sub property of participant. The sports team that participated on this action.
+     *
+     * @return {@link SportsTeam}
+     */
+    @Override
+    public List<SportsTeam> getSportsTeamList() {
+        return sportsTeam;
+    }
 
     /**
      * A sub property of participant. The sports team that participated on this action.
@@ -50,7 +62,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public SportsTeam getSportsTeam() {
-        return sportsTeam;
+        return getFirst(sportsTeam);
     }
 
     /**
@@ -59,11 +71,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param sportsTeam SportsTeam value to set.
      */
     @Override
-    public void setSportsTeam(SportsTeam sportsTeam) {
-        this.sportsTeam = sportsTeam;
+    public void addSportsTeam(SportsTeam sportsTeam) {
+        this.sportsTeam = add(this.sportsTeam, sportsTeam);
     }
 
-    private Place course;
+    private List<Place> course;
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getCourseList() {
+        return course;
+    }
 
     /**
      * A sub property of location. The course where this action was taken.
@@ -72,7 +94,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Place getCourse() {
-        return course;
+        return getFirst(course);
     }
 
     /**
@@ -81,11 +103,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param course Place value to set.
      */
     @Override
-    public void setCourse(Place course) {
-        this.course = course;
+    public void addCourse(Place course) {
+        this.course = add(this.course, course);
     }
 
-    private Place fromLocation;
+    private List<Place> fromLocation;
+
+    /**
+     * A sub property of location. The original location of the object or the agent before the action.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getFromLocationList() {
+        return fromLocation;
+    }
 
     /**
      * A sub property of location. The original location of the object or the agent before the action.
@@ -94,7 +126,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Place getFromLocation() {
-        return fromLocation;
+        return getFirst(fromLocation);
     }
 
     /**
@@ -103,11 +135,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param fromLocation Place value to set.
      */
     @Override
-    public void setFromLocation(Place fromLocation) {
-        this.fromLocation = fromLocation;
+    public void addFromLocation(Place fromLocation) {
+        this.fromLocation = add(this.fromLocation, fromLocation);
     }
 
-    private Diet diet;
+    private List<Diet> diet;
+
+    /**
+     * A sub property of instrument. The diet used in this action.
+     *
+     * @return {@link Diet}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Diet> getDietList() {
+        return diet;
+    }
 
     /**
      * A sub property of instrument. The diet used in this action.
@@ -117,7 +160,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Diet getDiet() {
-        return diet;
+        return getFirst(diet);
     }
 
     /**
@@ -127,11 +170,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDiet(Diet diet) {
-        this.diet = diet;
+    public void addDiet(Diet diet) {
+        this.diet = add(this.diet, diet);
     }
 
-    private SportsActivityLocation sportsActivityLocation;
+    private List<SportsActivityLocation> sportsActivityLocation;
+
+    /**
+     * A sub property of location. The sports activity location where this action occurred.
+     *
+     * @return {@link SportsActivityLocation}
+     */
+    @Override
+    public List<SportsActivityLocation> getSportsActivityLocationList() {
+        return sportsActivityLocation;
+    }
 
     /**
      * A sub property of location. The sports activity location where this action occurred.
@@ -140,7 +193,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public SportsActivityLocation getSportsActivityLocation() {
-        return sportsActivityLocation;
+        return getFirst(sportsActivityLocation);
     }
 
     /**
@@ -149,11 +202,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param sportsActivityLocation SportsActivityLocation value to set.
      */
     @Override
-    public void setSportsActivityLocation(SportsActivityLocation sportsActivityLocation) {
-        this.sportsActivityLocation = sportsActivityLocation;
+    public void addSportsActivityLocation(SportsActivityLocation sportsActivityLocation) {
+        this.sportsActivityLocation = add(this.sportsActivityLocation, sportsActivityLocation);
     }
 
-    private Distance distance;
+    private List<Distance> distance;
+
+    /**
+     * The distance travelled, e.g. exercising or travelling.
+     *
+     * @return {@link Distance}
+     */
+    @Override
+    public List<Distance> getDistanceList() {
+        return distance;
+    }
 
     /**
      * The distance travelled, e.g. exercising or travelling.
@@ -162,7 +225,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Distance getDistance() {
-        return distance;
+        return getFirst(distance);
     }
 
     /**
@@ -171,11 +234,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param distance Distance value to set.
      */
     @Override
-    public void setDistance(Distance distance) {
-        this.distance = distance;
+    public void addDistance(Distance distance) {
+        this.distance = add(this.distance, distance);
     }
 
-    private ExercisePlan exercisePlan;
+    private List<ExercisePlan> exercisePlan;
+
+    /**
+     * A sub property of instrument. The exercise plan used on this action.
+     *
+     * @return {@link ExercisePlan}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<ExercisePlan> getExercisePlanList() {
+        return exercisePlan;
+    }
 
     /**
      * A sub property of instrument. The exercise plan used on this action.
@@ -185,7 +259,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public ExercisePlan getExercisePlan() {
-        return exercisePlan;
+        return getFirst(exercisePlan);
     }
 
     /**
@@ -195,11 +269,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setExercisePlan(ExercisePlan exercisePlan) {
-        this.exercisePlan = exercisePlan;
+    public void addExercisePlan(ExercisePlan exercisePlan) {
+        this.exercisePlan = add(this.exercisePlan, exercisePlan);
     }
 
-    private SportsEvent sportsEvent;
+    private List<SportsEvent> sportsEvent;
+
+    /**
+     * A sub property of location. The sports event where this action occurred.
+     *
+     * @return {@link SportsEvent}
+     */
+    @Override
+    public List<SportsEvent> getSportsEventList() {
+        return sportsEvent;
+    }
 
     /**
      * A sub property of location. The sports event where this action occurred.
@@ -208,7 +292,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public SportsEvent getSportsEvent() {
-        return sportsEvent;
+        return getFirst(sportsEvent);
     }
 
     /**
@@ -217,11 +301,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param sportsEvent SportsEvent value to set.
      */
     @Override
-    public void setSportsEvent(SportsEvent sportsEvent) {
-        this.sportsEvent = sportsEvent;
+    public void addSportsEvent(SportsEvent sportsEvent) {
+        this.sportsEvent = add(this.sportsEvent, sportsEvent);
     }
 
-    private Diet exerciseRelatedDiet;
+    private List<Diet> exerciseRelatedDiet;
+
+    /**
+     * A sub property of instrument. The diet used in this action.
+     *
+     * @return {@link Diet}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Diet> getExerciseRelatedDietList() {
+        return exerciseRelatedDiet;
+    }
 
     /**
      * A sub property of instrument. The diet used in this action.
@@ -231,7 +326,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Diet getExerciseRelatedDiet() {
-        return exerciseRelatedDiet;
+        return getFirst(exerciseRelatedDiet);
     }
 
     /**
@@ -241,11 +336,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setExerciseRelatedDiet(Diet exerciseRelatedDiet) {
-        this.exerciseRelatedDiet = exerciseRelatedDiet;
+    public void addExerciseRelatedDiet(Diet exerciseRelatedDiet) {
+        this.exerciseRelatedDiet = add(this.exerciseRelatedDiet, exerciseRelatedDiet);
     }
 
-    private Person opponent;
+    private List<Person> opponent;
+
+    /**
+     * A sub property of participant. The opponent on this action.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getOpponentList() {
+        return opponent;
+    }
 
     /**
      * A sub property of participant. The opponent on this action.
@@ -254,7 +359,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Person getOpponent() {
-        return opponent;
+        return getFirst(opponent);
     }
 
     /**
@@ -263,11 +368,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param opponent Person value to set.
      */
     @Override
-    public void setOpponent(Person opponent) {
-        this.opponent = opponent;
+    public void addOpponent(Person opponent) {
+        this.opponent = add(this.opponent, opponent);
     }
 
-    private Place exerciseCourse;
+    private List<Place> exerciseCourse;
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getExerciseCourseList() {
+        return exerciseCourse;
+    }
 
     /**
      * A sub property of location. The course where this action was taken.
@@ -276,7 +391,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Place getExerciseCourse() {
-        return exerciseCourse;
+        return getFirst(exerciseCourse);
     }
 
     /**
@@ -285,11 +400,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param exerciseCourse Place value to set.
      */
     @Override
-    public void setExerciseCourse(Place exerciseCourse) {
-        this.exerciseCourse = exerciseCourse;
+    public void addExerciseCourse(Place exerciseCourse) {
+        this.exerciseCourse = add(this.exerciseCourse, exerciseCourse);
     }
 
-    private Place toLocation;
+    private List<Place> toLocation;
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getToLocationList() {
+        return toLocation;
+    }
 
     /**
      * A sub property of location. The final location of the object or the agent after the action.
@@ -298,7 +423,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Place getToLocation() {
-        return toLocation;
+        return getFirst(toLocation);
     }
 
     /**
@@ -307,11 +432,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param toLocation Place value to set.
      */
     @Override
-    public void setToLocation(Place toLocation) {
-        this.toLocation = toLocation;
+    public void addToLocation(Place toLocation) {
+        this.toLocation = add(this.toLocation, toLocation);
     }
 
-    private Text exerciseType;
+    private List<Text> exerciseType;
+
+    /**
+     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Text> getExerciseTypeList() {
+        return exerciseType;
+    }
 
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
@@ -321,7 +457,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getExerciseType() {
-        return exerciseType;
+        return getFirst(exerciseType);
     }
 
     /**
@@ -331,11 +467,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setExerciseType(Text exerciseType) {
-        this.exerciseType = exerciseType;
+    public void addExerciseType(Text exerciseType) {
+        this.exerciseType = add(this.exerciseType, exerciseType);
     }
 
-    private Audience audience;
+    private List<Audience> audience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -344,7 +490,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Audience getAudience() {
-        return audience;
+        return getFirst(audience);
     }
 
     /**
@@ -353,11 +499,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience audience) {
-        this.audience = audience;
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
 
-    private Event event;
+    private List<Event> event;
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventList() {
+        return event;
+    }
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -366,7 +522,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Event getEvent() {
-        return event;
+        return getFirst(event);
     }
 
     /**
@@ -375,11 +531,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param event Event value to set.
      */
     @Override
-    public void setEvent(Event event) {
-        this.event = event;
+    public void addEvent(Event event) {
+        this.event = add(this.event, event);
     }
 
-    private Object agent;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> agent;
+
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getAgentList() {
+        return (List<T>) agent;
+    }
 
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
@@ -388,7 +555,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAgent() {
-        return (T) agent;
+        return (T) getFirst(agent);
     }
 
     /**
@@ -397,8 +564,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param agent Organization value to set.
      */
     @Override
-    public void setAgent(Organization agent) {
-        this.agent = agent;
+    public void addAgent(Organization agent) {
+        this.agent = add(this.agent, agent);
     }
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
@@ -406,11 +573,23 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param agent Person value to set.
      */
     @Override
-    public void setAgent(Person agent) {
-        this.agent = agent;
+    public void addAgent(Person agent) {
+        this.agent = add(this.agent, agent);
     }
 
-    private Object startTime;
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> startTime;
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getStartTimeList() {
+        return (List<T>) startTime;
+    }
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -420,7 +599,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getStartTime() {
-        return (T) startTime;
+        return (T) getFirst(startTime);
     }
 
     /**
@@ -430,8 +609,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(DateTime startTime) {
-        this.startTime = startTime;
+    public void addStartTime(DateTime startTime) {
+        this.startTime = add(this.startTime, startTime);
     }
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -440,11 +619,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(Time startTime) {
-        this.startTime = startTime;
+    public void addStartTime(Time startTime) {
+        this.startTime = add(this.startTime, startTime);
     }
 
-    private ActionStatusType actionStatus;
+    private List<ActionStatusType> actionStatus;
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     * @return {@link ActionStatusType}
+     */
+    @Override
+    public List<ActionStatusType> getActionStatusList() {
+        return actionStatus;
+    }
 
     /**
      * Indicates the current disposition of the Action.
@@ -453,7 +642,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public ActionStatusType getActionStatus() {
-        return actionStatus;
+        return getFirst(actionStatus);
     }
 
     /**
@@ -462,11 +651,25 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param actionStatus ActionStatusType value to set.
      */
     @Override
-    public void setActionStatus(ActionStatusType actionStatus) {
-        this.actionStatus = actionStatus;
+    public void addActionStatus(ActionStatusType actionStatus) {
+        this.actionStatus = add(this.actionStatus, actionStatus);
     }
 
-    private Object provider;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -478,7 +681,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getProvider() {
-        return (T) provider;
+        return (T) getFirst(provider);
     }
 
     /**
@@ -490,8 +693,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization provider) {
-        this.provider = provider;
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -502,11 +705,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person provider) {
-        this.provider = provider;
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
     }
 
-    private Thing result;
+    private List<Thing> result;
+
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getResultList() {
+        return result;
+    }
 
     /**
      * The result produced in the action. e.g. John wrote *a book*.
@@ -515,7 +728,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Thing getResult() {
-        return result;
+        return getFirst(result);
     }
 
     /**
@@ -524,11 +737,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param result Thing value to set.
      */
     @Override
-    public void setResult(Thing result) {
-        this.result = result;
+    public void addResult(Thing result) {
+        this.result = add(this.result, result);
     }
 
-    private Object location;
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
+    private List<Object> location;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    @Override
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
+    }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -537,7 +761,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getLocation() {
-        return (T) location;
+        return (T) getFirst(location);
     }
 
     /**
@@ -546,8 +770,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(PostalAddress location) {
-        this.location = location;
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -555,8 +779,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param location Text value to set.
      */
     @Override
-    public void setLocation(Text location) {
-        this.location = location;
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -564,8 +788,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param location Place value to set.
      */
     @Override
-    public void setLocation(Place location) {
-        this.location = location;
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -573,11 +797,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param location VirtualLocation value to set.
      */
     @Override
-    public void setLocation(VirtualLocation location) {
-        this.location = location;
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
     }
 
-    private Thing object;
+    private List<Thing> object;
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getObjectList() {
+        return object;
+    }
 
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
@@ -586,7 +820,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Thing getObject() {
-        return object;
+        return getFirst(object);
     }
 
     /**
@@ -595,11 +829,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param object Thing value to set.
      */
     @Override
-    public void setObject(Thing object) {
-        this.object = object;
+    public void addObject(Thing object) {
+        this.object = add(this.object, object);
     }
 
-    private EntryPoint target;
+    private List<EntryPoint> target;
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     * @return {@link EntryPoint}
+     */
+    @Override
+    public List<EntryPoint> getTargetList() {
+        return target;
+    }
 
     /**
      * Indicates a target EntryPoint for an Action.
@@ -608,7 +852,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public EntryPoint getTarget() {
-        return target;
+        return getFirst(target);
     }
 
     /**
@@ -617,11 +861,23 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param target EntryPoint value to set.
      */
     @Override
-    public void setTarget(EntryPoint target) {
-        this.target = target;
+    public void addTarget(EntryPoint target) {
+        this.target = add(this.target, target);
     }
 
-    private Object endTime;
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> endTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getEndTimeList() {
+        return (List<T>) endTime;
+    }
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -631,7 +887,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getEndTime() {
-        return (T) endTime;
+        return (T) getFirst(endTime);
     }
 
     /**
@@ -641,8 +897,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(DateTime endTime) {
-        this.endTime = endTime;
+    public void addEndTime(DateTime endTime) {
+        this.endTime = add(this.endTime, endTime);
     }
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -651,11 +907,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(Time endTime) {
-        this.endTime = endTime;
+    public void addEndTime(Time endTime) {
+        this.endTime = add(this.endTime, endTime);
     }
 
-    private Object participant;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> participant;
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getParticipantList() {
+        return (List<T>) participant;
+    }
 
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
@@ -664,7 +931,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getParticipant() {
-        return (T) participant;
+        return (T) getFirst(participant);
     }
 
     /**
@@ -673,8 +940,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param participant Organization value to set.
      */
     @Override
-    public void setParticipant(Organization participant) {
-        this.participant = participant;
+    public void addParticipant(Organization participant) {
+        this.participant = add(this.participant, participant);
     }
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
@@ -682,11 +949,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param participant Person value to set.
      */
     @Override
-    public void setParticipant(Person participant) {
-        this.participant = participant;
+    public void addParticipant(Person participant) {
+        this.participant = add(this.participant, participant);
     }
 
-    private Thing instrument;
+    private List<Thing> instrument;
+
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getInstrumentList() {
+        return instrument;
+    }
 
     /**
      * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
@@ -695,7 +972,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Thing getInstrument() {
-        return instrument;
+        return getFirst(instrument);
     }
 
     /**
@@ -704,11 +981,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param instrument Thing value to set.
      */
     @Override
-    public void setInstrument(Thing instrument) {
-        this.instrument = instrument;
+    public void addInstrument(Thing instrument) {
+        this.instrument = add(this.instrument, instrument);
     }
 
-    private Thing error;
+    private List<Thing> error;
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getErrorList() {
+        return error;
+    }
 
     /**
      * For failed actions, more information on the cause of the failure.
@@ -717,7 +1004,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Thing getError() {
-        return error;
+        return getFirst(error);
     }
 
     /**
@@ -726,11 +1013,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param error Thing value to set.
      */
     @Override
-    public void setError(Thing error) {
-        this.error = error;
+    public void addError(Thing error) {
+        this.error = add(this.error, error);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -739,7 +1037,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -748,8 +1046,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -757,11 +1055,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -770,7 +1078,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -779,11 +1087,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -792,7 +1110,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -801,11 +1119,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -814,7 +1142,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -823,11 +1151,22 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -836,7 +1175,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -845,8 +1184,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -854,11 +1193,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -867,7 +1216,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -876,11 +1225,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -889,7 +1248,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -898,11 +1257,23 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -912,7 +1283,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -922,8 +1293,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -932,11 +1303,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -945,7 +1326,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -954,11 +1335,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -967,7 +1358,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -976,11 +1367,21 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -989,7 +1390,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -998,11 +1399,23 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1012,7 +1425,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1022,8 +1435,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1032,8 +1445,8 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1042,7 +1455,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

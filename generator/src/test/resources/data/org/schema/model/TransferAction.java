@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Place;
 
 /**
@@ -19,6 +20,13 @@ public interface TransferAction extends Action {
      *
      * @return {@link Place}
      */
+    List<Place> getFromLocationList();
+
+    /**
+     * A sub property of location. The original location of the object or the agent before the action.
+     *
+     * @return {@link Place}
+     */
     Place getFromLocation();
 
     /**
@@ -26,7 +34,14 @@ public interface TransferAction extends Action {
      *
      * @param fromLocation Place value to set.
      */
-    void setFromLocation(Place fromLocation);
+    void addFromLocation(Place fromLocation);
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getToLocationList();
 
     /**
      * A sub property of location. The final location of the object or the agent after the action.
@@ -40,5 +55,5 @@ public interface TransferAction extends Action {
      *
      * @param toLocation Place value to set.
      */
-    void setToLocation(Place toLocation);
+    void addToLocation(Place toLocation);
 }

@@ -2,8 +2,6 @@ package com.weedow.schemaorg.serializer.deserialization.datatype;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.converter.ConversionService;
 import com.weedow.schemaorg.serializer.converter.ConversionServiceImpl;
@@ -18,8 +16,8 @@ public abstract class AbstractDataTypeDeserializer extends AbstractTypeDeseriali
 
     private final transient ConversionService conversionService = new ConversionServiceImpl();
 
-    protected AbstractDataTypeDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {
-        super(delegateType, defaultDeserializer);
+    protected AbstractDataTypeDeserializer(Class<?> clazz) {
+        super(clazz);
     }
 
     protected abstract Object getValue(JsonParser p, DeserializationContext ctxt) throws IOException;
@@ -32,6 +30,6 @@ public abstract class AbstractDataTypeDeserializer extends AbstractTypeDeseriali
         } catch (Exception e) {
             LOG.warn("Could not convert value: {}", e.getMessage());
         }
-        return jsonLdDataType != null ? jsonLdDataType : super.deserialize(p, ctxt);
+        return jsonLdDataType;
     }
 }

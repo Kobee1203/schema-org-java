@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Review;
 import org.schema.model.datatype.Text;
 import org.schema.model.Audience;
@@ -41,6 +42,13 @@ public interface Service extends Intangible {
      *
      * @return {@link Review}
      */
+    List<Review> getReviewList();
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
     Review getReview();
 
     /**
@@ -48,7 +56,14 @@ public interface Service extends Intangible {
      *
      * @param review Review value to set.
      */
-    void setReview(Review review);
+    void addReview(Review review);
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardList();
 
     /**
      * An award won by or for this item.
@@ -62,7 +77,14 @@ public interface Service extends Intangible {
      *
      * @param award Text value to set.
      */
-    void setAward(Text award);
+    void addAward(Text award);
+
+    /**
+     * The audience eligible for this service.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getServiceAudienceList();
 
     /**
      * The audience eligible for this service.
@@ -76,7 +98,16 @@ public interface Service extends Intangible {
      *
      * @param serviceAudience Audience value to set.
      */
-    void setServiceAudience(Audience serviceAudience);
+    void addServiceAudience(Audience serviceAudience);
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getCategoryList();
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -94,7 +125,7 @@ public interface Service extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(URL category);
+    void addCategory(URL category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -102,7 +133,7 @@ public interface Service extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Text category);
+    void addCategory(Text category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -110,7 +141,7 @@ public interface Service extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(PhysicalActivityCategory category);
+    void addCategory(PhysicalActivityCategory category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -118,7 +149,7 @@ public interface Service extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Thing category);
+    void addCategory(Thing category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -126,7 +157,14 @@ public interface Service extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(CategoryCode category);
+    void addCategory(CategoryCode category);
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    List<OpeningHoursSpecification> getHoursAvailableList();
 
     /**
      * The hours during which this service or contact is available.
@@ -140,7 +178,14 @@ public interface Service extends Intangible {
      *
      * @param hoursAvailable OpeningHoursSpecification value to set.
      */
-    void setHoursAvailable(OpeningHoursSpecification hoursAvailable);
+    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getAudienceList();
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -154,7 +199,16 @@ public interface Service extends Intangible {
      *
      * @param audience Audience value to set.
      */
-    void setAudience(Audience audience);
+    void addAudience(Audience audience);
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getOffersList();
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -172,7 +226,7 @@ public interface Service extends Intangible {
      * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Offer offers);
+    void addOffers(Offer offers);
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
@@ -180,7 +234,14 @@ public interface Service extends Intangible {
      * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Demand offers);
+    void addOffers(Demand offers);
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getServiceOutputList();
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -194,7 +255,17 @@ public interface Service extends Intangible {
      *
      * @param serviceOutput Thing value to set.
      */
-    void setServiceOutput(Thing serviceOutput);
+    void addServiceOutput(Thing serviceOutput);
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    <T> List<T> getProviderList();
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -214,7 +285,7 @@ public interface Service extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Organization provider);
+    void addProvider(Organization provider);
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
@@ -223,7 +294,16 @@ public interface Service extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Person provider);
+    void addProvider(Person provider);
+
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    <T> List<T> getTermsOfServiceList();
 
     /**
      * Human-readable terms of service documentation.
@@ -241,7 +321,7 @@ public interface Service extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    void setTermsOfService(URL termsOfService);
+    void addTermsOfService(URL termsOfService);
     /**
      * Human-readable terms of service documentation.
      *
@@ -249,7 +329,14 @@ public interface Service extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    void setTermsOfService(Text termsOfService);
+    void addTermsOfService(Text termsOfService);
+
+    /**
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProviderMobilityList();
 
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
@@ -263,7 +350,14 @@ public interface Service extends Intangible {
      *
      * @param providerMobility Text value to set.
      */
-    void setProviderMobility(Text providerMobility);
+    void addProviderMobility(Text providerMobility);
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getBrokerList();
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -277,13 +371,20 @@ public interface Service extends Intangible {
      *
      * @param broker Person value to set.
      */
-    void setBroker(Person broker);
+    void addBroker(Person broker);
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
      * @param broker Organization value to set.
      */
-    void setBroker(Organization broker);
+    void addBroker(Organization broker);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -297,7 +398,15 @@ public interface Service extends Intangible {
      *
      * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating aggregateRating);
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getIsSimilarToList();
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -313,14 +422,21 @@ public interface Service extends Intangible {
      * @param isSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsSimilarTo(Service isSimilarTo);
+    void addIsSimilarTo(Service isSimilarTo);
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsSimilarTo(Product isSimilarTo);
+    void addIsSimilarTo(Product isSimilarTo);
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @return {@link ServiceChannel}
+     */
+    List<ServiceChannel> getAvailableChannelList();
 
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
@@ -334,7 +450,14 @@ public interface Service extends Intangible {
      *
      * @param availableChannel ServiceChannel value to set.
      */
-    void setAvailableChannel(ServiceChannel availableChannel);
+    void addAvailableChannel(ServiceChannel availableChannel);
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSloganList();
 
     /**
      * A slogan or motto associated with the item.
@@ -348,7 +471,14 @@ public interface Service extends Intangible {
      *
      * @param slogan Text value to set.
      */
-    void setSlogan(Text slogan);
+    void addSlogan(Text slogan);
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    <T> List<T> getBrandList();
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -362,13 +492,21 @@ public interface Service extends Intangible {
      *
      * @param brand Organization value to set.
      */
-    void setBrand(Organization brand);
+    void addBrand(Organization brand);
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
      * @param brand Brand value to set.
      */
-    void setBrand(Brand brand);
+    void addBrand(Brand brand);
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getLogoList();
 
     /**
      * An associated logo.
@@ -384,14 +522,21 @@ public interface Service extends Intangible {
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(URL logo);
+    void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(ImageObject logo);
+    void addLogo(ImageObject logo);
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getProducesList();
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -405,7 +550,14 @@ public interface Service extends Intangible {
      *
      * @param produces Thing value to set.
      */
-    void setProduces(Thing produces);
+    void addProduces(Thing produces);
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     */
+    <T> List<T> getServiceAreaList();
 
     /**
      * The geographic area where the service is provided.
@@ -419,19 +571,26 @@ public interface Service extends Intangible {
      *
      * @param serviceArea GeoShape value to set.
      */
-    void setServiceArea(GeoShape serviceArea);
+    void addServiceArea(GeoShape serviceArea);
     /**
      * The geographic area where the service is provided.
      *
      * @param serviceArea AdministrativeArea value to set.
      */
-    void setServiceArea(AdministrativeArea serviceArea);
+    void addServiceArea(AdministrativeArea serviceArea);
     /**
      * The geographic area where the service is provided.
      *
      * @param serviceArea Place value to set.
      */
-    void setServiceArea(Place serviceArea);
+    void addServiceArea(Place serviceArea);
+
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @return {@link GovernmentBenefitsType} or {@link Text}
+     */
+    <T> List<T> getServiceTypeList();
 
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
@@ -445,13 +604,20 @@ public interface Service extends Intangible {
      *
      * @param serviceType GovernmentBenefitsType value to set.
      */
-    void setServiceType(GovernmentBenefitsType serviceType);
+    void addServiceType(GovernmentBenefitsType serviceType);
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      *
      * @param serviceType Text value to set.
      */
-    void setServiceType(Text serviceType);
+    void addServiceType(Text serviceType);
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    <T> List<T> getAreaServedList();
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -465,25 +631,33 @@ public interface Service extends Intangible {
      *
      * @param areaServed AdministrativeArea value to set.
      */
-    void setAreaServed(AdministrativeArea areaServed);
+    void addAreaServed(AdministrativeArea areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
      * @param areaServed GeoShape value to set.
      */
-    void setAreaServed(GeoShape areaServed);
+    void addAreaServed(GeoShape areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
      * @param areaServed Text value to set.
      */
-    void setAreaServed(Text areaServed);
+    void addAreaServed(Text areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
      * @param areaServed Place value to set.
      */
-    void setAreaServed(Place areaServed);
+    void addAreaServed(Place areaServed);
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getIsRelatedToList();
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -499,14 +673,21 @@ public interface Service extends Intangible {
      * @param isRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsRelatedTo(Service isRelatedTo);
+    void addIsRelatedTo(Service isRelatedTo);
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsRelatedTo(Product isRelatedTo);
+    void addIsRelatedTo(Product isRelatedTo);
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    List<OfferCatalog> getHasOfferCatalogList();
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -520,5 +701,5 @@ public interface Service extends Intangible {
      *
      * @param hasOfferCatalog OfferCatalog value to set.
      */
-    void setHasOfferCatalog(OfferCatalog hasOfferCatalog);
+    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
 }

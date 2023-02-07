@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Text;
@@ -25,6 +26,14 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @return {@link Number} or {@link QuantitativeValue}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    <T> List<T> getRepetitionsList();
+
+    /**
+     * Number of times one should repeat the activity.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     <T> T getRepetitions();
 
     /**
@@ -33,14 +42,22 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param repetitions Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRepetitions(Number repetitions);
+    void addRepetitions(Number repetitions);
     /**
      * Number of times one should repeat the activity.
      *
      * @param repetitions QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRepetitions(QuantitativeValue repetitions);
+    void addRepetitions(QuantitativeValue repetitions);
+
+    /**
+     * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getIntensityList();
 
     /**
      * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
@@ -56,14 +73,22 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param intensity QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIntensity(QuantitativeValue intensity);
+    void addIntensity(QuantitativeValue intensity);
     /**
      * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
      *
      * @param intensity Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIntensity(Text intensity);
+    void addIntensity(Text intensity);
+
+    /**
+     * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
+     *
+     * @return {@link QuantitativeValue} or {@link Energy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getWorkloadList();
 
     /**
      * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
@@ -79,14 +104,22 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param workload QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setWorkload(QuantitativeValue workload);
+    void addWorkload(QuantitativeValue workload);
     /**
      * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
      *
      * @param workload Energy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setWorkload(Energy workload);
+    void addWorkload(Energy workload);
+
+    /**
+     * Length of time to engage in the activity.
+     *
+     * @return {@link Duration} or {@link QuantitativeValue}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getActivityDurationList();
 
     /**
      * Length of time to engage in the activity.
@@ -102,14 +135,22 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param activityDuration Duration value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActivityDuration(Duration activityDuration);
+    void addActivityDuration(Duration activityDuration);
     /**
      * Length of time to engage in the activity.
      *
      * @param activityDuration QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActivityDuration(QuantitativeValue activityDuration);
+    void addActivityDuration(QuantitativeValue activityDuration);
+
+    /**
+     * How often one should break from the activity.
+     *
+     * @return {@link Text} or {@link QuantitativeValue}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getRestPeriodsList();
 
     /**
      * How often one should break from the activity.
@@ -125,14 +166,22 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param restPeriods Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRestPeriods(Text restPeriods);
+    void addRestPeriods(Text restPeriods);
     /**
      * How often one should break from the activity.
      *
      * @param restPeriods QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRestPeriods(QuantitativeValue restPeriods);
+    void addRestPeriods(QuantitativeValue restPeriods);
+
+    /**
+     * How often one should engage in the activity.
+     *
+     * @return {@link Text} or {@link QuantitativeValue}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getActivityFrequencyList();
 
     /**
      * How often one should engage in the activity.
@@ -148,14 +197,22 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param activityFrequency Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActivityFrequency(Text activityFrequency);
+    void addActivityFrequency(Text activityFrequency);
     /**
      * How often one should engage in the activity.
      *
      * @param activityFrequency QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActivityFrequency(QuantitativeValue activityFrequency);
+    void addActivityFrequency(QuantitativeValue activityFrequency);
+
+    /**
+     * Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAdditionalVariableList();
 
     /**
      * Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
@@ -171,7 +228,15 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param additionalVariable Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAdditionalVariable(Text additionalVariable);
+    void addAdditionalVariable(Text additionalVariable);
+
+    /**
+     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getExerciseTypeList();
 
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
@@ -187,5 +252,5 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
      * @param exerciseType Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setExerciseType(Text exerciseType);
+    void addExerciseType(Text exerciseType);
 }

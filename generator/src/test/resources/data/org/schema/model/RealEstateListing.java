@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.Duration;
 import org.schema.model.datatype.Date;
@@ -28,6 +29,15 @@ public interface RealEstateListing extends WebPage {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
+    <T> List<T> getLeaseLengthList();
+
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @return {@link QuantitativeValue} or {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
     <T> T getLeaseLength();
 
     /**
@@ -37,7 +47,7 @@ public interface RealEstateListing extends WebPage {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(QuantitativeValue leaseLength);
+    void addLeaseLength(QuantitativeValue leaseLength);
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
@@ -45,7 +55,16 @@ public interface RealEstateListing extends WebPage {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(Duration leaseLength);
+    void addLeaseLength(Duration leaseLength);
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    <T> List<T> getDatePostedList();
 
     /**
      * Publication date of an online listing.
@@ -63,7 +82,7 @@ public interface RealEstateListing extends WebPage {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(Date datePosted);
+    void addDatePosted(Date datePosted);
     /**
      * Publication date of an online listing.
      *
@@ -71,5 +90,5 @@ public interface RealEstateListing extends WebPage {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(DateTime datePosted);
+    void addDatePosted(DateTime datePosted);
 }

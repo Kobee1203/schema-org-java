@@ -18,9 +18,12 @@ public abstract class AbstractConverter implements Converter<Object, JsonLdDataT
     @Override
     public JsonLdDataType<?> convert(Object source, Class<JsonLdDataType<?>> targetType) {
         try {
-            return (JsonLdDataType<?>) getInstanceMethod(targetType).invoke(null, getValue(source));
+            Object value = getValue(source);
+            if (value != null) {
+                return (JsonLdDataType<?>) getInstanceMethod(targetType).invoke(null, value);
+            }
         } catch (Exception e) {
-            LOG.debug("Could not convert {} of source type {}", source, targetType);
+            LOG.debug("Could not convert {} to target type {}", source, targetType);
         }
         return null;
     }

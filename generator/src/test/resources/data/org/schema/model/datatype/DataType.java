@@ -23,4 +23,14 @@ public abstract class DataType<T> implements com.weedow.schemaorg.commons.model.
     public T getValue() {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append(getClass().getSimpleName())
+                .append("{")
+                .append("value=").append(value)
+                .append('}')
+                .toString();
+    }
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Enumeration of considerations that make a product relevant or potentially restricted for adults only.

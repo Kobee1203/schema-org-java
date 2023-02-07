@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
 
@@ -21,6 +22,14 @@ public interface FinancialService extends LocalBusiness {
      * @return {@link URL} or {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
+    <T> List<T> getFeesAndCommissionsSpecificationList();
+
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
     <T> T getFeesAndCommissionsSpecification();
 
     /**
@@ -29,12 +38,12 @@ public interface FinancialService extends LocalBusiness {
      * @param feesAndCommissionsSpecification URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
+    void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
+    void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
 }

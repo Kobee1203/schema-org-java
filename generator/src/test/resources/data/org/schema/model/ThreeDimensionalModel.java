@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Boolean;
 
 /**
@@ -24,6 +25,15 @@ public interface ThreeDimensionalModel extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2394">https://github.com/schemaorg/schemaorg/issues/2394</a>
      */
+    List<Boolean> getIsResizableList();
+
+    /**
+     * Whether the 3DModel allows resizing. For example, room layout applications often do not allow 3DModel elements to be resized to reflect reality.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2394">https://github.com/schemaorg/schemaorg/issues/2394</a>
+     */
     Boolean getIsResizable();
 
     /**
@@ -33,5 +43,5 @@ public interface ThreeDimensionalModel extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2394">https://github.com/schemaorg/schemaorg/issues/2394</a>
      */
-    void setIsResizable(Boolean isResizable);
+    void addIsResizable(Boolean isResizable);
 }

@@ -168,12 +168,12 @@ class SchemaModelGeneratorImplTest {
         verify(templateService).apply(
                 "templates/type_interface",
                 options.getModelFolder().resolve("ActionStatusType.java"),
-                new Context(type, options.getModelPackage(), Collections.emptySet())
+                new Context(type, options.getModelPackage(), Set.of(List.class.getName()))
         );
         verify(templateService).apply(
                 "templates/type_enumeration",
                 options.getModelImplFolder().resolve("ActionStatusTypeEnum.java"),
-                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.ActionStatusType", JsonLdTypeName.class.getName()))
+                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.ActionStatusType", JsonLdTypeName.class.getName(), List.class.getName()))
         );
     }
 
@@ -193,12 +193,12 @@ class SchemaModelGeneratorImplTest {
         verify(templateService).apply(
                 "templates/type_interface",
                 options.getModelFolder().resolve("Thing.java"),
-                new Context(type, options.getModelPackage(), Collections.emptySet())
+                new Context(type, options.getModelPackage(), Set.of(List.class.getName()))
         );
         verify(templateService).apply(
                 "templates/type_implementation",
                 options.getModelImplFolder().resolve("ThingImpl.java"),
-                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName()))
+                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName(), List.class.getName()))
         );
     }
 
@@ -228,12 +228,12 @@ class SchemaModelGeneratorImplTest {
         verify(successHandler).onSuccess(
                 "templates/type_interface",
                 modelFolder.resolve("Thing.java"),
-                new Context(type, modelPackage, Collections.emptySet())
+                new Context(type, modelPackage, Set.of(List.class.getName()))
         );
         verify(successHandler).onSuccess(
                 "templates/type_implementation",
                 modelImplFolder.resolve("ThingImpl.java"),
-                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName()))
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName(), List.class.getName()))
         );
 
         verifyNoInteractions(errorHandler);
@@ -264,13 +264,13 @@ class SchemaModelGeneratorImplTest {
         doThrow(ioException1).when(templateService).apply(
                 "templates/type_interface",
                 modelFolder.resolve("Thing.java"),
-                new Context(type, modelPackage, Collections.emptySet())
+                new Context(type, modelPackage, Set.of(List.class.getName()))
         );
         final IOException ioException2 = new IOException();
         doThrow(ioException2).when(templateService).apply(
                 "templates/type_implementation",
                 modelImplFolder.resolve("ThingImpl.java"),
-                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName()))
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName(), List.class.getName()))
         );
 
         schemaModelGenerator.generate();
@@ -278,13 +278,13 @@ class SchemaModelGeneratorImplTest {
         verify(errorHandler).onError(
                 "templates/type_interface",
                 modelFolder.resolve("Thing.java"),
-                new Context(type, modelPackage, Collections.emptySet()),
+                new Context(type, modelPackage, Set.of(List.class.getName())),
                 ioException1
         );
         verify(errorHandler).onError(
                 "templates/type_implementation",
                 modelImplFolder.resolve("ThingImpl.java"),
-                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName())),
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName(), List.class.getName())),
                 ioException2
         );
 

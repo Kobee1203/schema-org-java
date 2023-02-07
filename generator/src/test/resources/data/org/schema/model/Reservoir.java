@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.

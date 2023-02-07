@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A delivery service through which radio content is provided via broadcast over the air or online.

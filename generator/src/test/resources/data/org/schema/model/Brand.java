@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Review;
 import org.schema.model.AggregateRating;
 import org.schema.model.datatype.Text;
@@ -24,6 +25,13 @@ public interface Brand extends Intangible {
      *
      * @return {@link Review}
      */
+    List<Review> getReviewList();
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
     Review getReview();
 
     /**
@@ -31,7 +39,14 @@ public interface Brand extends Intangible {
      *
      * @param review Review value to set.
      */
-    void setReview(Review review);
+    void addReview(Review review);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -45,7 +60,14 @@ public interface Brand extends Intangible {
      *
      * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating aggregateRating);
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSloganList();
 
     /**
      * A slogan or motto associated with the item.
@@ -59,7 +81,15 @@ public interface Brand extends Intangible {
      *
      * @param slogan Text value to set.
      */
-    void setSlogan(Text slogan);
+    void addSlogan(Text slogan);
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getLogoList();
 
     /**
      * An associated logo.
@@ -75,12 +105,12 @@ public interface Brand extends Intangible {
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(URL logo);
+    void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(ImageObject logo);
+    void addLogo(ImageObject logo);
 }

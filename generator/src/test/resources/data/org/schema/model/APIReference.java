@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface APIReference extends TechArticle {
      *
      * @return {@link Text}
      */
+    List<Text> getAssemblyList();
+
+    /**
+     * Library file name e.g., mscorlib.dll, system.web.dll.
+     *
+     * @return {@link Text}
+     */
     Text getAssembly();
 
     /**
@@ -26,7 +34,14 @@ public interface APIReference extends TechArticle {
      *
      * @param assembly Text value to set.
      */
-    void setAssembly(Text assembly);
+    void addAssembly(Text assembly);
+
+    /**
+     * Type of app development: phone, Metro style, desktop, XBox, etc.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTargetPlatformList();
 
     /**
      * Type of app development: phone, Metro style, desktop, XBox, etc.
@@ -40,7 +55,14 @@ public interface APIReference extends TechArticle {
      *
      * @param targetPlatform Text value to set.
      */
-    void setTargetPlatform(Text targetPlatform);
+    void addTargetPlatform(Text targetPlatform);
+
+    /**
+     * Library file name e.g., mscorlib.dll, system.web.dll.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getExecutableLibraryNameList();
 
     /**
      * Library file name e.g., mscorlib.dll, system.web.dll.
@@ -54,7 +76,14 @@ public interface APIReference extends TechArticle {
      *
      * @param executableLibraryName Text value to set.
      */
-    void setExecutableLibraryName(Text executableLibraryName);
+    void addExecutableLibraryName(Text executableLibraryName);
+
+    /**
+     * Indicates whether API is managed or unmanaged.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProgrammingModelList();
 
     /**
      * Indicates whether API is managed or unmanaged.
@@ -68,7 +97,14 @@ public interface APIReference extends TechArticle {
      *
      * @param programmingModel Text value to set.
      */
-    void setProgrammingModel(Text programmingModel);
+    void addProgrammingModel(Text programmingModel);
+
+    /**
+     * Associated product/technology version. e.g., .NET Framework 4.5.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAssemblyVersionList();
 
     /**
      * Associated product/technology version. e.g., .NET Framework 4.5.
@@ -82,5 +118,5 @@ public interface APIReference extends TechArticle {
      *
      * @param assemblyVersion Text value to set.
      */
-    void setAssemblyVersion(Text assemblyVersion);
+    void addAssemblyVersion(Text assemblyVersion);
 }

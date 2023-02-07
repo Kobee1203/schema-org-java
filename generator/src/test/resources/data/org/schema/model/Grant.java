@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.Product;
@@ -34,6 +35,13 @@ public interface Grant extends Intangible {
      *
      * @return {@link Organization} or {@link Person}
      */
+    <T> List<T> getFunderList();
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
     <T> T getFunder();
 
     /**
@@ -41,13 +49,24 @@ public interface Grant extends Intangible {
      *
      * @param funder Organization value to set.
      */
-    void setFunder(Organization funder);
+    void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
      */
-    void setFunder(Person funder);
+    void addFunder(Person funder);
+
+    /**
+     * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Product} or {@link Person} or {@link BioChemEntity} or {@link Event} or {@link MedicalEntity} or {@link CreativeWork} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     */
+    <T> List<T> getFundedItemList();
 
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
@@ -69,7 +88,7 @@ public interface Grant extends Intangible {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Product fundedItem);
+    void addFundedItem(Product fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
@@ -79,7 +98,7 @@ public interface Grant extends Intangible {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Person fundedItem);
+    void addFundedItem(Person fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
@@ -89,7 +108,7 @@ public interface Grant extends Intangible {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(BioChemEntity fundedItem);
+    void addFundedItem(BioChemEntity fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
@@ -99,7 +118,7 @@ public interface Grant extends Intangible {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Event fundedItem);
+    void addFundedItem(Event fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
@@ -109,7 +128,7 @@ public interface Grant extends Intangible {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(MedicalEntity fundedItem);
+    void addFundedItem(MedicalEntity fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
@@ -119,7 +138,7 @@ public interface Grant extends Intangible {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(CreativeWork fundedItem);
+    void addFundedItem(CreativeWork fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
@@ -129,7 +148,14 @@ public interface Grant extends Intangible {
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Organization fundedItem);
+    void addFundedItem(Organization fundedItem);
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSponsorList();
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -143,11 +169,11 @@ public interface Grant extends Intangible {
      *
      * @param sponsor Organization value to set.
      */
-    void setSponsor(Organization sponsor);
+    void addSponsor(Organization sponsor);
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @param sponsor Person value to set.
      */
-    void setSponsor(Person sponsor);
+    void addSponsor(Person sponsor);
 }

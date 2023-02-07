@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.SolveMathAction;
 import org.schema.model.datatype.Text;
 
@@ -24,6 +25,15 @@ public interface MathSolver extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
      */
+    <T> List<T> getMathExpressionList();
+
+    /**
+     * A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
+     *
+     * @return {@link SolveMathAction} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
+     */
     <T> T getMathExpression();
 
     /**
@@ -33,7 +43,7 @@ public interface MathSolver extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
      */
-    void setMathExpression(SolveMathAction mathExpression);
+    void addMathExpression(SolveMathAction mathExpression);
     /**
      * A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
      *
@@ -41,5 +51,5 @@ public interface MathSolver extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
      */
-    void setMathExpression(Text mathExpression);
+    void addMathExpression(Text mathExpression);
 }

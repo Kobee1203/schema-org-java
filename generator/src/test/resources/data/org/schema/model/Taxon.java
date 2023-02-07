@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.Taxon;
 import org.schema.model.datatype.Text;
@@ -25,6 +26,14 @@ public interface Taxon extends Thing {
      * @return {@link URL} or {@link Taxon} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
+    <T> List<T> getParentTaxonList();
+
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @return {@link URL} or {@link Taxon} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
     <T> T getParentTaxon();
 
     /**
@@ -33,21 +42,29 @@ public interface Taxon extends Thing {
      * @param parentTaxon URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(URL parentTaxon);
+    void addParentTaxon(URL parentTaxon);
     /**
      * Closest parent taxon of the taxon in question.
      *
      * @param parentTaxon Taxon value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(Taxon parentTaxon);
+    void addParentTaxon(Taxon parentTaxon);
     /**
      * Closest parent taxon of the taxon in question.
      *
      * @param parentTaxon Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(Text parentTaxon);
+    void addParentTaxon(Text parentTaxon);
+
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     *
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    <T> List<T> getTaxonRankList();
 
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
@@ -63,21 +80,29 @@ public interface Taxon extends Thing {
      * @param taxonRank PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(PropertyValue taxonRank);
+    void addTaxonRank(PropertyValue taxonRank);
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
      *
      * @param taxonRank URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(URL taxonRank);
+    void addTaxonRank(URL taxonRank);
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
      *
      * @param taxonRank Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(Text taxonRank);
+    void addTaxonRank(Text taxonRank);
+
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @return {@link Text} or {@link Taxon} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    <T> List<T> getChildTaxonList();
 
     /**
      * Closest child taxa of the taxon in question.
@@ -93,21 +118,30 @@ public interface Taxon extends Thing {
      * @param childTaxon Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(Text childTaxon);
+    void addChildTaxon(Text childTaxon);
     /**
      * Closest child taxa of the taxon in question.
      *
      * @param childTaxon Taxon value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(Taxon childTaxon);
+    void addChildTaxon(Taxon childTaxon);
     /**
      * Closest child taxa of the taxon in question.
      *
      * @param childTaxon URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(URL childTaxon);
+    void addChildTaxon(URL childTaxon);
+
+    /**
+     * A Defined Term contained in this term set.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    List<DefinedTerm> getHasDefinedTermList();
 
     /**
      * A Defined Term contained in this term set.
@@ -125,5 +159,5 @@ public interface Taxon extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setHasDefinedTerm(DefinedTerm hasDefinedTerm);
+    void addHasDefinedTerm(DefinedTerm hasDefinedTerm);
 }

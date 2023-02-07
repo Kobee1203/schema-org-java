@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -23,6 +24,13 @@ public interface NewsArticle extends Article {
      *
      * @return {@link Text}
      */
+    List<Text> getPrintEditionList();
+
+    /**
+     * The edition of the print product in which the NewsArticle appears.
+     *
+     * @return {@link Text}
+     */
     Text getPrintEdition();
 
     /**
@@ -30,7 +38,14 @@ public interface NewsArticle extends Article {
      *
      * @param printEdition Text value to set.
      */
-    void setPrintEdition(Text printEdition);
+    void addPrintEdition(Text printEdition);
+
+    /**
+     * The number of the column in which the NewsArticle appears in the print edition.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPrintColumnList();
 
     /**
      * The number of the column in which the NewsArticle appears in the print edition.
@@ -44,7 +59,14 @@ public interface NewsArticle extends Article {
      *
      * @param printColumn Text value to set.
      */
-    void setPrintColumn(Text printColumn);
+    void addPrintColumn(Text printColumn);
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPrintPageList();
 
     /**
      * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
@@ -58,7 +80,14 @@ public interface NewsArticle extends Article {
      *
      * @param printPage Text value to set.
      */
-    void setPrintPage(Text printPage);
+    void addPrintPage(Text printPage);
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPrintSectionList();
 
     /**
      * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
@@ -72,7 +101,19 @@ public interface NewsArticle extends Article {
      *
      * @param printSection Text value to set.
      */
-    void setPrintSection(Text printSection);
+    void addPrintSection(Text printSection);
+
+    /**
+     * A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
+     * 
+     * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
+     * 
+     * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
+     *       
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDatelineList();
 
     /**
      * A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
@@ -96,5 +137,5 @@ public interface NewsArticle extends Article {
      *
      * @param dateline Text value to set.
      */
-    void setDateline(Text dateline);
+    void addDateline(Text dateline);
 }

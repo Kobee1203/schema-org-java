@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalEntity;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalRiskFactor extends MedicalEntity {
      * @return {@link MedicalEntity}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalEntity> getIncreasesRiskOfList();
+
+    /**
+     * The condition, complication, etc. influenced by this factor.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalEntity getIncreasesRiskOf();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalRiskFactor extends MedicalEntity {
      * @param increasesRiskOf MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIncreasesRiskOf(MedicalEntity increasesRiskOf);
+    void addIncreasesRiskOf(MedicalEntity increasesRiskOf);
 }

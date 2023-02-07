@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.serializer.deserialization.spec;
 
+import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.converter.Converter;
 import com.weedow.schemaorg.serializer.converter.impl.*;
@@ -50,7 +51,7 @@ public class DataTypeSpecificationService {
         return Comparator.comparingInt((Class<JsonLdDataType<?>> clazz) -> dataTypeNames.indexOf(clazz.getSimpleName()));
     }
 
-    public DeserializerFunction getDeserializer(Class<?> rawClass) {
-        return deserializers.get(rawClass.getSimpleName());
+    public JsonDeserializer<JsonLdDataType<?>> getDeserializer(Class<?> clazz) {
+        return deserializers.get(clazz.getSimpleName()).apply(clazz);
     }
 }

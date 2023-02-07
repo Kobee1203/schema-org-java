@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Country;
 import org.schema.model.datatype.Text;
 
@@ -21,6 +22,14 @@ public interface PostalAddress extends ContactPoint {
      * @return {@link Country} or {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
+    <T> List<T> getAddressCountryList();
+
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
     <T> T getAddressCountry();
 
     /**
@@ -29,14 +38,22 @@ public interface PostalAddress extends ContactPoint {
      * @param addressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Country addressCountry);
+    void addAddressCountry(Country addressCountry);
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
      * @param addressCountry Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Text addressCountry);
+    void addAddressCountry(Text addressCountry);
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    List<Text> getAddressRegionList();
 
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
@@ -52,7 +69,14 @@ public interface PostalAddress extends ContactPoint {
      * @param addressRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressRegion(Text addressRegion);
+    void addAddressRegion(Text addressRegion);
+
+    /**
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAddressLocalityList();
 
     /**
      * The locality in which the street address is, and which is in the region. For example, Mountain View.
@@ -66,7 +90,15 @@ public interface PostalAddress extends ContactPoint {
      *
      * @param addressLocality Text value to set.
      */
-    void setAddressLocality(Text addressLocality);
+    void addAddressLocality(Text addressLocality);
+
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    List<Text> getPostalCodeList();
 
     /**
      * The postal code. For example, 94043.
@@ -82,7 +114,14 @@ public interface PostalAddress extends ContactPoint {
      * @param postalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCode(Text postalCode);
+    void addPostalCode(Text postalCode);
+
+    /**
+     * The post office box number for PO box addresses.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPostOfficeBoxNumberList();
 
     /**
      * The post office box number for PO box addresses.
@@ -96,7 +135,14 @@ public interface PostalAddress extends ContactPoint {
      *
      * @param postOfficeBoxNumber Text value to set.
      */
-    void setPostOfficeBoxNumber(Text postOfficeBoxNumber);
+    void addPostOfficeBoxNumber(Text postOfficeBoxNumber);
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getStreetAddressList();
 
     /**
      * The street address. For example, 1600 Amphitheatre Pkwy.
@@ -110,5 +156,5 @@ public interface PostalAddress extends ContactPoint {
      *
      * @param streetAddress Text value to set.
      */
-    void setStreetAddress(Text streetAddress);
+    void addStreetAddress(Text streetAddress);
 }

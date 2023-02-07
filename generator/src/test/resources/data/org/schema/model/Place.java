@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.Review;
 import org.schema.model.datatype.URL;
@@ -38,6 +39,13 @@ public interface Place extends Thing {
      *
      * @return {@link Text}
      */
+    List<Text> getTelephoneList();
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
     Text getTelephone();
 
     /**
@@ -45,7 +53,14 @@ public interface Place extends Thing {
      *
      * @param telephone Text value to set.
      */
-    void setTelephone(Text telephone);
+    void addTelephone(Text telephone);
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewList();
 
     /**
      * A review of the item.
@@ -59,7 +74,14 @@ public interface Place extends Thing {
      *
      * @param review Review value to set.
      */
-    void setReview(Review review);
+    void addReview(Review review);
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getMapsList();
 
     /**
      * A URL to a map of the place.
@@ -73,7 +95,14 @@ public interface Place extends Thing {
      *
      * @param maps URL value to set.
      */
-    void setMaps(URL maps);
+    void addMaps(URL maps);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoContainsList();
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -87,13 +116,20 @@ public interface Place extends Thing {
      *
      * @param geoContains Place value to set.
      */
-    void setGeoContains(Place geoContains);
+    void addGeoContains(Place geoContains);
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @param geoContains GeospatialGeometry value to set.
      */
-    void setGeoContains(GeospatialGeometry geoContains);
+    void addGeoContains(GeospatialGeometry geoContains);
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getMaximumAttendeeCapacityList();
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -107,7 +143,14 @@ public interface Place extends Thing {
      *
      * @param maximumAttendeeCapacity Integer value to set.
      */
-    void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity);
+    void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity);
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getContainsPlaceList();
 
     /**
      * The basic containment relation between a place and another that it contains.
@@ -121,7 +164,15 @@ public interface Place extends Thing {
      *
      * @param containsPlace Place value to set.
      */
-    void setContainsPlace(Place containsPlace);
+    void addContainsPlace(Place containsPlace);
+
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    List<Boolean> getSmokingAllowedList();
 
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
@@ -137,7 +188,15 @@ public interface Place extends Thing {
      * @param smokingAllowed Boolean value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setSmokingAllowed(Boolean smokingAllowed);
+    void addSmokingAllowed(Boolean smokingAllowed);
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getGlobalLocationNumberList();
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -153,7 +212,14 @@ public interface Place extends Thing {
      * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGlobalLocationNumber(Text globalLocationNumber);
+    void addGlobalLocationNumber(Text globalLocationNumber);
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    <T> List<T> getKeywordsList();
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -167,19 +233,26 @@ public interface Place extends Thing {
      *
      * @param keywords DefinedTerm value to set.
      */
-    void setKeywords(DefinedTerm keywords);
+    void addKeywords(DefinedTerm keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
      * @param keywords Text value to set.
      */
-    void setKeywords(Text keywords);
+    void addKeywords(Text keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
      * @param keywords URL value to set.
      */
-    void setKeywords(URL keywords);
+    void addKeywords(URL keywords);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoIntersectsList();
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -193,13 +266,20 @@ public interface Place extends Thing {
      *
      * @param geoIntersects GeospatialGeometry value to set.
      */
-    void setGeoIntersects(GeospatialGeometry geoIntersects);
+    void addGeoIntersects(GeospatialGeometry geoIntersects);
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @param geoIntersects Place value to set.
      */
-    void setGeoIntersects(Place geoIntersects);
+    void addGeoIntersects(Place geoIntersects);
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> List<T> getLatitudeList();
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -213,13 +293,20 @@ public interface Place extends Thing {
      *
      * @param latitude Text value to set.
      */
-    void setLatitude(Text latitude);
+    void addLatitude(Text latitude);
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
      * @param latitude Number value to set.
      */
-    void setLatitude(Number latitude);
+    void addLatitude(Number latitude);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoTouchesList();
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
@@ -233,13 +320,20 @@ public interface Place extends Thing {
      *
      * @param geoTouches Place value to set.
      */
-    void setGeoTouches(Place geoTouches);
+    void addGeoTouches(Place geoTouches);
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
      *
      * @param geoTouches GeospatialGeometry value to set.
      */
-    void setGeoTouches(GeospatialGeometry geoTouches);
+    void addGeoTouches(GeospatialGeometry geoTouches);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoCoveredByList();
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -253,13 +347,20 @@ public interface Place extends Thing {
      *
      * @param geoCoveredBy Place value to set.
      */
-    void setGeoCoveredBy(Place geoCoveredBy);
+    void addGeoCoveredBy(Place geoCoveredBy);
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @param geoCoveredBy GeospatialGeometry value to set.
      */
-    void setGeoCoveredBy(GeospatialGeometry geoCoveredBy);
+    void addGeoCoveredBy(GeospatialGeometry geoCoveredBy);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -273,7 +374,14 @@ public interface Place extends Thing {
      *
      * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating aggregateRating);
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    <T> List<T> getAddressList();
 
     /**
      * Physical address of the item.
@@ -287,13 +395,20 @@ public interface Place extends Thing {
      *
      * @param address Text value to set.
      */
-    void setAddress(Text address);
+    void addAddress(Text address);
     /**
      * Physical address of the item.
      *
      * @param address PostalAddress value to set.
      */
-    void setAddress(PostalAddress address);
+    void addAddress(PostalAddress address);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoEqualsList();
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
@@ -307,13 +422,20 @@ public interface Place extends Thing {
      *
      * @param geoEquals Place value to set.
      */
-    void setGeoEquals(Place geoEquals);
+    void addGeoEquals(Place geoEquals);
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
      *
      * @param geoEquals GeospatialGeometry value to set.
      */
-    void setGeoEquals(GeospatialGeometry geoEquals);
+    void addGeoEquals(GeospatialGeometry geoEquals);
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getMapList();
 
     /**
      * A URL to a map of the place.
@@ -327,7 +449,14 @@ public interface Place extends Thing {
      *
      * @param map URL value to set.
      */
-    void setMap(URL map);
+    void addMap(URL map);
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getPublicAccessList();
 
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
@@ -341,7 +470,14 @@ public interface Place extends Thing {
      *
      * @param publicAccess Boolean value to set.
      */
-    void setPublicAccess(Boolean publicAccess);
+    void addPublicAccess(Boolean publicAccess);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoCrossesList();
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -355,13 +491,20 @@ public interface Place extends Thing {
      *
      * @param geoCrosses GeospatialGeometry value to set.
      */
-    void setGeoCrosses(GeospatialGeometry geoCrosses);
+    void addGeoCrosses(GeospatialGeometry geoCrosses);
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @param geoCrosses Place value to set.
      */
-    void setGeoCrosses(Place geoCrosses);
+    void addGeoCrosses(Place geoCrosses);
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getContainedInPlaceList();
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -375,7 +518,15 @@ public interface Place extends Thing {
      *
      * @param containedInPlace Place value to set.
      */
-    void setContainedInPlace(Place containedInPlace);
+    void addContainedInPlace(Place containedInPlace);
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    List<LocationFeatureSpecification> getAmenityFeatureList();
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -391,7 +542,14 @@ public interface Place extends Thing {
      * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setAmenityFeature(LocationFeatureSpecification amenityFeature);
+    void addAmenityFeature(LocationFeatureSpecification amenityFeature);
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSloganList();
 
     /**
      * A slogan or motto associated with the item.
@@ -405,7 +563,14 @@ public interface Place extends Thing {
      *
      * @param slogan Text value to set.
      */
-    void setSlogan(Text slogan);
+    void addSlogan(Text slogan);
+
+    /**
+     * Photographs of this place.
+     *
+     * @return {@link ImageObject} or {@link Photograph}
+     */
+    <T> List<T> getPhotosList();
 
     /**
      * Photographs of this place.
@@ -419,13 +584,20 @@ public interface Place extends Thing {
      *
      * @param photos ImageObject value to set.
      */
-    void setPhotos(ImageObject photos);
+    void addPhotos(ImageObject photos);
     /**
      * Photographs of this place.
      *
      * @param photos Photograph value to set.
      */
-    void setPhotos(Photograph photos);
+    void addPhotos(Photograph photos);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoCoversList();
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -439,13 +611,20 @@ public interface Place extends Thing {
      *
      * @param geoCovers GeospatialGeometry value to set.
      */
-    void setGeoCovers(GeospatialGeometry geoCovers);
+    void addGeoCovers(GeospatialGeometry geoCovers);
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @param geoCovers Place value to set.
      */
-    void setGeoCovers(Place geoCovers);
+    void addGeoCovers(Place geoCovers);
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getContainedInList();
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -459,7 +638,16 @@ public interface Place extends Thing {
      *
      * @param containedIn Place value to set.
      */
-    void setContainedIn(Place containedIn);
+    void addContainedIn(Place containedIn);
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    List<Boolean> getHasDriveThroughServiceList();
 
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
@@ -477,7 +665,15 @@ public interface Place extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setHasDriveThroughService(Boolean hasDriveThroughService);
+    void addHasDriveThroughService(Boolean hasDriveThroughService);
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getLogoList();
 
     /**
      * An associated logo.
@@ -493,14 +689,21 @@ public interface Place extends Thing {
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(URL logo);
+    void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(ImageObject logo);
+    void addLogo(ImageObject logo);
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsAccessibleForFreeList();
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -514,7 +717,14 @@ public interface Place extends Thing {
      *
      * @param isAccessibleForFree Boolean value to set.
      */
-    void setIsAccessibleForFree(Boolean isAccessibleForFree);
+    void addIsAccessibleForFree(Boolean isAccessibleForFree);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoWithinList();
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -528,13 +738,20 @@ public interface Place extends Thing {
      *
      * @param geoWithin Place value to set.
      */
-    void setGeoWithin(Place geoWithin);
+    void addGeoWithin(Place geoWithin);
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @param geoWithin GeospatialGeometry value to set.
      */
-    void setGeoWithin(GeospatialGeometry geoWithin);
+    void addGeoWithin(GeospatialGeometry geoWithin);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoDisjointList();
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
@@ -548,13 +765,22 @@ public interface Place extends Thing {
      *
      * @param geoDisjoint GeospatialGeometry value to set.
      */
-    void setGeoDisjoint(GeospatialGeometry geoDisjoint);
+    void addGeoDisjoint(GeospatialGeometry geoDisjoint);
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
      * @param geoDisjoint Place value to set.
      */
-    void setGeoDisjoint(Place geoDisjoint);
+    void addGeoDisjoint(Place geoDisjoint);
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    List<URL> getTourBookingPageList();
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
@@ -572,7 +798,15 @@ public interface Place extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setTourBookingPage(URL tourBookingPage);
+    void addTourBookingPage(URL tourBookingPage);
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<Text> getIsicV4List();
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -588,7 +822,14 @@ public interface Place extends Thing {
      * @param isicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsicV4(Text isicV4);
+    void addIsicV4(Text isicV4);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoOverlapsList();
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -602,13 +843,21 @@ public interface Place extends Thing {
      *
      * @param geoOverlaps GeospatialGeometry value to set.
      */
-    void setGeoOverlaps(GeospatialGeometry geoOverlaps);
+    void addGeoOverlaps(GeospatialGeometry geoOverlaps);
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @param geoOverlaps Place value to set.
      */
-    void setGeoOverlaps(Place geoOverlaps);
+    void addGeoOverlaps(Place geoOverlaps);
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBranchCodeList();
 
     /**
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
@@ -624,7 +873,14 @@ public interface Place extends Thing {
      *
      * @param branchCode Text value to set.
      */
-    void setBranchCode(Text branchCode);
+    void addBranchCode(Text branchCode);
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    List<PropertyValue> getAdditionalPropertyList();
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -638,7 +894,15 @@ public interface Place extends Thing {
      *
      * @param additionalProperty PropertyValue value to set.
      */
-    void setAdditionalProperty(PropertyValue additionalProperty);
+    void addAdditionalProperty(PropertyValue additionalProperty);
+
+    /**
+     * The opening hours of a certain place.
+     *
+     * @return {@link OpeningHoursSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<OpeningHoursSpecification> getOpeningHoursSpecificationList();
 
     /**
      * The opening hours of a certain place.
@@ -654,7 +918,14 @@ public interface Place extends Thing {
      * @param openingHoursSpecification OpeningHoursSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification);
+    void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification);
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewsList();
 
     /**
      * Review of the item.
@@ -668,7 +939,14 @@ public interface Place extends Thing {
      *
      * @param reviews Review value to set.
      */
-    void setReviews(Review reviews);
+    void addReviews(Review reviews);
+
+    /**
+     * A photograph of this place.
+     *
+     * @return {@link Photograph} or {@link ImageObject}
+     */
+    <T> List<T> getPhotoList();
 
     /**
      * A photograph of this place.
@@ -682,13 +960,21 @@ public interface Place extends Thing {
      *
      * @param photo Photograph value to set.
      */
-    void setPhoto(Photograph photo);
+    void addPhoto(Photograph photo);
     /**
      * A photograph of this place.
      *
      * @param photo ImageObject value to set.
      */
-    void setPhoto(ImageObject photo);
+    void addPhoto(ImageObject photo);
+
+    /**
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    List<OpeningHoursSpecification> getSpecialOpeningHoursSpecificationList();
 
     /**
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
@@ -704,7 +990,14 @@ public interface Place extends Thing {
      *
      * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
-    void setSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification);
+    void addSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification);
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL} or {@link Map}
+     */
+    <T> List<T> getHasMapList();
 
     /**
      * A URL to a map of the place.
@@ -718,13 +1011,20 @@ public interface Place extends Thing {
      *
      * @param hasMap URL value to set.
      */
-    void setHasMap(URL hasMap);
+    void addHasMap(URL hasMap);
     /**
      * A URL to a map of the place.
      *
      * @param hasMap Map value to set.
      */
-    void setHasMap(Map hasMap);
+    void addHasMap(Map hasMap);
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> List<T> getLongitudeList();
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -738,13 +1038,20 @@ public interface Place extends Thing {
      *
      * @param longitude Number value to set.
      */
-    void setLongitude(Number longitude);
+    void addLongitude(Number longitude);
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
      * @param longitude Text value to set.
      */
-    void setLongitude(Text longitude);
+    void addLongitude(Text longitude);
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @return {@link GeoCoordinates} or {@link GeoShape}
+     */
+    <T> List<T> getGeoList();
 
     /**
      * The geo coordinates of the place.
@@ -758,13 +1065,20 @@ public interface Place extends Thing {
      *
      * @param geo GeoCoordinates value to set.
      */
-    void setGeo(GeoCoordinates geo);
+    void addGeo(GeoCoordinates geo);
     /**
      * The geo coordinates of the place.
      *
      * @param geo GeoShape value to set.
      */
-    void setGeo(GeoShape geo);
+    void addGeo(GeoShape geo);
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventsList();
 
     /**
      * Upcoming or past events associated with this place or organization.
@@ -778,7 +1092,14 @@ public interface Place extends Thing {
      *
      * @param events Event value to set.
      */
-    void setEvents(Event events);
+    void addEvents(Event events);
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFaxNumberList();
 
     /**
      * The fax number.
@@ -792,7 +1113,14 @@ public interface Place extends Thing {
      *
      * @param faxNumber Text value to set.
      */
-    void setFaxNumber(Text faxNumber);
+    void addFaxNumber(Text faxNumber);
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventList();
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -806,5 +1134,5 @@ public interface Place extends Thing {
      *
      * @param event Event value to set.
      */
-    void setEvent(Event event);
+    void addEvent(Event event);
 }

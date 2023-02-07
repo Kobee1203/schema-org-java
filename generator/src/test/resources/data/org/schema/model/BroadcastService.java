@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.BroadcastService;
 import org.schema.model.datatype.Text;
 import org.schema.model.BroadcastFrequencySpecification;
@@ -25,6 +26,13 @@ public interface BroadcastService extends Service {
      *
      * @return {@link BroadcastService}
      */
+    List<BroadcastService> getParentServiceList();
+
+    /**
+     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+     *
+     * @return {@link BroadcastService}
+     */
     BroadcastService getParentService();
 
     /**
@@ -32,7 +40,14 @@ public interface BroadcastService extends Service {
      *
      * @param parentService BroadcastService value to set.
      */
-    void setParentService(BroadcastService parentService);
+    void addParentService(BroadcastService parentService);
+
+    /**
+     * The name displayed in the channel guide. For many US affiliates, it is the network name.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBroadcastDisplayNameList();
 
     /**
      * The name displayed in the channel guide. For many US affiliates, it is the network name.
@@ -46,7 +61,14 @@ public interface BroadcastService extends Service {
      *
      * @param broadcastDisplayName Text value to set.
      */
-    void setBroadcastDisplayName(Text broadcastDisplayName);
+    void addBroadcastDisplayName(Text broadcastDisplayName);
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getVideoFormatList();
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -60,7 +82,14 @@ public interface BroadcastService extends Service {
      *
      * @param videoFormat Text value to set.
      */
-    void setVideoFormat(Text videoFormat);
+    void addVideoFormat(Text videoFormat);
+
+    /**
+     * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBroadcastTimezoneList();
 
     /**
      * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
@@ -74,7 +103,15 @@ public interface BroadcastService extends Service {
      *
      * @param broadcastTimezone Text value to set.
      */
-    void setBroadcastTimezone(Text broadcastTimezone);
+    void addBroadcastTimezone(Text broadcastTimezone);
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link BroadcastFrequencySpecification} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> List<T> getBroadcastFrequencyList();
 
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
@@ -90,14 +127,23 @@ public interface BroadcastService extends Service {
      * @param broadcastFrequency BroadcastFrequencySpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
+    void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
      * @param broadcastFrequency Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequency(Text broadcastFrequency);
+    void addBroadcastFrequency(Text broadcastFrequency);
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    List<Text> getCallSignList();
 
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
@@ -115,7 +161,15 @@ public interface BroadcastService extends Service {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
-    void setCallSign(Text callSign);
+    void addCallSign(Text callSign);
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> List<T> getInLanguageList();
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -131,14 +185,22 @@ public interface BroadcastService extends Service {
      * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text inLanguage);
+    void addInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
      * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Language inLanguage);
+    void addInLanguage(Language inLanguage);
+
+    /**
+     * A broadcast channel of a broadcast service.
+     *
+     * @return {@link BroadcastChannel}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    List<BroadcastChannel> getHasBroadcastChannelList();
 
     /**
      * A broadcast channel of a broadcast service.
@@ -154,7 +216,14 @@ public interface BroadcastService extends Service {
      * @param hasBroadcastChannel BroadcastChannel value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setHasBroadcastChannel(BroadcastChannel hasBroadcastChannel);
+    void addHasBroadcastChannel(BroadcastChannel hasBroadcastChannel);
+
+    /**
+     * The organization owning or operating the broadcast service.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getBroadcasterList();
 
     /**
      * The organization owning or operating the broadcast service.
@@ -168,7 +237,14 @@ public interface BroadcastService extends Service {
      *
      * @param broadcaster Organization value to set.
      */
-    void setBroadcaster(Organization broadcaster);
+    void addBroadcaster(Organization broadcaster);
+
+    /**
+     * The media network(s) whose content is broadcast on this station.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getBroadcastAffiliateOfList();
 
     /**
      * The media network(s) whose content is broadcast on this station.
@@ -182,7 +258,14 @@ public interface BroadcastService extends Service {
      *
      * @param broadcastAffiliateOf Organization value to set.
      */
-    void setBroadcastAffiliateOf(Organization broadcastAffiliateOf);
+    void addBroadcastAffiliateOf(Organization broadcastAffiliateOf);
+
+    /**
+     * The area within which users can expect to reach the broadcast service.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getAreaList();
 
     /**
      * The area within which users can expect to reach the broadcast service.
@@ -196,5 +279,5 @@ public interface BroadcastService extends Service {
      *
      * @param area Place value to set.
      */
-    void setArea(Place area);
+    void addArea(Place area);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.SportsTeam;
 import org.schema.model.datatype.Text;
@@ -22,6 +23,13 @@ public interface SportsEvent extends Event {
      *
      * @return {@link Person} or {@link SportsTeam}
      */
+    <T> List<T> getHomeTeamList();
+
+    /**
+     * The home team in a sports event.
+     *
+     * @return {@link Person} or {@link SportsTeam}
+     */
     <T> T getHomeTeam();
 
     /**
@@ -29,13 +37,20 @@ public interface SportsEvent extends Event {
      *
      * @param homeTeam Person value to set.
      */
-    void setHomeTeam(Person homeTeam);
+    void addHomeTeam(Person homeTeam);
     /**
      * The home team in a sports event.
      *
      * @param homeTeam SportsTeam value to set.
      */
-    void setHomeTeam(SportsTeam homeTeam);
+    void addHomeTeam(SportsTeam homeTeam);
+
+    /**
+     * The away team in a sports event.
+     *
+     * @return {@link SportsTeam} or {@link Person}
+     */
+    <T> List<T> getAwayTeamList();
 
     /**
      * The away team in a sports event.
@@ -49,13 +64,20 @@ public interface SportsEvent extends Event {
      *
      * @param awayTeam SportsTeam value to set.
      */
-    void setAwayTeam(SportsTeam awayTeam);
+    void addAwayTeam(SportsTeam awayTeam);
     /**
      * The away team in a sports event.
      *
      * @param awayTeam Person value to set.
      */
-    void setAwayTeam(Person awayTeam);
+    void addAwayTeam(Person awayTeam);
+
+    /**
+     * A competitor in a sports event.
+     *
+     * @return {@link Person} or {@link SportsTeam}
+     */
+    <T> List<T> getCompetitorList();
 
     /**
      * A competitor in a sports event.
@@ -69,13 +91,22 @@ public interface SportsEvent extends Event {
      *
      * @param competitor Person value to set.
      */
-    void setCompetitor(Person competitor);
+    void addCompetitor(Person competitor);
     /**
      * A competitor in a sports event.
      *
      * @param competitor SportsTeam value to set.
      */
-    void setCompetitor(SportsTeam competitor);
+    void addCompetitor(SportsTeam competitor);
+
+    /**
+     * A type of sport (e.g. Baseball).
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
+     */
+    <T> List<T> getSportList();
 
     /**
      * A type of sport (e.g. Baseball).
@@ -93,7 +124,7 @@ public interface SportsEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(Text sport);
+    void addSport(Text sport);
     /**
      * A type of sport (e.g. Baseball).
      *
@@ -101,5 +132,5 @@ public interface SportsEvent extends Event {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(URL sport);
+    void addSport(URL sport);
 }

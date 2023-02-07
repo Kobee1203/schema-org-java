@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
 import org.schema.model.Seat;
@@ -27,6 +28,13 @@ public interface Ticket extends Intangible {
      *
      * @return {@link URL} or {@link Text}
      */
+    <T> List<T> getTicketTokenList();
+
+    /**
+     * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
+     *
+     * @return {@link URL} or {@link Text}
+     */
     <T> T getTicketToken();
 
     /**
@@ -34,13 +42,20 @@ public interface Ticket extends Intangible {
      *
      * @param ticketToken URL value to set.
      */
-    void setTicketToken(URL ticketToken);
+    void addTicketToken(URL ticketToken);
     /**
      * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
      *
      * @param ticketToken Text value to set.
      */
-    void setTicketToken(Text ticketToken);
+    void addTicketToken(Text ticketToken);
+
+    /**
+     * The seat associated with the ticket.
+     *
+     * @return {@link Seat}
+     */
+    List<Seat> getTicketedSeatList();
 
     /**
      * The seat associated with the ticket.
@@ -54,7 +69,14 @@ public interface Ticket extends Intangible {
      *
      * @param ticketedSeat Seat value to set.
      */
-    void setTicketedSeat(Seat ticketedSeat);
+    void addTicketedSeat(Seat ticketedSeat);
+
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link PriceSpecification} or {@link Number} or {@link Text}
+     */
+    <T> List<T> getTotalPriceList();
 
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -68,19 +90,26 @@ public interface Ticket extends Intangible {
      *
      * @param totalPrice PriceSpecification value to set.
      */
-    void setTotalPrice(PriceSpecification totalPrice);
+    void addTotalPrice(PriceSpecification totalPrice);
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param totalPrice Number value to set.
      */
-    void setTotalPrice(Number totalPrice);
+    void addTotalPrice(Number totalPrice);
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param totalPrice Text value to set.
      */
-    void setTotalPrice(Text totalPrice);
+    void addTotalPrice(Text totalPrice);
+
+    /**
+     * The organization issuing the ticket or permit.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getIssuedByList();
 
     /**
      * The organization issuing the ticket or permit.
@@ -94,7 +123,14 @@ public interface Ticket extends Intangible {
      *
      * @param issuedBy Organization value to set.
      */
-    void setIssuedBy(Organization issuedBy);
+    void addIssuedBy(Organization issuedBy);
+
+    /**
+     * The unique identifier for the ticket.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTicketNumberList();
 
     /**
      * The unique identifier for the ticket.
@@ -108,7 +144,14 @@ public interface Ticket extends Intangible {
      *
      * @param ticketNumber Text value to set.
      */
-    void setTicketNumber(Text ticketNumber);
+    void addTicketNumber(Text ticketNumber);
+
+    /**
+     * The date the ticket was issued.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getDateIssuedList();
 
     /**
      * The date the ticket was issued.
@@ -122,13 +165,20 @@ public interface Ticket extends Intangible {
      *
      * @param dateIssued Date value to set.
      */
-    void setDateIssued(Date dateIssued);
+    void addDateIssued(Date dateIssued);
     /**
      * The date the ticket was issued.
      *
      * @param dateIssued DateTime value to set.
      */
-    void setDateIssued(DateTime dateIssued);
+    void addDateIssued(DateTime dateIssued);
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPriceCurrencyList();
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -142,7 +192,14 @@ public interface Ticket extends Intangible {
      *
      * @param priceCurrency Text value to set.
      */
-    void setPriceCurrency(Text priceCurrency);
+    void addPriceCurrency(Text priceCurrency);
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getUnderNameList();
 
     /**
      * The person or organization the reservation or ticket is for.
@@ -156,11 +213,11 @@ public interface Ticket extends Intangible {
      *
      * @param underName Organization value to set.
      */
-    void setUnderName(Organization underName);
+    void addUnderName(Organization underName);
     /**
      * The person or organization the reservation or ticket is for.
      *
      * @param underName Person value to set.
      */
-    void setUnderName(Person underName);
+    void addUnderName(Person underName);
 }

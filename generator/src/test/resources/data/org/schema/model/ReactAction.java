@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of responding instinctively and emotionally to an object, expressing a sentiment.

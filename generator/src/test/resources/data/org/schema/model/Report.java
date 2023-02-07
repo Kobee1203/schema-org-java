@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface Report extends Article {
      *
      * @return {@link Text}
      */
+    List<Text> getReportNumberList();
+
+    /**
+     * The number or other unique designator assigned to a Report by the publishing organization.
+     *
+     * @return {@link Text}
+     */
     Text getReportNumber();
 
     /**
@@ -26,5 +34,5 @@ public interface Report extends Article {
      *
      * @param reportNumber Text value to set.
      */
-    void setReportNumber(Text reportNumber);
+    void addReportNumber(Text reportNumber);
 }

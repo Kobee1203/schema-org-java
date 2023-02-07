@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.CreativeWork;
 import org.schema.model.ItemList;
@@ -25,6 +26,13 @@ public interface Recipe extends HowTo {
      *
      * @return {@link Text} or {@link CreativeWork} or {@link ItemList}
      */
+    <T> List<T> getRecipeInstructionsList();
+
+    /**
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     *
+     * @return {@link Text} or {@link CreativeWork} or {@link ItemList}
+     */
     <T> T getRecipeInstructions();
 
     /**
@@ -32,19 +40,26 @@ public interface Recipe extends HowTo {
      *
      * @param recipeInstructions Text value to set.
      */
-    void setRecipeInstructions(Text recipeInstructions);
+    void addRecipeInstructions(Text recipeInstructions);
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions CreativeWork value to set.
      */
-    void setRecipeInstructions(CreativeWork recipeInstructions);
+    void addRecipeInstructions(CreativeWork recipeInstructions);
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions ItemList value to set.
      */
-    void setRecipeInstructions(ItemList recipeInstructions);
+    void addRecipeInstructions(ItemList recipeInstructions);
+
+    /**
+     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIngredientsList();
 
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
@@ -58,7 +73,14 @@ public interface Recipe extends HowTo {
      *
      * @param ingredients Text value to set.
      */
-    void setIngredients(Text ingredients);
+    void addIngredients(Text ingredients);
+
+    /**
+     * The cuisine of the recipe (for example, French or Ethiopian).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRecipeCuisineList();
 
     /**
      * The cuisine of the recipe (for example, French or Ethiopian).
@@ -72,7 +94,14 @@ public interface Recipe extends HowTo {
      *
      * @param recipeCuisine Text value to set.
      */
-    void setRecipeCuisine(Text recipeCuisine);
+    void addRecipeCuisine(Text recipeCuisine);
+
+    /**
+     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
+     *
+     * @return {@link RestrictedDiet}
+     */
+    List<RestrictedDiet> getSuitableForDietList();
 
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
@@ -86,7 +115,14 @@ public interface Recipe extends HowTo {
      *
      * @param suitableForDiet RestrictedDiet value to set.
      */
-    void setSuitableForDiet(RestrictedDiet suitableForDiet);
+    void addSuitableForDiet(RestrictedDiet suitableForDiet);
+
+    /**
+     * Nutrition information about the recipe or menu item.
+     *
+     * @return {@link NutritionInformation}
+     */
+    List<NutritionInformation> getNutritionList();
 
     /**
      * Nutrition information about the recipe or menu item.
@@ -100,7 +136,14 @@ public interface Recipe extends HowTo {
      *
      * @param nutrition NutritionInformation value to set.
      */
-    void setNutrition(NutritionInformation nutrition);
+    void addNutrition(NutritionInformation nutrition);
+
+    /**
+     * The method of cooking, such as Frying, Steaming, ...
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCookingMethodList();
 
     /**
      * The method of cooking, such as Frying, Steaming, ...
@@ -114,7 +157,14 @@ public interface Recipe extends HowTo {
      *
      * @param cookingMethod Text value to set.
      */
-    void setCookingMethod(Text cookingMethod);
+    void addCookingMethod(Text cookingMethod);
+
+    /**
+     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRecipeIngredientList();
 
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
@@ -128,7 +178,14 @@ public interface Recipe extends HowTo {
      *
      * @param recipeIngredient Text value to set.
      */
-    void setRecipeIngredient(Text recipeIngredient);
+    void addRecipeIngredient(Text recipeIngredient);
+
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     *
+     * @return {@link Text} or {@link QuantitativeValue}
+     */
+    <T> List<T> getRecipeYieldList();
 
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
@@ -142,13 +199,20 @@ public interface Recipe extends HowTo {
      *
      * @param recipeYield Text value to set.
      */
-    void setRecipeYield(Text recipeYield);
+    void addRecipeYield(Text recipeYield);
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @param recipeYield QuantitativeValue value to set.
      */
-    void setRecipeYield(QuantitativeValue recipeYield);
+    void addRecipeYield(QuantitativeValue recipeYield);
+
+    /**
+     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getCookTimeList();
 
     /**
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -162,7 +226,14 @@ public interface Recipe extends HowTo {
      *
      * @param cookTime Duration value to set.
      */
-    void setCookTime(Duration cookTime);
+    void addCookTime(Duration cookTime);
+
+    /**
+     * The category of the recipe—for example, appetizer, entree, etc.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRecipeCategoryList();
 
     /**
      * The category of the recipe—for example, appetizer, entree, etc.
@@ -176,5 +247,5 @@ public interface Recipe extends HowTo {
      *
      * @param recipeCategory Text value to set.
      */
-    void setRecipeCategory(Text recipeCategory);
+    void addRecipeCategory(Text recipeCategory);
 }

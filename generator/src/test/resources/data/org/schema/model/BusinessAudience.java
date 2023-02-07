@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.QuantitativeValue;
 
 /**
@@ -19,6 +20,13 @@ public interface BusinessAudience extends Audience {
      *
      * @return {@link QuantitativeValue}
      */
+    List<QuantitativeValue> getYearlyRevenueList();
+
+    /**
+     * The size of the business in annual revenue.
+     *
+     * @return {@link QuantitativeValue}
+     */
     QuantitativeValue getYearlyRevenue();
 
     /**
@@ -26,7 +34,14 @@ public interface BusinessAudience extends Audience {
      *
      * @param yearlyRevenue QuantitativeValue value to set.
      */
-    void setYearlyRevenue(QuantitativeValue yearlyRevenue);
+    void addYearlyRevenue(QuantitativeValue yearlyRevenue);
+
+    /**
+     * The number of employees in an organization e.g. business.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getNumberOfEmployeesList();
 
     /**
      * The number of employees in an organization e.g. business.
@@ -40,7 +55,14 @@ public interface BusinessAudience extends Audience {
      *
      * @param numberOfEmployees QuantitativeValue value to set.
      */
-    void setNumberOfEmployees(QuantitativeValue numberOfEmployees);
+    void addNumberOfEmployees(QuantitativeValue numberOfEmployees);
+
+    /**
+     * The age of the business.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getYearsInOperationList();
 
     /**
      * The age of the business.
@@ -54,5 +76,5 @@ public interface BusinessAudience extends Audience {
      *
      * @param yearsInOperation QuantitativeValue value to set.
      */
-    void setYearsInOperation(QuantitativeValue yearsInOperation);
+    void addYearsInOperation(QuantitativeValue yearsInOperation);
 }

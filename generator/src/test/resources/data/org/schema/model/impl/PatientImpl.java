@@ -17,6 +17,8 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.Audience;
 import org.schema.model.datatype.Integer;
@@ -60,7 +62,18 @@ import org.schema.model.Patient;
 @JsonLdTypeName("Patient")
 public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Patient {
 
-    private MedicalCondition healthCondition;
+    private List<MedicalCondition> healthCondition;
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalCondition> getHealthConditionList() {
+        return healthCondition;
+    }
 
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
@@ -70,7 +83,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public MedicalCondition getHealthCondition() {
-        return healthCondition;
+        return getFirst(healthCondition);
     }
 
     /**
@@ -80,11 +93,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setHealthCondition(MedicalCondition healthCondition) {
-        this.healthCondition = healthCondition;
+    public void addHealthCondition(MedicalCondition healthCondition) {
+        this.healthCondition = add(this.healthCondition, healthCondition);
     }
 
-    private Drug drug;
+    private List<Drug> drug;
+
+    /**
+     * Specifying a drug or medicine used in a medication procedure.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Drug> getDrugList() {
+        return drug;
+    }
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
@@ -94,7 +118,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Drug getDrug() {
-        return drug;
+        return getFirst(drug);
     }
 
     /**
@@ -104,11 +128,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDrug(Drug drug) {
-        this.drug = drug;
+    public void addDrug(Drug drug) {
+        this.drug = add(this.drug, drug);
     }
 
-    private MedicalCondition diagnosis;
+    private List<MedicalCondition> diagnosis;
+
+    /**
+     * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalCondition> getDiagnosisList() {
+        return diagnosis;
+    }
 
     /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
@@ -118,7 +153,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public MedicalCondition getDiagnosis() {
-        return diagnosis;
+        return getFirst(diagnosis);
     }
 
     /**
@@ -128,11 +163,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDiagnosis(MedicalCondition diagnosis) {
-        this.diagnosis = diagnosis;
+    public void addDiagnosis(MedicalCondition diagnosis) {
+        this.diagnosis = add(this.diagnosis, diagnosis);
     }
 
-    private Text audienceType;
+    private List<Text> audienceType;
+
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAudienceTypeList() {
+        return audienceType;
+    }
 
     /**
      * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
@@ -141,7 +186,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAudienceType() {
-        return audienceType;
+        return getFirst(audienceType);
     }
 
     /**
@@ -150,11 +195,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param audienceType Text value to set.
      */
     @Override
-    public void setAudienceType(Text audienceType) {
-        this.audienceType = audienceType;
+    public void addAudienceType(Text audienceType) {
+        this.audienceType = add(this.audienceType, audienceType);
     }
 
-    private AdministrativeArea geographicArea;
+    private List<AdministrativeArea> geographicArea;
+
+    /**
+     * The geographic area associated with the audience.
+     *
+     * @return {@link AdministrativeArea}
+     */
+    @Override
+    public List<AdministrativeArea> getGeographicAreaList() {
+        return geographicArea;
+    }
 
     /**
      * The geographic area associated with the audience.
@@ -163,7 +218,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public AdministrativeArea getGeographicArea() {
-        return geographicArea;
+        return getFirst(geographicArea);
     }
 
     /**
@@ -172,11 +227,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param geographicArea AdministrativeArea value to set.
      */
     @Override
-    public void setGeographicArea(AdministrativeArea geographicArea) {
-        this.geographicArea = geographicArea;
+    public void addGeographicArea(AdministrativeArea geographicArea) {
+        this.geographicArea = add(this.geographicArea, geographicArea);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -185,7 +251,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -194,8 +260,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -203,11 +269,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -216,7 +292,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -225,11 +301,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -238,7 +324,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -247,11 +333,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -260,7 +356,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -269,11 +365,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -282,7 +389,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -291,8 +398,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -300,11 +407,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -313,7 +430,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -322,11 +439,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -335,7 +462,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -344,11 +471,23 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -358,7 +497,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -368,8 +507,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -378,11 +517,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -391,7 +540,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -400,11 +549,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -413,7 +572,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -422,11 +581,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -435,7 +604,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -444,11 +613,23 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -458,7 +639,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -468,8 +649,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -478,8 +659,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -488,11 +669,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 
-    private Integer requiredMinAge;
+    private List<Integer> requiredMinAge;
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getRequiredMinAgeList() {
+        return requiredMinAge;
+    }
 
     /**
      * Audiences defined by a person's minimum age.
@@ -501,7 +692,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Integer getRequiredMinAge() {
-        return requiredMinAge;
+        return getFirst(requiredMinAge);
     }
 
     /**
@@ -510,11 +701,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param requiredMinAge Integer value to set.
      */
     @Override
-    public void setRequiredMinAge(Integer requiredMinAge) {
-        this.requiredMinAge = requiredMinAge;
+    public void addRequiredMinAge(Integer requiredMinAge) {
+        this.requiredMinAge = add(this.requiredMinAge, requiredMinAge);
     }
 
-    private Number suggestedMaxAge;
+    private List<Number> suggestedMaxAge;
+
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getSuggestedMaxAgeList() {
+        return suggestedMaxAge;
+    }
 
     /**
      * Maximum recommended age in years for the audience or user.
@@ -523,7 +724,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Number getSuggestedMaxAge() {
-        return suggestedMaxAge;
+        return getFirst(suggestedMaxAge);
     }
 
     /**
@@ -532,11 +733,23 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param suggestedMaxAge Number value to set.
      */
     @Override
-    public void setSuggestedMaxAge(Number suggestedMaxAge) {
-        this.suggestedMaxAge = suggestedMaxAge;
+    public void addSuggestedMaxAge(Number suggestedMaxAge) {
+        this.suggestedMaxAge = add(this.suggestedMaxAge, suggestedMaxAge);
     }
 
-    private QuantitativeValue suggestedMeasurement;
+    private List<QuantitativeValue> suggestedMeasurement;
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public List<QuantitativeValue> getSuggestedMeasurementList() {
+        return suggestedMeasurement;
+    }
 
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
@@ -547,7 +760,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getSuggestedMeasurement() {
-        return suggestedMeasurement;
+        return getFirst(suggestedMeasurement);
     }
 
     /**
@@ -558,11 +771,23 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSuggestedMeasurement(QuantitativeValue suggestedMeasurement) {
-        this.suggestedMeasurement = suggestedMeasurement;
+    public void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement) {
+        this.suggestedMeasurement = add(this.suggestedMeasurement, suggestedMeasurement);
     }
 
-    private QuantitativeValue suggestedAge;
+    private List<QuantitativeValue> suggestedAge;
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public List<QuantitativeValue> getSuggestedAgeList() {
+        return suggestedAge;
+    }
 
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
@@ -573,7 +798,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getSuggestedAge() {
-        return suggestedAge;
+        return getFirst(suggestedAge);
     }
 
     /**
@@ -584,11 +809,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSuggestedAge(QuantitativeValue suggestedAge) {
-        this.suggestedAge = suggestedAge;
+    public void addSuggestedAge(QuantitativeValue suggestedAge) {
+        this.suggestedAge = add(this.suggestedAge, suggestedAge);
     }
 
-    private Integer requiredMaxAge;
+    private List<Integer> requiredMaxAge;
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getRequiredMaxAgeList() {
+        return requiredMaxAge;
+    }
 
     /**
      * Audiences defined by a person's maximum age.
@@ -597,7 +832,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Integer getRequiredMaxAge() {
-        return requiredMaxAge;
+        return getFirst(requiredMaxAge);
     }
 
     /**
@@ -606,11 +841,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param requiredMaxAge Integer value to set.
      */
     @Override
-    public void setRequiredMaxAge(Integer requiredMaxAge) {
-        this.requiredMaxAge = requiredMaxAge;
+    public void addRequiredMaxAge(Integer requiredMaxAge) {
+        this.requiredMaxAge = add(this.requiredMaxAge, requiredMaxAge);
     }
 
-    private Number suggestedMinAge;
+    private List<Number> suggestedMinAge;
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getSuggestedMinAgeList() {
+        return suggestedMinAge;
+    }
 
     /**
      * Minimum recommended age in years for the audience or user.
@@ -619,7 +864,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Number getSuggestedMinAge() {
-        return suggestedMinAge;
+        return getFirst(suggestedMinAge);
     }
 
     /**
@@ -628,11 +873,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param suggestedMinAge Number value to set.
      */
     @Override
-    public void setSuggestedMinAge(Number suggestedMinAge) {
-        this.suggestedMinAge = suggestedMinAge;
+    public void addSuggestedMinAge(Number suggestedMinAge) {
+        this.suggestedMinAge = add(this.suggestedMinAge, suggestedMinAge);
     }
 
-    private Text requiredGender;
+    private List<Text> requiredGender;
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getRequiredGenderList() {
+        return requiredGender;
+    }
 
     /**
      * Audiences defined by a person's gender.
@@ -641,7 +896,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getRequiredGender() {
-        return requiredGender;
+        return getFirst(requiredGender);
     }
 
     /**
@@ -650,11 +905,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param requiredGender Text value to set.
      */
     @Override
-    public void setRequiredGender(Text requiredGender) {
-        this.requiredGender = requiredGender;
+    public void addRequiredGender(Text requiredGender) {
+        this.requiredGender = add(this.requiredGender, requiredGender);
     }
 
-    private Object suggestedGender;
+    @JsonLdFieldTypes({ GenderType.class, Text.class })
+    private List<Object> suggestedGender;
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getSuggestedGenderList() {
+        return (List<T>) suggestedGender;
+    }
 
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
@@ -663,7 +929,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSuggestedGender() {
-        return (T) suggestedGender;
+        return (T) getFirst(suggestedGender);
     }
 
     /**
@@ -672,8 +938,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param suggestedGender GenderType value to set.
      */
     @Override
-    public void setSuggestedGender(GenderType suggestedGender) {
-        this.suggestedGender = suggestedGender;
+    public void addSuggestedGender(GenderType suggestedGender) {
+        this.suggestedGender = add(this.suggestedGender, suggestedGender);
     }
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
@@ -681,11 +947,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param suggestedGender Text value to set.
      */
     @Override
-    public void setSuggestedGender(Text suggestedGender) {
-        this.suggestedGender = suggestedGender;
+    public void addSuggestedGender(Text suggestedGender) {
+        this.suggestedGender = add(this.suggestedGender, suggestedGender);
     }
 
-    private Person spouse;
+    private List<Person> spouse;
+
+    /**
+     * The person's spouse.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getSpouseList() {
+        return spouse;
+    }
 
     /**
      * The person's spouse.
@@ -694,7 +970,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getSpouse() {
-        return spouse;
+        return getFirst(spouse);
     }
 
     /**
@@ -703,11 +979,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param spouse Person value to set.
      */
     @Override
-    public void setSpouse(Person spouse) {
-        this.spouse = spouse;
+    public void addSpouse(Person spouse) {
+        this.spouse = add(this.spouse, spouse);
     }
 
-    private Text additionalName;
+    private List<Text> additionalName;
+
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAdditionalNameList() {
+        return additionalName;
+    }
 
     /**
      * An additional name for a Person, can be used for a middle name.
@@ -716,7 +1002,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAdditionalName() {
-        return additionalName;
+        return getFirst(additionalName);
     }
 
     /**
@@ -725,11 +1011,23 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param additionalName Text value to set.
      */
     @Override
-    public void setAdditionalName(Text additionalName) {
-        this.additionalName = additionalName;
+    public void addAdditionalName(Text additionalName) {
+        this.additionalName = add(this.additionalName, additionalName);
     }
 
-    private EducationalOccupationalCredential hasCredential;
+    private List<EducationalOccupationalCredential> hasCredential;
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public List<EducationalOccupationalCredential> getHasCredentialList() {
+        return hasCredential;
+    }
 
     /**
      * A credential awarded to the Person or Organization.
@@ -740,7 +1038,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public EducationalOccupationalCredential getHasCredential() {
-        return hasCredential;
+        return getFirst(hasCredential);
     }
 
     /**
@@ -751,11 +1049,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setHasCredential(EducationalOccupationalCredential hasCredential) {
-        this.hasCredential = hasCredential;
+    public void addHasCredential(EducationalOccupationalCredential hasCredential) {
+        this.hasCredential = add(this.hasCredential, hasCredential);
     }
 
-    private Text telephone;
+    private List<Text> telephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTelephoneList() {
+        return telephone;
+    }
 
     /**
      * The telephone number.
@@ -764,7 +1072,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getTelephone() {
-        return telephone;
+        return getFirst(telephone);
     }
 
     /**
@@ -773,11 +1081,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param telephone Text value to set.
      */
     @Override
-    public void setTelephone(Text telephone) {
-        this.telephone = telephone;
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
-    private Text honorificPrefix;
+    private List<Text> honorificPrefix;
+
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getHonorificPrefixList() {
+        return honorificPrefix;
+    }
 
     /**
      * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
@@ -786,7 +1104,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getHonorificPrefix() {
-        return honorificPrefix;
+        return getFirst(honorificPrefix);
     }
 
     /**
@@ -795,11 +1113,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param honorificPrefix Text value to set.
      */
     @Override
-    public void setHonorificPrefix(Text honorificPrefix) {
-        this.honorificPrefix = honorificPrefix;
+    public void addHonorificPrefix(Text honorificPrefix) {
+        this.honorificPrefix = add(this.honorificPrefix, honorificPrefix);
     }
 
-    private Person parents;
+    private List<Person> parents;
+
+    /**
+     * A parents of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getParentsList() {
+        return parents;
+    }
 
     /**
      * A parents of the person.
@@ -808,7 +1136,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getParents() {
-        return parents;
+        return getFirst(parents);
     }
 
     /**
@@ -817,11 +1145,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param parents Person value to set.
      */
     @Override
-    public void setParents(Person parents) {
-        this.parents = parents;
+    public void addParents(Person parents) {
+        this.parents = add(this.parents, parents);
     }
 
-    private Text familyName;
+    private List<Text> familyName;
+
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFamilyNameList() {
+        return familyName;
+    }
 
     /**
      * Family name. In the U.S., the last name of a Person.
@@ -830,7 +1168,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getFamilyName() {
-        return familyName;
+        return getFirst(familyName);
     }
 
     /**
@@ -839,11 +1177,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param familyName Text value to set.
      */
     @Override
-    public void setFamilyName(Text familyName) {
-        this.familyName = familyName;
+    public void addFamilyName(Text familyName) {
+        this.familyName = add(this.familyName, familyName);
     }
 
-    private Text givenName;
+    private List<Text> givenName;
+
+    /**
+     * Given name. In the U.S., the first name of a Person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getGivenNameList() {
+        return givenName;
+    }
 
     /**
      * Given name. In the U.S., the first name of a Person.
@@ -852,7 +1200,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGivenName() {
-        return givenName;
+        return getFirst(givenName);
     }
 
     /**
@@ -861,11 +1209,25 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param givenName Text value to set.
      */
     @Override
-    public void setGivenName(Text givenName) {
-        this.givenName = givenName;
+    public void addGivenName(Text givenName) {
+        this.givenName = add(this.givenName, givenName);
     }
 
-    private Object knowsAbout;
+    @JsonLdFieldTypes({ URL.class, Text.class, Thing.class })
+    private List<Object> knowsAbout;
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @return {@link URL} or {@link Text} or {@link Thing}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public <T> List<T> getKnowsAboutList() {
+        return (List<T>) knowsAbout;
+    }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -877,7 +1239,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getKnowsAbout() {
-        return (T) knowsAbout;
+        return (T) getFirst(knowsAbout);
     }
 
     /**
@@ -889,8 +1251,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(URL knowsAbout) {
-        this.knowsAbout = knowsAbout;
+    public void addKnowsAbout(URL knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -901,8 +1263,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Text knowsAbout) {
-        this.knowsAbout = knowsAbout;
+    public void addKnowsAbout(Text knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -913,11 +1275,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Thing knowsAbout) {
-        this.knowsAbout = knowsAbout;
+    public void addKnowsAbout(Thing knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
 
-    private Event performerIn;
+    private List<Event> performerIn;
+
+    /**
+     * Event that this person is a performer or participant in.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getPerformerInList() {
+        return performerIn;
+    }
 
     /**
      * Event that this person is a performer or participant in.
@@ -926,7 +1298,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Event getPerformerIn() {
-        return performerIn;
+        return getFirst(performerIn);
     }
 
     /**
@@ -935,11 +1307,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param performerIn Event value to set.
      */
     @Override
-    public void setPerformerIn(Event performerIn) {
-        this.performerIn = performerIn;
+    public void addPerformerIn(Event performerIn) {
+        this.performerIn = add(this.performerIn, performerIn);
     }
 
-    private Object netWorth;
+    @JsonLdFieldTypes({ MonetaryAmount.class, PriceSpecification.class })
+    private List<Object> netWorth;
+
+    /**
+     * The total financial value of the person as calculated by subtracting assets from liabilities.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
+    @Override
+    public <T> List<T> getNetWorthList() {
+        return (List<T>) netWorth;
+    }
 
     /**
      * The total financial value of the person as calculated by subtracting assets from liabilities.
@@ -948,7 +1331,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getNetWorth() {
-        return (T) netWorth;
+        return (T) getFirst(netWorth);
     }
 
     /**
@@ -957,8 +1340,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param netWorth MonetaryAmount value to set.
      */
     @Override
-    public void setNetWorth(MonetaryAmount netWorth) {
-        this.netWorth = netWorth;
+    public void addNetWorth(MonetaryAmount netWorth) {
+        this.netWorth = add(this.netWorth, netWorth);
     }
     /**
      * The total financial value of the person as calculated by subtracting assets from liabilities.
@@ -966,11 +1349,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param netWorth PriceSpecification value to set.
      */
     @Override
-    public void setNetWorth(PriceSpecification netWorth) {
-        this.netWorth = netWorth;
+    public void addNetWorth(PriceSpecification netWorth) {
+        this.netWorth = add(this.netWorth, netWorth);
     }
 
-    private Text award;
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
 
     /**
      * An award won by or for this item.
@@ -979,7 +1372,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAward() {
-        return award;
+        return getFirst(award);
     }
 
     /**
@@ -988,11 +1381,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param award Text value to set.
      */
     @Override
-    public void setAward(Text award) {
-        this.award = award;
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
     }
 
-    private Object workLocation;
+    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
+    private List<Object> workLocation;
+
+    /**
+     * A contact location for a person's place of work.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    @Override
+    public <T> List<T> getWorkLocationList() {
+        return (List<T>) workLocation;
+    }
 
     /**
      * A contact location for a person's place of work.
@@ -1001,7 +1405,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getWorkLocation() {
-        return (T) workLocation;
+        return (T) getFirst(workLocation);
     }
 
     /**
@@ -1010,8 +1414,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param workLocation Place value to set.
      */
     @Override
-    public void setWorkLocation(Place workLocation) {
-        this.workLocation = workLocation;
+    public void addWorkLocation(Place workLocation) {
+        this.workLocation = add(this.workLocation, workLocation);
     }
     /**
      * A contact location for a person's place of work.
@@ -1019,11 +1423,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param workLocation ContactPoint value to set.
      */
     @Override
-    public void setWorkLocation(ContactPoint workLocation) {
-        this.workLocation = workLocation;
+    public void addWorkLocation(ContactPoint workLocation) {
+        this.workLocation = add(this.workLocation, workLocation);
     }
 
-    private Text honorificSuffix;
+    private List<Text> honorificSuffix;
+
+    /**
+     * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getHonorificSuffixList() {
+        return honorificSuffix;
+    }
 
     /**
      * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
@@ -1032,7 +1446,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getHonorificSuffix() {
-        return honorificSuffix;
+        return getFirst(honorificSuffix);
     }
 
     /**
@@ -1041,11 +1455,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param honorificSuffix Text value to set.
      */
     @Override
-    public void setHonorificSuffix(Text honorificSuffix) {
-        this.honorificSuffix = honorificSuffix;
+    public void addHonorificSuffix(Text honorificSuffix) {
+        this.honorificSuffix = add(this.honorificSuffix, honorificSuffix);
     }
 
-    private Place deathPlace;
+    private List<Place> deathPlace;
+
+    /**
+     * The place where the person died.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getDeathPlaceList() {
+        return deathPlace;
+    }
 
     /**
      * The place where the person died.
@@ -1054,7 +1478,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getDeathPlace() {
-        return deathPlace;
+        return getFirst(deathPlace);
     }
 
     /**
@@ -1063,11 +1487,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param deathPlace Place value to set.
      */
     @Override
-    public void setDeathPlace(Place deathPlace) {
-        this.deathPlace = deathPlace;
+    public void addDeathPlace(Place deathPlace) {
+        this.deathPlace = add(this.deathPlace, deathPlace);
     }
 
-    private Object homeLocation;
+    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
+    private List<Object> homeLocation;
+
+    /**
+     * A contact location for a person's residence.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    @Override
+    public <T> List<T> getHomeLocationList() {
+        return (List<T>) homeLocation;
+    }
 
     /**
      * A contact location for a person's residence.
@@ -1076,7 +1511,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getHomeLocation() {
-        return (T) homeLocation;
+        return (T) getFirst(homeLocation);
     }
 
     /**
@@ -1085,8 +1520,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param homeLocation Place value to set.
      */
     @Override
-    public void setHomeLocation(Place homeLocation) {
-        this.homeLocation = homeLocation;
+    public void addHomeLocation(Place homeLocation) {
+        this.homeLocation = add(this.homeLocation, homeLocation);
     }
     /**
      * A contact location for a person's residence.
@@ -1094,11 +1529,24 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param homeLocation ContactPoint value to set.
      */
     @Override
-    public void setHomeLocation(ContactPoint homeLocation) {
-        this.homeLocation = homeLocation;
+    public void addHomeLocation(ContactPoint homeLocation) {
+        this.homeLocation = add(this.homeLocation, homeLocation);
     }
 
-    private Grant funding;
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -1110,7 +1558,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Grant getFunding() {
-        return funding;
+        return getFirst(funding);
     }
 
     /**
@@ -1122,11 +1570,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant funding) {
-        this.funding = funding;
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
-    private Text vatID;
+    private List<Text> vatID;
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getVatIDList() {
+        return vatID;
+    }
 
     /**
      * The Value-added Tax ID of the organization or person.
@@ -1136,7 +1595,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getVatID() {
-        return vatID;
+        return getFirst(vatID);
     }
 
     /**
@@ -1146,11 +1605,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setVatID(Text vatID) {
-        this.vatID = vatID;
+    public void addVatID(Text vatID) {
+        this.vatID = add(this.vatID, vatID);
     }
 
-    private Object height;
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
+    private List<Object> height;
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     */
+    @Override
+    public <T> List<T> getHeightList() {
+        return (List<T>) height;
+    }
 
     /**
      * The height of the item.
@@ -1159,7 +1629,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getHeight() {
-        return (T) height;
+        return (T) getFirst(height);
     }
 
     /**
@@ -1168,8 +1638,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param height Distance value to set.
      */
     @Override
-    public void setHeight(Distance height) {
-        this.height = height;
+    public void addHeight(Distance height) {
+        this.height = add(this.height, height);
     }
     /**
      * The height of the item.
@@ -1177,11 +1647,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param height QuantitativeValue value to set.
      */
     @Override
-    public void setHeight(QuantitativeValue height) {
-        this.height = height;
+    public void addHeight(QuantitativeValue height) {
+        this.height = add(this.height, height);
     }
 
-    private Text globalLocationNumber;
+    private List<Text> globalLocationNumber;
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGlobalLocationNumberList() {
+        return globalLocationNumber;
+    }
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -1191,7 +1672,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGlobalLocationNumber() {
-        return globalLocationNumber;
+        return getFirst(globalLocationNumber);
     }
 
     /**
@@ -1201,11 +1682,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGlobalLocationNumber(Text globalLocationNumber) {
-        this.globalLocationNumber = globalLocationNumber;
+    public void addGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
     }
 
-    private ContactPoint contactPoints;
+    private List<ContactPoint> contactPoints;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointsList() {
+        return contactPoints;
+    }
 
     /**
      * A contact point for a person or organization.
@@ -1214,7 +1705,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public ContactPoint getContactPoints() {
-        return contactPoints;
+        return getFirst(contactPoints);
     }
 
     /**
@@ -1223,11 +1714,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param contactPoints ContactPoint value to set.
      */
     @Override
-    public void setContactPoints(ContactPoint contactPoints) {
-        this.contactPoints = contactPoints;
+    public void addContactPoints(ContactPoint contactPoints) {
+        this.contactPoints = add(this.contactPoints, contactPoints);
     }
 
-    private Occupation hasOccupation;
+    private List<Occupation> hasOccupation;
+
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public List<Occupation> getHasOccupationList() {
+        return hasOccupation;
+    }
 
     /**
      * The Person's occupation. For past professions, use Role for expressing dates.
@@ -1237,7 +1739,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Occupation getHasOccupation() {
-        return hasOccupation;
+        return getFirst(hasOccupation);
     }
 
     /**
@@ -1247,11 +1749,24 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setHasOccupation(Occupation hasOccupation) {
-        this.hasOccupation = hasOccupation;
+    public void addHasOccupation(Occupation hasOccupation) {
+        this.hasOccupation = add(this.hasOccupation, hasOccupation);
     }
 
-    private Object gender;
+    @JsonLdFieldTypes({ GenderType.class, Text.class })
+    private List<Object> gender;
+
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @return {@link GenderType} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    @Override
+    public <T> List<T> getGenderList() {
+        return (List<T>) gender;
+    }
 
     /**
      * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
@@ -1262,7 +1777,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getGender() {
-        return (T) gender;
+        return (T) getFirst(gender);
     }
 
     /**
@@ -1273,8 +1788,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
      */
     @Override
-    public void setGender(GenderType gender) {
-        this.gender = gender;
+    public void addGender(GenderType gender) {
+        this.gender = add(this.gender, gender);
     }
     /**
      * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
@@ -1284,11 +1799,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
      */
     @Override
-    public void setGender(Text gender) {
-        this.gender = gender;
+    public void addGender(Text gender) {
+        this.gender = add(this.gender, gender);
     }
 
-    private Person parent;
+    private List<Person> parent;
+
+    /**
+     * A parent of this person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getParentList() {
+        return parent;
+    }
 
     /**
      * A parent of this person.
@@ -1297,7 +1822,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getParent() {
-        return parent;
+        return getFirst(parent);
     }
 
     /**
@@ -1306,11 +1831,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param parent Person value to set.
      */
     @Override
-    public void setParent(Person parent) {
-        this.parent = parent;
+    public void addParent(Person parent) {
+        this.parent = add(this.parent, parent);
     }
 
-    private Text awards;
+    private List<Text> awards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
 
     /**
      * Awards won by or for this item.
@@ -1319,7 +1854,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAwards() {
-        return awards;
+        return getFirst(awards);
     }
 
     /**
@@ -1328,11 +1863,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text awards) {
-        this.awards = awards;
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
     }
 
-    private Person sibling;
+    private List<Person> sibling;
+
+    /**
+     * A sibling of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getSiblingList() {
+        return sibling;
+    }
 
     /**
      * A sibling of the person.
@@ -1341,7 +1886,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getSibling() {
-        return sibling;
+        return getFirst(sibling);
     }
 
     /**
@@ -1350,11 +1895,24 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param sibling Person value to set.
      */
     @Override
-    public void setSibling(Person sibling) {
-        this.sibling = sibling;
+    public void addSibling(Person sibling) {
+        this.sibling = add(this.sibling, sibling);
     }
 
-    private Object jobTitle;
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> jobTitle;
+
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public <T> List<T> getJobTitleList() {
+        return (List<T>) jobTitle;
+    }
 
     /**
      * The job title of the person (for example, Financial Manager).
@@ -1365,7 +1923,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getJobTitle() {
-        return (T) jobTitle;
+        return (T) getFirst(jobTitle);
     }
 
     /**
@@ -1376,8 +1934,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      */
     @Override
-    public void setJobTitle(Text jobTitle) {
-        this.jobTitle = jobTitle;
+    public void addJobTitle(Text jobTitle) {
+        this.jobTitle = add(this.jobTitle, jobTitle);
     }
     /**
      * The job title of the person (for example, Financial Manager).
@@ -1387,11 +1945,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      */
     @Override
-    public void setJobTitle(DefinedTerm jobTitle) {
-        this.jobTitle = jobTitle;
+    public void addJobTitle(DefinedTerm jobTitle) {
+        this.jobTitle = add(this.jobTitle, jobTitle);
     }
 
-    private Date birthDate;
+    private List<Date> birthDate;
+
+    /**
+     * Date of birth.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getBirthDateList() {
+        return birthDate;
+    }
 
     /**
      * Date of birth.
@@ -1400,7 +1968,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getBirthDate() {
-        return birthDate;
+        return getFirst(birthDate);
     }
 
     /**
@@ -1409,11 +1977,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param birthDate Date value to set.
      */
     @Override
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void addBirthDate(Date birthDate) {
+        this.birthDate = add(this.birthDate, birthDate);
     }
 
-    private Object funder;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> funder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getFunderList() {
+        return (List<T>) funder;
+    }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -1422,7 +2001,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getFunder() {
-        return (T) funder;
+        return (T) getFirst(funder);
     }
 
     /**
@@ -1431,8 +2010,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Organization funder) {
-        this.funder = funder;
+    public void addFunder(Organization funder) {
+        this.funder = add(this.funder, funder);
     }
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -1440,11 +2019,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param funder Person value to set.
      */
     @Override
-    public void setFunder(Person funder) {
-        this.funder = funder;
+    public void addFunder(Person funder) {
+        this.funder = add(this.funder, funder);
     }
 
-    private Offer makesOffer;
+    private List<Offer> makesOffer;
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Offer> getMakesOfferList() {
+        return makesOffer;
+    }
 
     /**
      * A pointer to products or services offered by the organization or person.
@@ -1454,7 +2044,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Offer getMakesOffer() {
-        return makesOffer;
+        return getFirst(makesOffer);
     }
 
     /**
@@ -1464,11 +2054,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMakesOffer(Offer makesOffer) {
-        this.makesOffer = makesOffer;
+    public void addMakesOffer(Offer makesOffer) {
+        this.makesOffer = add(this.makesOffer, makesOffer);
     }
 
-    private Person children;
+    private List<Person> children;
+
+    /**
+     * A child of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getChildrenList() {
+        return children;
+    }
 
     /**
      * A child of the person.
@@ -1477,7 +2077,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getChildren() {
-        return children;
+        return getFirst(children);
     }
 
     /**
@@ -1486,11 +2086,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param children Person value to set.
      */
     @Override
-    public void setChildren(Person children) {
-        this.children = children;
+    public void addChildren(Person children) {
+        this.children = add(this.children, children);
     }
 
-    private Organization worksFor;
+    private List<Organization> worksFor;
+
+    /**
+     * Organizations that the person works for.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getWorksForList() {
+        return worksFor;
+    }
 
     /**
      * Organizations that the person works for.
@@ -1499,7 +2109,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Organization getWorksFor() {
-        return worksFor;
+        return getFirst(worksFor);
     }
 
     /**
@@ -1508,11 +2118,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param worksFor Organization value to set.
      */
     @Override
-    public void setWorksFor(Organization worksFor) {
-        this.worksFor = worksFor;
+    public void addWorksFor(Organization worksFor) {
+        this.worksFor = add(this.worksFor, worksFor);
     }
 
-    private Person knows;
+    private List<Person> knows;
+
+    /**
+     * The most generic bi-directional social/work relation.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getKnowsList() {
+        return knows;
+    }
 
     /**
      * The most generic bi-directional social/work relation.
@@ -1521,7 +2141,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getKnows() {
-        return knows;
+        return getFirst(knows);
     }
 
     /**
@@ -1530,11 +2150,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param knows Person value to set.
      */
     @Override
-    public void setKnows(Person knows) {
-        this.knows = knows;
+    public void addKnows(Person knows) {
+        this.knows = add(this.knows, knows);
     }
 
-    private InteractionCounter interactionStatistic;
+    private List<InteractionCounter> interactionStatistic;
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public List<InteractionCounter> getInteractionStatisticList() {
+        return interactionStatistic;
+    }
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -1544,7 +2175,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public InteractionCounter getInteractionStatistic() {
-        return interactionStatistic;
+        return getFirst(interactionStatistic);
     }
 
     /**
@@ -1554,11 +2185,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter interactionStatistic) {
-        this.interactionStatistic = interactionStatistic;
+    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
     }
 
-    private Object address;
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
+    private List<Object> address;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    @Override
+    public <T> List<T> getAddressList() {
+        return (List<T>) address;
+    }
 
     /**
      * Physical address of the item.
@@ -1567,7 +2209,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getAddress() {
-        return (T) address;
+        return (T) getFirst(address);
     }
 
     /**
@@ -1576,8 +2218,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param address Text value to set.
      */
     @Override
-    public void setAddress(Text address) {
-        this.address = address;
+    public void addAddress(Text address) {
+        this.address = add(this.address, address);
     }
     /**
      * Physical address of the item.
@@ -1585,11 +2227,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param address PostalAddress value to set.
      */
     @Override
-    public void setAddress(PostalAddress address) {
-        this.address = address;
+    public void addAddress(PostalAddress address) {
+        this.address = add(this.address, address);
     }
 
-    private Object memberOf;
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class })
+    private List<Object> memberOf;
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getMemberOfList() {
+        return (List<T>) memberOf;
+    }
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -1598,7 +2251,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMemberOf() {
-        return (T) memberOf;
+        return (T) getFirst(memberOf);
     }
 
     /**
@@ -1607,8 +2260,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param memberOf ProgramMembership value to set.
      */
     @Override
-    public void setMemberOf(ProgramMembership memberOf) {
-        this.memberOf = memberOf;
+    public void addMemberOf(ProgramMembership memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
     }
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -1616,11 +2269,24 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param memberOf Organization value to set.
      */
     @Override
-    public void setMemberOf(Organization memberOf) {
-        this.memberOf = memberOf;
+    public void addMemberOf(Organization memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
     }
 
-    private Object publishingPrinciples;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> publishingPrinciples;
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> List<T> getPublishingPrinciplesList() {
+        return (List<T>) publishingPrinciples;
+    }
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -1631,7 +2297,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPublishingPrinciples() {
-        return (T) publishingPrinciples;
+        return (T) getFirst(publishingPrinciples);
     }
 
     /**
@@ -1642,8 +2308,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(URL publishingPrinciples) {
-        this.publishingPrinciples = publishingPrinciples;
+    public void addPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -1653,11 +2319,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param publishingPrinciples CreativeWork value to set.
      */
     @Override
-    public void setPublishingPrinciples(CreativeWork publishingPrinciples) {
-        this.publishingPrinciples = publishingPrinciples;
+    public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
 
-    private Person colleagues;
+    private List<Person> colleagues;
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getColleaguesList() {
+        return colleagues;
+    }
 
     /**
      * A colleague of the person.
@@ -1666,7 +2342,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getColleagues() {
-        return colleagues;
+        return getFirst(colleagues);
     }
 
     /**
@@ -1675,11 +2351,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param colleagues Person value to set.
      */
     @Override
-    public void setColleagues(Person colleagues) {
-        this.colleagues = colleagues;
+    public void addColleagues(Person colleagues) {
+        this.colleagues = add(this.colleagues, colleagues);
     }
 
-    private Date deathDate;
+    private List<Date> deathDate;
+
+    /**
+     * Date of death.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getDeathDateList() {
+        return deathDate;
+    }
 
     /**
      * Date of death.
@@ -1688,7 +2374,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getDeathDate() {
-        return deathDate;
+        return getFirst(deathDate);
     }
 
     /**
@@ -1697,11 +2383,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param deathDate Date value to set.
      */
     @Override
-    public void setDeathDate(Date deathDate) {
-        this.deathDate = deathDate;
+    public void addDeathDate(Date deathDate) {
+        this.deathDate = add(this.deathDate, deathDate);
     }
 
-    private Text email;
+    private List<Text> email;
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getEmailList() {
+        return email;
+    }
 
     /**
      * Email address.
@@ -1710,7 +2406,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getEmail() {
-        return email;
+        return getFirst(email);
     }
 
     /**
@@ -1719,11 +2415,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param email Text value to set.
      */
     @Override
-    public void setEmail(Text email) {
-        this.email = email;
+    public void addEmail(Text email) {
+        this.email = add(this.email, email);
     }
 
-    private Organization affiliation;
+    private List<Organization> affiliation;
+
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getAffiliationList() {
+        return affiliation;
+    }
 
     /**
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
@@ -1732,7 +2438,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Organization getAffiliation() {
-        return affiliation;
+        return getFirst(affiliation);
     }
 
     /**
@@ -1741,11 +2447,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param affiliation Organization value to set.
      */
     @Override
-    public void setAffiliation(Organization affiliation) {
-        this.affiliation = affiliation;
+    public void addAffiliation(Organization affiliation) {
+        this.affiliation = add(this.affiliation, affiliation);
     }
 
-    private Person siblings;
+    private List<Person> siblings;
+
+    /**
+     * A sibling of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getSiblingsList() {
+        return siblings;
+    }
 
     /**
      * A sibling of the person.
@@ -1754,7 +2470,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getSiblings() {
-        return siblings;
+        return getFirst(siblings);
     }
 
     /**
@@ -1763,11 +2479,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param siblings Person value to set.
      */
     @Override
-    public void setSiblings(Person siblings) {
-        this.siblings = siblings;
+    public void addSiblings(Person siblings) {
+        this.siblings = add(this.siblings, siblings);
     }
 
-    private Place birthPlace;
+    private List<Place> birthPlace;
+
+    /**
+     * The place where the person was born.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getBirthPlaceList() {
+        return birthPlace;
+    }
 
     /**
      * The place where the person was born.
@@ -1776,7 +2502,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getBirthPlace() {
-        return birthPlace;
+        return getFirst(birthPlace);
     }
 
     /**
@@ -1785,11 +2511,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param birthPlace Place value to set.
      */
     @Override
-    public void setBirthPlace(Place birthPlace) {
-        this.birthPlace = birthPlace;
+    public void addBirthPlace(Place birthPlace) {
+        this.birthPlace = add(this.birthPlace, birthPlace);
     }
 
-    private Object brand;
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
+    private List<Object> brand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1798,7 +2535,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getBrand() {
-        return (T) brand;
+        return (T) getFirst(brand);
     }
 
     /**
@@ -1807,8 +2544,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization brand) {
-        this.brand = brand;
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1816,11 +2553,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
     }
 
-    private Object sponsor;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> sponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getSponsorList() {
+        return (List<T>) sponsor;
+    }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1829,7 +2577,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSponsor() {
-        return (T) sponsor;
+        return (T) getFirst(sponsor);
     }
 
     /**
@@ -1838,8 +2586,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Organization sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Organization sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1847,11 +2595,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param sponsor Person value to set.
      */
     @Override
-    public void setSponsor(Person sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Person sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
 
-    private Text naics;
+    private List<Text> naics;
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getNaicsList() {
+        return naics;
+    }
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -1861,7 +2620,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getNaics() {
-        return naics;
+        return getFirst(naics);
     }
 
     /**
@@ -1871,11 +2630,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setNaics(Text naics) {
-        this.naics = naics;
+    public void addNaics(Text naics) {
+        this.naics = add(this.naics, naics);
     }
 
-    private ContactPoint contactPoint;
+    private List<ContactPoint> contactPoint;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointList() {
+        return contactPoint;
+    }
 
     /**
      * A contact point for a person or organization.
@@ -1884,7 +2653,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public ContactPoint getContactPoint() {
-        return contactPoint;
+        return getFirst(contactPoint);
     }
 
     /**
@@ -1893,11 +2662,23 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param contactPoint ContactPoint value to set.
      */
     @Override
-    public void setContactPoint(ContactPoint contactPoint) {
-        this.contactPoint = contactPoint;
+    public void addContactPoint(ContactPoint contactPoint) {
+        this.contactPoint = add(this.contactPoint, contactPoint);
     }
 
-    private Text callSign;
+    private List<Text> callSign;
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    @Override
+    public List<Text> getCallSignList() {
+        return callSign;
+    }
 
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
@@ -1908,7 +2689,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCallSign() {
-        return callSign;
+        return getFirst(callSign);
     }
 
     /**
@@ -1919,11 +2700,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     @Override
-    public void setCallSign(Text callSign) {
-        this.callSign = callSign;
+    public void addCallSign(Text callSign) {
+        this.callSign = add(this.callSign, callSign);
     }
 
-    private Text isicV4;
+    private List<Text> isicV4;
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getIsicV4List() {
+        return isicV4;
+    }
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -1933,7 +2725,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getIsicV4() {
-        return isicV4;
+        return getFirst(isicV4);
     }
 
     /**
@@ -1943,11 +2735,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsicV4(Text isicV4) {
-        this.isicV4 = isicV4;
+    public void addIsicV4(Text isicV4) {
+        this.isicV4 = add(this.isicV4, isicV4);
     }
 
-    private Place hasPOS;
+    private List<Place> hasPOS;
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Place> getHasPOSList() {
+        return hasPOS;
+    }
 
     /**
      * Points-of-Sales operated by the organization or person.
@@ -1957,7 +2760,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getHasPOS() {
-        return hasPOS;
+        return getFirst(hasPOS);
     }
 
     /**
@@ -1967,11 +2770,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setHasPOS(Place hasPOS) {
-        this.hasPOS = hasPOS;
+    public void addHasPOS(Place hasPOS) {
+        this.hasPOS = add(this.hasPOS, hasPOS);
     }
 
-    private Object alumniOf;
+    @JsonLdFieldTypes({ EducationalOrganization.class, Organization.class })
+    private List<Object> alumniOf;
+
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @return {@link EducationalOrganization} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getAlumniOfList() {
+        return (List<T>) alumniOf;
+    }
 
     /**
      * An organization that the person is an alumni of.
@@ -1980,7 +2794,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getAlumniOf() {
-        return (T) alumniOf;
+        return (T) getFirst(alumniOf);
     }
 
     /**
@@ -1989,8 +2803,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param alumniOf EducationalOrganization value to set.
      */
     @Override
-    public void setAlumniOf(EducationalOrganization alumniOf) {
-        this.alumniOf = alumniOf;
+    public void addAlumniOf(EducationalOrganization alumniOf) {
+        this.alumniOf = add(this.alumniOf, alumniOf);
     }
     /**
      * An organization that the person is an alumni of.
@@ -1998,11 +2812,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param alumniOf Organization value to set.
      */
     @Override
-    public void setAlumniOf(Organization alumniOf) {
-        this.alumniOf = alumniOf;
+    public void addAlumniOf(Organization alumniOf) {
+        this.alumniOf = add(this.alumniOf, alumniOf);
     }
 
-    private Text duns;
+    private List<Text> duns;
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getDunsList() {
+        return duns;
+    }
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
@@ -2012,7 +2837,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDuns() {
-        return duns;
+        return getFirst(duns);
     }
 
     /**
@@ -2022,11 +2847,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDuns(Text duns) {
-        this.duns = duns;
+    public void addDuns(Text duns) {
+        this.duns = add(this.duns, duns);
     }
 
-    private QuantitativeValue weight;
+    private List<QuantitativeValue> weight;
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getWeightList() {
+        return weight;
+    }
 
     /**
      * The weight of the product or person.
@@ -2036,7 +2872,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getWeight() {
-        return weight;
+        return getFirst(weight);
     }
 
     /**
@@ -2046,11 +2882,25 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setWeight(QuantitativeValue weight) {
-        this.weight = weight;
+    public void addWeight(QuantitativeValue weight) {
+        this.weight = add(this.weight, weight);
     }
 
-    private Object knowsLanguage;
+    @JsonLdFieldTypes({ Language.class, Text.class })
+    private List<Object> knowsLanguage;
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> List<T> getKnowsLanguageList() {
+        return (List<T>) knowsLanguage;
+    }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
@@ -2062,7 +2912,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getKnowsLanguage() {
-        return (T) knowsLanguage;
+        return (T) getFirst(knowsLanguage);
     }
 
     /**
@@ -2074,8 +2924,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Language knowsLanguage) {
-        this.knowsLanguage = knowsLanguage;
+    public void addKnowsLanguage(Language knowsLanguage) {
+        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
@@ -2086,11 +2936,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Text knowsLanguage) {
-        this.knowsLanguage = knowsLanguage;
+    public void addKnowsLanguage(Text knowsLanguage) {
+        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
     }
 
-    private Person relatedTo;
+    private List<Person> relatedTo;
+
+    /**
+     * The most generic familial relation.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getRelatedToList() {
+        return relatedTo;
+    }
 
     /**
      * The most generic familial relation.
@@ -2099,7 +2959,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getRelatedTo() {
-        return relatedTo;
+        return getFirst(relatedTo);
     }
 
     /**
@@ -2108,11 +2968,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param relatedTo Person value to set.
      */
     @Override
-    public void setRelatedTo(Person relatedTo) {
-        this.relatedTo = relatedTo;
+    public void addRelatedTo(Person relatedTo) {
+        this.relatedTo = add(this.relatedTo, relatedTo);
     }
 
-    private Object colleague;
+    @JsonLdFieldTypes({ Person.class, URL.class })
+    private List<Object> colleague;
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getColleagueList() {
+        return (List<T>) colleague;
+    }
 
     /**
      * A colleague of the person.
@@ -2121,7 +2992,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getColleague() {
-        return (T) colleague;
+        return (T) getFirst(colleague);
     }
 
     /**
@@ -2130,8 +3001,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param colleague Person value to set.
      */
     @Override
-    public void setColleague(Person colleague) {
-        this.colleague = colleague;
+    public void addColleague(Person colleague) {
+        this.colleague = add(this.colleague, colleague);
     }
     /**
      * A colleague of the person.
@@ -2139,11 +3010,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param colleague URL value to set.
      */
     @Override
-    public void setColleague(URL colleague) {
-        this.colleague = colleague;
+    public void addColleague(URL colleague) {
+        this.colleague = add(this.colleague, colleague);
     }
 
-    private Demand seeks;
+    private List<Demand> seeks;
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Demand> getSeeksList() {
+        return seeks;
+    }
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
@@ -2153,7 +3035,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Demand getSeeks() {
-        return seeks;
+        return getFirst(seeks);
     }
 
     /**
@@ -2163,11 +3045,22 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSeeks(Demand seeks) {
-        this.seeks = seeks;
+    public void addSeeks(Demand seeks) {
+        this.seeks = add(this.seeks, seeks);
     }
 
-    private Text taxID;
+    private List<Text> taxID;
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getTaxIDList() {
+        return taxID;
+    }
 
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
@@ -2177,7 +3070,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getTaxID() {
-        return taxID;
+        return getFirst(taxID);
     }
 
     /**
@@ -2187,11 +3080,23 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setTaxID(Text taxID) {
-        this.taxID = taxID;
+    public void addTaxID(Text taxID) {
+        this.taxID = add(this.taxID, taxID);
     }
 
-    private Object owns;
+    @JsonLdFieldTypes({ Product.class, OwnershipInfo.class })
+    private List<Object> owns;
+
+    /**
+     * Products owned by the organization or person.
+     *
+     * @return {@link Product} or {@link OwnershipInfo}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getOwnsList() {
+        return (List<T>) owns;
+    }
 
     /**
      * Products owned by the organization or person.
@@ -2201,7 +3106,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getOwns() {
-        return (T) owns;
+        return (T) getFirst(owns);
     }
 
     /**
@@ -2211,8 +3116,8 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(Product owns) {
-        this.owns = owns;
+    public void addOwns(Product owns) {
+        this.owns = add(this.owns, owns);
     }
     /**
      * Products owned by the organization or person.
@@ -2221,11 +3126,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(OwnershipInfo owns) {
-        this.owns = owns;
+    public void addOwns(OwnershipInfo owns) {
+        this.owns = add(this.owns, owns);
     }
 
-    private OfferCatalog hasOfferCatalog;
+    private List<OfferCatalog> hasOfferCatalog;
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public List<OfferCatalog> getHasOfferCatalogList() {
+        return hasOfferCatalog;
+    }
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -2234,7 +3149,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public OfferCatalog getHasOfferCatalog() {
-        return hasOfferCatalog;
+        return getFirst(hasOfferCatalog);
     }
 
     /**
@@ -2243,11 +3158,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param hasOfferCatalog OfferCatalog value to set.
      */
     @Override
-    public void setHasOfferCatalog(OfferCatalog hasOfferCatalog) {
-        this.hasOfferCatalog = hasOfferCatalog;
+    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
     }
 
-    private Person follows;
+    private List<Person> follows;
+
+    /**
+     * The most generic uni-directional social relation.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getFollowsList() {
+        return follows;
+    }
 
     /**
      * The most generic uni-directional social relation.
@@ -2256,7 +3181,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getFollows() {
-        return follows;
+        return getFirst(follows);
     }
 
     /**
@@ -2265,11 +3190,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param follows Person value to set.
      */
     @Override
-    public void setFollows(Person follows) {
-        this.follows = follows;
+    public void addFollows(Person follows) {
+        this.follows = add(this.follows, follows);
     }
 
-    private Country nationality;
+    private List<Country> nationality;
+
+    /**
+     * Nationality of the person.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public List<Country> getNationalityList() {
+        return nationality;
+    }
 
     /**
      * Nationality of the person.
@@ -2278,7 +3213,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Country getNationality() {
-        return nationality;
+        return getFirst(nationality);
     }
 
     /**
@@ -2287,11 +3222,21 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param nationality Country value to set.
      */
     @Override
-    public void setNationality(Country nationality) {
-        this.nationality = nationality;
+    public void addNationality(Country nationality) {
+        this.nationality = add(this.nationality, nationality);
     }
 
-    private Text faxNumber;
+    private List<Text> faxNumber;
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFaxNumberList() {
+        return faxNumber;
+    }
 
     /**
      * The fax number.
@@ -2300,7 +3245,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getFaxNumber() {
-        return faxNumber;
+        return getFirst(faxNumber);
     }
 
     /**
@@ -2309,7 +3254,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param faxNumber Text value to set.
      */
     @Override
-    public void setFaxNumber(Text faxNumber) {
-        this.faxNumber = faxNumber;
+    public void addFaxNumber(Text faxNumber) {
+        this.faxNumber = add(this.faxNumber, faxNumber);
     }
 }

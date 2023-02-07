@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Recipe;
 import org.schema.model.Place;
 import org.schema.model.FoodEstablishment;
@@ -22,6 +23,13 @@ public interface CookAction extends CreateAction {
      *
      * @return {@link Recipe}
      */
+    List<Recipe> getRecipeList();
+
+    /**
+     * A sub property of instrument. The recipe/instructions used to perform the action.
+     *
+     * @return {@link Recipe}
+     */
     Recipe getRecipe();
 
     /**
@@ -29,7 +37,14 @@ public interface CookAction extends CreateAction {
      *
      * @param recipe Recipe value to set.
      */
-    void setRecipe(Recipe recipe);
+    void addRecipe(Recipe recipe);
+
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     *
+     * @return {@link Place} or {@link FoodEstablishment}
+     */
+    <T> List<T> getFoodEstablishmentList();
 
     /**
      * A sub property of location. The specific food establishment where the action occurred.
@@ -43,13 +58,20 @@ public interface CookAction extends CreateAction {
      *
      * @param foodEstablishment Place value to set.
      */
-    void setFoodEstablishment(Place foodEstablishment);
+    void addFoodEstablishment(Place foodEstablishment);
     /**
      * A sub property of location. The specific food establishment where the action occurred.
      *
      * @param foodEstablishment FoodEstablishment value to set.
      */
-    void setFoodEstablishment(FoodEstablishment foodEstablishment);
+    void addFoodEstablishment(FoodEstablishment foodEstablishment);
+
+    /**
+     * A sub property of location. The specific food event where the action occurred.
+     *
+     * @return {@link FoodEvent}
+     */
+    List<FoodEvent> getFoodEventList();
 
     /**
      * A sub property of location. The specific food event where the action occurred.
@@ -63,5 +85,5 @@ public interface CookAction extends CreateAction {
      *
      * @param foodEvent FoodEvent value to set.
      */
-    void setFoodEvent(FoodEvent foodEvent);
+    void addFoodEvent(FoodEvent foodEvent);
 }

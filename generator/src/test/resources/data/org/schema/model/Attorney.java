@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Professional service: Attorney. <br/><br/>This type is deprecated - [[LegalService]] is more inclusive and less ambiguous.

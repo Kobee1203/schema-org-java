@@ -20,5 +20,15 @@ public abstract class {{this.name}}<T>{{#if this.parents}} extends {{#each this.
     public T getValue() {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append(getClass().getSimpleName())
+                .append("{")
+                .append("value=").append(value)
+                .append('}')
+                .toString();
+    }
 }
 {{/with}}

@@ -20,6 +20,8 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 
 /**
@@ -30,7 +32,17 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("OrderItem")
 public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OrderItem {
 
-    private ParcelDelivery orderDelivery;
+    private List<ParcelDelivery> orderDelivery;
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    @Override
+    public List<ParcelDelivery> getOrderDeliveryList() {
+        return orderDelivery;
+    }
 
     /**
      * The delivery of the parcel related to this order or order item.
@@ -39,7 +51,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public ParcelDelivery getOrderDelivery() {
-        return orderDelivery;
+        return getFirst(orderDelivery);
     }
 
     /**
@@ -48,11 +60,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param orderDelivery ParcelDelivery value to set.
      */
     @Override
-    public void setOrderDelivery(ParcelDelivery orderDelivery) {
-        this.orderDelivery = orderDelivery;
+    public void addOrderDelivery(ParcelDelivery orderDelivery) {
+        this.orderDelivery = add(this.orderDelivery, orderDelivery);
     }
 
-    private OrderStatus orderItemStatus;
+    private List<OrderStatus> orderItemStatus;
+
+    /**
+     * The current status of the order item.
+     *
+     * @return {@link OrderStatus}
+     */
+    @Override
+    public List<OrderStatus> getOrderItemStatusList() {
+        return orderItemStatus;
+    }
 
     /**
      * The current status of the order item.
@@ -61,7 +83,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public OrderStatus getOrderItemStatus() {
-        return orderItemStatus;
+        return getFirst(orderItemStatus);
     }
 
     /**
@@ -70,11 +92,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param orderItemStatus OrderStatus value to set.
      */
     @Override
-    public void setOrderItemStatus(OrderStatus orderItemStatus) {
-        this.orderItemStatus = orderItemStatus;
+    public void addOrderItemStatus(OrderStatus orderItemStatus) {
+        this.orderItemStatus = add(this.orderItemStatus, orderItemStatus);
     }
 
-    private Number orderQuantity;
+    private List<Number> orderQuantity;
+
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getOrderQuantityList() {
+        return orderQuantity;
+    }
 
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
@@ -83,7 +115,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Number getOrderQuantity() {
-        return orderQuantity;
+        return getFirst(orderQuantity);
     }
 
     /**
@@ -92,11 +124,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param orderQuantity Number value to set.
      */
     @Override
-    public void setOrderQuantity(Number orderQuantity) {
-        this.orderQuantity = orderQuantity;
+    public void addOrderQuantity(Number orderQuantity) {
+        this.orderQuantity = add(this.orderQuantity, orderQuantity);
     }
 
-    private Text orderItemNumber;
+    private List<Text> orderItemNumber;
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getOrderItemNumberList() {
+        return orderItemNumber;
+    }
 
     /**
      * The identifier of the order item.
@@ -105,7 +147,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getOrderItemNumber() {
-        return orderItemNumber;
+        return getFirst(orderItemNumber);
     }
 
     /**
@@ -114,11 +156,22 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param orderItemNumber Text value to set.
      */
     @Override
-    public void setOrderItemNumber(Text orderItemNumber) {
-        this.orderItemNumber = orderItemNumber;
+    public void addOrderItemNumber(Text orderItemNumber) {
+        this.orderItemNumber = add(this.orderItemNumber, orderItemNumber);
     }
 
-    private Object orderedItem;
+    @JsonLdFieldTypes({ Service.class, OrderItem.class, Product.class })
+    private List<Object> orderedItem;
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Service} or {@link OrderItem} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getOrderedItemList() {
+        return (List<T>) orderedItem;
+    }
 
     /**
      * The item ordered.
@@ -127,7 +180,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getOrderedItem() {
-        return (T) orderedItem;
+        return (T) getFirst(orderedItem);
     }
 
     /**
@@ -136,8 +189,8 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param orderedItem Service value to set.
      */
     @Override
-    public void setOrderedItem(Service orderedItem) {
-        this.orderedItem = orderedItem;
+    public void addOrderedItem(Service orderedItem) {
+        this.orderedItem = add(this.orderedItem, orderedItem);
     }
     /**
      * The item ordered.
@@ -145,8 +198,8 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param orderedItem OrderItem value to set.
      */
     @Override
-    public void setOrderedItem(OrderItem orderedItem) {
-        this.orderedItem = orderedItem;
+    public void addOrderedItem(OrderItem orderedItem) {
+        this.orderedItem = add(this.orderedItem, orderedItem);
     }
     /**
      * The item ordered.
@@ -154,11 +207,22 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param orderedItem Product value to set.
      */
     @Override
-    public void setOrderedItem(Product orderedItem) {
-        this.orderedItem = orderedItem;
+    public void addOrderedItem(Product orderedItem) {
+        this.orderedItem = add(this.orderedItem, orderedItem);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -167,7 +231,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -176,8 +240,8 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -185,11 +249,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -198,7 +272,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -207,11 +281,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -220,7 +304,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -229,11 +313,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -242,7 +336,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -251,11 +345,22 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -264,7 +369,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -273,8 +378,8 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -282,11 +387,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -295,7 +410,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -304,11 +419,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -317,7 +442,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -326,11 +451,23 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -340,7 +477,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -350,8 +487,8 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -360,11 +497,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -373,7 +520,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -382,11 +529,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -395,7 +552,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -404,11 +561,21 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -417,7 +584,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -426,11 +593,23 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -440,7 +619,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -450,8 +629,8 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -460,8 +639,8 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -470,7 +649,7 @@ public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

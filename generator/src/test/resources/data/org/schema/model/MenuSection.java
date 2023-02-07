@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MenuSection;
 import org.schema.model.MenuItem;
 
@@ -20,6 +21,13 @@ public interface MenuSection extends CreativeWork {
      *
      * @return {@link MenuSection}
      */
+    List<MenuSection> getHasMenuSectionList();
+
+    /**
+     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
+     *
+     * @return {@link MenuSection}
+     */
     MenuSection getHasMenuSection();
 
     /**
@@ -27,7 +35,14 @@ public interface MenuSection extends CreativeWork {
      *
      * @param hasMenuSection MenuSection value to set.
      */
-    void setHasMenuSection(MenuSection hasMenuSection);
+    void addHasMenuSection(MenuSection hasMenuSection);
+
+    /**
+     * A food or drink item contained in a menu or menu section.
+     *
+     * @return {@link MenuItem}
+     */
+    List<MenuItem> getHasMenuItemList();
 
     /**
      * A food or drink item contained in a menu or menu section.
@@ -41,5 +56,5 @@ public interface MenuSection extends CreativeWork {
      *
      * @param hasMenuItem MenuItem value to set.
      */
-    void setHasMenuItem(MenuItem hasMenuItem);
+    void addHasMenuItem(MenuItem hasMenuItem);
 }

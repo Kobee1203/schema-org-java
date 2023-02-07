@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.Thing;
 
@@ -20,6 +21,13 @@ public interface ChooseAction extends AssessAction {
      *
      * @return {@link Text} or {@link Thing}
      */
+    <T> List<T> getOptionList();
+
+    /**
+     * A sub property of object. The options subject to this action.
+     *
+     * @return {@link Text} or {@link Thing}
+     */
     <T> T getOption();
 
     /**
@@ -27,13 +35,20 @@ public interface ChooseAction extends AssessAction {
      *
      * @param option Text value to set.
      */
-    void setOption(Text option);
+    void addOption(Text option);
     /**
      * A sub property of object. The options subject to this action.
      *
      * @param option Thing value to set.
      */
-    void setOption(Thing option);
+    void addOption(Thing option);
+
+    /**
+     * A sub property of object. The options subject to this action.
+     *
+     * @return {@link Thing} or {@link Text}
+     */
+    <T> List<T> getActionOptionList();
 
     /**
      * A sub property of object. The options subject to this action.
@@ -47,11 +62,11 @@ public interface ChooseAction extends AssessAction {
      *
      * @param actionOption Thing value to set.
      */
-    void setActionOption(Thing actionOption);
+    void addActionOption(Thing actionOption);
     /**
      * A sub property of object. The options subject to this action.
      *
      * @param actionOption Text value to set.
      */
-    void setActionOption(Text actionOption);
+    void addActionOption(Text actionOption);
 }

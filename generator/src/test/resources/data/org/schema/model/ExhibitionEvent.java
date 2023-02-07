@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...

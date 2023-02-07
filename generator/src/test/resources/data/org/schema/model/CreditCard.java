@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#AmericanExpress<br/>* http://purl.org/goodrelations/v1#DinersClub<br/>* http://purl.org/goodrelations/v1#Discover<br/>* http://purl.org/goodrelations/v1#JCB<br/>* http://purl.org/goodrelations/v1#MasterCard<br/>* http://purl.org/goodrelations/v1#VISA

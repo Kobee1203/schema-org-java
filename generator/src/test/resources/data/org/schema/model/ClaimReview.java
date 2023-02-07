@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,6 +22,14 @@ public interface ClaimReview extends Review {
      * @return {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1061">https://github.com/schemaorg/schemaorg/issues/1061</a>
      */
+    List<Text> getClaimReviewedList();
+
+    /**
+     * A short summary of the specific claims reviewed in a ClaimReview.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1061">https://github.com/schemaorg/schemaorg/issues/1061</a>
+     */
     Text getClaimReviewed();
 
     /**
@@ -29,5 +38,5 @@ public interface ClaimReview extends Review {
      * @param claimReviewed Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1061">https://github.com/schemaorg/schemaorg/issues/1061</a>
      */
-    void setClaimReviewed(Text claimReviewed);
+    void addClaimReviewed(Text claimReviewed);
 }

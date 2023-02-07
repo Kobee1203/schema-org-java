@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.Person;
 import org.schema.model.Organization;
@@ -23,6 +24,14 @@ public interface Diet extends LifestyleModification, CreativeWork {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getExpertConsiderationsList();
+
+    /**
+     * Medical expert advice related to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getExpertConsiderations();
 
     /**
@@ -31,7 +40,15 @@ public interface Diet extends LifestyleModification, CreativeWork {
      * @param expertConsiderations Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setExpertConsiderations(Text expertConsiderations);
+    void addExpertConsiderations(Text expertConsiderations);
+
+    /**
+     * Specific physiologic risks associated to the diet plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getRisksList();
 
     /**
      * Specific physiologic risks associated to the diet plan.
@@ -47,7 +64,15 @@ public interface Diet extends LifestyleModification, CreativeWork {
      * @param risks Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRisks(Text risks);
+    void addRisks(Text risks);
+
+    /**
+     * Specific physiologic benefits associated to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getPhysiologicalBenefitsList();
 
     /**
      * Specific physiologic benefits associated to the plan.
@@ -63,7 +88,15 @@ public interface Diet extends LifestyleModification, CreativeWork {
      * @param physiologicalBenefits Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPhysiologicalBenefits(Text physiologicalBenefits);
+    void addPhysiologicalBenefits(Text physiologicalBenefits);
+
+    /**
+     * People or organizations that endorse the plan.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getEndorsersList();
 
     /**
      * People or organizations that endorse the plan.
@@ -79,14 +112,22 @@ public interface Diet extends LifestyleModification, CreativeWork {
      * @param endorsers Person value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEndorsers(Person endorsers);
+    void addEndorsers(Person endorsers);
     /**
      * People or organizations that endorse the plan.
      *
      * @param endorsers Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEndorsers(Organization endorsers);
+    void addEndorsers(Organization endorsers);
+
+    /**
+     * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getDietFeaturesList();
 
     /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
@@ -102,5 +143,5 @@ public interface Diet extends LifestyleModification, CreativeWork {
      * @param dietFeatures Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDietFeatures(Text dietFeatures);
+    void addDietFeatures(Text dietFeatures);
 }

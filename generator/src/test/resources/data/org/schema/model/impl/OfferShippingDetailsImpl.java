@@ -19,6 +19,7 @@ import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.OfferShippingDetails;
@@ -44,7 +45,19 @@ import org.schema.model.OfferShippingDetails;
 @JsonLdTypeName("OfferShippingDetails")
 public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferShippingDetails {
 
-    private DefinedRegion shippingDestination;
+    private List<DefinedRegion> shippingDestination;
+
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+     *
+     * @return {@link DefinedRegion}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<DefinedRegion> getShippingDestinationList() {
+        return shippingDestination;
+    }
 
     /**
      * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
@@ -55,7 +68,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public DefinedRegion getShippingDestination() {
-        return shippingDestination;
+        return getFirst(shippingDestination);
     }
 
     /**
@@ -66,11 +79,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setShippingDestination(DefinedRegion shippingDestination) {
-        this.shippingDestination = shippingDestination;
+    public void addShippingDestination(DefinedRegion shippingDestination) {
+        this.shippingDestination = add(this.shippingDestination, shippingDestination);
     }
 
-    private Boolean doesNotShip;
+    private List<Boolean> doesNotShip;
+
+    /**
+     * Indicates when shipping to a particular [[shippingDestination]] is not available.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<Boolean> getDoesNotShipList() {
+        return doesNotShip;
+    }
 
     /**
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
@@ -81,7 +106,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Boolean getDoesNotShip() {
-        return doesNotShip;
+        return getFirst(doesNotShip);
     }
 
     /**
@@ -92,11 +117,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setDoesNotShip(Boolean doesNotShip) {
-        this.doesNotShip = doesNotShip;
+    public void addDoesNotShip(Boolean doesNotShip) {
+        this.doesNotShip = add(this.doesNotShip, doesNotShip);
     }
 
-    private URL shippingSettingsLink;
+    private List<URL> shippingSettingsLink;
+
+    /**
+     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<URL> getShippingSettingsLinkList() {
+        return shippingSettingsLink;
+    }
 
     /**
      * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
@@ -107,7 +144,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getShippingSettingsLink() {
-        return shippingSettingsLink;
+        return getFirst(shippingSettingsLink);
     }
 
     /**
@@ -118,11 +155,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setShippingSettingsLink(URL shippingSettingsLink) {
-        this.shippingSettingsLink = shippingSettingsLink;
+    public void addShippingSettingsLink(URL shippingSettingsLink) {
+        this.shippingSettingsLink = add(this.shippingSettingsLink, shippingSettingsLink);
     }
 
-    private Text transitTimeLabel;
+    private List<Text> transitTimeLabel;
+
+    /**
+     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<Text> getTransitTimeLabelList() {
+        return transitTimeLabel;
+    }
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -133,7 +182,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getTransitTimeLabel() {
-        return transitTimeLabel;
+        return getFirst(transitTimeLabel);
     }
 
     /**
@@ -144,11 +193,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setTransitTimeLabel(Text transitTimeLabel) {
-        this.transitTimeLabel = transitTimeLabel;
+    public void addTransitTimeLabel(Text transitTimeLabel) {
+        this.transitTimeLabel = add(this.transitTimeLabel, transitTimeLabel);
     }
 
-    private Text shippingLabel;
+    private List<Text> shippingLabel;
+
+    /**
+     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<Text> getShippingLabelList() {
+        return shippingLabel;
+    }
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -159,7 +220,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getShippingLabel() {
-        return shippingLabel;
+        return getFirst(shippingLabel);
     }
 
     /**
@@ -170,11 +231,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setShippingLabel(Text shippingLabel) {
-        this.shippingLabel = shippingLabel;
+    public void addShippingLabel(Text shippingLabel) {
+        this.shippingLabel = add(this.shippingLabel, shippingLabel);
     }
 
-    private ShippingDeliveryTime deliveryTime;
+    private List<ShippingDeliveryTime> deliveryTime;
+
+    /**
+     * The total delay between the receipt of the order and the goods reaching the final customer.
+     *
+     * @return {@link ShippingDeliveryTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<ShippingDeliveryTime> getDeliveryTimeList() {
+        return deliveryTime;
+    }
 
     /**
      * The total delay between the receipt of the order and the goods reaching the final customer.
@@ -185,7 +258,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public ShippingDeliveryTime getDeliveryTime() {
-        return deliveryTime;
+        return getFirst(deliveryTime);
     }
 
     /**
@@ -196,11 +269,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setDeliveryTime(ShippingDeliveryTime deliveryTime) {
-        this.deliveryTime = deliveryTime;
+    public void addDeliveryTime(ShippingDeliveryTime deliveryTime) {
+        this.deliveryTime = add(this.deliveryTime, deliveryTime);
     }
 
-    private MonetaryAmount shippingRate;
+    private List<MonetaryAmount> shippingRate;
+
+    /**
+     * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<MonetaryAmount> getShippingRateList() {
+        return shippingRate;
+    }
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
@@ -211,7 +296,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public MonetaryAmount getShippingRate() {
-        return shippingRate;
+        return getFirst(shippingRate);
     }
 
     /**
@@ -222,12 +307,22 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setShippingRate(MonetaryAmount shippingRate) {
-        this.shippingRate = shippingRate;
+    public void addShippingRate(MonetaryAmount shippingRate) {
+        this.shippingRate = add(this.shippingRate, shippingRate);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -236,7 +331,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -245,8 +340,8 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -254,11 +349,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -267,7 +372,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -276,11 +381,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -289,7 +404,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -298,11 +413,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -311,7 +436,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -320,12 +445,22 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -334,7 +469,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -343,8 +478,8 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -352,11 +487,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -365,7 +510,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -374,11 +519,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -387,7 +542,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -396,12 +551,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -411,7 +577,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -421,8 +587,8 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -431,11 +597,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -444,7 +620,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -453,11 +629,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -466,7 +652,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -475,11 +661,21 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -488,7 +684,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -497,12 +693,23 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -512,7 +719,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -522,8 +729,8 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -532,8 +739,8 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -542,7 +749,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

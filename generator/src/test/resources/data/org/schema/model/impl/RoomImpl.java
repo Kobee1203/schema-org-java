@@ -32,6 +32,8 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Accommodation;
 import org.schema.model.Room;
 
@@ -46,7 +48,20 @@ import org.schema.model.Room;
 @JsonLdTypeName("Room")
 public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Room {
 
-    private Text floorLevel;
+    private List<Text> floorLevel;
+
+    /**
+     * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
+     *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<Text> getFloorLevelList() {
+        return floorLevel;
+    }
 
     /**
      * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
@@ -58,7 +73,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getFloorLevel() {
-        return floorLevel;
+        return getFirst(floorLevel);
     }
 
     /**
@@ -70,11 +85,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setFloorLevel(Text floorLevel) {
-        this.floorLevel = floorLevel;
+    public void addFloorLevel(Text floorLevel) {
+        this.floorLevel = add(this.floorLevel, floorLevel);
     }
 
-    private Integer numberOfBathroomsTotal;
+    private List<Integer> numberOfBathroomsTotal;
+
+    /**
+     * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<Integer> getNumberOfBathroomsTotalList() {
+        return numberOfBathroomsTotal;
+    }
 
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
@@ -85,7 +112,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Integer getNumberOfBathroomsTotal() {
-        return numberOfBathroomsTotal;
+        return getFirst(numberOfBathroomsTotal);
     }
 
     /**
@@ -96,11 +123,24 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBathroomsTotal(Integer numberOfBathroomsTotal) {
-        this.numberOfBathroomsTotal = numberOfBathroomsTotal;
+    public void addNumberOfBathroomsTotal(Integer numberOfBathroomsTotal) {
+        this.numberOfBathroomsTotal = add(this.numberOfBathroomsTotal, numberOfBathroomsTotal);
     }
 
-    private Object numberOfRooms;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfRooms;
+
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfRoomsList() {
+        return (List<T>) numberOfRooms;
+    }
 
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -111,7 +151,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getNumberOfRooms() {
-        return (T) numberOfRooms;
+        return (T) getFirst(numberOfRooms);
     }
 
     /**
@@ -122,8 +162,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setNumberOfRooms(QuantitativeValue numberOfRooms) {
-        this.numberOfRooms = numberOfRooms;
+    public void addNumberOfRooms(QuantitativeValue numberOfRooms) {
+        this.numberOfRooms = add(this.numberOfRooms, numberOfRooms);
     }
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -133,11 +173,24 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setNumberOfRooms(Number numberOfRooms) {
-        this.numberOfRooms = numberOfRooms;
+    public void addNumberOfRooms(Number numberOfRooms) {
+        this.numberOfRooms = add(this.numberOfRooms, numberOfRooms);
     }
 
-    private Object leaseLength;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Duration.class })
+    private List<Object> leaseLength;
+
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @return {@link QuantitativeValue} or {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public <T> List<T> getLeaseLengthList() {
+        return (List<T>) leaseLength;
+    }
 
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
@@ -148,7 +201,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getLeaseLength() {
-        return (T) leaseLength;
+        return (T) getFirst(leaseLength);
     }
 
     /**
@@ -159,8 +212,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setLeaseLength(QuantitativeValue leaseLength) {
-        this.leaseLength = leaseLength;
+    public void addLeaseLength(QuantitativeValue leaseLength) {
+        this.leaseLength = add(this.leaseLength, leaseLength);
     }
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
@@ -170,11 +223,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setLeaseLength(Duration leaseLength) {
-        this.leaseLength = leaseLength;
+    public void addLeaseLength(Duration leaseLength) {
+        this.leaseLength = add(this.leaseLength, leaseLength);
     }
 
-    private Number yearBuilt;
+    private List<Number> yearBuilt;
+
+    /**
+     * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<Number> getYearBuiltList() {
+        return yearBuilt;
+    }
 
     /**
      * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
@@ -185,7 +250,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Number getYearBuilt() {
-        return yearBuilt;
+        return getFirst(yearBuilt);
     }
 
     /**
@@ -196,11 +261,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setYearBuilt(Number yearBuilt) {
-        this.yearBuilt = yearBuilt;
+    public void addYearBuilt(Number yearBuilt) {
+        this.yearBuilt = add(this.yearBuilt, yearBuilt);
     }
 
-    private Text accommodationCategory;
+    private List<Text> accommodationCategory;
+
+    /**
+     * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<Text> getAccommodationCategoryList() {
+        return accommodationCategory;
+    }
 
     /**
      * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
@@ -211,7 +288,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAccommodationCategory() {
-        return accommodationCategory;
+        return getFirst(accommodationCategory);
     }
 
     /**
@@ -222,11 +299,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setAccommodationCategory(Text accommodationCategory) {
-        this.accommodationCategory = accommodationCategory;
+    public void addAccommodationCategory(Text accommodationCategory) {
+        this.accommodationCategory = add(this.accommodationCategory, accommodationCategory);
     }
 
-    private LocationFeatureSpecification amenityFeature;
+    private List<LocationFeatureSpecification> amenityFeature;
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public List<LocationFeatureSpecification> getAmenityFeatureList() {
+        return amenityFeature;
+    }
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -236,7 +324,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
-        return amenityFeature;
+        return getFirst(amenityFeature);
     }
 
     /**
@@ -246,11 +334,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setAmenityFeature(LocationFeatureSpecification amenityFeature) {
-        this.amenityFeature = amenityFeature;
+    public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
+        this.amenityFeature = add(this.amenityFeature, amenityFeature);
     }
 
-    private URL tourBookingPage;
+    private List<URL> tourBookingPage;
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<URL> getTourBookingPageList() {
+        return tourBookingPage;
+    }
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
@@ -261,7 +361,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getTourBookingPage() {
-        return tourBookingPage;
+        return getFirst(tourBookingPage);
     }
 
     /**
@@ -272,11 +372,24 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setTourBookingPage(URL tourBookingPage) {
-        this.tourBookingPage = tourBookingPage;
+    public void addTourBookingPage(URL tourBookingPage) {
+        this.tourBookingPage = add(this.tourBookingPage, tourBookingPage);
     }
 
-    private Object numberOfBedrooms;
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
+    private List<Object> numberOfBedrooms;
+
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfBedroomsList() {
+        return (List<T>) numberOfBedrooms;
+    }
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
@@ -287,7 +400,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getNumberOfBedrooms() {
-        return (T) numberOfBedrooms;
+        return (T) getFirst(numberOfBedrooms);
     }
 
     /**
@@ -298,8 +411,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBedrooms(Number numberOfBedrooms) {
-        this.numberOfBedrooms = numberOfBedrooms;
+    public void addNumberOfBedrooms(Number numberOfBedrooms) {
+        this.numberOfBedrooms = add(this.numberOfBedrooms, numberOfBedrooms);
     }
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
@@ -309,11 +422,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBedrooms(QuantitativeValue numberOfBedrooms) {
-        this.numberOfBedrooms = numberOfBedrooms;
+    public void addNumberOfBedrooms(QuantitativeValue numberOfBedrooms) {
+        this.numberOfBedrooms = add(this.numberOfBedrooms, numberOfBedrooms);
     }
 
-    private Number numberOfPartialBathrooms;
+    private List<Number> numberOfPartialBathrooms;
+
+    /**
+     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<Number> getNumberOfPartialBathroomsList() {
+        return numberOfPartialBathrooms;
+    }
 
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
@@ -324,7 +449,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Number getNumberOfPartialBathrooms() {
-        return numberOfPartialBathrooms;
+        return getFirst(numberOfPartialBathrooms);
     }
 
     /**
@@ -335,11 +460,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfPartialBathrooms(Number numberOfPartialBathrooms) {
-        this.numberOfPartialBathrooms = numberOfPartialBathrooms;
+    public void addNumberOfPartialBathrooms(Number numberOfPartialBathrooms) {
+        this.numberOfPartialBathrooms = add(this.numberOfPartialBathrooms, numberOfPartialBathrooms);
     }
 
-    private QuantitativeValue floorSize;
+    private List<QuantitativeValue> floorSize;
+
+    /**
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public List<QuantitativeValue> getFloorSizeList() {
+        return floorSize;
+    }
 
     /**
      * The size of the accommodation, e.g. in square meter or squarefoot.
@@ -350,7 +487,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public QuantitativeValue getFloorSize() {
-        return floorSize;
+        return getFirst(floorSize);
     }
 
     /**
@@ -361,11 +498,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setFloorSize(QuantitativeValue floorSize) {
-        this.floorSize = floorSize;
+    public void addFloorSize(QuantitativeValue floorSize) {
+        this.floorSize = add(this.floorSize, floorSize);
     }
 
-    private FloorPlan accommodationFloorPlan;
+    private List<FloorPlan> accommodationFloorPlan;
+
+    /**
+     * A floorplan of some [[Accommodation]].
+     *
+     * @return {@link FloorPlan}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<FloorPlan> getAccommodationFloorPlanList() {
+        return accommodationFloorPlan;
+    }
 
     /**
      * A floorplan of some [[Accommodation]].
@@ -376,7 +525,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public FloorPlan getAccommodationFloorPlan() {
-        return accommodationFloorPlan;
+        return getFirst(accommodationFloorPlan);
     }
 
     /**
@@ -387,11 +536,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setAccommodationFloorPlan(FloorPlan accommodationFloorPlan) {
-        this.accommodationFloorPlan = accommodationFloorPlan;
+    public void addAccommodationFloorPlan(FloorPlan accommodationFloorPlan) {
+        this.accommodationFloorPlan = add(this.accommodationFloorPlan, accommodationFloorPlan);
     }
 
-    private Number numberOfFullBathrooms;
+    private List<Number> numberOfFullBathrooms;
+
+    /**
+     * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<Number> getNumberOfFullBathroomsList() {
+        return numberOfFullBathrooms;
+    }
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
@@ -402,7 +563,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Number getNumberOfFullBathrooms() {
-        return numberOfFullBathrooms;
+        return getFirst(numberOfFullBathrooms);
     }
 
     /**
@@ -413,11 +574,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfFullBathrooms(Number numberOfFullBathrooms) {
-        this.numberOfFullBathrooms = numberOfFullBathrooms;
+    public void addNumberOfFullBathrooms(Number numberOfFullBathrooms) {
+        this.numberOfFullBathrooms = add(this.numberOfFullBathrooms, numberOfFullBathrooms);
     }
 
-    private Text permittedUsage;
+    private List<Text> permittedUsage;
+
+    /**
+     * Indications regarding the permitted usage of the accommodation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public List<Text> getPermittedUsageList() {
+        return permittedUsage;
+    }
 
     /**
      * Indications regarding the permitted usage of the accommodation.
@@ -427,7 +599,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getPermittedUsage() {
-        return permittedUsage;
+        return getFirst(permittedUsage);
     }
 
     /**
@@ -437,11 +609,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setPermittedUsage(Text permittedUsage) {
-        this.permittedUsage = permittedUsage;
+    public void addPermittedUsage(Text permittedUsage) {
+        this.permittedUsage = add(this.permittedUsage, permittedUsage);
     }
 
-    private Object petsAllowed;
+    @JsonLdFieldTypes({ Text.class, Boolean.class })
+    private List<Object> petsAllowed;
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @return {@link Text} or {@link Boolean}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public <T> List<T> getPetsAllowedList() {
+        return (List<T>) petsAllowed;
+    }
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -451,7 +635,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getPetsAllowed() {
-        return (T) petsAllowed;
+        return (T) getFirst(petsAllowed);
     }
 
     /**
@@ -461,8 +645,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setPetsAllowed(Text petsAllowed) {
-        this.petsAllowed = petsAllowed;
+    public void addPetsAllowed(Text petsAllowed) {
+        this.petsAllowed = add(this.petsAllowed, petsAllowed);
     }
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -471,11 +655,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setPetsAllowed(Boolean petsAllowed) {
-        this.petsAllowed = petsAllowed;
+    public void addPetsAllowed(Boolean petsAllowed) {
+        this.petsAllowed = add(this.petsAllowed, petsAllowed);
     }
 
-    private Text telephone;
+    private List<Text> telephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTelephoneList() {
+        return telephone;
+    }
 
     /**
      * The telephone number.
@@ -484,7 +678,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getTelephone() {
-        return telephone;
+        return getFirst(telephone);
     }
 
     /**
@@ -493,11 +687,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param telephone Text value to set.
      */
     @Override
-    public void setTelephone(Text telephone) {
-        this.telephone = telephone;
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -506,7 +710,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -515,11 +719,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
-    private URL maps;
+    private List<URL> maps;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getMapsList() {
+        return maps;
+    }
 
     /**
      * A URL to a map of the place.
@@ -528,7 +742,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getMaps() {
-        return maps;
+        return getFirst(maps);
     }
 
     /**
@@ -537,11 +751,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param maps URL value to set.
      */
     @Override
-    public void setMaps(URL maps) {
-        this.maps = maps;
+    public void addMaps(URL maps) {
+        this.maps = add(this.maps, maps);
     }
 
-    private Object geoContains;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoContains;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoContainsList() {
+        return (List<T>) geoContains;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -550,7 +775,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoContains() {
-        return (T) geoContains;
+        return (T) getFirst(geoContains);
     }
 
     /**
@@ -559,8 +784,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoContains Place value to set.
      */
     @Override
-    public void setGeoContains(Place geoContains) {
-        this.geoContains = geoContains;
+    public void addGeoContains(Place geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -568,11 +793,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoContains GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoContains(GeospatialGeometry geoContains) {
-        this.geoContains = geoContains;
+    public void addGeoContains(GeospatialGeometry geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
     }
 
-    private Integer maximumAttendeeCapacity;
+    private List<Integer> maximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getMaximumAttendeeCapacityList() {
+        return maximumAttendeeCapacity;
+    }
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -581,7 +816,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Integer getMaximumAttendeeCapacity() {
-        return maximumAttendeeCapacity;
+        return getFirst(maximumAttendeeCapacity);
     }
 
     /**
@@ -590,11 +825,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
-        this.maximumAttendeeCapacity = maximumAttendeeCapacity;
+    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
     }
 
-    private Place containsPlace;
+    private List<Place> containsPlace;
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainsPlaceList() {
+        return containsPlace;
+    }
 
     /**
      * The basic containment relation between a place and another that it contains.
@@ -603,7 +848,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Place getContainsPlace() {
-        return containsPlace;
+        return getFirst(containsPlace);
     }
 
     /**
@@ -612,11 +857,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param containsPlace Place value to set.
      */
     @Override
-    public void setContainsPlace(Place containsPlace) {
-        this.containsPlace = containsPlace;
+    public void addContainsPlace(Place containsPlace) {
+        this.containsPlace = add(this.containsPlace, containsPlace);
     }
 
-    private Boolean smokingAllowed;
+    private List<Boolean> smokingAllowed;
+
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public List<Boolean> getSmokingAllowedList() {
+        return smokingAllowed;
+    }
 
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
@@ -626,7 +882,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getSmokingAllowed() {
-        return smokingAllowed;
+        return getFirst(smokingAllowed);
     }
 
     /**
@@ -636,11 +892,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setSmokingAllowed(Boolean smokingAllowed) {
-        this.smokingAllowed = smokingAllowed;
+    public void addSmokingAllowed(Boolean smokingAllowed) {
+        this.smokingAllowed = add(this.smokingAllowed, smokingAllowed);
     }
 
-    private Text globalLocationNumber;
+    private List<Text> globalLocationNumber;
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGlobalLocationNumberList() {
+        return globalLocationNumber;
+    }
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -650,7 +917,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getGlobalLocationNumber() {
-        return globalLocationNumber;
+        return getFirst(globalLocationNumber);
     }
 
     /**
@@ -660,11 +927,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGlobalLocationNumber(Text globalLocationNumber) {
-        this.globalLocationNumber = globalLocationNumber;
+    public void addGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
     }
 
-    private Object keywords;
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -673,7 +951,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getKeywords() {
-        return (T) keywords;
+        return (T) getFirst(keywords);
     }
 
     /**
@@ -682,8 +960,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm keywords) {
-        this.keywords = keywords;
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -691,8 +969,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text keywords) {
-        this.keywords = keywords;
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -700,11 +978,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(URL keywords) {
-        this.keywords = keywords;
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
-    private Object geoIntersects;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoIntersects;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoIntersectsList() {
+        return (List<T>) geoIntersects;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -713,7 +1002,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoIntersects() {
-        return (T) geoIntersects;
+        return (T) getFirst(geoIntersects);
     }
 
     /**
@@ -722,8 +1011,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoIntersects GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoIntersects(GeospatialGeometry geoIntersects) {
-        this.geoIntersects = geoIntersects;
+    public void addGeoIntersects(GeospatialGeometry geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -731,11 +1020,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoIntersects Place value to set.
      */
     @Override
-    public void setGeoIntersects(Place geoIntersects) {
-        this.geoIntersects = geoIntersects;
+    public void addGeoIntersects(Place geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
     }
 
-    private Object latitude;
+    @JsonLdFieldTypes({ Text.class, Number.class })
+    private List<Object> latitude;
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> List<T> getLatitudeList() {
+        return (List<T>) latitude;
+    }
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -744,7 +1044,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getLatitude() {
-        return (T) latitude;
+        return (T) getFirst(latitude);
     }
 
     /**
@@ -753,8 +1053,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param latitude Text value to set.
      */
     @Override
-    public void setLatitude(Text latitude) {
-        this.latitude = latitude;
+    public void addLatitude(Text latitude) {
+        this.latitude = add(this.latitude, latitude);
     }
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -762,11 +1062,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param latitude Number value to set.
      */
     @Override
-    public void setLatitude(Number latitude) {
-        this.latitude = latitude;
+    public void addLatitude(Number latitude) {
+        this.latitude = add(this.latitude, latitude);
     }
 
-    private Object geoTouches;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoTouches;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoTouchesList() {
+        return (List<T>) geoTouches;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
@@ -775,7 +1086,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoTouches() {
-        return (T) geoTouches;
+        return (T) getFirst(geoTouches);
     }
 
     /**
@@ -784,8 +1095,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoTouches Place value to set.
      */
     @Override
-    public void setGeoTouches(Place geoTouches) {
-        this.geoTouches = geoTouches;
+    public void addGeoTouches(Place geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
@@ -793,11 +1104,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoTouches GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoTouches(GeospatialGeometry geoTouches) {
-        this.geoTouches = geoTouches;
+    public void addGeoTouches(GeospatialGeometry geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
     }
 
-    private Object geoCoveredBy;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoCoveredBy;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoCoveredByList() {
+        return (List<T>) geoCoveredBy;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -806,7 +1128,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoCoveredBy() {
-        return (T) geoCoveredBy;
+        return (T) getFirst(geoCoveredBy);
     }
 
     /**
@@ -815,8 +1137,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoCoveredBy Place value to set.
      */
     @Override
-    public void setGeoCoveredBy(Place geoCoveredBy) {
-        this.geoCoveredBy = geoCoveredBy;
+    public void addGeoCoveredBy(Place geoCoveredBy) {
+        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -824,11 +1146,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoCoveredBy GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
-        this.geoCoveredBy = geoCoveredBy;
+    public void addGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
+        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -837,7 +1169,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -846,11 +1178,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
-    private Object address;
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
+    private List<Object> address;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    @Override
+    public <T> List<T> getAddressList() {
+        return (List<T>) address;
+    }
 
     /**
      * Physical address of the item.
@@ -859,7 +1202,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getAddress() {
-        return (T) address;
+        return (T) getFirst(address);
     }
 
     /**
@@ -868,8 +1211,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param address Text value to set.
      */
     @Override
-    public void setAddress(Text address) {
-        this.address = address;
+    public void addAddress(Text address) {
+        this.address = add(this.address, address);
     }
     /**
      * Physical address of the item.
@@ -877,11 +1220,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param address PostalAddress value to set.
      */
     @Override
-    public void setAddress(PostalAddress address) {
-        this.address = address;
+    public void addAddress(PostalAddress address) {
+        this.address = add(this.address, address);
     }
 
-    private Object geoEquals;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoEquals;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoEqualsList() {
+        return (List<T>) geoEquals;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
@@ -890,7 +1244,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoEquals() {
-        return (T) geoEquals;
+        return (T) getFirst(geoEquals);
     }
 
     /**
@@ -899,8 +1253,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoEquals Place value to set.
      */
     @Override
-    public void setGeoEquals(Place geoEquals) {
-        this.geoEquals = geoEquals;
+    public void addGeoEquals(Place geoEquals) {
+        this.geoEquals = add(this.geoEquals, geoEquals);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
@@ -908,11 +1262,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoEquals GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoEquals(GeospatialGeometry geoEquals) {
-        this.geoEquals = geoEquals;
+    public void addGeoEquals(GeospatialGeometry geoEquals) {
+        this.geoEquals = add(this.geoEquals, geoEquals);
     }
 
-    private URL map;
+    private List<URL> map;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getMapList() {
+        return map;
+    }
 
     /**
      * A URL to a map of the place.
@@ -921,7 +1285,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getMap() {
-        return map;
+        return getFirst(map);
     }
 
     /**
@@ -930,11 +1294,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param map URL value to set.
      */
     @Override
-    public void setMap(URL map) {
-        this.map = map;
+    public void addMap(URL map) {
+        this.map = add(this.map, map);
     }
 
-    private Boolean publicAccess;
+    private List<Boolean> publicAccess;
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getPublicAccessList() {
+        return publicAccess;
+    }
 
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
@@ -943,7 +1317,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getPublicAccess() {
-        return publicAccess;
+        return getFirst(publicAccess);
     }
 
     /**
@@ -952,11 +1326,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param publicAccess Boolean value to set.
      */
     @Override
-    public void setPublicAccess(Boolean publicAccess) {
-        this.publicAccess = publicAccess;
+    public void addPublicAccess(Boolean publicAccess) {
+        this.publicAccess = add(this.publicAccess, publicAccess);
     }
 
-    private Object geoCrosses;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoCrosses;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoCrossesList() {
+        return (List<T>) geoCrosses;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -965,7 +1350,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoCrosses() {
-        return (T) geoCrosses;
+        return (T) getFirst(geoCrosses);
     }
 
     /**
@@ -974,8 +1359,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCrosses(GeospatialGeometry geoCrosses) {
-        this.geoCrosses = geoCrosses;
+    public void addGeoCrosses(GeospatialGeometry geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -983,11 +1368,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoCrosses Place value to set.
      */
     @Override
-    public void setGeoCrosses(Place geoCrosses) {
-        this.geoCrosses = geoCrosses;
+    public void addGeoCrosses(Place geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
     }
 
-    private Place containedInPlace;
+    private List<Place> containedInPlace;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainedInPlaceList() {
+        return containedInPlace;
+    }
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -996,7 +1391,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Place getContainedInPlace() {
-        return containedInPlace;
+        return getFirst(containedInPlace);
     }
 
     /**
@@ -1005,11 +1400,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param containedInPlace Place value to set.
      */
     @Override
-    public void setContainedInPlace(Place containedInPlace) {
-        this.containedInPlace = containedInPlace;
+    public void addContainedInPlace(Place containedInPlace) {
+        this.containedInPlace = add(this.containedInPlace, containedInPlace);
     }
 
-    private Text slogan;
+    private List<Text> slogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
+    }
 
     /**
      * A slogan or motto associated with the item.
@@ -1018,7 +1423,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getSlogan() {
-        return slogan;
+        return getFirst(slogan);
     }
 
     /**
@@ -1027,11 +1432,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text slogan) {
-        this.slogan = slogan;
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
     }
 
-    private Object photos;
+    @JsonLdFieldTypes({ ImageObject.class, Photograph.class })
+    private List<Object> photos;
+
+    /**
+     * Photographs of this place.
+     *
+     * @return {@link ImageObject} or {@link Photograph}
+     */
+    @Override
+    public <T> List<T> getPhotosList() {
+        return (List<T>) photos;
+    }
 
     /**
      * Photographs of this place.
@@ -1040,7 +1456,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getPhotos() {
-        return (T) photos;
+        return (T) getFirst(photos);
     }
 
     /**
@@ -1049,8 +1465,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param photos ImageObject value to set.
      */
     @Override
-    public void setPhotos(ImageObject photos) {
-        this.photos = photos;
+    public void addPhotos(ImageObject photos) {
+        this.photos = add(this.photos, photos);
     }
     /**
      * Photographs of this place.
@@ -1058,11 +1474,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param photos Photograph value to set.
      */
     @Override
-    public void setPhotos(Photograph photos) {
-        this.photos = photos;
+    public void addPhotos(Photograph photos) {
+        this.photos = add(this.photos, photos);
     }
 
-    private Object geoCovers;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoCovers;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoCoversList() {
+        return (List<T>) geoCovers;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1071,7 +1498,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoCovers() {
-        return (T) geoCovers;
+        return (T) getFirst(geoCovers);
     }
 
     /**
@@ -1080,8 +1507,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCovers(GeospatialGeometry geoCovers) {
-        this.geoCovers = geoCovers;
+    public void addGeoCovers(GeospatialGeometry geoCovers) {
+        this.geoCovers = add(this.geoCovers, geoCovers);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1089,11 +1516,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoCovers Place value to set.
      */
     @Override
-    public void setGeoCovers(Place geoCovers) {
-        this.geoCovers = geoCovers;
+    public void addGeoCovers(Place geoCovers) {
+        this.geoCovers = add(this.geoCovers, geoCovers);
     }
 
-    private Place containedIn;
+    private List<Place> containedIn;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainedInList() {
+        return containedIn;
+    }
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -1102,7 +1539,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Place getContainedIn() {
-        return containedIn;
+        return getFirst(containedIn);
     }
 
     /**
@@ -1111,11 +1548,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param containedIn Place value to set.
      */
     @Override
-    public void setContainedIn(Place containedIn) {
-        this.containedIn = containedIn;
+    public void addContainedIn(Place containedIn) {
+        this.containedIn = add(this.containedIn, containedIn);
     }
 
-    private Boolean hasDriveThroughService;
+    private List<Boolean> hasDriveThroughService;
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public List<Boolean> getHasDriveThroughServiceList() {
+        return hasDriveThroughService;
+    }
 
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
@@ -1126,7 +1575,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getHasDriveThroughService() {
-        return hasDriveThroughService;
+        return getFirst(hasDriveThroughService);
     }
 
     /**
@@ -1137,11 +1586,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
-    public void setHasDriveThroughService(Boolean hasDriveThroughService) {
-        this.hasDriveThroughService = hasDriveThroughService;
+    public void addHasDriveThroughService(Boolean hasDriveThroughService) {
+        this.hasDriveThroughService = add(this.hasDriveThroughService, hasDriveThroughService);
     }
 
-    private Object logo;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> logo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
 
     /**
      * An associated logo.
@@ -1151,7 +1612,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getLogo() {
-        return (T) logo;
+        return (T) getFirst(logo);
     }
 
     /**
@@ -1161,8 +1622,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL logo) {
-        this.logo = logo;
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
     }
     /**
      * An associated logo.
@@ -1171,11 +1632,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(ImageObject logo) {
-        this.logo = logo;
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
     }
 
-    private Boolean isAccessibleForFree;
+    private List<Boolean> isAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsAccessibleForFreeList() {
+        return isAccessibleForFree;
+    }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -1184,7 +1655,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return isAccessibleForFree;
+        return getFirst(isAccessibleForFree);
     }
 
     /**
@@ -1193,11 +1664,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
-        this.isAccessibleForFree = isAccessibleForFree;
+    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
     }
 
-    private Object geoWithin;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoWithin;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoWithinList() {
+        return (List<T>) geoWithin;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1206,7 +1688,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoWithin() {
-        return (T) geoWithin;
+        return (T) getFirst(geoWithin);
     }
 
     /**
@@ -1215,8 +1697,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoWithin Place value to set.
      */
     @Override
-    public void setGeoWithin(Place geoWithin) {
-        this.geoWithin = geoWithin;
+    public void addGeoWithin(Place geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1224,11 +1706,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoWithin GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoWithin(GeospatialGeometry geoWithin) {
-        this.geoWithin = geoWithin;
+    public void addGeoWithin(GeospatialGeometry geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
 
-    private Object geoDisjoint;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoDisjoint;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoDisjointList() {
+        return (List<T>) geoDisjoint;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
@@ -1237,7 +1730,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoDisjoint() {
-        return (T) geoDisjoint;
+        return (T) getFirst(geoDisjoint);
     }
 
     /**
@@ -1246,8 +1739,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoDisjoint GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoDisjoint(GeospatialGeometry geoDisjoint) {
-        this.geoDisjoint = geoDisjoint;
+    public void addGeoDisjoint(GeospatialGeometry geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
@@ -1255,11 +1748,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoDisjoint Place value to set.
      */
     @Override
-    public void setGeoDisjoint(Place geoDisjoint) {
-        this.geoDisjoint = geoDisjoint;
+    public void addGeoDisjoint(Place geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
     }
 
-    private Text isicV4;
+    private List<Text> isicV4;
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getIsicV4List() {
+        return isicV4;
+    }
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -1269,7 +1773,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getIsicV4() {
-        return isicV4;
+        return getFirst(isicV4);
     }
 
     /**
@@ -1279,11 +1783,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsicV4(Text isicV4) {
-        this.isicV4 = isicV4;
+    public void addIsicV4(Text isicV4) {
+        this.isicV4 = add(this.isicV4, isicV4);
     }
 
-    private Object geoOverlaps;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoOverlaps;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoOverlapsList() {
+        return (List<T>) geoOverlaps;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1292,7 +1807,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeoOverlaps() {
-        return (T) geoOverlaps;
+        return (T) getFirst(geoOverlaps);
     }
 
     /**
@@ -1301,8 +1816,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoOverlaps(GeospatialGeometry geoOverlaps) {
-        this.geoOverlaps = geoOverlaps;
+    public void addGeoOverlaps(GeospatialGeometry geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1310,11 +1825,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geoOverlaps Place value to set.
      */
     @Override
-    public void setGeoOverlaps(Place geoOverlaps) {
-        this.geoOverlaps = geoOverlaps;
+    public void addGeoOverlaps(Place geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
     }
 
-    private Text branchCode;
+    private List<Text> branchCode;
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getBranchCodeList() {
+        return branchCode;
+    }
 
     /**
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
@@ -1324,7 +1850,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getBranchCode() {
-        return branchCode;
+        return getFirst(branchCode);
     }
 
     /**
@@ -1334,11 +1860,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param branchCode Text value to set.
      */
     @Override
-    public void setBranchCode(Text branchCode) {
-        this.branchCode = branchCode;
+    public void addBranchCode(Text branchCode) {
+        this.branchCode = add(this.branchCode, branchCode);
     }
 
-    private PropertyValue additionalProperty;
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -1347,7 +1883,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return additionalProperty;
+        return getFirst(additionalProperty);
     }
 
     /**
@@ -1356,11 +1892,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = additionalProperty;
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
-    private OpeningHoursSpecification openingHoursSpecification;
+    private List<OpeningHoursSpecification> openingHoursSpecification;
+
+    /**
+     * The opening hours of a certain place.
+     *
+     * @return {@link OpeningHoursSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
+        return openingHoursSpecification;
+    }
 
     /**
      * The opening hours of a certain place.
@@ -1370,7 +1917,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
-        return openingHoursSpecification;
+        return getFirst(openingHoursSpecification);
     }
 
     /**
@@ -1380,11 +1927,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
-        this.openingHoursSpecification = openingHoursSpecification;
+    public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
+        this.openingHoursSpecification = add(this.openingHoursSpecification, openingHoursSpecification);
     }
 
-    private Review reviews;
+    private List<Review> reviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
 
     /**
      * Review of the item.
@@ -1393,7 +1950,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Review getReviews() {
-        return reviews;
+        return getFirst(reviews);
     }
 
     /**
@@ -1402,11 +1959,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review reviews) {
-        this.reviews = reviews;
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
-    private Object photo;
+    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
+    private List<Object> photo;
+
+    /**
+     * A photograph of this place.
+     *
+     * @return {@link Photograph} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getPhotoList() {
+        return (List<T>) photo;
+    }
 
     /**
      * A photograph of this place.
@@ -1415,7 +1983,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getPhoto() {
-        return (T) photo;
+        return (T) getFirst(photo);
     }
 
     /**
@@ -1424,8 +1992,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param photo Photograph value to set.
      */
     @Override
-    public void setPhoto(Photograph photo) {
-        this.photo = photo;
+    public void addPhoto(Photograph photo) {
+        this.photo = add(this.photo, photo);
     }
     /**
      * A photograph of this place.
@@ -1433,11 +2001,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param photo ImageObject value to set.
      */
     @Override
-    public void setPhoto(ImageObject photo) {
-        this.photo = photo;
+    public void addPhoto(ImageObject photo) {
+        this.photo = add(this.photo, photo);
     }
 
-    private OpeningHoursSpecification specialOpeningHoursSpecification;
+    private List<OpeningHoursSpecification> specialOpeningHoursSpecification;
+
+    /**
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public List<OpeningHoursSpecification> getSpecialOpeningHoursSpecificationList() {
+        return specialOpeningHoursSpecification;
+    }
 
     /**
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
@@ -1447,7 +2026,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
-        return specialOpeningHoursSpecification;
+        return getFirst(specialOpeningHoursSpecification);
     }
 
     /**
@@ -1457,11 +2036,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
-    public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
-        this.specialOpeningHoursSpecification = specialOpeningHoursSpecification;
+    public void addSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
+        this.specialOpeningHoursSpecification = add(this.specialOpeningHoursSpecification, specialOpeningHoursSpecification);
     }
 
-    private Object hasMap;
+    @JsonLdFieldTypes({ URL.class, Map.class })
+    private List<Object> hasMap;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL} or {@link Map}
+     */
+    @Override
+    public <T> List<T> getHasMapList() {
+        return (List<T>) hasMap;
+    }
 
     /**
      * A URL to a map of the place.
@@ -1470,7 +2060,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getHasMap() {
-        return (T) hasMap;
+        return (T) getFirst(hasMap);
     }
 
     /**
@@ -1479,8 +2069,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param hasMap URL value to set.
      */
     @Override
-    public void setHasMap(URL hasMap) {
-        this.hasMap = hasMap;
+    public void addHasMap(URL hasMap) {
+        this.hasMap = add(this.hasMap, hasMap);
     }
     /**
      * A URL to a map of the place.
@@ -1488,11 +2078,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param hasMap Map value to set.
      */
     @Override
-    public void setHasMap(Map hasMap) {
-        this.hasMap = hasMap;
+    public void addHasMap(Map hasMap) {
+        this.hasMap = add(this.hasMap, hasMap);
     }
 
-    private Object longitude;
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> longitude;
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getLongitudeList() {
+        return (List<T>) longitude;
+    }
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -1501,7 +2102,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getLongitude() {
-        return (T) longitude;
+        return (T) getFirst(longitude);
     }
 
     /**
@@ -1510,8 +2111,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param longitude Number value to set.
      */
     @Override
-    public void setLongitude(Number longitude) {
-        this.longitude = longitude;
+    public void addLongitude(Number longitude) {
+        this.longitude = add(this.longitude, longitude);
     }
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -1519,11 +2120,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param longitude Text value to set.
      */
     @Override
-    public void setLongitude(Text longitude) {
-        this.longitude = longitude;
+    public void addLongitude(Text longitude) {
+        this.longitude = add(this.longitude, longitude);
     }
 
-    private Object geo;
+    @JsonLdFieldTypes({ GeoCoordinates.class, GeoShape.class })
+    private List<Object> geo;
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @return {@link GeoCoordinates} or {@link GeoShape}
+     */
+    @Override
+    public <T> List<T> getGeoList() {
+        return (List<T>) geo;
+    }
 
     /**
      * The geo coordinates of the place.
@@ -1532,7 +2144,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getGeo() {
-        return (T) geo;
+        return (T) getFirst(geo);
     }
 
     /**
@@ -1541,8 +2153,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geo GeoCoordinates value to set.
      */
     @Override
-    public void setGeo(GeoCoordinates geo) {
-        this.geo = geo;
+    public void addGeo(GeoCoordinates geo) {
+        this.geo = add(this.geo, geo);
     }
     /**
      * The geo coordinates of the place.
@@ -1550,11 +2162,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param geo GeoShape value to set.
      */
     @Override
-    public void setGeo(GeoShape geo) {
-        this.geo = geo;
+    public void addGeo(GeoShape geo) {
+        this.geo = add(this.geo, geo);
     }
 
-    private Event events;
+    private List<Event> events;
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventsList() {
+        return events;
+    }
 
     /**
      * Upcoming or past events associated with this place or organization.
@@ -1563,7 +2185,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Event getEvents() {
-        return events;
+        return getFirst(events);
     }
 
     /**
@@ -1572,11 +2194,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param events Event value to set.
      */
     @Override
-    public void setEvents(Event events) {
-        this.events = events;
+    public void addEvents(Event events) {
+        this.events = add(this.events, events);
     }
 
-    private Text faxNumber;
+    private List<Text> faxNumber;
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFaxNumberList() {
+        return faxNumber;
+    }
 
     /**
      * The fax number.
@@ -1585,7 +2217,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getFaxNumber() {
-        return faxNumber;
+        return getFirst(faxNumber);
     }
 
     /**
@@ -1594,11 +2226,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param faxNumber Text value to set.
      */
     @Override
-    public void setFaxNumber(Text faxNumber) {
-        this.faxNumber = faxNumber;
+    public void addFaxNumber(Text faxNumber) {
+        this.faxNumber = add(this.faxNumber, faxNumber);
     }
 
-    private Event event;
+    private List<Event> event;
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventList() {
+        return event;
+    }
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -1607,7 +2249,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Event getEvent() {
-        return event;
+        return getFirst(event);
     }
 
     /**
@@ -1616,11 +2258,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param event Event value to set.
      */
     @Override
-    public void setEvent(Event event) {
-        this.event = event;
+    public void addEvent(Event event) {
+        this.event = add(this.event, event);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1629,7 +2282,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -1638,8 +2291,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1647,11 +2300,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -1660,7 +2323,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -1669,11 +2332,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -1682,7 +2355,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -1691,11 +2364,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1704,7 +2387,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -1713,11 +2396,22 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1726,7 +2420,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -1735,8 +2429,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1744,11 +2438,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -1757,7 +2461,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -1766,11 +2470,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -1779,7 +2493,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -1788,11 +2502,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1802,7 +2528,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -1812,8 +2538,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -1822,11 +2548,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1835,7 +2571,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -1844,11 +2580,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1857,7 +2603,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -1866,11 +2612,21 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1879,7 +2635,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -1888,11 +2644,23 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1902,7 +2670,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1912,8 +2680,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1922,8 +2690,8 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1932,7 +2700,7 @@ public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

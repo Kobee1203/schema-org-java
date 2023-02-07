@@ -80,7 +80,11 @@ public final class ModelUtils {
         return keyword != null && SourceVersion.isKeyword(keyword);
     }
 
-    public static String capitalize(String str) {
+    public static String getMethodName(String fieldName, String prefix, String suffix) {
+        return prefix + (!prefix.isBlank() ? capitalize(fieldName) : fieldName) + suffix;
+    }
+
+    private static String capitalize(String str) {
         return str == null || str.length() <= 1 ? str : str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 

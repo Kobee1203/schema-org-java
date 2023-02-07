@@ -49,6 +49,8 @@ import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.MedicalOrganization;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
@@ -71,7 +73,19 @@ import org.schema.model.Hospital;
 @JsonLdTypeName("Hospital")
 public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Hospital {
 
-    private Object availableService;
+    @JsonLdFieldTypes({ MedicalTest.class, MedicalProcedure.class, MedicalTherapy.class })
+    private List<Object> availableService;
+
+    /**
+     * A medical service available from this provider.
+     *
+     * @return {@link MedicalTest} or {@link MedicalProcedure} or {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> List<T> getAvailableServiceList() {
+        return (List<T>) availableService;
+    }
 
     /**
      * A medical service available from this provider.
@@ -81,7 +95,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getAvailableService() {
-        return (T) availableService;
+        return (T) getFirst(availableService);
     }
 
     /**
@@ -91,8 +105,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAvailableService(MedicalTest availableService) {
-        this.availableService = availableService;
+    public void addAvailableService(MedicalTest availableService) {
+        this.availableService = add(this.availableService, availableService);
     }
     /**
      * A medical service available from this provider.
@@ -101,8 +115,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAvailableService(MedicalProcedure availableService) {
-        this.availableService = availableService;
+    public void addAvailableService(MedicalProcedure availableService) {
+        this.availableService = add(this.availableService, availableService);
     }
     /**
      * A medical service available from this provider.
@@ -111,11 +125,24 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAvailableService(MedicalTherapy availableService) {
-        this.availableService = availableService;
+    public void addAvailableService(MedicalTherapy availableService) {
+        this.availableService = add(this.availableService, availableService);
     }
 
-    private Object healthcareReportingData;
+    @JsonLdFieldTypes({ Dataset.class, CDCPMDRecord.class })
+    private List<Object> healthcareReportingData;
+
+    /**
+     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
+     *
+     * @return {@link Dataset} or {@link CDCPMDRecord}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public <T> List<T> getHealthcareReportingDataList() {
+        return (List<T>) healthcareReportingData;
+    }
 
     /**
      * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
@@ -126,7 +153,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getHealthcareReportingData() {
-        return (T) healthcareReportingData;
+        return (T) getFirst(healthcareReportingData);
     }
 
     /**
@@ -137,8 +164,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setHealthcareReportingData(Dataset healthcareReportingData) {
-        this.healthcareReportingData = healthcareReportingData;
+    public void addHealthcareReportingData(Dataset healthcareReportingData) {
+        this.healthcareReportingData = add(this.healthcareReportingData, healthcareReportingData);
     }
     /**
      * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
@@ -148,11 +175,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setHealthcareReportingData(CDCPMDRecord healthcareReportingData) {
-        this.healthcareReportingData = healthcareReportingData;
+    public void addHealthcareReportingData(CDCPMDRecord healthcareReportingData) {
+        this.healthcareReportingData = add(this.healthcareReportingData, healthcareReportingData);
     }
 
-    private MedicalSpecialty medicalSpecialty;
+    private List<MedicalSpecialty> medicalSpecialty;
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalSpecialty> getMedicalSpecialtyList() {
+        return medicalSpecialty;
+    }
 
     /**
      * A medical specialty of the provider.
@@ -162,7 +200,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public MedicalSpecialty getMedicalSpecialty() {
-        return medicalSpecialty;
+        return getFirst(medicalSpecialty);
     }
 
     /**
@@ -172,11 +210,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMedicalSpecialty(MedicalSpecialty medicalSpecialty) {
-        this.medicalSpecialty = medicalSpecialty;
+    public void addMedicalSpecialty(MedicalSpecialty medicalSpecialty) {
+        this.medicalSpecialty = add(this.medicalSpecialty, medicalSpecialty);
     }
 
-    private Boolean isAcceptingNewPatients;
+    private List<Boolean> isAcceptingNewPatients;
+
+    /**
+     * Whether the provider is accepting new patients.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public List<Boolean> getIsAcceptingNewPatientsList() {
+        return isAcceptingNewPatients;
+    }
 
     /**
      * Whether the provider is accepting new patients.
@@ -187,7 +237,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Boolean getIsAcceptingNewPatients() {
-        return isAcceptingNewPatients;
+        return getFirst(isAcceptingNewPatients);
     }
 
     /**
@@ -198,11 +248,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     @Override
-    public void setIsAcceptingNewPatients(Boolean isAcceptingNewPatients) {
-        this.isAcceptingNewPatients = isAcceptingNewPatients;
+    public void addIsAcceptingNewPatients(Boolean isAcceptingNewPatients) {
+        this.isAcceptingNewPatients = add(this.isAcceptingNewPatients, isAcceptingNewPatients);
     }
 
-    private Text healthPlanNetworkId;
+    private List<Text> healthPlanNetworkId;
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public List<Text> getHealthPlanNetworkIdList() {
+        return healthPlanNetworkId;
+    }
 
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
@@ -213,7 +275,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getHealthPlanNetworkId() {
-        return healthPlanNetworkId;
+        return getFirst(healthPlanNetworkId);
     }
 
     /**
@@ -224,11 +286,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     @Override
-    public void setHealthPlanNetworkId(Text healthPlanNetworkId) {
-        this.healthPlanNetworkId = healthPlanNetworkId;
+    public void addHealthPlanNetworkId(Text healthPlanNetworkId) {
+        this.healthPlanNetworkId = add(this.healthPlanNetworkId, healthPlanNetworkId);
     }
 
-    private Object ownershipFundingInfo;
+    @JsonLdFieldTypes({ URL.class, AboutPage.class, Text.class, CreativeWork.class })
+    private List<Object> ownershipFundingInfo;
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @return {@link URL} or {@link AboutPage} or {@link Text} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> List<T> getOwnershipFundingInfoList() {
+        return (List<T>) ownershipFundingInfo;
+    }
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -240,7 +316,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getOwnershipFundingInfo() {
-        return (T) ownershipFundingInfo;
+        return (T) getFirst(ownershipFundingInfo);
     }
 
     /**
@@ -252,8 +328,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(URL ownershipFundingInfo) {
-        this.ownershipFundingInfo = ownershipFundingInfo;
+    public void addOwnershipFundingInfo(URL ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -264,8 +340,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
-        this.ownershipFundingInfo = ownershipFundingInfo;
+    public void addOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -276,8 +352,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(Text ownershipFundingInfo) {
-        this.ownershipFundingInfo = ownershipFundingInfo;
+    public void addOwnershipFundingInfo(Text ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -288,11 +364,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
-        this.ownershipFundingInfo = ownershipFundingInfo;
+    public void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
     }
 
-    private EducationalOccupationalCredential hasCredential;
+    private List<EducationalOccupationalCredential> hasCredential;
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public List<EducationalOccupationalCredential> getHasCredentialList() {
+        return hasCredential;
+    }
 
     /**
      * A credential awarded to the Person or Organization.
@@ -303,7 +391,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public EducationalOccupationalCredential getHasCredential() {
-        return hasCredential;
+        return getFirst(hasCredential);
     }
 
     /**
@@ -314,11 +402,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setHasCredential(EducationalOccupationalCredential hasCredential) {
-        this.hasCredential = hasCredential;
+    public void addHasCredential(EducationalOccupationalCredential hasCredential) {
+        this.hasCredential = add(this.hasCredential, hasCredential);
     }
 
-    private Person founders;
+    private List<Person> founders;
+
+    /**
+     * A person who founded this organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getFoundersList() {
+        return founders;
+    }
 
     /**
      * A person who founded this organization.
@@ -327,7 +425,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Person getFounders() {
-        return founders;
+        return getFirst(founders);
     }
 
     /**
@@ -336,11 +434,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param founders Person value to set.
      */
     @Override
-    public void setFounders(Person founders) {
-        this.founders = founders;
+    public void addFounders(Person founders) {
+        this.founders = add(this.founders, founders);
     }
 
-    private Text telephone;
+    private List<Text> telephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTelephoneList() {
+        return telephone;
+    }
 
     /**
      * The telephone number.
@@ -349,7 +457,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getTelephone() {
-        return telephone;
+        return getFirst(telephone);
     }
 
     /**
@@ -358,11 +466,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param telephone Text value to set.
      */
     @Override
-    public void setTelephone(Text telephone) {
-        this.telephone = telephone;
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -371,7 +489,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -380,11 +498,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
-    private Object knowsAbout;
+    @JsonLdFieldTypes({ URL.class, Text.class, Thing.class })
+    private List<Object> knowsAbout;
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @return {@link URL} or {@link Text} or {@link Thing}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public <T> List<T> getKnowsAboutList() {
+        return (List<T>) knowsAbout;
+    }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -396,7 +528,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getKnowsAbout() {
-        return (T) knowsAbout;
+        return (T) getFirst(knowsAbout);
     }
 
     /**
@@ -408,8 +540,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(URL knowsAbout) {
-        this.knowsAbout = knowsAbout;
+    public void addKnowsAbout(URL knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -420,8 +552,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Text knowsAbout) {
-        this.knowsAbout = knowsAbout;
+    public void addKnowsAbout(Text knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -432,11 +564,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Thing knowsAbout) {
-        this.knowsAbout = knowsAbout;
+    public void addKnowsAbout(Thing knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
 
-    private Text award;
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
 
     /**
      * An award won by or for this item.
@@ -445,7 +587,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getAward() {
-        return award;
+        return getFirst(award);
     }
 
     /**
@@ -454,11 +596,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param award Text value to set.
      */
     @Override
-    public void setAward(Text award) {
-        this.award = award;
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
     }
 
-    private Object member;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> member;
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getMemberList() {
+        return (List<T>) member;
+    }
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -467,7 +620,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getMember() {
-        return (T) member;
+        return (T) getFirst(member);
     }
 
     /**
@@ -476,8 +629,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param member Organization value to set.
      */
     @Override
-    public void setMember(Organization member) {
-        this.member = member;
+    public void addMember(Organization member) {
+        this.member = add(this.member, member);
     }
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -485,11 +638,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param member Person value to set.
      */
     @Override
-    public void setMember(Person member) {
-        this.member = member;
+    public void addMember(Person member) {
+        this.member = add(this.member, member);
     }
 
-    private Person employee;
+    private List<Person> employee;
+
+    /**
+     * Someone working for this organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getEmployeeList() {
+        return employee;
+    }
 
     /**
      * Someone working for this organization.
@@ -498,7 +661,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Person getEmployee() {
-        return employee;
+        return getFirst(employee);
     }
 
     /**
@@ -507,11 +670,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param employee Person value to set.
      */
     @Override
-    public void setEmployee(Person employee) {
-        this.employee = employee;
+    public void addEmployee(Person employee) {
+        this.employee = add(this.employee, employee);
     }
 
-    private Date dissolutionDate;
+    private List<Date> dissolutionDate;
+
+    /**
+     * The date that this organization was dissolved.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getDissolutionDateList() {
+        return dissolutionDate;
+    }
 
     /**
      * The date that this organization was dissolved.
@@ -520,7 +693,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Date getDissolutionDate() {
-        return dissolutionDate;
+        return getFirst(dissolutionDate);
     }
 
     /**
@@ -529,11 +702,24 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param dissolutionDate Date value to set.
      */
     @Override
-    public void setDissolutionDate(Date dissolutionDate) {
-        this.dissolutionDate = dissolutionDate;
+    public void addDissolutionDate(Date dissolutionDate) {
+        this.dissolutionDate = add(this.dissolutionDate, dissolutionDate);
     }
 
-    private Grant funding;
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -545,7 +731,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Grant getFunding() {
-        return funding;
+        return getFirst(funding);
     }
 
     /**
@@ -557,11 +743,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant funding) {
-        this.funding = funding;
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
-    private Text vatID;
+    private List<Text> vatID;
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getVatIDList() {
+        return vatID;
+    }
 
     /**
      * The Value-added Tax ID of the organization or person.
@@ -571,7 +768,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getVatID() {
-        return vatID;
+        return getFirst(vatID);
     }
 
     /**
@@ -581,11 +778,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setVatID(Text vatID) {
-        this.vatID = vatID;
+    public void addVatID(Text vatID) {
+        this.vatID = add(this.vatID, vatID);
     }
 
-    private Text globalLocationNumber;
+    private List<Text> globalLocationNumber;
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGlobalLocationNumberList() {
+        return globalLocationNumber;
+    }
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -595,7 +803,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getGlobalLocationNumber() {
-        return globalLocationNumber;
+        return getFirst(globalLocationNumber);
     }
 
     /**
@@ -605,11 +813,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGlobalLocationNumber(Text globalLocationNumber) {
-        this.globalLocationNumber = globalLocationNumber;
+    public void addGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
     }
 
-    private Object keywords;
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -618,7 +837,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getKeywords() {
-        return (T) keywords;
+        return (T) getFirst(keywords);
     }
 
     /**
@@ -627,8 +846,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm keywords) {
-        this.keywords = keywords;
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -636,8 +855,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text keywords) {
-        this.keywords = keywords;
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -645,11 +864,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(URL keywords) {
-        this.keywords = keywords;
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
-    private ContactPoint contactPoints;
+    private List<ContactPoint> contactPoints;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointsList() {
+        return contactPoints;
+    }
 
     /**
      * A contact point for a person or organization.
@@ -658,7 +887,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public ContactPoint getContactPoints() {
-        return contactPoints;
+        return getFirst(contactPoints);
     }
 
     /**
@@ -667,11 +896,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param contactPoints ContactPoint value to set.
      */
     @Override
-    public void setContactPoints(ContactPoint contactPoints) {
-        this.contactPoints = contactPoints;
+    public void addContactPoints(ContactPoint contactPoints) {
+        this.contactPoints = add(this.contactPoints, contactPoints);
     }
 
-    private Organization subOrganization;
+    private List<Organization> subOrganization;
+
+    /**
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getSubOrganizationList() {
+        return subOrganization;
+    }
 
     /**
      * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
@@ -680,7 +919,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Organization getSubOrganization() {
-        return subOrganization;
+        return getFirst(subOrganization);
     }
 
     /**
@@ -689,11 +928,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param subOrganization Organization value to set.
      */
     @Override
-    public void setSubOrganization(Organization subOrganization) {
-        this.subOrganization = subOrganization;
+    public void addSubOrganization(Organization subOrganization) {
+        this.subOrganization = add(this.subOrganization, subOrganization);
     }
 
-    private Text awards;
+    private List<Text> awards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
 
     /**
      * Awards won by or for this item.
@@ -702,7 +951,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getAwards() {
-        return awards;
+        return getFirst(awards);
     }
 
     /**
@@ -711,11 +960,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text awards) {
-        this.awards = awards;
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
     }
 
-    private QuantitativeValue numberOfEmployees;
+    private List<QuantitativeValue> numberOfEmployees;
+
+    /**
+     * The number of employees in an organization e.g. business.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    @Override
+    public List<QuantitativeValue> getNumberOfEmployeesList() {
+        return numberOfEmployees;
+    }
 
     /**
      * The number of employees in an organization e.g. business.
@@ -724,7 +983,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public QuantitativeValue getNumberOfEmployees() {
-        return numberOfEmployees;
+        return getFirst(numberOfEmployees);
     }
 
     /**
@@ -733,11 +992,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param numberOfEmployees QuantitativeValue value to set.
      */
     @Override
-    public void setNumberOfEmployees(QuantitativeValue numberOfEmployees) {
-        this.numberOfEmployees = numberOfEmployees;
+    public void addNumberOfEmployees(QuantitativeValue numberOfEmployees) {
+        this.numberOfEmployees = add(this.numberOfEmployees, numberOfEmployees);
     }
 
-    private Object funder;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> funder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getFunderList() {
+        return (List<T>) funder;
+    }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -746,7 +1016,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getFunder() {
-        return (T) funder;
+        return (T) getFirst(funder);
     }
 
     /**
@@ -755,8 +1025,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Organization funder) {
-        this.funder = funder;
+    public void addFunder(Organization funder) {
+        this.funder = add(this.funder, funder);
     }
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -764,11 +1034,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param funder Person value to set.
      */
     @Override
-    public void setFunder(Person funder) {
-        this.funder = funder;
+    public void addFunder(Person funder) {
+        this.funder = add(this.funder, funder);
     }
 
-    private Offer makesOffer;
+    private List<Offer> makesOffer;
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Offer> getMakesOfferList() {
+        return makesOffer;
+    }
 
     /**
      * A pointer to products or services offered by the organization or person.
@@ -778,7 +1059,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Offer getMakesOffer() {
-        return makesOffer;
+        return getFirst(makesOffer);
     }
 
     /**
@@ -788,11 +1069,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMakesOffer(Offer makesOffer) {
-        this.makesOffer = makesOffer;
+    public void addMakesOffer(Offer makesOffer) {
+        this.makesOffer = add(this.makesOffer, makesOffer);
     }
 
-    private Text legalName;
+    private List<Text> legalName;
+
+    /**
+     * The official name of the organization, e.g. the registered company name.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getLegalNameList() {
+        return legalName;
+    }
 
     /**
      * The official name of the organization, e.g. the registered company name.
@@ -802,7 +1094,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getLegalName() {
-        return legalName;
+        return getFirst(legalName);
     }
 
     /**
@@ -812,11 +1104,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLegalName(Text legalName) {
-        this.legalName = legalName;
+    public void addLegalName(Text legalName) {
+        this.legalName = add(this.legalName, legalName);
     }
 
-    private Object correctionsPolicy;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> correctionsPolicy;
+
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> List<T> getCorrectionsPolicyList() {
+        return (List<T>) correctionsPolicy;
+    }
 
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
@@ -828,7 +1134,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getCorrectionsPolicy() {
-        return (T) correctionsPolicy;
+        return (T) getFirst(correctionsPolicy);
     }
 
     /**
@@ -840,8 +1146,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setCorrectionsPolicy(URL correctionsPolicy) {
-        this.correctionsPolicy = correctionsPolicy;
+    public void addCorrectionsPolicy(URL correctionsPolicy) {
+        this.correctionsPolicy = add(this.correctionsPolicy, correctionsPolicy);
     }
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
@@ -852,11 +1158,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setCorrectionsPolicy(CreativeWork correctionsPolicy) {
-        this.correctionsPolicy = correctionsPolicy;
+    public void addCorrectionsPolicy(CreativeWork correctionsPolicy) {
+        this.correctionsPolicy = add(this.correctionsPolicy, correctionsPolicy);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -865,7 +1181,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -874,11 +1190,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
-    private InteractionCounter interactionStatistic;
+    private List<InteractionCounter> interactionStatistic;
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public List<InteractionCounter> getInteractionStatisticList() {
+        return interactionStatistic;
+    }
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -888,7 +1215,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public InteractionCounter getInteractionStatistic() {
-        return interactionStatistic;
+        return getFirst(interactionStatistic);
     }
 
     /**
@@ -898,11 +1225,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter interactionStatistic) {
-        this.interactionStatistic = interactionStatistic;
+    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
     }
 
-    private Object location;
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
+    private List<Object> location;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    @Override
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
+    }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -911,7 +1249,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getLocation() {
-        return (T) location;
+        return (T) getFirst(location);
     }
 
     /**
@@ -920,8 +1258,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(PostalAddress location) {
-        this.location = location;
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -929,8 +1267,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param location Text value to set.
      */
     @Override
-    public void setLocation(Text location) {
-        this.location = location;
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -938,8 +1276,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param location Place value to set.
      */
     @Override
-    public void setLocation(Place location) {
-        this.location = location;
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -947,11 +1285,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param location VirtualLocation value to set.
      */
     @Override
-    public void setLocation(VirtualLocation location) {
-        this.location = location;
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
     }
 
-    private Object address;
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
+    private List<Object> address;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    @Override
+    public <T> List<T> getAddressList() {
+        return (List<T>) address;
+    }
 
     /**
      * Physical address of the item.
@@ -960,7 +1309,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getAddress() {
-        return (T) address;
+        return (T) getFirst(address);
     }
 
     /**
@@ -969,8 +1318,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param address Text value to set.
      */
     @Override
-    public void setAddress(Text address) {
-        this.address = address;
+    public void addAddress(Text address) {
+        this.address = add(this.address, address);
     }
     /**
      * Physical address of the item.
@@ -978,11 +1327,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param address PostalAddress value to set.
      */
     @Override
-    public void setAddress(PostalAddress address) {
-        this.address = address;
+    public void addAddress(PostalAddress address) {
+        this.address = add(this.address, address);
     }
 
-    private Object memberOf;
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class })
+    private List<Object> memberOf;
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getMemberOfList() {
+        return (List<T>) memberOf;
+    }
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -991,7 +1351,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getMemberOf() {
-        return (T) memberOf;
+        return (T) getFirst(memberOf);
     }
 
     /**
@@ -1000,8 +1360,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param memberOf ProgramMembership value to set.
      */
     @Override
-    public void setMemberOf(ProgramMembership memberOf) {
-        this.memberOf = memberOf;
+    public void addMemberOf(ProgramMembership memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
     }
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -1009,11 +1369,24 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param memberOf Organization value to set.
      */
     @Override
-    public void setMemberOf(Organization memberOf) {
-        this.memberOf = memberOf;
+    public void addMemberOf(Organization memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
     }
 
-    private Object publishingPrinciples;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> publishingPrinciples;
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> List<T> getPublishingPrinciplesList() {
+        return (List<T>) publishingPrinciples;
+    }
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -1024,7 +1397,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getPublishingPrinciples() {
-        return (T) publishingPrinciples;
+        return (T) getFirst(publishingPrinciples);
     }
 
     /**
@@ -1035,8 +1408,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(URL publishingPrinciples) {
-        this.publishingPrinciples = publishingPrinciples;
+    public void addPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -1046,11 +1419,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param publishingPrinciples CreativeWork value to set.
      */
     @Override
-    public void setPublishingPrinciples(CreativeWork publishingPrinciples) {
-        this.publishingPrinciples = publishingPrinciples;
+    public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
 
-    private Object diversityStaffingReport;
+    @JsonLdFieldTypes({ URL.class, Article.class })
+    private List<Object> diversityStaffingReport;
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @return {@link URL} or {@link Article}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> List<T> getDiversityStaffingReportList() {
+        return (List<T>) diversityStaffingReport;
+    }
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
@@ -1062,7 +1449,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getDiversityStaffingReport() {
-        return (T) diversityStaffingReport;
+        return (T) getFirst(diversityStaffingReport);
     }
 
     /**
@@ -1074,8 +1461,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityStaffingReport(URL diversityStaffingReport) {
-        this.diversityStaffingReport = diversityStaffingReport;
+    public void addDiversityStaffingReport(URL diversityStaffingReport) {
+        this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
@@ -1086,11 +1473,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityStaffingReport(Article diversityStaffingReport) {
-        this.diversityStaffingReport = diversityStaffingReport;
+    public void addDiversityStaffingReport(Article diversityStaffingReport) {
+        this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
     }
 
-    private Object diversityPolicy;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> diversityPolicy;
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> List<T> getDiversityPolicyList() {
+        return (List<T>) diversityPolicy;
+    }
 
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
@@ -1102,7 +1503,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getDiversityPolicy() {
-        return (T) diversityPolicy;
+        return (T) getFirst(diversityPolicy);
     }
 
     /**
@@ -1114,8 +1515,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityPolicy(CreativeWork diversityPolicy) {
-        this.diversityPolicy = diversityPolicy;
+    public void addDiversityPolicy(CreativeWork diversityPolicy) {
+        this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
     }
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
@@ -1126,11 +1527,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityPolicy(URL diversityPolicy) {
-        this.diversityPolicy = diversityPolicy;
+    public void addDiversityPolicy(URL diversityPolicy) {
+        this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
     }
 
-    private Text email;
+    private List<Text> email;
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getEmailList() {
+        return email;
+    }
 
     /**
      * Email address.
@@ -1139,7 +1550,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getEmail() {
-        return email;
+        return getFirst(email);
     }
 
     /**
@@ -1148,11 +1559,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param email Text value to set.
      */
     @Override
-    public void setEmail(Text email) {
-        this.email = email;
+    public void addEmail(Text email) {
+        this.email = add(this.email, email);
     }
 
-    private Person employees;
+    private List<Person> employees;
+
+    /**
+     * People working for this organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getEmployeesList() {
+        return employees;
+    }
 
     /**
      * People working for this organization.
@@ -1161,7 +1582,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Person getEmployees() {
-        return employees;
+        return getFirst(employees);
     }
 
     /**
@@ -1170,11 +1591,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param employees Person value to set.
      */
     @Override
-    public void setEmployees(Person employees) {
-        this.employees = employees;
+    public void addEmployees(Person employees) {
+        this.employees = add(this.employees, employees);
     }
 
-    private NonprofitType nonprofitStatus;
+    private List<NonprofitType> nonprofitStatus;
+
+    /**
+     * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
+     *
+     * @return {@link NonprofitType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
+     */
+    @Override
+    public List<NonprofitType> getNonprofitStatusList() {
+        return nonprofitStatus;
+    }
 
     /**
      * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
@@ -1185,7 +1618,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public NonprofitType getNonprofitStatus() {
-        return nonprofitStatus;
+        return getFirst(nonprofitStatus);
     }
 
     /**
@@ -1196,11 +1629,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
     @Override
-    public void setNonprofitStatus(NonprofitType nonprofitStatus) {
-        this.nonprofitStatus = nonprofitStatus;
+    public void addNonprofitStatus(NonprofitType nonprofitStatus) {
+        this.nonprofitStatus = add(this.nonprofitStatus, nonprofitStatus);
     }
 
-    private Text slogan;
+    private List<Text> slogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
+    }
 
     /**
      * A slogan or motto associated with the item.
@@ -1209,7 +1652,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getSlogan() {
-        return slogan;
+        return getFirst(slogan);
     }
 
     /**
@@ -1218,11 +1661,24 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text slogan) {
-        this.slogan = slogan;
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
     }
 
-    private Object ethicsPolicy;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> ethicsPolicy;
+
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> List<T> getEthicsPolicyList() {
+        return (List<T>) ethicsPolicy;
+    }
 
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
@@ -1233,7 +1689,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getEthicsPolicy() {
-        return (T) ethicsPolicy;
+        return (T) getFirst(ethicsPolicy);
     }
 
     /**
@@ -1244,8 +1700,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setEthicsPolicy(URL ethicsPolicy) {
-        this.ethicsPolicy = ethicsPolicy;
+    public void addEthicsPolicy(URL ethicsPolicy) {
+        this.ethicsPolicy = add(this.ethicsPolicy, ethicsPolicy);
     }
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
@@ -1255,11 +1711,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setEthicsPolicy(CreativeWork ethicsPolicy) {
-        this.ethicsPolicy = ethicsPolicy;
+    public void addEthicsPolicy(CreativeWork ethicsPolicy) {
+        this.ethicsPolicy = add(this.ethicsPolicy, ethicsPolicy);
     }
 
-    private Object brand;
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
+    private List<Object> brand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1268,7 +1735,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getBrand() {
-        return (T) brand;
+        return (T) getFirst(brand);
     }
 
     /**
@@ -1277,8 +1744,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization brand) {
-        this.brand = brand;
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1286,11 +1753,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
     }
 
-    private Object sponsor;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> sponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getSponsorList() {
+        return (List<T>) sponsor;
+    }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1299,7 +1777,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getSponsor() {
-        return (T) sponsor;
+        return (T) getFirst(sponsor);
     }
 
     /**
@@ -1308,8 +1786,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Organization sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Organization sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1317,11 +1795,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param sponsor Person value to set.
      */
     @Override
-    public void setSponsor(Person sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Person sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
 
-    private Object logo;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> logo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
 
     /**
      * An associated logo.
@@ -1331,7 +1821,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getLogo() {
-        return (T) logo;
+        return (T) getFirst(logo);
     }
 
     /**
@@ -1341,8 +1831,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL logo) {
-        this.logo = logo;
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
     }
     /**
      * An associated logo.
@@ -1351,11 +1841,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(ImageObject logo) {
-        this.logo = logo;
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
     }
 
-    private Object actionableFeedbackPolicy;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> actionableFeedbackPolicy;
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> List<T> getActionableFeedbackPolicyList() {
+        return (List<T>) actionableFeedbackPolicy;
+    }
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -1367,7 +1871,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getActionableFeedbackPolicy() {
-        return (T) actionableFeedbackPolicy;
+        return (T) getFirst(actionableFeedbackPolicy);
     }
 
     /**
@@ -1379,8 +1883,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
-        this.actionableFeedbackPolicy = actionableFeedbackPolicy;
+    public void addActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
     }
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -1391,11 +1895,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
-        this.actionableFeedbackPolicy = actionableFeedbackPolicy;
+    public void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
     }
 
-    private Text naics;
+    private List<Text> naics;
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getNaicsList() {
+        return naics;
+    }
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -1405,7 +1920,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getNaics() {
-        return naics;
+        return getFirst(naics);
     }
 
     /**
@@ -1415,11 +1930,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setNaics(Text naics) {
-        this.naics = naics;
+    public void addNaics(Text naics) {
+        this.naics = add(this.naics, naics);
     }
 
-    private ContactPoint contactPoint;
+    private List<ContactPoint> contactPoint;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointList() {
+        return contactPoint;
+    }
 
     /**
      * A contact point for a person or organization.
@@ -1428,7 +1953,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public ContactPoint getContactPoint() {
-        return contactPoint;
+        return getFirst(contactPoint);
     }
 
     /**
@@ -1437,11 +1962,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param contactPoint ContactPoint value to set.
      */
     @Override
-    public void setContactPoint(ContactPoint contactPoint) {
-        this.contactPoint = contactPoint;
+    public void addContactPoint(ContactPoint contactPoint) {
+        this.contactPoint = add(this.contactPoint, contactPoint);
     }
 
-    private Object serviceArea;
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
+    private List<Object> serviceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getServiceAreaList() {
+        return (List<T>) serviceArea;
+    }
 
     /**
      * The geographic area where the service is provided.
@@ -1450,7 +1986,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getServiceArea() {
-        return (T) serviceArea;
+        return (T) getFirst(serviceArea);
     }
 
     /**
@@ -1459,8 +1995,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param serviceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(GeoShape serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(GeoShape serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
     /**
      * The geographic area where the service is provided.
@@ -1468,8 +2004,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param serviceArea AdministrativeArea value to set.
      */
     @Override
-    public void setServiceArea(AdministrativeArea serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
     /**
      * The geographic area where the service is provided.
@@ -1477,11 +2013,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param serviceArea Place value to set.
      */
     @Override
-    public void setServiceArea(Place serviceArea) {
-        this.serviceArea = serviceArea;
+    public void addServiceArea(Place serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
 
-    private Text isicV4;
+    private List<Text> isicV4;
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getIsicV4List() {
+        return isicV4;
+    }
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -1491,7 +2038,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getIsicV4() {
-        return isicV4;
+        return getFirst(isicV4);
     }
 
     /**
@@ -1501,11 +2048,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsicV4(Text isicV4) {
-        this.isicV4 = isicV4;
+    public void addIsicV4(Text isicV4) {
+        this.isicV4 = add(this.isicV4, isicV4);
     }
 
-    private MerchantReturnPolicy hasMerchantReturnPolicy;
+    private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<MerchantReturnPolicy> getHasMerchantReturnPolicyList() {
+        return hasMerchantReturnPolicy;
+    }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -1516,7 +2075,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return hasMerchantReturnPolicy;
+        return getFirst(hasMerchantReturnPolicy);
     }
 
     /**
@@ -1527,11 +2086,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
-        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
+    public void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
     }
 
-    private Place hasPOS;
+    private List<Place> hasPOS;
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Place> getHasPOSList() {
+        return hasPOS;
+    }
 
     /**
      * Points-of-Sales operated by the organization or person.
@@ -1541,7 +2111,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Place getHasPOS() {
-        return hasPOS;
+        return getFirst(hasPOS);
     }
 
     /**
@@ -1551,11 +2121,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setHasPOS(Place hasPOS) {
-        this.hasPOS = hasPOS;
+    public void addHasPOS(Place hasPOS) {
+        this.hasPOS = add(this.hasPOS, hasPOS);
     }
 
-    private Person founder;
+    private List<Person> founder;
+
+    /**
+     * A person who founded this organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getFounderList() {
+        return founder;
+    }
 
     /**
      * A person who founded this organization.
@@ -1564,7 +2144,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Person getFounder() {
-        return founder;
+        return getFirst(founder);
     }
 
     /**
@@ -1573,11 +2153,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param founder Person value to set.
      */
     @Override
-    public void setFounder(Person founder) {
-        this.founder = founder;
+    public void addFounder(Person founder) {
+        this.founder = add(this.founder, founder);
     }
 
-    private Object unnamedSourcesPolicy;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> unnamedSourcesPolicy;
+
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> List<T> getUnnamedSourcesPolicyList() {
+        return (List<T>) unnamedSourcesPolicy;
+    }
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -1589,7 +2183,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getUnnamedSourcesPolicy() {
-        return (T) unnamedSourcesPolicy;
+        return (T) getFirst(unnamedSourcesPolicy);
     }
 
     /**
@@ -1601,8 +2195,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
-        this.unnamedSourcesPolicy = unnamedSourcesPolicy;
+    public void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
     }
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -1613,11 +2207,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
-        this.unnamedSourcesPolicy = unnamedSourcesPolicy;
+    public void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
     }
 
-    private Place foundingLocation;
+    private List<Place> foundingLocation;
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getFoundingLocationList() {
+        return foundingLocation;
+    }
 
     /**
      * The place where the Organization was founded.
@@ -1626,7 +2230,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Place getFoundingLocation() {
-        return foundingLocation;
+        return getFirst(foundingLocation);
     }
 
     /**
@@ -1635,11 +2239,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param foundingLocation Place value to set.
      */
     @Override
-    public void setFoundingLocation(Place foundingLocation) {
-        this.foundingLocation = foundingLocation;
+    public void addFoundingLocation(Place foundingLocation) {
+        this.foundingLocation = add(this.foundingLocation, foundingLocation);
     }
 
-    private Text duns;
+    private List<Text> duns;
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getDunsList() {
+        return duns;
+    }
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
@@ -1649,7 +2264,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getDuns() {
-        return duns;
+        return getFirst(duns);
     }
 
     /**
@@ -1659,11 +2274,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDuns(Text duns) {
-        this.duns = duns;
+    public void addDuns(Text duns) {
+        this.duns = add(this.duns, duns);
     }
 
-    private Organization parentOrganization;
+    private List<Organization> parentOrganization;
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getParentOrganizationList() {
+        return parentOrganization;
+    }
 
     /**
      * The larger organization that this organization is a [[subOrganization]] of, if any.
@@ -1672,7 +2297,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Organization getParentOrganization() {
-        return parentOrganization;
+        return getFirst(parentOrganization);
     }
 
     /**
@@ -1681,11 +2306,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param parentOrganization Organization value to set.
      */
     @Override
-    public void setParentOrganization(Organization parentOrganization) {
-        this.parentOrganization = parentOrganization;
+    public void addParentOrganization(Organization parentOrganization) {
+        this.parentOrganization = add(this.parentOrganization, parentOrganization);
     }
 
-    private Person alumni;
+    private List<Person> alumni;
+
+    /**
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getAlumniList() {
+        return alumni;
+    }
 
     /**
      * Alumni of an organization.
@@ -1694,7 +2329,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Person getAlumni() {
-        return alumni;
+        return getFirst(alumni);
     }
 
     /**
@@ -1703,11 +2338,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param alumni Person value to set.
      */
     @Override
-    public void setAlumni(Person alumni) {
-        this.alumni = alumni;
+    public void addAlumni(Person alumni) {
+        this.alumni = add(this.alumni, alumni);
     }
 
-    private Text leiCode;
+    private List<Text> leiCode;
+
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
+     */
+    @Override
+    public List<Text> getLeiCodeList() {
+        return leiCode;
+    }
 
     /**
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
@@ -1718,7 +2365,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getLeiCode() {
-        return leiCode;
+        return getFirst(leiCode);
     }
 
     /**
@@ -1729,11 +2376,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      */
     @Override
-    public void setLeiCode(Text leiCode) {
-        this.leiCode = leiCode;
+    public void addLeiCode(Text leiCode) {
+        this.leiCode = add(this.leiCode, leiCode);
     }
 
-    private Object areaServed;
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
+    private List<Object> areaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
+    }
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -1742,7 +2400,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getAreaServed() {
-        return (T) areaServed;
+        return (T) getFirst(areaServed);
     }
 
     /**
@@ -1751,8 +2409,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -1760,8 +2418,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param areaServed GeoShape value to set.
      */
     @Override
-    public void setAreaServed(GeoShape areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -1769,8 +2427,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param areaServed Text value to set.
      */
     @Override
-    public void setAreaServed(Text areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -1778,11 +2436,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param areaServed Place value to set.
      */
     @Override
-    public void setAreaServed(Place areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
 
-    private Date foundingDate;
+    private List<Date> foundingDate;
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getFoundingDateList() {
+        return foundingDate;
+    }
 
     /**
      * The date that this organization was founded.
@@ -1791,7 +2459,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Date getFoundingDate() {
-        return foundingDate;
+        return getFirst(foundingDate);
     }
 
     /**
@@ -1800,11 +2468,25 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param foundingDate Date value to set.
      */
     @Override
-    public void setFoundingDate(Date foundingDate) {
-        this.foundingDate = foundingDate;
+    public void addFoundingDate(Date foundingDate) {
+        this.foundingDate = add(this.foundingDate, foundingDate);
     }
 
-    private Object knowsLanguage;
+    @JsonLdFieldTypes({ Language.class, Text.class })
+    private List<Object> knowsLanguage;
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> List<T> getKnowsLanguageList() {
+        return (List<T>) knowsLanguage;
+    }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
@@ -1816,7 +2498,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getKnowsLanguage() {
-        return (T) knowsLanguage;
+        return (T) getFirst(knowsLanguage);
     }
 
     /**
@@ -1828,8 +2510,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Language knowsLanguage) {
-        this.knowsLanguage = knowsLanguage;
+    public void addKnowsLanguage(Language knowsLanguage) {
+        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
@@ -1840,11 +2522,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Text knowsLanguage) {
-        this.knowsLanguage = knowsLanguage;
+    public void addKnowsLanguage(Text knowsLanguage) {
+        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
     }
 
-    private Review reviews;
+    private List<Review> reviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
 
     /**
      * Review of the item.
@@ -1853,7 +2545,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Review getReviews() {
-        return reviews;
+        return getFirst(reviews);
     }
 
     /**
@@ -1862,11 +2554,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review reviews) {
-        this.reviews = reviews;
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
-    private Demand seeks;
+    private List<Demand> seeks;
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Demand> getSeeksList() {
+        return seeks;
+    }
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
@@ -1876,7 +2579,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Demand getSeeks() {
-        return seeks;
+        return getFirst(seeks);
     }
 
     /**
@@ -1886,11 +2589,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSeeks(Demand seeks) {
-        this.seeks = seeks;
+    public void addSeeks(Demand seeks) {
+        this.seeks = add(this.seeks, seeks);
     }
 
-    private Text taxID;
+    private List<Text> taxID;
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getTaxIDList() {
+        return taxID;
+    }
 
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
@@ -1900,7 +2614,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getTaxID() {
-        return taxID;
+        return getFirst(taxID);
     }
 
     /**
@@ -1910,11 +2624,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setTaxID(Text taxID) {
-        this.taxID = taxID;
+    public void addTaxID(Text taxID) {
+        this.taxID = add(this.taxID, taxID);
     }
 
-    private Object owns;
+    @JsonLdFieldTypes({ Product.class, OwnershipInfo.class })
+    private List<Object> owns;
+
+    /**
+     * Products owned by the organization or person.
+     *
+     * @return {@link Product} or {@link OwnershipInfo}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getOwnsList() {
+        return (List<T>) owns;
+    }
 
     /**
      * Products owned by the organization or person.
@@ -1924,7 +2650,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getOwns() {
-        return (T) owns;
+        return (T) getFirst(owns);
     }
 
     /**
@@ -1934,8 +2660,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(Product owns) {
-        this.owns = owns;
+    public void addOwns(Product owns) {
+        this.owns = add(this.owns, owns);
     }
     /**
      * Products owned by the organization or person.
@@ -1944,11 +2670,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(OwnershipInfo owns) {
-        this.owns = owns;
+    public void addOwns(OwnershipInfo owns) {
+        this.owns = add(this.owns, owns);
     }
 
-    private OfferCatalog hasOfferCatalog;
+    private List<OfferCatalog> hasOfferCatalog;
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public List<OfferCatalog> getHasOfferCatalogList() {
+        return hasOfferCatalog;
+    }
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -1957,7 +2693,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public OfferCatalog getHasOfferCatalog() {
-        return hasOfferCatalog;
+        return getFirst(hasOfferCatalog);
     }
 
     /**
@@ -1966,11 +2702,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param hasOfferCatalog OfferCatalog value to set.
      */
     @Override
-    public void setHasOfferCatalog(OfferCatalog hasOfferCatalog) {
-        this.hasOfferCatalog = hasOfferCatalog;
+    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
     }
 
-    private Object members;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> members;
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getMembersList() {
+        return (List<T>) members;
+    }
 
     /**
      * A member of this organization.
@@ -1979,7 +2726,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getMembers() {
-        return (T) members;
+        return (T) getFirst(members);
     }
 
     /**
@@ -1988,8 +2735,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param members Person value to set.
      */
     @Override
-    public void setMembers(Person members) {
-        this.members = members;
+    public void addMembers(Person members) {
+        this.members = add(this.members, members);
     }
     /**
      * A member of this organization.
@@ -1997,11 +2744,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param members Organization value to set.
      */
     @Override
-    public void setMembers(Organization members) {
-        this.members = members;
+    public void addMembers(Organization members) {
+        this.members = add(this.members, members);
     }
 
-    private Event events;
+    private List<Event> events;
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventsList() {
+        return events;
+    }
 
     /**
      * Upcoming or past events associated with this place or organization.
@@ -2010,7 +2767,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Event getEvents() {
-        return events;
+        return getFirst(events);
     }
 
     /**
@@ -2019,11 +2776,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param events Event value to set.
      */
     @Override
-    public void setEvents(Event events) {
-        this.events = events;
+    public void addEvents(Event events) {
+        this.events = add(this.events, events);
     }
 
-    private Text iso6523Code;
+    private List<Text> iso6523Code;
+
+    /**
+     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
+     */
+    @Override
+    public List<Text> getIso6523CodeList() {
+        return iso6523Code;
+    }
 
     /**
      * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
@@ -2034,7 +2803,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getIso6523Code() {
-        return iso6523Code;
+        return getFirst(iso6523Code);
     }
 
     /**
@@ -2045,11 +2814,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public void setIso6523Code(Text iso6523Code) {
-        this.iso6523Code = iso6523Code;
+    public void addIso6523Code(Text iso6523Code) {
+        this.iso6523Code = add(this.iso6523Code, iso6523Code);
     }
 
-    private Organization department;
+    private List<Organization> department;
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getDepartmentList() {
+        return department;
+    }
 
     /**
      * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
@@ -2058,7 +2837,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Organization getDepartment() {
-        return department;
+        return getFirst(department);
     }
 
     /**
@@ -2067,11 +2846,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param department Organization value to set.
      */
     @Override
-    public void setDepartment(Organization department) {
-        this.department = department;
+    public void addDepartment(Organization department) {
+        this.department = add(this.department, department);
     }
 
-    private Text faxNumber;
+    private List<Text> faxNumber;
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFaxNumberList() {
+        return faxNumber;
+    }
 
     /**
      * The fax number.
@@ -2080,7 +2869,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getFaxNumber() {
-        return faxNumber;
+        return getFirst(faxNumber);
     }
 
     /**
@@ -2089,11 +2878,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param faxNumber Text value to set.
      */
     @Override
-    public void setFaxNumber(Text faxNumber) {
-        this.faxNumber = faxNumber;
+    public void addFaxNumber(Text faxNumber) {
+        this.faxNumber = add(this.faxNumber, faxNumber);
     }
 
-    private Event event;
+    private List<Event> event;
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventList() {
+        return event;
+    }
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -2102,7 +2901,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Event getEvent() {
-        return event;
+        return getFirst(event);
     }
 
     /**
@@ -2111,11 +2910,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param event Event value to set.
      */
     @Override
-    public void setEvent(Event event) {
-        this.event = event;
+    public void addEvent(Event event) {
+        this.event = add(this.event, event);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -2124,7 +2934,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -2133,8 +2943,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -2142,11 +2952,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -2155,7 +2975,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -2164,11 +2984,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -2177,7 +3007,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -2186,11 +3016,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -2199,7 +3039,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -2208,11 +3048,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -2221,7 +3072,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -2230,8 +3081,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -2239,11 +3090,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -2252,7 +3113,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -2261,11 +3122,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -2274,7 +3145,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -2283,11 +3154,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -2297,7 +3180,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -2307,8 +3190,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -2317,11 +3200,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -2330,7 +3223,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -2339,11 +3232,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -2352,7 +3255,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -2361,11 +3264,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -2374,7 +3287,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -2383,11 +3296,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2397,7 +3322,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -2407,8 +3332,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2417,8 +3342,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2427,11 +3352,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 
-    private Organization branchOf;
+    private List<Organization> branchOf;
+
+    /**
+     * The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)[[branch]].
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getBranchOfList() {
+        return branchOf;
+    }
 
     /**
      * The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)[[branch]].
@@ -2440,7 +3375,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Organization getBranchOf() {
-        return branchOf;
+        return getFirst(branchOf);
     }
 
     /**
@@ -2449,11 +3384,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param branchOf Organization value to set.
      */
     @Override
-    public void setBranchOf(Organization branchOf) {
-        this.branchOf = branchOf;
+    public void addBranchOf(Organization branchOf) {
+        this.branchOf = add(this.branchOf, branchOf);
     }
 
-    private Text openingHours;
+    private List<Text> openingHours;
+
+    /**
+     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getOpeningHoursList() {
+        return openingHours;
+    }
 
     /**
      * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
@@ -2462,7 +3407,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getOpeningHours() {
-        return openingHours;
+        return getFirst(openingHours);
     }
 
     /**
@@ -2471,11 +3416,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param openingHours Text value to set.
      */
     @Override
-    public void setOpeningHours(Text openingHours) {
-        this.openingHours = openingHours;
+    public void addOpeningHours(Text openingHours) {
+        this.openingHours = add(this.openingHours, openingHours);
     }
 
-    private Text priceRange;
+    private List<Text> priceRange;
+
+    /**
+     * The price range of the business, for example ```$$$```.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPriceRangeList() {
+        return priceRange;
+    }
 
     /**
      * The price range of the business, for example ```$$$```.
@@ -2484,7 +3439,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getPriceRange() {
-        return priceRange;
+        return getFirst(priceRange);
     }
 
     /**
@@ -2493,11 +3448,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param priceRange Text value to set.
      */
     @Override
-    public void setPriceRange(Text priceRange) {
-        this.priceRange = priceRange;
+    public void addPriceRange(Text priceRange) {
+        this.priceRange = add(this.priceRange, priceRange);
     }
 
-    private Text paymentAccepted;
+    private List<Text> paymentAccepted;
+
+    /**
+     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPaymentAcceptedList() {
+        return paymentAccepted;
+    }
 
     /**
      * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
@@ -2506,7 +3471,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getPaymentAccepted() {
-        return paymentAccepted;
+        return getFirst(paymentAccepted);
     }
 
     /**
@@ -2515,11 +3480,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param paymentAccepted Text value to set.
      */
     @Override
-    public void setPaymentAccepted(Text paymentAccepted) {
-        this.paymentAccepted = paymentAccepted;
+    public void addPaymentAccepted(Text paymentAccepted) {
+        this.paymentAccepted = add(this.paymentAccepted, paymentAccepted);
     }
 
-    private Text currenciesAccepted;
+    private List<Text> currenciesAccepted;
+
+    /**
+     * The currency accepted.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getCurrenciesAcceptedList() {
+        return currenciesAccepted;
+    }
 
     /**
      * The currency accepted.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -2528,7 +3503,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getCurrenciesAccepted() {
-        return currenciesAccepted;
+        return getFirst(currenciesAccepted);
     }
 
     /**
@@ -2537,11 +3512,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param currenciesAccepted Text value to set.
      */
     @Override
-    public void setCurrenciesAccepted(Text currenciesAccepted) {
-        this.currenciesAccepted = currenciesAccepted;
+    public void addCurrenciesAccepted(Text currenciesAccepted) {
+        this.currenciesAccepted = add(this.currenciesAccepted, currenciesAccepted);
     }
 
-    private URL maps;
+    private List<URL> maps;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getMapsList() {
+        return maps;
+    }
 
     /**
      * A URL to a map of the place.
@@ -2550,7 +3535,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getMaps() {
-        return maps;
+        return getFirst(maps);
     }
 
     /**
@@ -2559,11 +3544,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param maps URL value to set.
      */
     @Override
-    public void setMaps(URL maps) {
-        this.maps = maps;
+    public void addMaps(URL maps) {
+        this.maps = add(this.maps, maps);
     }
 
-    private Object geoContains;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoContains;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoContainsList() {
+        return (List<T>) geoContains;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2572,7 +3568,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoContains() {
-        return (T) geoContains;
+        return (T) getFirst(geoContains);
     }
 
     /**
@@ -2581,8 +3577,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoContains Place value to set.
      */
     @Override
-    public void setGeoContains(Place geoContains) {
-        this.geoContains = geoContains;
+    public void addGeoContains(Place geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2590,11 +3586,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoContains GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoContains(GeospatialGeometry geoContains) {
-        this.geoContains = geoContains;
+    public void addGeoContains(GeospatialGeometry geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
     }
 
-    private Integer maximumAttendeeCapacity;
+    private List<Integer> maximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getMaximumAttendeeCapacityList() {
+        return maximumAttendeeCapacity;
+    }
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -2603,7 +3609,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Integer getMaximumAttendeeCapacity() {
-        return maximumAttendeeCapacity;
+        return getFirst(maximumAttendeeCapacity);
     }
 
     /**
@@ -2612,11 +3618,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
-        this.maximumAttendeeCapacity = maximumAttendeeCapacity;
+    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
     }
 
-    private Place containsPlace;
+    private List<Place> containsPlace;
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainsPlaceList() {
+        return containsPlace;
+    }
 
     /**
      * The basic containment relation between a place and another that it contains.
@@ -2625,7 +3641,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Place getContainsPlace() {
-        return containsPlace;
+        return getFirst(containsPlace);
     }
 
     /**
@@ -2634,11 +3650,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param containsPlace Place value to set.
      */
     @Override
-    public void setContainsPlace(Place containsPlace) {
-        this.containsPlace = containsPlace;
+    public void addContainsPlace(Place containsPlace) {
+        this.containsPlace = add(this.containsPlace, containsPlace);
     }
 
-    private Boolean smokingAllowed;
+    private List<Boolean> smokingAllowed;
+
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public List<Boolean> getSmokingAllowedList() {
+        return smokingAllowed;
+    }
 
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
@@ -2648,7 +3675,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Boolean getSmokingAllowed() {
-        return smokingAllowed;
+        return getFirst(smokingAllowed);
     }
 
     /**
@@ -2658,11 +3685,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setSmokingAllowed(Boolean smokingAllowed) {
-        this.smokingAllowed = smokingAllowed;
+    public void addSmokingAllowed(Boolean smokingAllowed) {
+        this.smokingAllowed = add(this.smokingAllowed, smokingAllowed);
     }
 
-    private Object geoIntersects;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoIntersects;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoIntersectsList() {
+        return (List<T>) geoIntersects;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2671,7 +3709,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoIntersects() {
-        return (T) geoIntersects;
+        return (T) getFirst(geoIntersects);
     }
 
     /**
@@ -2680,8 +3718,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoIntersects GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoIntersects(GeospatialGeometry geoIntersects) {
-        this.geoIntersects = geoIntersects;
+    public void addGeoIntersects(GeospatialGeometry geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2689,11 +3727,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoIntersects Place value to set.
      */
     @Override
-    public void setGeoIntersects(Place geoIntersects) {
-        this.geoIntersects = geoIntersects;
+    public void addGeoIntersects(Place geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
     }
 
-    private Object latitude;
+    @JsonLdFieldTypes({ Text.class, Number.class })
+    private List<Object> latitude;
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> List<T> getLatitudeList() {
+        return (List<T>) latitude;
+    }
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -2702,7 +3751,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getLatitude() {
-        return (T) latitude;
+        return (T) getFirst(latitude);
     }
 
     /**
@@ -2711,8 +3760,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param latitude Text value to set.
      */
     @Override
-    public void setLatitude(Text latitude) {
-        this.latitude = latitude;
+    public void addLatitude(Text latitude) {
+        this.latitude = add(this.latitude, latitude);
     }
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -2720,11 +3769,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param latitude Number value to set.
      */
     @Override
-    public void setLatitude(Number latitude) {
-        this.latitude = latitude;
+    public void addLatitude(Number latitude) {
+        this.latitude = add(this.latitude, latitude);
     }
 
-    private Object geoTouches;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoTouches;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoTouchesList() {
+        return (List<T>) geoTouches;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
@@ -2733,7 +3793,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoTouches() {
-        return (T) geoTouches;
+        return (T) getFirst(geoTouches);
     }
 
     /**
@@ -2742,8 +3802,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoTouches Place value to set.
      */
     @Override
-    public void setGeoTouches(Place geoTouches) {
-        this.geoTouches = geoTouches;
+    public void addGeoTouches(Place geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
@@ -2751,11 +3811,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoTouches GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoTouches(GeospatialGeometry geoTouches) {
-        this.geoTouches = geoTouches;
+    public void addGeoTouches(GeospatialGeometry geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
     }
 
-    private Object geoCoveredBy;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoCoveredBy;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoCoveredByList() {
+        return (List<T>) geoCoveredBy;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2764,7 +3835,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoCoveredBy() {
-        return (T) geoCoveredBy;
+        return (T) getFirst(geoCoveredBy);
     }
 
     /**
@@ -2773,8 +3844,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoCoveredBy Place value to set.
      */
     @Override
-    public void setGeoCoveredBy(Place geoCoveredBy) {
-        this.geoCoveredBy = geoCoveredBy;
+    public void addGeoCoveredBy(Place geoCoveredBy) {
+        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2782,11 +3853,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoCoveredBy GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
-        this.geoCoveredBy = geoCoveredBy;
+    public void addGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
+        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
     }
 
-    private Object geoEquals;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoEquals;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoEqualsList() {
+        return (List<T>) geoEquals;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
@@ -2795,7 +3877,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoEquals() {
-        return (T) geoEquals;
+        return (T) getFirst(geoEquals);
     }
 
     /**
@@ -2804,8 +3886,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoEquals Place value to set.
      */
     @Override
-    public void setGeoEquals(Place geoEquals) {
-        this.geoEquals = geoEquals;
+    public void addGeoEquals(Place geoEquals) {
+        this.geoEquals = add(this.geoEquals, geoEquals);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
@@ -2813,11 +3895,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoEquals GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoEquals(GeospatialGeometry geoEquals) {
-        this.geoEquals = geoEquals;
+    public void addGeoEquals(GeospatialGeometry geoEquals) {
+        this.geoEquals = add(this.geoEquals, geoEquals);
     }
 
-    private URL map;
+    private List<URL> map;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getMapList() {
+        return map;
+    }
 
     /**
      * A URL to a map of the place.
@@ -2826,7 +3918,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getMap() {
-        return map;
+        return getFirst(map);
     }
 
     /**
@@ -2835,11 +3927,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param map URL value to set.
      */
     @Override
-    public void setMap(URL map) {
-        this.map = map;
+    public void addMap(URL map) {
+        this.map = add(this.map, map);
     }
 
-    private Boolean publicAccess;
+    private List<Boolean> publicAccess;
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getPublicAccessList() {
+        return publicAccess;
+    }
 
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
@@ -2848,7 +3950,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Boolean getPublicAccess() {
-        return publicAccess;
+        return getFirst(publicAccess);
     }
 
     /**
@@ -2857,11 +3959,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param publicAccess Boolean value to set.
      */
     @Override
-    public void setPublicAccess(Boolean publicAccess) {
-        this.publicAccess = publicAccess;
+    public void addPublicAccess(Boolean publicAccess) {
+        this.publicAccess = add(this.publicAccess, publicAccess);
     }
 
-    private Object geoCrosses;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoCrosses;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoCrossesList() {
+        return (List<T>) geoCrosses;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2870,7 +3983,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoCrosses() {
-        return (T) geoCrosses;
+        return (T) getFirst(geoCrosses);
     }
 
     /**
@@ -2879,8 +3992,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCrosses(GeospatialGeometry geoCrosses) {
-        this.geoCrosses = geoCrosses;
+    public void addGeoCrosses(GeospatialGeometry geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2888,11 +4001,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoCrosses Place value to set.
      */
     @Override
-    public void setGeoCrosses(Place geoCrosses) {
-        this.geoCrosses = geoCrosses;
+    public void addGeoCrosses(Place geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
     }
 
-    private Place containedInPlace;
+    private List<Place> containedInPlace;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainedInPlaceList() {
+        return containedInPlace;
+    }
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -2901,7 +4024,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Place getContainedInPlace() {
-        return containedInPlace;
+        return getFirst(containedInPlace);
     }
 
     /**
@@ -2910,11 +4033,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param containedInPlace Place value to set.
      */
     @Override
-    public void setContainedInPlace(Place containedInPlace) {
-        this.containedInPlace = containedInPlace;
+    public void addContainedInPlace(Place containedInPlace) {
+        this.containedInPlace = add(this.containedInPlace, containedInPlace);
     }
 
-    private LocationFeatureSpecification amenityFeature;
+    private List<LocationFeatureSpecification> amenityFeature;
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public List<LocationFeatureSpecification> getAmenityFeatureList() {
+        return amenityFeature;
+    }
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -2924,7 +4058,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
-        return amenityFeature;
+        return getFirst(amenityFeature);
     }
 
     /**
@@ -2934,11 +4068,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setAmenityFeature(LocationFeatureSpecification amenityFeature) {
-        this.amenityFeature = amenityFeature;
+    public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
+        this.amenityFeature = add(this.amenityFeature, amenityFeature);
     }
 
-    private Object photos;
+    @JsonLdFieldTypes({ ImageObject.class, Photograph.class })
+    private List<Object> photos;
+
+    /**
+     * Photographs of this place.
+     *
+     * @return {@link ImageObject} or {@link Photograph}
+     */
+    @Override
+    public <T> List<T> getPhotosList() {
+        return (List<T>) photos;
+    }
 
     /**
      * Photographs of this place.
@@ -2947,7 +4092,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getPhotos() {
-        return (T) photos;
+        return (T) getFirst(photos);
     }
 
     /**
@@ -2956,8 +4101,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param photos ImageObject value to set.
      */
     @Override
-    public void setPhotos(ImageObject photos) {
-        this.photos = photos;
+    public void addPhotos(ImageObject photos) {
+        this.photos = add(this.photos, photos);
     }
     /**
      * Photographs of this place.
@@ -2965,11 +4110,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param photos Photograph value to set.
      */
     @Override
-    public void setPhotos(Photograph photos) {
-        this.photos = photos;
+    public void addPhotos(Photograph photos) {
+        this.photos = add(this.photos, photos);
     }
 
-    private Object geoCovers;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoCovers;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoCoversList() {
+        return (List<T>) geoCovers;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2978,7 +4134,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoCovers() {
-        return (T) geoCovers;
+        return (T) getFirst(geoCovers);
     }
 
     /**
@@ -2987,8 +4143,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCovers(GeospatialGeometry geoCovers) {
-        this.geoCovers = geoCovers;
+    public void addGeoCovers(GeospatialGeometry geoCovers) {
+        this.geoCovers = add(this.geoCovers, geoCovers);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2996,11 +4152,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoCovers Place value to set.
      */
     @Override
-    public void setGeoCovers(Place geoCovers) {
-        this.geoCovers = geoCovers;
+    public void addGeoCovers(Place geoCovers) {
+        this.geoCovers = add(this.geoCovers, geoCovers);
     }
 
-    private Place containedIn;
+    private List<Place> containedIn;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainedInList() {
+        return containedIn;
+    }
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -3009,7 +4175,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Place getContainedIn() {
-        return containedIn;
+        return getFirst(containedIn);
     }
 
     /**
@@ -3018,11 +4184,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param containedIn Place value to set.
      */
     @Override
-    public void setContainedIn(Place containedIn) {
-        this.containedIn = containedIn;
+    public void addContainedIn(Place containedIn) {
+        this.containedIn = add(this.containedIn, containedIn);
     }
 
-    private Boolean hasDriveThroughService;
+    private List<Boolean> hasDriveThroughService;
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public List<Boolean> getHasDriveThroughServiceList() {
+        return hasDriveThroughService;
+    }
 
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
@@ -3033,7 +4211,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Boolean getHasDriveThroughService() {
-        return hasDriveThroughService;
+        return getFirst(hasDriveThroughService);
     }
 
     /**
@@ -3044,11 +4222,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
-    public void setHasDriveThroughService(Boolean hasDriveThroughService) {
-        this.hasDriveThroughService = hasDriveThroughService;
+    public void addHasDriveThroughService(Boolean hasDriveThroughService) {
+        this.hasDriveThroughService = add(this.hasDriveThroughService, hasDriveThroughService);
     }
 
-    private Boolean isAccessibleForFree;
+    private List<Boolean> isAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsAccessibleForFreeList() {
+        return isAccessibleForFree;
+    }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -3057,7 +4245,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return isAccessibleForFree;
+        return getFirst(isAccessibleForFree);
     }
 
     /**
@@ -3066,11 +4254,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
-        this.isAccessibleForFree = isAccessibleForFree;
+    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
     }
 
-    private Object geoWithin;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoWithin;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoWithinList() {
+        return (List<T>) geoWithin;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -3079,7 +4278,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoWithin() {
-        return (T) geoWithin;
+        return (T) getFirst(geoWithin);
     }
 
     /**
@@ -3088,8 +4287,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoWithin Place value to set.
      */
     @Override
-    public void setGeoWithin(Place geoWithin) {
-        this.geoWithin = geoWithin;
+    public void addGeoWithin(Place geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -3097,11 +4296,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoWithin GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoWithin(GeospatialGeometry geoWithin) {
-        this.geoWithin = geoWithin;
+    public void addGeoWithin(GeospatialGeometry geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
 
-    private Object geoDisjoint;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoDisjoint;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoDisjointList() {
+        return (List<T>) geoDisjoint;
+    }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
@@ -3110,7 +4320,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoDisjoint() {
-        return (T) geoDisjoint;
+        return (T) getFirst(geoDisjoint);
     }
 
     /**
@@ -3119,8 +4329,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoDisjoint GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoDisjoint(GeospatialGeometry geoDisjoint) {
-        this.geoDisjoint = geoDisjoint;
+    public void addGeoDisjoint(GeospatialGeometry geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
     }
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
@@ -3128,11 +4338,23 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoDisjoint Place value to set.
      */
     @Override
-    public void setGeoDisjoint(Place geoDisjoint) {
-        this.geoDisjoint = geoDisjoint;
+    public void addGeoDisjoint(Place geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
     }
 
-    private URL tourBookingPage;
+    private List<URL> tourBookingPage;
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<URL> getTourBookingPageList() {
+        return tourBookingPage;
+    }
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
@@ -3143,7 +4365,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getTourBookingPage() {
-        return tourBookingPage;
+        return getFirst(tourBookingPage);
     }
 
     /**
@@ -3154,11 +4376,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setTourBookingPage(URL tourBookingPage) {
-        this.tourBookingPage = tourBookingPage;
+    public void addTourBookingPage(URL tourBookingPage) {
+        this.tourBookingPage = add(this.tourBookingPage, tourBookingPage);
     }
 
-    private Object geoOverlaps;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoOverlaps;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoOverlapsList() {
+        return (List<T>) geoOverlaps;
+    }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -3167,7 +4400,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeoOverlaps() {
-        return (T) geoOverlaps;
+        return (T) getFirst(geoOverlaps);
     }
 
     /**
@@ -3176,8 +4409,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoOverlaps(GeospatialGeometry geoOverlaps) {
-        this.geoOverlaps = geoOverlaps;
+    public void addGeoOverlaps(GeospatialGeometry geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
     }
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -3185,11 +4418,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geoOverlaps Place value to set.
      */
     @Override
-    public void setGeoOverlaps(Place geoOverlaps) {
-        this.geoOverlaps = geoOverlaps;
+    public void addGeoOverlaps(Place geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
     }
 
-    private Text branchCode;
+    private List<Text> branchCode;
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getBranchCodeList() {
+        return branchCode;
+    }
 
     /**
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
@@ -3199,7 +4443,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getBranchCode() {
-        return branchCode;
+        return getFirst(branchCode);
     }
 
     /**
@@ -3209,11 +4453,21 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param branchCode Text value to set.
      */
     @Override
-    public void setBranchCode(Text branchCode) {
-        this.branchCode = branchCode;
+    public void addBranchCode(Text branchCode) {
+        this.branchCode = add(this.branchCode, branchCode);
     }
 
-    private PropertyValue additionalProperty;
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -3222,7 +4476,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return additionalProperty;
+        return getFirst(additionalProperty);
     }
 
     /**
@@ -3231,11 +4485,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = additionalProperty;
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
-    private OpeningHoursSpecification openingHoursSpecification;
+    private List<OpeningHoursSpecification> openingHoursSpecification;
+
+    /**
+     * The opening hours of a certain place.
+     *
+     * @return {@link OpeningHoursSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
+        return openingHoursSpecification;
+    }
 
     /**
      * The opening hours of a certain place.
@@ -3245,7 +4510,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
-        return openingHoursSpecification;
+        return getFirst(openingHoursSpecification);
     }
 
     /**
@@ -3255,11 +4520,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
-        this.openingHoursSpecification = openingHoursSpecification;
+    public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
+        this.openingHoursSpecification = add(this.openingHoursSpecification, openingHoursSpecification);
     }
 
-    private Object photo;
+    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
+    private List<Object> photo;
+
+    /**
+     * A photograph of this place.
+     *
+     * @return {@link Photograph} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getPhotoList() {
+        return (List<T>) photo;
+    }
 
     /**
      * A photograph of this place.
@@ -3268,7 +4544,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getPhoto() {
-        return (T) photo;
+        return (T) getFirst(photo);
     }
 
     /**
@@ -3277,8 +4553,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param photo Photograph value to set.
      */
     @Override
-    public void setPhoto(Photograph photo) {
-        this.photo = photo;
+    public void addPhoto(Photograph photo) {
+        this.photo = add(this.photo, photo);
     }
     /**
      * A photograph of this place.
@@ -3286,11 +4562,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param photo ImageObject value to set.
      */
     @Override
-    public void setPhoto(ImageObject photo) {
-        this.photo = photo;
+    public void addPhoto(ImageObject photo) {
+        this.photo = add(this.photo, photo);
     }
 
-    private OpeningHoursSpecification specialOpeningHoursSpecification;
+    private List<OpeningHoursSpecification> specialOpeningHoursSpecification;
+
+    /**
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public List<OpeningHoursSpecification> getSpecialOpeningHoursSpecificationList() {
+        return specialOpeningHoursSpecification;
+    }
 
     /**
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
@@ -3300,7 +4587,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
-        return specialOpeningHoursSpecification;
+        return getFirst(specialOpeningHoursSpecification);
     }
 
     /**
@@ -3310,11 +4597,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
-    public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
-        this.specialOpeningHoursSpecification = specialOpeningHoursSpecification;
+    public void addSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
+        this.specialOpeningHoursSpecification = add(this.specialOpeningHoursSpecification, specialOpeningHoursSpecification);
     }
 
-    private Object hasMap;
+    @JsonLdFieldTypes({ URL.class, Map.class })
+    private List<Object> hasMap;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL} or {@link Map}
+     */
+    @Override
+    public <T> List<T> getHasMapList() {
+        return (List<T>) hasMap;
+    }
 
     /**
      * A URL to a map of the place.
@@ -3323,7 +4621,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getHasMap() {
-        return (T) hasMap;
+        return (T) getFirst(hasMap);
     }
 
     /**
@@ -3332,8 +4630,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param hasMap URL value to set.
      */
     @Override
-    public void setHasMap(URL hasMap) {
-        this.hasMap = hasMap;
+    public void addHasMap(URL hasMap) {
+        this.hasMap = add(this.hasMap, hasMap);
     }
     /**
      * A URL to a map of the place.
@@ -3341,11 +4639,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param hasMap Map value to set.
      */
     @Override
-    public void setHasMap(Map hasMap) {
-        this.hasMap = hasMap;
+    public void addHasMap(Map hasMap) {
+        this.hasMap = add(this.hasMap, hasMap);
     }
 
-    private Object longitude;
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> longitude;
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getLongitudeList() {
+        return (List<T>) longitude;
+    }
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -3354,7 +4663,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getLongitude() {
-        return (T) longitude;
+        return (T) getFirst(longitude);
     }
 
     /**
@@ -3363,8 +4672,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param longitude Number value to set.
      */
     @Override
-    public void setLongitude(Number longitude) {
-        this.longitude = longitude;
+    public void addLongitude(Number longitude) {
+        this.longitude = add(this.longitude, longitude);
     }
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -3372,11 +4681,22 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param longitude Text value to set.
      */
     @Override
-    public void setLongitude(Text longitude) {
-        this.longitude = longitude;
+    public void addLongitude(Text longitude) {
+        this.longitude = add(this.longitude, longitude);
     }
 
-    private Object geo;
+    @JsonLdFieldTypes({ GeoCoordinates.class, GeoShape.class })
+    private List<Object> geo;
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @return {@link GeoCoordinates} or {@link GeoShape}
+     */
+    @Override
+    public <T> List<T> getGeoList() {
+        return (List<T>) geo;
+    }
 
     /**
      * The geo coordinates of the place.
@@ -3385,7 +4705,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getGeo() {
-        return (T) geo;
+        return (T) getFirst(geo);
     }
 
     /**
@@ -3394,8 +4714,8 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geo GeoCoordinates value to set.
      */
     @Override
-    public void setGeo(GeoCoordinates geo) {
-        this.geo = geo;
+    public void addGeo(GeoCoordinates geo) {
+        this.geo = add(this.geo, geo);
     }
     /**
      * The geo coordinates of the place.
@@ -3403,7 +4723,7 @@ public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param geo GeoShape value to set.
      */
     @Override
-    public void setGeo(GeoShape geo) {
-        this.geo = geo;
+    public void addGeo(GeoShape geo) {
+        this.geo = add(this.geo, geo);
     }
 }

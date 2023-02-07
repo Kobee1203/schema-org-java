@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.CssSelectorType;
 import org.schema.model.datatype.XPathType;
 
@@ -22,6 +23,14 @@ public interface SpeakableSpecification extends Intangible {
      * @return {@link CssSelectorType}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
+    List<CssSelectorType> getCssSelectorList();
+
+    /**
+     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @return {@link CssSelectorType}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
     CssSelectorType getCssSelector();
 
     /**
@@ -30,7 +39,15 @@ public interface SpeakableSpecification extends Intangible {
      * @param cssSelector CssSelectorType value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setCssSelector(CssSelectorType cssSelector);
+    void addCssSelector(CssSelectorType cssSelector);
+
+    /**
+     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @return {@link XPathType}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    List<XPathType> getXpathList();
 
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
@@ -46,5 +63,5 @@ public interface SpeakableSpecification extends Intangible {
      * @param xpath XPathType value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setXpath(XPathType xpath);
+    void addXpath(XPathType xpath);
 }

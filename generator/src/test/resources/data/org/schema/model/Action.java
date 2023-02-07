@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.datatype.DateTime;
@@ -30,6 +31,13 @@ public interface Action extends Thing {
      *
      * @return {@link Organization} or {@link Person}
      */
+    <T> List<T> getAgentList();
+
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
     <T> T getAgent();
 
     /**
@@ -37,13 +45,21 @@ public interface Action extends Thing {
      *
      * @param agent Organization value to set.
      */
-    void setAgent(Organization agent);
+    void addAgent(Organization agent);
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
      * @param agent Person value to set.
      */
-    void setAgent(Person agent);
+    void addAgent(Person agent);
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> List<T> getStartTimeList();
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -59,14 +75,21 @@ public interface Action extends Thing {
      * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(DateTime startTime);
+    void addStartTime(DateTime startTime);
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @param startTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(Time startTime);
+    void addStartTime(Time startTime);
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     * @return {@link ActionStatusType}
+     */
+    List<ActionStatusType> getActionStatusList();
 
     /**
      * Indicates the current disposition of the Action.
@@ -80,7 +103,17 @@ public interface Action extends Thing {
      *
      * @param actionStatus ActionStatusType value to set.
      */
-    void setActionStatus(ActionStatusType actionStatus);
+    void addActionStatus(ActionStatusType actionStatus);
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    <T> List<T> getProviderList();
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -100,7 +133,7 @@ public interface Action extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Organization provider);
+    void addProvider(Organization provider);
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
@@ -109,7 +142,14 @@ public interface Action extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Person provider);
+    void addProvider(Person provider);
+
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getResultList();
 
     /**
      * The result produced in the action. e.g. John wrote *a book*.
@@ -123,7 +163,14 @@ public interface Action extends Thing {
      *
      * @param result Thing value to set.
      */
-    void setResult(Thing result);
+    void addResult(Thing result);
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    <T> List<T> getLocationList();
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -137,25 +184,32 @@ public interface Action extends Thing {
      *
      * @param location PostalAddress value to set.
      */
-    void setLocation(PostalAddress location);
+    void addLocation(PostalAddress location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location Text value to set.
      */
-    void setLocation(Text location);
+    void addLocation(Text location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location Place value to set.
      */
-    void setLocation(Place location);
+    void addLocation(Place location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location VirtualLocation value to set.
      */
-    void setLocation(VirtualLocation location);
+    void addLocation(VirtualLocation location);
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getObjectList();
 
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
@@ -169,7 +223,14 @@ public interface Action extends Thing {
      *
      * @param object Thing value to set.
      */
-    void setObject(Thing object);
+    void addObject(Thing object);
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     * @return {@link EntryPoint}
+     */
+    List<EntryPoint> getTargetList();
 
     /**
      * Indicates a target EntryPoint for an Action.
@@ -183,7 +244,15 @@ public interface Action extends Thing {
      *
      * @param target EntryPoint value to set.
      */
-    void setTarget(EntryPoint target);
+    void addTarget(EntryPoint target);
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> List<T> getEndTimeList();
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -199,14 +268,21 @@ public interface Action extends Thing {
      * @param endTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(DateTime endTime);
+    void addEndTime(DateTime endTime);
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @param endTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(Time endTime);
+    void addEndTime(Time endTime);
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getParticipantList();
 
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
@@ -220,13 +296,20 @@ public interface Action extends Thing {
      *
      * @param participant Organization value to set.
      */
-    void setParticipant(Organization participant);
+    void addParticipant(Organization participant);
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
      *
      * @param participant Person value to set.
      */
-    void setParticipant(Person participant);
+    void addParticipant(Person participant);
+
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getInstrumentList();
 
     /**
      * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
@@ -240,7 +323,14 @@ public interface Action extends Thing {
      *
      * @param instrument Thing value to set.
      */
-    void setInstrument(Thing instrument);
+    void addInstrument(Thing instrument);
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getErrorList();
 
     /**
      * For failed actions, more information on the cause of the failure.
@@ -254,5 +344,5 @@ public interface Action extends Thing {
      *
      * @param error Thing value to set.
      */
-    void setError(Thing error);
+    void addError(Thing error);
 }

@@ -4,6 +4,9 @@ import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Property;
 import com.weedow.schemaorg.generator.model.Type;
+import com.weedow.schemaorg.generator.model.field.Accessor;
+import com.weedow.schemaorg.generator.model.field.Field;
+import com.weedow.schemaorg.generator.model.field.Mutator;
 import com.weedow.schemaorg.generator.model.jsonld.DomainIncludes;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
@@ -34,25 +37,23 @@ public class PropertyModelHandlerImpl implements ModelHandler {
         final List<String> partOf = ModelUtils.getPartOf(graphItem);
         final List<String> source = ModelUtils.getSource(graphItem);
 
-        final Property.Field field = new Property.Field(
+        final Field field = new Field(
                 name,
-                () -> propertyTypes.size() > 1 ? "Object" : propertyTypes.get(0).getName()
+                propertyTypes
         );
 
-        final Property.Accessor accessor = new Property.Accessor(
+        final Accessor accessor = new Accessor(
                 name,
                 description,
                 partOf,
                 source,
-                () -> propertyTypes.stream().map(type -> "{@link " + type.getName() + "}").collect(Collectors.joining(" or ")),
-                () -> propertyTypes.size() > 1 ? "<T> T" : propertyTypes.get(0).getName(),
-                () -> propertyTypes.size() > 1 ? "(T)" : null
+                propertyTypes
         );
 
-        List<Property.Mutator> mutators = propertyTypes
+        List<Mutator> mutators = propertyTypes
                 .stream()
                 .map(type ->
-                        new Property.Mutator(
+                        new Mutator(
                                 name,
                                 description,
                                 partOf,

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.DefinedTerm;
@@ -23,6 +24,14 @@ public interface MolecularEntity extends BioChemEntity {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
+    List<Text> getInChIKeyList();
+
+    /**
+     * InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
     Text getInChIKey();
 
     /**
@@ -31,7 +40,15 @@ public interface MolecularEntity extends BioChemEntity {
      * @param inChIKey Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setInChIKey(Text inChIKey);
+    void addInChIKey(Text inChIKey);
+
+    /**
+     * Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<Text> getIupacNameList();
 
     /**
      * Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).
@@ -47,7 +64,15 @@ public interface MolecularEntity extends BioChemEntity {
      * @param iupacName Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setIupacName(Text iupacName);
+    void addIupacName(Text iupacName);
+
+    /**
+     * The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;.
+     *
+     * @return {@link Text} or {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    <T> List<T> getMonoisotopicMolecularWeightList();
 
     /**
      * The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;.
@@ -63,14 +88,22 @@ public interface MolecularEntity extends BioChemEntity {
      * @param monoisotopicMolecularWeight Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setMonoisotopicMolecularWeight(Text monoisotopicMolecularWeight);
+    void addMonoisotopicMolecularWeight(Text monoisotopicMolecularWeight);
     /**
      * The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;.
      *
      * @param monoisotopicMolecularWeight QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setMonoisotopicMolecularWeight(QuantitativeValue monoisotopicMolecularWeight);
+    void addMonoisotopicMolecularWeight(QuantitativeValue monoisotopicMolecularWeight);
+
+    /**
+     * The empirical formula is the simplest whole number ratio of all the atoms in a molecule.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<Text> getMolecularFormulaList();
 
     /**
      * The empirical formula is the simplest whole number ratio of all the atoms in a molecule.
@@ -86,7 +119,15 @@ public interface MolecularEntity extends BioChemEntity {
      * @param molecularFormula Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setMolecularFormula(Text molecularFormula);
+    void addMolecularFormula(Text molecularFormula);
+
+    /**
+     * Intended use of the BioChemEntity by humans.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<DefinedTerm> getPotentialUseList();
 
     /**
      * Intended use of the BioChemEntity by humans.
@@ -102,7 +143,15 @@ public interface MolecularEntity extends BioChemEntity {
      * @param potentialUse DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setPotentialUse(DefinedTerm potentialUse);
+    void addPotentialUse(DefinedTerm potentialUse);
+
+    /**
+     * A role played by the BioChemEntity within a chemical context.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<DefinedTerm> getChemicalRoleList();
 
     /**
      * A role played by the BioChemEntity within a chemical context.
@@ -118,7 +167,15 @@ public interface MolecularEntity extends BioChemEntity {
      * @param chemicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChemicalRole(DefinedTerm chemicalRole);
+    void addChemicalRole(DefinedTerm chemicalRole);
+
+    /**
+     * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&lt;Number&gt; &lt;unit&gt;', for example '12 amu' or as '&lt;QuantitativeValue&gt;.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    <T> List<T> getMolecularWeightList();
 
     /**
      * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&lt;Number&gt; &lt;unit&gt;', for example '12 amu' or as '&lt;QuantitativeValue&gt;.
@@ -134,14 +191,22 @@ public interface MolecularEntity extends BioChemEntity {
      * @param molecularWeight QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setMolecularWeight(QuantitativeValue molecularWeight);
+    void addMolecularWeight(QuantitativeValue molecularWeight);
     /**
      * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&lt;Number&gt; &lt;unit&gt;', for example '12 amu' or as '&lt;QuantitativeValue&gt;.
      *
      * @param molecularWeight Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setMolecularWeight(Text molecularWeight);
+    void addMolecularWeight(Text molecularWeight);
+
+    /**
+     * Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<Text> getInChIList();
 
     /**
      * Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.
@@ -157,7 +222,15 @@ public interface MolecularEntity extends BioChemEntity {
      * @param inChI Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setInChI(Text inChI);
+    void addInChI(Text inChI);
+
+    /**
+     * A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    List<Text> getSmilesList();
 
     /**
      * A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
@@ -173,5 +246,5 @@ public interface MolecularEntity extends BioChemEntity {
      * @param smiles Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setSmiles(Text smiles);
+    void addSmiles(Text smiles);
 }

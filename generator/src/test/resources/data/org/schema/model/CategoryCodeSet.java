@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.CategoryCode;
 
 /**
@@ -23,6 +24,15 @@ public interface CategoryCodeSet extends DefinedTermSet {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
+    List<CategoryCode> getHasCategoryCodeList();
+
+    /**
+     * A Category code contained in this code set.
+     *
+     * @return {@link CategoryCode}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
     CategoryCode getHasCategoryCode();
 
     /**
@@ -32,5 +42,5 @@ public interface CategoryCodeSet extends DefinedTermSet {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setHasCategoryCode(CategoryCode hasCategoryCode);
+    void addHasCategoryCode(CategoryCode hasCategoryCode);
 }

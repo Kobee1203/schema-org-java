@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.Person;
 import org.schema.model.MediaObject;
@@ -26,6 +27,15 @@ public interface VideoObject extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
+    List<Text> getEmbeddedTextCaptionList();
+
+    /**
+     * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
     Text getEmbeddedTextCaption();
 
     /**
@@ -35,7 +45,14 @@ public interface VideoObject extends MediaObject {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text embeddedTextCaption);
+    void addEmbeddedTextCaption(Text embeddedTextCaption);
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -49,7 +66,14 @@ public interface VideoObject extends MediaObject {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -63,7 +87,14 @@ public interface VideoObject extends MediaObject {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @return {@link Text} or {@link MediaObject}
+     */
+    <T> List<T> getCaptionList();
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -77,13 +108,20 @@ public interface VideoObject extends MediaObject {
      *
      * @param caption Text value to set.
      */
-    void setCaption(Text caption);
+    void addCaption(Text caption);
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
      * @param caption MediaObject value to set.
      */
-    void setCaption(MediaObject caption);
+    void addCaption(MediaObject caption);
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    List<ImageObject> getThumbnailList();
 
     /**
      * Thumbnail image for an image or video.
@@ -97,7 +135,14 @@ public interface VideoObject extends MediaObject {
      *
      * @param thumbnail ImageObject value to set.
      */
-    void setThumbnail(ImageObject thumbnail);
+    void addThumbnail(ImageObject thumbnail);
+
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTranscriptList();
 
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
@@ -111,7 +156,14 @@ public interface VideoObject extends MediaObject {
      *
      * @param transcript Text value to set.
      */
-    void setTranscript(Text transcript);
+    void addTranscript(Text transcript);
+
+    /**
+     * The quality of the video.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getVideoQualityList();
 
     /**
      * The quality of the video.
@@ -125,7 +177,14 @@ public interface VideoObject extends MediaObject {
      *
      * @param videoQuality Text value to set.
      */
-    void setVideoQuality(Text videoQuality);
+    void addVideoQuality(Text videoQuality);
+
+    /**
+     * The frame size of the video.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getVideoFrameSizeList();
 
     /**
      * The frame size of the video.
@@ -139,7 +198,14 @@ public interface VideoObject extends MediaObject {
      *
      * @param videoFrameSize Text value to set.
      */
-    void setVideoFrameSize(Text videoFrameSize);
+    void addVideoFrameSize(Text videoFrameSize);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -153,7 +219,14 @@ public interface VideoObject extends MediaObject {
      *
      * @param actors Person value to set.
      */
-    void setActors(Person actors);
+    void addActors(Person actors);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getMusicByList();
 
     /**
      * The composer of the soundtrack.
@@ -167,13 +240,20 @@ public interface VideoObject extends MediaObject {
      *
      * @param musicBy Person value to set.
      */
-    void setMusicBy(Person musicBy);
+    void addMusicBy(Person musicBy);
     /**
      * The composer of the soundtrack.
      *
      * @param musicBy MusicGroup value to set.
      */
-    void setMusicBy(MusicGroup musicBy);
+    void addMusicBy(MusicGroup musicBy);
+
+    /**
+     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -187,5 +267,5 @@ public interface VideoObject extends MediaObject {
      *
      * @param directors Person value to set.
      */
-    void setDirectors(Person directors);
+    void addDirectors(Person directors);
 }

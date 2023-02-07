@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.

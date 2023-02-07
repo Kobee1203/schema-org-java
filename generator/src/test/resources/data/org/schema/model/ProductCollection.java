@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.TypeAndQuantityNode;
 
 /**
@@ -22,6 +23,14 @@ public interface ProductCollection extends Product, Collection {
      * @return {@link TypeAndQuantityNode}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
+    List<TypeAndQuantityNode> getIncludesObjectList();
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @return {@link TypeAndQuantityNode}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
     TypeAndQuantityNode getIncludesObject();
 
     /**
@@ -30,5 +39,5 @@ public interface ProductCollection extends Product, Collection {
      * @param includesObject TypeAndQuantityNode value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIncludesObject(TypeAndQuantityNode includesObject);
+    void addIncludesObject(TypeAndQuantityNode includesObject);
 }

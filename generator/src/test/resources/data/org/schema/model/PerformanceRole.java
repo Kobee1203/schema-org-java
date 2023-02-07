@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface PerformanceRole extends Role {
      *
      * @return {@link Text}
      */
+    List<Text> getCharacterNameList();
+
+    /**
+     * The name of a character played in some acting or performing role, i.e. in a PerformanceRole.
+     *
+     * @return {@link Text}
+     */
     Text getCharacterName();
 
     /**
@@ -26,5 +34,5 @@ public interface PerformanceRole extends Role {
      *
      * @param characterName Text value to set.
      */
-    void setCharacterName(Text characterName);
+    void addCharacterName(Text characterName);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.

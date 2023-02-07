@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * An agent bookmarks/flags/labels/tags/marks an object.

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.AnatomicalSystem;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.Vessel;
@@ -23,6 +24,14 @@ public interface Vein extends Vessel {
      * @return {@link AnatomicalSystem} or {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    <T> List<T> getRegionDrainedList();
+
+    /**
+     * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
+     *
+     * @return {@link AnatomicalSystem} or {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     <T> T getRegionDrained();
 
     /**
@@ -31,14 +40,22 @@ public interface Vein extends Vessel {
      * @param regionDrained AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRegionDrained(AnatomicalSystem regionDrained);
+    void addRegionDrained(AnatomicalSystem regionDrained);
     /**
      * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
      *
      * @param regionDrained AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRegionDrained(AnatomicalStructure regionDrained);
+    void addRegionDrained(AnatomicalStructure regionDrained);
+
+    /**
+     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getTributaryList();
 
     /**
      * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
@@ -54,7 +71,15 @@ public interface Vein extends Vessel {
      * @param tributary AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTributary(AnatomicalStructure tributary);
+    void addTributary(AnatomicalStructure tributary);
+
+    /**
+     * The vasculature that the vein drains into.
+     *
+     * @return {@link Vessel}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Vessel> getDrainsToList();
 
     /**
      * The vasculature that the vein drains into.
@@ -70,5 +95,5 @@ public interface Vein extends Vessel {
      * @param drainsTo Vessel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrainsTo(Vessel drainsTo);
+    void addDrainsTo(Vessel drainsTo);
 }

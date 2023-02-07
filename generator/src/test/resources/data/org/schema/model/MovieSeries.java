@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.VideoObject;
 import org.schema.model.Organization;
@@ -22,6 +23,13 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @return {@link Person}
      */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
     Person getDirector();
 
     /**
@@ -29,7 +37,14 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -43,7 +58,14 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The trailer of a movie or tv/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -57,7 +79,14 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject trailer);
+    void addTrailer(VideoObject trailer);
+
+    /**
+     * The production company or studio responsible for the item e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -71,7 +100,14 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization productionCompany);
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -85,7 +121,14 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @param actors Person value to set.
      */
-    void setActors(Person actors);
+    void addActors(Person actors);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getMusicByList();
 
     /**
      * The composer of the soundtrack.
@@ -99,13 +142,20 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @param musicBy Person value to set.
      */
-    void setMusicBy(Person musicBy);
+    void addMusicBy(Person musicBy);
     /**
      * The composer of the soundtrack.
      *
      * @param musicBy MusicGroup value to set.
      */
-    void setMusicBy(MusicGroup musicBy);
+    void addMusicBy(MusicGroup musicBy);
+
+    /**
+     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -119,5 +169,5 @@ public interface MovieSeries extends CreativeWorkSeries {
      *
      * @param directors Person value to set.
      */
-    void setDirectors(Person directors);
+    void addDirectors(Person directors);
 }

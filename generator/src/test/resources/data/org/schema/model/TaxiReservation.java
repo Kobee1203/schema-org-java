@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Integer;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.DateTime;
@@ -22,6 +23,13 @@ public interface TaxiReservation extends Reservation {
      *
      * @return {@link Integer} or {@link QuantitativeValue}
      */
+    <T> List<T> getPartySizeList();
+
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     * @return {@link Integer} or {@link QuantitativeValue}
+     */
     <T> T getPartySize();
 
     /**
@@ -29,13 +37,20 @@ public interface TaxiReservation extends Reservation {
      *
      * @param partySize Integer value to set.
      */
-    void setPartySize(Integer partySize);
+    void addPartySize(Integer partySize);
     /**
      * Number of people the reservation should accommodate.
      *
      * @param partySize QuantitativeValue value to set.
      */
-    void setPartySize(QuantitativeValue partySize);
+    void addPartySize(QuantitativeValue partySize);
+
+    /**
+     * When a taxi will pickup a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPickupTimeList();
 
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
@@ -49,7 +64,14 @@ public interface TaxiReservation extends Reservation {
      *
      * @param pickupTime DateTime value to set.
      */
-    void setPickupTime(DateTime pickupTime);
+    void addPickupTime(DateTime pickupTime);
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getPickupLocationList();
 
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
@@ -63,5 +85,5 @@ public interface TaxiReservation extends Reservation {
      *
      * @param pickupLocation Place value to set.
      */
-    void setPickupLocation(Place pickupLocation);
+    void addPickupLocation(Place pickupLocation);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Event;
 import org.schema.model.EventAttendanceModeEnumeration;
 import org.schema.model.Review;
@@ -45,6 +46,13 @@ public interface Event extends Thing {
      *
      * @return {@link Event}
      */
+    List<Event> getSuperEventList();
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @return {@link Event}
+     */
     Event getSuperEvent();
 
     /**
@@ -52,7 +60,16 @@ public interface Event extends Thing {
      *
      * @param superEvent Event value to set.
      */
-    void setSuperEvent(Event superEvent);
+    void addSuperEvent(Event superEvent);
+
+    /**
+     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
+     *
+     * @return {@link EventAttendanceModeEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    List<EventAttendanceModeEnumeration> getEventAttendanceModeList();
 
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
@@ -70,7 +87,14 @@ public interface Event extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
-    void setEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode);
+    void addEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode);
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewList();
 
     /**
      * A review of the item.
@@ -84,7 +108,14 @@ public interface Event extends Thing {
      *
      * @param review Review value to set.
      */
-    void setReview(Review review);
+    void addReview(Review review);
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getTranslatorList();
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -98,13 +129,21 @@ public interface Event extends Thing {
      *
      * @param translator Person value to set.
      */
-    void setTranslator(Person translator);
+    void addTranslator(Person translator);
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
      * @param translator Organization value to set.
      */
-    void setTranslator(Organization translator);
+    void addTranslator(Organization translator);
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    <T> List<T> getStartDateList();
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -120,14 +159,22 @@ public interface Event extends Thing {
      * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(DateTime startDate);
+    void addStartDate(DateTime startDate);
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
      * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(Date startDate);
+    void addStartDate(Date startDate);
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    <T> List<T> getComposerList();
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -143,14 +190,21 @@ public interface Event extends Thing {
      * @param composer Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setComposer(Organization composer);
+    void addComposer(Organization composer);
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setComposer(Person composer);
+    void addComposer(Person composer);
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getMaximumAttendeeCapacityList();
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -164,7 +218,16 @@ public interface Event extends Thing {
      *
      * @param maximumAttendeeCapacity Integer value to set.
      */
-    void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity);
+    void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity);
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    List<Integer> getMaximumVirtualAttendeeCapacityList();
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -182,7 +245,14 @@ public interface Event extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
-    void setMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity);
+    void addMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity);
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -196,7 +266,17 @@ public interface Event extends Thing {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    List<Grant> getFundingList();
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -216,7 +296,14 @@ public interface Event extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setFunding(Grant funding);
+    void addFunding(Grant funding);
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    <T> List<T> getKeywordsList();
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -230,19 +317,26 @@ public interface Event extends Thing {
      *
      * @param keywords DefinedTerm value to set.
      */
-    void setKeywords(DefinedTerm keywords);
+    void addKeywords(DefinedTerm keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
      * @param keywords Text value to set.
      */
-    void setKeywords(Text keywords);
+    void addKeywords(Text keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
      * @param keywords URL value to set.
      */
-    void setKeywords(URL keywords);
+    void addKeywords(URL keywords);
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getAudienceList();
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -256,7 +350,16 @@ public interface Event extends Thing {
      *
      * @param audience Audience value to set.
      */
-    void setAudience(Audience audience);
+    void addAudience(Audience audience);
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getOffersList();
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -274,7 +377,7 @@ public interface Event extends Thing {
      * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Offer offers);
+    void addOffers(Offer offers);
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
@@ -282,7 +385,14 @@ public interface Event extends Thing {
      * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Demand offers);
+    void addOffers(Demand offers);
+
+    /**
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getSubEventList();
 
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
@@ -296,7 +406,14 @@ public interface Event extends Thing {
      *
      * @param subEvent Event value to set.
      */
-    void setSubEvent(Event subEvent);
+    void addSubEvent(Event subEvent);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -310,7 +427,14 @@ public interface Event extends Thing {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     *
+     * @return {@link EventStatusType}
+     */
+    List<EventStatusType> getEventStatusList();
 
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
@@ -324,7 +448,15 @@ public interface Event extends Thing {
      *
      * @param eventStatus EventStatusType value to set.
      */
-    void setEventStatus(EventStatusType eventStatus);
+    void addEventStatus(EventStatusType eventStatus);
+
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    <T> List<T> getEndDateList();
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -340,14 +472,21 @@ public interface Event extends Thing {
      * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Date endDate);
+    void addEndDate(Date endDate);
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
      * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(DateTime endDate);
+    void addEndDate(DateTime endDate);
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getFunderList();
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -361,13 +500,20 @@ public interface Event extends Thing {
      *
      * @param funder Organization value to set.
      */
-    void setFunder(Organization funder);
+    void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
      */
-    void setFunder(Person funder);
+    void addFunder(Person funder);
+
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getPerformerList();
 
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
@@ -381,13 +527,20 @@ public interface Event extends Thing {
      *
      * @param performer Organization value to set.
      */
-    void setPerformer(Organization performer);
+    void addPerformer(Organization performer);
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
      * @param performer Person value to set.
      */
-    void setPerformer(Person performer);
+    void addPerformer(Person performer);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -401,7 +554,14 @@ public interface Event extends Thing {
      *
      * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating aggregateRating);
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTypicalAgeRangeList();
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -415,7 +575,14 @@ public interface Event extends Thing {
      *
      * @param typicalAgeRange Text value to set.
      */
-    void setTypicalAgeRange(Text typicalAgeRange);
+    void addTypicalAgeRange(Text typicalAgeRange);
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    <T> List<T> getLocationList();
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -429,25 +596,32 @@ public interface Event extends Thing {
      *
      * @param location PostalAddress value to set.
      */
-    void setLocation(PostalAddress location);
+    void addLocation(PostalAddress location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location Text value to set.
      */
-    void setLocation(Text location);
+    void addLocation(Text location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location Place value to set.
      */
-    void setLocation(Place location);
+    void addLocation(Place location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      * @param location VirtualLocation value to set.
      */
-    void setLocation(VirtualLocation location);
+    void addLocation(VirtualLocation location);
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getPerformersList();
 
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
@@ -461,13 +635,22 @@ public interface Event extends Thing {
      *
      * @param performers Person value to set.
      */
-    void setPerformers(Person performers);
+    void addPerformers(Person performers);
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
      *
      * @param performers Organization value to set.
      */
-    void setPerformers(Organization performers);
+    void addPerformers(Organization performers);
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    List<Duration> getDurationList();
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -485,7 +668,14 @@ public interface Event extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration duration);
+    void addDuration(Duration duration);
+
+    /**
+     * An organizer of an Event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getOrganizerList();
 
     /**
      * An organizer of an Event.
@@ -499,13 +689,20 @@ public interface Event extends Thing {
      *
      * @param organizer Person value to set.
      */
-    void setOrganizer(Person organizer);
+    void addOrganizer(Person organizer);
     /**
      * An organizer of an Event.
      *
      * @param organizer Organization value to set.
      */
-    void setOrganizer(Organization organizer);
+    void addOrganizer(Organization organizer);
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSponsorList();
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -519,13 +716,20 @@ public interface Event extends Thing {
      *
      * @param sponsor Organization value to set.
      */
-    void setSponsor(Organization sponsor);
+    void addSponsor(Organization sponsor);
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @param sponsor Person value to set.
      */
-    void setSponsor(Person sponsor);
+    void addSponsor(Person sponsor);
+
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getPreviousStartDateList();
 
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
@@ -539,7 +743,14 @@ public interface Event extends Thing {
      *
      * @param previousStartDate Date value to set.
      */
-    void setPreviousStartDate(Date previousStartDate);
+    void addPreviousStartDate(Date previousStartDate);
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsAccessibleForFreeList();
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -553,7 +764,14 @@ public interface Event extends Thing {
      *
      * @param isAccessibleForFree Boolean value to set.
      */
-    void setIsAccessibleForFree(Boolean isAccessibleForFree);
+    void addIsAccessibleForFree(Boolean isAccessibleForFree);
+
+    /**
+     * The number of attendee places for an event that remain unallocated.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getRemainingAttendeeCapacityList();
 
     /**
      * The number of attendee places for an event that remain unallocated.
@@ -567,7 +785,14 @@ public interface Event extends Thing {
      *
      * @param remainingAttendeeCapacity Integer value to set.
      */
-    void setRemainingAttendeeCapacity(Integer remainingAttendeeCapacity);
+    void addRemainingAttendeeCapacity(Integer remainingAttendeeCapacity);
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getSubEventsList();
 
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
@@ -581,7 +806,14 @@ public interface Event extends Thing {
      *
      * @param subEvents Event value to set.
      */
-    void setSubEvents(Event subEvents);
+    void addSubEvents(Event subEvents);
+
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getWorkPerformedList();
 
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
@@ -595,7 +827,14 @@ public interface Event extends Thing {
      *
      * @param workPerformed CreativeWork value to set.
      */
-    void setWorkPerformed(CreativeWork workPerformed);
+    void addWorkPerformed(CreativeWork workPerformed);
+
+    /**
+     * The time admission will commence.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    <T> List<T> getDoorTimeList();
 
     /**
      * The time admission will commence.
@@ -609,13 +848,21 @@ public interface Event extends Thing {
      *
      * @param doorTime Time value to set.
      */
-    void setDoorTime(Time doorTime);
+    void addDoorTime(Time doorTime);
     /**
      * The time admission will commence.
      *
      * @param doorTime DateTime value to set.
      */
-    void setDoorTime(DateTime doorTime);
+    void addDoorTime(DateTime doorTime);
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> List<T> getInLanguageList();
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -631,14 +878,22 @@ public interface Event extends Thing {
      * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text inLanguage);
+    void addInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
      * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Language inLanguage);
+    void addInLanguage(Language inLanguage);
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    List<Thing> getAboutList();
 
     /**
      * The subject matter of the content.
@@ -654,7 +909,14 @@ public interface Event extends Thing {
      * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setAbout(Thing about);
+    void addAbout(Thing about);
+
+    /**
+     * The CreativeWork that captured all or part of this Event.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getRecordedInList();
 
     /**
      * The CreativeWork that captured all or part of this Event.
@@ -668,7 +930,16 @@ public interface Event extends Thing {
      *
      * @param recordedIn CreativeWork value to set.
      */
-    void setRecordedIn(CreativeWork recordedIn);
+    void addRecordedIn(CreativeWork recordedIn);
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    List<Integer> getMaximumPhysicalAttendeeCapacityList();
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -686,7 +957,14 @@ public interface Event extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
-    void setMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity);
+    void addMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity);
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getAttendeeList();
 
     /**
      * A person or organization attending the event.
@@ -700,13 +978,21 @@ public interface Event extends Thing {
      *
      * @param attendee Person value to set.
      */
-    void setAttendee(Person attendee);
+    void addAttendee(Person attendee);
     /**
      * A person or organization attending the event.
      *
      * @param attendee Organization value to set.
      */
-    void setAttendee(Organization attendee);
+    void addAttendee(Organization attendee);
+
+    /**
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getWorkFeaturedList();
 
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
@@ -722,7 +1008,21 @@ public interface Event extends Thing {
      *
      * @param workFeatured CreativeWork value to set.
      */
-    void setWorkFeatured(CreativeWork workFeatured);
+    void addWorkFeatured(CreativeWork workFeatured);
+
+    /**
+     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
+     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
+     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
+     *
+     * @return {@link Schedule}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    List<Schedule> getEventScheduleList();
 
     /**
      * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
@@ -750,7 +1050,14 @@ public interface Event extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setEventSchedule(Schedule eventSchedule);
+    void addEventSchedule(Schedule eventSchedule);
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getContributorList();
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -764,13 +1071,20 @@ public interface Event extends Thing {
      *
      * @param contributor Organization value to set.
      */
-    void setContributor(Organization contributor);
+    void addContributor(Organization contributor);
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
      * @param contributor Person value to set.
      */
-    void setContributor(Person contributor);
+    void addContributor(Person contributor);
+
+    /**
+     * A person attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getAttendeesList();
 
     /**
      * A person attending the event.
@@ -784,11 +1098,11 @@ public interface Event extends Thing {
      *
      * @param attendees Person value to set.
      */
-    void setAttendees(Person attendees);
+    void addAttendees(Person attendees);
     /**
      * A person attending the event.
      *
      * @param attendees Organization value to set.
      */
-    void setAttendees(Organization attendees);
+    void addAttendees(Organization attendees);
 }

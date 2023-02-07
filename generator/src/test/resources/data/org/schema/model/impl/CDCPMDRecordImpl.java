@@ -17,6 +17,8 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.CDCPMDRecord;
@@ -34,7 +36,19 @@ import org.schema.model.CDCPMDRecord;
 @JsonLdTypeName("CDCPMDRecord")
 public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CDCPMDRecord {
 
-    private Number cvdNumBedsOcc;
+    private List<Number> cvdNumBedsOcc;
+
+    /**
+     * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumBedsOccList() {
+        return cvdNumBedsOcc;
+    }
 
     /**
      * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
@@ -45,7 +59,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumBedsOcc() {
-        return cvdNumBedsOcc;
+        return getFirst(cvdNumBedsOcc);
     }
 
     /**
@@ -56,11 +70,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumBedsOcc(Number cvdNumBedsOcc) {
-        this.cvdNumBedsOcc = cvdNumBedsOcc;
+    public void addCvdNumBedsOcc(Number cvdNumBedsOcc) {
+        this.cvdNumBedsOcc = add(this.cvdNumBedsOcc, cvdNumBedsOcc);
     }
 
-    private Number cvdNumICUBedsOcc;
+    private List<Number> cvdNumICUBedsOcc;
+
+    /**
+     * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumICUBedsOccList() {
+        return cvdNumICUBedsOcc;
+    }
 
     /**
      * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
@@ -71,7 +97,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumICUBedsOcc() {
-        return cvdNumICUBedsOcc;
+        return getFirst(cvdNumICUBedsOcc);
     }
 
     /**
@@ -82,11 +108,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumICUBedsOcc(Number cvdNumICUBedsOcc) {
-        this.cvdNumICUBedsOcc = cvdNumICUBedsOcc;
+    public void addCvdNumICUBedsOcc(Number cvdNumICUBedsOcc) {
+        this.cvdNumICUBedsOcc = add(this.cvdNumICUBedsOcc, cvdNumICUBedsOcc);
     }
 
-    private Number cvdNumVent;
+    private List<Number> cvdNumVent;
+
+    /**
+     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumVentList() {
+        return cvdNumVent;
+    }
 
     /**
      * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
@@ -97,7 +135,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumVent() {
-        return cvdNumVent;
+        return getFirst(cvdNumVent);
     }
 
     /**
@@ -108,11 +146,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumVent(Number cvdNumVent) {
-        this.cvdNumVent = cvdNumVent;
+    public void addCvdNumVent(Number cvdNumVent) {
+        this.cvdNumVent = add(this.cvdNumVent, cvdNumVent);
     }
 
-    private Number cvdNumC19Died;
+    private List<Number> cvdNumC19Died;
+
+    /**
+     * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumC19DiedList() {
+        return cvdNumC19Died;
+    }
 
     /**
      * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
@@ -123,7 +173,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19Died() {
-        return cvdNumC19Died;
+        return getFirst(cvdNumC19Died);
     }
 
     /**
@@ -134,11 +184,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19Died(Number cvdNumC19Died) {
-        this.cvdNumC19Died = cvdNumC19Died;
+    public void addCvdNumC19Died(Number cvdNumC19Died) {
+        this.cvdNumC19Died = add(this.cvdNumC19Died, cvdNumC19Died);
     }
 
-    private Number cvdNumTotBeds;
+    private List<Number> cvdNumTotBeds;
+
+    /**
+     * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumTotBedsList() {
+        return cvdNumTotBeds;
+    }
 
     /**
      * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
@@ -149,7 +211,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumTotBeds() {
-        return cvdNumTotBeds;
+        return getFirst(cvdNumTotBeds);
     }
 
     /**
@@ -160,11 +222,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumTotBeds(Number cvdNumTotBeds) {
-        this.cvdNumTotBeds = cvdNumTotBeds;
+    public void addCvdNumTotBeds(Number cvdNumTotBeds) {
+        this.cvdNumTotBeds = add(this.cvdNumTotBeds, cvdNumTotBeds);
     }
 
-    private Text cvdFacilityCounty;
+    private List<Text> cvdFacilityCounty;
+
+    /**
+     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Text> getCvdFacilityCountyList() {
+        return cvdFacilityCounty;
+    }
 
     /**
      * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
@@ -175,7 +249,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCvdFacilityCounty() {
-        return cvdFacilityCounty;
+        return getFirst(cvdFacilityCounty);
     }
 
     /**
@@ -186,11 +260,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdFacilityCounty(Text cvdFacilityCounty) {
-        this.cvdFacilityCounty = cvdFacilityCounty;
+    public void addCvdFacilityCounty(Text cvdFacilityCounty) {
+        this.cvdFacilityCounty = add(this.cvdFacilityCounty, cvdFacilityCounty);
     }
 
-    private Number cvdNumICUBeds;
+    private List<Number> cvdNumICUBeds;
+
+    /**
+     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumICUBedsList() {
+        return cvdNumICUBeds;
+    }
 
     /**
      * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
@@ -201,7 +287,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumICUBeds() {
-        return cvdNumICUBeds;
+        return getFirst(cvdNumICUBeds);
     }
 
     /**
@@ -212,11 +298,24 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumICUBeds(Number cvdNumICUBeds) {
-        this.cvdNumICUBeds = cvdNumICUBeds;
+    public void addCvdNumICUBeds(Number cvdNumICUBeds) {
+        this.cvdNumICUBeds = add(this.cvdNumICUBeds, cvdNumICUBeds);
     }
 
-    private Object cvdCollectionDate;
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
+    private List<Object> cvdCollectionDate;
+
+    /**
+     * collectiondate - Date for which patient counts are reported.
+     *
+     * @return {@link DateTime} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public <T> List<T> getCvdCollectionDateList() {
+        return (List<T>) cvdCollectionDate;
+    }
 
     /**
      * collectiondate - Date for which patient counts are reported.
@@ -227,7 +326,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCvdCollectionDate() {
-        return (T) cvdCollectionDate;
+        return (T) getFirst(cvdCollectionDate);
     }
 
     /**
@@ -238,8 +337,8 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdCollectionDate(DateTime cvdCollectionDate) {
-        this.cvdCollectionDate = cvdCollectionDate;
+    public void addCvdCollectionDate(DateTime cvdCollectionDate) {
+        this.cvdCollectionDate = add(this.cvdCollectionDate, cvdCollectionDate);
     }
     /**
      * collectiondate - Date for which patient counts are reported.
@@ -249,11 +348,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdCollectionDate(Text cvdCollectionDate) {
-        this.cvdCollectionDate = cvdCollectionDate;
+    public void addCvdCollectionDate(Text cvdCollectionDate) {
+        this.cvdCollectionDate = add(this.cvdCollectionDate, cvdCollectionDate);
     }
 
-    private Number cvdNumC19HOPats;
+    private List<Number> cvdNumC19HOPats;
+
+    /**
+     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumC19HOPatsList() {
+        return cvdNumC19HOPats;
+    }
 
     /**
      * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
@@ -264,7 +375,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19HOPats() {
-        return cvdNumC19HOPats;
+        return getFirst(cvdNumC19HOPats);
     }
 
     /**
@@ -275,11 +386,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19HOPats(Number cvdNumC19HOPats) {
-        this.cvdNumC19HOPats = cvdNumC19HOPats;
+    public void addCvdNumC19HOPats(Number cvdNumC19HOPats) {
+        this.cvdNumC19HOPats = add(this.cvdNumC19HOPats, cvdNumC19HOPats);
     }
 
-    private Number cvdNumC19OFMechVentPats;
+    private List<Number> cvdNumC19OFMechVentPats;
+
+    /**
+     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumC19OFMechVentPatsList() {
+        return cvdNumC19OFMechVentPats;
+    }
 
     /**
      * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
@@ -290,7 +413,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19OFMechVentPats() {
-        return cvdNumC19OFMechVentPats;
+        return getFirst(cvdNumC19OFMechVentPats);
     }
 
     /**
@@ -301,11 +424,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19OFMechVentPats(Number cvdNumC19OFMechVentPats) {
-        this.cvdNumC19OFMechVentPats = cvdNumC19OFMechVentPats;
+    public void addCvdNumC19OFMechVentPats(Number cvdNumC19OFMechVentPats) {
+        this.cvdNumC19OFMechVentPats = add(this.cvdNumC19OFMechVentPats, cvdNumC19OFMechVentPats);
     }
 
-    private Text cvdFacilityId;
+    private List<Text> cvdFacilityId;
+
+    /**
+     * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Text> getCvdFacilityIdList() {
+        return cvdFacilityId;
+    }
 
     /**
      * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
@@ -316,7 +451,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCvdFacilityId() {
-        return cvdFacilityId;
+        return getFirst(cvdFacilityId);
     }
 
     /**
@@ -327,11 +462,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdFacilityId(Text cvdFacilityId) {
-        this.cvdFacilityId = cvdFacilityId;
+    public void addCvdFacilityId(Text cvdFacilityId) {
+        this.cvdFacilityId = add(this.cvdFacilityId, cvdFacilityId);
     }
 
-    private Number cvdNumVentUse;
+    private List<Number> cvdNumVentUse;
+
+    /**
+     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumVentUseList() {
+        return cvdNumVentUse;
+    }
 
     /**
      * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
@@ -342,7 +489,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumVentUse() {
-        return cvdNumVentUse;
+        return getFirst(cvdNumVentUse);
     }
 
     /**
@@ -353,11 +500,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumVentUse(Number cvdNumVentUse) {
-        this.cvdNumVentUse = cvdNumVentUse;
+    public void addCvdNumVentUse(Number cvdNumVentUse) {
+        this.cvdNumVentUse = add(this.cvdNumVentUse, cvdNumVentUse);
     }
 
-    private Number cvdNumBeds;
+    private List<Number> cvdNumBeds;
+
+    /**
+     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumBedsList() {
+        return cvdNumBeds;
+    }
 
     /**
      * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
@@ -368,7 +527,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumBeds() {
-        return cvdNumBeds;
+        return getFirst(cvdNumBeds);
     }
 
     /**
@@ -379,11 +538,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumBeds(Number cvdNumBeds) {
-        this.cvdNumBeds = cvdNumBeds;
+    public void addCvdNumBeds(Number cvdNumBeds) {
+        this.cvdNumBeds = add(this.cvdNumBeds, cvdNumBeds);
     }
 
-    private Number cvdNumC19MechVentPats;
+    private List<Number> cvdNumC19MechVentPats;
+
+    /**
+     * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumC19MechVentPatsList() {
+        return cvdNumC19MechVentPats;
+    }
 
     /**
      * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
@@ -394,7 +565,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19MechVentPats() {
-        return cvdNumC19MechVentPats;
+        return getFirst(cvdNumC19MechVentPats);
     }
 
     /**
@@ -405,11 +576,24 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19MechVentPats(Number cvdNumC19MechVentPats) {
-        this.cvdNumC19MechVentPats = cvdNumC19MechVentPats;
+    public void addCvdNumC19MechVentPats(Number cvdNumC19MechVentPats) {
+        this.cvdNumC19MechVentPats = add(this.cvdNumC19MechVentPats, cvdNumC19MechVentPats);
     }
 
-    private Object datePosted;
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> datePosted;
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public <T> List<T> getDatePostedList() {
+        return (List<T>) datePosted;
+    }
 
     /**
      * Publication date of an online listing.
@@ -420,7 +604,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDatePosted() {
-        return (T) datePosted;
+        return (T) getFirst(datePosted);
     }
 
     /**
@@ -431,8 +615,8 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(Date datePosted) {
-        this.datePosted = datePosted;
+    public void addDatePosted(Date datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
     }
     /**
      * Publication date of an online listing.
@@ -442,11 +626,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(DateTime datePosted) {
-        this.datePosted = datePosted;
+    public void addDatePosted(DateTime datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
     }
 
-    private Number cvdNumC19OverflowPats;
+    private List<Number> cvdNumC19OverflowPats;
+
+    /**
+     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumC19OverflowPatsList() {
+        return cvdNumC19OverflowPats;
+    }
 
     /**
      * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
@@ -457,7 +653,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19OverflowPats() {
-        return cvdNumC19OverflowPats;
+        return getFirst(cvdNumC19OverflowPats);
     }
 
     /**
@@ -468,11 +664,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19OverflowPats(Number cvdNumC19OverflowPats) {
-        this.cvdNumC19OverflowPats = cvdNumC19OverflowPats;
+    public void addCvdNumC19OverflowPats(Number cvdNumC19OverflowPats) {
+        this.cvdNumC19OverflowPats = add(this.cvdNumC19OverflowPats, cvdNumC19OverflowPats);
     }
 
-    private Number cvdNumC19HospPats;
+    private List<Number> cvdNumC19HospPats;
+
+    /**
+     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public List<Number> getCvdNumC19HospPatsList() {
+        return cvdNumC19HospPats;
+    }
 
     /**
      * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
@@ -483,7 +691,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19HospPats() {
-        return cvdNumC19HospPats;
+        return getFirst(cvdNumC19HospPats);
     }
 
     /**
@@ -494,11 +702,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19HospPats(Number cvdNumC19HospPats) {
-        this.cvdNumC19HospPats = cvdNumC19HospPats;
+    public void addCvdNumC19HospPats(Number cvdNumC19HospPats) {
+        this.cvdNumC19HospPats = add(this.cvdNumC19HospPats, cvdNumC19HospPats);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -507,7 +726,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -516,8 +735,8 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -525,11 +744,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -538,7 +767,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -547,11 +776,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -560,7 +799,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -569,11 +808,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -582,7 +831,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -591,11 +840,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -604,7 +864,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -613,8 +873,8 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -622,11 +882,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -635,7 +905,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -644,11 +914,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -657,7 +937,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -666,11 +946,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -680,7 +972,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -690,8 +982,8 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -700,11 +992,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -713,7 +1015,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -722,11 +1024,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -735,7 +1047,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -744,11 +1056,21 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -757,7 +1079,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -766,11 +1088,23 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -780,7 +1114,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -790,8 +1124,8 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -800,8 +1134,8 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -810,7 +1144,7 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

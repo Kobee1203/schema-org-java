@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.HealthAspectEnumeration;
 
 /**
@@ -24,6 +25,15 @@ public interface HealthTopicContent extends WebContent {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
+    List<HealthAspectEnumeration> getHasHealthAspectList();
+
+    /**
+     * Indicates the aspect or aspects specifically addressed in some [[HealthTopicContent]]. For example, that the content is an overview, or that it talks about treatment, self-care, treatments or their side-effects.
+     *
+     * @return {@link HealthAspectEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
     HealthAspectEnumeration getHasHealthAspect();
 
     /**
@@ -33,5 +43,5 @@ public interface HealthTopicContent extends WebContent {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setHasHealthAspect(HealthAspectEnumeration hasHealthAspect);
+    void addHasHealthAspect(HealthAspectEnumeration hasHealthAspect);
 }

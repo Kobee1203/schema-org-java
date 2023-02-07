@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.CategoryCodeSet;
 import org.schema.model.datatype.URL;
@@ -25,6 +26,15 @@ public interface CategoryCode extends DefinedTerm {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
+    List<Text> getCodeValueList();
+
+    /**
+     * A short textual code that uniquely identifies the value.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
     Text getCodeValue();
 
     /**
@@ -34,7 +44,16 @@ public interface CategoryCode extends DefinedTerm {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setCodeValue(Text codeValue);
+    void addCodeValue(Text codeValue);
+
+    /**
+     * A [[CategoryCodeSet]] that contains this category code.
+     *
+     * @return {@link CategoryCodeSet} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    <T> List<T> getInCodeSetList();
 
     /**
      * A [[CategoryCodeSet]] that contains this category code.
@@ -52,7 +71,7 @@ public interface CategoryCode extends DefinedTerm {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInCodeSet(CategoryCodeSet inCodeSet);
+    void addInCodeSet(CategoryCodeSet inCodeSet);
     /**
      * A [[CategoryCodeSet]] that contains this category code.
      *
@@ -60,5 +79,5 @@ public interface CategoryCode extends DefinedTerm {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInCodeSet(URL inCodeSet);
+    void addInCodeSet(URL inCodeSet);
 }

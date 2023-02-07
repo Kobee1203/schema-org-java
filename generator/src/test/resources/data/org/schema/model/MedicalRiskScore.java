@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalRiskScore extends MedicalRiskEstimator {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getAlgorithmList();
+
+    /**
+     * The algorithm or rules to follow to compute the score.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getAlgorithm();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalRiskScore extends MedicalRiskEstimator {
      * @param algorithm Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAlgorithm(Text algorithm);
+    void addAlgorithm(Text algorithm);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.Person;
 import org.schema.model.datatype.Integer;
@@ -23,6 +24,13 @@ public interface Book extends CreativeWork {
      *
      * @return {@link Text}
      */
+    List<Text> getIsbnList();
+
+    /**
+     * The ISBN of the book.
+     *
+     * @return {@link Text}
+     */
     Text getIsbn();
 
     /**
@@ -30,7 +38,14 @@ public interface Book extends CreativeWork {
      *
      * @param isbn Text value to set.
      */
-    void setIsbn(Text isbn);
+    void addIsbn(Text isbn);
+
+    /**
+     * The illustrator of the book.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getIllustratorList();
 
     /**
      * The illustrator of the book.
@@ -44,7 +59,14 @@ public interface Book extends CreativeWork {
      *
      * @param illustrator Person value to set.
      */
-    void setIllustrator(Person illustrator);
+    void addIllustrator(Person illustrator);
+
+    /**
+     * The number of pages in the book.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfPagesList();
 
     /**
      * The number of pages in the book.
@@ -58,7 +80,15 @@ public interface Book extends CreativeWork {
      *
      * @param numberOfPages Integer value to set.
      */
-    void setNumberOfPages(Integer numberOfPages);
+    void addNumberOfPages(Integer numberOfPages);
+
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Boolean> getAbridgedList();
 
     /**
      * Indicates whether the book is an abridged edition.
@@ -74,7 +104,14 @@ public interface Book extends CreativeWork {
      * @param abridged Boolean value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setAbridged(Boolean abridged);
+    void addAbridged(Boolean abridged);
+
+    /**
+     * The format of the book.
+     *
+     * @return {@link BookFormatType}
+     */
+    List<BookFormatType> getBookFormatList();
 
     /**
      * The format of the book.
@@ -88,7 +125,14 @@ public interface Book extends CreativeWork {
      *
      * @param bookFormat BookFormatType value to set.
      */
-    void setBookFormat(BookFormatType bookFormat);
+    void addBookFormat(BookFormatType bookFormat);
+
+    /**
+     * The edition of the book.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBookEditionList();
 
     /**
      * The edition of the book.
@@ -102,5 +146,5 @@ public interface Book extends CreativeWork {
      *
      * @param bookEdition Text value to set.
      */
-    void setBookEdition(Text bookEdition);
+    void addBookEdition(Text bookEdition);
 }

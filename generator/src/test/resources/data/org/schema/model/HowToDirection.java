@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.MediaObject;
 import org.schema.model.HowToSupply;
@@ -24,6 +25,13 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @return {@link URL} or {@link MediaObject}
      */
+    <T> List<T> getAfterMediaList();
+
+    /**
+     * A media object representing the circumstances after performing this direction.
+     *
+     * @return {@link URL} or {@link MediaObject}
+     */
     <T> T getAfterMedia();
 
     /**
@@ -31,13 +39,20 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param afterMedia URL value to set.
      */
-    void setAfterMedia(URL afterMedia);
+    void addAfterMedia(URL afterMedia);
     /**
      * A media object representing the circumstances after performing this direction.
      *
      * @param afterMedia MediaObject value to set.
      */
-    void setAfterMedia(MediaObject afterMedia);
+    void addAfterMedia(MediaObject afterMedia);
+
+    /**
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     *
+     * @return {@link HowToSupply} or {@link Text}
+     */
+    <T> List<T> getSupplyList();
 
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
@@ -51,13 +66,20 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param supply HowToSupply value to set.
      */
-    void setSupply(HowToSupply supply);
+    void addSupply(HowToSupply supply);
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply Text value to set.
      */
-    void setSupply(Text supply);
+    void addSupply(Text supply);
+
+    /**
+     * A media object representing the circumstances while performing this direction.
+     *
+     * @return {@link URL} or {@link MediaObject}
+     */
+    <T> List<T> getDuringMediaList();
 
     /**
      * A media object representing the circumstances while performing this direction.
@@ -71,13 +93,20 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param duringMedia URL value to set.
      */
-    void setDuringMedia(URL duringMedia);
+    void addDuringMedia(URL duringMedia);
     /**
      * A media object representing the circumstances while performing this direction.
      *
      * @param duringMedia MediaObject value to set.
      */
-    void setDuringMedia(MediaObject duringMedia);
+    void addDuringMedia(MediaObject duringMedia);
+
+    /**
+     * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getTotalTimeList();
 
     /**
      * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -91,7 +120,14 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param totalTime Duration value to set.
      */
-    void setTotalTime(Duration totalTime);
+    void addTotalTime(Duration totalTime);
+
+    /**
+     * A media object representing the circumstances before performing this direction.
+     *
+     * @return {@link URL} or {@link MediaObject}
+     */
+    <T> List<T> getBeforeMediaList();
 
     /**
      * A media object representing the circumstances before performing this direction.
@@ -105,13 +141,20 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param beforeMedia URL value to set.
      */
-    void setBeforeMedia(URL beforeMedia);
+    void addBeforeMedia(URL beforeMedia);
     /**
      * A media object representing the circumstances before performing this direction.
      *
      * @param beforeMedia MediaObject value to set.
      */
-    void setBeforeMedia(MediaObject beforeMedia);
+    void addBeforeMedia(MediaObject beforeMedia);
+
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @return {@link HowToTool} or {@link Text}
+     */
+    <T> List<T> getToolList();
 
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
@@ -125,13 +168,20 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param tool HowToTool value to set.
      */
-    void setTool(HowToTool tool);
+    void addTool(HowToTool tool);
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool Text value to set.
      */
-    void setTool(Text tool);
+    void addTool(Text tool);
+
+    /**
+     * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getPrepTimeList();
 
     /**
      * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -145,7 +195,14 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param prepTime Duration value to set.
      */
-    void setPrepTime(Duration prepTime);
+    void addPrepTime(Duration prepTime);
+
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getPerformTimeList();
 
     /**
      * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -159,5 +216,5 @@ public interface HowToDirection extends ListItem, CreativeWork {
      *
      * @param performTime Duration value to set.
      */
-    void setPerformTime(Duration performTime);
+    void addPerformTime(Duration performTime);
 }

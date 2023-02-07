@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A specific payment status. For example, PaymentDue, PaymentComplete, etc.

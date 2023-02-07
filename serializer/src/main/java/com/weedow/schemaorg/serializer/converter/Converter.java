@@ -2,8 +2,6 @@ package com.weedow.schemaorg.serializer.converter;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
-import java.lang.reflect.Type;
-
 /**
  * A converter converts a source object of type {@code S} to a target of type {@code T}.
  *
@@ -13,14 +11,13 @@ import java.lang.reflect.Type;
 public interface Converter<S, T> {
 
     /**
-     * Whether the given jsonLdDataType is supported by the current converter.
+     * Whether the current converter supports the conversion from the given {@code jsonLdDataType} to the given {@code targetType}.
      *
-     * @param sourceType     Source type
      * @param jsonLdDataType JsonLdDataType class
-     * @param javaType       Java type related to the JsonLdDataType class
-     * @return {@code true} if the converter supports the given jsonLdDataType, {@code false} instead.
+     * @param targetType     Target type
+     * @return {@code true} if the converter supports the conversion from {@code jsonLdDataType} to {@code targetType}, {@code false} instead.
      */
-    boolean supports(Class<?> sourceType, Class<? extends JsonLdDataType<?>> jsonLdDataType, Type javaType);
+    boolean supports(Class<? extends JsonLdDataType<?>> jsonLdDataType, Class<?> targetType);
 
     /**
      * Convert the source object of type {@code S} to target type {@code T}.

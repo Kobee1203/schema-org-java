@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Date;
 import org.schema.model.Specialty;
 import org.schema.model.ImageObject;
@@ -28,6 +29,13 @@ public interface WebPage extends CreativeWork {
      *
      * @return {@link Date}
      */
+    List<Date> getLastReviewedList();
+
+    /**
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
+     *
+     * @return {@link Date}
+     */
     Date getLastReviewed();
 
     /**
@@ -35,7 +43,14 @@ public interface WebPage extends CreativeWork {
      *
      * @param lastReviewed Date value to set.
      */
-    void setLastReviewed(Date lastReviewed);
+    void addLastReviewed(Date lastReviewed);
+
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     *
+     * @return {@link Specialty}
+     */
+    List<Specialty> getSpecialtyList();
 
     /**
      * One of the domain specialities to which this web page's content applies.
@@ -49,7 +64,14 @@ public interface WebPage extends CreativeWork {
      *
      * @param specialty Specialty value to set.
      */
-    void setSpecialty(Specialty specialty);
+    void addSpecialty(Specialty specialty);
+
+    /**
+     * Indicates the main image on the page.
+     *
+     * @return {@link ImageObject}
+     */
+    List<ImageObject> getPrimaryImageOfPageList();
 
     /**
      * Indicates the main image on the page.
@@ -63,7 +85,14 @@ public interface WebPage extends CreativeWork {
      *
      * @param primaryImageOfPage ImageObject value to set.
      */
-    void setPrimaryImageOfPage(ImageObject primaryImageOfPage);
+    void addPrimaryImageOfPage(ImageObject primaryImageOfPage);
+
+    /**
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getSignificantLinkList();
 
     /**
      * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
@@ -77,7 +106,14 @@ public interface WebPage extends CreativeWork {
      *
      * @param significantLink URL value to set.
      */
-    void setSignificantLink(URL significantLink);
+    void addSignificantLink(URL significantLink);
+
+    /**
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getReviewedByList();
 
     /**
      * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
@@ -91,13 +127,20 @@ public interface WebPage extends CreativeWork {
      *
      * @param reviewedBy Organization value to set.
      */
-    void setReviewedBy(Organization reviewedBy);
+    void addReviewedBy(Organization reviewedBy);
     /**
      * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
      *
      * @param reviewedBy Person value to set.
      */
-    void setReviewedBy(Person reviewedBy);
+    void addReviewedBy(Person reviewedBy);
+
+    /**
+     * Indicates if this web page element is the main subject of the page.
+     *
+     * @return {@link WebPageElement}
+     */
+    List<WebPageElement> getMainContentOfPageList();
 
     /**
      * Indicates if this web page element is the main subject of the page.
@@ -111,7 +154,14 @@ public interface WebPage extends CreativeWork {
      *
      * @param mainContentOfPage WebPageElement value to set.
      */
-    void setMainContentOfPage(WebPageElement mainContentOfPage);
+    void addMainContentOfPage(WebPageElement mainContentOfPage);
+
+    /**
+     * A link related to this web page, for example to other related web pages.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getRelatedLinkList();
 
     /**
      * A link related to this web page, for example to other related web pages.
@@ -125,7 +175,28 @@ public interface WebPage extends CreativeWork {
      *
      * @param relatedLink URL value to set.
      */
-    void setRelatedLink(URL relatedLink);
+    void addRelatedLink(URL relatedLink);
+
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     *
+     * @return {@link URL} or {@link SpeakableSpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    <T> List<T> getSpeakableList();
 
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
@@ -167,7 +238,7 @@ public interface WebPage extends CreativeWork {
      * @param speakable URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setSpeakable(URL speakable);
+    void addSpeakable(URL speakable);
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
      * 
@@ -187,7 +258,14 @@ public interface WebPage extends CreativeWork {
      * @param speakable SpeakableSpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setSpeakable(SpeakableSpecification speakable);
+    void addSpeakable(SpeakableSpecification speakable);
+
+    /**
+     * A set of links that can help a user understand and navigate a website hierarchy.
+     *
+     * @return {@link BreadcrumbList} or {@link Text}
+     */
+    <T> List<T> getBreadcrumbList();
 
     /**
      * A set of links that can help a user understand and navigate a website hierarchy.
@@ -201,13 +279,20 @@ public interface WebPage extends CreativeWork {
      *
      * @param breadcrumb BreadcrumbList value to set.
      */
-    void setBreadcrumb(BreadcrumbList breadcrumb);
+    void addBreadcrumb(BreadcrumbList breadcrumb);
     /**
      * A set of links that can help a user understand and navigate a website hierarchy.
      *
      * @param breadcrumb Text value to set.
      */
-    void setBreadcrumb(Text breadcrumb);
+    void addBreadcrumb(Text breadcrumb);
+
+    /**
+     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getSignificantLinksList();
 
     /**
      * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
@@ -221,5 +306,5 @@ public interface WebPage extends CreativeWork {
      *
      * @param significantLinks URL value to set.
      */
-    void setSignificantLinks(URL significantLinks);
+    void addSignificantLinks(URL significantLinks);
 }

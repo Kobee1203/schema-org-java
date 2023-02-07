@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalEntity;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalContraindication;
@@ -23,6 +24,14 @@ public interface MedicalDevice extends MedicalEntity {
      * @return {@link MedicalEntity}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalEntity> getAdverseOutcomeList();
+
+    /**
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalEntity getAdverseOutcome();
 
     /**
@@ -31,7 +40,15 @@ public interface MedicalDevice extends MedicalEntity {
      * @param adverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAdverseOutcome(MedicalEntity adverseOutcome);
+    void addAdverseOutcome(MedicalEntity adverseOutcome);
+
+    /**
+     * A description of the workup, testing, and other preparations required before implanting this device.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getPreOpList();
 
     /**
      * A description of the workup, testing, and other preparations required before implanting this device.
@@ -47,7 +64,15 @@ public interface MedicalDevice extends MedicalEntity {
      * @param preOp Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPreOp(Text preOp);
+    void addPreOp(Text preOp);
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getSeriousAdverseOutcomeList();
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
@@ -63,7 +88,15 @@ public interface MedicalDevice extends MedicalEntity {
      * @param seriousAdverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
+    void addSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
+
+    /**
+     * A description of the postoperative procedures, care, and/or followups for this device.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getPostOpList();
 
     /**
      * A description of the postoperative procedures, care, and/or followups for this device.
@@ -79,7 +112,15 @@ public interface MedicalDevice extends MedicalEntity {
      * @param postOp Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPostOp(Text postOp);
+    void addPostOp(Text postOp);
+
+    /**
+     * A description of the procedure involved in setting up, using, and/or installing the device.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getProcedureList();
 
     /**
      * A description of the procedure involved in setting up, using, and/or installing the device.
@@ -95,7 +136,15 @@ public interface MedicalDevice extends MedicalEntity {
      * @param procedure Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setProcedure(Text procedure);
+    void addProcedure(Text procedure);
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @return {@link Text} or {@link MedicalContraindication}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getContraindicationList();
 
     /**
      * A contraindication for this therapy.
@@ -111,12 +160,12 @@ public interface MedicalDevice extends MedicalEntity {
      * @param contraindication Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setContraindication(Text contraindication);
+    void addContraindication(Text contraindication);
     /**
      * A contraindication for this therapy.
      *
      * @param contraindication MedicalContraindication value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setContraindication(MedicalContraindication contraindication);
+    void addContraindication(MedicalContraindication contraindication);
 }

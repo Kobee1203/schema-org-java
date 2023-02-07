@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface TechArticle extends Article {
      *
      * @return {@link Text}
      */
+    List<Text> getDependenciesList();
+
+    /**
+     * Prerequisites needed to fulfill steps in article.
+     *
+     * @return {@link Text}
+     */
     Text getDependencies();
 
     /**
@@ -26,7 +34,14 @@ public interface TechArticle extends Article {
      *
      * @param dependencies Text value to set.
      */
-    void setDependencies(Text dependencies);
+    void addDependencies(Text dependencies);
+
+    /**
+     * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProficiencyLevelList();
 
     /**
      * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
@@ -40,5 +55,5 @@ public interface TechArticle extends Article {
      *
      * @param proficiencyLevel Text value to set.
      */
-    void setProficiencyLevel(Text proficiencyLevel);
+    void addProficiencyLevel(Text proficiencyLevel);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
 import org.schema.model.Thing;
@@ -21,6 +22,13 @@ public interface DataFeedItem extends Intangible {
      *
      * @return {@link DateTime} or {@link Date}
      */
+    <T> List<T> getDateDeletedList();
+
+    /**
+     * The datetime the item was removed from the DataFeed.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
     <T> T getDateDeleted();
 
     /**
@@ -28,13 +36,20 @@ public interface DataFeedItem extends Intangible {
      *
      * @param dateDeleted DateTime value to set.
      */
-    void setDateDeleted(DateTime dateDeleted);
+    void addDateDeleted(DateTime dateDeleted);
     /**
      * The datetime the item was removed from the DataFeed.
      *
      * @param dateDeleted Date value to set.
      */
-    void setDateDeleted(Date dateDeleted);
+    void addDateDeleted(Date dateDeleted);
+
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getDateCreatedList();
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -48,13 +63,20 @@ public interface DataFeedItem extends Intangible {
      *
      * @param dateCreated Date value to set.
      */
-    void setDateCreated(Date dateCreated);
+    void addDateCreated(Date dateCreated);
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
      * @param dateCreated DateTime value to set.
      */
-    void setDateCreated(DateTime dateCreated);
+    void addDateCreated(DateTime dateCreated);
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getDateModifiedList();
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -68,13 +90,20 @@ public interface DataFeedItem extends Intangible {
      *
      * @param dateModified DateTime value to set.
      */
-    void setDateModified(DateTime dateModified);
+    void addDateModified(DateTime dateModified);
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
      * @param dateModified Date value to set.
      */
-    void setDateModified(Date dateModified);
+    void addDateModified(Date dateModified);
+
+    /**
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getItemList();
 
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
@@ -88,5 +117,5 @@ public interface DataFeedItem extends Intangible {
      *
      * @param item Thing value to set.
      */
-    void setItem(Thing item);
+    void addItem(Thing item);
 }

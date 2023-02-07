@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Question;
 
 /**
@@ -19,6 +20,13 @@ public interface AskAction extends CommunicateAction {
      *
      * @return {@link Question}
      */
+    List<Question> getQuestionList();
+
+    /**
+     * A sub property of object. A question.
+     *
+     * @return {@link Question}
+     */
     Question getQuestion();
 
     /**
@@ -26,5 +34,5 @@ public interface AskAction extends CommunicateAction {
      *
      * @param question Question value to set.
      */
-    void setQuestion(Question question);
+    void addQuestion(Question question);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * An agent orders a (not yet released) object/product/service to be delivered/sent.

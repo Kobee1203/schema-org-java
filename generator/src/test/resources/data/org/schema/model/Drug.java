@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.DrugPregnancyCategory;
 import org.schema.model.datatype.Text;
 import org.schema.model.DrugLegalStatus;
@@ -34,6 +35,14 @@ public interface Drug extends Substance {
      * @return {@link DrugPregnancyCategory}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<DrugPregnancyCategory> getPregnancyCategoryList();
+
+    /**
+     * Pregnancy category of this drug.
+     *
+     * @return {@link DrugPregnancyCategory}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     DrugPregnancyCategory getPregnancyCategory();
 
     /**
@@ -42,7 +51,15 @@ public interface Drug extends Substance {
      * @param pregnancyCategory DrugPregnancyCategory value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPregnancyCategory(DrugPregnancyCategory pregnancyCategory);
+    void addPregnancyCategory(DrugPregnancyCategory pregnancyCategory);
+
+    /**
+     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getOverdosageList();
 
     /**
      * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
@@ -58,7 +75,15 @@ public interface Drug extends Substance {
      * @param overdosage Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setOverdosage(Text overdosage);
+    void addOverdosage(Text overdosage);
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getLegalStatusList();
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -74,21 +99,29 @@ public interface Drug extends Substance {
      * @param legalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(DrugLegalStatus legalStatus);
+    void addLegalStatus(DrugLegalStatus legalStatus);
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
      * @param legalStatus Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(Text legalStatus);
+    void addLegalStatus(Text legalStatus);
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
      * @param legalStatus MedicalEnumeration value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(MedicalEnumeration legalStatus);
+    void addLegalStatus(MedicalEnumeration legalStatus);
+
+    /**
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getMechanismOfActionList();
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
@@ -104,7 +137,15 @@ public interface Drug extends Substance {
      * @param mechanismOfAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMechanismOfAction(Text mechanismOfAction);
+    void addMechanismOfAction(Text mechanismOfAction);
+
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getClinicalPharmacologyList();
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -120,7 +161,16 @@ public interface Drug extends Substance {
      * @param clinicalPharmacology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setClinicalPharmacology(Text clinicalPharmacology);
+    void addClinicalPharmacology(Text clinicalPharmacology);
+
+    /**
+     * The RxCUI drug identifier from RXNORM.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Text> getRxcuiList();
 
     /**
      * The RxCUI drug identifier from RXNORM.
@@ -138,7 +188,15 @@ public interface Drug extends Substance {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setRxcui(Text rxcui);
+    void addRxcui(Text rxcui);
+
+    /**
+     * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Drug> getInteractingDrugList();
 
     /**
      * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
@@ -154,7 +212,15 @@ public interface Drug extends Substance {
      * @param interactingDrug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setInteractingDrug(Drug interactingDrug);
+    void addInteractingDrug(Drug interactingDrug);
+
+    /**
+     * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getDosageFormList();
 
     /**
      * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
@@ -170,7 +236,15 @@ public interface Drug extends Substance {
      * @param dosageForm Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDosageForm(Text dosageForm);
+    void addDosageForm(Text dosageForm);
+
+    /**
+     * Link to the drug's label details.
+     *
+     * @return {@link URL}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<URL> getLabelDetailsList();
 
     /**
      * Link to the drug's label details.
@@ -186,7 +260,15 @@ public interface Drug extends Substance {
      * @param labelDetails URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLabelDetails(URL labelDetails);
+    void addLabelDetails(URL labelDetails);
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MaximumDoseSchedule> getMaximumIntakeList();
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -202,7 +284,15 @@ public interface Drug extends Substance {
      * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMaximumIntake(MaximumDoseSchedule maximumIntake);
+    void addMaximumIntake(MaximumDoseSchedule maximumIntake);
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getActiveIngredientList();
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -218,7 +308,15 @@ public interface Drug extends Substance {
      * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActiveIngredient(Text activeIngredient);
+    void addActiveIngredient(Text activeIngredient);
+
+    /**
+     * Any other drug related to this one, for example commonly-prescribed alternatives.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Drug> getRelatedDrugList();
 
     /**
      * Any other drug related to this one, for example commonly-prescribed alternatives.
@@ -234,7 +332,15 @@ public interface Drug extends Substance {
      * @param relatedDrug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedDrug(Drug relatedDrug);
+    void addRelatedDrug(Drug relatedDrug);
+
+    /**
+     * A route by which this drug may be administered, e.g. 'oral'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAdministrationRouteList();
 
     /**
      * A route by which this drug may be administered, e.g. 'oral'.
@@ -250,7 +356,15 @@ public interface Drug extends Substance {
      * @param administrationRoute Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAdministrationRoute(Text administrationRoute);
+    void addAdministrationRoute(Text administrationRoute);
+
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getDrugUnitList();
 
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
@@ -266,7 +380,15 @@ public interface Drug extends Substance {
      * @param drugUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrugUnit(Text drugUnit);
+    void addDrugUnit(Text drugUnit);
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getFoodWarningList();
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
@@ -282,7 +404,15 @@ public interface Drug extends Substance {
      * @param foodWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFoodWarning(Text foodWarning);
+    void addFoodWarning(Text foodWarning);
+
+    /**
+     * Any FDA or other warnings about the drug (text or URL).
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getWarningList();
 
     /**
      * Any FDA or other warnings about the drug (text or URL).
@@ -298,14 +428,22 @@ public interface Drug extends Substance {
      * @param warning URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setWarning(URL warning);
+    void addWarning(URL warning);
     /**
      * Any FDA or other warnings about the drug (text or URL).
      *
      * @param warning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setWarning(Text warning);
+    void addWarning(Text warning);
+
+    /**
+     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
+     *
+     * @return {@link DrugPrescriptionStatus} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getPrescriptionStatusList();
 
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
@@ -321,14 +459,22 @@ public interface Drug extends Substance {
      * @param prescriptionStatus DrugPrescriptionStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPrescriptionStatus(DrugPrescriptionStatus prescriptionStatus);
+    void addPrescriptionStatus(DrugPrescriptionStatus prescriptionStatus);
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
      *
      * @param prescriptionStatus Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPrescriptionStatus(Text prescriptionStatus);
+    void addPrescriptionStatus(Text prescriptionStatus);
+
+    /**
+     * Proprietary name given to the diet plan, typically by its originator or creator.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getProprietaryNameList();
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
@@ -344,7 +490,15 @@ public interface Drug extends Substance {
      * @param proprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setProprietaryName(Text proprietaryName);
+    void addProprietaryName(Text proprietaryName);
+
+    /**
+     * The class of drug this belongs to (e.g., statins).
+     *
+     * @return {@link DrugClass}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<DrugClass> getDrugClassList();
 
     /**
      * The class of drug this belongs to (e.g., statins).
@@ -360,7 +514,15 @@ public interface Drug extends Substance {
      * @param drugClass DrugClass value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrugClass(DrugClass drugClass);
+    void addDrugClass(DrugClass drugClass);
+
+    /**
+     * Link to prescribing information for the drug.
+     *
+     * @return {@link URL}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<URL> getPrescribingInfoList();
 
     /**
      * Link to prescribing information for the drug.
@@ -376,7 +538,16 @@ public interface Drug extends Substance {
      * @param prescribingInfo URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPrescribingInfo(URL prescribingInfo);
+    void addPrescribingInfo(URL prescribingInfo);
+
+    /**
+     * The insurance plans that cover this drug.
+     *
+     * @return {@link HealthInsurancePlan}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<HealthInsurancePlan> getIncludedInHealthInsurancePlanList();
 
     /**
      * The insurance plans that cover this drug.
@@ -394,7 +565,15 @@ public interface Drug extends Substance {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setIncludedInHealthInsurancePlan(HealthInsurancePlan includedInHealthInsurancePlan);
+    void addIncludedInHealthInsurancePlan(HealthInsurancePlan includedInHealthInsurancePlan);
+
+    /**
+     * The generic name of this drug or supplement.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getNonProprietaryNameList();
 
     /**
      * The generic name of this drug or supplement.
@@ -410,7 +589,14 @@ public interface Drug extends Substance {
      * @param nonProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setNonProprietaryName(Text nonProprietaryName);
+    void addNonProprietaryName(Text nonProprietaryName);
+
+    /**
+     * The manufacturer of the product.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getManufacturerList();
 
     /**
      * The manufacturer of the product.
@@ -424,7 +610,15 @@ public interface Drug extends Substance {
      *
      * @param manufacturer Organization value to set.
      */
-    void setManufacturer(Organization manufacturer);
+    void addManufacturer(Organization manufacturer);
+
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Boolean> getIsProprietaryList();
 
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
@@ -440,7 +634,15 @@ public interface Drug extends Substance {
      * @param isProprietary Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIsProprietary(Boolean isProprietary);
+    void addIsProprietary(Boolean isProprietary);
+
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getClincalPharmacologyList();
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -456,7 +658,15 @@ public interface Drug extends Substance {
      * @param clincalPharmacology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setClincalPharmacology(Text clincalPharmacology);
+    void addClincalPharmacology(Text clincalPharmacology);
+
+    /**
+     * True if the drug is available in a generic form (regardless of name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Boolean> getIsAvailableGenericallyList();
 
     /**
      * True if the drug is available in a generic form (regardless of name).
@@ -472,7 +682,15 @@ public interface Drug extends Substance {
      * @param isAvailableGenerically Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIsAvailableGenerically(Boolean isAvailableGenerically);
+    void addIsAvailableGenerically(Boolean isAvailableGenerically);
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getBreastfeedingWarningList();
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
@@ -488,7 +706,15 @@ public interface Drug extends Substance {
      * @param breastfeedingWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBreastfeedingWarning(Text breastfeedingWarning);
+    void addBreastfeedingWarning(Text breastfeedingWarning);
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getPregnancyWarningList();
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
@@ -504,7 +730,15 @@ public interface Drug extends Substance {
      * @param pregnancyWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPregnancyWarning(Text pregnancyWarning);
+    void addPregnancyWarning(Text pregnancyWarning);
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAlcoholWarningList();
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
@@ -520,7 +754,15 @@ public interface Drug extends Substance {
      * @param alcoholWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAlcoholWarning(Text alcoholWarning);
+    void addAlcoholWarning(Text alcoholWarning);
+
+    /**
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     *
+     * @return {@link DoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<DoseSchedule> getDoseScheduleList();
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
@@ -536,7 +778,15 @@ public interface Drug extends Substance {
      * @param doseSchedule DoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseSchedule(DoseSchedule doseSchedule);
+    void addDoseSchedule(DoseSchedule doseSchedule);
+
+    /**
+     * An available dosage strength for the drug.
+     *
+     * @return {@link DrugStrength}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<DrugStrength> getAvailableStrengthList();
 
     /**
      * An available dosage strength for the drug.
@@ -552,5 +802,5 @@ public interface Drug extends Substance {
      * @param availableStrength DrugStrength value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableStrength(DrugStrength availableStrength);
+    void addAvailableStrength(DrugStrength availableStrength);
 }

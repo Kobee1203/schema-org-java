@@ -2,8 +2,6 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
-import java.lang.reflect.Type;
-
 public class NumberConverter extends AbstractConverter {
 
     public static final NumberConverter INSTANCE = new NumberConverter();
@@ -13,8 +11,8 @@ public class NumberConverter extends AbstractConverter {
 
     @Override
     @SuppressWarnings("java:S1872")
-    public boolean supports(Class<?> sourceType, Class<? extends JsonLdDataType<?>> jsonLdDataType, Type javaType) {
-        return (Number.class.isAssignableFrom(sourceType) || String.class.isAssignableFrom(sourceType)) && jsonLdDataType.getSimpleName().equals("Number");
+    public boolean supports(Class<? extends JsonLdDataType<?>> jsonLdDataType, Class<?> targetType) {
+        return (Number.class.isAssignableFrom(targetType) || String.class.isAssignableFrom(targetType)) && jsonLdDataType.getSimpleName().equals("Number");
     }
 
     @Override

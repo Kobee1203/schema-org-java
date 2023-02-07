@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalRiskFactor;
 
@@ -22,6 +23,14 @@ public interface MedicalRiskEstimator extends MedicalEntity {
      * @return {@link MedicalEntity}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalEntity> getEstimatesRiskOfList();
+
+    /**
+     * The condition, complication, or symptom whose risk is being estimated.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalEntity getEstimatesRiskOf();
 
     /**
@@ -30,7 +39,15 @@ public interface MedicalRiskEstimator extends MedicalEntity {
      * @param estimatesRiskOf MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEstimatesRiskOf(MedicalEntity estimatesRiskOf);
+    void addEstimatesRiskOf(MedicalEntity estimatesRiskOf);
+
+    /**
+     * A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.
+     *
+     * @return {@link MedicalRiskFactor}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalRiskFactor> getIncludedRiskFactorList();
 
     /**
      * A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.
@@ -46,5 +63,5 @@ public interface MedicalRiskEstimator extends MedicalEntity {
      * @param includedRiskFactor MedicalRiskFactor value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIncludedRiskFactor(MedicalRiskFactor includedRiskFactor);
+    void addIncludedRiskFactor(MedicalRiskFactor includedRiskFactor);
 }

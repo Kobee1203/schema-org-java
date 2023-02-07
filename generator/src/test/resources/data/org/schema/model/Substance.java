@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MaximumDoseSchedule;
 import org.schema.model.datatype.Text;
 
@@ -22,6 +23,14 @@ public interface Substance extends MedicalEntity {
      * @return {@link MaximumDoseSchedule}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MaximumDoseSchedule> getMaximumIntakeList();
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MaximumDoseSchedule getMaximumIntake();
 
     /**
@@ -30,7 +39,15 @@ public interface Substance extends MedicalEntity {
      * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMaximumIntake(MaximumDoseSchedule maximumIntake);
+    void addMaximumIntake(MaximumDoseSchedule maximumIntake);
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getActiveIngredientList();
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -46,5 +63,5 @@ public interface Substance extends MedicalEntity {
      * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActiveIngredient(Text activeIngredient);
+    void addActiveIngredient(Text activeIngredient);
 }

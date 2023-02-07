@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.BlogPosting;
 import org.schema.model.datatype.Text;
 
@@ -20,6 +21,13 @@ public interface Blog extends CreativeWork {
      *
      * @return {@link BlogPosting}
      */
+    List<BlogPosting> getBlogPostsList();
+
+    /**
+     * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
+     *
+     * @return {@link BlogPosting}
+     */
     BlogPosting getBlogPosts();
 
     /**
@@ -27,7 +35,15 @@ public interface Blog extends CreativeWork {
      *
      * @param blogPosts BlogPosting value to set.
      */
-    void setBlogPosts(BlogPosting blogPosts);
+    void addBlogPosts(BlogPosting blogPosts);
+
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    List<Text> getIssnList();
 
     /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
@@ -43,7 +59,14 @@ public interface Blog extends CreativeWork {
      * @param issn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setIssn(Text issn);
+    void addIssn(Text issn);
+
+    /**
+     * A posting that is part of this blog.
+     *
+     * @return {@link BlogPosting}
+     */
+    List<BlogPosting> getBlogPostList();
 
     /**
      * A posting that is part of this blog.
@@ -57,5 +80,5 @@ public interface Blog extends CreativeWork {
      *
      * @param blogPost BlogPosting value to set.
      */
-    void setBlogPost(BlogPosting blogPost);
+    void addBlogPost(BlogPosting blogPost);
 }

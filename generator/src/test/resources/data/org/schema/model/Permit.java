@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Duration;
 import org.schema.model.Organization;
 import org.schema.model.datatype.Date;
@@ -26,6 +27,14 @@ public interface Permit extends Intangible {
      * @return {@link Duration}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
+    List<Duration> getValidForList();
+
+    /**
+     * The duration of validity of a permit or similar thing.
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
     Duration getValidFor();
 
     /**
@@ -34,7 +43,14 @@ public interface Permit extends Intangible {
      * @param validFor Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidFor(Duration validFor);
+    void addValidFor(Duration validFor);
+
+    /**
+     * The organization issuing the ticket or permit.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getIssuedByList();
 
     /**
      * The organization issuing the ticket or permit.
@@ -48,7 +64,14 @@ public interface Permit extends Intangible {
      *
      * @param issuedBy Organization value to set.
      */
-    void setIssuedBy(Organization issuedBy);
+    void addIssuedBy(Organization issuedBy);
+
+    /**
+     * The date when the item is no longer valid.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getValidUntilList();
 
     /**
      * The date when the item is no longer valid.
@@ -62,7 +85,15 @@ public interface Permit extends Intangible {
      *
      * @param validUntil Date value to set.
      */
-    void setValidUntil(Date validUntil);
+    void addValidUntil(Date validUntil);
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getValidFromList();
 
     /**
      * The date when the item becomes valid.
@@ -78,14 +109,21 @@ public interface Permit extends Intangible {
      * @param validFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(DateTime validFrom);
+    void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(Date validFrom);
+    void addValidFrom(Date validFrom);
+
+    /**
+     * The service through with the permit was granted.
+     *
+     * @return {@link Service}
+     */
+    List<Service> getIssuedThroughList();
 
     /**
      * The service through with the permit was granted.
@@ -99,7 +137,15 @@ public interface Permit extends Intangible {
      *
      * @param issuedThrough Service value to set.
      */
-    void setIssuedThrough(Service issuedThrough);
+    void addIssuedThrough(Service issuedThrough);
+
+    /**
+     * The geographic area where a permit or similar thing is valid.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    List<AdministrativeArea> getValidInList();
 
     /**
      * The geographic area where a permit or similar thing is valid.
@@ -115,7 +161,14 @@ public interface Permit extends Intangible {
      * @param validIn AdministrativeArea value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidIn(AdministrativeArea validIn);
+    void addValidIn(AdministrativeArea validIn);
+
+    /**
+     * The target audience for this permit.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getPermitAudienceList();
 
     /**
      * The target audience for this permit.
@@ -129,5 +182,5 @@ public interface Permit extends Intangible {
      *
      * @param permitAudience Audience value to set.
      */
-    void setPermitAudience(Audience permitAudience);
+    void addPermitAudience(Audience permitAudience);
 }

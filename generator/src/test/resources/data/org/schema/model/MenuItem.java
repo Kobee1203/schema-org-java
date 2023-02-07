@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MenuItem;
 import org.schema.model.MenuSection;
 import org.schema.model.Offer;
@@ -25,6 +26,14 @@ public interface MenuItem extends Intangible {
      * @return {@link MenuItem} or {@link MenuSection}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
+    <T> List<T> getMenuAddOnList();
+
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     *
+     * @return {@link MenuItem} or {@link MenuSection}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
+     */
     <T> T getMenuAddOn();
 
     /**
@@ -33,14 +42,23 @@ public interface MenuItem extends Intangible {
      * @param menuAddOn MenuItem value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
-    void setMenuAddOn(MenuItem menuAddOn);
+    void addMenuAddOn(MenuItem menuAddOn);
     /**
      * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
      *
      * @param menuAddOn MenuSection value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
-    void setMenuAddOn(MenuSection menuAddOn);
+    void addMenuAddOn(MenuSection menuAddOn);
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getOffersList();
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -58,7 +76,7 @@ public interface MenuItem extends Intangible {
      * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Offer offers);
+    void addOffers(Offer offers);
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
@@ -66,7 +84,14 @@ public interface MenuItem extends Intangible {
      * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Demand offers);
+    void addOffers(Demand offers);
+
+    /**
+     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
+     *
+     * @return {@link RestrictedDiet}
+     */
+    List<RestrictedDiet> getSuitableForDietList();
 
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
@@ -80,7 +105,14 @@ public interface MenuItem extends Intangible {
      *
      * @param suitableForDiet RestrictedDiet value to set.
      */
-    void setSuitableForDiet(RestrictedDiet suitableForDiet);
+    void addSuitableForDiet(RestrictedDiet suitableForDiet);
+
+    /**
+     * Nutrition information about the recipe or menu item.
+     *
+     * @return {@link NutritionInformation}
+     */
+    List<NutritionInformation> getNutritionList();
 
     /**
      * Nutrition information about the recipe or menu item.
@@ -94,5 +126,5 @@ public interface MenuItem extends Intangible {
      *
      * @param nutrition NutritionInformation value to set.
      */
-    void setNutrition(NutritionInformation nutrition);
+    void addNutrition(NutritionInformation nutrition);
 }

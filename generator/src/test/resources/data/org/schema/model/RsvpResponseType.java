@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.

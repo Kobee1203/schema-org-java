@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MapCategoryType;
 
 /**
@@ -19,6 +20,13 @@ public interface Map extends CreativeWork {
      *
      * @return {@link MapCategoryType}
      */
+    List<MapCategoryType> getMapTypeList();
+
+    /**
+     * Indicates the kind of Map, from the MapCategoryType Enumeration.
+     *
+     * @return {@link MapCategoryType}
+     */
     MapCategoryType getMapType();
 
     /**
@@ -26,5 +34,5 @@ public interface Map extends CreativeWork {
      *
      * @param mapType MapCategoryType value to set.
      */
-    void setMapType(MapCategoryType mapType);
+    void addMapType(MapCategoryType mapType);
 }

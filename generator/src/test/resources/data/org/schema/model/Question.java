@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.ItemList;
 import org.schema.model.Answer;
 import org.schema.model.datatype.Integer;
@@ -23,6 +24,13 @@ public interface Question extends Comment {
      *
      * @return {@link ItemList} or {@link Answer}
      */
+    <T> List<T> getSuggestedAnswerList();
+
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @return {@link ItemList} or {@link Answer}
+     */
     <T> T getSuggestedAnswer();
 
     /**
@@ -30,13 +38,20 @@ public interface Question extends Comment {
      *
      * @param suggestedAnswer ItemList value to set.
      */
-    void setSuggestedAnswer(ItemList suggestedAnswer);
+    void addSuggestedAnswer(ItemList suggestedAnswer);
     /**
      * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
      *
      * @param suggestedAnswer Answer value to set.
      */
-    void setSuggestedAnswer(Answer suggestedAnswer);
+    void addSuggestedAnswer(Answer suggestedAnswer);
+
+    /**
+     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
+     *
+     * @return {@link Answer} or {@link ItemList}
+     */
+    <T> List<T> getAcceptedAnswerList();
 
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
@@ -50,13 +65,20 @@ public interface Question extends Comment {
      *
      * @param acceptedAnswer Answer value to set.
      */
-    void setAcceptedAnswer(Answer acceptedAnswer);
+    void addAcceptedAnswer(Answer acceptedAnswer);
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
      * @param acceptedAnswer ItemList value to set.
      */
-    void setAcceptedAnswer(ItemList acceptedAnswer);
+    void addAcceptedAnswer(ItemList acceptedAnswer);
+
+    /**
+     * The number of answers this question has received.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getAnswerCountList();
 
     /**
      * The number of answers this question has received.
@@ -70,7 +92,16 @@ public interface Question extends Comment {
      *
      * @param answerCount Integer value to set.
      */
-    void setAnswerCount(Integer answerCount);
+    void addAnswerCount(Integer answerCount);
+
+    /**
+     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
+    List<Text> getEduQuestionTypeList();
 
     /**
      * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
@@ -88,5 +119,5 @@ public interface Question extends Comment {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
-    void setEduQuestionType(Text eduQuestionType);
+    void addEduQuestionType(Text eduQuestionType);
 }

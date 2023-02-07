@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A place offering space for "Recreational Vehicles", Caravans, mobile homes and the like.

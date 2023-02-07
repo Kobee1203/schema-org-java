@@ -4,7 +4,6 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -19,8 +18,8 @@ public class URLConverter extends AbstractConverter {
 
     @Override
     @SuppressWarnings("java:S1872")
-    public boolean supports(Class<?> sourceType, Class<? extends JsonLdDataType<?>> jsonLdDataType, Type javaType) {
-        return (URL.class.isAssignableFrom(sourceType) || String.class.isAssignableFrom(sourceType)) && jsonLdDataType.getSimpleName().equals("URL");
+    public boolean supports(Class<? extends JsonLdDataType<?>> jsonLdDataType, Class<?> targetType) {
+        return (URL.class.isAssignableFrom(targetType) || String.class.isAssignableFrom(targetType)) && jsonLdDataType.getSimpleName().equals("URL");
     }
 
     @Override

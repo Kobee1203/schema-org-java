@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.ArchiveComponent;
 
 /**
@@ -23,6 +24,15 @@ public interface ArchiveOrganization extends LocalBusiness {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
+    List<ArchiveComponent> getArchiveHeldList();
+
+    /**
+     * Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].
+     *
+     * @return {@link ArchiveComponent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     */
     ArchiveComponent getArchiveHeld();
 
     /**
@@ -32,5 +42,5 @@ public interface ArchiveOrganization extends LocalBusiness {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
-    void setArchiveHeld(ArchiveComponent archiveHeld);
+    void addArchiveHeld(ArchiveComponent archiveHeld);
 }

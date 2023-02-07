@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.MonetaryAmount;
 
@@ -20,6 +21,13 @@ public interface HowToSupply extends HowToItem {
      *
      * @return {@link Text} or {@link MonetaryAmount}
      */
+    <T> List<T> getEstimatedCostList();
+
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @return {@link Text} or {@link MonetaryAmount}
+     */
     <T> T getEstimatedCost();
 
     /**
@@ -27,11 +35,11 @@ public interface HowToSupply extends HowToItem {
      *
      * @param estimatedCost Text value to set.
      */
-    void setEstimatedCost(Text estimatedCost);
+    void addEstimatedCost(Text estimatedCost);
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
      * @param estimatedCost MonetaryAmount value to set.
      */
-    void setEstimatedCost(MonetaryAmount estimatedCost);
+    void addEstimatedCost(MonetaryAmount estimatedCost);
 }

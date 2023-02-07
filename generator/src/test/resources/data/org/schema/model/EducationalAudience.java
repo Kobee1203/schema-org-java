@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -20,6 +21,13 @@ public interface EducationalAudience extends Audience {
      *
      * @return {@link Text}
      */
+    List<Text> getEducationalRoleList();
+
+    /**
+     * An educationalRole of an EducationalAudience.
+     *
+     * @return {@link Text}
+     */
     Text getEducationalRole();
 
     /**
@@ -27,5 +35,5 @@ public interface EducationalAudience extends Audience {
      *
      * @param educationalRole Text value to set.
      */
-    void setEducationalRole(Text educationalRole);
+    void addEducationalRole(Text educationalRole);
 }

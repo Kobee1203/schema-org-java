@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface WebApplication extends SoftwareApplication {
      *
      * @return {@link Text}
      */
+    List<Text> getBrowserRequirementsList();
+
+    /**
+     * Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.
+     *
+     * @return {@link Text}
+     */
     Text getBrowserRequirements();
 
     /**
@@ -26,5 +34,5 @@ public interface WebApplication extends SoftwareApplication {
      *
      * @param browserRequirements Text value to set.
      */
-    void setBrowserRequirements(Text browserRequirements);
+    void addBrowserRequirements(Text browserRequirements);
 }

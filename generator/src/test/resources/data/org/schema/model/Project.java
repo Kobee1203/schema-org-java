@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.

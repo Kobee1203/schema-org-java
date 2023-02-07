@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.MonetaryAmountDistribution;
 import org.schema.model.MonetaryAmount;
@@ -39,6 +40,15 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
+    List<Text> getEmployerOverviewList();
+
+    /**
+     * A description of the employer, career opportunities and work environment for this position.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
     Text getEmployerOverview();
 
     /**
@@ -48,7 +58,15 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
-    void setEmployerOverview(Text employerOverview);
+    void addEmployerOverview(Text employerOverview);
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getEstimatedSalaryList();
 
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
@@ -64,21 +82,30 @@ public interface JobPosting extends Intangible {
      * @param estimatedSalary MonetaryAmountDistribution value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
+    void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
      * @param estimatedSalary MonetaryAmount value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setEstimatedSalary(MonetaryAmount estimatedSalary);
+    void addEstimatedSalary(MonetaryAmount estimatedSalary);
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
      * @param estimatedSalary Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setEstimatedSalary(Number estimatedSalary);
+    void addEstimatedSalary(Number estimatedSalary);
+
+    /**
+     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    List<Text> getJobLocationTypeList();
 
     /**
      * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
@@ -96,7 +123,15 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
      */
-    void setJobLocationType(Text jobLocationType);
+    void addJobLocationType(Text jobLocationType);
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Text> getResponsibilitiesList();
 
     /**
      * Responsibilities associated with this role or Occupation.
@@ -112,7 +147,14 @@ public interface JobPosting extends Intangible {
      * @param responsibilities Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setResponsibilities(Text responsibilities);
+    void addResponsibilities(Text responsibilities);
+
+    /**
+     * A (typically single) geographic location associated with the job position.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getJobLocationList();
 
     /**
      * A (typically single) geographic location associated with the job position.
@@ -126,7 +168,16 @@ public interface JobPosting extends Intangible {
      *
      * @param jobLocation Place value to set.
      */
-    void setJobLocation(Place jobLocation);
+    void addJobLocation(Place jobLocation);
+
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    <T> List<T> getPhysicalRequirementList();
 
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -144,7 +195,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setPhysicalRequirement(URL physicalRequirement);
+    void addPhysicalRequirement(URL physicalRequirement);
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
@@ -152,7 +203,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setPhysicalRequirement(Text physicalRequirement);
+    void addPhysicalRequirement(Text physicalRequirement);
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
@@ -160,7 +211,14 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setPhysicalRequirement(DefinedTerm physicalRequirement);
+    void addPhysicalRequirement(DefinedTerm physicalRequirement);
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIncentivesList();
 
     /**
      * Description of bonus and commission compensation aspects of the job.
@@ -174,7 +232,16 @@ public interface JobPosting extends Intangible {
      *
      * @param incentives Text value to set.
      */
-    void setIncentives(Text incentives);
+    void addIncentives(Text incentives);
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    List<Boolean> getDirectApplyList();
 
     /**
      * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
@@ -192,7 +259,16 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
      */
-    void setDirectApply(Boolean directApply);
+    void addDirectApply(Boolean directApply);
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    <T> List<T> getSensoryRequirementList();
 
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -210,7 +286,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setSensoryRequirement(DefinedTerm sensoryRequirement);
+    void addSensoryRequirement(DefinedTerm sensoryRequirement);
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
@@ -218,7 +294,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setSensoryRequirement(URL sensoryRequirement);
+    void addSensoryRequirement(URL sensoryRequirement);
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
@@ -226,7 +302,16 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setSensoryRequirement(Text sensoryRequirement);
+    void addSensoryRequirement(Text sensoryRequirement);
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    List<AdministrativeArea> getApplicantLocationRequirementsList();
 
     /**
      * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
@@ -244,7 +329,14 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
      */
-    void setApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements);
+    void addApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements);
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getWorkHoursList();
 
     /**
      * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
@@ -258,7 +350,16 @@ public interface JobPosting extends Intangible {
      *
      * @param workHours Text value to set.
      */
-    void setWorkHours(Text workHours);
+    void addWorkHours(Text workHours);
+
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @return {@link Date} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    <T> List<T> getJobStartDateList();
 
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
@@ -276,7 +377,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
-    void setJobStartDate(Date jobStartDate);
+    void addJobStartDate(Date jobStartDate);
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
@@ -284,7 +385,14 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
-    void setJobStartDate(Text jobStartDate);
+    void addJobStartDate(Text jobStartDate);
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEmploymentTypeList();
 
     /**
      * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
@@ -298,7 +406,14 @@ public interface JobPosting extends Intangible {
      *
      * @param employmentType Text value to set.
      */
-    void setEmploymentType(Text employmentType);
+    void addEmploymentType(Text employmentType);
+
+    /**
+     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSpecialCommitmentsList();
 
     /**
      * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
@@ -312,7 +427,16 @@ public interface JobPosting extends Intangible {
      *
      * @param specialCommitments Text value to set.
      */
-    void setSpecialCommitments(Text specialCommitments);
+    void addSpecialCommitments(Text specialCommitments);
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @return {@link ContactPoint}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    List<ContactPoint> getApplicationContactList();
 
     /**
      * Contact details for further information relevant to this job posting.
@@ -330,7 +454,14 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
-    void setApplicationContact(ContactPoint applicationContact);
+    void addApplicationContact(ContactPoint applicationContact);
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIncentiveCompensationList();
 
     /**
      * Description of bonus and commission compensation aspects of the job.
@@ -344,7 +475,15 @@ public interface JobPosting extends Intangible {
      *
      * @param incentiveCompensation Text value to set.
      */
-    void setIncentiveCompensation(Text incentiveCompensation);
+    void addIncentiveCompensation(Text incentiveCompensation);
+
+    /**
+     * The Occupation for the JobPosting.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Occupation> getRelevantOccupationList();
 
     /**
      * The Occupation for the JobPosting.
@@ -360,7 +499,16 @@ public interface JobPosting extends Intangible {
      * @param relevantOccupation Occupation value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setRelevantOccupation(Occupation relevantOccupation);
+    void addRelevantOccupation(Occupation relevantOccupation);
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    List<Integer> getTotalJobOpeningsList();
 
     /**
      * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
@@ -378,7 +526,15 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
      */
-    void setTotalJobOpenings(Integer totalJobOpenings);
+    void addTotalJobOpenings(Integer totalJobOpenings);
+
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @return {@link Text} or {@link OccupationalExperienceRequirements}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getExperienceRequirementsList();
 
     /**
      * Description of skills and experience needed for the position or Occupation.
@@ -394,14 +550,21 @@ public interface JobPosting extends Intangible {
      * @param experienceRequirements Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setExperienceRequirements(Text experienceRequirements);
+    void addExperienceRequirements(Text experienceRequirements);
     /**
      * Description of skills and experience needed for the position or Occupation.
      *
      * @param experienceRequirements OccupationalExperienceRequirements value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setExperienceRequirements(OccupationalExperienceRequirements experienceRequirements);
+    void addExperienceRequirements(OccupationalExperienceRequirements experienceRequirements);
+
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getJobBenefitsList();
 
     /**
      * Description of benefits associated with the job.
@@ -415,7 +578,14 @@ public interface JobPosting extends Intangible {
      *
      * @param jobBenefits Text value to set.
      */
-    void setJobBenefits(Text jobBenefits);
+    void addJobBenefits(Text jobBenefits);
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSalaryCurrencyList();
 
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
@@ -429,7 +599,16 @@ public interface JobPosting extends Intangible {
      *
      * @param salaryCurrency Text value to set.
      */
-    void setSalaryCurrency(Text salaryCurrency);
+    void addSalaryCurrency(Text salaryCurrency);
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    List<Boolean> getExperienceInPlaceOfEducationList();
 
     /**
      * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
@@ -447,7 +626,16 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
-    void setExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation);
+    void addExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation);
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    <T> List<T> getSecurityClearanceRequirementList();
 
     /**
      * A description of any security clearance requirements of the job.
@@ -465,7 +653,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setSecurityClearanceRequirement(URL securityClearanceRequirement);
+    void addSecurityClearanceRequirement(URL securityClearanceRequirement);
     /**
      * A description of any security clearance requirements of the job.
      *
@@ -473,7 +661,16 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setSecurityClearanceRequirement(Text securityClearanceRequirement);
+    void addSecurityClearanceRequirement(Text securityClearanceRequirement);
+
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    List<Text> getEligibilityToWorkRequirementList();
 
     /**
      * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
@@ -491,7 +688,17 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setEligibilityToWorkRequirement(Text eligibilityToWorkRequirement);
+    void addEligibilityToWorkRequirement(Text eligibilityToWorkRequirement);
+
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @return {@link EducationalOccupationalCredential} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    <T> List<T> getEducationRequirementsList();
 
     /**
      * Educational background needed for the position or Occupation.
@@ -511,7 +718,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationRequirements(EducationalOccupationalCredential educationRequirements);
+    void addEducationRequirements(EducationalOccupationalCredential educationRequirements);
     /**
      * Educational background needed for the position or Occupation.
      *
@@ -520,7 +727,14 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationRequirements(Text educationRequirements);
+    void addEducationRequirements(Text educationRequirements);
+
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBenefitsList();
 
     /**
      * Description of benefits associated with the job.
@@ -534,7 +748,14 @@ public interface JobPosting extends Intangible {
      *
      * @param benefits Text value to set.
      */
-    void setBenefits(Text benefits);
+    void addBenefits(Text benefits);
+
+    /**
+     * The industry associated with the job position.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    <T> List<T> getIndustryList();
 
     /**
      * The industry associated with the job position.
@@ -548,13 +769,20 @@ public interface JobPosting extends Intangible {
      *
      * @param industry DefinedTerm value to set.
      */
-    void setIndustry(DefinedTerm industry);
+    void addIndustry(DefinedTerm industry);
     /**
      * The industry associated with the job position.
      *
      * @param industry Text value to set.
      */
-    void setIndustry(Text industry);
+    void addIndustry(Text industry);
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    <T> List<T> getBaseSalaryList();
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
@@ -568,19 +796,28 @@ public interface JobPosting extends Intangible {
      *
      * @param baseSalary Number value to set.
      */
-    void setBaseSalary(Number baseSalary);
+    void addBaseSalary(Number baseSalary);
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
      * @param baseSalary PriceSpecification value to set.
      */
-    void setBaseSalary(PriceSpecification baseSalary);
+    void addBaseSalary(PriceSpecification baseSalary);
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
      * @param baseSalary MonetaryAmount value to set.
      */
-    void setBaseSalary(MonetaryAmount baseSalary);
+    void addBaseSalary(MonetaryAmount baseSalary);
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    <T> List<T> getDatePostedList();
 
     /**
      * Publication date of an online listing.
@@ -598,7 +835,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(Date datePosted);
+    void addDatePosted(Date datePosted);
     /**
      * Publication date of an online listing.
      *
@@ -606,7 +843,16 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(DateTime datePosted);
+    void addDatePosted(DateTime datePosted);
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getSkillsList();
 
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
@@ -624,7 +870,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setSkills(Text skills);
+    void addSkills(Text skills);
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
@@ -632,7 +878,14 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setSkills(DefinedTerm skills);
+    void addSkills(DefinedTerm skills);
+
+    /**
+     * The title of the job.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTitleList();
 
     /**
      * The title of the job.
@@ -646,7 +899,14 @@ public interface JobPosting extends Intangible {
      *
      * @param title Text value to set.
      */
-    void setTitle(Text title);
+    void addTitle(Text title);
+
+    /**
+     * Organization offering the job position.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getHiringOrganizationList();
 
     /**
      * Organization offering the job position.
@@ -660,7 +920,16 @@ public interface JobPosting extends Intangible {
      *
      * @param hiringOrganization Organization value to set.
      */
-    void setHiringOrganization(Organization hiringOrganization);
+    void addHiringOrganization(Organization hiringOrganization);
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    List<Boolean> getJobImmediateStartList();
 
     /**
      * An indicator as to whether a position is available for an immediate start.
@@ -678,7 +947,15 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
-    void setJobImmediateStart(Boolean jobImmediateStart);
+    void addJobImmediateStart(Boolean jobImmediateStart);
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getValidThroughList();
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -694,14 +971,23 @@ public interface JobPosting extends Intangible {
      * @param validThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(DateTime validThrough);
+    void addValidThrough(DateTime validThrough);
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(Date validThrough);
+    void addValidThrough(Date validThrough);
+
+    /**
+     * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
+     */
+    List<Organization> getEmploymentUnitList();
 
     /**
      * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
@@ -719,7 +1005,17 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
      */
-    void setEmploymentUnit(Organization employmentUnit);
+    void addEmploymentUnit(Organization employmentUnit);
+
+    /**
+     * Specific qualifications required for this role or Occupation.
+     *
+     * @return {@link Text} or {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    <T> List<T> getQualificationsList();
 
     /**
      * Specific qualifications required for this role or Occupation.
@@ -739,7 +1035,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setQualifications(Text qualifications);
+    void addQualifications(Text qualifications);
     /**
      * Specific qualifications required for this role or Occupation.
      *
@@ -748,7 +1044,20 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setQualifications(EducationalOccupationalCredential qualifications);
+    void addQualifications(EducationalOccupationalCredential qualifications);
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link CategoryCode} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getOccupationalCategoryList();
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -774,7 +1083,7 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setOccupationalCategory(CategoryCode occupationalCategory);
+    void addOccupationalCategory(CategoryCode occupationalCategory);
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
      * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
@@ -786,5 +1095,5 @@ public interface JobPosting extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setOccupationalCategory(Text occupationalCategory);
+    void addOccupationalCategory(Text occupationalCategory);
 }

@@ -168,15 +168,27 @@ class ModelUtilsTest {
 
     @ParameterizedTest
     @CsvSource(value = {
-            "null, null",
-            "'', ''",
-            "a, a",
-            "mytext, Mytext",
-            "MYTEXT, MYTEXT",
-            "myText, MyText",
+            "null, pre, '', prenull",
+            "null, '', Suf, nullSuf",
+            "null, pre, Suf, prenullSuf",
+            "'', pre, '', pre",
+            "'', '', Suf, Suf",
+            "'', pre, Suf, preSuf",
+            "a, pre, '', prea",
+            "a, '', Suf, aSuf",
+            "a, pre, Suf, preaSuf",
+            "mytext, pre, '', preMytext",
+            "mytext, '', 'Suf', mytextSuf",
+            "mytext, pre, Suf, preMytextSuf",
+            "MYTEXT, pre, '', preMYTEXT",
+            "MYTEXT, '', Suf, MYTEXTSuf",
+            "MYTEXT, pre, Suf, preMYTEXTSuf",
+            "myText, pre, '', preMyText",
+            "myText, '', Suf, myTextSuf",
+            "myText, pre, Suf, preMyTextSuf",
     }, nullValues = "null")
-    void capitalize(String value, String expected) {
-        Assertions.assertThat(ModelUtils.capitalize(value)).isEqualTo(expected);
+    void getMethodName(String value, String prefix, String suffix, String expected) {
+        Assertions.assertThat(ModelUtils.getMethodName(value, prefix, suffix)).isEqualTo(expected);
     }
 
     @ParameterizedTest

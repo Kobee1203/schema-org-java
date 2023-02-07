@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalAudienceType;
 import org.schema.model.MedicalAudience;
@@ -23,6 +24,14 @@ public interface MedicalWebPage extends WebPage {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getAspectList();
+
+    /**
+     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getAspect();
 
     /**
@@ -31,7 +40,15 @@ public interface MedicalWebPage extends WebPage {
      * @param aspect Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAspect(Text aspect);
+    void addAspect(Text aspect);
+
+    /**
+     * Medical audience for page.
+     *
+     * @return {@link MedicalAudienceType} or {@link MedicalAudience}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getMedicalAudienceList();
 
     /**
      * Medical audience for page.
@@ -47,12 +64,12 @@ public interface MedicalWebPage extends WebPage {
      * @param medicalAudience MedicalAudienceType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicalAudience(MedicalAudienceType medicalAudience);
+    void addMedicalAudience(MedicalAudienceType medicalAudience);
     /**
      * Medical audience for page.
      *
      * @param medicalAudience MedicalAudience value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicalAudience(MedicalAudience medicalAudience);
+    void addMedicalAudience(MedicalAudience medicalAudience);
 }

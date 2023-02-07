@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Audience;
 import org.schema.model.ContactPoint;
@@ -23,6 +24,13 @@ public interface DigitalDocumentPermission extends Intangible {
      *
      * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
      */
+    <T> List<T> getGranteeList();
+
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
+     */
     <T> T getGrantee();
 
     /**
@@ -30,25 +38,32 @@ public interface DigitalDocumentPermission extends Intangible {
      *
      * @param grantee Person value to set.
      */
-    void setGrantee(Person grantee);
+    void addGrantee(Person grantee);
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
      * @param grantee Audience value to set.
      */
-    void setGrantee(Audience grantee);
+    void addGrantee(Audience grantee);
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
      * @param grantee ContactPoint value to set.
      */
-    void setGrantee(ContactPoint grantee);
+    void addGrantee(ContactPoint grantee);
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
      * @param grantee Organization value to set.
      */
-    void setGrantee(Organization grantee);
+    void addGrantee(Organization grantee);
+
+    /**
+     * The type of permission granted the person, organization, or audience.
+     *
+     * @return {@link DigitalDocumentPermissionType}
+     */
+    List<DigitalDocumentPermissionType> getPermissionTypeList();
 
     /**
      * The type of permission granted the person, organization, or audience.
@@ -62,5 +77,5 @@ public interface DigitalDocumentPermission extends Intangible {
      *
      * @param permissionType DigitalDocumentPermissionType value to set.
      */
-    void setPermissionType(DigitalDocumentPermissionType permissionType);
+    void addPermissionType(DigitalDocumentPermissionType permissionType);
 }

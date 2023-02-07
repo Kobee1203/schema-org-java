@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTherapy;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalSignOrSymptom extends MedicalCondition {
      * @return {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalTherapy> getPossibleTreatmentList();
+
+    /**
+     * A possible treatment to address this condition, sign or symptom.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalTherapy getPossibleTreatment();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalSignOrSymptom extends MedicalCondition {
      * @param possibleTreatment MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPossibleTreatment(MedicalTherapy possibleTreatment);
+    void addPossibleTreatment(MedicalTherapy possibleTreatment);
 }

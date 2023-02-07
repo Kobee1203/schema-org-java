@@ -20,6 +20,8 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.PaymentMethod;
 import org.schema.model.QuantitativeValue;
@@ -110,636 +112,724 @@ public enum PaymentCardEnum implements PaymentCard {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getCashBack() {
-        return null;
-    }
+    public <T> List<T> getCashBackList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setCashBack(Number cashBack) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'cashBack': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setCashBack(Boolean cashBack) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'cashBack': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getMonthlyMinimumRepaymentAmount() {
-        return null;
-    }
+    public <T> T getCashBack() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMonthlyMinimumRepaymentAmount(MonetaryAmount monthlyMinimumRepaymentAmount) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'monthlyMinimumRepaymentAmount': method not allowed for enum Enum");
+    public void addCashBack(Number cashBack) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'cashBack': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMonthlyMinimumRepaymentAmount(Number monthlyMinimumRepaymentAmount) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'monthlyMinimumRepaymentAmount': method not allowed for enum Enum");
+    public void addCashBack(Boolean cashBack) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'cashBack': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public MonetaryAmount getFloorLimit() {
-        return null;
-    }
+    public <T> List<T> getMonthlyMinimumRepaymentAmountList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setFloorLimit(MonetaryAmount floorLimit) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'floorLimit': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Boolean getContactlessPayment() {
-        return null;
-    }
+    public <T> T getMonthlyMinimumRepaymentAmount() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setContactlessPayment(Boolean contactlessPayment) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'contactlessPayment': method not allowed for enum Enum");
+    public void addMonthlyMinimumRepaymentAmount(MonetaryAmount monthlyMinimumRepaymentAmount) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'monthlyMinimumRepaymentAmount': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getSupersededBy() {
-        return null;
+    public void addMonthlyMinimumRepaymentAmount(Number monthlyMinimumRepaymentAmount) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'monthlyMinimumRepaymentAmount': method not allowed for enum PaymentCardEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<MonetaryAmount> getFloorLimitList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Enumeration supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSupersededBy(Class supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSupersededBy(Property supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return null;
-    }
+    public MonetaryAmount getFloorLimit() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
+    public void addFloorLimit(MonetaryAmount floorLimit) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'floorLimit': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getAlternateName() {
-        return null;
-    }
+    public List<Boolean> getContactlessPaymentList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text alternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() {
-        return null;
-    }
+    public Boolean getContactlessPayment() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
+    public void addContactlessPayment(Boolean contactlessPayment) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'contactlessPayment': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Action getPotentialAction() {
-        return null;
-    }
+    public <T> List<T> getSupersededByList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getImage() {
-        return null;
-    }
+    public <T> T getSupersededBy() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
+    public void addSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
+    public void addSupersededBy(Class supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getUrl() {
-        return null;
+    public void addSupersededBy(Property supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum PaymentCardEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getDescription() {
-        return null;
-    }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getSubjectOf() {
-        return null;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum PaymentCardEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getAlternateNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getAdditionalType() {
-        return null;
-    }
+    public Text getAlternateName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
+    public void addAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDisambiguatingDescription() {
-        return null;
-    }
+    public List<Text> getNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getSameAs() {
-        return null;
-    }
+    public Text getName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL sameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getIdentifier() {
-        return null;
-    }
+    public List<Action> getPotentialActionList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(URL identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setIdentifier(Text identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getAnnualPercentageRate() {
-        return null;
-    }
+    public Action getPotentialAction() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAnnualPercentageRate(Number annualPercentageRate) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'annualPercentageRate': method not allowed for enum Enum");
+    public void addPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'annualPercentageRate': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getFeesAndCommissionsSpecification() {
-        return null;
-    }
+    public <T> List<T> getImageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'feesAndCommissionsSpecification': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'feesAndCommissionsSpecification': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getInterestRate() {
-        return null;
-    }
+    public <T> T getImage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setInterestRate(Number interestRate) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'interestRate': method not allowed for enum Enum");
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setInterestRate(QuantitativeValue interestRate) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'interestRate': method not allowed for enum Enum");
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Review getReview() {
-        return null;
-    }
+    public List<URL> getUrlList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setReview(Review review) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'review': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getAward() {
-        return null;
-    }
+    public URL getUrl() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAward(Text award) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'award': method not allowed for enum Enum");
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Audience getServiceAudience() {
-        return null;
-    }
+    public List<Text> getDescriptionList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setServiceAudience(Audience serviceAudience) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'serviceAudience': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getCategory() {
-        return null;
-    }
+    public Text getDescription() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setCategory(URL category) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum Enum");
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setCategory(Text category) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setCategory(PhysicalActivityCategory category) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setCategory(Thing category) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setCategory(CategoryCode category) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public OpeningHoursSpecification getHoursAvailable() {
-        return null;
-    }
+    public <T> List<T> getSubjectOfList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setHoursAvailable(OpeningHoursSpecification hoursAvailable) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'hoursAvailable': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Audience getAudience() {
-        return null;
-    }
+    public <T> T getSubjectOf() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAudience(Audience audience) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'audience': method not allowed for enum Enum");
+    public void addSubjectOf(Event subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getOffers() {
-        return null;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum PaymentCardEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<URL> getAdditionalTypeList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setOffers(Offer offers) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'offers': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setOffers(Demand offers) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'offers': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Thing getServiceOutput() {
-        return null;
-    }
+    public URL getAdditionalType() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setServiceOutput(Thing serviceOutput) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'serviceOutput': method not allowed for enum Enum");
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getProvider() {
-        return null;
-    }
+    public List<Text> getDisambiguatingDescriptionList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setProvider(Organization provider) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'provider': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setProvider(Person provider) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'provider': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getTermsOfService() {
-        return null;
-    }
+    public Text getDisambiguatingDescription() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setTermsOfService(URL termsOfService) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'termsOfService': method not allowed for enum Enum");
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setTermsOfService(Text termsOfService) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'termsOfService': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getProviderMobility() {
-        return null;
-    }
+    public List<URL> getSameAsList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setProviderMobility(Text providerMobility) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'providerMobility': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getBroker() {
-        return null;
-    }
+    public URL getSameAs() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setBroker(Person broker) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'broker': method not allowed for enum Enum");
+    public void addSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setBroker(Organization broker) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'broker': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return null;
-    }
+    public <T> List<T> getIdentifierList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'aggregateRating': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getIsSimilarTo() {
-        return null;
-    }
+    public <T> T getIdentifier() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIsSimilarTo(Service isSimilarTo) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'isSimilarTo': method not allowed for enum Enum");
+    public void addIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIsSimilarTo(Product isSimilarTo) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'isSimilarTo': method not allowed for enum Enum");
+    public void addIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public ServiceChannel getAvailableChannel() {
-        return null;
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum PaymentCardEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getAnnualPercentageRateList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAvailableChannel(ServiceChannel availableChannel) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'availableChannel': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getSlogan() {
-        return null;
-    }
+    public <T> T getAnnualPercentageRate() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSlogan(Text slogan) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'slogan': method not allowed for enum Enum");
+    public void addAnnualPercentageRate(Number annualPercentageRate) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'annualPercentageRate': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getBrand() {
-        return null;
+    public void addAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'annualPercentageRate': method not allowed for enum PaymentCardEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getFeesAndCommissionsSpecificationList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setBrand(Organization brand) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'brand': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setBrand(Brand brand) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'brand': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getLogo() {
-        return null;
-    }
+    public <T> T getFeesAndCommissionsSpecification() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setLogo(URL logo) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'logo': method not allowed for enum Enum");
+    public void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'feesAndCommissionsSpecification': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setLogo(ImageObject logo) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'logo': method not allowed for enum Enum");
+    public void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'feesAndCommissionsSpecification': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Thing getProduces() {
-        return null;
-    }
+    public <T> List<T> getInterestRateList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setProduces(Thing produces) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'produces': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getServiceArea() {
-        return null;
-    }
+    public <T> T getInterestRate() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setServiceArea(GeoShape serviceArea) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'serviceArea': method not allowed for enum Enum");
+    public void addInterestRate(Number interestRate) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'interestRate': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setServiceArea(AdministrativeArea serviceArea) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'serviceArea': method not allowed for enum Enum");
+    public void addInterestRate(QuantitativeValue interestRate) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'interestRate': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setServiceArea(Place serviceArea) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'serviceArea': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getServiceType() {
-        return null;
-    }
+    public List<Review> getReviewList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setServiceType(GovernmentBenefitsType serviceType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'serviceType': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setServiceType(Text serviceType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'serviceType': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getAreaServed() {
-        return null;
-    }
+    public Review getReview() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAreaServed(AdministrativeArea areaServed) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum Enum");
+    public void addReview(Review review) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'review': method not allowed for enum PaymentCardEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAreaServed(GeoShape areaServed) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setAreaServed(Text areaServed) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setAreaServed(Place areaServed) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getIsRelatedTo() {
-        return null;
-    }
+    public List<Text> getAwardList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIsRelatedTo(Service isRelatedTo) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'isRelatedTo': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setIsRelatedTo(Product isRelatedTo) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'isRelatedTo': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public OfferCatalog getHasOfferCatalog() {
-        return null;
-    }
+    public Text getAward() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setHasOfferCatalog(OfferCatalog hasOfferCatalog) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'hasOfferCatalog': method not allowed for enum Enum");
+    public void addAward(Text award) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'award': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Audience> getServiceAudienceList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Audience getServiceAudience() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addServiceAudience(Audience serviceAudience) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'serviceAudience': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getCategoryList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getCategory() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addCategory(URL category) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addCategory(Text category) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addCategory(PhysicalActivityCategory category) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addCategory(Thing category) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addCategory(CategoryCode category) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'category': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<OpeningHoursSpecification> getHoursAvailableList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public OpeningHoursSpecification getHoursAvailable() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'hoursAvailable': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Audience> getAudienceList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Audience getAudience() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAudience(Audience audience) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'audience': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getOffersList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getOffers() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOffers(Offer offers) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'offers': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOffers(Demand offers) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'offers': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Thing> getServiceOutputList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Thing getServiceOutput() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addServiceOutput(Thing serviceOutput) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'serviceOutput': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getProviderList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getProvider() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addProvider(Organization provider) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'provider': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addProvider(Person provider) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'provider': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getTermsOfServiceList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getTermsOfService() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addTermsOfService(URL termsOfService) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'termsOfService': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addTermsOfService(Text termsOfService) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'termsOfService': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getProviderMobilityList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getProviderMobility() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addProviderMobility(Text providerMobility) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'providerMobility': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getBrokerList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getBroker() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addBroker(Person broker) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'broker': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addBroker(Organization broker) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'broker': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public AggregateRating getAggregateRating() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'aggregateRating': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getIsSimilarToList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getIsSimilarTo() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIsSimilarTo(Service isSimilarTo) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'isSimilarTo': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIsSimilarTo(Product isSimilarTo) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'isSimilarTo': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<ServiceChannel> getAvailableChannelList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public ServiceChannel getAvailableChannel() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAvailableChannel(ServiceChannel availableChannel) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'availableChannel': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getSloganList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getSlogan() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSlogan(Text slogan) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'slogan': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getBrandList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getBrand() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addBrand(Organization brand) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'brand': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addBrand(Brand brand) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'brand': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getLogoList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getLogo() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addLogo(URL logo) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'logo': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addLogo(ImageObject logo) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'logo': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Thing> getProducesList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Thing getProduces() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addProduces(Thing produces) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'produces': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getServiceAreaList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getServiceArea() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addServiceArea(GeoShape serviceArea) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'serviceArea': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'serviceArea': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addServiceArea(Place serviceArea) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'serviceArea': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getServiceTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getServiceType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addServiceType(GovernmentBenefitsType serviceType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'serviceType': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addServiceType(Text serviceType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'serviceType': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getAreaServedList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getAreaServed() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAreaServed(AdministrativeArea areaServed) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAreaServed(GeoShape areaServed) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAreaServed(Text areaServed) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAreaServed(Place areaServed) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'areaServed': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getIsRelatedToList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getIsRelatedTo() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIsRelatedTo(Service isRelatedTo) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'isRelatedTo': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIsRelatedTo(Product isRelatedTo) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'isRelatedTo': method not allowed for enum PaymentCardEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<OfferCatalog> getHasOfferCatalogList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public OfferCatalog getHasOfferCatalog() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'hasOfferCatalog': method not allowed for enum PaymentCardEnum");
     }
 }
