@@ -2,6 +2,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+### Changed
+
+### Fixed
+
 ## [0.4.0] - 2023-02-07
 
 ### Added
@@ -122,3 +130,14 @@ All notable changes to this project will be documented in this file.
 ## [0.1.0] - 2022-11-03
 
 schema-org-java is alive!
+
+[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/Kobee1203/schema-org-java/compare/0.3.1...0.4.0
+[0.3.1]: https://github.com/Kobee1203/schema-org-java/compare/0.3.0...0.3.1
+[0.3.0]: https://github.com/Kobee1203/schema-org-java/compare/0.2.2...0.3.0
+[0.2.2]: https://github.com/Kobee1203/schema-org-java/compare/0.2.1...0.2.2
+[0.2.1]: https://github.com/Kobee1203/schema-org-java/compare/0.2.0...0.2.1
+[0.2.0]: https://github.com/Kobee1203/schema-org-java/compare/0.1.2...0.2.0
+[0.1.2]: https://github.com/Kobee1203/schema-org-java/compare/0.1.1...0.1.2
+[0.1.1]: https://github.com/Kobee1203/schema-org-java/compare/0.1.0...0.1.1
+[0.1.0]: https://github.com/Kobee1203/schema-org-java/commits/0.1.0
