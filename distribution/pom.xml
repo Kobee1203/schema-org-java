@@ -86,7 +86,10 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <description>Release Schema.org Java ${project.version}</description>
+                            <description><![CDATA[
+                            Release Schema.org Java ${project.version}.
+                            For a list of changes in this version, see [CHANGELOG.md](https://github.com/Kobee1203/schema-org-java/blob/main/CHANGELOG.md).
+                            ]]></description>
                             <releaseName>${project.version}</releaseName>
                             <tag>${project.version}</tag>
 
