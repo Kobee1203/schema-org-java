@@ -35,7 +35,7 @@ The library has the following features:
 * Supports different versions of the [Schema.org vocabulary](https://schema.org/docs/developers.html#defs).
 * Supports serializing and deserializing schema.org objects to and from JSON-LD formats.
 
-https://user-images.githubusercontent.com/1423193/199852384-e41869fb-beae-4106-be0f-1482393b9e0c.mp4
+https://user-images.githubusercontent.com/1423193/218336603-4cb1bc82-0daa-4187-9c34-72e206bccfe9.mp4
 
 ## <a name="Build">Build</a>
 [![GitHub repo size](https://img.shields.io/github/repo-size/Kobee1203/schema-org-java)](https://github.com/Kobee1203/schema-org-java)
