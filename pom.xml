@@ -67,7 +67,7 @@
         <junit-jupiter-engine.version>5.9.2</junit-jupiter-engine.version>
         <assertj-core.version>3.24.2</assertj-core.version>
         <mockito-junit-jupiter.version>5.1.1</mockito-junit-jupiter.version>
-        <equalsverifier.version>3.13.1</equalsverifier.version>
+        <equalsverifier.version>3.14</equalsverifier.version>
         <to-string-verifier.version>1.4.8</to-string-verifier.version>
         <json-unit-assertj.version>2.36.1</json-unit-assertj.version>
         <system-stubs-jupiter.version>2.0.2</system-stubs-jupiter.version>
