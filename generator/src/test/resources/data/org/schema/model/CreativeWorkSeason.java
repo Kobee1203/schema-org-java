@@ -6,22 +6,196 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Integer;
 import org.schema.model.Person;
 import org.schema.model.VideoObject;
-import org.schema.model.Episode;
-import org.schema.model.datatype.Integer;
-import org.schema.model.CreativeWorkSeries;
 import org.schema.model.Organization;
-import org.schema.model.datatype.Text;
+import org.schema.model.Episode;
+import org.schema.model.CreativeWorkSeries;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Date;
 
 /**
- * A media season e.g. tv, radio, video game etc.
+ * A media season, e.g. TV, radio, video game etc.
  *
  * @see <a href="https://schema.org/CreativeWorkSeason">https://schema.org/CreativeWorkSeason</a>
  */
 public interface CreativeWorkSeason extends CreativeWork {
+
+    /**
+     * Position of the season within an ordered group of seasons.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> List<T> getSeasonNumberList();
+
+    /**
+     * Position of the season within an ordered group of seasons.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> T getSeasonNumber();
+
+    /**
+     * Position of the season within an ordered group of seasons.
+     *
+     * @param seasonNumber Text value to set.
+     */
+    void addSeasonNumber(Text seasonNumber);
+    /**
+     * Position of the season within an ordered group of seasons.
+     *
+     * @param seasonNumber Integer value to set.
+     */
+    void addSeasonNumber(Integer seasonNumber);
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getActor();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor Person value to set.
+     */
+    void addActor(Person actor);
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    VideoObject getTrailer();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @param trailer VideoObject value to set.
+     */
+    void addTrailer(VideoObject trailer);
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    Organization getProductionCompany();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @param productionCompany Organization value to set.
+     */
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodesList();
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    Episode getEpisodes();
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @param episodes Episode value to set.
+     */
+    void addEpisodes(Episode episodes);
+
+    /**
+     * The series to which this episode or season belongs.
+     *
+     * @return {@link CreativeWorkSeries}
+     */
+    List<CreativeWorkSeries> getPartOfSeriesList();
+
+    /**
+     * The series to which this episode or season belongs.
+     *
+     * @return {@link CreativeWorkSeries}
+     */
+    CreativeWorkSeries getPartOfSeries();
+
+    /**
+     * The series to which this episode or season belongs.
+     *
+     * @param partOfSeries CreativeWorkSeries value to set.
+     */
+    void addPartOfSeries(CreativeWorkSeries partOfSeries);
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodeList();
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    Episode getEpisode();
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @param episode Episode value to set.
+     */
+    void addEpisode(Episode episode);
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirector();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    void addDirector(Person director);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -55,121 +229,6 @@ public interface CreativeWorkSeason extends CreativeWork {
     void addStartDate(Date startDate);
 
     /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorList();
-
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirector();
-
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    void addDirector(Person director);
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorList();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActor();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actor Person value to set.
-     */
-    void addActor(Person actor);
-
-    /**
-     * The trailer of a movie or tv/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    List<VideoObject> getTrailerList();
-
-    /**
-     * The trailer of a movie or tv/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    VideoObject getTrailer();
-
-    /**
-     * The trailer of a movie or tv/radio series, season, episode, etc.
-     *
-     * @param trailer VideoObject value to set.
-     */
-    void addTrailer(VideoObject trailer);
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    <T> List<T> getEndDateList();
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    <T> T getEndDate();
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param endDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void addEndDate(Date endDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param endDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void addEndDate(DateTime endDate);
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @return {@link Episode}
-     */
-    List<Episode> getEpisodesList();
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @return {@link Episode}
-     */
-    Episode getEpisodes();
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @param episodes Episode value to set.
-     */
-    void addEpisodes(Episode episodes);
-
-    /**
      * The number of episodes in this season or series.
      *
      * @return {@link Integer}
@@ -191,92 +250,33 @@ public interface CreativeWorkSeason extends CreativeWork {
     void addNumberOfEpisodes(Integer numberOfEpisodes);
 
     /**
-     * The series to which this episode or season belongs.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @return {@link CreativeWorkSeries}
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    List<CreativeWorkSeries> getPartOfSeriesList();
+    <T> List<T> getEndDateList();
 
     /**
-     * The series to which this episode or season belongs.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @return {@link CreativeWorkSeries}
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    CreativeWorkSeries getPartOfSeries();
+    <T> T getEndDate();
 
     /**
-     * The series to which this episode or season belongs.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param partOfSeries CreativeWorkSeries value to set.
+     * @param endDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void addPartOfSeries(CreativeWorkSeries partOfSeries);
-
+    void addEndDate(DateTime endDate);
     /**
-     * The production company or studio responsible for the item e.g. series, video game, episode etc.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @return {@link Organization}
+     * @param endDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    List<Organization> getProductionCompanyList();
-
-    /**
-     * The production company or studio responsible for the item e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    Organization getProductionCompany();
-
-    /**
-     * The production company or studio responsible for the item e.g. series, video game, episode etc.
-     *
-     * @param productionCompany Organization value to set.
-     */
-    void addProductionCompany(Organization productionCompany);
-
-    /**
-     * Position of the season within an ordered group of seasons.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    <T> List<T> getSeasonNumberList();
-
-    /**
-     * Position of the season within an ordered group of seasons.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    <T> T getSeasonNumber();
-
-    /**
-     * Position of the season within an ordered group of seasons.
-     *
-     * @param seasonNumber Text value to set.
-     */
-    void addSeasonNumber(Text seasonNumber);
-    /**
-     * Position of the season within an ordered group of seasons.
-     *
-     * @param seasonNumber Integer value to set.
-     */
-    void addSeasonNumber(Integer seasonNumber);
-
-    /**
-     * An episode of a tv, radio or game media within a series or season.
-     *
-     * @return {@link Episode}
-     */
-    List<Episode> getEpisodeList();
-
-    /**
-     * An episode of a tv, radio or game media within a series or season.
-     *
-     * @return {@link Episode}
-     */
-    Episode getEpisode();
-
-    /**
-     * An episode of a tv, radio or game media within a series or season.
-     *
-     * @param episode Episode value to set.
-     */
-    void addEpisode(Episode episode);
+    void addEndDate(Date endDate);
 }

@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ParcelDelivery;
 import org.schema.model.OrderStatus;
 import org.schema.model.datatype.Number;
-import org.schema.model.datatype.Text;
+import org.schema.model.ParcelDelivery;
+import org.schema.model.Product;
 import org.schema.model.Service;
 import org.schema.model.OrderItem;
-import org.schema.model.Product;
+import org.schema.model.datatype.Text;
 
 /**
  * An order item is a line of an order. It includes the quantity and shipping details of a bought offer.
@@ -20,27 +20,6 @@ import org.schema.model.Product;
  * @see <a href="https://schema.org/OrderItem">https://schema.org/OrderItem</a>
  */
 public interface OrderItem extends Intangible {
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    List<ParcelDelivery> getOrderDeliveryList();
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    ParcelDelivery getOrderDelivery();
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @param orderDelivery ParcelDelivery value to set.
-     */
-    void addOrderDelivery(ParcelDelivery orderDelivery);
 
     /**
      * The current status of the order item.
@@ -85,6 +64,60 @@ public interface OrderItem extends Intangible {
     void addOrderQuantity(Number orderQuantity);
 
     /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    List<ParcelDelivery> getOrderDeliveryList();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    ParcelDelivery getOrderDelivery();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @param orderDelivery ParcelDelivery value to set.
+     */
+    void addOrderDelivery(ParcelDelivery orderDelivery);
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Product} or {@link Service} or {@link OrderItem}
+     */
+    <T> List<T> getOrderedItemList();
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Product} or {@link Service} or {@link OrderItem}
+     */
+    <T> T getOrderedItem();
+
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem Product value to set.
+     */
+    void addOrderedItem(Product orderedItem);
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem Service value to set.
+     */
+    void addOrderedItem(Service orderedItem);
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem OrderItem value to set.
+     */
+    void addOrderedItem(OrderItem orderedItem);
+
+    /**
      * The identifier of the order item.
      *
      * @return {@link Text}
@@ -104,37 +137,4 @@ public interface OrderItem extends Intangible {
      * @param orderItemNumber Text value to set.
      */
     void addOrderItemNumber(Text orderItemNumber);
-
-    /**
-     * The item ordered.
-     *
-     * @return {@link Service} or {@link OrderItem} or {@link Product}
-     */
-    <T> List<T> getOrderedItemList();
-
-    /**
-     * The item ordered.
-     *
-     * @return {@link Service} or {@link OrderItem} or {@link Product}
-     */
-    <T> T getOrderedItem();
-
-    /**
-     * The item ordered.
-     *
-     * @param orderedItem Service value to set.
-     */
-    void addOrderedItem(Service orderedItem);
-    /**
-     * The item ordered.
-     *
-     * @param orderedItem OrderItem value to set.
-     */
-    void addOrderedItem(OrderItem orderedItem);
-    /**
-     * The item ordered.
-     *
-     * @param orderedItem Product value to set.
-     */
-    void addOrderedItem(Product orderedItem);
 }

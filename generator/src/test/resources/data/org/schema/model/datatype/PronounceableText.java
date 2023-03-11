@@ -28,54 +28,6 @@ public class PronounceableText extends Text {
     }
 
 
-    private Text phoneticText;
-
-    /**
-     * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
-     */
-    public Text getPhoneticText() {
-        return phoneticText;
-    }
-
-    /**
-     * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
-     *
-     * @param phoneticText Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
-     */
-    public void setPhoneticText(Text phoneticText) {
-        this.phoneticText = phoneticText;
-    }
-
-    private Text speechToTextMarkup;
-
-    /**
-     * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
-     */
-    public Text getSpeechToTextMarkup() {
-        return speechToTextMarkup;
-    }
-
-    /**
-     * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
-     *
-     * @param speechToTextMarkup Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
-     */
-    public void setSpeechToTextMarkup(Text speechToTextMarkup) {
-        this.speechToTextMarkup = speechToTextMarkup;
-    }
-
     private Text textValue;
 
     /**
@@ -98,6 +50,30 @@ public class PronounceableText extends Text {
      */
     public void setTextValue(Text textValue) {
         this.textValue = textValue;
+    }
+
+    private Text phoneticText;
+
+    /**
+     * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public Text getPhoneticText() {
+        return phoneticText;
+    }
+
+    /**
+     * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
+     *
+     * @param phoneticText Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public void setPhoneticText(Text phoneticText) {
+        this.phoneticText = phoneticText;
     }
 
     private Object inLanguage;
@@ -129,5 +105,29 @@ public class PronounceableText extends Text {
      */
     public void setInLanguage(Language inLanguage) {
         this.inLanguage = inLanguage;
+    }
+
+    private Text speechToTextMarkup;
+
+    /**
+     * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public Text getSpeechToTextMarkup() {
+        return speechToTextMarkup;
+    }
+
+    /**
+     * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
+     *
+     * @param speechToTextMarkup Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public void setSpeechToTextMarkup(Text speechToTextMarkup) {
+        this.speechToTextMarkup = speechToTextMarkup;
     }
 }

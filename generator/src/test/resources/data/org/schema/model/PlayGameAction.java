@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.GameAvailabilityEnumeration;
 import org.schema.model.datatype.Text;
+import org.schema.model.GameAvailabilityEnumeration;
 
 /**
  * The act of playing a video game.
@@ -21,7 +21,7 @@ public interface PlayGameAction extends ConsumeAction {
     /**
      * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
      *
-     * @return {@link GameAvailabilityEnumeration} or {@link Text}
+     * @return {@link Text} or {@link GameAvailabilityEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
      */
@@ -30,7 +30,7 @@ public interface PlayGameAction extends ConsumeAction {
     /**
      * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
      *
-     * @return {@link GameAvailabilityEnumeration} or {@link Text}
+     * @return {@link Text} or {@link GameAvailabilityEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
      */
@@ -39,17 +39,17 @@ public interface PlayGameAction extends ConsumeAction {
     /**
      * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
      *
-     * @param gameAvailabilityType GameAvailabilityEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
-     */
-    void addGameAvailabilityType(GameAvailabilityEnumeration gameAvailabilityType);
-    /**
-     * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
-     *
      * @param gameAvailabilityType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
      */
     void addGameAvailabilityType(Text gameAvailabilityType);
+    /**
+     * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
+     *
+     * @param gameAvailabilityType GameAvailabilityEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
+     */
+    void addGameAvailabilityType(GameAvailabilityEnumeration gameAvailabilityType);
 }

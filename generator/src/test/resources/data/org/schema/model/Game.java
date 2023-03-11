@@ -7,10 +7,10 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Thing;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Place;
-import org.schema.model.datatype.URL;
 import org.schema.model.PostalAddress;
+import org.schema.model.datatype.URL;
+import org.schema.model.Place;
+import org.schema.model.QuantitativeValue;
 
 /**
  * The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.
@@ -41,25 +41,37 @@ public interface Game extends CreativeWork {
     void addCharacterAttribute(Thing characterAttribute);
 
     /**
-     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     * Real or fictional location of the game (or part of game).
      *
-     * @return {@link Thing}
+     * @return {@link PostalAddress} or {@link URL} or {@link Place}
      */
-    List<Thing> getGameItemList();
+    <T> List<T> getGameLocationList();
 
     /**
-     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     * Real or fictional location of the game (or part of game).
      *
-     * @return {@link Thing}
+     * @return {@link PostalAddress} or {@link URL} or {@link Place}
      */
-    Thing getGameItem();
+    <T> T getGameLocation();
 
     /**
-     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     * Real or fictional location of the game (or part of game).
      *
-     * @param gameItem Thing value to set.
+     * @param gameLocation PostalAddress value to set.
      */
-    void addGameItem(Thing gameItem);
+    void addGameLocation(PostalAddress gameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param gameLocation URL value to set.
+     */
+    void addGameLocation(URL gameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param gameLocation Place value to set.
+     */
+    void addGameLocation(Place gameLocation);
 
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
@@ -83,6 +95,27 @@ public interface Game extends CreativeWork {
     void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
 
     /**
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getGameItemList();
+
+    /**
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     *
+     * @return {@link Thing}
+     */
+    Thing getGameItem();
+
+    /**
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     *
+     * @param gameItem Thing value to set.
+     */
+    void addGameItem(Thing gameItem);
+
+    /**
      * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
      *
      * @return {@link Thing}
@@ -102,37 +135,4 @@ public interface Game extends CreativeWork {
      * @param quest Thing value to set.
      */
     void addQuest(Thing quest);
-
-    /**
-     * Real or fictional location of the game (or part of game).
-     *
-     * @return {@link Place} or {@link URL} or {@link PostalAddress}
-     */
-    <T> List<T> getGameLocationList();
-
-    /**
-     * Real or fictional location of the game (or part of game).
-     *
-     * @return {@link Place} or {@link URL} or {@link PostalAddress}
-     */
-    <T> T getGameLocation();
-
-    /**
-     * Real or fictional location of the game (or part of game).
-     *
-     * @param gameLocation Place value to set.
-     */
-    void addGameLocation(Place gameLocation);
-    /**
-     * Real or fictional location of the game (or part of game).
-     *
-     * @param gameLocation URL value to set.
-     */
-    void addGameLocation(URL gameLocation);
-    /**
-     * Real or fictional location of the game (or part of game).
-     *
-     * @param gameLocation PostalAddress value to set.
-     */
-    void addGameLocation(PostalAddress gameLocation);
 }

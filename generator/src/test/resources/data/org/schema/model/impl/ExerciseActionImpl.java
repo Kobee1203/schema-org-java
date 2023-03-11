@@ -5,30 +5,30 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.SportsTeam;
 import org.schema.model.Place;
 import org.schema.model.Diet;
-import org.schema.model.SportsActivityLocation;
-import org.schema.model.Distance;
-import org.schema.model.ExercisePlan;
-import org.schema.model.SportsEvent;
 import org.schema.model.Person;
+import org.schema.model.SportsTeam;
+import org.schema.model.SportsEvent;
+import org.schema.model.ExercisePlan;
 import org.schema.model.datatype.Text;
-import org.schema.model.Audience;
+import org.schema.model.Distance;
+import org.schema.model.SportsActivityLocation;
 import org.schema.model.Event;
-import org.schema.model.Organization;
+import org.schema.model.Audience;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Time;
-import org.schema.model.ActionStatusType;
+import org.schema.model.Organization;
 import org.schema.model.Thing;
-import org.schema.model.PostalAddress;
-import org.schema.model.VirtualLocation;
-import org.schema.model.EntryPoint;
-import org.schema.model.CreativeWork;
+import org.schema.model.ActionStatusType;
 import org.schema.model.datatype.URL;
+import org.schema.model.EntryPoint;
+import org.schema.model.VirtualLocation;
+import org.schema.model.PostalAddress;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.CreativeWork;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
@@ -43,36 +43,36 @@ import org.schema.model.ExerciseAction;
 @JsonLdTypeName("ExerciseAction")
 public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExerciseAction {
 
-    private List<SportsTeam> sportsTeam;
+    private List<Place> toLocation;
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * A sub property of location. The final location of the object or the agent after the action.
      *
-     * @return {@link SportsTeam}
+     * @return {@link Place}
      */
     @Override
-    public List<SportsTeam> getSportsTeamList() {
-        return sportsTeam;
+    public List<Place> getToLocationList() {
+        return toLocation;
     }
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * A sub property of location. The final location of the object or the agent after the action.
      *
-     * @return {@link SportsTeam}
+     * @return {@link Place}
      */
     @Override
-    public SportsTeam getSportsTeam() {
-        return getFirst(sportsTeam);
+    public Place getToLocation() {
+        return getFirst(toLocation);
     }
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * A sub property of location. The final location of the object or the agent after the action.
      *
-     * @param sportsTeam SportsTeam value to set.
+     * @param toLocation Place value to set.
      */
     @Override
-    public void addSportsTeam(SportsTeam sportsTeam) {
-        this.sportsTeam = add(this.sportsTeam, sportsTeam);
+    public void addToLocation(Place toLocation) {
+        this.toLocation = add(this.toLocation, toLocation);
     }
 
     private List<Place> course;
@@ -139,6 +139,169 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.fromLocation = add(this.fromLocation, fromLocation);
     }
 
+    private List<Diet> exerciseRelatedDiet;
+
+    /**
+     * A sub property of instrument. The diet used in this action.
+     *
+     * @return {@link Diet}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<Diet> getExerciseRelatedDietList() {
+        return exerciseRelatedDiet;
+    }
+
+    /**
+     * A sub property of instrument. The diet used in this action.
+     *
+     * @return {@link Diet}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Diet getExerciseRelatedDiet() {
+        return getFirst(exerciseRelatedDiet);
+    }
+
+    /**
+     * A sub property of instrument. The diet used in this action.
+     *
+     * @param exerciseRelatedDiet Diet value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addExerciseRelatedDiet(Diet exerciseRelatedDiet) {
+        this.exerciseRelatedDiet = add(this.exerciseRelatedDiet, exerciseRelatedDiet);
+    }
+
+    private List<Place> exerciseCourse;
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getExerciseCourseList() {
+        return exerciseCourse;
+    }
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getExerciseCourse() {
+        return getFirst(exerciseCourse);
+    }
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     * @param exerciseCourse Place value to set.
+     */
+    @Override
+    public void addExerciseCourse(Place exerciseCourse) {
+        this.exerciseCourse = add(this.exerciseCourse, exerciseCourse);
+    }
+
+    private List<Person> opponent;
+
+    /**
+     * A sub property of participant. The opponent on this action.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getOpponentList() {
+        return opponent;
+    }
+
+    /**
+     * A sub property of participant. The opponent on this action.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getOpponent() {
+        return getFirst(opponent);
+    }
+
+    /**
+     * A sub property of participant. The opponent on this action.
+     *
+     * @param opponent Person value to set.
+     */
+    @Override
+    public void addOpponent(Person opponent) {
+        this.opponent = add(this.opponent, opponent);
+    }
+
+    private List<SportsTeam> sportsTeam;
+
+    /**
+     * A sub property of participant. The sports team that participated on this action.
+     *
+     * @return {@link SportsTeam}
+     */
+    @Override
+    public List<SportsTeam> getSportsTeamList() {
+        return sportsTeam;
+    }
+
+    /**
+     * A sub property of participant. The sports team that participated on this action.
+     *
+     * @return {@link SportsTeam}
+     */
+    @Override
+    public SportsTeam getSportsTeam() {
+        return getFirst(sportsTeam);
+    }
+
+    /**
+     * A sub property of participant. The sports team that participated on this action.
+     *
+     * @param sportsTeam SportsTeam value to set.
+     */
+    @Override
+    public void addSportsTeam(SportsTeam sportsTeam) {
+        this.sportsTeam = add(this.sportsTeam, sportsTeam);
+    }
+
+    private List<SportsEvent> sportsEvent;
+
+    /**
+     * A sub property of location. The sports event where this action occurred.
+     *
+     * @return {@link SportsEvent}
+     */
+    @Override
+    public List<SportsEvent> getSportsEventList() {
+        return sportsEvent;
+    }
+
+    /**
+     * A sub property of location. The sports event where this action occurred.
+     *
+     * @return {@link SportsEvent}
+     */
+    @Override
+    public SportsEvent getSportsEvent() {
+        return getFirst(sportsEvent);
+    }
+
+    /**
+     * A sub property of location. The sports event where this action occurred.
+     *
+     * @param sportsEvent SportsEvent value to set.
+     */
+    @Override
+    public void addSportsEvent(SportsEvent sportsEvent) {
+        this.sportsEvent = add(this.sportsEvent, sportsEvent);
+    }
+
     private List<Diet> diet;
 
     /**
@@ -172,70 +335,6 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     @Override
     public void addDiet(Diet diet) {
         this.diet = add(this.diet, diet);
-    }
-
-    private List<SportsActivityLocation> sportsActivityLocation;
-
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     *
-     * @return {@link SportsActivityLocation}
-     */
-    @Override
-    public List<SportsActivityLocation> getSportsActivityLocationList() {
-        return sportsActivityLocation;
-    }
-
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     *
-     * @return {@link SportsActivityLocation}
-     */
-    @Override
-    public SportsActivityLocation getSportsActivityLocation() {
-        return getFirst(sportsActivityLocation);
-    }
-
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     *
-     * @param sportsActivityLocation SportsActivityLocation value to set.
-     */
-    @Override
-    public void addSportsActivityLocation(SportsActivityLocation sportsActivityLocation) {
-        this.sportsActivityLocation = add(this.sportsActivityLocation, sportsActivityLocation);
-    }
-
-    private List<Distance> distance;
-
-    /**
-     * The distance travelled, e.g. exercising or travelling.
-     *
-     * @return {@link Distance}
-     */
-    @Override
-    public List<Distance> getDistanceList() {
-        return distance;
-    }
-
-    /**
-     * The distance travelled, e.g. exercising or travelling.
-     *
-     * @return {@link Distance}
-     */
-    @Override
-    public Distance getDistance() {
-        return getFirst(distance);
-    }
-
-    /**
-     * The distance travelled, e.g. exercising or travelling.
-     *
-     * @param distance Distance value to set.
-     */
-    @Override
-    public void addDistance(Distance distance) {
-        this.distance = add(this.distance, distance);
     }
 
     private List<ExercisePlan> exercisePlan;
@@ -273,169 +372,6 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.exercisePlan = add(this.exercisePlan, exercisePlan);
     }
 
-    private List<SportsEvent> sportsEvent;
-
-    /**
-     * A sub property of location. The sports event where this action occurred.
-     *
-     * @return {@link SportsEvent}
-     */
-    @Override
-    public List<SportsEvent> getSportsEventList() {
-        return sportsEvent;
-    }
-
-    /**
-     * A sub property of location. The sports event where this action occurred.
-     *
-     * @return {@link SportsEvent}
-     */
-    @Override
-    public SportsEvent getSportsEvent() {
-        return getFirst(sportsEvent);
-    }
-
-    /**
-     * A sub property of location. The sports event where this action occurred.
-     *
-     * @param sportsEvent SportsEvent value to set.
-     */
-    @Override
-    public void addSportsEvent(SportsEvent sportsEvent) {
-        this.sportsEvent = add(this.sportsEvent, sportsEvent);
-    }
-
-    private List<Diet> exerciseRelatedDiet;
-
-    /**
-     * A sub property of instrument. The diet used in this action.
-     *
-     * @return {@link Diet}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<Diet> getExerciseRelatedDietList() {
-        return exerciseRelatedDiet;
-    }
-
-    /**
-     * A sub property of instrument. The diet used in this action.
-     *
-     * @return {@link Diet}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Diet getExerciseRelatedDiet() {
-        return getFirst(exerciseRelatedDiet);
-    }
-
-    /**
-     * A sub property of instrument. The diet used in this action.
-     *
-     * @param exerciseRelatedDiet Diet value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addExerciseRelatedDiet(Diet exerciseRelatedDiet) {
-        this.exerciseRelatedDiet = add(this.exerciseRelatedDiet, exerciseRelatedDiet);
-    }
-
-    private List<Person> opponent;
-
-    /**
-     * A sub property of participant. The opponent on this action.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getOpponentList() {
-        return opponent;
-    }
-
-    /**
-     * A sub property of participant. The opponent on this action.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getOpponent() {
-        return getFirst(opponent);
-    }
-
-    /**
-     * A sub property of participant. The opponent on this action.
-     *
-     * @param opponent Person value to set.
-     */
-    @Override
-    public void addOpponent(Person opponent) {
-        this.opponent = add(this.opponent, opponent);
-    }
-
-    private List<Place> exerciseCourse;
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getExerciseCourseList() {
-        return exerciseCourse;
-    }
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getExerciseCourse() {
-        return getFirst(exerciseCourse);
-    }
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @param exerciseCourse Place value to set.
-     */
-    @Override
-    public void addExerciseCourse(Place exerciseCourse) {
-        this.exerciseCourse = add(this.exerciseCourse, exerciseCourse);
-    }
-
-    private List<Place> toLocation;
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getToLocationList() {
-        return toLocation;
-    }
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getToLocation() {
-        return getFirst(toLocation);
-    }
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @param toLocation Place value to set.
-     */
-    @Override
-    public void addToLocation(Place toLocation) {
-        this.toLocation = add(this.toLocation, toLocation);
-    }
-
     private List<Text> exerciseType;
 
     /**
@@ -471,36 +407,68 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.exerciseType = add(this.exerciseType, exerciseType);
     }
 
-    private List<Audience> audience;
+    private List<Distance> distance;
 
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * The distance travelled, e.g. exercising or travelling.
      *
-     * @return {@link Audience}
+     * @return {@link Distance}
      */
     @Override
-    public List<Audience> getAudienceList() {
-        return audience;
+    public List<Distance> getDistanceList() {
+        return distance;
     }
 
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * The distance travelled, e.g. exercising or travelling.
      *
-     * @return {@link Audience}
+     * @return {@link Distance}
      */
     @Override
-    public Audience getAudience() {
-        return getFirst(audience);
+    public Distance getDistance() {
+        return getFirst(distance);
     }
 
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * The distance travelled, e.g. exercising or travelling.
      *
-     * @param audience Audience value to set.
+     * @param distance Distance value to set.
      */
     @Override
-    public void addAudience(Audience audience) {
-        this.audience = add(this.audience, audience);
+    public void addDistance(Distance distance) {
+        this.distance = add(this.distance, distance);
+    }
+
+    private List<SportsActivityLocation> sportsActivityLocation;
+
+    /**
+     * A sub property of location. The sports activity location where this action occurred.
+     *
+     * @return {@link SportsActivityLocation}
+     */
+    @Override
+    public List<SportsActivityLocation> getSportsActivityLocationList() {
+        return sportsActivityLocation;
+    }
+
+    /**
+     * A sub property of location. The sports activity location where this action occurred.
+     *
+     * @return {@link SportsActivityLocation}
+     */
+    @Override
+    public SportsActivityLocation getSportsActivityLocation() {
+        return getFirst(sportsActivityLocation);
+    }
+
+    /**
+     * A sub property of location. The sports activity location where this action occurred.
+     *
+     * @param sportsActivityLocation SportsActivityLocation value to set.
+     */
+    @Override
+    public void addSportsActivityLocation(SportsActivityLocation sportsActivityLocation) {
+        this.sportsActivityLocation = add(this.sportsActivityLocation, sportsActivityLocation);
     }
 
     private List<Event> event;
@@ -535,55 +503,145 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.event = add(this.event, event);
     }
 
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> agent;
+    private List<Audience> audience;
 
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Audience}
      */
     @Override
-    public <T> List<T> getAgentList() {
-        return (List<T>) agent;
+    public List<Audience> getAudienceList() {
+        return audience;
     }
 
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Audience}
      */
     @Override
-    public <T> T getAgent() {
-        return (T) getFirst(agent);
+    public Audience getAudience() {
+        return getFirst(audience);
     }
 
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @param agent Organization value to set.
+     * @param audience Audience value to set.
      */
     @Override
-    public void addAgent(Organization agent) {
-        this.agent = add(this.agent, agent);
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @param agent Person value to set.
-     */
-    @Override
-    public void addAgent(Person agent) {
-        this.agent = add(this.agent, agent);
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> endTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getEndTimeList() {
+        return (List<T>) endTime;
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getEndTime() {
+        return (T) getFirst(endTime);
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addEndTime(DateTime endTime) {
+        this.endTime = add(this.endTime, endTime);
+    }
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addEndTime(Time endTime) {
+        this.endTime = add(this.endTime, endTime);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
     private List<Object> startTime;
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link DateTime} or {@link Time}
+     * @return {@link Time} or {@link DateTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
@@ -592,9 +650,9 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     }
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link DateTime} or {@link Time}
+     * @return {@link Time} or {@link DateTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
@@ -603,7 +661,17 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     }
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addStartTime(Time startTime) {
+        this.startTime = add(this.startTime, startTime);
+    }
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
@@ -612,15 +680,37 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     public void addStartTime(DateTime startTime) {
         this.startTime = add(this.startTime, startTime);
     }
+
+    private List<Thing> result;
+
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The result produced in the action. E.g. John wrote *a book*.
      *
-     * @param startTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @return {@link Thing}
      */
     @Override
-    public void addStartTime(Time startTime) {
-        this.startTime = add(this.startTime, startTime);
+    public List<Thing> getResultList() {
+        return result;
+    }
+
+    /**
+     * The result produced in the action. E.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getResult() {
+        return getFirst(result);
+    }
+
+    /**
+     * The result produced in the action. E.g. John wrote *a book*.
+     *
+     * @param result Thing value to set.
+     */
+    @Override
+    public void addResult(Thing result) {
+        this.result = add(this.result, result);
     }
 
     private List<ActionStatusType> actionStatus;
@@ -656,307 +746,51 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> provider;
+    private List<Object> agent;
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
-    }
-
-    private List<Thing> result;
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public List<Thing> getResultList() {
-        return result;
-    }
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getResult() {
-        return getFirst(result);
-    }
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @param result Thing value to set.
-     */
-    @Override
-    public void addResult(Thing result) {
-        this.result = add(this.result, result);
-    }
-
-    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
-    private List<Object> location;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> List<T> getLocationList() {
-        return (List<T>) location;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) getFirst(location);
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
-    @Override
-    public void addLocation(PostalAddress location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
-    @Override
-    public void addLocation(Text location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
-    @Override
-    public void addLocation(Place location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
-    @Override
-    public void addLocation(VirtualLocation location) {
-        this.location = add(this.location, location);
-    }
-
-    private List<Thing> object;
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public List<Thing> getObjectList() {
-        return object;
-    }
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getObject() {
-        return getFirst(object);
-    }
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @param object Thing value to set.
-     */
-    @Override
-    public void addObject(Thing object) {
-        this.object = add(this.object, object);
-    }
-
-    private List<EntryPoint> target;
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    @Override
-    public List<EntryPoint> getTargetList() {
-        return target;
-    }
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    @Override
-    public EntryPoint getTarget() {
-        return getFirst(target);
-    }
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @param target EntryPoint value to set.
-     */
-    @Override
-    public void addTarget(EntryPoint target) {
-        this.target = add(this.target, target);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Time.class })
-    private List<Object> endTime;
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> List<T> getEndTimeList() {
-        return (List<T>) endTime;
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getEndTime() {
-        return (T) getFirst(endTime);
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addEndTime(DateTime endTime) {
-        this.endTime = add(this.endTime, endTime);
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addEndTime(Time endTime) {
-        this.endTime = add(this.endTime, endTime);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> participant;
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> List<T> getParticipantList() {
-        return (List<T>) participant;
+    public <T> List<T> getAgentList() {
+        return (List<T>) agent;
     }
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getParticipant() {
-        return (T) getFirst(participant);
+    public <T> T getAgent() {
+        return (T) getFirst(agent);
     }
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
-     * @param participant Organization value to set.
+     * @param agent Organization value to set.
      */
     @Override
-    public void addParticipant(Organization participant) {
-        this.participant = add(this.participant, participant);
+    public void addAgent(Organization agent) {
+        this.agent = add(this.agent, agent);
     }
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
-     * @param participant Person value to set.
+     * @param agent Person value to set.
      */
     @Override
-    public void addParticipant(Person participant) {
-        this.participant = add(this.participant, participant);
+    public void addAgent(Person agent) {
+        this.agent = add(this.agent, agent);
     }
 
     private List<Thing> instrument;
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @return {@link Thing}
      */
@@ -966,7 +800,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     }
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @return {@link Thing}
      */
@@ -976,13 +810,45 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     }
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @param instrument Thing value to set.
      */
     @Override
     public void addInstrument(Thing instrument) {
         this.instrument = add(this.instrument, instrument);
+    }
+
+    private List<Thing> object;
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getObjectList() {
+        return object;
+    }
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getObject() {
+        return getFirst(object);
+    }
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @param object Thing value to set.
+     */
+    @Override
+    public void addObject(Thing object) {
+        this.object = add(this.object, object);
     }
 
     private List<Thing> error;
@@ -1017,110 +883,148 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.error = add(this.error, error);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    @JsonLdFieldTypes({ URL.class, EntryPoint.class })
+    private List<Object> target;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link URL} or {@link EntryPoint}
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public <T> List<T> getTargetList() {
+        return (List<T>) target;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link URL} or {@link EntryPoint}
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public <T> T getTarget() {
+        return (T) getFirst(target);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param target URL value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addTarget(URL target) {
+        this.target = add(this.target, target);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @param target EntryPoint value to set.
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addTarget(EntryPoint target) {
+        this.target = add(this.target, target);
     }
 
-    private List<Text> alternateName;
+    @JsonLdFieldTypes({ Place.class, Text.class, VirtualLocation.class, PostalAddress.class })
+    private List<Object> location;
 
     /**
-     * An alias for the item.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Text}
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
     }
 
     /**
-     * An alias for the item.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param alternateName Text value to set.
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
+    public <T> T getLocation() {
+        return (T) getFirst(location);
     }
 
     /**
-     * The name of the item.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Text}
+     * @param location Place value to set.
      */
     @Override
-    public Text getName() {
-        return getFirst(name);
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    @Override
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    @Override
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location PostalAddress value to set.
+     */
+    @Override
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> participant;
+
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getParticipantList() {
+        return (List<T>) participant;
     }
 
     /**
-     * The name of the item.
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
      *
-     * @param name Text value to set.
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public <T> T getParticipant() {
+        return (T) getFirst(participant);
+    }
+
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @param participant Organization value to set.
+     */
+    @Override
+    public void addParticipant(Organization participant) {
+        this.participant = add(this.participant, participant);
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @param participant Person value to set.
+     */
+    @Override
+    public void addParticipant(Person participant) {
+        this.participant = add(this.participant, participant);
     }
 
     private List<Action> potentialAction;
@@ -1155,110 +1059,46 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -1307,68 +1147,68 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -1403,14 +1243,78 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -1421,13 +1325,23 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -1448,14 +1362,110 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

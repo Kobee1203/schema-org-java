@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
 import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.CreativeWork;
 
 /**
@@ -28,7 +28,7 @@ public interface Claim extends CreativeWork {
      * For a [[Claim]] interpreted from [[MediaObject]] content
      *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
@@ -38,7 +38,7 @@ public interface Claim extends CreativeWork {
      * For a [[Claim]] interpreted from [[MediaObject]] content
      *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
@@ -48,50 +48,23 @@ public interface Claim extends CreativeWork {
      * For a [[Claim]] interpreted from [[MediaObject]] content
      *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
      *
-     * @param claimInterpreter Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addClaimInterpreter(Person claimInterpreter);
-    /**
-     * For a [[Claim]] interpreted from [[MediaObject]] content
-     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
-     *
      * @param claimInterpreter Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void addClaimInterpreter(Organization claimInterpreter);
-
     /**
-     * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
+     * For a [[Claim]] interpreted from [[MediaObject]] content
+     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
      *
-     * @return {@link CreativeWork}
+     * @param claimInterpreter Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    List<CreativeWork> getFirstAppearanceList();
+    void addClaimInterpreter(Person claimInterpreter);
 
     /**
-     * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
-     */
-    CreativeWork getFirstAppearance();
-
-    /**
-     * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
-     *
-     * @param firstAppearance CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
-     */
-    void addFirstAppearance(CreativeWork firstAppearance);
-
-    /**
-     * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
+     * Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
      *
      * @return {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -100,7 +73,7 @@ public interface Claim extends CreativeWork {
     List<CreativeWork> getAppearanceList();
 
     /**
-     * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
+     * Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
      *
      * @return {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -109,11 +82,38 @@ public interface Claim extends CreativeWork {
     CreativeWork getAppearance();
 
     /**
-     * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
+     * Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
      *
      * @param appearance CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */
     void addAppearance(CreativeWork appearance);
+
+    /**
+     * Indicates the first known occurrence of a [[Claim]] in some [[CreativeWork]].
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     */
+    List<CreativeWork> getFirstAppearanceList();
+
+    /**
+     * Indicates the first known occurrence of a [[Claim]] in some [[CreativeWork]].
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     */
+    CreativeWork getFirstAppearance();
+
+    /**
+     * Indicates the first known occurrence of a [[Claim]] in some [[CreativeWork]].
+     *
+     * @param firstAppearance CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     */
+    void addFirstAppearance(CreativeWork firstAppearance);
 }

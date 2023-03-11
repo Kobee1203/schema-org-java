@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.SoftwareApplication;
 import org.schema.model.datatype.Text;
 import org.schema.model.ComputerLanguage;
-import org.schema.model.SoftwareApplication;
 import org.schema.model.datatype.URL;
 
 /**
@@ -17,6 +17,90 @@ import org.schema.model.datatype.URL;
  * @see <a href="https://schema.org/SoftwareSourceCode">https://schema.org/SoftwareSourceCode</a>
  */
 public interface SoftwareSourceCode extends CreativeWork {
+
+    /**
+     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    List<SoftwareApplication> getTargetProductList();
+
+    /**
+     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    SoftwareApplication getTargetProduct();
+
+    /**
+     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     *
+     * @param targetProduct SoftwareApplication value to set.
+     */
+    void addTargetProduct(SoftwareApplication targetProduct);
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRuntimePlatformList();
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    Text getRuntimePlatform();
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @param runtimePlatform Text value to set.
+     */
+    void addRuntimePlatform(Text runtimePlatform);
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCodeSampleTypeList();
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @return {@link Text}
+     */
+    Text getCodeSampleType();
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @param codeSampleType Text value to set.
+     */
+    void addCodeSampleType(Text codeSampleType);
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRuntimeList();
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    Text getRuntime();
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @param runtime Text value to set.
+     */
+    void addRuntime(Text runtime);
 
     /**
      * The computer programming language.
@@ -67,107 +151,23 @@ public interface SoftwareSourceCode extends CreativeWork {
     void addSampleType(Text sampleType);
 
     /**
-     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getRuntimePlatformList();
-
-    /**
-     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
-     *
-     * @return {@link Text}
-     */
-    Text getRuntimePlatform();
-
-    /**
-     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
-     *
-     * @param runtimePlatform Text value to set.
-     */
-    void addRuntimePlatform(Text runtimePlatform);
-
-    /**
-     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getRuntimeList();
-
-    /**
-     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
-     *
-     * @return {@link Text}
-     */
-    Text getRuntime();
-
-    /**
-     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
-     *
-     * @param runtime Text value to set.
-     */
-    void addRuntime(Text runtime);
-
-    /**
-     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    List<SoftwareApplication> getTargetProductList();
-
-    /**
-     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    SoftwareApplication getTargetProduct();
-
-    /**
-     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
-     *
-     * @param targetProduct SoftwareApplication value to set.
-     */
-    void addTargetProduct(SoftwareApplication targetProduct);
-
-    /**
-     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).
      *
      * @return {@link URL}
      */
     List<URL> getCodeRepositoryList();
 
     /**
-     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).
      *
      * @return {@link URL}
      */
     URL getCodeRepository();
 
     /**
-     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).
      *
      * @param codeRepository URL value to set.
      */
     void addCodeRepository(URL codeRepository);
-
-    /**
-     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getCodeSampleTypeList();
-
-    /**
-     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
-     *
-     * @return {@link Text}
-     */
-    Text getCodeSampleType();
-
-    /**
-     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
-     *
-     * @param codeSampleType Text value to set.
-     */
-    void addCodeSampleType(Text codeSampleType);
 }

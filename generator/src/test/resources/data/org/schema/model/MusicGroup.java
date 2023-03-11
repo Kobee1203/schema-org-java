@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MusicRecording;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.Person;
 import org.schema.model.MusicAlbum;
+import org.schema.model.MusicRecording;
 import org.schema.model.ItemList;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
+import org.schema.model.Person;
 
 /**
  * A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
@@ -19,6 +19,27 @@ import org.schema.model.ItemList;
  * @see <a href="https://schema.org/MusicGroup">https://schema.org/MusicGroup</a>
  */
 public interface MusicGroup extends PerformingGroup {
+
+    /**
+     * A music album.
+     *
+     * @return {@link MusicAlbum}
+     */
+    List<MusicAlbum> getAlbumList();
+
+    /**
+     * A music album.
+     *
+     * @return {@link MusicAlbum}
+     */
+    MusicAlbum getAlbum();
+
+    /**
+     * A music album.
+     *
+     * @param album MusicAlbum value to set.
+     */
+    void addAlbum(MusicAlbum album);
 
     /**
      * A music recording (track)&#x2014;usually a single song.
@@ -40,75 +61,6 @@ public interface MusicGroup extends PerformingGroup {
      * @param tracks MusicRecording value to set.
      */
     void addTracks(MusicRecording tracks);
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getGenreList();
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getGenre();
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param genre URL value to set.
-     */
-    void addGenre(URL genre);
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param genre Text value to set.
-     */
-    void addGenre(Text genre);
-
-    /**
-     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getMusicGroupMemberList();
-
-    /**
-     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-     *
-     * @return {@link Person}
-     */
-    Person getMusicGroupMember();
-
-    /**
-     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-     *
-     * @param musicGroupMember Person value to set.
-     */
-    void addMusicGroupMember(Person musicGroupMember);
-
-    /**
-     * A collection of music albums.
-     *
-     * @return {@link MusicAlbum}
-     */
-    List<MusicAlbum> getAlbumsList();
-
-    /**
-     * A collection of music albums.
-     *
-     * @return {@link MusicAlbum}
-     */
-    MusicAlbum getAlbums();
-
-    /**
-     * A collection of music albums.
-     *
-     * @param albums MusicAlbum value to set.
-     */
-    void addAlbums(MusicAlbum albums);
 
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -142,23 +94,71 @@ public interface MusicGroup extends PerformingGroup {
     void addTrack(MusicRecording track);
 
     /**
-     * A music album.
+     * A collection of music albums.
      *
      * @return {@link MusicAlbum}
      */
-    List<MusicAlbum> getAlbumList();
+    List<MusicAlbum> getAlbumsList();
 
     /**
-     * A music album.
+     * A collection of music albums.
      *
      * @return {@link MusicAlbum}
      */
-    MusicAlbum getAlbum();
+    MusicAlbum getAlbums();
 
     /**
-     * A music album.
+     * A collection of music albums.
      *
-     * @param album MusicAlbum value to set.
+     * @param albums MusicAlbum value to set.
      */
-    void addAlbum(MusicAlbum album);
+    void addAlbums(MusicAlbum albums);
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getGenreList();
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> T getGenre();
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre Text value to set.
+     */
+    void addGenre(Text genre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre URL value to set.
+     */
+    void addGenre(URL genre);
+
+    /**
+     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getMusicGroupMemberList();
+
+    /**
+     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+     *
+     * @return {@link Person}
+     */
+    Person getMusicGroupMember();
+
+    /**
+     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+     *
+     * @param musicGroupMember Person value to set.
+     */
+    void addMusicGroupMember(Person musicGroupMember);
 }

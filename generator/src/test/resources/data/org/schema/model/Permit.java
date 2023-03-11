@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Duration;
+import org.schema.model.Audience;
 import org.schema.model.Organization;
 import org.schema.model.datatype.Date;
+import org.schema.model.Duration;
+import org.schema.model.AdministrativeArea;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.Service;
-import org.schema.model.AdministrativeArea;
-import org.schema.model.Audience;
 
 /**
  * A permit issued by an organization, e.g. a parking pass.
@@ -22,28 +22,25 @@ import org.schema.model.Audience;
 public interface Permit extends Intangible {
 
     /**
-     * The duration of validity of a permit or similar thing.
+     * The target audience for this permit.
      *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Audience}
      */
-    List<Duration> getValidForList();
+    List<Audience> getPermitAudienceList();
 
     /**
-     * The duration of validity of a permit or similar thing.
+     * The target audience for this permit.
      *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Audience}
      */
-    Duration getValidFor();
+    Audience getPermitAudience();
 
     /**
-     * The duration of validity of a permit or similar thing.
+     * The target audience for this permit.
      *
-     * @param validFor Duration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @param permitAudience Audience value to set.
      */
-    void addValidFor(Duration validFor);
+    void addPermitAudience(Audience permitAudience);
 
     /**
      * The organization issuing the ticket or permit.
@@ -88,56 +85,28 @@ public interface Permit extends Intangible {
     void addValidUntil(Date validUntil);
 
     /**
-     * The date when the item becomes valid.
+     * The duration of validity of a permit or similar thing.
      *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    <T> List<T> getValidFromList();
+    List<Duration> getValidForList();
 
     /**
-     * The date when the item becomes valid.
+     * The duration of validity of a permit or similar thing.
      *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    <T> T getValidFrom();
+    Duration getValidFor();
 
     /**
-     * The date when the item becomes valid.
+     * The duration of validity of a permit or similar thing.
      *
-     * @param validFrom DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param validFor Duration value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void addValidFrom(DateTime validFrom);
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addValidFrom(Date validFrom);
-
-    /**
-     * The service through with the permit was granted.
-     *
-     * @return {@link Service}
-     */
-    List<Service> getIssuedThroughList();
-
-    /**
-     * The service through with the permit was granted.
-     *
-     * @return {@link Service}
-     */
-    Service getIssuedThrough();
-
-    /**
-     * The service through with the permit was granted.
-     *
-     * @param issuedThrough Service value to set.
-     */
-    void addIssuedThrough(Service issuedThrough);
+    void addValidFor(Duration validFor);
 
     /**
      * The geographic area where a permit or similar thing is valid.
@@ -164,23 +133,54 @@ public interface Permit extends Intangible {
     void addValidIn(AdministrativeArea validIn);
 
     /**
-     * The target audience for this permit.
+     * The date when the item becomes valid.
      *
-     * @return {@link Audience}
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    List<Audience> getPermitAudienceList();
+    <T> List<T> getValidFromList();
 
     /**
-     * The target audience for this permit.
+     * The date when the item becomes valid.
      *
-     * @return {@link Audience}
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    Audience getPermitAudience();
+    <T> T getValidFrom();
 
     /**
-     * The target audience for this permit.
+     * The date when the item becomes valid.
      *
-     * @param permitAudience Audience value to set.
+     * @param validFrom Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void addPermitAudience(Audience permitAudience);
+    void addValidFrom(Date validFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom DateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void addValidFrom(DateTime validFrom);
+
+    /**
+     * The service through which the permit was granted.
+     *
+     * @return {@link Service}
+     */
+    List<Service> getIssuedThroughList();
+
+    /**
+     * The service through which the permit was granted.
+     *
+     * @return {@link Service}
+     */
+    Service getIssuedThrough();
+
+    /**
+     * The service through which the permit was granted.
+     *
+     * @param issuedThrough Service value to set.
+     */
+    void addIssuedThrough(Service issuedThrough);
 }

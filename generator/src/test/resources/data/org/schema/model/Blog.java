@@ -10,7 +10,7 @@ import org.schema.model.BlogPosting;
 import org.schema.model.datatype.Text;
 
 /**
- * A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloqually referred to by the same term.
+ * A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloquially referred to by the same term.
  *
  * @see <a href="https://schema.org/Blog">https://schema.org/Blog</a>
  */
@@ -38,6 +38,27 @@ public interface Blog extends CreativeWork {
     void addBlogPosts(BlogPosting blogPosts);
 
     /**
+     * A posting that is part of this blog.
+     *
+     * @return {@link BlogPosting}
+     */
+    List<BlogPosting> getBlogPostList();
+
+    /**
+     * A posting that is part of this blog.
+     *
+     * @return {@link BlogPosting}
+     */
+    BlogPosting getBlogPost();
+
+    /**
+     * A posting that is part of this blog.
+     *
+     * @param blogPost BlogPosting value to set.
+     */
+    void addBlogPost(BlogPosting blogPost);
+
+    /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
      * @return {@link Text}
@@ -60,25 +81,4 @@ public interface Blog extends CreativeWork {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     void addIssn(Text issn);
-
-    /**
-     * A posting that is part of this blog.
-     *
-     * @return {@link BlogPosting}
-     */
-    List<BlogPosting> getBlogPostList();
-
-    /**
-     * A posting that is part of this blog.
-     *
-     * @return {@link BlogPosting}
-     */
-    BlogPosting getBlogPost();
-
-    /**
-     * A posting that is part of this blog.
-     *
-     * @param blogPost BlogPosting value to set.
-     */
-    void addBlogPost(BlogPosting blogPost);
 }

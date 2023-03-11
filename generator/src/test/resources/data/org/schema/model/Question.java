@@ -20,58 +20,58 @@ import org.schema.model.datatype.Text;
 public interface Question extends Comment {
 
     /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @return {@link ItemList} or {@link Answer}
-     */
-    <T> List<T> getSuggestedAnswerList();
-
-    /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @return {@link ItemList} or {@link Answer}
-     */
-    <T> T getSuggestedAnswer();
-
-    /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @param suggestedAnswer ItemList value to set.
-     */
-    void addSuggestedAnswer(ItemList suggestedAnswer);
-    /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @param suggestedAnswer Answer value to set.
-     */
-    void addSuggestedAnswer(Answer suggestedAnswer);
-
-    /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
-     * @return {@link Answer} or {@link ItemList}
+     * @return {@link ItemList} or {@link Answer}
      */
     <T> List<T> getAcceptedAnswerList();
 
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
-     * @return {@link Answer} or {@link ItemList}
+     * @return {@link ItemList} or {@link Answer}
      */
     <T> T getAcceptedAnswer();
 
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
-     * @param acceptedAnswer Answer value to set.
-     */
-    void addAcceptedAnswer(Answer acceptedAnswer);
-    /**
-     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-     *
      * @param acceptedAnswer ItemList value to set.
      */
     void addAcceptedAnswer(ItemList acceptedAnswer);
+    /**
+     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
+     *
+     * @param acceptedAnswer Answer value to set.
+     */
+    void addAcceptedAnswer(Answer acceptedAnswer);
+
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @return {@link Answer} or {@link ItemList}
+     */
+    <T> List<T> getSuggestedAnswerList();
+
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @return {@link Answer} or {@link ItemList}
+     */
+    <T> T getSuggestedAnswer();
+
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @param suggestedAnswer Answer value to set.
+     */
+    void addSuggestedAnswer(Answer suggestedAnswer);
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @param suggestedAnswer ItemList value to set.
+     */
+    void addSuggestedAnswer(ItemList suggestedAnswer);
 
     /**
      * The number of answers this question has received.

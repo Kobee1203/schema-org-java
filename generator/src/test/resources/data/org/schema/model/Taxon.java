@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.URL;
-import org.schema.model.Taxon;
 import org.schema.model.datatype.Text;
+import org.schema.model.Taxon;
 import org.schema.model.PropertyValue;
 import org.schema.model.DefinedTerm;
 
@@ -23,7 +23,7 @@ public interface Taxon extends Thing {
     /**
      * Closest parent taxon of the taxon in question.
      *
-     * @return {@link URL} or {@link Taxon} or {@link Text}
+     * @return {@link URL} or {@link Text} or {@link Taxon}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     <T> List<T> getParentTaxonList();
@@ -31,7 +31,7 @@ public interface Taxon extends Thing {
     /**
      * Closest parent taxon of the taxon in question.
      *
-     * @return {@link URL} or {@link Taxon} or {@link Text}
+     * @return {@link URL} or {@link Text} or {@link Taxon}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     <T> T getParentTaxon();
@@ -46,50 +46,50 @@ public interface Taxon extends Thing {
     /**
      * Closest parent taxon of the taxon in question.
      *
-     * @param parentTaxon Taxon value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addParentTaxon(Taxon parentTaxon);
-    /**
-     * Closest parent taxon of the taxon in question.
-     *
      * @param parentTaxon Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void addParentTaxon(Text parentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param parentTaxon Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void addParentTaxon(Taxon parentTaxon);
 
     /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
      *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     <T> List<T> getTaxonRankList();
 
     /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
      *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     <T> T getTaxonRank();
 
     /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
-     *
-     * @param taxonRank PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addTaxonRank(PropertyValue taxonRank);
-    /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
      *
      * @param taxonRank URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void addTaxonRank(URL taxonRank);
     /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
+     *
+     * @param taxonRank PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void addTaxonRank(PropertyValue taxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
      *
      * @param taxonRank Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>

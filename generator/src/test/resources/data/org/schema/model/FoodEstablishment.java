@@ -8,8 +8,8 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.Rating;
 import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Boolean;
 import org.schema.model.Menu;
 
 /**
@@ -67,17 +67,23 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
-     * @return {@link Text} or {@link Boolean} or {@link URL}
+     * @return {@link URL} or {@link Text} or {@link Boolean}
      */
     <T> List<T> getAcceptsReservationsList();
 
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
-     * @return {@link Text} or {@link Boolean} or {@link URL}
+     * @return {@link URL} or {@link Text} or {@link Boolean}
      */
     <T> T getAcceptsReservations();
 
+    /**
+     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
+     *
+     * @param acceptsReservations URL value to set.
+     */
+    void addAcceptsReservations(URL acceptsReservations);
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
@@ -90,12 +96,39 @@ public interface FoodEstablishment extends LocalBusiness {
      * @param acceptsReservations Boolean value to set.
      */
     void addAcceptsReservations(Boolean acceptsReservations);
+
     /**
-     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
-     * @param acceptsReservations URL value to set.
+     * @return {@link Menu} or {@link Text} or {@link URL}
      */
-    void addAcceptsReservations(URL acceptsReservations);
+    <T> List<T> getMenuList();
+
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @return {@link Menu} or {@link Text} or {@link URL}
+     */
+    <T> T getMenu();
+
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param menu Menu value to set.
+     */
+    void addMenu(Menu menu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param menu Text value to set.
+     */
+    void addMenu(Text menu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param menu URL value to set.
+     */
+    void addMenu(URL menu);
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
@@ -129,37 +162,4 @@ public interface FoodEstablishment extends LocalBusiness {
      * @param hasMenu Menu value to set.
      */
     void addHasMenu(Menu hasMenu);
-
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @return {@link URL} or {@link Menu} or {@link Text}
-     */
-    <T> List<T> getMenuList();
-
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @return {@link URL} or {@link Menu} or {@link Text}
-     */
-    <T> T getMenu();
-
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @param menu URL value to set.
-     */
-    void addMenu(URL menu);
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @param menu Menu value to set.
-     */
-    void addMenu(Menu menu);
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @param menu Text value to set.
-     */
-    void addMenu(Text menu);
 }

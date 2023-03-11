@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MusicAlbumProductionType;
 import org.schema.model.MusicAlbumReleaseType;
 import org.schema.model.MusicRelease;
-import org.schema.model.Person;
 import org.schema.model.MusicGroup;
+import org.schema.model.Person;
+import org.schema.model.MusicAlbumProductionType;
 
 /**
  * A collection of music tracks.
@@ -18,30 +18,6 @@ import org.schema.model.MusicGroup;
  * @see <a href="https://schema.org/MusicAlbum">https://schema.org/MusicAlbum</a>
  */
 public interface MusicAlbum extends MusicPlaylist {
-
-    /**
-     * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
-     *
-     * @return {@link MusicAlbumProductionType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<MusicAlbumProductionType> getAlbumProductionTypeList();
-
-    /**
-     * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
-     *
-     * @return {@link MusicAlbumProductionType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    MusicAlbumProductionType getAlbumProductionType();
-
-    /**
-     * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
-     *
-     * @param albumProductionType MusicAlbumProductionType value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addAlbumProductionType(MusicAlbumProductionType albumProductionType);
 
     /**
      * The kind of release which this album is: single, EP or album.
@@ -91,27 +67,51 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * The artist that performed this album or recording.
      *
-     * @return {@link Person} or {@link MusicGroup}
+     * @return {@link MusicGroup} or {@link Person}
      */
     <T> List<T> getByArtistList();
 
     /**
      * The artist that performed this album or recording.
      *
-     * @return {@link Person} or {@link MusicGroup}
+     * @return {@link MusicGroup} or {@link Person}
      */
     <T> T getByArtist();
 
     /**
      * The artist that performed this album or recording.
      *
-     * @param byArtist Person value to set.
-     */
-    void addByArtist(Person byArtist);
-    /**
-     * The artist that performed this album or recording.
-     *
      * @param byArtist MusicGroup value to set.
      */
     void addByArtist(MusicGroup byArtist);
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param byArtist Person value to set.
+     */
+    void addByArtist(Person byArtist);
+
+    /**
+     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
+     *
+     * @return {@link MusicAlbumProductionType}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    List<MusicAlbumProductionType> getAlbumProductionTypeList();
+
+    /**
+     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
+     *
+     * @return {@link MusicAlbumProductionType}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    MusicAlbumProductionType getAlbumProductionType();
+
+    /**
+     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
+     *
+     * @param albumProductionType MusicAlbumProductionType value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void addAlbumProductionType(MusicAlbumProductionType albumProductionType);
 }

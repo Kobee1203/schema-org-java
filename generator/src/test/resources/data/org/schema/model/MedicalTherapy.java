@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalTherapy;
 import org.schema.model.MedicalEntity;
+import org.schema.model.MedicalTherapy;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalContraindication;
 
@@ -18,30 +18,6 @@ import org.schema.model.MedicalContraindication;
  * @see <a href="https://schema.org/MedicalTherapy">https://schema.org/MedicalTherapy</a>
  */
 public interface MedicalTherapy extends TherapeuticProcedure {
-
-    /**
-     * A therapy that duplicates or overlaps this one.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalTherapy> getDuplicateTherapyList();
-
-    /**
-     * A therapy that duplicates or overlaps this one.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalTherapy getDuplicateTherapy();
-
-    /**
-     * A therapy that duplicates or overlaps this one.
-     *
-     * @param duplicateTherapy MedicalTherapy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addDuplicateTherapy(MedicalTherapy duplicateTherapy);
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
@@ -66,6 +42,30 @@ public interface MedicalTherapy extends TherapeuticProcedure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
+
+    /**
+     * A therapy that duplicates or overlaps this one.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalTherapy> getDuplicateTherapyList();
+
+    /**
+     * A therapy that duplicates or overlaps this one.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalTherapy getDuplicateTherapy();
+
+    /**
+     * A therapy that duplicates or overlaps this one.
+     *
+     * @param duplicateTherapy MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addDuplicateTherapy(MedicalTherapy duplicateTherapy);
 
     /**
      * A contraindication for this therapy.

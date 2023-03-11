@@ -6,29 +6,30 @@
 package org.schema.model.impl;
 
 import org.schema.model.datatype.Text;
-import org.schema.model.MonetaryAmountDistribution;
+import org.schema.model.datatype.URL;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.datatype.Number;
-import org.schema.model.Place;
-import org.schema.model.datatype.URL;
-import org.schema.model.DefinedTerm;
+import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.Boolean;
-import org.schema.model.AdministrativeArea;
-import org.schema.model.datatype.Date;
-import org.schema.model.ContactPoint;
-import org.schema.model.Occupation;
-import org.schema.model.datatype.Integer;
+import org.schema.model.DefinedTerm;
 import org.schema.model.OccupationalExperienceRequirements;
 import org.schema.model.EducationalOccupationalCredential;
-import org.schema.model.PriceSpecification;
+import org.schema.model.datatype.Date;
+import org.schema.model.Occupation;
+import org.schema.model.Place;
+import org.schema.model.MonetaryAmountDistribution;
 import org.schema.model.datatype.DateTime;
-import org.schema.model.Organization;
+import org.schema.model.datatype.Integer;
+import org.schema.model.ContactPoint;
+import org.schema.model.AdministrativeArea;
 import org.schema.model.CategoryCode;
-import org.schema.model.CreativeWork;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -43,6 +44,251 @@ import org.schema.model.JobPosting;
  */
 @JsonLdTypeName("JobPosting")
 public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements JobPosting {
+
+    private List<Text> incentiveCompensation;
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getIncentiveCompensationList() {
+        return incentiveCompensation;
+    }
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getIncentiveCompensation() {
+        return getFirst(incentiveCompensation);
+    }
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @param incentiveCompensation Text value to set.
+     */
+    @Override
+    public void addIncentiveCompensation(Text incentiveCompensation) {
+        this.incentiveCompensation = add(this.incentiveCompensation, incentiveCompensation);
+    }
+
+    @JsonLdFieldTypes({ Text.class, URL.class })
+    private List<Object> securityClearanceRequirement;
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> List<T> getSecurityClearanceRequirementList() {
+        return (List<T>) securityClearanceRequirement;
+    }
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> T getSecurityClearanceRequirement() {
+        return (T) getFirst(securityClearanceRequirement);
+    }
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @param securityClearanceRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void addSecurityClearanceRequirement(Text securityClearanceRequirement) {
+        this.securityClearanceRequirement = add(this.securityClearanceRequirement, securityClearanceRequirement);
+    }
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @param securityClearanceRequirement URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void addSecurityClearanceRequirement(URL securityClearanceRequirement) {
+        this.securityClearanceRequirement = add(this.securityClearanceRequirement, securityClearanceRequirement);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> hiringOrganization;
+
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getHiringOrganizationList() {
+        return (List<T>) hiringOrganization;
+    }
+
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getHiringOrganization() {
+        return (T) getFirst(hiringOrganization);
+    }
+
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @param hiringOrganization Organization value to set.
+     */
+    @Override
+    public void addHiringOrganization(Organization hiringOrganization) {
+        this.hiringOrganization = add(this.hiringOrganization, hiringOrganization);
+    }
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @param hiringOrganization Person value to set.
+     */
+    @Override
+    public void addHiringOrganization(Person hiringOrganization) {
+        this.hiringOrganization = add(this.hiringOrganization, hiringOrganization);
+    }
+
+    @JsonLdFieldTypes({ MonetaryAmount.class, Number.class, PriceSpecification.class })
+    private List<Object> baseSalary;
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
+     */
+    @Override
+    public <T> List<T> getBaseSalaryList() {
+        return (List<T>) baseSalary;
+    }
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
+     */
+    @Override
+    public <T> T getBaseSalary() {
+        return (T) getFirst(baseSalary);
+    }
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary MonetaryAmount value to set.
+     */
+    @Override
+    public void addBaseSalary(MonetaryAmount baseSalary) {
+        this.baseSalary = add(this.baseSalary, baseSalary);
+    }
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary Number value to set.
+     */
+    @Override
+    public void addBaseSalary(Number baseSalary) {
+        this.baseSalary = add(this.baseSalary, baseSalary);
+    }
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary PriceSpecification value to set.
+     */
+    @Override
+    public void addBaseSalary(PriceSpecification baseSalary) {
+        this.baseSalary = add(this.baseSalary, baseSalary);
+    }
+
+    private List<Text> workHours;
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getWorkHoursList() {
+        return workHours;
+    }
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getWorkHours() {
+        return getFirst(workHours);
+    }
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @param workHours Text value to set.
+     */
+    @Override
+    public void addWorkHours(Text workHours) {
+        this.workHours = add(this.workHours, workHours);
+    }
+
+    private List<Boolean> jobImmediateStart;
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public List<Boolean> getJobImmediateStartList() {
+        return jobImmediateStart;
+    }
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public Boolean getJobImmediateStart() {
+        return getFirst(jobImmediateStart);
+    }
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @param jobImmediateStart Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public void addJobImmediateStart(Boolean jobImmediateStart) {
+        this.jobImmediateStart = add(this.jobImmediateStart, jobImmediateStart);
+    }
 
     private List<Text> employerOverview;
 
@@ -82,174 +328,63 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.employerOverview = add(this.employerOverview, employerOverview);
     }
 
-    @JsonLdFieldTypes({ MonetaryAmountDistribution.class, MonetaryAmount.class, Number.class })
-    private List<Object> estimatedSalary;
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> skills;
 
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @return {@link Text} or {@link DefinedTerm}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
     @Override
-    public <T> List<T> getEstimatedSalaryList() {
-        return (List<T>) estimatedSalary;
+    public <T> List<T> getSkillsList() {
+        return (List<T>) skills;
     }
 
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @return {@link Text} or {@link DefinedTerm}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
     @Override
-    public <T> T getEstimatedSalary() {
-        return (T) getFirst(estimatedSalary);
+    public <T> T getSkills() {
+        return (T) getFirst(skills);
     }
 
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @param estimatedSalary MonetaryAmountDistribution value to set.
+     * @param skills Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
     @Override
-    public void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary) {
-        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
+    public void addSkills(Text skills) {
+        this.skills = add(this.skills, skills);
     }
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @param estimatedSalary MonetaryAmount value to set.
+     * @param skills DefinedTerm value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
     @Override
-    public void addEstimatedSalary(MonetaryAmount estimatedSalary) {
-        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
-    }
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @param estimatedSalary Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addEstimatedSalary(Number estimatedSalary) {
-        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
+    public void addSkills(DefinedTerm skills) {
+        this.skills = add(this.skills, skills);
     }
 
-    private List<Text> jobLocationType;
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    @Override
-    public List<Text> getJobLocationTypeList() {
-        return jobLocationType;
-    }
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    @Override
-    public Text getJobLocationType() {
-        return getFirst(jobLocationType);
-    }
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @param jobLocationType Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    @Override
-    public void addJobLocationType(Text jobLocationType) {
-        this.jobLocationType = add(this.jobLocationType, jobLocationType);
-    }
-
-    private List<Text> responsibilities;
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public List<Text> getResponsibilitiesList() {
-        return responsibilities;
-    }
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public Text getResponsibilities() {
-        return getFirst(responsibilities);
-    }
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @param responsibilities Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addResponsibilities(Text responsibilities) {
-        this.responsibilities = add(this.responsibilities, responsibilities);
-    }
-
-    private List<Place> jobLocation;
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getJobLocationList() {
-        return jobLocation;
-    }
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getJobLocation() {
-        return getFirst(jobLocation);
-    }
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     * @param jobLocation Place value to set.
-     */
-    @Override
-    public void addJobLocation(Place jobLocation) {
-        this.jobLocation = add(this.jobLocation, jobLocation);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class, DefinedTerm.class })
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private List<Object> physicalRequirement;
 
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
@@ -261,7 +396,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
@@ -273,12 +408,12 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param physicalRequirement URL value to set.
+     * @param physicalRequirement DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void addPhysicalRequirement(URL physicalRequirement) {
+    public void addPhysicalRequirement(DefinedTerm physicalRequirement) {
         this.physicalRequirement = add(this.physicalRequirement, physicalRequirement);
     }
     /**
@@ -295,296 +430,113 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param physicalRequirement DefinedTerm value to set.
+     * @param physicalRequirement URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void addPhysicalRequirement(DefinedTerm physicalRequirement) {
+    public void addPhysicalRequirement(URL physicalRequirement) {
         this.physicalRequirement = add(this.physicalRequirement, physicalRequirement);
     }
 
-    private List<Text> incentives;
+    @JsonLdFieldTypes({ OccupationalExperienceRequirements.class, Text.class })
+    private List<Object> experienceRequirements;
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * Description of skills and experience needed for the position or Occupation.
      *
-     * @return {@link Text}
+     * @return {@link OccupationalExperienceRequirements} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public List<Text> getIncentivesList() {
-        return incentives;
+    public <T> List<T> getExperienceRequirementsList() {
+        return (List<T>) experienceRequirements;
     }
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * Description of skills and experience needed for the position or Occupation.
      *
-     * @return {@link Text}
+     * @return {@link OccupationalExperienceRequirements} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public Text getIncentives() {
-        return getFirst(incentives);
+    public <T> T getExperienceRequirements() {
+        return (T) getFirst(experienceRequirements);
     }
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * Description of skills and experience needed for the position or Occupation.
      *
-     * @param incentives Text value to set.
+     * @param experienceRequirements OccupationalExperienceRequirements value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void addIncentives(Text incentives) {
-        this.incentives = add(this.incentives, incentives);
+    public void addExperienceRequirements(OccupationalExperienceRequirements experienceRequirements) {
+        this.experienceRequirements = add(this.experienceRequirements, experienceRequirements);
+    }
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @param experienceRequirements Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addExperienceRequirements(Text experienceRequirements) {
+        this.experienceRequirements = add(this.experienceRequirements, experienceRequirements);
     }
 
-    private List<Boolean> directApply;
+    @JsonLdFieldTypes({ EducationalOccupationalCredential.class, Text.class })
+    private List<Object> qualifications;
 
     /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @return {@link Boolean}
+     * @return {@link EducationalOccupationalCredential} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public List<Boolean> getDirectApplyList() {
-        return directApply;
+    public <T> List<T> getQualificationsList() {
+        return (List<T>) qualifications;
     }
 
     /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @return {@link Boolean}
+     * @return {@link EducationalOccupationalCredential} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public Boolean getDirectApply() {
-        return getFirst(directApply);
+    public <T> T getQualifications() {
+        return (T) getFirst(qualifications);
     }
 
     /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @param directApply Boolean value to set.
+     * @param qualifications EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void addDirectApply(Boolean directApply) {
-        this.directApply = add(this.directApply, directApply);
+    public void addQualifications(EducationalOccupationalCredential qualifications) {
+        this.qualifications = add(this.qualifications, qualifications);
     }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, URL.class, Text.class })
-    private List<Object> sensoryRequirement;
-
     /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
+     * @param qualifications Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public <T> List<T> getSensoryRequirementList() {
-        return (List<T>) sensoryRequirement;
-    }
-
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public <T> T getSensoryRequirement() {
-        return (T) getFirst(sensoryRequirement);
-    }
-
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param sensoryRequirement DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void addSensoryRequirement(DefinedTerm sensoryRequirement) {
-        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
-    }
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param sensoryRequirement URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void addSensoryRequirement(URL sensoryRequirement) {
-        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
-    }
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param sensoryRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void addSensoryRequirement(Text sensoryRequirement) {
-        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
-    }
-
-    private List<AdministrativeArea> applicantLocationRequirements;
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    @Override
-    public List<AdministrativeArea> getApplicantLocationRequirementsList() {
-        return applicantLocationRequirements;
-    }
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    @Override
-    public AdministrativeArea getApplicantLocationRequirements() {
-        return getFirst(applicantLocationRequirements);
-    }
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @param applicantLocationRequirements AdministrativeArea value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    @Override
-    public void addApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements) {
-        this.applicantLocationRequirements = add(this.applicantLocationRequirements, applicantLocationRequirements);
-    }
-
-    private List<Text> workHours;
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getWorkHoursList() {
-        return workHours;
-    }
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getWorkHours() {
-        return getFirst(workHours);
-    }
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @param workHours Text value to set.
-     */
-    @Override
-    public void addWorkHours(Text workHours) {
-        this.workHours = add(this.workHours, workHours);
-    }
-
-    @JsonLdFieldTypes({ Date.class, Text.class })
-    private List<Object> jobStartDate;
-
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @return {@link Date} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public <T> List<T> getJobStartDateList() {
-        return (List<T>) jobStartDate;
-    }
-
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @return {@link Date} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public <T> T getJobStartDate() {
-        return (T) getFirst(jobStartDate);
-    }
-
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @param jobStartDate Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public void addJobStartDate(Date jobStartDate) {
-        this.jobStartDate = add(this.jobStartDate, jobStartDate);
-    }
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @param jobStartDate Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public void addJobStartDate(Text jobStartDate) {
-        this.jobStartDate = add(this.jobStartDate, jobStartDate);
-    }
-
-    private List<Text> employmentType;
-
-    /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getEmploymentTypeList() {
-        return employmentType;
-    }
-
-    /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getEmploymentType() {
-        return getFirst(employmentType);
-    }
-
-    /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-     *
-     * @param employmentType Text value to set.
-     */
-    @Override
-    public void addEmploymentType(Text employmentType) {
-        this.employmentType = add(this.employmentType, employmentType);
+    public void addQualifications(Text qualifications) {
+        this.qualifications = add(this.qualifications, qualifications);
     }
 
     private List<Text> specialCommitments;
@@ -619,74 +571,86 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.specialCommitments = add(this.specialCommitments, specialCommitments);
     }
 
-    private List<ContactPoint> applicationContact;
+    @JsonLdFieldTypes({ Text.class, Date.class })
+    private List<Object> jobStartDate;
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @return {@link ContactPoint}
+     * @return {@link Text} or {@link Date}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public List<ContactPoint> getApplicationContactList() {
-        return applicationContact;
+    public <T> List<T> getJobStartDateList() {
+        return (List<T>) jobStartDate;
     }
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @return {@link ContactPoint}
+     * @return {@link Text} or {@link Date}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public ContactPoint getApplicationContact() {
-        return getFirst(applicationContact);
+    public <T> T getJobStartDate() {
+        return (T) getFirst(jobStartDate);
     }
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @param applicationContact ContactPoint value to set.
+     * @param jobStartDate Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void addApplicationContact(ContactPoint applicationContact) {
-        this.applicationContact = add(this.applicationContact, applicationContact);
+    public void addJobStartDate(Text jobStartDate) {
+        this.jobStartDate = add(this.jobStartDate, jobStartDate);
+    }
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @param jobStartDate Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public void addJobStartDate(Date jobStartDate) {
+        this.jobStartDate = add(this.jobStartDate, jobStartDate);
     }
 
-    private List<Text> incentiveCompensation;
+    private List<Text> title;
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * The title of the job.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getIncentiveCompensationList() {
-        return incentiveCompensation;
+    public List<Text> getTitleList() {
+        return title;
     }
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * The title of the job.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getIncentiveCompensation() {
-        return getFirst(incentiveCompensation);
+    public Text getTitle() {
+        return getFirst(title);
     }
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * The title of the job.
      *
-     * @param incentiveCompensation Text value to set.
+     * @param title Text value to set.
      */
     @Override
-    public void addIncentiveCompensation(Text incentiveCompensation) {
-        this.incentiveCompensation = add(this.incentiveCompensation, incentiveCompensation);
+    public void addTitle(Text title) {
+        this.title = add(this.title, title);
     }
 
     private List<Occupation> relevantOccupation;
@@ -724,278 +688,36 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.relevantOccupation = add(this.relevantOccupation, relevantOccupation);
     }
 
-    private List<Integer> totalJobOpenings;
+    private List<Place> jobLocation;
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * A (typically single) geographic location associated with the job position.
      *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     * @return {@link Place}
      */
     @Override
-    public List<Integer> getTotalJobOpeningsList() {
-        return totalJobOpenings;
+    public List<Place> getJobLocationList() {
+        return jobLocation;
     }
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * A (typically single) geographic location associated with the job position.
      *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     * @return {@link Place}
      */
     @Override
-    public Integer getTotalJobOpenings() {
-        return getFirst(totalJobOpenings);
+    public Place getJobLocation() {
+        return getFirst(jobLocation);
     }
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * A (typically single) geographic location associated with the job position.
      *
-     * @param totalJobOpenings Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     * @param jobLocation Place value to set.
      */
     @Override
-    public void addTotalJobOpenings(Integer totalJobOpenings) {
-        this.totalJobOpenings = add(this.totalJobOpenings, totalJobOpenings);
-    }
-
-    @JsonLdFieldTypes({ Text.class, OccupationalExperienceRequirements.class })
-    private List<Object> experienceRequirements;
-
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @return {@link Text} or {@link OccupationalExperienceRequirements}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> List<T> getExperienceRequirementsList() {
-        return (List<T>) experienceRequirements;
-    }
-
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @return {@link Text} or {@link OccupationalExperienceRequirements}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> T getExperienceRequirements() {
-        return (T) getFirst(experienceRequirements);
-    }
-
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @param experienceRequirements Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addExperienceRequirements(Text experienceRequirements) {
-        this.experienceRequirements = add(this.experienceRequirements, experienceRequirements);
-    }
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @param experienceRequirements OccupationalExperienceRequirements value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addExperienceRequirements(OccupationalExperienceRequirements experienceRequirements) {
-        this.experienceRequirements = add(this.experienceRequirements, experienceRequirements);
-    }
-
-    private List<Text> jobBenefits;
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getJobBenefitsList() {
-        return jobBenefits;
-    }
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getJobBenefits() {
-        return getFirst(jobBenefits);
-    }
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @param jobBenefits Text value to set.
-     */
-    @Override
-    public void addJobBenefits(Text jobBenefits) {
-        this.jobBenefits = add(this.jobBenefits, jobBenefits);
-    }
-
-    private List<Text> salaryCurrency;
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getSalaryCurrencyList() {
-        return salaryCurrency;
-    }
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getSalaryCurrency() {
-        return getFirst(salaryCurrency);
-    }
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @param salaryCurrency Text value to set.
-     */
-    @Override
-    public void addSalaryCurrency(Text salaryCurrency) {
-        this.salaryCurrency = add(this.salaryCurrency, salaryCurrency);
-    }
-
-    private List<Boolean> experienceInPlaceOfEducation;
-
-    /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    @Override
-    public List<Boolean> getExperienceInPlaceOfEducationList() {
-        return experienceInPlaceOfEducation;
-    }
-
-    /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    @Override
-    public Boolean getExperienceInPlaceOfEducation() {
-        return getFirst(experienceInPlaceOfEducation);
-    }
-
-    /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
-     *
-     * @param experienceInPlaceOfEducation Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    @Override
-    public void addExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation) {
-        this.experienceInPlaceOfEducation = add(this.experienceInPlaceOfEducation, experienceInPlaceOfEducation);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> securityClearanceRequirement;
-
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public <T> List<T> getSecurityClearanceRequirementList() {
-        return (List<T>) securityClearanceRequirement;
-    }
-
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public <T> T getSecurityClearanceRequirement() {
-        return (T) getFirst(securityClearanceRequirement);
-    }
-
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @param securityClearanceRequirement URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void addSecurityClearanceRequirement(URL securityClearanceRequirement) {
-        this.securityClearanceRequirement = add(this.securityClearanceRequirement, securityClearanceRequirement);
-    }
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @param securityClearanceRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void addSecurityClearanceRequirement(Text securityClearanceRequirement) {
-        this.securityClearanceRequirement = add(this.securityClearanceRequirement, securityClearanceRequirement);
-    }
-
-    private List<Text> eligibilityToWorkRequirement;
-
-    /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public List<Text> getEligibilityToWorkRequirementList() {
-        return eligibilityToWorkRequirement;
-    }
-
-    /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public Text getEligibilityToWorkRequirement() {
-        return getFirst(eligibilityToWorkRequirement);
-    }
-
-    /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
-     *
-     * @param eligibilityToWorkRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void addEligibilityToWorkRequirement(Text eligibilityToWorkRequirement) {
-        this.eligibilityToWorkRequirement = add(this.eligibilityToWorkRequirement, eligibilityToWorkRequirement);
+    public void addJobLocation(Place jobLocation) {
+        this.jobLocation = add(this.jobLocation, jobLocation);
     }
 
     @JsonLdFieldTypes({ EducationalOccupationalCredential.class, Text.class })
@@ -1052,7 +774,436 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.educationRequirements = add(this.educationRequirements, educationRequirements);
     }
 
-    private List<Text> benefits;
+    private List<Text> eligibilityToWorkRequirement;
+
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public List<Text> getEligibilityToWorkRequirementList() {
+        return eligibilityToWorkRequirement;
+    }
+
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public Text getEligibilityToWorkRequirement() {
+        return getFirst(eligibilityToWorkRequirement);
+    }
+
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @param eligibilityToWorkRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void addEligibilityToWorkRequirement(Text eligibilityToWorkRequirement) {
+        this.eligibilityToWorkRequirement = add(this.eligibilityToWorkRequirement, eligibilityToWorkRequirement);
+    }
+
+    @JsonLdFieldTypes({ MonetaryAmount.class, Number.class, MonetaryAmountDistribution.class })
+    private List<Object> estimatedSalary;
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link MonetaryAmountDistribution}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> List<T> getEstimatedSalaryList() {
+        return (List<T>) estimatedSalary;
+    }
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link MonetaryAmountDistribution}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> T getEstimatedSalary() {
+        return (T) getFirst(estimatedSalary);
+    }
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addEstimatedSalary(MonetaryAmount estimatedSalary) {
+        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
+    }
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addEstimatedSalary(Number estimatedSalary) {
+        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
+    }
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary MonetaryAmountDistribution value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary) {
+        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
+    }
+
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> validThrough;
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getValidThroughList() {
+        return (List<T>) validThrough;
+    }
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getValidThrough() {
+        return (T) getFirst(validThrough);
+    }
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void addValidThrough(Date validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough DateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void addValidThrough(DateTime validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
+    }
+
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
+    private List<Object> sensoryRequirement;
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> List<T> getSensoryRequirementList() {
+        return (List<T>) sensoryRequirement;
+    }
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> T getSensoryRequirement() {
+        return (T) getFirst(sensoryRequirement);
+    }
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param sensoryRequirement URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void addSensoryRequirement(URL sensoryRequirement) {
+        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
+    }
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param sensoryRequirement DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void addSensoryRequirement(DefinedTerm sensoryRequirement) {
+        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
+    }
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param sensoryRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void addSensoryRequirement(Text sensoryRequirement) {
+        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
+    }
+
+    private List<Text> employmentType;
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getEmploymentTypeList() {
+        return employmentType;
+    }
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getEmploymentType() {
+        return getFirst(employmentType);
+    }
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @param employmentType Text value to set.
+     */
+    @Override
+    public void addEmploymentType(Text employmentType) {
+        this.employmentType = add(this.employmentType, employmentType);
+    }
+
+    private List<Integer> totalJobOpenings;
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    @Override
+    public List<Integer> getTotalJobOpeningsList() {
+        return totalJobOpenings;
+    }
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    @Override
+    public Integer getTotalJobOpenings() {
+        return getFirst(totalJobOpenings);
+    }
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @param totalJobOpenings Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    @Override
+    public void addTotalJobOpenings(Integer totalJobOpenings) {
+        this.totalJobOpenings = add(this.totalJobOpenings, totalJobOpenings);
+    }
+
+    private List<Text> salaryCurrency;
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSalaryCurrencyList() {
+        return salaryCurrency;
+    }
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSalaryCurrency() {
+        return getFirst(salaryCurrency);
+    }
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @param salaryCurrency Text value to set.
+     */
+    @Override
+    public void addSalaryCurrency(Text salaryCurrency) {
+        this.salaryCurrency = add(this.salaryCurrency, salaryCurrency);
+    }
+
+    private List<ContactPoint> applicationContact;
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @return {@link ContactPoint}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public List<ContactPoint> getApplicationContactList() {
+        return applicationContact;
+    }
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @return {@link ContactPoint}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public ContactPoint getApplicationContact() {
+        return getFirst(applicationContact);
+    }
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @param applicationContact ContactPoint value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public void addApplicationContact(ContactPoint applicationContact) {
+        this.applicationContact = add(this.applicationContact, applicationContact);
+    }
+
+    private List<Boolean> experienceInPlaceOfEducation;
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    @Override
+    public List<Boolean> getExperienceInPlaceOfEducationList() {
+        return experienceInPlaceOfEducation;
+    }
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    @Override
+    public Boolean getExperienceInPlaceOfEducation() {
+        return getFirst(experienceInPlaceOfEducation);
+    }
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @param experienceInPlaceOfEducation Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    @Override
+    public void addExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation) {
+        this.experienceInPlaceOfEducation = add(this.experienceInPlaceOfEducation, experienceInPlaceOfEducation);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> datePosted;
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public <T> List<T> getDatePostedList() {
+        return (List<T>) datePosted;
+    }
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public <T> T getDatePosted() {
+        return (T) getFirst(datePosted);
+    }
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void addDatePosted(DateTime datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
+    }
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void addDatePosted(Date datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
+    }
+
+    private List<Text> jobBenefits;
 
     /**
      * Description of benefits associated with the job.
@@ -1060,8 +1211,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Text}
      */
     @Override
-    public List<Text> getBenefitsList() {
-        return benefits;
+    public List<Text> getJobBenefitsList() {
+        return jobBenefits;
     }
 
     /**
@@ -1070,18 +1221,122 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Text}
      */
     @Override
-    public Text getBenefits() {
-        return getFirst(benefits);
+    public Text getJobBenefits() {
+        return getFirst(jobBenefits);
     }
 
     /**
      * Description of benefits associated with the job.
      *
-     * @param benefits Text value to set.
+     * @param jobBenefits Text value to set.
      */
     @Override
-    public void addBenefits(Text benefits) {
-        this.benefits = add(this.benefits, benefits);
+    public void addJobBenefits(Text jobBenefits) {
+        this.jobBenefits = add(this.jobBenefits, jobBenefits);
+    }
+
+    private List<AdministrativeArea> applicantLocationRequirements;
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    @Override
+    public List<AdministrativeArea> getApplicantLocationRequirementsList() {
+        return applicantLocationRequirements;
+    }
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    @Override
+    public AdministrativeArea getApplicantLocationRequirements() {
+        return getFirst(applicantLocationRequirements);
+    }
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @param applicantLocationRequirements AdministrativeArea value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    @Override
+    public void addApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements) {
+        this.applicantLocationRequirements = add(this.applicantLocationRequirements, applicantLocationRequirements);
+    }
+
+    @JsonLdFieldTypes({ Text.class, CategoryCode.class })
+    private List<Object> occupationalCategory;
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link Text} or {@link CategoryCode}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public <T> List<T> getOccupationalCategoryList() {
+        return (List<T>) occupationalCategory;
+    }
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link Text} or {@link CategoryCode}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public <T> T getOccupationalCategory() {
+        return (T) getFirst(occupationalCategory);
+    }
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public void addOccupationalCategory(Text occupationalCategory) {
+        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
+    }
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory CategoryCode value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public void addOccupationalCategory(CategoryCode occupationalCategory) {
+        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
@@ -1126,305 +1381,6 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.industry = add(this.industry, industry);
     }
 
-    @JsonLdFieldTypes({ Number.class, PriceSpecification.class, MonetaryAmount.class })
-    private List<Object> baseSalary;
-
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    @Override
-    public <T> List<T> getBaseSalaryList() {
-        return (List<T>) baseSalary;
-    }
-
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    @Override
-    public <T> T getBaseSalary() {
-        return (T) getFirst(baseSalary);
-    }
-
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @param baseSalary Number value to set.
-     */
-    @Override
-    public void addBaseSalary(Number baseSalary) {
-        this.baseSalary = add(this.baseSalary, baseSalary);
-    }
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @param baseSalary PriceSpecification value to set.
-     */
-    @Override
-    public void addBaseSalary(PriceSpecification baseSalary) {
-        this.baseSalary = add(this.baseSalary, baseSalary);
-    }
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @param baseSalary MonetaryAmount value to set.
-     */
-    @Override
-    public void addBaseSalary(MonetaryAmount baseSalary) {
-        this.baseSalary = add(this.baseSalary, baseSalary);
-    }
-
-    @JsonLdFieldTypes({ Date.class, DateTime.class })
-    private List<Object> datePosted;
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public <T> List<T> getDatePostedList() {
-        return (List<T>) datePosted;
-    }
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public <T> T getDatePosted() {
-        return (T) getFirst(datePosted);
-    }
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addDatePosted(Date datePosted) {
-        this.datePosted = add(this.datePosted, datePosted);
-    }
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addDatePosted(DateTime datePosted) {
-        this.datePosted = add(this.datePosted, datePosted);
-    }
-
-    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
-    private List<Object> skills;
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> List<T> getSkillsList() {
-        return (List<T>) skills;
-    }
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> T getSkills() {
-        return (T) getFirst(skills);
-    }
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @param skills Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addSkills(Text skills) {
-        this.skills = add(this.skills, skills);
-    }
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @param skills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addSkills(DefinedTerm skills) {
-        this.skills = add(this.skills, skills);
-    }
-
-    private List<Text> title;
-
-    /**
-     * The title of the job.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getTitleList() {
-        return title;
-    }
-
-    /**
-     * The title of the job.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTitle() {
-        return getFirst(title);
-    }
-
-    /**
-     * The title of the job.
-     *
-     * @param title Text value to set.
-     */
-    @Override
-    public void addTitle(Text title) {
-        this.title = add(this.title, title);
-    }
-
-    private List<Organization> hiringOrganization;
-
-    /**
-     * Organization offering the job position.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getHiringOrganizationList() {
-        return hiringOrganization;
-    }
-
-    /**
-     * Organization offering the job position.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getHiringOrganization() {
-        return getFirst(hiringOrganization);
-    }
-
-    /**
-     * Organization offering the job position.
-     *
-     * @param hiringOrganization Organization value to set.
-     */
-    @Override
-    public void addHiringOrganization(Organization hiringOrganization) {
-        this.hiringOrganization = add(this.hiringOrganization, hiringOrganization);
-    }
-
-    private List<Boolean> jobImmediateStart;
-
-    /**
-     * An indicator as to whether a position is available for an immediate start.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public List<Boolean> getJobImmediateStartList() {
-        return jobImmediateStart;
-    }
-
-    /**
-     * An indicator as to whether a position is available for an immediate start.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public Boolean getJobImmediateStart() {
-        return getFirst(jobImmediateStart);
-    }
-
-    /**
-     * An indicator as to whether a position is available for an immediate start.
-     *
-     * @param jobImmediateStart Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public void addJobImmediateStart(Boolean jobImmediateStart) {
-        this.jobImmediateStart = add(this.jobImmediateStart, jobImmediateStart);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> validThrough;
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getValidThroughList() {
-        return (List<T>) validThrough;
-    }
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getValidThrough() {
-        return (T) getFirst(validThrough);
-    }
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidThrough(DateTime validThrough) {
-        this.validThrough = add(this.validThrough, validThrough);
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidThrough(Date validThrough) {
-        this.validThrough = add(this.validThrough, validThrough);
-    }
-
     private List<Organization> employmentUnit;
 
     /**
@@ -1463,230 +1419,179 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.employmentUnit = add(this.employmentUnit, employmentUnit);
     }
 
-    @JsonLdFieldTypes({ Text.class, EducationalOccupationalCredential.class })
-    private List<Object> qualifications;
+    private List<Text> benefits;
 
     /**
-     * Specific qualifications required for this role or Occupation.
-     *
-     * @return {@link Text} or {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public <T> List<T> getQualificationsList() {
-        return (List<T>) qualifications;
-    }
-
-    /**
-     * Specific qualifications required for this role or Occupation.
-     *
-     * @return {@link Text} or {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public <T> T getQualifications() {
-        return (T) getFirst(qualifications);
-    }
-
-    /**
-     * Specific qualifications required for this role or Occupation.
-     *
-     * @param qualifications Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public void addQualifications(Text qualifications) {
-        this.qualifications = add(this.qualifications, qualifications);
-    }
-    /**
-     * Specific qualifications required for this role or Occupation.
-     *
-     * @param qualifications EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public void addQualifications(EducationalOccupationalCredential qualifications) {
-        this.qualifications = add(this.qualifications, qualifications);
-    }
-
-    @JsonLdFieldTypes({ CategoryCode.class, Text.class })
-    private List<Object> occupationalCategory;
-
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @return {@link CategoryCode} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> List<T> getOccupationalCategoryList() {
-        return (List<T>) occupationalCategory;
-    }
-
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @return {@link CategoryCode} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> T getOccupationalCategory() {
-        return (T) getFirst(occupationalCategory);
-    }
-
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @param occupationalCategory CategoryCode value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addOccupationalCategory(CategoryCode occupationalCategory) {
-        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
-    }
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @param occupationalCategory Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addOccupationalCategory(Text occupationalCategory) {
-        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
+     * Description of benefits associated with the job.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Text> getBenefitsList() {
+        return benefits;
     }
 
     /**
-     * An alias for the item.
+     * Description of benefits associated with the job.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Text getBenefits() {
+        return getFirst(benefits);
     }
 
     /**
-     * An alias for the item.
+     * Description of benefits associated with the job.
      *
-     * @param alternateName Text value to set.
+     * @param benefits Text value to set.
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
+    public void addBenefits(Text benefits) {
+        this.benefits = add(this.benefits, benefits);
     }
 
-    private List<Text> name;
+    private List<Text> jobLocationType;
 
     /**
-     * The name of the item.
+     * A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    @Override
+    public List<Text> getJobLocationTypeList() {
+        return jobLocationType;
+    }
+
+    /**
+     * A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    @Override
+    public Text getJobLocationType() {
+        return getFirst(jobLocationType);
+    }
+
+    /**
+     * A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
+     *
+     * @param jobLocationType Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    @Override
+    public void addJobLocationType(Text jobLocationType) {
+        this.jobLocationType = add(this.jobLocationType, jobLocationType);
+    }
+
+    private List<Text> responsibilities;
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public List<Text> getResponsibilitiesList() {
+        return responsibilities;
+    }
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public Text getResponsibilities() {
+        return getFirst(responsibilities);
+    }
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @param responsibilities Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addResponsibilities(Text responsibilities) {
+        this.responsibilities = add(this.responsibilities, responsibilities);
+    }
+
+    private List<Boolean> directApply;
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    @Override
+    public List<Boolean> getDirectApplyList() {
+        return directApply;
+    }
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    @Override
+    public Boolean getDirectApply() {
+        return getFirst(directApply);
+    }
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @param directApply Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    @Override
+    public void addDirectApply(Boolean directApply) {
+        this.directApply = add(this.directApply, directApply);
+    }
+
+    private List<Text> incentives;
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getNameList() {
-        return name;
+    public List<Text> getIncentivesList() {
+        return incentives;
     }
 
     /**
-     * The name of the item.
+     * Description of bonus and commission compensation aspects of the job.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getName() {
-        return getFirst(name);
+    public Text getIncentives() {
+        return getFirst(incentives);
     }
 
     /**
-     * The name of the item.
+     * Description of bonus and commission compensation aspects of the job.
      *
-     * @param name Text value to set.
+     * @param incentives Text value to set.
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public void addIncentives(Text incentives) {
+        this.incentives = add(this.incentives, incentives);
     }
 
     private List<Action> potentialAction;
@@ -1721,110 +1626,46 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -1873,68 +1714,68 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -1969,14 +1810,78 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -1987,13 +1892,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -2014,14 +1929,110 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

@@ -12,5 +12,5 @@ import java.util.List;
  *
  * @see <a href="https://schema.org/PoliceStation">https://schema.org/PoliceStation</a>
  */
-public interface PoliceStation extends CivicStructure, EmergencyService {
+public interface PoliceStation extends EmergencyService, CivicStructure {
 }

@@ -6,31 +6,37 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.datatype.Text;
 import org.schema.model.ItemList;
 import org.schema.model.CreativeWork;
-import org.schema.model.datatype.Text;
 
 /**
  * A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).
  *
  * @see <a href="https://schema.org/HowToSection">https://schema.org/HowToSection</a>
  */
-public interface HowToSection extends ListItem, CreativeWork, ItemList {
+public interface HowToSection extends ItemList, CreativeWork, ListItem {
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @return {@link ItemList} or {@link CreativeWork} or {@link Text}
+     * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
      */
     <T> List<T> getStepsList();
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @return {@link ItemList} or {@link CreativeWork} or {@link Text}
+     * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
      */
     <T> T getSteps();
 
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
+     *
+     * @param steps Text value to set.
+     */
+    void addSteps(Text steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
@@ -43,10 +49,4 @@ public interface HowToSection extends ListItem, CreativeWork, ItemList {
      * @param steps CreativeWork value to set.
      */
     void addSteps(CreativeWork steps);
-    /**
-     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
-     *
-     * @param steps Text value to set.
-     */
-    void addSteps(Text steps);
 }

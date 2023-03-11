@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia.
+ * Web page type: Media gallery page. A mixed-media page that can contain media such as images, videos, and other multimedia.
  *
  * @see <a href="https://schema.org/MediaGallery">https://schema.org/MediaGallery</a>
  */

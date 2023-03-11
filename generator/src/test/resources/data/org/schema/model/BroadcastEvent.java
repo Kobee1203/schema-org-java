@@ -54,27 +54,6 @@ public interface BroadcastEvent extends PublicationEvent {
     void addSubtitleLanguage(Text subtitleLanguage);
 
     /**
-     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getVideoFormatList();
-
-    /**
-     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-     *
-     * @return {@link Text}
-     */
-    Text getVideoFormat();
-
-    /**
-     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-     *
-     * @param videoFormat Text value to set.
-     */
-    void addVideoFormat(Text videoFormat);
-
-    /**
      * The event being broadcast such as a sporting event or awards ceremony.
      *
      * @return {@link Event}
@@ -94,6 +73,27 @@ public interface BroadcastEvent extends PublicationEvent {
      * @param broadcastOfEvent Event value to set.
      */
     void addBroadcastOfEvent(Event broadcastOfEvent);
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getVideoFormatList();
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @return {@link Text}
+     */
+    Text getVideoFormat();
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @param videoFormat Text value to set.
+     */
+    void addVideoFormat(Text videoFormat);
 
     /**
      * True if the broadcast is of a live event.

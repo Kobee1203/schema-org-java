@@ -6,17 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.PostalAddress;
-import org.schema.model.datatype.Text;
 import org.schema.model.Product;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Date;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.DateTime;
+import org.schema.model.PostalAddress;
 import org.schema.model.DeliveryEvent;
-import org.schema.model.DeliveryMethod;
+import org.schema.model.datatype.URL;
 import org.schema.model.Order;
+import org.schema.model.DeliveryMethod;
 
 /**
  * The delivery of a parcel either via the postal service or a commercial service.
@@ -24,48 +24,6 @@ import org.schema.model.Order;
  * @see <a href="https://schema.org/ParcelDelivery">https://schema.org/ParcelDelivery</a>
  */
 public interface ParcelDelivery extends Intangible {
-
-    /**
-     * Shipper's address.
-     *
-     * @return {@link PostalAddress}
-     */
-    List<PostalAddress> getOriginAddressList();
-
-    /**
-     * Shipper's address.
-     *
-     * @return {@link PostalAddress}
-     */
-    PostalAddress getOriginAddress();
-
-    /**
-     * Shipper's address.
-     *
-     * @param originAddress PostalAddress value to set.
-     */
-    void addOriginAddress(PostalAddress originAddress);
-
-    /**
-     * Shipper tracking number.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTrackingNumberList();
-
-    /**
-     * Shipper tracking number.
-     *
-     * @return {@link Text}
-     */
-    Text getTrackingNumber();
-
-    /**
-     * Shipper tracking number.
-     *
-     * @param trackingNumber Text value to set.
-     */
-    void addTrackingNumber(Text trackingNumber);
 
     /**
      * Item(s) being shipped.
@@ -89,12 +47,60 @@ public interface ParcelDelivery extends Intangible {
     void addItemShipped(Product itemShipped);
 
     /**
+     * Shipper tracking number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTrackingNumberList();
+
+    /**
+     * Shipper tracking number.
+     *
+     * @return {@link Text}
+     */
+    Text getTrackingNumber();
+
+    /**
+     * Shipper tracking number.
+     *
+     * @param trackingNumber Text value to set.
+     */
+    void addTrackingNumber(Text trackingNumber);
+
+    /**
+     * The latest date the package may arrive.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getExpectedArrivalUntilList();
+
+    /**
+     * The latest date the package may arrive.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> T getExpectedArrivalUntil();
+
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param expectedArrivalUntil DateTime value to set.
+     */
+    void addExpectedArrivalUntil(DateTime expectedArrivalUntil);
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param expectedArrivalUntil Date value to set.
+     */
+    void addExpectedArrivalUntil(Date expectedArrivalUntil);
+
+    /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
      * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     <T> List<T> getProviderList();
 
@@ -103,8 +109,8 @@ public interface ParcelDelivery extends Intangible {
      *
      * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     <T> T getProvider();
 
@@ -113,8 +119,8 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     void addProvider(Organization provider);
     /**
@@ -122,31 +128,10 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     void addProvider(Person provider);
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getTrackingUrlList();
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @return {@link URL}
-     */
-    URL getTrackingUrl();
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @param trackingUrl URL value to set.
-     */
-    void addTrackingUrl(URL trackingUrl);
 
     /**
      * Destination address.
@@ -168,54 +153,6 @@ public interface ParcelDelivery extends Intangible {
      * @param deliveryAddress PostalAddress value to set.
      */
     void addDeliveryAddress(PostalAddress deliveryAddress);
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> List<T> getExpectedArrivalUntilList();
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> T getExpectedArrivalUntil();
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @param expectedArrivalUntil Date value to set.
-     */
-    void addExpectedArrivalUntil(Date expectedArrivalUntil);
-    /**
-     * The latest date the package may arrive.
-     *
-     * @param expectedArrivalUntil DateTime value to set.
-     */
-    void addExpectedArrivalUntil(DateTime expectedArrivalUntil);
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @return {@link DeliveryEvent}
-     */
-    List<DeliveryEvent> getDeliveryStatusList();
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @return {@link DeliveryEvent}
-     */
-    DeliveryEvent getDeliveryStatus();
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @param deliveryStatus DeliveryEvent value to set.
-     */
-    void addDeliveryStatus(DeliveryEvent deliveryStatus);
 
     /**
      * The earliest date the package may arrive.
@@ -266,25 +203,67 @@ public interface ParcelDelivery extends Intangible {
     void addCarrier(Organization carrier);
 
     /**
-     * Method used for delivery or shipping.
+     * Shipper's address.
      *
-     * @return {@link DeliveryMethod}
+     * @return {@link PostalAddress}
      */
-    List<DeliveryMethod> getHasDeliveryMethodList();
+    List<PostalAddress> getOriginAddressList();
 
     /**
-     * Method used for delivery or shipping.
+     * Shipper's address.
      *
-     * @return {@link DeliveryMethod}
+     * @return {@link PostalAddress}
      */
-    DeliveryMethod getHasDeliveryMethod();
+    PostalAddress getOriginAddress();
 
     /**
-     * Method used for delivery or shipping.
+     * Shipper's address.
      *
-     * @param hasDeliveryMethod DeliveryMethod value to set.
+     * @param originAddress PostalAddress value to set.
      */
-    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
+    void addOriginAddress(PostalAddress originAddress);
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @return {@link DeliveryEvent}
+     */
+    List<DeliveryEvent> getDeliveryStatusList();
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @return {@link DeliveryEvent}
+     */
+    DeliveryEvent getDeliveryStatus();
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @param deliveryStatus DeliveryEvent value to set.
+     */
+    void addDeliveryStatus(DeliveryEvent deliveryStatus);
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getTrackingUrlList();
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @return {@link URL}
+     */
+    URL getTrackingUrl();
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @param trackingUrl URL value to set.
+     */
+    void addTrackingUrl(URL trackingUrl);
 
     /**
      * The overall order the items in this delivery were included in.
@@ -306,4 +285,25 @@ public interface ParcelDelivery extends Intangible {
      * @param partOfOrder Order value to set.
      */
     void addPartOfOrder(Order partOfOrder);
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getHasDeliveryMethodList();
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    DeliveryMethod getHasDeliveryMethod();
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @param hasDeliveryMethod DeliveryMethod value to set.
+     */
+    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
 }

@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Country;
 import org.schema.model.datatype.Text;
-import org.schema.model.PostalAddress;
 import org.schema.model.datatype.Number;
+import org.schema.model.Country;
+import org.schema.model.PostalAddress;
 
 /**
  * The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.
@@ -18,6 +18,75 @@ import org.schema.model.datatype.Number;
  * @see <a href="https://schema.org/GeoShape">https://schema.org/GeoShape</a>
  */
 public interface GeoShape extends StructuredValue {
+
+    /**
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPolygonList();
+
+    /**
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     *
+     * @return {@link Text}
+     */
+    Text getPolygon();
+
+    /**
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     *
+     * @param polygon Text value to set.
+     */
+    void addPolygon(Text polygon);
+
+    /**
+     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCircleList();
+
+    /**
+     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     *
+     * @return {@link Text}
+     */
+    Text getCircle();
+
+    /**
+     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     *
+     * @param circle Text value to set.
+     */
+    void addCircle(Text circle);
+
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> List<T> getElevationList();
+
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> T getElevation();
+
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param elevation Number value to set.
+     */
+    void addElevation(Number elevation);
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param elevation Text value to set.
+     */
+    void addElevation(Text elevation);
 
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
@@ -51,67 +120,28 @@ public interface GeoShape extends StructuredValue {
     void addAddressCountry(Text addressCountry);
 
     /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     * The postal code. For example, 94043.
      *
      * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    List<Text> getCircleList();
+    List<Text> getPostalCodeList();
 
     /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     * The postal code. For example, 94043.
      *
      * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    Text getCircle();
+    Text getPostalCode();
 
     /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     * The postal code. For example, 94043.
      *
-     * @param circle Text value to set.
+     * @param postalCode Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void addCircle(Text circle);
-
-    /**
-     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getLineList();
-
-    /**
-     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-     *
-     * @return {@link Text}
-     */
-    Text getLine();
-
-    /**
-     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-     *
-     * @param line Text value to set.
-     */
-    void addLine(Text line);
-
-    /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPolygonList();
-
-    /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-     *
-     * @return {@link Text}
-     */
-    Text getPolygon();
-
-    /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-     *
-     * @param polygon Text value to set.
-     */
-    void addPolygon(Text polygon);
+    void addPostalCode(Text postalCode);
 
     /**
      * Physical address of the item.
@@ -141,55 +171,25 @@ public interface GeoShape extends StructuredValue {
     void addAddress(PostalAddress address);
 
     /**
-     * The postal code. For example, 94043.
+     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      *
      * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    List<Text> getPostalCodeList();
+    List<Text> getLineList();
 
     /**
-     * The postal code. For example, 94043.
+     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      *
      * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    Text getPostalCode();
+    Text getLine();
 
     /**
-     * The postal code. For example, 94043.
+     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      *
-     * @param postalCode Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @param line Text value to set.
      */
-    void addPostalCode(Text postalCode);
-
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> List<T> getElevationList();
-
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> T getElevation();
-
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param elevation Text value to set.
-     */
-    void addElevation(Text elevation);
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param elevation Number value to set.
-     */
-    void addElevation(Number elevation);
+    void addLine(Text line);
 
     /**
      * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.

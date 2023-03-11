@@ -43,54 +43,6 @@ public interface DoseSchedule extends MedicalIntangible {
     void addTargetPopulation(Text targetPopulation);
 
     /**
-     * How often the dose is taken, e.g. 'daily'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getFrequencyList();
-
-    /**
-     * How often the dose is taken, e.g. 'daily'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getFrequency();
-
-    /**
-     * How often the dose is taken, e.g. 'daily'.
-     *
-     * @param frequency Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addFrequency(Text frequency);
-
-    /**
-     * The unit of the dose, e.g. 'mg'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getDoseUnitList();
-
-    /**
-     * The unit of the dose, e.g. 'mg'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getDoseUnit();
-
-    /**
-     * The unit of the dose, e.g. 'mg'.
-     *
-     * @param doseUnit Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addDoseUnit(Text doseUnit);
-
-    /**
      * The value of the dose, e.g. 500.
      *
      * @return {@link Number} or {@link QualitativeValue}
@@ -120,4 +72,52 @@ public interface DoseSchedule extends MedicalIntangible {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addDoseValue(QualitativeValue doseValue);
+
+    /**
+     * The unit of the dose, e.g. 'mg'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getDoseUnitList();
+
+    /**
+     * The unit of the dose, e.g. 'mg'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getDoseUnit();
+
+    /**
+     * The unit of the dose, e.g. 'mg'.
+     *
+     * @param doseUnit Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addDoseUnit(Text doseUnit);
+
+    /**
+     * How often the dose is taken, e.g. 'daily'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getFrequencyList();
+
+    /**
+     * How often the dose is taken, e.g. 'daily'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getFrequency();
+
+    /**
+     * How often the dose is taken, e.g. 'daily'.
+     *
+     * @param frequency Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addFrequency(Text frequency);
 }

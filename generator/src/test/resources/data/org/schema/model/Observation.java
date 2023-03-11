@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DataType;
 import org.schema.model.StatisticalPopulation;
-import org.schema.model.Property;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.DataType;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.Property;
 
 /**
  * Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube "measure properties", as in the [lifeExpectancy example](https://www.w3.org/TR/vocab-data-cube/#dsd-example)).
@@ -22,33 +22,6 @@ import org.schema.model.QuantitativeValue;
  * @see <a href="https://schema.org/Observation">https://schema.org/Observation</a>
  */
 public interface Observation extends Intangible {
-
-    /**
-     * The measuredValue of an [[Observation]].
-     *
-     * @return {@link DataType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    List<DataType> getMeasuredValueList();
-
-    /**
-     * The measuredValue of an [[Observation]].
-     *
-     * @return {@link DataType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    DataType getMeasuredValue();
-
-    /**
-     * The measuredValue of an [[Observation]].
-     *
-     * @param measuredValue DataType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    void addMeasuredValue(DataType measuredValue);
 
     /**
      * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
@@ -78,31 +51,58 @@ public interface Observation extends Intangible {
     void addObservedNode(StatisticalPopulation observedNode);
 
     /**
-     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * A marginOfError for an [[Observation]].
      *
-     * @return {@link Property}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    List<Property> getMeasuredPropertyList();
+    List<QuantitativeValue> getMarginOfErrorList();
 
     /**
-     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * A marginOfError for an [[Observation]].
      *
-     * @return {@link Property}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    Property getMeasuredProperty();
+    QuantitativeValue getMarginOfError();
 
     /**
-     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * A marginOfError for an [[Observation]].
      *
-     * @param measuredProperty Property value to set.
+     * @param marginOfError QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void addMeasuredProperty(Property measuredProperty);
+    void addMarginOfError(QuantitativeValue marginOfError);
+
+    /**
+     * The measuredValue of an [[Observation]].
+     *
+     * @return {@link DataType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    List<DataType> getMeasuredValueList();
+
+    /**
+     * The measuredValue of an [[Observation]].
+     *
+     * @return {@link DataType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    DataType getMeasuredValue();
+
+    /**
+     * The measuredValue of an [[Observation]].
+     *
+     * @param measuredValue DataType value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    void addMeasuredValue(DataType measuredValue);
 
     /**
      * The observationDate of an [[Observation]].
@@ -132,29 +132,29 @@ public interface Observation extends Intangible {
     void addObservationDate(DateTime observationDate);
 
     /**
-     * A marginOfError for an [[Observation]].
+     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Property}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    List<QuantitativeValue> getMarginOfErrorList();
+    List<Property> getMeasuredPropertyList();
 
     /**
-     * A marginOfError for an [[Observation]].
+     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Property}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    QuantitativeValue getMarginOfError();
+    Property getMeasuredProperty();
 
     /**
-     * A marginOfError for an [[Observation]].
+     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
      *
-     * @param marginOfError QuantitativeValue value to set.
+     * @param measuredProperty Property value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void addMarginOfError(QuantitativeValue marginOfError);
+    void addMeasuredProperty(Property measuredProperty);
 }

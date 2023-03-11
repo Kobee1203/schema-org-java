@@ -16,25 +16,25 @@ import org.schema.model.datatype.Text;
 public interface APIReference extends TechArticle {
 
     /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
+     * Indicates whether API is managed or unmanaged.
      *
      * @return {@link Text}
      */
-    List<Text> getAssemblyList();
+    List<Text> getProgrammingModelList();
 
     /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
+     * Indicates whether API is managed or unmanaged.
      *
      * @return {@link Text}
      */
-    Text getAssembly();
+    Text getProgrammingModel();
 
     /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
+     * Indicates whether API is managed or unmanaged.
      *
-     * @param assembly Text value to set.
+     * @param programmingModel Text value to set.
      */
-    void addAssembly(Text assembly);
+    void addProgrammingModel(Text programmingModel);
 
     /**
      * Type of app development: phone, Metro style, desktop, XBox, etc.
@@ -58,65 +58,65 @@ public interface APIReference extends TechArticle {
     void addTargetPlatform(Text targetPlatform);
 
     /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
      *
      * @return {@link Text}
      */
-    List<Text> getExecutableLibraryNameList();
+    List<Text> getAssemblyList();
 
     /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
      *
      * @return {@link Text}
      */
-    Text getExecutableLibraryName();
+    Text getAssembly();
 
     /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
      *
-     * @param executableLibraryName Text value to set.
+     * @param assembly Text value to set.
      */
-    void addExecutableLibraryName(Text executableLibraryName);
+    void addAssembly(Text assembly);
 
     /**
-     * Indicates whether API is managed or unmanaged.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getProgrammingModelList();
-
-    /**
-     * Indicates whether API is managed or unmanaged.
-     *
-     * @return {@link Text}
-     */
-    Text getProgrammingModel();
-
-    /**
-     * Indicates whether API is managed or unmanaged.
-     *
-     * @param programmingModel Text value to set.
-     */
-    void addProgrammingModel(Text programmingModel);
-
-    /**
-     * Associated product/technology version. e.g., .NET Framework 4.5.
+     * Associated product/technology version. E.g., .NET Framework 4.5.
      *
      * @return {@link Text}
      */
     List<Text> getAssemblyVersionList();
 
     /**
-     * Associated product/technology version. e.g., .NET Framework 4.5.
+     * Associated product/technology version. E.g., .NET Framework 4.5.
      *
      * @return {@link Text}
      */
     Text getAssemblyVersion();
 
     /**
-     * Associated product/technology version. e.g., .NET Framework 4.5.
+     * Associated product/technology version. E.g., .NET Framework 4.5.
      *
      * @param assemblyVersion Text value to set.
      */
     void addAssemblyVersion(Text assemblyVersion);
+
+    /**
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getExecutableLibraryNameList();
+
+    /**
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     *
+     * @return {@link Text}
+     */
+    Text getExecutableLibraryName();
+
+    /**
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     *
+     * @param executableLibraryName Text value to set.
+     */
+    void addExecutableLibraryName(Text executableLibraryName);
 }

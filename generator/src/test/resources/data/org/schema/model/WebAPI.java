@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.CreativeWork;
 import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 
 /**
  * An application programming interface accessible over Web/Internet technologies.
@@ -21,7 +21,7 @@ public interface WebAPI extends Service {
     /**
      * Further documentation describing the Web API in more detail.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
@@ -30,7 +30,7 @@ public interface WebAPI extends Service {
     /**
      * Further documentation describing the Web API in more detail.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
@@ -39,17 +39,17 @@ public interface WebAPI extends Service {
     /**
      * Further documentation describing the Web API in more detail.
      *
-     * @param documentation CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    void addDocumentation(CreativeWork documentation);
-    /**
-     * Further documentation describing the Web API in more detail.
-     *
      * @param documentation URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     void addDocumentation(URL documentation);
+    /**
+     * Further documentation describing the Web API in more detail.
+     *
+     * @param documentation CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    void addDocumentation(CreativeWork documentation);
 }

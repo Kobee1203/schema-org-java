@@ -7,14 +7,14 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Person;
-import org.schema.model.VideoObject;
-import org.schema.model.datatype.Text;
 import org.schema.model.CreativeWork;
 import org.schema.model.GameServer;
-import org.schema.model.GamePlayMode;
-import org.schema.model.datatype.URL;
+import org.schema.model.VideoObject;
+import org.schema.model.datatype.Text;
 import org.schema.model.Thing;
+import org.schema.model.datatype.URL;
 import org.schema.model.MusicGroup;
+import org.schema.model.GamePlayMode;
 
 /**
  * A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.
@@ -24,88 +24,46 @@ import org.schema.model.MusicGroup;
 public interface VideoGame extends SoftwareApplication, Game {
 
     /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
-    List<Person> getDirectorList();
+    List<Person> getActorsList();
 
     /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
-    Person getDirector();
+    Person getActors();
 
     /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param director Person value to set.
+     * @param actors Person value to set.
      */
-    void addDirector(Person director);
+    void addActors(Person actors);
 
     /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
     List<Person> getActorList();
 
     /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
     Person getActor();
 
     /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @param actor Person value to set.
      */
     void addActor(Person actor);
-
-    /**
-     * The trailer of a movie or tv/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    List<VideoObject> getTrailerList();
-
-    /**
-     * The trailer of a movie or tv/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    VideoObject getTrailer();
-
-    /**
-     * The trailer of a movie or tv/radio series, season, episode, etc.
-     *
-     * @param trailer VideoObject value to set.
-     */
-    void addTrailer(VideoObject trailer);
-
-    /**
-     * The edition of a video game.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getGameEditionList();
-
-    /**
-     * The edition of a video game.
-     *
-     * @return {@link Text}
-     */
-    Text getGameEdition();
-
-    /**
-     * The edition of a video game.
-     *
-     * @param gameEdition Text value to set.
-     */
-    void addGameEdition(Text gameEdition);
 
     /**
      * Cheat codes to the game.
@@ -150,6 +108,150 @@ public interface VideoGame extends SoftwareApplication, Game {
     void addGameServer(GameServer gameServer);
 
     /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    VideoObject getTrailer();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @param trailer VideoObject value to set.
+     */
+    void addTrailer(VideoObject trailer);
+
+    /**
+     * The edition of a video game.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getGameEditionList();
+
+    /**
+     * The edition of a video game.
+     *
+     * @return {@link Text}
+     */
+    Text getGameEdition();
+
+    /**
+     * The edition of a video game.
+     *
+     * @param gameEdition Text value to set.
+     */
+    void addGameEdition(Text gameEdition);
+
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @return {@link Thing} or {@link URL} or {@link Text}
+     */
+    <T> List<T> getGamePlatformList();
+
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @return {@link Thing} or {@link URL} or {@link Text}
+     */
+    <T> T getGamePlatform();
+
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param gamePlatform Thing value to set.
+     */
+    void addGamePlatform(Thing gamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param gamePlatform URL value to set.
+     */
+    void addGamePlatform(URL gamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param gamePlatform Text value to set.
+     */
+    void addGamePlatform(Text gamePlatform);
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirector();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    void addDirector(Person director);
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirectors();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param directors Person value to set.
+     */
+    void addDirectors(Person directors);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> List<T> getMusicByList();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> T getMusicBy();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void addMusicBy(MusicGroup musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy Person value to set.
+     */
+    void addMusicBy(Person musicBy);
+
+    /**
      * Links to tips, tactics, etc.
      *
      * @return {@link CreativeWork}
@@ -171,27 +273,6 @@ public interface VideoGame extends SoftwareApplication, Game {
     void addGameTip(CreativeWork gameTip);
 
     /**
-     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorsList();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActors();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actors Person value to set.
-     */
-    void addActors(Person actors);
-
-    /**
      * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
      *
      * @return {@link GamePlayMode}
@@ -211,85 +292,4 @@ public interface VideoGame extends SoftwareApplication, Game {
      * @param playMode GamePlayMode value to set.
      */
     void addPlayMode(GamePlayMode playMode);
-
-    /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-     *
-     * @return {@link Text} or {@link URL} or {@link Thing}
-     */
-    <T> List<T> getGamePlatformList();
-
-    /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-     *
-     * @return {@link Text} or {@link URL} or {@link Thing}
-     */
-    <T> T getGamePlatform();
-
-    /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-     *
-     * @param gamePlatform Text value to set.
-     */
-    void addGamePlatform(Text gamePlatform);
-    /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-     *
-     * @param gamePlatform URL value to set.
-     */
-    void addGamePlatform(URL gamePlatform);
-    /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-     *
-     * @param gamePlatform Thing value to set.
-     */
-    void addGamePlatform(Thing gamePlatform);
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link Person} or {@link MusicGroup}
-     */
-    <T> List<T> getMusicByList();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link Person} or {@link MusicGroup}
-     */
-    <T> T getMusicBy();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy Person value to set.
-     */
-    void addMusicBy(Person musicBy);
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy MusicGroup value to set.
-     */
-    void addMusicBy(MusicGroup musicBy);
-
-    /**
-     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorsList();
-
-    /**
-     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirectors();
-
-    /**
-     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param directors Person value to set.
-     */
-    void addDirectors(Person directors);
 }

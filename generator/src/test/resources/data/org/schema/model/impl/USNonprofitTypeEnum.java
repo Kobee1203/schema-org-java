@@ -5,16 +5,16 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Enumeration;
 import org.schema.model.Class;
 import org.schema.model.Property;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
+import org.schema.model.Enumeration;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
+import org.schema.model.datatype.Text;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -33,41 +33,41 @@ import org.schema.model.USNonprofitType;
 @JsonLdTypeName("USNonprofitType")
 public enum USNonprofitTypeEnum implements USNonprofitType {
     NONPROFIT_501C4("Nonprofit501c4"),
-    NONPROFIT_501C23("Nonprofit501c23"),
-    NONPROFIT_501K("Nonprofit501k"),
-    NONPROFIT_501C1("Nonprofit501c1"),
-    NONPROFIT_501N("Nonprofit501n"),
-    NONPROFIT_501C7("Nonprofit501c7"),
-    NONPROFIT_501C9("Nonprofit501c9"),
-    NONPROFIT_501C3("Nonprofit501c3"),
     NONPROFIT_501C2("Nonprofit501c2"),
-    NONPROFIT_501A("Nonprofit501a"),
-    NONPROFIT_501C21("Nonprofit501c21"),
-    NONPROFIT_501E("Nonprofit501e"),
-    NONPROFIT_501C14("Nonprofit501c14"),
-    NONPROFIT_501C28("Nonprofit501c28"),
-    NONPROFIT_501C18("Nonprofit501c18"),
-    NONPROFIT_501C27("Nonprofit501c27"),
-    NONPROFIT_501D("Nonprofit501d"),
-    NONPROFIT_501C25("Nonprofit501c25"),
-    NONPROFIT_501C15("Nonprofit501c15"),
-    NONPROFIT_501C12("Nonprofit501c12"),
-    NONPROFIT_501C13("Nonprofit501c13"),
-    NONPROFIT_501C26("Nonprofit501c26"),
-    NONPROFIT_501C8("Nonprofit501c8"),
     NONPROFIT_501C10("Nonprofit501c10"),
-    NONPROFIT_501C11("Nonprofit501c11"),
-    NONPROFIT_501F("Nonprofit501f"),
-    NONPROFIT_501C5("Nonprofit501c5"),
-    NONPROFIT_501C20("Nonprofit501c20"),
-    NONPROFIT_501C6("Nonprofit501c6"),
-    NONPROFIT_527("Nonprofit527"),
-    NONPROFIT_501C19("Nonprofit501c19"),
-    NONPROFIT_501C16("Nonprofit501c16"),
-    NONPROFIT_501C24("Nonprofit501c24"),
     NONPROFIT_501Q("Nonprofit501q"),
+    NONPROFIT_501C24("Nonprofit501c24"),
+    NONPROFIT_501C18("Nonprofit501c18"),
+    NONPROFIT_501C20("Nonprofit501c20"),
+    NONPROFIT_501C15("Nonprofit501c15"),
+    NONPROFIT_501N("Nonprofit501n"),
+    NONPROFIT_501C8("Nonprofit501c8"),
+    NONPROFIT_501C6("Nonprofit501c6"),
+    NONPROFIT_501C21("Nonprofit501c21"),
+    NONPROFIT_501C12("Nonprofit501c12"),
+    NONPROFIT_501C16("Nonprofit501c16"),
+    NONPROFIT_501C7("Nonprofit501c7"),
+    NONPROFIT_501A("Nonprofit501a"),
+    NONPROFIT_501C28("Nonprofit501c28"),
+    NONPROFIT_501C5("Nonprofit501c5"),
+    NONPROFIT_501C25("Nonprofit501c25"),
+    NONPROFIT_501C1("Nonprofit501c1"),
+    NONPROFIT_501C11("Nonprofit501c11"),
+    NONPROFIT_501E("Nonprofit501e"),
+    NONPROFIT_501C3("Nonprofit501c3"),
+    NONPROFIT_501C27("Nonprofit501c27"),
+    NONPROFIT_501C9("Nonprofit501c9"),
     NONPROFIT_501C22("Nonprofit501c22"),
-    NONPROFIT_501C17("Nonprofit501c17")
+    NONPROFIT_501K("Nonprofit501k"),
+    NONPROFIT_501D("Nonprofit501d"),
+    NONPROFIT_501C26("Nonprofit501c26"),
+    NONPROFIT_527("Nonprofit527"),
+    NONPROFIT_501C23("Nonprofit501c23"),
+    NONPROFIT_501F("Nonprofit501f"),
+    NONPROFIT_501C19("Nonprofit501c19"),
+    NONPROFIT_501C17("Nonprofit501c17"),
+    NONPROFIT_501C13("Nonprofit501c13"),
+    NONPROFIT_501C14("Nonprofit501c14")
     ;
 
     private final String enumValue;
@@ -131,11 +131,6 @@ public enum USNonprofitTypeEnum implements USNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Enumeration supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum USNonprofitTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
     public void addSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum USNonprofitTypeEnum");
     }
@@ -146,47 +141,8 @@ public enum USNonprofitTypeEnum implements USNonprofitType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getMainEntityOfPageList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getMainEntityOfPage() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum USNonprofitTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum USNonprofitTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getAlternateNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getAlternateName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum USNonprofitTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum USNonprofitTypeEnum");
+    public void addSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum USNonprofitTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -203,47 +159,21 @@ public enum USNonprofitTypeEnum implements USNonprofitType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getImageList() { return null; }
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getImage() { return null; }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum USNonprofitTypeEnum");
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum USNonprofitTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum USNonprofitTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<URL> getUrlList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getUrl() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum USNonprofitTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getDescriptionList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getDescription() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum USNonprofitTypeEnum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum USNonprofitTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -265,29 +195,29 @@ public enum USNonprofitTypeEnum implements USNonprofitType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getAdditionalTypeList() { return null; }
+    public List<URL> getUrlList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getAdditionalType() { return null; }
+    public URL getUrl() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum USNonprofitTypeEnum");
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum USNonprofitTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Text> getDisambiguatingDescriptionList() { return null; }
+    public List<Text> getAlternateNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDisambiguatingDescription() { return null; }
+    public Text getAlternateName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum USNonprofitTypeEnum");
+    public void addAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum USNonprofitTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -304,12 +234,43 @@ public enum USNonprofitTypeEnum implements USNonprofitType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
+    public List<Text> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum USNonprofitTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getDisambiguatingDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum USNonprofitTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
     public <T> List<T> getIdentifierList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getIdentifier() { return null; }
 
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum USNonprofitTypeEnum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public void addIdentifier(URL identifier) {
@@ -322,7 +283,46 @@ public enum USNonprofitTypeEnum implements USNonprofitType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum USNonprofitTypeEnum");
+    public <T> List<T> getImageList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getImage() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum USNonprofitTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum USNonprofitTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getNameList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getName() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum USNonprofitTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<URL> getAdditionalTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public URL getAdditionalType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum USNonprofitTypeEnum");
     }
 }

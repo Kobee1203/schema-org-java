@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.CreativeWork;
-import org.schema.model.SoftwareApplication;
 import org.schema.model.ImageObject;
+import org.schema.model.datatype.Text;
+import org.schema.model.CreativeWork;
 import org.schema.model.DataFeed;
+import org.schema.model.SoftwareApplication;
 
 /**
  * A software application.
@@ -21,115 +21,79 @@ import org.schema.model.DataFeed;
 public interface SoftwareApplication extends CreativeWork {
 
     /**
-     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     * A link to a screenshot image of the app.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    <T> List<T> getScreenshotList();
+
+    /**
+     * A link to a screenshot image of the app.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    <T> T getScreenshot();
+
+    /**
+     * A link to a screenshot image of the app.
+     *
+     * @param screenshot URL value to set.
+     */
+    void addScreenshot(URL screenshot);
+    /**
+     * A link to a screenshot image of the app.
+     *
+     * @param screenshot ImageObject value to set.
+     */
+    void addScreenshot(ImageObject screenshot);
+
+    /**
+     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
      *
      * @return {@link Text}
      */
-    List<Text> getCountriesSupportedList();
+    List<Text> getPermissionsList();
 
     /**
-     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
      *
      * @return {@link Text}
      */
-    Text getCountriesSupported();
+    Text getPermissions();
 
     /**
-     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
      *
-     * @param countriesSupported Text value to set.
+     * @param permissions Text value to set.
      */
-    void addCountriesSupported(Text countriesSupported);
+    void addPermissions(Text permissions);
 
     /**
-     * URL at which the app may be installed, if different from the URL of the item.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getInstallUrlList();
-
-    /**
-     * URL at which the app may be installed, if different from the URL of the item.
-     *
-     * @return {@link URL}
-     */
-    URL getInstallUrl();
-
-    /**
-     * URL at which the app may be installed, if different from the URL of the item.
-     *
-     * @param installUrl URL value to set.
-     */
-    void addInstallUrl(URL installUrl);
-
-    /**
-     * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getOperatingSystemList();
-
-    /**
-     * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
-     *
-     * @return {@link Text}
-     */
-    Text getOperatingSystem();
-
-    /**
-     * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
-     *
-     * @param operatingSystem Text value to set.
-     */
-    void addOperatingSystem(Text operatingSystem);
-
-    /**
-     * Minimum memory requirements.
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
      *
      * @return {@link Text} or {@link URL}
      */
-    <T> List<T> getMemoryRequirementsList();
+    <T> List<T> getRequirementsList();
 
     /**
-     * Minimum memory requirements.
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
      *
      * @return {@link Text} or {@link URL}
      */
-    <T> T getMemoryRequirements();
+    <T> T getRequirements();
 
     /**
-     * Minimum memory requirements.
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
      *
-     * @param memoryRequirements Text value to set.
+     * @param requirements Text value to set.
      */
-    void addMemoryRequirements(Text memoryRequirements);
+    void addRequirements(Text requirements);
     /**
-     * Minimum memory requirements.
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
      *
-     * @param memoryRequirements URL value to set.
+     * @param requirements URL value to set.
      */
-    void addMemoryRequirements(URL memoryRequirements);
-
-    /**
-     * Version of the software instance.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSoftwareVersionList();
-
-    /**
-     * Version of the software instance.
-     *
-     * @return {@link Text}
-     */
-    Text getSoftwareVersion();
-
-    /**
-     * Version of the software instance.
-     *
-     * @param softwareVersion Text value to set.
-     */
-    void addSoftwareVersion(Text softwareVersion);
+    void addRequirements(URL requirements);
 
     /**
      * Storage requirements (free space required).
@@ -159,25 +123,190 @@ public interface SoftwareApplication extends CreativeWork {
     void addStorageRequirements(Text storageRequirements);
 
     /**
-     * Software application help.
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
      *
-     * @return {@link CreativeWork}
+     * @return {@link Text} or {@link URL}
      */
-    List<CreativeWork> getSoftwareHelpList();
+    <T> List<T> getSoftwareRequirementsList();
 
     /**
-     * Software application help.
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
      *
-     * @return {@link CreativeWork}
+     * @return {@link Text} or {@link URL}
      */
-    CreativeWork getSoftwareHelp();
+    <T> T getSoftwareRequirements();
 
     /**
-     * Software application help.
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
      *
-     * @param softwareHelp CreativeWork value to set.
+     * @param softwareRequirements Text value to set.
      */
-    void addSoftwareHelp(CreativeWork softwareHelp);
+    void addSoftwareRequirements(Text softwareRequirements);
+    /**
+     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
+     *
+     * @param softwareRequirements URL value to set.
+     */
+    void addSoftwareRequirements(URL softwareRequirements);
+
+    /**
+     * Type of software application, e.g. 'Game, Multimedia'.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getApplicationCategoryList();
+
+    /**
+     * Type of software application, e.g. 'Game, Multimedia'.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getApplicationCategory();
+
+    /**
+     * Type of software application, e.g. 'Game, Multimedia'.
+     *
+     * @param applicationCategory URL value to set.
+     */
+    void addApplicationCategory(URL applicationCategory);
+    /**
+     * Type of software application, e.g. 'Game, Multimedia'.
+     *
+     * @param applicationCategory Text value to set.
+     */
+    void addApplicationCategory(Text applicationCategory);
+
+    /**
+     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDeviceList();
+
+    /**
+     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
+     *
+     * @return {@link Text}
+     */
+    Text getDevice();
+
+    /**
+     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
+     *
+     * @param device Text value to set.
+     */
+    void addDevice(Text device);
+
+    /**
+     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFileSizeList();
+
+    /**
+     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+     *
+     * @return {@link Text}
+     */
+    Text getFileSize();
+
+    /**
+     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+     *
+     * @param fileSize Text value to set.
+     */
+    void addFileSize(Text fileSize);
+
+    /**
+     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCountriesNotSupportedList();
+
+    /**
+     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @return {@link Text}
+     */
+    Text getCountriesNotSupported();
+
+    /**
+     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @param countriesNotSupported Text value to set.
+     */
+    void addCountriesNotSupported(Text countriesNotSupported);
+
+    /**
+     * Operating systems supported (Windows 7, OS X 10.6, Android 1.6).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOperatingSystemList();
+
+    /**
+     * Operating systems supported (Windows 7, OS X 10.6, Android 1.6).
+     *
+     * @return {@link Text}
+     */
+    Text getOperatingSystem();
+
+    /**
+     * Operating systems supported (Windows 7, OS X 10.6, Android 1.6).
+     *
+     * @param operatingSystem Text value to set.
+     */
+    void addOperatingSystem(Text operatingSystem);
+
+    /**
+     * Features or modules provided by this application (and possibly required by other applications).
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getFeatureListList();
+
+    /**
+     * Features or modules provided by this application (and possibly required by other applications).
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getFeatureList();
+
+    /**
+     * Features or modules provided by this application (and possibly required by other applications).
+     *
+     * @param featureList URL value to set.
+     */
+    void addFeatureList(URL featureList);
+    /**
+     * Features or modules provided by this application (and possibly required by other applications).
+     *
+     * @param featureList Text value to set.
+     */
+    void addFeatureList(Text featureList);
+
+    /**
+     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getApplicationSuiteList();
+
+    /**
+     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
+     *
+     * @return {@link Text}
+     */
+    Text getApplicationSuite();
+
+    /**
+     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
+     *
+     * @param applicationSuite Text value to set.
+     */
+    void addApplicationSuite(Text applicationSuite);
 
     /**
      * Subcategory of the application, e.g. 'Arcade Game'.
@@ -207,292 +336,52 @@ public interface SoftwareApplication extends CreativeWork {
     void addApplicationSubCategory(Text applicationSubCategory);
 
     /**
-     * If the file can be downloaded, URL to download the binary.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getDownloadUrlList();
-
-    /**
-     * If the file can be downloaded, URL to download the binary.
-     *
-     * @return {@link URL}
-     */
-    URL getDownloadUrl();
-
-    /**
-     * If the file can be downloaded, URL to download the binary.
-     *
-     * @param downloadUrl URL value to set.
-     */
-    void addDownloadUrl(URL downloadUrl);
-
-    /**
-     * Type of software application, e.g. 'Game, Multimedia'.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> List<T> getApplicationCategoryList();
-
-    /**
-     * Type of software application, e.g. 'Game, Multimedia'.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> T getApplicationCategory();
-
-    /**
-     * Type of software application, e.g. 'Game, Multimedia'.
-     *
-     * @param applicationCategory Text value to set.
-     */
-    void addApplicationCategory(Text applicationCategory);
-    /**
-     * Type of software application, e.g. 'Game, Multimedia'.
-     *
-     * @param applicationCategory URL value to set.
-     */
-    void addApplicationCategory(URL applicationCategory);
-
-    /**
-     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getCountriesNotSupportedList();
-
-    /**
-     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @return {@link Text}
-     */
-    Text getCountriesNotSupported();
-
-    /**
-     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @param countriesNotSupported Text value to set.
-     */
-    void addCountriesNotSupported(Text countriesNotSupported);
-
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getSoftwareRequirementsList();
-
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getSoftwareRequirements();
-
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param softwareRequirements URL value to set.
-     */
-    void addSoftwareRequirements(URL softwareRequirements);
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param softwareRequirements Text value to set.
-     */
-    void addSoftwareRequirements(Text softwareRequirements);
-
-    /**
-     * Additional content for a software application.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    List<SoftwareApplication> getSoftwareAddOnList();
-
-    /**
-     * Additional content for a software application.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    SoftwareApplication getSoftwareAddOn();
-
-    /**
-     * Additional content for a software application.
-     *
-     * @param softwareAddOn SoftwareApplication value to set.
-     */
-    void addSoftwareAddOn(SoftwareApplication softwareAddOn);
-
-    /**
-     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getApplicationSuiteList();
-
-    /**
-     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
-     *
-     * @return {@link Text}
-     */
-    Text getApplicationSuite();
-
-    /**
-     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
-     *
-     * @param applicationSuite Text value to set.
-     */
-    void addApplicationSuite(Text applicationSuite);
-
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getRequirementsList();
-
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getRequirements();
-
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param requirements URL value to set.
-     */
-    void addRequirements(URL requirements);
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param requirements Text value to set.
-     */
-    void addRequirements(Text requirements);
-
-    /**
-     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPermissionsList();
-
-    /**
-     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
-     *
-     * @return {@link Text}
-     */
-    Text getPermissions();
-
-    /**
-     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
-     *
-     * @param permissions Text value to set.
-     */
-    void addPermissions(Text permissions);
-
-    /**
-     * Processor architecture required to run the application (e.g. IA64).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getProcessorRequirementsList();
-
-    /**
-     * Processor architecture required to run the application (e.g. IA64).
-     *
-     * @return {@link Text}
-     */
-    Text getProcessorRequirements();
-
-    /**
-     * Processor architecture required to run the application (e.g. IA64).
-     *
-     * @param processorRequirements Text value to set.
-     */
-    void addProcessorRequirements(Text processorRequirements);
-
-    /**
-     * A link to a screenshot image of the app.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    <T> List<T> getScreenshotList();
-
-    /**
-     * A link to a screenshot image of the app.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    <T> T getScreenshot();
-
-    /**
-     * A link to a screenshot image of the app.
-     *
-     * @param screenshot ImageObject value to set.
-     */
-    void addScreenshot(ImageObject screenshot);
-    /**
-     * A link to a screenshot image of the app.
-     *
-     * @param screenshot URL value to set.
-     */
-    void addScreenshot(URL screenshot);
-
-    /**
-     * Features or modules provided by this application (and possibly required by other applications).
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> List<T> getFeatureListList();
-
-    /**
-     * Features or modules provided by this application (and possibly required by other applications).
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> T getFeatureList();
-
-    /**
-     * Features or modules provided by this application (and possibly required by other applications).
-     *
-     * @param featureList Text value to set.
-     */
-    void addFeatureList(Text featureList);
-    /**
-     * Features or modules provided by this application (and possibly required by other applications).
-     *
-     * @param featureList URL value to set.
-     */
-    void addFeatureList(URL featureList);
-
-    /**
      * Description of what changed in this version.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link Text} or {@link URL}
      */
     <T> List<T> getReleaseNotesList();
 
     /**
      * Description of what changed in this version.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link Text} or {@link URL}
      */
     <T> T getReleaseNotes();
 
     /**
      * Description of what changed in this version.
      *
-     * @param releaseNotes URL value to set.
-     */
-    void addReleaseNotes(URL releaseNotes);
-    /**
-     * Description of what changed in this version.
-     *
      * @param releaseNotes Text value to set.
      */
     void addReleaseNotes(Text releaseNotes);
+    /**
+     * Description of what changed in this version.
+     *
+     * @param releaseNotes URL value to set.
+     */
+    void addReleaseNotes(URL releaseNotes);
+
+    /**
+     * Software application help.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getSoftwareHelpList();
+
+    /**
+     * Software application help.
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getSoftwareHelp();
+
+    /**
+     * Software application help.
+     *
+     * @param softwareHelp CreativeWork value to set.
+     */
+    void addSoftwareHelp(CreativeWork softwareHelp);
 
     /**
      * Supporting data for a SoftwareApplication.
@@ -516,46 +405,25 @@ public interface SoftwareApplication extends CreativeWork {
     void addSupportingData(DataFeed supportingData);
 
     /**
-     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
      *
      * @return {@link Text}
      */
-    List<Text> getFileSizeList();
+    List<Text> getCountriesSupportedList();
 
     /**
-     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
      *
      * @return {@link Text}
      */
-    Text getFileSize();
+    Text getCountriesSupported();
 
     /**
-     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
      *
-     * @param fileSize Text value to set.
+     * @param countriesSupported Text value to set.
      */
-    void addFileSize(Text fileSize);
-
-    /**
-     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getDeviceList();
-
-    /**
-     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-     *
-     * @return {@link Text}
-     */
-    Text getDevice();
-
-    /**
-     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-     *
-     * @param device Text value to set.
-     */
-    void addDevice(Text device);
+    void addCountriesSupported(Text countriesSupported);
 
     /**
      * Device required to run the application. Used in cases where a specific make/model is required to run the application.
@@ -577,4 +445,136 @@ public interface SoftwareApplication extends CreativeWork {
      * @param availableOnDevice Text value to set.
      */
     void addAvailableOnDevice(Text availableOnDevice);
+
+    /**
+     * Version of the software instance.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSoftwareVersionList();
+
+    /**
+     * Version of the software instance.
+     *
+     * @return {@link Text}
+     */
+    Text getSoftwareVersion();
+
+    /**
+     * Version of the software instance.
+     *
+     * @param softwareVersion Text value to set.
+     */
+    void addSoftwareVersion(Text softwareVersion);
+
+    /**
+     * URL at which the app may be installed, if different from the URL of the item.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getInstallUrlList();
+
+    /**
+     * URL at which the app may be installed, if different from the URL of the item.
+     *
+     * @return {@link URL}
+     */
+    URL getInstallUrl();
+
+    /**
+     * URL at which the app may be installed, if different from the URL of the item.
+     *
+     * @param installUrl URL value to set.
+     */
+    void addInstallUrl(URL installUrl);
+
+    /**
+     * Minimum memory requirements.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getMemoryRequirementsList();
+
+    /**
+     * Minimum memory requirements.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> T getMemoryRequirements();
+
+    /**
+     * Minimum memory requirements.
+     *
+     * @param memoryRequirements Text value to set.
+     */
+    void addMemoryRequirements(Text memoryRequirements);
+    /**
+     * Minimum memory requirements.
+     *
+     * @param memoryRequirements URL value to set.
+     */
+    void addMemoryRequirements(URL memoryRequirements);
+
+    /**
+     * Processor architecture required to run the application (e.g. IA64).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProcessorRequirementsList();
+
+    /**
+     * Processor architecture required to run the application (e.g. IA64).
+     *
+     * @return {@link Text}
+     */
+    Text getProcessorRequirements();
+
+    /**
+     * Processor architecture required to run the application (e.g. IA64).
+     *
+     * @param processorRequirements Text value to set.
+     */
+    void addProcessorRequirements(Text processorRequirements);
+
+    /**
+     * Additional content for a software application.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    List<SoftwareApplication> getSoftwareAddOnList();
+
+    /**
+     * Additional content for a software application.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    SoftwareApplication getSoftwareAddOn();
+
+    /**
+     * Additional content for a software application.
+     *
+     * @param softwareAddOn SoftwareApplication value to set.
+     */
+    void addSoftwareAddOn(SoftwareApplication softwareAddOn);
+
+    /**
+     * If the file can be downloaded, URL to download the binary.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getDownloadUrlList();
+
+    /**
+     * If the file can be downloaded, URL to download the binary.
+     *
+     * @return {@link URL}
+     */
+    URL getDownloadUrl();
+
+    /**
+     * If the file can be downloaded, URL to download the binary.
+     *
+     * @param downloadUrl URL value to set.
+     */
+    void addDownloadUrl(URL downloadUrl);
 }

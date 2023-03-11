@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalTest;
 import org.schema.model.PhysicalExam;
+import org.schema.model.MedicalTest;
 
 /**
  * Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.
@@ -16,30 +16,6 @@ import org.schema.model.PhysicalExam;
  * @see <a href="https://schema.org/MedicalSign">https://schema.org/MedicalSign</a>
  */
 public interface MedicalSign extends MedicalSignOrSymptom {
-
-    /**
-     * A diagnostic test that can identify this sign.
-     *
-     * @return {@link MedicalTest}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalTest> getIdentifyingTestList();
-
-    /**
-     * A diagnostic test that can identify this sign.
-     *
-     * @return {@link MedicalTest}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalTest getIdentifyingTest();
-
-    /**
-     * A diagnostic test that can identify this sign.
-     *
-     * @param identifyingTest MedicalTest value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addIdentifyingTest(MedicalTest identifyingTest);
 
     /**
      * A physical examination that can identify this sign.
@@ -64,4 +40,28 @@ public interface MedicalSign extends MedicalSignOrSymptom {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addIdentifyingExam(PhysicalExam identifyingExam);
+
+    /**
+     * A diagnostic test that can identify this sign.
+     *
+     * @return {@link MedicalTest}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalTest> getIdentifyingTestList();
+
+    /**
+     * A diagnostic test that can identify this sign.
+     *
+     * @return {@link MedicalTest}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalTest getIdentifyingTest();
+
+    /**
+     * A diagnostic test that can identify this sign.
+     *
+     * @param identifyingTest MedicalTest value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addIdentifyingTest(MedicalTest identifyingTest);
 }

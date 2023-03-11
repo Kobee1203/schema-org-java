@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Number;
+import org.schema.model.QuantitativeValue;
 
 /**
- * An item used as either a tool or supply when performing the instructions for how to to achieve a result.
+ * An item used as either a tool or supply when performing the instructions for how to achieve a result.
  *
  * @see <a href="https://schema.org/HowToItem">https://schema.org/HowToItem</a>
  */
@@ -20,23 +20,23 @@ public interface HowToItem extends ListItem {
     /**
      * The required quantity of the item(s).
      *
-     * @return {@link QuantitativeValue} or {@link Number} or {@link Text}
+     * @return {@link Text} or {@link Number} or {@link QuantitativeValue}
      */
     <T> List<T> getRequiredQuantityList();
 
     /**
      * The required quantity of the item(s).
      *
-     * @return {@link QuantitativeValue} or {@link Number} or {@link Text}
+     * @return {@link Text} or {@link Number} or {@link QuantitativeValue}
      */
     <T> T getRequiredQuantity();
 
     /**
      * The required quantity of the item(s).
      *
-     * @param requiredQuantity QuantitativeValue value to set.
+     * @param requiredQuantity Text value to set.
      */
-    void addRequiredQuantity(QuantitativeValue requiredQuantity);
+    void addRequiredQuantity(Text requiredQuantity);
     /**
      * The required quantity of the item(s).
      *
@@ -46,7 +46,7 @@ public interface HowToItem extends ListItem {
     /**
      * The required quantity of the item(s).
      *
-     * @param requiredQuantity Text value to set.
+     * @param requiredQuantity QuantitativeValue value to set.
      */
-    void addRequiredQuantity(Text requiredQuantity);
+    void addRequiredQuantity(QuantitativeValue requiredQuantity);
 }

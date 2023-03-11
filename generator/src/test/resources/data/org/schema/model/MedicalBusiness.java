@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include differents business run by health professionals.
+ * A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include different businesses run by health professionals.
  *
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalBusiness">https://schema.org/MedicalBusiness</a>

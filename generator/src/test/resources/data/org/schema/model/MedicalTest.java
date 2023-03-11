@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalCondition;
 import org.schema.model.Drug;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalEnumeration;
 import org.schema.model.MedicalSign;
+import org.schema.model.MedicalCondition;
 import org.schema.model.MedicalDevice;
 
 /**
@@ -20,30 +20,6 @@ import org.schema.model.MedicalDevice;
  * @see <a href="https://schema.org/MedicalTest">https://schema.org/MedicalTest</a>
  */
 public interface MedicalTest extends MedicalEntity {
-
-    /**
-     * A condition the test is used to diagnose.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalCondition> getUsedToDiagnoseList();
-
-    /**
-     * A condition the test is used to diagnose.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalCondition getUsedToDiagnose();
-
-    /**
-     * A condition the test is used to diagnose.
-     *
-     * @param usedToDiagnose MedicalCondition value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addUsedToDiagnose(MedicalCondition usedToDiagnose);
 
     /**
      * Drugs that affect the test's results.
@@ -123,6 +99,30 @@ public interface MedicalTest extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addSignDetected(MedicalSign signDetected);
+
+    /**
+     * A condition the test is used to diagnose.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getUsedToDiagnoseList();
+
+    /**
+     * A condition the test is used to diagnose.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalCondition getUsedToDiagnose();
+
+    /**
+     * A condition the test is used to diagnose.
+     *
+     * @param usedToDiagnose MedicalCondition value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addUsedToDiagnose(MedicalCondition usedToDiagnose);
 
     /**
      * Device used to perform the test.

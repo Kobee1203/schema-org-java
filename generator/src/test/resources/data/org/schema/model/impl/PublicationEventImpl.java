@@ -9,40 +9,40 @@ import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.BroadcastService;
-import org.schema.model.Event;
 import org.schema.model.EventAttendanceModeEnumeration;
-import org.schema.model.Review;
+import org.schema.model.CreativeWork;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Time;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
-import org.schema.model.datatype.Integer;
-import org.schema.model.Grant;
+import org.schema.model.datatype.URL;
 import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.Text;
-import org.schema.model.datatype.URL;
-import org.schema.model.Audience;
-import org.schema.model.Offer;
-import org.schema.model.Demand;
+import org.schema.model.Event;
+import org.schema.model.Schedule;
+import org.schema.model.Review;
 import org.schema.model.EventStatusType;
+import org.schema.model.Grant;
+import org.schema.model.Duration;
+import org.schema.model.Thing;
+import org.schema.model.Audience;
 import org.schema.model.AggregateRating;
-import org.schema.model.PostalAddress;
+import org.schema.model.Language;
+import org.schema.model.Demand;
+import org.schema.model.Offer;
 import org.schema.model.Place;
 import org.schema.model.VirtualLocation;
-import org.schema.model.Duration;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.Time;
-import org.schema.model.Language;
-import org.schema.model.Thing;
-import org.schema.model.Schedule;
+import org.schema.model.PostalAddress;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
 import org.schema.model.PublicationEvent;
 
 /**
- * A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
+ * A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
  *
  * @see <a href="https://schema.org/PublicationEvent">https://schema.org/PublicationEvent</a>
  */
@@ -159,36 +159,46 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.publishedOn = add(this.publishedOn, publishedOn);
     }
 
-    private List<Event> superEvent;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> performer;
 
     /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
-     * @return {@link Event}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public List<Event> getSuperEventList() {
-        return superEvent;
+    public <T> List<T> getPerformerList() {
+        return (List<T>) performer;
     }
 
     /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
-     * @return {@link Event}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public Event getSuperEvent() {
-        return getFirst(superEvent);
+    public <T> T getPerformer() {
+        return (T) getFirst(performer);
     }
 
     /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
-     * @param superEvent Event value to set.
+     * @param performer Person value to set.
      */
     @Override
-    public void addSuperEvent(Event superEvent) {
-        this.superEvent = add(this.superEvent, superEvent);
+    public void addPerformer(Person performer) {
+        this.performer = add(this.performer, performer);
+    }
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @param performer Organization value to set.
+     */
+    @Override
+    public void addPerformer(Organization performer) {
+        this.performer = add(this.performer, performer);
     }
 
     private List<EventAttendanceModeEnumeration> eventAttendanceMode;
@@ -229,1024 +239,39 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.eventAttendanceMode = add(this.eventAttendanceMode, eventAttendanceMode);
     }
 
-    private List<Review> review;
+    private List<CreativeWork> workFeatured;
 
     /**
-     * A review of the item.
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      *
-     * @return {@link Review}
+     * @return {@link CreativeWork}
      */
     @Override
-    public List<Review> getReviewList() {
-        return review;
+    public List<CreativeWork> getWorkFeaturedList() {
+        return workFeatured;
     }
 
     /**
-     * A review of the item.
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      *
-     * @return {@link Review}
+     * @return {@link CreativeWork}
      */
     @Override
-    public Review getReview() {
-        return getFirst(review);
+    public CreativeWork getWorkFeatured() {
+        return getFirst(workFeatured);
     }
 
     /**
-     * A review of the item.
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      *
-     * @param review Review value to set.
+     * @param workFeatured CreativeWork value to set.
      */
     @Override
-    public void addReview(Review review) {
-        this.review = add(this.review, review);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> translator;
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getTranslatorList() {
-        return (List<T>) translator;
-    }
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getTranslator() {
-        return (T) getFirst(translator);
-    }
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @param translator Person value to set.
-     */
-    @Override
-    public void addTranslator(Person translator) {
-        this.translator = add(this.translator, translator);
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @param translator Organization value to set.
-     */
-    @Override
-    public void addTranslator(Organization translator) {
-        this.translator = add(this.translator, translator);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> startDate;
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> List<T> getStartDateList() {
-        return (List<T>) startDate;
-    }
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> T getStartDate() {
-        return (T) getFirst(startDate);
-    }
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param startDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addStartDate(DateTime startDate) {
-        this.startDate = add(this.startDate, startDate);
-    }
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param startDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addStartDate(Date startDate) {
-        this.startDate = add(this.startDate, startDate);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> composer;
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    @Override
-    public <T> List<T> getComposerList() {
-        return (List<T>) composer;
-    }
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    @Override
-    public <T> T getComposer() {
-        return (T) getFirst(composer);
-    }
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @param composer Organization value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    @Override
-    public void addComposer(Organization composer) {
-        this.composer = add(this.composer, composer);
-    }
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @param composer Person value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    @Override
-    public void addComposer(Person composer) {
-        this.composer = add(this.composer, composer);
-    }
-
-    private List<Integer> maximumAttendeeCapacity;
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public List<Integer> getMaximumAttendeeCapacityList() {
-        return maximumAttendeeCapacity;
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getMaximumAttendeeCapacity() {
-        return getFirst(maximumAttendeeCapacity);
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @param maximumAttendeeCapacity Integer value to set.
-     */
-    @Override
-    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
-        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
-    }
-
-    private List<Integer> maximumVirtualAttendeeCapacity;
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public List<Integer> getMaximumVirtualAttendeeCapacityList() {
-        return maximumVirtualAttendeeCapacity;
-    }
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public Integer getMaximumVirtualAttendeeCapacity() {
-        return getFirst(maximumVirtualAttendeeCapacity);
-    }
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @param maximumVirtualAttendeeCapacity Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public void addMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity) {
-        this.maximumVirtualAttendeeCapacity = add(this.maximumVirtualAttendeeCapacity, maximumVirtualAttendeeCapacity);
-    }
-
-    private List<Person> director;
-
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getDirectorList() {
-        return director;
-    }
-
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getDirector() {
-        return getFirst(director);
-    }
-
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    @Override
-    public void addDirector(Person director) {
-        this.director = add(this.director, director);
-    }
-
-    private List<Grant> funding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public List<Grant> getFundingList() {
-        return funding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return getFirst(funding);
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void addFunding(Grant funding) {
-        this.funding = add(this.funding, funding);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
-    private List<Object> keywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getKeywordsList() {
-        return (List<T>) keywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) getFirst(keywords);
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    @Override
-    public void addKeywords(DefinedTerm keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    @Override
-    public void addKeywords(Text keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    @Override
-    public void addKeywords(URL keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-
-    private List<Audience> audience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public List<Audience> getAudienceList() {
-        return audience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return getFirst(audience);
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    @Override
-    public void addAudience(Audience audience) {
-        this.audience = add(this.audience, audience);
-    }
-
-    @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private List<Object> offers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getOffersList() {
-        return (List<T>) offers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) getFirst(offers);
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Offer offers) {
-        this.offers = add(this.offers, offers);
-    }
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Demand offers) {
-        this.offers = add(this.offers, offers);
-    }
-
-    private List<Event> subEvent;
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public List<Event> getSubEventList() {
-        return subEvent;
-    }
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getSubEvent() {
-        return getFirst(subEvent);
-    }
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     * @param subEvent Event value to set.
-     */
-    @Override
-    public void addSubEvent(Event subEvent) {
-        this.subEvent = add(this.subEvent, subEvent);
-    }
-
-    private List<Person> actor;
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getActorList() {
-        return actor;
-    }
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getActor() {
-        return getFirst(actor);
-    }
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actor Person value to set.
-     */
-    @Override
-    public void addActor(Person actor) {
-        this.actor = add(this.actor, actor);
-    }
-
-    private List<EventStatusType> eventStatus;
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     * @return {@link EventStatusType}
-     */
-    @Override
-    public List<EventStatusType> getEventStatusList() {
-        return eventStatus;
-    }
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     * @return {@link EventStatusType}
-     */
-    @Override
-    public EventStatusType getEventStatus() {
-        return getFirst(eventStatus);
-    }
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     * @param eventStatus EventStatusType value to set.
-     */
-    @Override
-    public void addEventStatus(EventStatusType eventStatus) {
-        this.eventStatus = add(this.eventStatus, eventStatus);
-    }
-
-    @JsonLdFieldTypes({ Date.class, DateTime.class })
-    private List<Object> endDate;
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> List<T> getEndDateList() {
-        return (List<T>) endDate;
-    }
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> T getEndDate() {
-        return (T) getFirst(endDate);
-    }
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param endDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addEndDate(Date endDate) {
-        this.endDate = add(this.endDate, endDate);
-    }
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param endDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addEndDate(DateTime endDate) {
-        this.endDate = add(this.endDate, endDate);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> funder;
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getFunderList() {
-        return (List<T>) funder;
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getFunder() {
-        return (T) getFirst(funder);
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Organization value to set.
-     */
-    @Override
-    public void addFunder(Organization funder) {
-        this.funder = add(this.funder, funder);
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Person value to set.
-     */
-    @Override
-    public void addFunder(Person funder) {
-        this.funder = add(this.funder, funder);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> performer;
-
-    /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getPerformerList() {
-        return (List<T>) performer;
-    }
-
-    /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getPerformer() {
-        return (T) getFirst(performer);
-    }
-
-    /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-     *
-     * @param performer Organization value to set.
-     */
-    @Override
-    public void addPerformer(Organization performer) {
-        this.performer = add(this.performer, performer);
-    }
-    /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-     *
-     * @param performer Person value to set.
-     */
-    @Override
-    public void addPerformer(Person performer) {
-        this.performer = add(this.performer, performer);
-    }
-
-    private List<AggregateRating> aggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public List<AggregateRating> getAggregateRatingList() {
-        return aggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return getFirst(aggregateRating);
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    @Override
-    public void addAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = add(this.aggregateRating, aggregateRating);
-    }
-
-    private List<Text> typicalAgeRange;
-
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getTypicalAgeRangeList() {
-        return typicalAgeRange;
-    }
-
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTypicalAgeRange() {
-        return getFirst(typicalAgeRange);
-    }
-
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @param typicalAgeRange Text value to set.
-     */
-    @Override
-    public void addTypicalAgeRange(Text typicalAgeRange) {
-        this.typicalAgeRange = add(this.typicalAgeRange, typicalAgeRange);
-    }
-
-    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
-    private List<Object> location;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> List<T> getLocationList() {
-        return (List<T>) location;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) getFirst(location);
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
-    @Override
-    public void addLocation(PostalAddress location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
-    @Override
-    public void addLocation(Text location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
-    @Override
-    public void addLocation(Place location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
-    @Override
-    public void addLocation(VirtualLocation location) {
-        this.location = add(this.location, location);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> performers;
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getPerformersList() {
-        return (List<T>) performers;
-    }
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getPerformers() {
-        return (T) getFirst(performers);
-    }
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @param performers Person value to set.
-     */
-    @Override
-    public void addPerformers(Person performers) {
-        this.performers = add(this.performers, performers);
-    }
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @param performers Organization value to set.
-     */
-    @Override
-    public void addPerformers(Organization performers) {
-        this.performers = add(this.performers, performers);
-    }
-
-    private List<Duration> duration;
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public List<Duration> getDurationList() {
-        return duration;
-    }
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public Duration getDuration() {
-        return getFirst(duration);
-    }
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @param duration Duration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void addDuration(Duration duration) {
-        this.duration = add(this.duration, duration);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> organizer;
-
-    /**
-     * An organizer of an Event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getOrganizerList() {
-        return (List<T>) organizer;
-    }
-
-    /**
-     * An organizer of an Event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getOrganizer() {
-        return (T) getFirst(organizer);
-    }
-
-    /**
-     * An organizer of an Event.
-     *
-     * @param organizer Person value to set.
-     */
-    @Override
-    public void addOrganizer(Person organizer) {
-        this.organizer = add(this.organizer, organizer);
-    }
-    /**
-     * An organizer of an Event.
-     *
-     * @param organizer Organization value to set.
-     */
-    @Override
-    public void addOrganizer(Organization organizer) {
-        this.organizer = add(this.organizer, organizer);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> sponsor;
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getSponsorList() {
-        return (List<T>) sponsor;
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSponsor() {
-        return (T) getFirst(sponsor);
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Organization value to set.
-     */
-    @Override
-    public void addSponsor(Organization sponsor) {
-        this.sponsor = add(this.sponsor, sponsor);
-    }
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Person value to set.
-     */
-    @Override
-    public void addSponsor(Person sponsor) {
-        this.sponsor = add(this.sponsor, sponsor);
-    }
-
-    private List<Date> previousStartDate;
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public List<Date> getPreviousStartDateList() {
-        return previousStartDate;
-    }
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getPreviousStartDate() {
-        return getFirst(previousStartDate);
-    }
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @param previousStartDate Date value to set.
-     */
-    @Override
-    public void addPreviousStartDate(Date previousStartDate) {
-        this.previousStartDate = add(this.previousStartDate, previousStartDate);
-    }
-
-    private List<Boolean> isAccessibleForFree;
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public List<Boolean> getIsAccessibleForFreeList() {
-        return isAccessibleForFree;
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsAccessibleForFree() {
-        return getFirst(isAccessibleForFree);
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param isAccessibleForFree Boolean value to set.
-     */
-    @Override
-    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
-        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
+    public void addWorkFeatured(CreativeWork workFeatured) {
+        this.workFeatured = add(this.workFeatured, workFeatured);
     }
 
     private List<Integer> remainingAttendeeCapacity;
@@ -1281,68 +306,36 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.remainingAttendeeCapacity = add(this.remainingAttendeeCapacity, remainingAttendeeCapacity);
     }
 
-    private List<Event> subEvents;
+    private List<Person> actor;
 
     /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Event}
+     * @return {@link Person}
      */
     @Override
-    public List<Event> getSubEventsList() {
-        return subEvents;
+    public List<Person> getActorList() {
+        return actor;
     }
 
     /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Event}
+     * @return {@link Person}
      */
     @Override
-    public Event getSubEvents() {
-        return getFirst(subEvents);
+    public Person getActor() {
+        return getFirst(actor);
     }
 
     /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param subEvents Event value to set.
+     * @param actor Person value to set.
      */
     @Override
-    public void addSubEvents(Event subEvents) {
-        this.subEvents = add(this.subEvents, subEvents);
-    }
-
-    private List<CreativeWork> workPerformed;
-
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     *
-     * @return {@link CreativeWork}
-     */
-    @Override
-    public List<CreativeWork> getWorkPerformedList() {
-        return workPerformed;
-    }
-
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     *
-     * @return {@link CreativeWork}
-     */
-    @Override
-    public CreativeWork getWorkPerformed() {
-        return getFirst(workPerformed);
-    }
-
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     *
-     * @param workPerformed CreativeWork value to set.
-     */
-    @Override
-    public void addWorkPerformed(CreativeWork workPerformed) {
-        this.workPerformed = add(this.workPerformed, workPerformed);
+    public void addActor(Person actor) {
+        this.actor = add(this.actor, actor);
     }
 
     @JsonLdFieldTypes({ Time.class, DateTime.class })
@@ -1387,85 +380,36 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.doorTime = add(this.doorTime, doorTime);
     }
 
-    @JsonLdFieldTypes({ Text.class, Language.class })
-    private List<Object> inLanguage;
+    private List<Date> previousStartDate;
 
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @return {@link Date}
      */
     @Override
-    public <T> List<T> getInLanguageList() {
-        return (List<T>) inLanguage;
+    public List<Date> getPreviousStartDateList() {
+        return previousStartDate;
     }
 
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @return {@link Date}
      */
     @Override
-    public <T> T getInLanguage() {
-        return (T) getFirst(inLanguage);
+    public Date getPreviousStartDate() {
+        return getFirst(previousStartDate);
     }
 
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
-     * @param inLanguage Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @param previousStartDate Date value to set.
      */
     @Override
-    public void addInLanguage(Text inLanguage) {
-        this.inLanguage = add(this.inLanguage, inLanguage);
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param inLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public void addInLanguage(Language inLanguage) {
-        this.inLanguage = add(this.inLanguage, inLanguage);
-    }
-
-    private List<Thing> about;
-
-    /**
-     * The subject matter of the content.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public List<Thing> getAboutList() {
-        return about;
-    }
-
-    /**
-     * The subject matter of the content.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public Thing getAbout() {
-        return getFirst(about);
-    }
-
-    /**
-     * The subject matter of the content.
-     *
-     * @param about Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addAbout(Thing about) {
-        this.about = add(this.about, about);
+    public void addPreviousStartDate(Date previousStartDate) {
+        this.previousStartDate = add(this.previousStartDate, previousStartDate);
     }
 
     private List<CreativeWork> recordedIn;
@@ -1500,119 +444,129 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.recordedIn = add(this.recordedIn, recordedIn);
     }
 
-    private List<Integer> maximumPhysicalAttendeeCapacity;
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
+    private List<Object> keywords;
 
     /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
      */
     @Override
-    public List<Integer> getMaximumPhysicalAttendeeCapacityList() {
-        return maximumPhysicalAttendeeCapacity;
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
     }
 
     /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
      */
     @Override
-    public Integer getMaximumPhysicalAttendeeCapacity() {
-        return getFirst(maximumPhysicalAttendeeCapacity);
+    public <T> T getKeywords() {
+        return (T) getFirst(keywords);
     }
 
     /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param maximumPhysicalAttendeeCapacity Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     * @param keywords URL value to set.
      */
     @Override
-    public void addMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity) {
-        this.maximumPhysicalAttendeeCapacity = add(this.maximumPhysicalAttendeeCapacity, maximumPhysicalAttendeeCapacity);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> attendee;
-
-    /**
-     * A person or organization attending the event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getAttendeeList() {
-        return (List<T>) attendee;
-    }
-
-    /**
-     * A person or organization attending the event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getAttendee() {
-        return (T) getFirst(attendee);
-    }
-
-    /**
-     * A person or organization attending the event.
-     *
-     * @param attendee Person value to set.
-     */
-    @Override
-    public void addAttendee(Person attendee) {
-        this.attendee = add(this.attendee, attendee);
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
-     * A person or organization attending the event.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param attendee Organization value to set.
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void addAttendee(Organization attendee) {
-        this.attendee = add(this.attendee, attendee);
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
-    private List<CreativeWork> workFeatured;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> contributor;
 
     /**
-     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @return {@link CreativeWork}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public List<CreativeWork> getWorkFeaturedList() {
-        return workFeatured;
+    public <T> List<T> getContributorList() {
+        return (List<T>) contributor;
     }
 
     /**
-     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @return {@link CreativeWork}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public CreativeWork getWorkFeatured() {
-        return getFirst(workFeatured);
+    public <T> T getContributor() {
+        return (T) getFirst(contributor);
     }
 
     /**
-     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @param workFeatured CreativeWork value to set.
+     * @param contributor Organization value to set.
      */
     @Override
-    public void addWorkFeatured(CreativeWork workFeatured) {
-        this.workFeatured = add(this.workFeatured, workFeatured);
+    public void addContributor(Organization contributor) {
+        this.contributor = add(this.contributor, contributor);
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Person value to set.
+     */
+    @Override
+    public void addContributor(Person contributor) {
+        this.contributor = add(this.contributor, contributor);
+    }
+
+    private List<Event> superEvent;
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getSuperEventList() {
+        return superEvent;
+    }
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getSuperEvent() {
+        return getFirst(superEvent);
+    }
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @param superEvent Event value to set.
+     */
+    @Override
+    public void addSuperEvent(Event superEvent) {
+        this.superEvent = add(this.superEvent, superEvent);
     }
 
     private List<Schedule> eventSchedule;
@@ -1668,55 +622,51 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.eventSchedule = add(this.eventSchedule, eventSchedule);
     }
 
+    private List<Integer> maximumVirtualAttendeeCapacity;
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public List<Integer> getMaximumVirtualAttendeeCapacityList() {
+        return maximumVirtualAttendeeCapacity;
+    }
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public Integer getMaximumVirtualAttendeeCapacity() {
+        return getFirst(maximumVirtualAttendeeCapacity);
+    }
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @param maximumVirtualAttendeeCapacity Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public void addMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity) {
+        this.maximumVirtualAttendeeCapacity = add(this.maximumVirtualAttendeeCapacity, maximumVirtualAttendeeCapacity);
+    }
+
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> contributor;
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getContributorList() {
-        return (List<T>) contributor;
-    }
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getContributor() {
-        return (T) getFirst(contributor);
-    }
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Organization value to set.
-     */
-    @Override
-    public void addContributor(Organization contributor) {
-        this.contributor = add(this.contributor, contributor);
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Person value to set.
-     */
-    @Override
-    public void addContributor(Person contributor) {
-        this.contributor = add(this.contributor, contributor);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> attendees;
 
     /**
      * A person attending the event.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
     public <T> List<T> getAttendeesList() {
@@ -1726,7 +676,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
     /**
      * A person attending the event.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
     public <T> T getAttendees() {
@@ -1736,126 +686,1070 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
     /**
      * A person attending the event.
      *
-     * @param attendees Person value to set.
-     */
-    @Override
-    public void addAttendees(Person attendees) {
-        this.attendees = add(this.attendees, attendees);
-    }
-    /**
-     * A person attending the event.
-     *
      * @param attendees Organization value to set.
      */
     @Override
     public void addAttendees(Organization attendees) {
         this.attendees = add(this.attendees, attendees);
     }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A person attending the event.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @param attendees Person value to set.
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public void addAttendees(Person attendees) {
+        this.attendees = add(this.attendees, attendees);
+    }
+
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A review of the item.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Review}
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public Review getReview() {
+        return getFirst(review);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A review of the item.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param review Review value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
+
+    private List<EventStatusType> eventStatus;
+
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @return {@link EventStatusType}
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public List<EventStatusType> getEventStatusList() {
+        return eventStatus;
     }
 
-    private List<Text> alternateName;
+    /**
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     *
+     * @return {@link EventStatusType}
+     */
+    @Override
+    public EventStatusType getEventStatus() {
+        return getFirst(eventStatus);
+    }
 
     /**
-     * An alias for the item.
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     *
+     * @param eventStatus EventStatusType value to set.
+     */
+    @Override
+    public void addEventStatus(EventStatusType eventStatus) {
+        this.eventStatus = add(this.eventStatus, eventStatus);
+    }
+
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     */
+    @Override
+    public Grant getFunding() {
+        return getFirst(funding);
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @param funding Grant value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     */
+    @Override
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
+    }
+
+    private List<CreativeWork> workPerformed;
+
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public List<CreativeWork> getWorkPerformedList() {
+        return workPerformed;
+    }
+
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public CreativeWork getWorkPerformed() {
+        return getFirst(workPerformed);
+    }
+
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     *
+     * @param workPerformed CreativeWork value to set.
+     */
+    @Override
+    public void addWorkPerformed(CreativeWork workPerformed) {
+        this.workPerformed = add(this.workPerformed, workPerformed);
+    }
+
+    private List<Duration> duration;
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public List<Duration> getDurationList() {
+        return duration;
+    }
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public Duration getDuration() {
+        return getFirst(duration);
+    }
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param duration Duration value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addDuration(Duration duration) {
+        this.duration = add(this.duration, duration);
+    }
+
+    private List<Thing> about;
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public List<Thing> getAboutList() {
+        return about;
+    }
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public Thing getAbout() {
+        return getFirst(about);
+    }
+
+    /**
+     * The subject matter of the content.
+     *
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void addAbout(Thing about) {
+        this.about = add(this.about, about);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> composer;
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public <T> List<T> getComposerList() {
+        return (List<T>) composer;
+    }
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public <T> T getComposer() {
+        return (T) getFirst(composer);
+    }
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param composer Organization value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public void addComposer(Organization composer) {
+        this.composer = add(this.composer, composer);
+    }
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param composer Person value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public void addComposer(Person composer) {
+        this.composer = add(this.composer, composer);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> funder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getFunderList() {
+        return (List<T>) funder;
+    }
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getFunder() {
+        return (T) getFirst(funder);
+    }
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Organization value to set.
+     */
+    @Override
+    public void addFunder(Organization funder) {
+        this.funder = add(this.funder, funder);
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    @Override
+    public void addFunder(Person funder) {
+        this.funder = add(this.funder, funder);
+    }
+
+    private List<Boolean> isAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsAccessibleForFreeList() {
+        return isAccessibleForFree;
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsAccessibleForFree() {
+        return getFirst(isAccessibleForFree);
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param isAccessibleForFree Boolean value to set.
+     */
+    @Override
+    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
+    }
+
+    private List<Event> subEvent;
+
+    /**
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getSubEventList() {
+        return subEvent;
+    }
+
+    /**
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getSubEvent() {
+        return getFirst(subEvent);
+    }
+
+    /**
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     *
+     * @param subEvent Event value to set.
+     */
+    @Override
+    public void addSubEvent(Event subEvent) {
+        this.subEvent = add(this.subEvent, subEvent);
+    }
+
+    private List<Text> typicalAgeRange;
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Text> getTypicalAgeRangeList() {
+        return typicalAgeRange;
     }
 
     /**
-     * An alias for the item.
+     * The typical expected age range, e.g. '7-9', '11-'.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Text getTypicalAgeRange() {
+        return getFirst(typicalAgeRange);
     }
 
     /**
-     * An alias for the item.
+     * The typical expected age range, e.g. '7-9', '11-'.
      *
-     * @param alternateName Text value to set.
+     * @param typicalAgeRange Text value to set.
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
+    public void addTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = add(this.typicalAgeRange, typicalAgeRange);
     }
 
-    private List<Text> name;
+    private List<Audience> audience;
 
     /**
-     * The name of the item.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link Text}
+     * @return {@link Audience}
      */
     @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
+    public List<Audience> getAudienceList() {
+        return audience;
     }
 
     /**
-     * The name of the item.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @param name Text value to set.
+     * @return {@link Audience}
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public Audience getAudience() {
+        return getFirst(audience);
+    }
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @param audience Audience value to set.
+     */
+    @Override
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> attendee;
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getAttendeeList() {
+        return (List<T>) attendee;
+    }
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getAttendee() {
+        return (T) getFirst(attendee);
+    }
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @param attendee Organization value to set.
+     */
+    @Override
+    public void addAttendee(Organization attendee) {
+        this.attendee = add(this.attendee, attendee);
+    }
+    /**
+     * A person or organization attending the event.
+     *
+     * @param attendee Person value to set.
+     */
+    @Override
+    public void addAttendee(Person attendee) {
+        this.attendee = add(this.attendee, attendee);
+    }
+
+    private List<Event> subEvents;
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getSubEventsList() {
+        return subEvents;
+    }
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getSubEvents() {
+        return getFirst(subEvents);
+    }
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @param subEvents Event value to set.
+     */
+    @Override
+    public void addSubEvents(Event subEvents) {
+        this.subEvents = add(this.subEvents, subEvents);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> performers;
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getPerformersList() {
+        return (List<T>) performers;
+    }
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getPerformers() {
+        return (T) getFirst(performers);
+    }
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @param performers Person value to set.
+     */
+    @Override
+    public void addPerformers(Person performers) {
+        this.performers = add(this.performers, performers);
+    }
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @param performers Organization value to set.
+     */
+    @Override
+    public void addPerformers(Organization performers) {
+        this.performers = add(this.performers, performers);
+    }
+
+    private List<Integer> maximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getMaximumAttendeeCapacityList() {
+        return maximumAttendeeCapacity;
+    }
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getMaximumAttendeeCapacity() {
+        return getFirst(maximumAttendeeCapacity);
+    }
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @param maximumAttendeeCapacity Integer value to set.
+     */
+    @Override
+    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> translator;
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getTranslatorList() {
+        return (List<T>) translator;
+    }
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getTranslator() {
+        return (T) getFirst(translator);
+    }
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param translator Organization value to set.
+     */
+    @Override
+    public void addTranslator(Organization translator) {
+        this.translator = add(this.translator, translator);
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param translator Person value to set.
+     */
+    @Override
+    public void addTranslator(Person translator) {
+        this.translator = add(this.translator, translator);
+    }
+
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return getFirst(aggregateRating);
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    @Override
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
+    }
+
+    private List<Integer> maximumPhysicalAttendeeCapacity;
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public List<Integer> getMaximumPhysicalAttendeeCapacityList() {
+        return maximumPhysicalAttendeeCapacity;
+    }
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public Integer getMaximumPhysicalAttendeeCapacity() {
+        return getFirst(maximumPhysicalAttendeeCapacity);
+    }
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @param maximumPhysicalAttendeeCapacity Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public void addMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity) {
+        this.maximumPhysicalAttendeeCapacity = add(this.maximumPhysicalAttendeeCapacity, maximumPhysicalAttendeeCapacity);
+    }
+
+    private List<Person> director;
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getDirectorList() {
+        return director;
+    }
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getDirector() {
+        return getFirst(director);
+    }
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    @Override
+    public void addDirector(Person director) {
+        this.director = add(this.director, director);
+    }
+
+    @JsonLdFieldTypes({ Text.class, Language.class })
+    private List<Object> inLanguage;
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public <T> List<T> getInLanguageList() {
+        return (List<T>) inLanguage;
+    }
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public <T> T getInLanguage() {
+        return (T) getFirst(inLanguage);
+    }
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void addInLanguage(Text inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void addInLanguage(Language inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> startDate;
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> List<T> getStartDateList() {
+        return (List<T>) startDate;
+    }
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> T getStartDate() {
+        return (T) getFirst(startDate);
+    }
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void addStartDate(DateTime startDate) {
+        this.startDate = add(this.startDate, startDate);
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void addStartDate(Date startDate) {
+        this.startDate = add(this.startDate, startDate);
+    }
+
+    @JsonLdFieldTypes({ Demand.class, Offer.class })
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Demand} or {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Demand} or {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getOffers() {
+        return (T) getFirst(offers);
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Offer value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> endDate;
+
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> List<T> getEndDateList() {
+        return (List<T>) endDate;
+    }
+
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> T getEndDate() {
+        return (T) getFirst(endDate);
+    }
+
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param endDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void addEndDate(DateTime endDate) {
+        this.endDate = add(this.endDate, endDate);
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param endDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void addEndDate(Date endDate) {
+        this.endDate = add(this.endDate, endDate);
+    }
+
+    @JsonLdFieldTypes({ Place.class, Text.class, VirtualLocation.class, PostalAddress.class })
+    private List<Object> location;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
+     */
+    @Override
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
+    }
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
+     */
+    @Override
+    public <T> T getLocation() {
+        return (T) getFirst(location);
+    }
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    @Override
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    @Override
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    @Override
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location PostalAddress value to set.
+     */
+    @Override
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> sponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getSponsorList() {
+        return (List<T>) sponsor;
+    }
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getSponsor() {
+        return (T) getFirst(sponsor);
+    }
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Organization value to set.
+     */
+    @Override
+    public void addSponsor(Organization sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Person value to set.
+     */
+    @Override
+    public void addSponsor(Person sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> organizer;
+
+    /**
+     * An organizer of an Event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getOrganizerList() {
+        return (List<T>) organizer;
+    }
+
+    /**
+     * An organizer of an Event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getOrganizer() {
+        return (T) getFirst(organizer);
+    }
+
+    /**
+     * An organizer of an Event.
+     *
+     * @param organizer Organization value to set.
+     */
+    @Override
+    public void addOrganizer(Organization organizer) {
+        this.organizer = add(this.organizer, organizer);
+    }
+    /**
+     * An organizer of an Event.
+     *
+     * @param organizer Person value to set.
+     */
+    @Override
+    public void addOrganizer(Person organizer) {
+        this.organizer = add(this.organizer, organizer);
     }
 
     private List<Action> potentialAction;
@@ -1890,110 +1784,46 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -2042,68 +1872,68 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -2138,14 +1968,78 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -2156,13 +2050,23 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -2183,14 +2087,110 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

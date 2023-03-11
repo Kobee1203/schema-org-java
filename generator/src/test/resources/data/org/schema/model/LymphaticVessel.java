@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Vessel;
 import org.schema.model.AnatomicalSystem;
 import org.schema.model.AnatomicalStructure;
+import org.schema.model.Vessel;
 
 /**
  * A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.
@@ -17,30 +17,6 @@ import org.schema.model.AnatomicalStructure;
  * @see <a href="https://schema.org/LymphaticVessel">https://schema.org/LymphaticVessel</a>
  */
 public interface LymphaticVessel extends Vessel {
-
-    /**
-     * The vasculature the lymphatic structure runs, or efferents, to.
-     *
-     * @return {@link Vessel}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Vessel> getRunsToList();
-
-    /**
-     * The vasculature the lymphatic structure runs, or efferents, to.
-     *
-     * @return {@link Vessel}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Vessel getRunsTo();
-
-    /**
-     * The vasculature the lymphatic structure runs, or efferents, to.
-     *
-     * @param runsTo Vessel value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRunsTo(Vessel runsTo);
 
     /**
      * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
@@ -96,4 +72,28 @@ public interface LymphaticVessel extends Vessel {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addOriginatesFrom(Vessel originatesFrom);
+
+    /**
+     * The vasculature the lymphatic structure runs, or efferents, to.
+     *
+     * @return {@link Vessel}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Vessel> getRunsToList();
+
+    /**
+     * The vasculature the lymphatic structure runs, or efferents, to.
+     *
+     * @return {@link Vessel}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Vessel getRunsTo();
+
+    /**
+     * The vasculature the lymphatic structure runs, or efferents, to.
+     *
+     * @param runsTo Vessel value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRunsTo(Vessel runsTo);
 }

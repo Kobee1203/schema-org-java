@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * A media season e.g. tv, radio, video game etc.
+ * A media season, e.g. TV, radio, video game etc.
  *
  * @see <a href="https://schema.org/Season">https://schema.org/Season</a>
  */

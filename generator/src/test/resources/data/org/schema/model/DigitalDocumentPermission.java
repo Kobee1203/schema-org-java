@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
 import org.schema.model.Audience;
-import org.schema.model.ContactPoint;
 import org.schema.model.Organization;
+import org.schema.model.ContactPoint;
+import org.schema.model.Person;
 import org.schema.model.DigitalDocumentPermissionType;
 
 /**
@@ -22,23 +22,17 @@ public interface DigitalDocumentPermission extends Intangible {
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
-     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
+     * @return {@link Audience} or {@link Organization} or {@link ContactPoint} or {@link Person}
      */
     <T> List<T> getGranteeList();
 
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
-     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
+     * @return {@link Audience} or {@link Organization} or {@link ContactPoint} or {@link Person}
      */
     <T> T getGrantee();
 
-    /**
-     * The person, organization, contact point, or audience that has been granted this permission.
-     *
-     * @param grantee Person value to set.
-     */
-    void addGrantee(Person grantee);
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
@@ -48,15 +42,21 @@ public interface DigitalDocumentPermission extends Intangible {
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
+     * @param grantee Organization value to set.
+     */
+    void addGrantee(Organization grantee);
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
      * @param grantee ContactPoint value to set.
      */
     void addGrantee(ContactPoint grantee);
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
-     * @param grantee Organization value to set.
+     * @param grantee Person value to set.
      */
-    void addGrantee(Organization grantee);
+    void addGrantee(Person grantee);
 
     /**
      * The type of permission granted the person, organization, or audience.

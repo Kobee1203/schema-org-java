@@ -12,5 +12,5 @@ import java.util.List;
  *
  * @see <a href="https://schema.org/FireStation">https://schema.org/FireStation</a>
  */
-public interface FireStation extends CivicStructure, EmergencyService {
+public interface FireStation extends EmergencyService, CivicStructure {
 }

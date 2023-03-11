@@ -5,25 +5,25 @@
  */
 package org.schema.model.impl;
 
+import org.schema.model.MedicalCondition;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Integer;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.GenderType;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.Audience;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Number;
-import org.schema.model.MedicalCondition;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.GenderType;
 import org.schema.model.PeopleAudience;
 import org.schema.model.MedicalAudience;
 
@@ -35,6 +35,319 @@ import org.schema.model.MedicalAudience;
  */
 @JsonLdTypeName("MedicalAudience")
 public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalAudience {
+
+    private List<MedicalCondition> healthCondition;
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalCondition> getHealthConditionList() {
+        return healthCondition;
+    }
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalCondition getHealthCondition() {
+        return getFirst(healthCondition);
+    }
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @param healthCondition MedicalCondition value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addHealthCondition(MedicalCondition healthCondition) {
+        this.healthCondition = add(this.healthCondition, healthCondition);
+    }
+
+    private List<Text> requiredGender;
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getRequiredGenderList() {
+        return requiredGender;
+    }
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getRequiredGender() {
+        return getFirst(requiredGender);
+    }
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @param requiredGender Text value to set.
+     */
+    @Override
+    public void addRequiredGender(Text requiredGender) {
+        this.requiredGender = add(this.requiredGender, requiredGender);
+    }
+
+    private List<Number> suggestedMinAge;
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getSuggestedMinAgeList() {
+        return suggestedMinAge;
+    }
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getSuggestedMinAge() {
+        return getFirst(suggestedMinAge);
+    }
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @param suggestedMinAge Number value to set.
+     */
+    @Override
+    public void addSuggestedMinAge(Number suggestedMinAge) {
+        this.suggestedMinAge = add(this.suggestedMinAge, suggestedMinAge);
+    }
+
+    private List<Integer> requiredMinAge;
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getRequiredMinAgeList() {
+        return requiredMinAge;
+    }
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getRequiredMinAge() {
+        return getFirst(requiredMinAge);
+    }
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @param requiredMinAge Integer value to set.
+     */
+    @Override
+    public void addRequiredMinAge(Integer requiredMinAge) {
+        this.requiredMinAge = add(this.requiredMinAge, requiredMinAge);
+    }
+
+    private List<QuantitativeValue> suggestedMeasurement;
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public List<QuantitativeValue> getSuggestedMeasurementList() {
+        return suggestedMeasurement;
+    }
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public QuantitativeValue getSuggestedMeasurement() {
+        return getFirst(suggestedMeasurement);
+    }
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @param suggestedMeasurement QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement) {
+        this.suggestedMeasurement = add(this.suggestedMeasurement, suggestedMeasurement);
+    }
+
+    @JsonLdFieldTypes({ GenderType.class, Text.class })
+    private List<Object> suggestedGender;
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getSuggestedGenderList() {
+        return (List<T>) suggestedGender;
+    }
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    @Override
+    public <T> T getSuggestedGender() {
+        return (T) getFirst(suggestedGender);
+    }
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender GenderType value to set.
+     */
+    @Override
+    public void addSuggestedGender(GenderType suggestedGender) {
+        this.suggestedGender = add(this.suggestedGender, suggestedGender);
+    }
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender Text value to set.
+     */
+    @Override
+    public void addSuggestedGender(Text suggestedGender) {
+        this.suggestedGender = add(this.suggestedGender, suggestedGender);
+    }
+
+    private List<Integer> requiredMaxAge;
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getRequiredMaxAgeList() {
+        return requiredMaxAge;
+    }
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getRequiredMaxAge() {
+        return getFirst(requiredMaxAge);
+    }
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @param requiredMaxAge Integer value to set.
+     */
+    @Override
+    public void addRequiredMaxAge(Integer requiredMaxAge) {
+        this.requiredMaxAge = add(this.requiredMaxAge, requiredMaxAge);
+    }
+
+    private List<QuantitativeValue> suggestedAge;
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public List<QuantitativeValue> getSuggestedAgeList() {
+        return suggestedAge;
+    }
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public QuantitativeValue getSuggestedAge() {
+        return getFirst(suggestedAge);
+    }
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @param suggestedAge QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public void addSuggestedAge(QuantitativeValue suggestedAge) {
+        this.suggestedAge = add(this.suggestedAge, suggestedAge);
+    }
+
+    private List<Number> suggestedMaxAge;
+
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getSuggestedMaxAgeList() {
+        return suggestedMaxAge;
+    }
+
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getSuggestedMaxAge() {
+        return getFirst(suggestedMaxAge);
+    }
+
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @param suggestedMaxAge Number value to set.
+     */
+    @Override
+    public void addSuggestedMaxAge(Number suggestedMaxAge) {
+        this.suggestedMaxAge = add(this.suggestedMaxAge, suggestedMaxAge);
+    }
 
     private List<Text> audienceType;
 
@@ -100,112 +413,6 @@ public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.Json
         this.geographicArea = add(this.geographicArea, geographicArea);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
     private List<Action> potentialAction;
 
     /**
@@ -238,110 +445,46 @@ public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.Json
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -390,68 +533,68 @@ public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.Json
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -486,14 +629,78 @@ public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.Json
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -504,13 +711,23 @@ public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.Json
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -531,327 +748,110 @@ public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.Json
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
 
-    private List<Integer> requiredMinAge;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
 
     /**
-     * Audiences defined by a person's minimum age.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Integer}
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public List<Integer> getRequiredMinAgeList() {
-        return requiredMinAge;
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * Audiences defined by a person's minimum age.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Integer}
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public Integer getRequiredMinAge() {
-        return getFirst(requiredMinAge);
+    public <T> T getImage() {
+        return (T) getFirst(image);
     }
 
     /**
-     * Audiences defined by a person's minimum age.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param requiredMinAge Integer value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void addRequiredMinAge(Integer requiredMinAge) {
-        this.requiredMinAge = add(this.requiredMinAge, requiredMinAge);
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
-
-    private List<Number> suggestedMaxAge;
-
     /**
-     * Maximum recommended age in years for the audience or user.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Number}
+     * @param image ImageObject value to set.
      */
     @Override
-    public List<Number> getSuggestedMaxAgeList() {
-        return suggestedMaxAge;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getSuggestedMaxAge() {
-        return getFirst(suggestedMaxAge);
-    }
+    private List<Text> name;
 
     /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     * @param suggestedMaxAge Number value to set.
-     */
-    @Override
-    public void addSuggestedMaxAge(Number suggestedMaxAge) {
-        this.suggestedMaxAge = add(this.suggestedMaxAge, suggestedMaxAge);
-    }
-
-    private List<MedicalCondition> healthCondition;
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<MedicalCondition> getHealthConditionList() {
-        return healthCondition;
-    }
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalCondition getHealthCondition() {
-        return getFirst(healthCondition);
-    }
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @param healthCondition MedicalCondition value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addHealthCondition(MedicalCondition healthCondition) {
-        this.healthCondition = add(this.healthCondition, healthCondition);
-    }
-
-    private List<QuantitativeValue> suggestedMeasurement;
-
-    /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public List<QuantitativeValue> getSuggestedMeasurementList() {
-        return suggestedMeasurement;
-    }
-
-    /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public QuantitativeValue getSuggestedMeasurement() {
-        return getFirst(suggestedMeasurement);
-    }
-
-    /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
-     *
-     * @param suggestedMeasurement QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement) {
-        this.suggestedMeasurement = add(this.suggestedMeasurement, suggestedMeasurement);
-    }
-
-    private List<QuantitativeValue> suggestedAge;
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public List<QuantitativeValue> getSuggestedAgeList() {
-        return suggestedAge;
-    }
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public QuantitativeValue getSuggestedAge() {
-        return getFirst(suggestedAge);
-    }
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @param suggestedAge QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void addSuggestedAge(QuantitativeValue suggestedAge) {
-        this.suggestedAge = add(this.suggestedAge, suggestedAge);
-    }
-
-    private List<Integer> requiredMaxAge;
-
-    /**
-     * Audiences defined by a person's maximum age.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public List<Integer> getRequiredMaxAgeList() {
-        return requiredMaxAge;
-    }
-
-    /**
-     * Audiences defined by a person's maximum age.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getRequiredMaxAge() {
-        return getFirst(requiredMaxAge);
-    }
-
-    /**
-     * Audiences defined by a person's maximum age.
-     *
-     * @param requiredMaxAge Integer value to set.
-     */
-    @Override
-    public void addRequiredMaxAge(Integer requiredMaxAge) {
-        this.requiredMaxAge = add(this.requiredMaxAge, requiredMaxAge);
-    }
-
-    private List<Number> suggestedMinAge;
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public List<Number> getSuggestedMinAgeList() {
-        return suggestedMinAge;
-    }
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getSuggestedMinAge() {
-        return getFirst(suggestedMinAge);
-    }
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     * @param suggestedMinAge Number value to set.
-     */
-    @Override
-    public void addSuggestedMinAge(Number suggestedMinAge) {
-        this.suggestedMinAge = add(this.suggestedMinAge, suggestedMinAge);
-    }
-
-    private List<Text> requiredGender;
-
-    /**
-     * Audiences defined by a person's gender.
+     * The name of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getRequiredGenderList() {
-        return requiredGender;
+    public List<Text> getNameList() {
+        return name;
     }
 
     /**
-     * Audiences defined by a person's gender.
+     * The name of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getRequiredGender() {
-        return getFirst(requiredGender);
+    public Text getName() {
+        return getFirst(name);
     }
 
     /**
-     * Audiences defined by a person's gender.
+     * The name of the item.
      *
-     * @param requiredGender Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void addRequiredGender(Text requiredGender) {
-        this.requiredGender = add(this.requiredGender, requiredGender);
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    @JsonLdFieldTypes({ GenderType.class, Text.class })
-    private List<Object> suggestedGender;
+    private List<URL> additionalType;
 
     /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link GenderType} or {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public <T> List<T> getSuggestedGenderList() {
-        return (List<T>) suggestedGender;
-    }
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    @Override
-    public <T> T getSuggestedGender() {
-        return (T) getFirst(suggestedGender);
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
     }
 
     /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param suggestedGender GenderType value to set.
+     * @return {@link URL}
      */
     @Override
-    public void addSuggestedGender(GenderType suggestedGender) {
-        this.suggestedGender = add(this.suggestedGender, suggestedGender);
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
     }
+
     /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param suggestedGender Text value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void addSuggestedGender(Text suggestedGender) {
-        this.suggestedGender = add(this.suggestedGender, suggestedGender);
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

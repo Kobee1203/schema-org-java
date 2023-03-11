@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Thing;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
-import org.schema.model.Thing;
 
 /**
  * A single item within a larger data feed.
@@ -18,58 +18,79 @@ import org.schema.model.Thing;
 public interface DataFeedItem extends Intangible {
 
     /**
-     * The datetime the item was removed from the DataFeed.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Thing}
      */
-    <T> List<T> getDateDeletedList();
+    List<Thing> getItemList();
 
     /**
-     * The datetime the item was removed from the DataFeed.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Thing}
      */
-    <T> T getDateDeleted();
+    Thing getItem();
 
     /**
-     * The datetime the item was removed from the DataFeed.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
      *
-     * @param dateDeleted DateTime value to set.
+     * @param item Thing value to set.
      */
-    void addDateDeleted(DateTime dateDeleted);
-    /**
-     * The datetime the item was removed from the DataFeed.
-     *
-     * @param dateDeleted Date value to set.
-     */
-    void addDateDeleted(Date dateDeleted);
+    void addItem(Thing item);
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DateTime} or {@link Date}
      */
     <T> List<T> getDateCreatedList();
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DateTime} or {@link Date}
      */
     <T> T getDateCreated();
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param dateCreated Date value to set.
-     */
-    void addDateCreated(Date dateCreated);
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
      * @param dateCreated DateTime value to set.
      */
     void addDateCreated(DateTime dateCreated);
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param dateCreated Date value to set.
+     */
+    void addDateCreated(Date dateCreated);
+
+    /**
+     * The datetime the item was removed from the DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getDateDeletedList();
+
+    /**
+     * The datetime the item was removed from the DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> T getDateDeleted();
+
+    /**
+     * The datetime the item was removed from the DataFeed.
+     *
+     * @param dateDeleted Date value to set.
+     */
+    void addDateDeleted(Date dateDeleted);
+    /**
+     * The datetime the item was removed from the DataFeed.
+     *
+     * @param dateDeleted DateTime value to set.
+     */
+    void addDateDeleted(DateTime dateDeleted);
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -97,25 +118,4 @@ public interface DataFeedItem extends Intangible {
      * @param dateModified Date value to set.
      */
     void addDateModified(Date dateModified);
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getItemList();
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-     *
-     * @return {@link Thing}
-     */
-    Thing getItem();
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-     *
-     * @param item Thing value to set.
-     */
-    void addItem(Thing item);
 }

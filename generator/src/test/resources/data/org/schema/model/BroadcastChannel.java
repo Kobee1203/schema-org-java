@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
-import org.schema.model.BroadcastFrequencySpecification;
 import org.schema.model.BroadcastService;
+import org.schema.model.datatype.URL;
 import org.schema.model.CableOrSatelliteService;
+import org.schema.model.BroadcastFrequencySpecification;
 
 /**
  * A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
@@ -18,85 +18,6 @@ import org.schema.model.CableOrSatelliteService;
  * @see <a href="https://schema.org/BroadcastChannel">https://schema.org/BroadcastChannel</a>
  */
 public interface BroadcastChannel extends Intangible {
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getGenreList();
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getGenre();
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param genre URL value to set.
-     */
-    void addGenre(URL genre);
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param genre Text value to set.
-     */
-    void addGenre(Text genre);
-
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @return {@link BroadcastFrequencySpecification} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    <T> List<T> getBroadcastFrequencyList();
-
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @return {@link BroadcastFrequencySpecification} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    <T> T getBroadcastFrequency();
-
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @param broadcastFrequency Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void addBroadcastFrequency(Text broadcastFrequency);
-
-    /**
-     * The BroadcastService offered on this channel.
-     *
-     * @return {@link BroadcastService}
-     */
-    List<BroadcastService> getProvidesBroadcastServiceList();
-
-    /**
-     * The BroadcastService offered on this channel.
-     *
-     * @return {@link BroadcastService}
-     */
-    BroadcastService getProvidesBroadcastService();
-
-    /**
-     * The BroadcastService offered on this channel.
-     *
-     * @param providesBroadcastService BroadcastService value to set.
-     */
-    void addProvidesBroadcastService(BroadcastService providesBroadcastService);
 
     /**
      * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
@@ -120,25 +41,52 @@ public interface BroadcastChannel extends Intangible {
     void addBroadcastChannelId(Text broadcastChannelId);
 
     /**
-     * The CableOrSatelliteService offering the channel.
+     * The BroadcastService offered on this channel.
      *
-     * @return {@link CableOrSatelliteService}
+     * @return {@link BroadcastService}
      */
-    List<CableOrSatelliteService> getInBroadcastLineupList();
+    List<BroadcastService> getProvidesBroadcastServiceList();
 
     /**
-     * The CableOrSatelliteService offering the channel.
+     * The BroadcastService offered on this channel.
      *
-     * @return {@link CableOrSatelliteService}
+     * @return {@link BroadcastService}
      */
-    CableOrSatelliteService getInBroadcastLineup();
+    BroadcastService getProvidesBroadcastService();
 
     /**
-     * The CableOrSatelliteService offering the channel.
+     * The BroadcastService offered on this channel.
      *
-     * @param inBroadcastLineup CableOrSatelliteService value to set.
+     * @param providesBroadcastService BroadcastService value to set.
      */
-    void addInBroadcastLineup(CableOrSatelliteService inBroadcastLineup);
+    void addProvidesBroadcastService(BroadcastService providesBroadcastService);
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getGenreList();
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> T getGenre();
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre Text value to set.
+     */
+    void addGenre(Text genre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre URL value to set.
+     */
+    void addGenre(URL genre);
 
     /**
      * The type of service required to have access to the channel (e.g. Standard or Premium).
@@ -160,4 +108,56 @@ public interface BroadcastChannel extends Intangible {
      * @param broadcastServiceTier Text value to set.
      */
     void addBroadcastServiceTier(Text broadcastServiceTier);
+
+    /**
+     * The CableOrSatelliteService offering the channel.
+     *
+     * @return {@link CableOrSatelliteService}
+     */
+    List<CableOrSatelliteService> getInBroadcastLineupList();
+
+    /**
+     * The CableOrSatelliteService offering the channel.
+     *
+     * @return {@link CableOrSatelliteService}
+     */
+    CableOrSatelliteService getInBroadcastLineup();
+
+    /**
+     * The CableOrSatelliteService offering the channel.
+     *
+     * @param inBroadcastLineup CableOrSatelliteService value to set.
+     */
+    void addInBroadcastLineup(CableOrSatelliteService inBroadcastLineup);
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link Text} or {@link BroadcastFrequencySpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> List<T> getBroadcastFrequencyList();
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link Text} or {@link BroadcastFrequencySpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> T getBroadcastFrequency();
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void addBroadcastFrequency(Text broadcastFrequency);
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
 }

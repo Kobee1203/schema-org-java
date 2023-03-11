@@ -10,7 +10,7 @@ import org.schema.model.MonetaryAmount;
 import org.schema.model.datatype.Boolean;
 
 /**
- * A loan in which property or real estate is used as collateral. (A loan securitized against some real estate).
+ * A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>

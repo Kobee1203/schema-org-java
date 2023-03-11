@@ -9,7 +9,7 @@ import java.util.List;
 import org.schema.model.DefinedTerm;
 
 /**
- * A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.
+ * A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>

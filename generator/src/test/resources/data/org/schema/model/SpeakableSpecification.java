@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.CssSelectorType;
 import org.schema.model.datatype.XPathType;
+import org.schema.model.datatype.CssSelectorType;
 
 /**
  * A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.
@@ -16,30 +16,6 @@ import org.schema.model.datatype.XPathType;
  * @see <a href="https://schema.org/SpeakableSpecification">https://schema.org/SpeakableSpecification</a>
  */
 public interface SpeakableSpecification extends Intangible {
-
-    /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     *
-     * @return {@link CssSelectorType}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    List<CssSelectorType> getCssSelectorList();
-
-    /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     *
-     * @return {@link CssSelectorType}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    CssSelectorType getCssSelector();
-
-    /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     *
-     * @param cssSelector CssSelectorType value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    void addCssSelector(CssSelectorType cssSelector);
 
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
@@ -64,4 +40,28 @@ public interface SpeakableSpecification extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
     void addXpath(XPathType xpath);
+
+    /**
+     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @return {@link CssSelectorType}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    List<CssSelectorType> getCssSelectorList();
+
+    /**
+     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @return {@link CssSelectorType}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    CssSelectorType getCssSelector();
+
+    /**
+     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @param cssSelector CssSelectorType value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    void addCssSelector(CssSelectorType cssSelector);
 }

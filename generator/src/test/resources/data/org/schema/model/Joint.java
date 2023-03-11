@@ -42,6 +42,37 @@ public interface Joint extends AnatomicalStructure {
     void addStructuralClass(Text structuralClass);
 
     /**
+     * The degree of mobility the joint allows.
+     *
+     * @return {@link MedicalEntity} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getFunctionalClassList();
+
+    /**
+     * The degree of mobility the joint allows.
+     *
+     * @return {@link MedicalEntity} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getFunctionalClass();
+
+    /**
+     * The degree of mobility the joint allows.
+     *
+     * @param functionalClass MedicalEntity value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addFunctionalClass(MedicalEntity functionalClass);
+    /**
+     * The degree of mobility the joint allows.
+     *
+     * @param functionalClass Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addFunctionalClass(Text functionalClass);
+
+    /**
      * The biomechanical properties of the bone.
      *
      * @return {@link Text}
@@ -64,35 +95,4 @@ public interface Joint extends AnatomicalStructure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addBiomechnicalClass(Text biomechnicalClass);
-
-    /**
-     * The degree of mobility the joint allows.
-     *
-     * @return {@link Text} or {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getFunctionalClassList();
-
-    /**
-     * The degree of mobility the joint allows.
-     *
-     * @return {@link Text} or {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getFunctionalClass();
-
-    /**
-     * The degree of mobility the joint allows.
-     *
-     * @param functionalClass Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addFunctionalClass(Text functionalClass);
-    /**
-     * The degree of mobility the joint allows.
-     *
-     * @param functionalClass MedicalEntity value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addFunctionalClass(MedicalEntity functionalClass);
 }

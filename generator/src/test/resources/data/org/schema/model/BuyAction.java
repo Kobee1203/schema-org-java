@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.WarrantyPromise;
 import org.schema.model.Organization;
 import org.schema.model.Person;
+import org.schema.model.WarrantyPromise;
 
 /**
  * The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.
@@ -16,27 +16,6 @@ import org.schema.model.Person;
  * @see <a href="https://schema.org/BuyAction">https://schema.org/BuyAction</a>
  */
 public interface BuyAction extends TradeAction {
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @return {@link WarrantyPromise}
-     */
-    List<WarrantyPromise> getWarrantyPromiseList();
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @return {@link WarrantyPromise}
-     */
-    WarrantyPromise getWarrantyPromise();
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @param warrantyPromise WarrantyPromise value to set.
-     */
-    void addWarrantyPromise(WarrantyPromise warrantyPromise);
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -66,29 +45,50 @@ public interface BuyAction extends TradeAction {
     void addSeller(Person seller);
 
     /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     */
+    List<WarrantyPromise> getWarrantyPromiseList();
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     */
+    WarrantyPromise getWarrantyPromise();
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @param warrantyPromise WarrantyPromise value to set.
+     */
+    void addWarrantyPromise(WarrantyPromise warrantyPromise);
+
+    /**
      * 'vendor' is an earlier term for 'seller'.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     <T> List<T> getVendorList();
 
     /**
      * 'vendor' is an earlier term for 'seller'.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     <T> T getVendor();
 
     /**
      * 'vendor' is an earlier term for 'seller'.
      *
-     * @param vendor Person value to set.
-     */
-    void addVendor(Person vendor);
-    /**
-     * 'vendor' is an earlier term for 'seller'.
-     *
      * @param vendor Organization value to set.
      */
     void addVendor(Organization vendor);
+    /**
+     * 'vendor' is an earlier term for 'seller'.
+     *
+     * @param vendor Person value to set.
+     */
+    void addVendor(Person vendor);
 }

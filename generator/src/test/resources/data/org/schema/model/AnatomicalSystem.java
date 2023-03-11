@@ -6,91 +6,19 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalTherapy;
-import org.schema.model.MedicalCondition;
-import org.schema.model.AnatomicalStructure;
 import org.schema.model.datatype.Text;
+import org.schema.model.MedicalTherapy;
+import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
+import org.schema.model.MedicalCondition;
 
 /**
- * An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can includes circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.
+ * An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can include circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.
  *
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/AnatomicalSystem">https://schema.org/AnatomicalSystem</a>
  */
 public interface AnatomicalSystem extends MedicalEntity {
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalTherapy> getRelatedTherapyList();
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalTherapy getRelatedTherapy();
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @param relatedTherapy MedicalTherapy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRelatedTherapy(MedicalTherapy relatedTherapy);
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalCondition> getRelatedConditionList();
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalCondition getRelatedCondition();
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @param relatedCondition MedicalCondition value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRelatedCondition(MedicalCondition relatedCondition);
-
-    /**
-     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AnatomicalStructure> getRelatedStructureList();
-
-    /**
-     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AnatomicalStructure getRelatedStructure();
-
-    /**
-     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
-     *
-     * @param relatedStructure AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRelatedStructure(AnatomicalStructure relatedStructure);
 
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
@@ -115,6 +43,30 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addAssociatedPathophysiology(Text associatedPathophysiology);
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalTherapy> getRelatedTherapyList();
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalTherapy getRelatedTherapy();
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @param relatedTherapy MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRelatedTherapy(MedicalTherapy relatedTherapy);
 
     /**
      * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
@@ -146,4 +98,52 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addComprisedOf(AnatomicalSystem comprisedOf);
+
+    /**
+     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getRelatedStructureList();
+
+    /**
+     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AnatomicalStructure getRelatedStructure();
+
+    /**
+     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
+     *
+     * @param relatedStructure AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRelatedStructure(AnatomicalStructure relatedStructure);
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getRelatedConditionList();
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalCondition getRelatedCondition();
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @param relatedCondition MedicalCondition value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRelatedCondition(MedicalCondition relatedCondition);
 }

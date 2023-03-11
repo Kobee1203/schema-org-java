@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalEntity;
-import org.schema.model.Drug;
 import org.schema.model.DoseSchedule;
+import org.schema.model.Drug;
+import org.schema.model.MedicalEntity;
 
 /**
  * A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.
@@ -19,28 +19,28 @@ import org.schema.model.DoseSchedule;
 public interface TherapeuticProcedure extends MedicalProcedure {
 
     /**
-     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
      *
-     * @return {@link MedicalEntity}
+     * @return {@link DoseSchedule}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalEntity> getAdverseOutcomeList();
+    List<DoseSchedule> getDoseScheduleList();
 
     /**
-     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
      *
-     * @return {@link MedicalEntity}
+     * @return {@link DoseSchedule}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalEntity getAdverseOutcome();
+    DoseSchedule getDoseSchedule();
 
     /**
-     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
      *
-     * @param adverseOutcome MedicalEntity value to set.
+     * @param doseSchedule DoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addAdverseOutcome(MedicalEntity adverseOutcome);
+    void addDoseSchedule(DoseSchedule doseSchedule);
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
@@ -67,26 +67,26 @@ public interface TherapeuticProcedure extends MedicalProcedure {
     void addDrug(Drug drug);
 
     /**
-     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
      *
-     * @return {@link DoseSchedule}
+     * @return {@link MedicalEntity}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<DoseSchedule> getDoseScheduleList();
+    List<MedicalEntity> getAdverseOutcomeList();
 
     /**
-     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
      *
-     * @return {@link DoseSchedule}
+     * @return {@link MedicalEntity}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    DoseSchedule getDoseSchedule();
+    MedicalEntity getAdverseOutcome();
 
     /**
-     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
      *
-     * @param doseSchedule DoseSchedule value to set.
+     * @param adverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addDoseSchedule(DoseSchedule doseSchedule);
+    void addAdverseOutcome(MedicalEntity adverseOutcome);
 }

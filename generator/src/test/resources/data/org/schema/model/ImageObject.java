@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.MediaObject;
+import org.schema.model.datatype.Text;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
+import org.schema.model.datatype.Boolean;
 
 /**
  * An image file.
@@ -18,6 +18,81 @@ import org.schema.model.PropertyValue;
  * @see <a href="https://schema.org/ImageObject">https://schema.org/ImageObject</a>
  */
 public interface ImageObject extends MediaObject {
+
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @return {@link MediaObject} or {@link Text}
+     */
+    <T> List<T> getCaptionList();
+
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @return {@link MediaObject} or {@link Text}
+     */
+    <T> T getCaption();
+
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param caption MediaObject value to set.
+     */
+    void addCaption(MediaObject caption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param caption Text value to set.
+     */
+    void addCaption(Text caption);
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    List<ImageObject> getThumbnailList();
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    ImageObject getThumbnail();
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @param thumbnail ImageObject value to set.
+     */
+    void addThumbnail(ImageObject thumbnail);
+
+    /**
+     * exif data for this object.
+     *
+     * @return {@link Text} or {@link PropertyValue}
+     */
+    <T> List<T> getExifDataList();
+
+    /**
+     * exif data for this object.
+     *
+     * @return {@link Text} or {@link PropertyValue}
+     */
+    <T> T getExifData();
+
+    /**
+     * exif data for this object.
+     *
+     * @param exifData Text value to set.
+     */
+    void addExifData(Text exifData);
+    /**
+     * exif data for this object.
+     *
+     * @param exifData PropertyValue value to set.
+     */
+    void addExifData(PropertyValue exifData);
 
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
@@ -66,79 +141,4 @@ public interface ImageObject extends MediaObject {
      * @param representativeOfPage Boolean value to set.
      */
     void addRepresentativeOfPage(Boolean representativeOfPage);
-
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
-     * @return {@link Text} or {@link MediaObject}
-     */
-    <T> List<T> getCaptionList();
-
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
-     * @return {@link Text} or {@link MediaObject}
-     */
-    <T> T getCaption();
-
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
-     * @param caption Text value to set.
-     */
-    void addCaption(Text caption);
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
-     * @param caption MediaObject value to set.
-     */
-    void addCaption(MediaObject caption);
-
-    /**
-     * Thumbnail image for an image or video.
-     *
-     * @return {@link ImageObject}
-     */
-    List<ImageObject> getThumbnailList();
-
-    /**
-     * Thumbnail image for an image or video.
-     *
-     * @return {@link ImageObject}
-     */
-    ImageObject getThumbnail();
-
-    /**
-     * Thumbnail image for an image or video.
-     *
-     * @param thumbnail ImageObject value to set.
-     */
-    void addThumbnail(ImageObject thumbnail);
-
-    /**
-     * exif data for this object.
-     *
-     * @return {@link PropertyValue} or {@link Text}
-     */
-    <T> List<T> getExifDataList();
-
-    /**
-     * exif data for this object.
-     *
-     * @return {@link PropertyValue} or {@link Text}
-     */
-    <T> T getExifData();
-
-    /**
-     * exif data for this object.
-     *
-     * @param exifData PropertyValue value to set.
-     */
-    void addExifData(PropertyValue exifData);
-    /**
-     * exif data for this object.
-     *
-     * @param exifData Text value to set.
-     */
-    void addExifData(Text exifData);
 }

@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Country;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
+import org.schema.model.Country;
 import org.schema.model.PostalAddress;
 
 /**
@@ -17,6 +17,60 @@ import org.schema.model.PostalAddress;
  * @see <a href="https://schema.org/GeoCoordinates">https://schema.org/GeoCoordinates</a>
  */
 public interface GeoCoordinates extends StructuredValue {
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> List<T> getLongitudeList();
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> T getLongitude();
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param longitude Text value to set.
+     */
+    void addLongitude(Text longitude);
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param longitude Number value to set.
+     */
+    void addLongitude(Number longitude);
+
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> List<T> getElevationList();
+
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> T getElevation();
+
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param elevation Number value to set.
+     */
+    void addElevation(Number elevation);
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param elevation Text value to set.
+     */
+    void addElevation(Text elevation);
 
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
@@ -50,31 +104,28 @@ public interface GeoCoordinates extends StructuredValue {
     void addAddressCountry(Text addressCountry);
 
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The postal code. For example, 94043.
      *
-     * @return {@link Text} or {@link Number}
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    <T> List<T> getLatitudeList();
+    List<Text> getPostalCodeList();
 
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The postal code. For example, 94043.
      *
-     * @return {@link Text} or {@link Number}
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    <T> T getLatitude();
+    Text getPostalCode();
 
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The postal code. For example, 94043.
      *
-     * @param latitude Text value to set.
+     * @param postalCode Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void addLatitude(Text latitude);
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @param latitude Number value to set.
-     */
-    void addLatitude(Number latitude);
+    void addPostalCode(Text postalCode);
 
     /**
      * Physical address of the item.
@@ -104,80 +155,29 @@ public interface GeoCoordinates extends StructuredValue {
     void addAddress(PostalAddress address);
 
     /**
-     * The postal code. For example, 94043.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<Text> getPostalCodeList();
-
-    /**
-     * The postal code. For example, 94043.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    Text getPostalCode();
-
-    /**
-     * The postal code. For example, 94043.
-     *
-     * @param postalCode Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addPostalCode(Text postalCode);
-
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> List<T> getElevationList();
-
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> T getElevation();
-
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param elevation Text value to set.
-     */
-    void addElevation(Text elevation);
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param elevation Number value to set.
-     */
-    void addElevation(Number elevation);
-
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
      * @return {@link Number} or {@link Text}
      */
-    <T> List<T> getLongitudeList();
+    <T> List<T> getLatitudeList();
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
      * @return {@link Number} or {@link Text}
      */
-    <T> T getLongitude();
+    <T> T getLatitude();
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @param longitude Number value to set.
+     * @param latitude Number value to set.
      */
-    void addLongitude(Number longitude);
+    void addLatitude(Number latitude);
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @param longitude Text value to set.
+     * @param latitude Text value to set.
      */
-    void addLongitude(Text longitude);
+    void addLatitude(Text latitude);
 }

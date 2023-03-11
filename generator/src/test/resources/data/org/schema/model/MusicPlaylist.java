@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.MusicRecording;
-import org.schema.model.datatype.Integer;
 import org.schema.model.ItemList;
+import org.schema.model.datatype.Integer;
 
 /**
  * A collection of music tracks in playlist form.
@@ -37,27 +37,6 @@ public interface MusicPlaylist extends CreativeWork {
      * @param tracks MusicRecording value to set.
      */
     void addTracks(MusicRecording tracks);
-
-    /**
-     * The number of tracks in this album or playlist.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getNumTracksList();
-
-    /**
-     * The number of tracks in this album or playlist.
-     *
-     * @return {@link Integer}
-     */
-    Integer getNumTracks();
-
-    /**
-     * The number of tracks in this album or playlist.
-     *
-     * @param numTracks Integer value to set.
-     */
-    void addNumTracks(Integer numTracks);
 
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -89,4 +68,25 @@ public interface MusicPlaylist extends CreativeWork {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addTrack(MusicRecording track);
+
+    /**
+     * The number of tracks in this album or playlist.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumTracksList();
+
+    /**
+     * The number of tracks in this album or playlist.
+     *
+     * @return {@link Integer}
+     */
+    Integer getNumTracks();
+
+    /**
+     * The number of tracks in this album or playlist.
+     *
+     * @param numTracks Integer value to set.
+     */
+    void addNumTracks(Integer numTracks);
 }

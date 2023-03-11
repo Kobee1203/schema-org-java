@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
 import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use [[isBasedOn]] to link to source/origin. The [[recordedIn]] property can be used to reference a Quotation from an [[Event]].
@@ -21,7 +21,7 @@ public interface Quotation extends CreativeWork {
     /**
      * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
      */
@@ -30,7 +30,7 @@ public interface Quotation extends CreativeWork {
     /**
      * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
      */
@@ -39,17 +39,17 @@ public interface Quotation extends CreativeWork {
     /**
      * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
      *
-     * @param spokenByCharacter Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
-     */
-    void addSpokenByCharacter(Person spokenByCharacter);
-    /**
-     * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
-     *
      * @param spokenByCharacter Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
      */
     void addSpokenByCharacter(Organization spokenByCharacter);
+    /**
+     * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
+     *
+     * @param spokenByCharacter Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
+     */
+    void addSpokenByCharacter(Person spokenByCharacter);
 }

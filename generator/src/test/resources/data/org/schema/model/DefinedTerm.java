@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.URL;
 import org.schema.model.DefinedTermSet;
+import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Text;
 
 /**
  * A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.
@@ -18,6 +18,41 @@ import org.schema.model.DefinedTermSet;
  * @see <a href="https://schema.org/DefinedTerm">https://schema.org/DefinedTerm</a>
  */
 public interface DefinedTerm extends Intangible {
+
+    /**
+     * A [[DefinedTermSet]] that contains this term.
+     *
+     * @return {@link DefinedTermSet} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    <T> List<T> getInDefinedTermSetList();
+
+    /**
+     * A [[DefinedTermSet]] that contains this term.
+     *
+     * @return {@link DefinedTermSet} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    <T> T getInDefinedTermSet();
+
+    /**
+     * A [[DefinedTermSet]] that contains this term.
+     *
+     * @param inDefinedTermSet DefinedTermSet value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    void addInDefinedTermSet(DefinedTermSet inDefinedTermSet);
+    /**
+     * A [[DefinedTermSet]] that contains this term.
+     *
+     * @param inDefinedTermSet URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    void addInDefinedTermSet(URL inDefinedTermSet);
 
     /**
      * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
@@ -45,39 +80,4 @@ public interface DefinedTerm extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     void addTermCode(Text termCode);
-
-    /**
-     * A [[DefinedTermSet]] that contains this term.
-     *
-     * @return {@link URL} or {@link DefinedTermSet}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    <T> List<T> getInDefinedTermSetList();
-
-    /**
-     * A [[DefinedTermSet]] that contains this term.
-     *
-     * @return {@link URL} or {@link DefinedTermSet}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    <T> T getInDefinedTermSet();
-
-    /**
-     * A [[DefinedTermSet]] that contains this term.
-     *
-     * @param inDefinedTermSet URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void addInDefinedTermSet(URL inDefinedTermSet);
-    /**
-     * A [[DefinedTermSet]] that contains this term.
-     *
-     * @param inDefinedTermSet DefinedTermSet value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void addInDefinedTermSet(DefinedTermSet inDefinedTermSet);
 }

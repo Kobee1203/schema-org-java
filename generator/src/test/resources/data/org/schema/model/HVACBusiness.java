@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * A business that provide Heating, Ventilation and Air Conditioning services.
+ * A business that provides Heating, Ventilation and Air Conditioning services.
  *
  * @see <a href="https://schema.org/HVACBusiness">https://schema.org/HVACBusiness</a>
  */

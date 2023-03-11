@@ -8,8 +8,8 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.Duration;
-import org.schema.model.datatype.Date;
 import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Date;
 
 /**
  * A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).
@@ -60,7 +60,7 @@ public interface RealEstateListing extends WebPage {
     /**
      * Publication date of an online listing.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DateTime} or {@link Date}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
@@ -69,7 +69,7 @@ public interface RealEstateListing extends WebPage {
     /**
      * Publication date of an online listing.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DateTime} or {@link Date}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
@@ -78,17 +78,17 @@ public interface RealEstateListing extends WebPage {
     /**
      * Publication date of an online listing.
      *
-     * @param datePosted Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void addDatePosted(Date datePosted);
-    /**
-     * Publication date of an online listing.
-     *
      * @param datePosted DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     void addDatePosted(DateTime datePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void addDatePosted(Date datePosted);
 }

@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.datatype.Text;
 import org.schema.model.Thing;
 import org.schema.model.DataFeedItem;
-import org.schema.model.datatype.Text;
 
 /**
  * A single feed providing structured information about one or more entities or topics.
@@ -18,35 +18,35 @@ import org.schema.model.datatype.Text;
 public interface DataFeed extends Dataset {
 
     /**
-     * An item within in a data feed. Data feeds may have many elements.
+     * An item within a data feed. Data feeds may have many elements.
      *
-     * @return {@link Thing} or {@link DataFeedItem} or {@link Text}
+     * @return {@link Text} or {@link Thing} or {@link DataFeedItem}
      */
     <T> List<T> getDataFeedElementList();
 
     /**
-     * An item within in a data feed. Data feeds may have many elements.
+     * An item within a data feed. Data feeds may have many elements.
      *
-     * @return {@link Thing} or {@link DataFeedItem} or {@link Text}
+     * @return {@link Text} or {@link Thing} or {@link DataFeedItem}
      */
     <T> T getDataFeedElement();
 
     /**
-     * An item within in a data feed. Data feeds may have many elements.
+     * An item within a data feed. Data feeds may have many elements.
+     *
+     * @param dataFeedElement Text value to set.
+     */
+    void addDataFeedElement(Text dataFeedElement);
+    /**
+     * An item within a data feed. Data feeds may have many elements.
      *
      * @param dataFeedElement Thing value to set.
      */
     void addDataFeedElement(Thing dataFeedElement);
     /**
-     * An item within in a data feed. Data feeds may have many elements.
+     * An item within a data feed. Data feeds may have many elements.
      *
      * @param dataFeedElement DataFeedItem value to set.
      */
     void addDataFeedElement(DataFeedItem dataFeedElement);
-    /**
-     * An item within in a data feed. Data feeds may have many elements.
-     *
-     * @param dataFeedElement Text value to set.
-     */
-    void addDataFeedElement(Text dataFeedElement);
 }

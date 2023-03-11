@@ -13,5 +13,5 @@ import java.util.List;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalAudience">https://schema.org/MedicalAudience</a>
  */
-public interface MedicalAudience extends Audience, PeopleAudience {
+public interface MedicalAudience extends PeopleAudience, Audience {
 }

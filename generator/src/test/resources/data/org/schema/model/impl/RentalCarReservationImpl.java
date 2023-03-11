@@ -5,23 +5,23 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Place;
 import org.schema.model.datatype.DateTime;
-import org.schema.model.PriceSpecification;
+import org.schema.model.Place;
+import org.schema.model.Person;
+import org.schema.model.Organization;
+import org.schema.model.ProgramMembership;
 import org.schema.model.datatype.Number;
+import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.Text;
 import org.schema.model.Ticket;
-import org.schema.model.ReservationStatusType;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.ProgramMembership;
 import org.schema.model.Thing;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
+import org.schema.model.ReservationStatusType;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
@@ -36,6 +36,70 @@ import org.schema.model.RentalCarReservation;
  */
 @JsonLdTypeName("RentalCarReservation")
 public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RentalCarReservation {
+
+    private List<DateTime> pickupTime;
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public List<DateTime> getPickupTimeList() {
+        return pickupTime;
+    }
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public DateTime getPickupTime() {
+        return getFirst(pickupTime);
+    }
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @param pickupTime DateTime value to set.
+     */
+    @Override
+    public void addPickupTime(DateTime pickupTime) {
+        this.pickupTime = add(this.pickupTime, pickupTime);
+    }
+
+    private List<Place> pickupLocation;
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getPickupLocationList() {
+        return pickupLocation;
+    }
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getPickupLocation() {
+        return getFirst(pickupLocation);
+    }
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @param pickupLocation Place value to set.
+     */
+    @Override
+    public void addPickupLocation(Place pickupLocation) {
+        this.pickupLocation = add(this.pickupLocation, pickupLocation);
+    }
 
     private List<Place> dropoffLocation;
 
@@ -101,271 +165,6 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
         this.dropoffTime = add(this.dropoffTime, dropoffTime);
     }
 
-    private List<DateTime> pickupTime;
-
-    /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public List<DateTime> getPickupTimeList() {
-        return pickupTime;
-    }
-
-    /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public DateTime getPickupTime() {
-        return getFirst(pickupTime);
-    }
-
-    /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
-     *
-     * @param pickupTime DateTime value to set.
-     */
-    @Override
-    public void addPickupTime(DateTime pickupTime) {
-        this.pickupTime = add(this.pickupTime, pickupTime);
-    }
-
-    private List<Place> pickupLocation;
-
-    /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getPickupLocationList() {
-        return pickupLocation;
-    }
-
-    /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getPickupLocation() {
-        return getFirst(pickupLocation);
-    }
-
-    /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @param pickupLocation Place value to set.
-     */
-    @Override
-    public void addPickupLocation(Place pickupLocation) {
-        this.pickupLocation = add(this.pickupLocation, pickupLocation);
-    }
-
-    private List<DateTime> modifiedTime;
-
-    /**
-     * The date and time the reservation was modified.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public List<DateTime> getModifiedTimeList() {
-        return modifiedTime;
-    }
-
-    /**
-     * The date and time the reservation was modified.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public DateTime getModifiedTime() {
-        return getFirst(modifiedTime);
-    }
-
-    /**
-     * The date and time the reservation was modified.
-     *
-     * @param modifiedTime DateTime value to set.
-     */
-    @Override
-    public void addModifiedTime(DateTime modifiedTime) {
-        this.modifiedTime = add(this.modifiedTime, modifiedTime);
-    }
-
-    @JsonLdFieldTypes({ PriceSpecification.class, Number.class, Text.class })
-    private List<Object> totalPrice;
-
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link PriceSpecification} or {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getTotalPriceList() {
-        return (List<T>) totalPrice;
-    }
-
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link PriceSpecification} or {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> T getTotalPrice() {
-        return (T) getFirst(totalPrice);
-    }
-
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice PriceSpecification value to set.
-     */
-    @Override
-    public void addTotalPrice(PriceSpecification totalPrice) {
-        this.totalPrice = add(this.totalPrice, totalPrice);
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice Number value to set.
-     */
-    @Override
-    public void addTotalPrice(Number totalPrice) {
-        this.totalPrice = add(this.totalPrice, totalPrice);
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice Text value to set.
-     */
-    @Override
-    public void addTotalPrice(Text totalPrice) {
-        this.totalPrice = add(this.totalPrice, totalPrice);
-    }
-
-    private List<Ticket> reservedTicket;
-
-    /**
-     * A ticket associated with the reservation.
-     *
-     * @return {@link Ticket}
-     */
-    @Override
-    public List<Ticket> getReservedTicketList() {
-        return reservedTicket;
-    }
-
-    /**
-     * A ticket associated with the reservation.
-     *
-     * @return {@link Ticket}
-     */
-    @Override
-    public Ticket getReservedTicket() {
-        return getFirst(reservedTicket);
-    }
-
-    /**
-     * A ticket associated with the reservation.
-     *
-     * @param reservedTicket Ticket value to set.
-     */
-    @Override
-    public void addReservedTicket(Ticket reservedTicket) {
-        this.reservedTicket = add(this.reservedTicket, reservedTicket);
-    }
-
-    private List<ReservationStatusType> reservationStatus;
-
-    /**
-     * The current status of the reservation.
-     *
-     * @return {@link ReservationStatusType}
-     */
-    @Override
-    public List<ReservationStatusType> getReservationStatusList() {
-        return reservationStatus;
-    }
-
-    /**
-     * The current status of the reservation.
-     *
-     * @return {@link ReservationStatusType}
-     */
-    @Override
-    public ReservationStatusType getReservationStatus() {
-        return getFirst(reservationStatus);
-    }
-
-    /**
-     * The current status of the reservation.
-     *
-     * @param reservationStatus ReservationStatusType value to set.
-     */
-    @Override
-    public void addReservationStatus(ReservationStatusType reservationStatus) {
-        this.reservationStatus = add(this.reservationStatus, reservationStatus);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> provider;
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
-    }
-
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> broker;
 
@@ -408,36 +207,90 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
         this.broker = add(this.broker, broker);
     }
 
-    private List<DateTime> bookingTime;
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
 
     /**
-     * The date and time the reservation was booked.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    private List<DateTime> modifiedTime;
+
+    /**
+     * The date and time the reservation was modified.
      *
      * @return {@link DateTime}
      */
     @Override
-    public List<DateTime> getBookingTimeList() {
-        return bookingTime;
+    public List<DateTime> getModifiedTimeList() {
+        return modifiedTime;
     }
 
     /**
-     * The date and time the reservation was booked.
+     * The date and time the reservation was modified.
      *
      * @return {@link DateTime}
      */
     @Override
-    public DateTime getBookingTime() {
-        return getFirst(bookingTime);
+    public DateTime getModifiedTime() {
+        return getFirst(modifiedTime);
     }
 
     /**
-     * The date and time the reservation was booked.
+     * The date and time the reservation was modified.
      *
-     * @param bookingTime DateTime value to set.
+     * @param modifiedTime DateTime value to set.
      */
     @Override
-    public void addBookingTime(DateTime bookingTime) {
-        this.bookingTime = add(this.bookingTime, bookingTime);
+    public void addModifiedTime(DateTime modifiedTime) {
+        this.modifiedTime = add(this.modifiedTime, modifiedTime);
     }
 
     private List<ProgramMembership> programMembershipUsed;
@@ -472,13 +325,13 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
         this.programMembershipUsed = add(this.programMembershipUsed, programMembershipUsed);
     }
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private List<Object> bookingAgent;
 
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
     public <T> List<T> getBookingAgentList() {
@@ -488,7 +341,7 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
     public <T> T getBookingAgent() {
@@ -498,52 +351,103 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
-     * @param bookingAgent Person value to set.
-     */
-    @Override
-    public void addBookingAgent(Person bookingAgent) {
-        this.bookingAgent = add(this.bookingAgent, bookingAgent);
-    }
-    /**
-     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-     *
      * @param bookingAgent Organization value to set.
      */
     @Override
     public void addBookingAgent(Organization bookingAgent) {
         this.bookingAgent = add(this.bookingAgent, bookingAgent);
     }
-
-    private List<Text> priceCurrency;
-
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
-     * @return {@link Text}
+     * @param bookingAgent Person value to set.
      */
     @Override
-    public List<Text> getPriceCurrencyList() {
-        return priceCurrency;
+    public void addBookingAgent(Person bookingAgent) {
+        this.bookingAgent = add(this.bookingAgent, bookingAgent);
+    }
+
+    @JsonLdFieldTypes({ Number.class, PriceSpecification.class, Text.class })
+    private List<Object> totalPrice;
+
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link Number} or {@link PriceSpecification} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getTotalPriceList() {
+        return (List<T>) totalPrice;
     }
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link Text}
+     * @return {@link Number} or {@link PriceSpecification} or {@link Text}
      */
     @Override
-    public Text getPriceCurrency() {
-        return getFirst(priceCurrency);
+    public <T> T getTotalPrice() {
+        return (T) getFirst(totalPrice);
     }
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param priceCurrency Text value to set.
+     * @param totalPrice Number value to set.
      */
     @Override
-    public void addPriceCurrency(Text priceCurrency) {
-        this.priceCurrency = add(this.priceCurrency, priceCurrency);
+    public void addTotalPrice(Number totalPrice) {
+        this.totalPrice = add(this.totalPrice, totalPrice);
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param totalPrice PriceSpecification value to set.
+     */
+    @Override
+    public void addTotalPrice(PriceSpecification totalPrice) {
+        this.totalPrice = add(this.totalPrice, totalPrice);
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param totalPrice Text value to set.
+     */
+    @Override
+    public void addTotalPrice(Text totalPrice) {
+        this.totalPrice = add(this.totalPrice, totalPrice);
+    }
+
+    private List<Ticket> reservedTicket;
+
+    /**
+     * A ticket associated with the reservation.
+     *
+     * @return {@link Ticket}
+     */
+    @Override
+    public List<Ticket> getReservedTicketList() {
+        return reservedTicket;
+    }
+
+    /**
+     * A ticket associated with the reservation.
+     *
+     * @return {@link Ticket}
+     */
+    @Override
+    public Ticket getReservedTicket() {
+        return getFirst(reservedTicket);
+    }
+
+    /**
+     * A ticket associated with the reservation.
+     *
+     * @param reservedTicket Ticket value to set.
+     */
+    @Override
+    public void addReservedTicket(Ticket reservedTicket) {
+        this.reservedTicket = add(this.reservedTicket, reservedTicket);
     }
 
     private List<Text> reservationId;
@@ -576,6 +480,38 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
     @Override
     public void addReservationId(Text reservationId) {
         this.reservationId = add(this.reservationId, reservationId);
+    }
+
+    private List<Thing> reservationFor;
+
+    /**
+     * The thing -- flight, event, restaurant, etc. being reserved.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getReservationForList() {
+        return reservationFor;
+    }
+
+    /**
+     * The thing -- flight, event, restaurant, etc. being reserved.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getReservationFor() {
+        return getFirst(reservationFor);
+    }
+
+    /**
+     * The thing -- flight, event, restaurant, etc. being reserved.
+     *
+     * @param reservationFor Thing value to set.
+     */
+    @Override
+    public void addReservationFor(Thing reservationFor) {
+        this.reservationFor = add(this.reservationFor, reservationFor);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
@@ -620,142 +556,100 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
         this.underName = add(this.underName, underName);
     }
 
-    private List<Thing> reservationFor;
+    private List<DateTime> bookingTime;
 
     /**
-     * The thing -- flight, event, restaurant,etc. being reserved.
+     * The date and time the reservation was booked.
      *
-     * @return {@link Thing}
+     * @return {@link DateTime}
      */
     @Override
-    public List<Thing> getReservationForList() {
-        return reservationFor;
+    public List<DateTime> getBookingTimeList() {
+        return bookingTime;
     }
 
     /**
-     * The thing -- flight, event, restaurant,etc. being reserved.
+     * The date and time the reservation was booked.
      *
-     * @return {@link Thing}
+     * @return {@link DateTime}
      */
     @Override
-    public Thing getReservationFor() {
-        return getFirst(reservationFor);
+    public DateTime getBookingTime() {
+        return getFirst(bookingTime);
     }
 
     /**
-     * The thing -- flight, event, restaurant,etc. being reserved.
+     * The date and time the reservation was booked.
      *
-     * @param reservationFor Thing value to set.
+     * @param bookingTime DateTime value to set.
      */
     @Override
-    public void addReservationFor(Thing reservationFor) {
-        this.reservationFor = add(this.reservationFor, reservationFor);
+    public void addBookingTime(DateTime bookingTime) {
+        this.bookingTime = add(this.bookingTime, bookingTime);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    private List<ReservationStatusType> reservationStatus;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The current status of the reservation.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link ReservationStatusType}
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public List<ReservationStatusType> getReservationStatusList() {
+        return reservationStatus;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The current status of the reservation.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @return {@link ReservationStatusType}
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public ReservationStatusType getReservationStatus() {
+        return getFirst(reservationStatus);
     }
+
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The current status of the reservation.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @param reservationStatus ReservationStatusType value to set.
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addReservationStatus(ReservationStatusType reservationStatus) {
+        this.reservationStatus = add(this.reservationStatus, reservationStatus);
     }
 
-    private List<Text> alternateName;
+    private List<Text> priceCurrency;
 
     /**
-     * An alias for the item.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Text> getPriceCurrencyList() {
+        return priceCurrency;
     }
 
     /**
-     * An alias for the item.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Text getPriceCurrency() {
+        return getFirst(priceCurrency);
     }
 
     /**
-     * An alias for the item.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @param alternateName Text value to set.
+     * @param priceCurrency Text value to set.
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public void addPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = add(this.priceCurrency, priceCurrency);
     }
 
     private List<Action> potentialAction;
@@ -790,110 +684,46 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -942,68 +772,68 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -1038,14 +868,78 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -1056,13 +950,23 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -1083,14 +987,110 @@ public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

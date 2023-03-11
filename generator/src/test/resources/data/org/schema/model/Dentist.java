@@ -12,5 +12,5 @@ import java.util.List;
  *
  * @see <a href="https://schema.org/Dentist">https://schema.org/Dentist</a>
  */
-public interface Dentist extends MedicalOrganization, MedicalBusiness, LocalBusiness {
+public interface Dentist extends LocalBusiness, MedicalOrganization, MedicalBusiness {
 }

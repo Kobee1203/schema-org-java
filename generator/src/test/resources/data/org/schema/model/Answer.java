@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.WebContent;
 import org.schema.model.Comment;
+import org.schema.model.WebContent;
 
 /**
  * An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
@@ -20,7 +20,7 @@ public interface Answer extends Comment {
     /**
      * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
      *
-     * @return {@link WebContent} or {@link Comment}
+     * @return {@link Comment} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
@@ -29,7 +29,7 @@ public interface Answer extends Comment {
     /**
      * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
      *
-     * @return {@link WebContent} or {@link Comment}
+     * @return {@link Comment} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
@@ -38,17 +38,17 @@ public interface Answer extends Comment {
     /**
      * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
      *
-     * @param answerExplanation WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
-     */
-    void addAnswerExplanation(WebContent answerExplanation);
-    /**
-     * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
-     *
      * @param answerExplanation Comment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
     void addAnswerExplanation(Comment answerExplanation);
+    /**
+     * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
+     *
+     * @param answerExplanation WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
+    void addAnswerExplanation(WebContent answerExplanation);
 }

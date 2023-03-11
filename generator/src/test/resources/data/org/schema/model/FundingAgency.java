@@ -12,12 +12,12 @@ import java.util.List;
  *     the granting process (via [[Grant]]s, typically [[MonetaryGrant]]s).
  *     A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc.
  *     
- * Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation...
+ * Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation, ...
  *     
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+ * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
  * @see <a href="https://schema.org/FundingAgency">https://schema.org/FundingAgency</a>
  */
 public interface FundingAgency extends Project {

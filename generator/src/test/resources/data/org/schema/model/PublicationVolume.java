@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.<br/><br/>See also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
@@ -18,40 +18,9 @@ import org.schema.model.datatype.Integer;
 public interface PublicationVolume extends CreativeWork {
 
     /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @return {@link Text} or {@link Integer}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    <T> List<T> getPageStartList();
-
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @return {@link Text} or {@link Integer}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    <T> T getPageStart();
-
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param pageStart Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addPageStart(Text pageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param pageStart Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addPageStart(Integer pageStart);
-
-    /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link Integer} or {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     <T> List<T> getPageEndList();
@@ -59,7 +28,7 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link Integer} or {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     <T> T getPageEnd();
@@ -67,22 +36,22 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param pageEnd Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addPageEnd(Text pageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
      * @param pageEnd Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     void addPageEnd(Integer pageEnd);
+    /**
+     * The page on which the work ends; for example "138" or "xvi".
+     *
+     * @param pageEnd Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void addPageEnd(Text pageEnd);
 
     /**
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
-     * @return {@link Integer} or {@link Text}
+     * @return {@link Text} or {@link Integer}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     <T> List<T> getVolumeNumberList();
@@ -90,7 +59,7 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
-     * @return {@link Integer} or {@link Text}
+     * @return {@link Text} or {@link Integer}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     <T> T getVolumeNumber();
@@ -98,17 +67,17 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
-     * @param volumeNumber Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addVolumeNumber(Integer volumeNumber);
-    /**
-     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
-     *
      * @param volumeNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     void addVolumeNumber(Text volumeNumber);
+    /**
+     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
+     *
+     * @param volumeNumber Integer value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void addVolumeNumber(Integer volumeNumber);
 
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
@@ -133,4 +102,35 @@ public interface PublicationVolume extends CreativeWork {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     void addPagination(Text pagination);
+
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @return {@link Integer} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    <T> List<T> getPageStartList();
+
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @return {@link Integer} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    <T> T getPageStart();
+
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @param pageStart Integer value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void addPageStart(Integer pageStart);
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @param pageStart Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void addPageStart(Text pageStart);
 }

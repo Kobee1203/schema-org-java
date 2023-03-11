@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.SoftwareApplication;
 import org.schema.model.datatype.Text;
+import org.schema.model.SoftwareApplication;
 import org.schema.model.datatype.URL;
 import org.schema.model.DigitalPlatformEnumeration;
 
@@ -18,6 +18,27 @@ import org.schema.model.DigitalPlatformEnumeration;
  * @see <a href="https://schema.org/EntryPoint">https://schema.org/EntryPoint</a>
  */
 public interface EntryPoint extends Intangible {
+
+    /**
+     * The supported encoding type(s) for an EntryPoint request.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEncodingTypeList();
+
+    /**
+     * The supported encoding type(s) for an EntryPoint request.
+     *
+     * @return {@link Text}
+     */
+    Text getEncodingType();
+
+    /**
+     * The supported encoding type(s) for an EntryPoint request.
+     *
+     * @param encodingType Text value to set.
+     */
+    void addEncodingType(Text encodingType);
 
     /**
      * An application that can complete the request.
@@ -41,6 +62,60 @@ public interface EntryPoint extends Intangible {
     void addActionApplication(SoftwareApplication actionApplication);
 
     /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @return {@link URL} or {@link DigitalPlatformEnumeration} or {@link Text}
+     */
+    <T> List<T> getActionPlatformList();
+
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @return {@link URL} or {@link DigitalPlatformEnumeration} or {@link Text}
+     */
+    <T> T getActionPlatform();
+
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @param actionPlatform URL value to set.
+     */
+    void addActionPlatform(URL actionPlatform);
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @param actionPlatform DigitalPlatformEnumeration value to set.
+     */
+    void addActionPlatform(DigitalPlatformEnumeration actionPlatform);
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @param actionPlatform Text value to set.
+     */
+    void addActionPlatform(Text actionPlatform);
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getContentTypeList();
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     * @return {@link Text}
+     */
+    Text getContentType();
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     * @param contentType Text value to set.
+     */
+    void addContentType(Text contentType);
+
+    /**
      * An application that can complete the request.
      *
      * @return {@link SoftwareApplication}
@@ -60,39 +135,6 @@ public interface EntryPoint extends Intangible {
      * @param application SoftwareApplication value to set.
      */
     void addApplication(SoftwareApplication application);
-
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @return {@link Text} or {@link URL} or {@link DigitalPlatformEnumeration}
-     */
-    <T> List<T> getActionPlatformList();
-
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @return {@link Text} or {@link URL} or {@link DigitalPlatformEnumeration}
-     */
-    <T> T getActionPlatform();
-
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @param actionPlatform Text value to set.
-     */
-    void addActionPlatform(Text actionPlatform);
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @param actionPlatform URL value to set.
-     */
-    void addActionPlatform(URL actionPlatform);
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @param actionPlatform DigitalPlatformEnumeration value to set.
-     */
-    void addActionPlatform(DigitalPlatformEnumeration actionPlatform);
 
     /**
      * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
@@ -135,46 +177,4 @@ public interface EntryPoint extends Intangible {
      * @param urlTemplate Text value to set.
      */
     void addUrlTemplate(Text urlTemplate);
-
-    /**
-     * The supported encoding type(s) for an EntryPoint request.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getEncodingTypeList();
-
-    /**
-     * The supported encoding type(s) for an EntryPoint request.
-     *
-     * @return {@link Text}
-     */
-    Text getEncodingType();
-
-    /**
-     * The supported encoding type(s) for an EntryPoint request.
-     *
-     * @param encodingType Text value to set.
-     */
-    void addEncodingType(Text encodingType);
-
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getContentTypeList();
-
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @return {@link Text}
-     */
-    Text getContentType();
-
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @param contentType Text value to set.
-     */
-    void addContentType(Text contentType);
 }

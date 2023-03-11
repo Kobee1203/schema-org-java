@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalTherapy;
-import org.schema.model.datatype.Text;
 import org.schema.model.AnatomicalSystem;
 import org.schema.model.AnatomicalStructure;
+import org.schema.model.datatype.Text;
+import org.schema.model.MedicalTherapy;
 import org.schema.model.MedicalCondition;
 
 /**
@@ -19,54 +19,6 @@ import org.schema.model.MedicalCondition;
  * @see <a href="https://schema.org/SuperficialAnatomy">https://schema.org/SuperficialAnatomy</a>
  */
 public interface SuperficialAnatomy extends MedicalEntity {
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalTherapy> getRelatedTherapyList();
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalTherapy getRelatedTherapy();
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @param relatedTherapy MedicalTherapy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRelatedTherapy(MedicalTherapy relatedTherapy);
-
-    /**
-     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getSignificanceList();
-
-    /**
-     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getSignificance();
-
-    /**
-     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
-     *
-     * @param significance Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSignificance(Text significance);
 
     /**
      * Anatomical systems or structures that relate to the superficial anatomy.
@@ -100,30 +52,6 @@ public interface SuperficialAnatomy extends MedicalEntity {
     void addRelatedAnatomy(AnatomicalStructure relatedAnatomy);
 
     /**
-     * A medical condition associated with this anatomy.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalCondition> getRelatedConditionList();
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalCondition getRelatedCondition();
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @param relatedCondition MedicalCondition value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRelatedCondition(MedicalCondition relatedCondition);
-
-    /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
      *
      * @return {@link Text}
@@ -146,4 +74,76 @@ public interface SuperficialAnatomy extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addAssociatedPathophysiology(Text associatedPathophysiology);
+
+    /**
+     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getSignificanceList();
+
+    /**
+     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getSignificance();
+
+    /**
+     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
+     *
+     * @param significance Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addSignificance(Text significance);
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalTherapy> getRelatedTherapyList();
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalTherapy getRelatedTherapy();
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @param relatedTherapy MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRelatedTherapy(MedicalTherapy relatedTherapy);
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getRelatedConditionList();
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalCondition getRelatedCondition();
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @param relatedCondition MedicalCondition value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRelatedCondition(MedicalCondition relatedCondition);
 }

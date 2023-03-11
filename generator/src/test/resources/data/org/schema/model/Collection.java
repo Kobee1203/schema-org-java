@@ -9,7 +9,7 @@ import java.util.List;
 import org.schema.model.datatype.Integer;
 
 /**
- * A collection of items e.g. creative works or products.
+ * A collection of items, e.g. creative works or products.
  *
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/Collection">https://schema.org/Collection</a>

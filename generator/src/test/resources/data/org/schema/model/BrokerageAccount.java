@@ -11,8 +11,8 @@ import java.util.List;
  * An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/BrokerageAccount">https://schema.org/BrokerageAccount</a>
  */
 public interface BrokerageAccount extends InvestmentOrDeposit {

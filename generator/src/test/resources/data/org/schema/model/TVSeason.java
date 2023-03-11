@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Country;
 import org.schema.model.TVSeries;
+import org.schema.model.Country;
 
 /**
  * Season dedicated to TV broadcast and associated online delivery.
@@ -15,6 +15,27 @@ import org.schema.model.TVSeries;
  * @see <a href="https://schema.org/TVSeason">https://schema.org/TVSeason</a>
  */
 public interface TVSeason extends CreativeWorkSeason, CreativeWork {
+
+    /**
+     * The TV series to which this episode or season belongs.
+     *
+     * @return {@link TVSeries}
+     */
+    List<TVSeries> getPartOfTVSeriesList();
+
+    /**
+     * The TV series to which this episode or season belongs.
+     *
+     * @return {@link TVSeries}
+     */
+    TVSeries getPartOfTVSeries();
+
+    /**
+     * The TV series to which this episode or season belongs.
+     *
+     * @param partOfTVSeries TVSeries value to set.
+     */
+    void addPartOfTVSeries(TVSeries partOfTVSeries);
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -48,25 +69,4 @@ public interface TVSeason extends CreativeWorkSeason, CreativeWork {
      * @param countryOfOrigin Country value to set.
      */
     void addCountryOfOrigin(Country countryOfOrigin);
-
-    /**
-     * The TV series to which this episode or season belongs.
-     *
-     * @return {@link TVSeries}
-     */
-    List<TVSeries> getPartOfTVSeriesList();
-
-    /**
-     * The TV series to which this episode or season belongs.
-     *
-     * @return {@link TVSeries}
-     */
-    TVSeries getPartOfTVSeries();
-
-    /**
-     * The TV series to which this episode or season belongs.
-     *
-     * @param partOfTVSeries TVSeries value to set.
-     */
-    void addPartOfTVSeries(TVSeries partOfTVSeries);
 }

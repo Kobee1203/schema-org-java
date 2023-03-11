@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
+import org.schema.model.MonetaryAmount;
 import org.schema.model.datatype.Number;
 import org.schema.model.PriceSpecification;
-import org.schema.model.MonetaryAmount;
+import org.schema.model.datatype.Text;
 
 /**
  * A subclass of OrganizationRole used to describe employee relationships.
@@ -19,40 +19,25 @@ import org.schema.model.MonetaryAmount;
 public interface EmployeeRole extends OrganizationRole {
 
     /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSalaryCurrencyList();
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @return {@link Text}
-     */
-    Text getSalaryCurrency();
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @param salaryCurrency Text value to set.
-     */
-    void addSalaryCurrency(Text salaryCurrency);
-
-    /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
+     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
      */
     <T> List<T> getBaseSalaryList();
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
+     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
      */
     <T> T getBaseSalary();
 
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary MonetaryAmount value to set.
+     */
+    void addBaseSalary(MonetaryAmount baseSalary);
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
@@ -65,10 +50,25 @@ public interface EmployeeRole extends OrganizationRole {
      * @param baseSalary PriceSpecification value to set.
      */
     void addBaseSalary(PriceSpecification baseSalary);
+
     /**
-     * The base salary of the job or of an employee in an EmployeeRole.
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
      *
-     * @param baseSalary MonetaryAmount value to set.
+     * @return {@link Text}
      */
-    void addBaseSalary(MonetaryAmount baseSalary);
+    List<Text> getSalaryCurrencyList();
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    Text getSalaryCurrency();
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @param salaryCurrency Text value to set.
+     */
+    void addSalaryCurrency(Text salaryCurrency);
 }

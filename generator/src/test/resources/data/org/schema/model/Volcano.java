@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * A volcano, like Fuji san.
+ * A volcano, like Fujisan.
  *
  * @see <a href="https://schema.org/Volcano">https://schema.org/Volcano</a>
  */
