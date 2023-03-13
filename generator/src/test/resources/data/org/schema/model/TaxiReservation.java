@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.Place;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Integer;
 
 /**
  * A reservation for a taxi.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
@@ -19,48 +19,21 @@ import org.schema.model.Place;
 public interface TaxiReservation extends Reservation {
 
     /**
-     * Number of people the reservation should accommodate.
-     *
-     * @return {@link Integer} or {@link QuantitativeValue}
-     */
-    <T> List<T> getPartySizeList();
-
-    /**
-     * Number of people the reservation should accommodate.
-     *
-     * @return {@link Integer} or {@link QuantitativeValue}
-     */
-    <T> T getPartySize();
-
-    /**
-     * Number of people the reservation should accommodate.
-     *
-     * @param partySize Integer value to set.
-     */
-    void addPartySize(Integer partySize);
-    /**
-     * Number of people the reservation should accommodate.
-     *
-     * @param partySize QuantitativeValue value to set.
-     */
-    void addPartySize(QuantitativeValue partySize);
-
-    /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
+     * When a taxi will pick up a passenger or a rental car can be picked up.
      *
      * @return {@link DateTime}
      */
     List<DateTime> getPickupTimeList();
 
     /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
+     * When a taxi will pick up a passenger or a rental car can be picked up.
      *
      * @return {@link DateTime}
      */
     DateTime getPickupTime();
 
     /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
+     * When a taxi will pick up a passenger or a rental car can be picked up.
      *
      * @param pickupTime DateTime value to set.
      */
@@ -86,4 +59,31 @@ public interface TaxiReservation extends Reservation {
      * @param pickupLocation Place value to set.
      */
     void addPickupLocation(Place pickupLocation);
+
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     * @return {@link QuantitativeValue} or {@link Integer}
+     */
+    <T> List<T> getPartySizeList();
+
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     * @return {@link QuantitativeValue} or {@link Integer}
+     */
+    <T> T getPartySize();
+
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     * @param partySize QuantitativeValue value to set.
+     */
+    void addPartySize(QuantitativeValue partySize);
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     * @param partySize Integer value to set.
+     */
+    void addPartySize(Integer partySize);
 }

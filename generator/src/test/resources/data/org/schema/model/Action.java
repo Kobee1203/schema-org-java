@@ -6,17 +6,18 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Organization;
-import org.schema.model.Person;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Time;
-import org.schema.model.ActionStatusType;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.Thing;
-import org.schema.model.PostalAddress;
-import org.schema.model.datatype.Text;
-import org.schema.model.Place;
-import org.schema.model.VirtualLocation;
+import org.schema.model.ActionStatusType;
+import org.schema.model.datatype.URL;
 import org.schema.model.EntryPoint;
+import org.schema.model.Place;
+import org.schema.model.datatype.Text;
+import org.schema.model.VirtualLocation;
+import org.schema.model.PostalAddress;
 
 /**
  * An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.<br/><br/>See also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](https://schema.org/docs/actions.html).
@@ -27,62 +28,126 @@ import org.schema.model.EntryPoint;
 public interface Action extends Thing {
 
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getAgentList();
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getAgent();
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @param agent Organization value to set.
-     */
-    void addAgent(Organization agent);
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @param agent Person value to set.
-     */
-    void addAgent(Person agent);
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> List<T> getEndTimeList();
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> T getEndTime();
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addEndTime(DateTime endTime);
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addEndTime(Time endTime);
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getProviderList();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> T getProvider();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Organization provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Person provider);
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link Time} or {@link DateTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     <T> List<T> getStartTimeList();
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link DateTime} or {@link Time}
+     * @return {@link Time} or {@link DateTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     <T> T getStartTime();
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param startTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void addStartTime(DateTime startTime);
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @param startTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     void addStartTime(Time startTime);
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addStartTime(DateTime startTime);
+
+    /**
+     * The result produced in the action. E.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getResultList();
+
+    /**
+     * The result produced in the action. E.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    Thing getResult();
+
+    /**
+     * The result produced in the action. E.g. John wrote *a book*.
+     *
+     * @param result Thing value to set.
+     */
+    void addResult(Thing result);
 
     /**
      * Indicates the current disposition of the Action.
@@ -106,224 +171,73 @@ public interface Action extends Thing {
     void addActionStatus(ActionStatusType actionStatus);
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    <T> List<T> getProviderList();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    <T> T getProvider();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    void addProvider(Organization provider);
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    void addProvider(Person provider);
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getResultList();
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @return {@link Thing}
-     */
-    Thing getResult();
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @param result Thing value to set.
-     */
-    void addResult(Thing result);
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    <T> List<T> getLocationList();
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    <T> T getLocation();
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
-    void addLocation(PostalAddress location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
-    void addLocation(Text location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
-    void addLocation(Place location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
-    void addLocation(VirtualLocation location);
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getObjectList();
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    Thing getObject();
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @param object Thing value to set.
-     */
-    void addObject(Thing object);
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    List<EntryPoint> getTargetList();
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    EntryPoint getTarget();
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @param target EntryPoint value to set.
-     */
-    void addTarget(EntryPoint target);
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    <T> List<T> getEndTimeList();
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    <T> T getEndTime();
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void addEndTime(DateTime endTime);
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void addEndTime(Time endTime);
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
      * @return {@link Organization} or {@link Person}
      */
-    <T> List<T> getParticipantList();
+    <T> List<T> getAgentList();
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
      * @return {@link Organization} or {@link Person}
      */
-    <T> T getParticipant();
+    <T> T getAgent();
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
-     * @param participant Organization value to set.
+     * @param agent Organization value to set.
      */
-    void addParticipant(Organization participant);
+    void addAgent(Organization agent);
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
-     * @param participant Person value to set.
+     * @param agent Person value to set.
      */
-    void addParticipant(Person participant);
+    void addAgent(Person agent);
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @return {@link Thing}
      */
     List<Thing> getInstrumentList();
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @return {@link Thing}
      */
     Thing getInstrument();
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @param instrument Thing value to set.
      */
     void addInstrument(Thing instrument);
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getObjectList();
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    Thing getObject();
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @param object Thing value to set.
+     */
+    void addObject(Thing object);
 
     /**
      * For failed actions, more information on the cause of the failure.
@@ -345,4 +259,97 @@ public interface Action extends Thing {
      * @param error Thing value to set.
      */
     void addError(Thing error);
+
+    /**
+     * Indicates a target EntryPoint, or url, for an Action.
+     *
+     * @return {@link URL} or {@link EntryPoint}
+     */
+    <T> List<T> getTargetList();
+
+    /**
+     * Indicates a target EntryPoint, or url, for an Action.
+     *
+     * @return {@link URL} or {@link EntryPoint}
+     */
+    <T> T getTarget();
+
+    /**
+     * Indicates a target EntryPoint, or url, for an Action.
+     *
+     * @param target URL value to set.
+     */
+    void addTarget(URL target);
+    /**
+     * Indicates a target EntryPoint, or url, for an Action.
+     *
+     * @param target EntryPoint value to set.
+     */
+    void addTarget(EntryPoint target);
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
+     */
+    <T> List<T> getLocationList();
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
+     */
+    <T> T getLocation();
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    void addLocation(Place location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    void addLocation(Text location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    void addLocation(VirtualLocation location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location PostalAddress value to set.
+     */
+    void addLocation(PostalAddress location);
+
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getParticipantList();
+
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getParticipant();
+
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @param participant Organization value to set.
+     */
+    void addParticipant(Organization participant);
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @param participant Person value to set.
+     */
+    void addParticipant(Person participant);
 }

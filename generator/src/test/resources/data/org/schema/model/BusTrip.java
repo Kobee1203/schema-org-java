@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.datatype.Text;
 import org.schema.model.BusStop;
 import org.schema.model.BusStation;
-import org.schema.model.datatype.Text;
 
 /**
  * A trip on a commercial bus line.
@@ -16,6 +16,48 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/BusTrip">https://schema.org/BusTrip</a>
  */
 public interface BusTrip extends Trip {
+
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBusNameList();
+
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @return {@link Text}
+     */
+    Text getBusName();
+
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @param busName Text value to set.
+     */
+    void addBusName(Text busName);
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBusNumberList();
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @return {@link Text}
+     */
+    Text getBusNumber();
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @param busNumber Text value to set.
+     */
+    void addBusNumber(Text busNumber);
 
     /**
      * The stop or station from which the bus departs.
@@ -45,71 +87,29 @@ public interface BusTrip extends Trip {
     void addDepartureBusStop(BusStation departureBusStop);
 
     /**
-     * The name of the bus (e.g. Bolt Express).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBusNameList();
-
-    /**
-     * The name of the bus (e.g. Bolt Express).
-     *
-     * @return {@link Text}
-     */
-    Text getBusName();
-
-    /**
-     * The name of the bus (e.g. Bolt Express).
-     *
-     * @param busName Text value to set.
-     */
-    void addBusName(Text busName);
-
-    /**
      * The stop or station from which the bus arrives.
      *
-     * @return {@link BusStation} or {@link BusStop}
+     * @return {@link BusStop} or {@link BusStation}
      */
     <T> List<T> getArrivalBusStopList();
 
     /**
      * The stop or station from which the bus arrives.
      *
-     * @return {@link BusStation} or {@link BusStop}
+     * @return {@link BusStop} or {@link BusStation}
      */
     <T> T getArrivalBusStop();
 
     /**
      * The stop or station from which the bus arrives.
      *
-     * @param arrivalBusStop BusStation value to set.
-     */
-    void addArrivalBusStop(BusStation arrivalBusStop);
-    /**
-     * The stop or station from which the bus arrives.
-     *
      * @param arrivalBusStop BusStop value to set.
      */
     void addArrivalBusStop(BusStop arrivalBusStop);
-
     /**
-     * The unique identifier for the bus.
+     * The stop or station from which the bus arrives.
      *
-     * @return {@link Text}
+     * @param arrivalBusStop BusStation value to set.
      */
-    List<Text> getBusNumberList();
-
-    /**
-     * The unique identifier for the bus.
-     *
-     * @return {@link Text}
-     */
-    Text getBusNumber();
-
-    /**
-     * The unique identifier for the bus.
-     *
-     * @param busNumber Text value to set.
-     */
-    void addBusNumber(Text busNumber);
+    void addArrivalBusStop(BusStation arrivalBusStop);
 }

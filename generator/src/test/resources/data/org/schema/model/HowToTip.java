@@ -12,5 +12,5 @@ import java.util.List;
  *
  * @see <a href="https://schema.org/HowToTip">https://schema.org/HowToTip</a>
  */
-public interface HowToTip extends CreativeWork, ListItem {
+public interface HowToTip extends ListItem, CreativeWork {
 }

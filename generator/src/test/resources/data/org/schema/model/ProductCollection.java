@@ -15,7 +15,7 @@ import org.schema.model.TypeAndQuantityNode;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2597">https://github.com/schemaorg/schemaorg/issues/2597</a>
  * @see <a href="https://schema.org/ProductCollection">https://schema.org/ProductCollection</a>
  */
-public interface ProductCollection extends Product, Collection {
+public interface ProductCollection extends Collection, Product {
 
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].

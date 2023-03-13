@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Enumeration;
 import org.schema.model.Class;
 import org.schema.model.Property;
+import org.schema.model.Enumeration;
 
 /**
  * Lists or enumerations—for example, a list of cuisines or music genres, etc.
@@ -20,7 +20,7 @@ public interface Enumeration extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @return {@link Enumeration} or {@link Class} or {@link Property}
+     * @return {@link Class} or {@link Property} or {@link Enumeration}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     <T> List<T> getSupersededByList();
@@ -28,18 +28,11 @@ public interface Enumeration extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @return {@link Enumeration} or {@link Class} or {@link Property}
+     * @return {@link Class} or {@link Property} or {@link Enumeration}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     <T> T getSupersededBy();
 
-    /**
-     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-     *
-     * @param supersededBy Enumeration value to set.
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    void addSupersededBy(Enumeration supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
@@ -54,4 +47,11 @@ public interface Enumeration extends Intangible {
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void addSupersededBy(Property supersededBy);
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param supersededBy Enumeration value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void addSupersededBy(Enumeration supersededBy);
 }

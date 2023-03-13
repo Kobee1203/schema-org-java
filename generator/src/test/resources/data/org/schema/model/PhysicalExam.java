@@ -13,5 +13,5 @@ import java.util.List;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PhysicalExam">https://schema.org/PhysicalExam</a>
  */
-public interface PhysicalExam extends MedicalEnumeration, MedicalProcedure {
+public interface PhysicalExam extends MedicalProcedure, MedicalEnumeration {
 }

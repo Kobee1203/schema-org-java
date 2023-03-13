@@ -6,57 +6,18 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DeliveryMethod;
+import org.schema.model.Organization;
+import org.schema.model.ContactPoint;
 import org.schema.model.Person;
 import org.schema.model.Audience;
-import org.schema.model.ContactPoint;
-import org.schema.model.Organization;
-import org.schema.model.DeliveryMethod;
 
 /**
- * The act of physically/electronically dispatching an object for transfer from an origin to a destination.Related actions:<br/><br/>* [[ReceiveAction]]: The reciprocal of SendAction.<br/>* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).
+ * The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:<br/><br/>* [[ReceiveAction]]: The reciprocal of SendAction.<br/>* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).
  *
  * @see <a href="https://schema.org/SendAction">https://schema.org/SendAction</a>
  */
 public interface SendAction extends TransferAction {
-
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
-     */
-    <T> List<T> getRecipientList();
-
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
-     */
-    <T> T getRecipient();
-
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @param recipient Person value to set.
-     */
-    void addRecipient(Person recipient);
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @param recipient Audience value to set.
-     */
-    void addRecipient(Audience recipient);
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @param recipient ContactPoint value to set.
-     */
-    void addRecipient(ContactPoint recipient);
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @param recipient Organization value to set.
-     */
-    void addRecipient(Organization recipient);
 
     /**
      * A sub property of instrument. The method of delivery.
@@ -78,4 +39,43 @@ public interface SendAction extends TransferAction {
      * @param deliveryMethod DeliveryMethod value to set.
      */
     void addDeliveryMethod(DeliveryMethod deliveryMethod);
+
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     */
+    <T> List<T> getRecipientList();
+
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     */
+    <T> T getRecipient();
+
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient Organization value to set.
+     */
+    void addRecipient(Organization recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient ContactPoint value to set.
+     */
+    void addRecipient(ContactPoint recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient Person value to set.
+     */
+    void addRecipient(Person recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient Audience value to set.
+     */
+    void addRecipient(Audience recipient);
 }

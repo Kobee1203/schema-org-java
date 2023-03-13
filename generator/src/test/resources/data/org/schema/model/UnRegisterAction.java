@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * The act of un-registering from a service.<br/><br/>Related actions:<br/><br/>* [[RegisterAction]]: antonym of UnRegisterAction.<br/>* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people.
+ * The act of un-registering from a service.<br/><br/>Related actions:<br/><br/>* [[RegisterAction]]: antonym of UnRegisterAction.<br/>* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you were previously registered, rather than leaving a team/group of people.
  *
  * @see <a href="https://schema.org/UnRegisterAction">https://schema.org/UnRegisterAction</a>
  */

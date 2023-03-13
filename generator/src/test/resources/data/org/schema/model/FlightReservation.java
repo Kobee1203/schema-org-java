@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QualitativeValue;
 import org.schema.model.datatype.Text;
+import org.schema.model.QualitativeValue;
 
 /**
  * A reservation for air travel.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
@@ -15,54 +15,6 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/FlightReservation">https://schema.org/FlightReservation</a>
  */
 public interface FlightReservation extends Reservation {
-
-    /**
-     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     */
-    <T> List<T> getPassengerPriorityStatusList();
-
-    /**
-     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     */
-    <T> T getPassengerPriorityStatus();
-
-    /**
-     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-     *
-     * @param passengerPriorityStatus QualitativeValue value to set.
-     */
-    void addPassengerPriorityStatus(QualitativeValue passengerPriorityStatus);
-    /**
-     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-     *
-     * @param passengerPriorityStatus Text value to set.
-     */
-    void addPassengerPriorityStatus(Text passengerPriorityStatus);
-
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBoardingGroupList();
-
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @return {@link Text}
-     */
-    Text getBoardingGroup();
-
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @param boardingGroup Text value to set.
-     */
-    void addBoardingGroup(Text boardingGroup);
 
     /**
      * The type of security screening the passenger is subject to.
@@ -105,4 +57,52 @@ public interface FlightReservation extends Reservation {
      * @param passengerSequenceNumber Text value to set.
      */
     void addPassengerSequenceNumber(Text passengerSequenceNumber);
+
+    /**
+     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     */
+    <T> List<T> getPassengerPriorityStatusList();
+
+    /**
+     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     */
+    <T> T getPassengerPriorityStatus();
+
+    /**
+     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
+     *
+     * @param passengerPriorityStatus Text value to set.
+     */
+    void addPassengerPriorityStatus(Text passengerPriorityStatus);
+    /**
+     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
+     *
+     * @param passengerPriorityStatus QualitativeValue value to set.
+     */
+    void addPassengerPriorityStatus(QualitativeValue passengerPriorityStatus);
+
+    /**
+     * The airline-specific indicator of boarding order / preference.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBoardingGroupList();
+
+    /**
+     * The airline-specific indicator of boarding order / preference.
+     *
+     * @return {@link Text}
+     */
+    Text getBoardingGroup();
+
+    /**
+     * The airline-specific indicator of boarding order / preference.
+     *
+     * @param boardingGroup Text value to set.
+     */
+    void addBoardingGroup(Text boardingGroup);
 }

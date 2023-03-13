@@ -5,26 +5,26 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.MedicalTherapy;
-import org.schema.model.MedicalCondition;
-import org.schema.model.AnatomicalStructure;
 import org.schema.model.datatype.Text;
+import org.schema.model.MedicalTherapy;
+import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
+import org.schema.model.MedicalCondition;
+import org.schema.model.Organization;
+import org.schema.model.MedicalSpecialty;
+import org.schema.model.MedicineSystem;
+import org.schema.model.Grant;
 import org.schema.model.DrugLegalStatus;
 import org.schema.model.MedicalEnumeration;
-import org.schema.model.Grant;
 import org.schema.model.MedicalStudy;
-import org.schema.model.MedicalCode;
 import org.schema.model.MedicalGuideline;
-import org.schema.model.Organization;
-import org.schema.model.MedicineSystem;
-import org.schema.model.MedicalSpecialty;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
+import org.schema.model.MedicalCode;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -32,118 +32,13 @@ import java.util.List;
 import org.schema.model.MedicalEntity;
 
 /**
- * An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can includes circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.
+ * An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can include circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.
  *
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/AnatomicalSystem">https://schema.org/AnatomicalSystem</a>
  */
 @JsonLdTypeName("AnatomicalSystem")
 public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AnatomicalSystem {
-
-    private List<MedicalTherapy> relatedTherapy;
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<MedicalTherapy> getRelatedTherapyList() {
-        return relatedTherapy;
-    }
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @return {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalTherapy getRelatedTherapy() {
-        return getFirst(relatedTherapy);
-    }
-
-    /**
-     * A medical therapy related to this anatomy.
-     *
-     * @param relatedTherapy MedicalTherapy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addRelatedTherapy(MedicalTherapy relatedTherapy) {
-        this.relatedTherapy = add(this.relatedTherapy, relatedTherapy);
-    }
-
-    private List<MedicalCondition> relatedCondition;
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<MedicalCondition> getRelatedConditionList() {
-        return relatedCondition;
-    }
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalCondition getRelatedCondition() {
-        return getFirst(relatedCondition);
-    }
-
-    /**
-     * A medical condition associated with this anatomy.
-     *
-     * @param relatedCondition MedicalCondition value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addRelatedCondition(MedicalCondition relatedCondition) {
-        this.relatedCondition = add(this.relatedCondition, relatedCondition);
-    }
-
-    private List<AnatomicalStructure> relatedStructure;
-
-    /**
-     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<AnatomicalStructure> getRelatedStructureList() {
-        return relatedStructure;
-    }
-
-    /**
-     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public AnatomicalStructure getRelatedStructure() {
-        return getFirst(relatedStructure);
-    }
-
-    /**
-     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
-     *
-     * @param relatedStructure AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addRelatedStructure(AnatomicalStructure relatedStructure) {
-        this.relatedStructure = add(this.relatedStructure, relatedStructure);
-    }
 
     private List<Text> associatedPathophysiology;
 
@@ -178,6 +73,41 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
     @Override
     public void addAssociatedPathophysiology(Text associatedPathophysiology) {
         this.associatedPathophysiology = add(this.associatedPathophysiology, associatedPathophysiology);
+    }
+
+    private List<MedicalTherapy> relatedTherapy;
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalTherapy> getRelatedTherapyList() {
+        return relatedTherapy;
+    }
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalTherapy getRelatedTherapy() {
+        return getFirst(relatedTherapy);
+    }
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @param relatedTherapy MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addRelatedTherapy(MedicalTherapy relatedTherapy) {
+        this.relatedTherapy = add(this.relatedTherapy, relatedTherapy);
     }
 
     @JsonLdFieldTypes({ AnatomicalStructure.class, AnatomicalSystem.class })
@@ -226,206 +156,74 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.comprisedOf = add(this.comprisedOf, comprisedOf);
     }
 
-    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
-    private List<Object> legalStatus;
+    private List<AnatomicalStructure> relatedStructure;
 
     /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
      *
-     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @return {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public <T> List<T> getLegalStatusList() {
-        return (List<T>) legalStatus;
+    public List<AnatomicalStructure> getRelatedStructureList() {
+        return relatedStructure;
     }
 
     /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
      *
-     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @return {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public <T> T getLegalStatus() {
-        return (T) getFirst(legalStatus);
+    public AnatomicalStructure getRelatedStructure() {
+        return getFirst(relatedStructure);
     }
 
     /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
      *
-     * @param legalStatus DrugLegalStatus value to set.
+     * @param relatedStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void addLegalStatus(DrugLegalStatus legalStatus) {
-        this.legalStatus = add(this.legalStatus, legalStatus);
+    public void addRelatedStructure(AnatomicalStructure relatedStructure) {
+        this.relatedStructure = add(this.relatedStructure, relatedStructure);
     }
+
+    private List<MedicalCondition> relatedCondition;
+
     /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * A medical condition associated with this anatomy.
      *
-     * @param legalStatus Text value to set.
+     * @return {@link MedicalCondition}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void addLegalStatus(Text legalStatus) {
-        this.legalStatus = add(this.legalStatus, legalStatus);
+    public List<MedicalCondition> getRelatedConditionList() {
+        return relatedCondition;
     }
+
     /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * A medical condition associated with this anatomy.
      *
-     * @param legalStatus MedicalEnumeration value to set.
+     * @return {@link MedicalCondition}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void addLegalStatus(MedicalEnumeration legalStatus) {
-        this.legalStatus = add(this.legalStatus, legalStatus);
-    }
-
-    private List<Grant> funding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public List<Grant> getFundingList() {
-        return funding;
+    public MedicalCondition getRelatedCondition() {
+        return getFirst(relatedCondition);
     }
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * A medical condition associated with this anatomy.
      *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return getFirst(funding);
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void addFunding(Grant funding) {
-        this.funding = add(this.funding, funding);
-    }
-
-    private List<MedicalStudy> study;
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @return {@link MedicalStudy}
+     * @param relatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public List<MedicalStudy> getStudyList() {
-        return study;
-    }
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @return {@link MedicalStudy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalStudy getStudy() {
-        return getFirst(study);
-    }
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @param study MedicalStudy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addStudy(MedicalStudy study) {
-        this.study = add(this.study, study);
-    }
-
-    private List<MedicalCode> code;
-
-    /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
-     *
-     * @return {@link MedicalCode}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<MedicalCode> getCodeList() {
-        return code;
-    }
-
-    /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
-     *
-     * @return {@link MedicalCode}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalCode getCode() {
-        return getFirst(code);
-    }
-
-    /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
-     *
-     * @param code MedicalCode value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addCode(MedicalCode code) {
-        this.code = add(this.code, code);
-    }
-
-    private List<MedicalGuideline> guideline;
-
-    /**
-     * A medical guideline related to this entity.
-     *
-     * @return {@link MedicalGuideline}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<MedicalGuideline> getGuidelineList() {
-        return guideline;
-    }
-
-    /**
-     * A medical guideline related to this entity.
-     *
-     * @return {@link MedicalGuideline}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalGuideline getGuideline() {
-        return getFirst(guideline);
-    }
-
-    /**
-     * A medical guideline related to this entity.
-     *
-     * @param guideline MedicalGuideline value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addGuideline(MedicalGuideline guideline) {
-        this.guideline = add(this.guideline, guideline);
+    public void addRelatedCondition(MedicalCondition relatedCondition) {
+        this.relatedCondition = add(this.relatedCondition, relatedCondition);
     }
 
     private List<Organization> recognizingAuthority;
@@ -463,41 +261,6 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.recognizingAuthority = add(this.recognizingAuthority, recognizingAuthority);
     }
 
-    private List<MedicineSystem> medicineSystem;
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @return {@link MedicineSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public List<MedicineSystem> getMedicineSystemList() {
-        return medicineSystem;
-    }
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @return {@link MedicineSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicineSystem getMedicineSystem() {
-        return getFirst(medicineSystem);
-    }
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @param medicineSystem MedicineSystem value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void addMedicineSystem(MedicineSystem medicineSystem) {
-        this.medicineSystem = add(this.medicineSystem, medicineSystem);
-    }
-
     private List<MedicalSpecialty> relevantSpecialty;
 
     /**
@@ -533,110 +296,241 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.relevantSpecialty = add(this.relevantSpecialty, relevantSpecialty);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    private List<MedicineSystem> medicineSystem;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public List<MedicineSystem> getMedicineSystemList() {
+        return medicineSystem;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public MedicineSystem getMedicineSystem() {
+        return getFirst(medicineSystem);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param medicineSystem MedicineSystem value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addMedicineSystem(MedicineSystem medicineSystem) {
+        this.medicineSystem = add(this.medicineSystem, medicineSystem);
     }
 
-    private List<Text> alternateName;
+    private List<Grant> funding;
 
     /**
-     * An alias for the item.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Text}
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Grant> getFundingList() {
+        return funding;
     }
 
     /**
-     * An alias for the item.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Text}
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Grant getFunding() {
+        return getFirst(funding);
     }
 
     /**
-     * An alias for the item.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param alternateName Text value to set.
+     * @param funding Grant value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
-    private List<Text> name;
+    @JsonLdFieldTypes({ Text.class, DrugLegalStatus.class, MedicalEnumeration.class })
+    private List<Object> legalStatus;
 
     /**
-     * The name of the item.
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @return {@link Text}
+     * @return {@link Text} or {@link DrugLegalStatus} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
+    public <T> List<T> getLegalStatusList() {
+        return (List<T>) legalStatus;
     }
 
     /**
-     * The name of the item.
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @param name Text value to set.
+     * @return {@link Text} or {@link DrugLegalStatus} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public <T> T getLegalStatus() {
+        return (T) getFirst(legalStatus);
+    }
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addLegalStatus(Text legalStatus) {
+        this.legalStatus = add(this.legalStatus, legalStatus);
+    }
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus DrugLegalStatus value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addLegalStatus(DrugLegalStatus legalStatus) {
+        this.legalStatus = add(this.legalStatus, legalStatus);
+    }
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus MedicalEnumeration value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addLegalStatus(MedicalEnumeration legalStatus) {
+        this.legalStatus = add(this.legalStatus, legalStatus);
+    }
+
+    private List<MedicalStudy> study;
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalStudy> getStudyList() {
+        return study;
+    }
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalStudy getStudy() {
+        return getFirst(study);
+    }
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @param study MedicalStudy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addStudy(MedicalStudy study) {
+        this.study = add(this.study, study);
+    }
+
+    private List<MedicalGuideline> guideline;
+
+    /**
+     * A medical guideline related to this entity.
+     *
+     * @return {@link MedicalGuideline}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalGuideline> getGuidelineList() {
+        return guideline;
+    }
+
+    /**
+     * A medical guideline related to this entity.
+     *
+     * @return {@link MedicalGuideline}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalGuideline getGuideline() {
+        return getFirst(guideline);
+    }
+
+    /**
+     * A medical guideline related to this entity.
+     *
+     * @param guideline MedicalGuideline value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addGuideline(MedicalGuideline guideline) {
+        this.guideline = add(this.guideline, guideline);
+    }
+
+    private List<MedicalCode> code;
+
+    /**
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     *
+     * @return {@link MedicalCode}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public List<MedicalCode> getCodeList() {
+        return code;
+    }
+
+    /**
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     *
+     * @return {@link MedicalCode}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalCode getCode() {
+        return getFirst(code);
+    }
+
+    /**
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     *
+     * @param code MedicalCode value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void addCode(MedicalCode code) {
+        this.code = add(this.code, code);
     }
 
     private List<Action> potentialAction;
@@ -671,110 +565,46 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -823,68 +653,68 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -919,14 +749,78 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -937,13 +831,23 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -964,14 +868,110 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

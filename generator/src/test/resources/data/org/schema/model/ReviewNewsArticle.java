@@ -15,5 +15,5 @@ import java.util.List;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://schema.org/ReviewNewsArticle">https://schema.org/ReviewNewsArticle</a>
  */
-public interface ReviewNewsArticle extends CriticReview, NewsArticle {
+public interface ReviewNewsArticle extends NewsArticle, CriticReview {
 }

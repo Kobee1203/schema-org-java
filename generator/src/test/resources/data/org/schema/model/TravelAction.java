@@ -9,7 +9,7 @@ import java.util.List;
 import org.schema.model.Distance;
 
 /**
- * The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.
+ * The act of traveling from a fromLocation to a destination by a specified mode of transport, optionally with participants.
  *
  * @see <a href="https://schema.org/TravelAction">https://schema.org/TravelAction</a>
  */

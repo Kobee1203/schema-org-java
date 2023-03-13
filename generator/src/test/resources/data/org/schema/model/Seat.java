@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QualitativeValue;
 import org.schema.model.datatype.Text;
+import org.schema.model.QualitativeValue;
 
 /**
  * Used to describe a seat, such as a reserved seat in an event reservation.
@@ -15,33 +15,6 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/Seat">https://schema.org/Seat</a>
  */
 public interface Seat extends Intangible {
-
-    /**
-     * The type/class of the seat.
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     */
-    <T> List<T> getSeatingTypeList();
-
-    /**
-     * The type/class of the seat.
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     */
-    <T> T getSeatingType();
-
-    /**
-     * The type/class of the seat.
-     *
-     * @param seatingType QualitativeValue value to set.
-     */
-    void addSeatingType(QualitativeValue seatingType);
-    /**
-     * The type/class of the seat.
-     *
-     * @param seatingType Text value to set.
-     */
-    void addSeatingType(Text seatingType);
 
     /**
      * The section location of the reserved seat (e.g. Orchestra).
@@ -65,27 +38,6 @@ public interface Seat extends Intangible {
     void addSeatSection(Text seatSection);
 
     /**
-     * The row location of the reserved seat (e.g., B).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSeatRowList();
-
-    /**
-     * The row location of the reserved seat (e.g., B).
-     *
-     * @return {@link Text}
-     */
-    Text getSeatRow();
-
-    /**
-     * The row location of the reserved seat (e.g., B).
-     *
-     * @param seatRow Text value to set.
-     */
-    void addSeatRow(Text seatRow);
-
-    /**
      * The location of the reserved seat (e.g., 27).
      *
      * @return {@link Text}
@@ -105,4 +57,52 @@ public interface Seat extends Intangible {
      * @param seatNumber Text value to set.
      */
     void addSeatNumber(Text seatNumber);
+
+    /**
+     * The type/class of the seat.
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     */
+    <T> List<T> getSeatingTypeList();
+
+    /**
+     * The type/class of the seat.
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     */
+    <T> T getSeatingType();
+
+    /**
+     * The type/class of the seat.
+     *
+     * @param seatingType Text value to set.
+     */
+    void addSeatingType(Text seatingType);
+    /**
+     * The type/class of the seat.
+     *
+     * @param seatingType QualitativeValue value to set.
+     */
+    void addSeatingType(QualitativeValue seatingType);
+
+    /**
+     * The row location of the reserved seat (e.g., B).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSeatRowList();
+
+    /**
+     * The row location of the reserved seat (e.g., B).
+     *
+     * @return {@link Text}
+     */
+    Text getSeatRow();
+
+    /**
+     * The row location of the reserved seat (e.g., B).
+     *
+     * @param seatRow Text value to set.
+     */
+    void addSeatRow(Text seatRow);
 }

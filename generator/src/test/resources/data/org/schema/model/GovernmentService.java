@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.AdministrativeArea;
 import org.schema.model.Organization;
+import org.schema.model.AdministrativeArea;
+import org.schema.model.datatype.Text;
 
 /**
  * A service provided by a government organization, e.g. food stamps, veterans benefits, etc.
@@ -16,41 +16,6 @@ import org.schema.model.Organization;
  * @see <a href="https://schema.org/GovernmentService">https://schema.org/GovernmentService</a>
  */
 public interface GovernmentService extends Service {
-
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @return {@link Text} or {@link AdministrativeArea}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    <T> List<T> getJurisdictionList();
-
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @return {@link Text} or {@link AdministrativeArea}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    <T> T getJurisdiction();
-
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @param jurisdiction Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    void addJurisdiction(Text jurisdiction);
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @param jurisdiction AdministrativeArea value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    void addJurisdiction(AdministrativeArea jurisdiction);
 
     /**
      * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
@@ -72,4 +37,39 @@ public interface GovernmentService extends Service {
      * @param serviceOperator Organization value to set.
      */
     void addServiceOperator(Organization serviceOperator);
+
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    <T> List<T> getJurisdictionList();
+
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    <T> T getJurisdiction();
+
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @param jurisdiction AdministrativeArea value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    void addJurisdiction(AdministrativeArea jurisdiction);
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @param jurisdiction Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    void addJurisdiction(Text jurisdiction);
 }

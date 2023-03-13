@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Date;
-import org.schema.model.Specialty;
-import org.schema.model.ImageObject;
 import org.schema.model.datatype.URL;
+import org.schema.model.Specialty;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.WebPageElement;
-import org.schema.model.SpeakableSpecification;
+import org.schema.model.datatype.Date;
 import org.schema.model.BreadcrumbList;
 import org.schema.model.datatype.Text;
+import org.schema.model.WebPageElement;
+import org.schema.model.SpeakableSpecification;
+import org.schema.model.ImageObject;
 
 /**
  * A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.
@@ -23,69 +23,6 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/WebPage">https://schema.org/WebPage</a>
  */
 public interface WebPage extends CreativeWork {
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getLastReviewedList();
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @return {@link Date}
-     */
-    Date getLastReviewed();
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @param lastReviewed Date value to set.
-     */
-    void addLastReviewed(Date lastReviewed);
-
-    /**
-     * One of the domain specialities to which this web page's content applies.
-     *
-     * @return {@link Specialty}
-     */
-    List<Specialty> getSpecialtyList();
-
-    /**
-     * One of the domain specialities to which this web page's content applies.
-     *
-     * @return {@link Specialty}
-     */
-    Specialty getSpecialty();
-
-    /**
-     * One of the domain specialities to which this web page's content applies.
-     *
-     * @param specialty Specialty value to set.
-     */
-    void addSpecialty(Specialty specialty);
-
-    /**
-     * Indicates the main image on the page.
-     *
-     * @return {@link ImageObject}
-     */
-    List<ImageObject> getPrimaryImageOfPageList();
-
-    /**
-     * Indicates the main image on the page.
-     *
-     * @return {@link ImageObject}
-     */
-    ImageObject getPrimaryImageOfPage();
-
-    /**
-     * Indicates the main image on the page.
-     *
-     * @param primaryImageOfPage ImageObject value to set.
-     */
-    void addPrimaryImageOfPage(ImageObject primaryImageOfPage);
 
     /**
      * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
@@ -107,6 +44,27 @@ public interface WebPage extends CreativeWork {
      * @param significantLink URL value to set.
      */
     void addSignificantLink(URL significantLink);
+
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     *
+     * @return {@link Specialty}
+     */
+    List<Specialty> getSpecialtyList();
+
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     *
+     * @return {@link Specialty}
+     */
+    Specialty getSpecialty();
+
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     *
+     * @param specialty Specialty value to set.
+     */
+    void addSpecialty(Specialty specialty);
 
     /**
      * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
@@ -136,25 +94,25 @@ public interface WebPage extends CreativeWork {
     void addReviewedBy(Person reviewedBy);
 
     /**
-     * Indicates if this web page element is the main subject of the page.
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @return {@link WebPageElement}
+     * @return {@link Date}
      */
-    List<WebPageElement> getMainContentOfPageList();
+    List<Date> getLastReviewedList();
 
     /**
-     * Indicates if this web page element is the main subject of the page.
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @return {@link WebPageElement}
+     * @return {@link Date}
      */
-    WebPageElement getMainContentOfPage();
+    Date getLastReviewed();
 
     /**
-     * Indicates if this web page element is the main subject of the page.
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @param mainContentOfPage WebPageElement value to set.
+     * @param lastReviewed Date value to set.
      */
-    void addMainContentOfPage(WebPageElement mainContentOfPage);
+    void addLastReviewed(Date lastReviewed);
 
     /**
      * A link related to this web page, for example to other related web pages.
@@ -176,89 +134,6 @@ public interface WebPage extends CreativeWork {
      * @param relatedLink URL value to set.
      */
     void addRelatedLink(URL relatedLink);
-
-    /**
-     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
-     * 
-     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
-     * 
-     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
-     * 
-     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
-     * 
-     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
-     * 
-     * 
-     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
-     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
-     *          
-     *
-     * @return {@link URL} or {@link SpeakableSpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    <T> List<T> getSpeakableList();
-
-    /**
-     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
-     * 
-     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
-     * 
-     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
-     * 
-     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
-     * 
-     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
-     * 
-     * 
-     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
-     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
-     *          
-     *
-     * @return {@link URL} or {@link SpeakableSpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    <T> T getSpeakable();
-
-    /**
-     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
-     * 
-     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
-     * 
-     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
-     * 
-     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
-     * 
-     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
-     * 
-     * 
-     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
-     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
-     *          
-     *
-     * @param speakable URL value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    void addSpeakable(URL speakable);
-    /**
-     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
-     * 
-     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
-     * 
-     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
-     * 
-     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
-     * 
-     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
-     * 
-     * 
-     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
-     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
-     *          
-     *
-     * @param speakable SpeakableSpecification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    void addSpeakable(SpeakableSpecification speakable);
 
     /**
      * A set of links that can help a user understand and navigate a website hierarchy.
@@ -307,4 +182,129 @@ public interface WebPage extends CreativeWork {
      * @param significantLinks URL value to set.
      */
     void addSignificantLinks(URL significantLinks);
+
+    /**
+     * Indicates if this web page element is the main subject of the page.
+     *
+     * @return {@link WebPageElement}
+     */
+    List<WebPageElement> getMainContentOfPageList();
+
+    /**
+     * Indicates if this web page element is the main subject of the page.
+     *
+     * @return {@link WebPageElement}
+     */
+    WebPageElement getMainContentOfPage();
+
+    /**
+     * Indicates if this web page element is the main subject of the page.
+     *
+     * @param mainContentOfPage WebPageElement value to set.
+     */
+    void addMainContentOfPage(WebPageElement mainContentOfPage);
+
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     *
+     * @return {@link SpeakableSpecification} or {@link URL}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    <T> List<T> getSpeakableList();
+
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     *
+     * @return {@link SpeakableSpecification} or {@link URL}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    <T> T getSpeakable();
+
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     *
+     * @param speakable SpeakableSpecification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    void addSpeakable(SpeakableSpecification speakable);
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     *
+     * @param speakable URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    void addSpeakable(URL speakable);
+
+    /**
+     * Indicates the main image on the page.
+     *
+     * @return {@link ImageObject}
+     */
+    List<ImageObject> getPrimaryImageOfPageList();
+
+    /**
+     * Indicates the main image on the page.
+     *
+     * @return {@link ImageObject}
+     */
+    ImageObject getPrimaryImageOfPage();
+
+    /**
+     * Indicates the main image on the page.
+     *
+     * @param primaryImageOfPage ImageObject value to set.
+     */
+    void addPrimaryImageOfPage(ImageObject primaryImageOfPage);
 }

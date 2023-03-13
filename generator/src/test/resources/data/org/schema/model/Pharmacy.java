@@ -12,5 +12,5 @@ import java.util.List;
  *
  * @see <a href="https://schema.org/Pharmacy">https://schema.org/Pharmacy</a>
  */
-public interface Pharmacy extends MedicalOrganization, MedicalBusiness {
+public interface Pharmacy extends MedicalBusiness, MedicalOrganization {
 }

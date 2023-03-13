@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalAudienceType;
 import org.schema.model.MedicalAudience;
+import org.schema.model.MedicalAudienceType;
+import org.schema.model.datatype.Text;
 
 /**
  * A web page that provides medical information.
@@ -17,6 +17,37 @@ import org.schema.model.MedicalAudience;
  * @see <a href="https://schema.org/MedicalWebPage">https://schema.org/MedicalWebPage</a>
  */
 public interface MedicalWebPage extends WebPage {
+
+    /**
+     * Medical audience for page.
+     *
+     * @return {@link MedicalAudience} or {@link MedicalAudienceType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getMedicalAudienceList();
+
+    /**
+     * Medical audience for page.
+     *
+     * @return {@link MedicalAudience} or {@link MedicalAudienceType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getMedicalAudience();
+
+    /**
+     * Medical audience for page.
+     *
+     * @param medicalAudience MedicalAudience value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMedicalAudience(MedicalAudience medicalAudience);
+    /**
+     * Medical audience for page.
+     *
+     * @param medicalAudience MedicalAudienceType value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMedicalAudience(MedicalAudienceType medicalAudience);
 
     /**
      * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
@@ -41,35 +72,4 @@ public interface MedicalWebPage extends WebPage {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addAspect(Text aspect);
-
-    /**
-     * Medical audience for page.
-     *
-     * @return {@link MedicalAudienceType} or {@link MedicalAudience}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getMedicalAudienceList();
-
-    /**
-     * Medical audience for page.
-     *
-     * @return {@link MedicalAudienceType} or {@link MedicalAudience}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getMedicalAudience();
-
-    /**
-     * Medical audience for page.
-     *
-     * @param medicalAudience MedicalAudienceType value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMedicalAudience(MedicalAudienceType medicalAudience);
-    /**
-     * Medical audience for page.
-     *
-     * @param medicalAudience MedicalAudience value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMedicalAudience(MedicalAudience medicalAudience);
 }

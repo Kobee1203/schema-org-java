@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.GameServerStatus;
-import org.schema.model.VideoGame;
 import org.schema.model.datatype.Integer;
+import org.schema.model.VideoGame;
+import org.schema.model.GameServerStatus;
 
 /**
  * Server that provides game interaction in a multiplayer game.
@@ -18,25 +18,25 @@ import org.schema.model.datatype.Integer;
 public interface GameServer extends Intangible {
 
     /**
-     * Status of a game server.
+     * Number of players on the server.
      *
-     * @return {@link GameServerStatus}
+     * @return {@link Integer}
      */
-    List<GameServerStatus> getServerStatusList();
+    List<Integer> getPlayersOnlineList();
 
     /**
-     * Status of a game server.
+     * Number of players on the server.
      *
-     * @return {@link GameServerStatus}
+     * @return {@link Integer}
      */
-    GameServerStatus getServerStatus();
+    Integer getPlayersOnline();
 
     /**
-     * Status of a game server.
+     * Number of players on the server.
      *
-     * @param serverStatus GameServerStatus value to set.
+     * @param playersOnline Integer value to set.
      */
-    void addServerStatus(GameServerStatus serverStatus);
+    void addPlayersOnline(Integer playersOnline);
 
     /**
      * Video game which is played on this server.
@@ -60,23 +60,23 @@ public interface GameServer extends Intangible {
     void addGame(VideoGame game);
 
     /**
-     * Number of players on the server.
+     * Status of a game server.
      *
-     * @return {@link Integer}
+     * @return {@link GameServerStatus}
      */
-    List<Integer> getPlayersOnlineList();
+    List<GameServerStatus> getServerStatusList();
 
     /**
-     * Number of players on the server.
+     * Status of a game server.
      *
-     * @return {@link Integer}
+     * @return {@link GameServerStatus}
      */
-    Integer getPlayersOnline();
+    GameServerStatus getServerStatus();
 
     /**
-     * Number of players on the server.
+     * Status of a game server.
      *
-     * @param playersOnline Integer value to set.
+     * @param serverStatus GameServerStatus value to set.
      */
-    void addPlayersOnline(Integer playersOnline);
+    void addServerStatus(GameServerStatus serverStatus);
 }

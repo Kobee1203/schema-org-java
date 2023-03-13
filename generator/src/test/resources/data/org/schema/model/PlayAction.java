@@ -6,36 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Audience;
 import org.schema.model.Event;
+import org.schema.model.Audience;
 
 /**
- * The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.<br/><br/>Related actions:<br/><br/>* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.<br/>* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.
+ * The act of playing/exercising/training/performing for enjoyment, leisure, recreation, competition or exercise.<br/><br/>Related actions:<br/><br/>* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.<br/>* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.
  *
  * @see <a href="https://schema.org/PlayAction">https://schema.org/PlayAction</a>
  */
 public interface PlayAction extends Action {
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    List<Audience> getAudienceList();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    Audience getAudience();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    void addAudience(Audience audience);
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -57,4 +36,25 @@ public interface PlayAction extends Action {
      * @param event Event value to set.
      */
     void addEvent(Event event);
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getAudienceList();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    Audience getAudience();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @param audience Audience value to set.
+     */
+    void addAudience(Audience audience);
 }

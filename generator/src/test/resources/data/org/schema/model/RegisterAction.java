@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * The act of registering to be a user of a service, product or web page.<br/><br/>Related actions:<br/><br/>* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.<br/>* [FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.<br/>* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.
+ * The act of registering to be a user of a service, product or web page.<br/><br/>Related actions:<br/><br/>* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.<br/>* [[FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.<br/>* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.
  *
  * @see <a href="https://schema.org/RegisterAction">https://schema.org/RegisterAction</a>
  */

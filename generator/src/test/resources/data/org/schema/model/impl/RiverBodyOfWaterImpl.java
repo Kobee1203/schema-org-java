@@ -5,28 +5,28 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.Text;
-import org.schema.model.Review;
-import org.schema.model.datatype.URL;
-import org.schema.model.Place;
 import org.schema.model.GeospatialGeometry;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.DefinedTerm;
+import org.schema.model.Place;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
-import org.schema.model.AggregateRating;
-import org.schema.model.PostalAddress;
+import org.schema.model.datatype.Boolean;
 import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.PropertyValue;
 import org.schema.model.ImageObject;
 import org.schema.model.Photograph;
-import org.schema.model.PropertyValue;
-import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.datatype.URL;
+import org.schema.model.DefinedTerm;
+import org.schema.model.Review;
 import org.schema.model.Map;
+import org.schema.model.Event;
+import org.schema.model.PostalAddress;
 import org.schema.model.GeoCoordinates;
 import org.schema.model.GeoShape;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
+import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.datatype.Integer;
+import org.schema.model.AggregateRating;
 import org.schema.model.Action;
+import org.schema.model.CreativeWork;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -43,206 +43,88 @@ import org.schema.model.RiverBodyOfWater;
 @JsonLdTypeName("RiverBodyOfWater")
 public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RiverBodyOfWater {
 
-    private List<Text> telephone;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoCovers;
 
     /**
-     * The telephone number.
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Text}
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public List<Text> getTelephoneList() {
-        return telephone;
+    public <T> List<T> getGeoCoversList() {
+        return (List<T>) geoCovers;
     }
 
     /**
-     * The telephone number.
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Text}
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public Text getTelephone() {
-        return getFirst(telephone);
+    public <T> T getGeoCovers() {
+        return (T) getFirst(geoCovers);
     }
 
     /**
-     * The telephone number.
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param telephone Text value to set.
+     * @param geoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void addTelephone(Text telephone) {
-        this.telephone = add(this.telephone, telephone);
+    public void addGeoCovers(GeospatialGeometry geoCovers) {
+        this.geoCovers = add(this.geoCovers, geoCovers);
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCovers Place value to set.
+     */
+    @Override
+    public void addGeoCovers(Place geoCovers) {
+        this.geoCovers = add(this.geoCovers, geoCovers);
     }
 
-    private List<Review> review;
+    @JsonLdFieldTypes({ Text.class, Number.class })
+    private List<Object> longitude;
 
     /**
-     * A review of the item.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @return {@link Review}
+     * @return {@link Text} or {@link Number}
      */
     @Override
-    public List<Review> getReviewList() {
-        return review;
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return getFirst(review);
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    @Override
-    public void addReview(Review review) {
-        this.review = add(this.review, review);
-    }
-
-    private List<URL> maps;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getMapsList() {
-        return maps;
+    public <T> List<T> getLongitudeList() {
+        return (List<T>) longitude;
     }
 
     /**
-     * A URL to a map of the place.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @return {@link URL}
+     * @return {@link Text} or {@link Number}
      */
     @Override
-    public URL getMaps() {
-        return getFirst(maps);
+    public <T> T getLongitude() {
+        return (T) getFirst(longitude);
     }
 
     /**
-     * A URL to a map of the place.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @param maps URL value to set.
+     * @param longitude Text value to set.
      */
     @Override
-    public void addMaps(URL maps) {
-        this.maps = add(this.maps, maps);
-    }
-
-    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
-    private List<Object> geoContains;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> List<T> getGeoContainsList() {
-        return (List<T>) geoContains;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoContains() {
-        return (T) getFirst(geoContains);
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoContains Place value to set.
-     */
-    @Override
-    public void addGeoContains(Place geoContains) {
-        this.geoContains = add(this.geoContains, geoContains);
+    public void addLongitude(Text longitude) {
+        this.longitude = add(this.longitude, longitude);
     }
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @param geoContains GeospatialGeometry value to set.
+     * @param longitude Number value to set.
      */
     @Override
-    public void addGeoContains(GeospatialGeometry geoContains) {
-        this.geoContains = add(this.geoContains, geoContains);
-    }
-
-    private List<Integer> maximumAttendeeCapacity;
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public List<Integer> getMaximumAttendeeCapacityList() {
-        return maximumAttendeeCapacity;
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getMaximumAttendeeCapacity() {
-        return getFirst(maximumAttendeeCapacity);
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @param maximumAttendeeCapacity Integer value to set.
-     */
-    @Override
-    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
-        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
-    }
-
-    private List<Place> containsPlace;
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getContainsPlaceList() {
-        return containsPlace;
-    }
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainsPlace() {
-        return getFirst(containsPlace);
-    }
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     * @param containsPlace Place value to set.
-     */
-    @Override
-    public void addContainsPlace(Place containsPlace) {
-        this.containsPlace = add(this.containsPlace, containsPlace);
+    public void addLongitude(Number longitude) {
+        this.longitude = add(this.longitude, longitude);
     }
 
     private List<Boolean> smokingAllowed;
@@ -280,6 +162,41 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.smokingAllowed = add(this.smokingAllowed, smokingAllowed);
     }
 
+    private List<Text> isicV4;
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getIsicV4List() {
+        return isicV4;
+    }
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getIsicV4() {
+        return getFirst(isicV4);
+    }
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param isicV4 Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void addIsicV4(Text isicV4) {
+        this.isicV4 = add(this.isicV4, isicV4);
+    }
+
     private List<Text> globalLocationNumber;
 
     /**
@@ -315,479 +232,6 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
     }
 
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
-    private List<Object> keywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getKeywordsList() {
-        return (List<T>) keywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) getFirst(keywords);
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    @Override
-    public void addKeywords(DefinedTerm keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    @Override
-    public void addKeywords(Text keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    @Override
-    public void addKeywords(URL keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoIntersects;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getGeoIntersectsList() {
-        return (List<T>) geoIntersects;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoIntersects() {
-        return (T) getFirst(geoIntersects);
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoIntersects GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoIntersects(GeospatialGeometry geoIntersects) {
-        this.geoIntersects = add(this.geoIntersects, geoIntersects);
-    }
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoIntersects Place value to set.
-     */
-    @Override
-    public void addGeoIntersects(Place geoIntersects) {
-        this.geoIntersects = add(this.geoIntersects, geoIntersects);
-    }
-
-    @JsonLdFieldTypes({ Text.class, Number.class })
-    private List<Object> latitude;
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    @Override
-    public <T> List<T> getLatitudeList() {
-        return (List<T>) latitude;
-    }
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    @Override
-    public <T> T getLatitude() {
-        return (T) getFirst(latitude);
-    }
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @param latitude Text value to set.
-     */
-    @Override
-    public void addLatitude(Text latitude) {
-        this.latitude = add(this.latitude, latitude);
-    }
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @param latitude Number value to set.
-     */
-    @Override
-    public void addLatitude(Number latitude) {
-        this.latitude = add(this.latitude, latitude);
-    }
-
-    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
-    private List<Object> geoTouches;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> List<T> getGeoTouchesList() {
-        return (List<T>) geoTouches;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoTouches() {
-        return (T) getFirst(geoTouches);
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     * @param geoTouches Place value to set.
-     */
-    @Override
-    public void addGeoTouches(Place geoTouches) {
-        this.geoTouches = add(this.geoTouches, geoTouches);
-    }
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     * @param geoTouches GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoTouches(GeospatialGeometry geoTouches) {
-        this.geoTouches = add(this.geoTouches, geoTouches);
-    }
-
-    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
-    private List<Object> geoCoveredBy;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> List<T> getGeoCoveredByList() {
-        return (List<T>) geoCoveredBy;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoCoveredBy() {
-        return (T) getFirst(geoCoveredBy);
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoCoveredBy Place value to set.
-     */
-    @Override
-    public void addGeoCoveredBy(Place geoCoveredBy) {
-        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
-    }
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoCoveredBy GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
-        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
-    }
-
-    private List<AggregateRating> aggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public List<AggregateRating> getAggregateRatingList() {
-        return aggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return getFirst(aggregateRating);
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    @Override
-    public void addAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = add(this.aggregateRating, aggregateRating);
-    }
-
-    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
-    private List<Object> address;
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link Text} or {@link PostalAddress}
-     */
-    @Override
-    public <T> List<T> getAddressList() {
-        return (List<T>) address;
-    }
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link Text} or {@link PostalAddress}
-     */
-    @Override
-    public <T> T getAddress() {
-        return (T) getFirst(address);
-    }
-
-    /**
-     * Physical address of the item.
-     *
-     * @param address Text value to set.
-     */
-    @Override
-    public void addAddress(Text address) {
-        this.address = add(this.address, address);
-    }
-    /**
-     * Physical address of the item.
-     *
-     * @param address PostalAddress value to set.
-     */
-    @Override
-    public void addAddress(PostalAddress address) {
-        this.address = add(this.address, address);
-    }
-
-    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
-    private List<Object> geoEquals;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> List<T> getGeoEqualsList() {
-        return (List<T>) geoEquals;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoEquals() {
-        return (T) getFirst(geoEquals);
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     * @param geoEquals Place value to set.
-     */
-    @Override
-    public void addGeoEquals(Place geoEquals) {
-        this.geoEquals = add(this.geoEquals, geoEquals);
-    }
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     * @param geoEquals GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoEquals(GeospatialGeometry geoEquals) {
-        this.geoEquals = add(this.geoEquals, geoEquals);
-    }
-
-    private List<URL> map;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getMapList() {
-        return map;
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getMap() {
-        return getFirst(map);
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @param map URL value to set.
-     */
-    @Override
-    public void addMap(URL map) {
-        this.map = add(this.map, map);
-    }
-
-    private List<Boolean> publicAccess;
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public List<Boolean> getPublicAccessList() {
-        return publicAccess;
-    }
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getPublicAccess() {
-        return getFirst(publicAccess);
-    }
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     * @param publicAccess Boolean value to set.
-     */
-    @Override
-    public void addPublicAccess(Boolean publicAccess) {
-        this.publicAccess = add(this.publicAccess, publicAccess);
-    }
-
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoCrosses;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getGeoCrossesList() {
-        return (List<T>) geoCrosses;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoCrosses() {
-        return (T) getFirst(geoCrosses);
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoCrosses GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoCrosses(GeospatialGeometry geoCrosses) {
-        this.geoCrosses = add(this.geoCrosses, geoCrosses);
-    }
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoCrosses Place value to set.
-     */
-    @Override
-    public void addGeoCrosses(Place geoCrosses) {
-        this.geoCrosses = add(this.geoCrosses, geoCrosses);
-    }
-
-    private List<Place> containedInPlace;
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getContainedInPlaceList() {
-        return containedInPlace;
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainedInPlace() {
-        return getFirst(containedInPlace);
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @param containedInPlace Place value to set.
-     */
-    @Override
-    public void addContainedInPlace(Place containedInPlace) {
-        this.containedInPlace = add(this.containedInPlace, containedInPlace);
-    }
-
     private List<LocationFeatureSpecification> amenityFeature;
 
     /**
@@ -821,6 +265,38 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
     @Override
     public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
         this.amenityFeature = add(this.amenityFeature, amenityFeature);
+    }
+
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public PropertyValue getAdditionalProperty() {
+        return getFirst(additionalProperty);
+    }
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @param additionalProperty PropertyValue value to set.
+     */
+    @Override
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
     private List<Text> slogan;
@@ -897,278 +373,87 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.photos = add(this.photos, photos);
     }
 
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoCovers;
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
+    private List<Object> keywords;
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link GeospatialGeometry} or {@link Place}
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
      */
     @Override
-    public <T> List<T> getGeoCoversList() {
-        return (List<T>) geoCovers;
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link GeospatialGeometry} or {@link Place}
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
      */
     @Override
-    public <T> T getGeoCovers() {
-        return (T) getFirst(geoCovers);
+    public <T> T getKeywords() {
+        return (T) getFirst(keywords);
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param geoCovers GeospatialGeometry value to set.
+     * @param keywords URL value to set.
      */
     @Override
-    public void addGeoCovers(GeospatialGeometry geoCovers) {
-        this.geoCovers = add(this.geoCovers, geoCovers);
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param geoCovers Place value to set.
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void addGeoCovers(Place geoCovers) {
-        this.geoCovers = add(this.geoCovers, geoCovers);
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
-    private List<Place> containedIn;
+    private List<Review> reviews;
 
     /**
-     * The basic containment relation between a place and one that contains it.
+     * Review of the item.
      *
-     * @return {@link Place}
+     * @return {@link Review}
      */
     @Override
-    public List<Place> getContainedInList() {
-        return containedIn;
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainedIn() {
-        return getFirst(containedIn);
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @param containedIn Place value to set.
-     */
-    @Override
-    public void addContainedIn(Place containedIn) {
-        this.containedIn = add(this.containedIn, containedIn);
-    }
-
-    private List<Boolean> hasDriveThroughService;
-
-    /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public List<Boolean> getHasDriveThroughServiceList() {
-        return hasDriveThroughService;
+    public List<Review> getReviewsList() {
+        return reviews;
     }
 
     /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     * Review of the item.
      *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @return {@link Review}
      */
     @Override
-    public Boolean getHasDriveThroughService() {
-        return getFirst(hasDriveThroughService);
+    public Review getReviews() {
+        return getFirst(reviews);
     }
 
     /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     * Review of the item.
      *
-     * @param hasDriveThroughService Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @param reviews Review value to set.
      */
     @Override
-    public void addHasDriveThroughService(Boolean hasDriveThroughService) {
-        this.hasDriveThroughService = add(this.hasDriveThroughService, hasDriveThroughService);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> logo;
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getLogoList() {
-        return (List<T>) logo;
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getLogo() {
-        return (T) getFirst(logo);
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(URL logo) {
-        this.logo = add(this.logo, logo);
-    }
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(ImageObject logo) {
-        this.logo = add(this.logo, logo);
-    }
-
-    private List<Boolean> isAccessibleForFree;
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public List<Boolean> getIsAccessibleForFreeList() {
-        return isAccessibleForFree;
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsAccessibleForFree() {
-        return getFirst(isAccessibleForFree);
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param isAccessibleForFree Boolean value to set.
-     */
-    @Override
-    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
-        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
-    }
-
-    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
-    private List<Object> geoWithin;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> List<T> getGeoWithinList() {
-        return (List<T>) geoWithin;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoWithin() {
-        return (T) getFirst(geoWithin);
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoWithin Place value to set.
-     */
-    @Override
-    public void addGeoWithin(Place geoWithin) {
-        this.geoWithin = add(this.geoWithin, geoWithin);
-    }
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoWithin GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoWithin(GeospatialGeometry geoWithin) {
-        this.geoWithin = add(this.geoWithin, geoWithin);
-    }
-
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoDisjoint;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getGeoDisjointList() {
-        return (List<T>) geoDisjoint;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoDisjoint() {
-        return (T) getFirst(geoDisjoint);
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
-     *
-     * @param geoDisjoint GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoDisjoint(GeospatialGeometry geoDisjoint) {
-        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
-    }
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
-     *
-     * @param geoDisjoint Place value to set.
-     */
-    @Override
-    public void addGeoDisjoint(Place geoDisjoint) {
-        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
     private List<URL> tourBookingPage;
@@ -1209,292 +494,110 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.tourBookingPage = add(this.tourBookingPage, tourBookingPage);
     }
 
-    private List<Text> isicV4;
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getIsicV4List() {
-        return isicV4;
-    }
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getIsicV4() {
-        return getFirst(isicV4);
-    }
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @param isicV4 Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsicV4(Text isicV4) {
-        this.isicV4 = add(this.isicV4, isicV4);
-    }
-
     @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoOverlaps;
+    private List<Object> geoWithin;
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public <T> List<T> getGeoOverlapsList() {
-        return (List<T>) geoOverlaps;
+    public <T> List<T> getGeoWithinList() {
+        return (List<T>) geoWithin;
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public <T> T getGeoOverlaps() {
-        return (T) getFirst(geoOverlaps);
+    public <T> T getGeoWithin() {
+        return (T) getFirst(geoWithin);
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param geoOverlaps GeospatialGeometry value to set.
+     * @param geoWithin GeospatialGeometry value to set.
      */
     @Override
-    public void addGeoOverlaps(GeospatialGeometry geoOverlaps) {
-        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
+    public void addGeoWithin(GeospatialGeometry geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param geoOverlaps Place value to set.
+     * @param geoWithin Place value to set.
      */
     @Override
-    public void addGeoOverlaps(Place geoOverlaps) {
-        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
+    public void addGeoWithin(Place geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
 
-    private List<Text> branchCode;
+    private List<Place> containsPlace;
 
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-     *       
+     * The basic containment relation between a place and another that it contains.
      *
-     * @return {@link Text}
+     * @return {@link Place}
      */
     @Override
-    public List<Text> getBranchCodeList() {
-        return branchCode;
+    public List<Place> getContainsPlaceList() {
+        return containsPlace;
     }
 
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-     *       
+     * The basic containment relation between a place and another that it contains.
      *
-     * @return {@link Text}
+     * @return {@link Place}
      */
     @Override
-    public Text getBranchCode() {
-        return getFirst(branchCode);
+    public Place getContainsPlace() {
+        return getFirst(containsPlace);
     }
 
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-     *       
+     * The basic containment relation between a place and another that it contains.
      *
-     * @param branchCode Text value to set.
+     * @param containsPlace Place value to set.
      */
     @Override
-    public void addBranchCode(Text branchCode) {
-        this.branchCode = add(this.branchCode, branchCode);
+    public void addContainsPlace(Place containsPlace) {
+        this.containsPlace = add(this.containsPlace, containsPlace);
     }
 
-    private List<PropertyValue> additionalProperty;
+    private List<Review> review;
 
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    @Override
-    public List<PropertyValue> getAdditionalPropertyList() {
-        return additionalProperty;
-    }
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    @Override
-    public PropertyValue getAdditionalProperty() {
-        return getFirst(additionalProperty);
-    }
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @param additionalProperty PropertyValue value to set.
-     */
-    @Override
-    public void addAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = add(this.additionalProperty, additionalProperty);
-    }
-
-    private List<OpeningHoursSpecification> openingHoursSpecification;
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @return {@link OpeningHoursSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
-        return openingHoursSpecification;
-    }
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @return {@link OpeningHoursSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public OpeningHoursSpecification getOpeningHoursSpecification() {
-        return getFirst(openingHoursSpecification);
-    }
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @param openingHoursSpecification OpeningHoursSpecification value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
-        this.openingHoursSpecification = add(this.openingHoursSpecification, openingHoursSpecification);
-    }
-
-    private List<Review> reviews;
-
-    /**
-     * Review of the item.
+     * A review of the item.
      *
      * @return {@link Review}
      */
     @Override
-    public List<Review> getReviewsList() {
-        return reviews;
+    public List<Review> getReviewList() {
+        return review;
     }
 
     /**
-     * Review of the item.
+     * A review of the item.
      *
      * @return {@link Review}
      */
     @Override
-    public Review getReviews() {
-        return getFirst(reviews);
+    public Review getReview() {
+        return getFirst(review);
     }
 
     /**
-     * Review of the item.
+     * A review of the item.
      *
-     * @param reviews Review value to set.
+     * @param review Review value to set.
      */
     @Override
-    public void addReviews(Review reviews) {
-        this.reviews = add(this.reviews, reviews);
-    }
-
-    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
-    private List<Object> photo;
-
-    /**
-     * A photograph of this place.
-     *
-     * @return {@link Photograph} or {@link ImageObject}
-     */
-    @Override
-    public <T> List<T> getPhotoList() {
-        return (List<T>) photo;
-    }
-
-    /**
-     * A photograph of this place.
-     *
-     * @return {@link Photograph} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getPhoto() {
-        return (T) getFirst(photo);
-    }
-
-    /**
-     * A photograph of this place.
-     *
-     * @param photo Photograph value to set.
-     */
-    @Override
-    public void addPhoto(Photograph photo) {
-        this.photo = add(this.photo, photo);
-    }
-    /**
-     * A photograph of this place.
-     *
-     * @param photo ImageObject value to set.
-     */
-    @Override
-    public void addPhoto(ImageObject photo) {
-        this.photo = add(this.photo, photo);
-    }
-
-    private List<OpeningHoursSpecification> specialOpeningHoursSpecification;
-
-    /**
-     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public List<OpeningHoursSpecification> getSpecialOpeningHoursSpecificationList() {
-        return specialOpeningHoursSpecification;
-    }
-
-    /**
-     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
-        return getFirst(specialOpeningHoursSpecification);
-    }
-
-    /**
-     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
-     *
-     * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
-     */
-    @Override
-    public void addSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
-        this.specialOpeningHoursSpecification = add(this.specialOpeningHoursSpecification, specialOpeningHoursSpecification);
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
     @JsonLdFieldTypes({ URL.class, Map.class })
@@ -1539,46 +642,452 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.hasMap = add(this.hasMap, hasMap);
     }
 
-    @JsonLdFieldTypes({ Number.class, Text.class })
-    private List<Object> longitude;
+    private List<Place> containedIn;
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The basic containment relation between a place and one that contains it.
      *
-     * @return {@link Number} or {@link Text}
+     * @return {@link Place}
      */
     @Override
-    public <T> List<T> getLongitudeList() {
-        return (List<T>) longitude;
+    public List<Place> getContainedInList() {
+        return containedIn;
     }
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The basic containment relation between a place and one that contains it.
      *
-     * @return {@link Number} or {@link Text}
+     * @return {@link Place}
      */
     @Override
-    public <T> T getLongitude() {
-        return (T) getFirst(longitude);
+    public Place getContainedIn() {
+        return getFirst(containedIn);
     }
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The basic containment relation between a place and one that contains it.
      *
-     * @param longitude Number value to set.
+     * @param containedIn Place value to set.
      */
     @Override
-    public void addLongitude(Number longitude) {
-        this.longitude = add(this.longitude, longitude);
+    public void addContainedIn(Place containedIn) {
+        this.containedIn = add(this.containedIn, containedIn);
+    }
+
+    private List<Event> events;
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventsList() {
+        return events;
+    }
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getEvents() {
+        return getFirst(events);
+    }
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @param events Event value to set.
+     */
+    @Override
+    public void addEvents(Event events) {
+        this.events = add(this.events, events);
+    }
+
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoOverlaps;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoOverlapsList() {
+        return (List<T>) geoOverlaps;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoOverlaps() {
+        return (T) getFirst(geoOverlaps);
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoOverlaps GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoOverlaps(GeospatialGeometry geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
     }
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param longitude Text value to set.
+     * @param geoOverlaps Place value to set.
      */
     @Override
-    public void addLongitude(Text longitude) {
-        this.longitude = add(this.longitude, longitude);
+    public void addGeoOverlaps(Place geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
+    }
+
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoEquals;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoEqualsList() {
+        return (List<T>) geoEquals;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoEquals() {
+        return (T) getFirst(geoEquals);
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @param geoEquals GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoEquals(GeospatialGeometry geoEquals) {
+        this.geoEquals = add(this.geoEquals, geoEquals);
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @param geoEquals Place value to set.
+     */
+    @Override
+    public void addGeoEquals(Place geoEquals) {
+        this.geoEquals = add(this.geoEquals, geoEquals);
+    }
+
+    private List<URL> maps;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getMapsList() {
+        return maps;
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getMaps() {
+        return getFirst(maps);
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @param maps URL value to set.
+     */
+    @Override
+    public void addMaps(URL maps) {
+        this.maps = add(this.maps, maps);
+    }
+
+    private List<Boolean> isAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsAccessibleForFreeList() {
+        return isAccessibleForFree;
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsAccessibleForFree() {
+        return getFirst(isAccessibleForFree);
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param isAccessibleForFree Boolean value to set.
+     */
+    @Override
+    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
+    }
+
+    private List<Event> event;
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventList() {
+        return event;
+    }
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getEvent() {
+        return getFirst(event);
+    }
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @param event Event value to set.
+     */
+    @Override
+    public void addEvent(Event event) {
+        this.event = add(this.event, event);
+    }
+
+    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
+    private List<Object> photo;
+
+    /**
+     * A photograph of this place.
+     *
+     * @return {@link Photograph} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getPhotoList() {
+        return (List<T>) photo;
+    }
+
+    /**
+     * A photograph of this place.
+     *
+     * @return {@link Photograph} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getPhoto() {
+        return (T) getFirst(photo);
+    }
+
+    /**
+     * A photograph of this place.
+     *
+     * @param photo Photograph value to set.
+     */
+    @Override
+    public void addPhoto(Photograph photo) {
+        this.photo = add(this.photo, photo);
+    }
+    /**
+     * A photograph of this place.
+     *
+     * @param photo ImageObject value to set.
+     */
+    @Override
+    public void addPhoto(ImageObject photo) {
+        this.photo = add(this.photo, photo);
+    }
+
+    private List<Place> containedInPlace;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainedInPlaceList() {
+        return containedInPlace;
+    }
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainedInPlace() {
+        return getFirst(containedInPlace);
+    }
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @param containedInPlace Place value to set.
+     */
+    @Override
+    public void addContainedInPlace(Place containedInPlace) {
+        this.containedInPlace = add(this.containedInPlace, containedInPlace);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> logo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link ImageObject} or {@link URL}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link ImageObject} or {@link URL}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getLogo() {
+        return (T) getFirst(logo);
+    }
+
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
+    }
+    /**
+     * An associated logo.
+     *
+     * @param logo URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
+    }
+
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoCrosses;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoCrossesList() {
+        return (List<T>) geoCrosses;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoCrosses() {
+        return (T) getFirst(geoCrosses);
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCrosses GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoCrosses(GeospatialGeometry geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCrosses Place value to set.
+     */
+    @Override
+    public void addGeoCrosses(Place geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
+    }
+
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
+    private List<Object> address;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    @Override
+    public <T> List<T> getAddressList() {
+        return (List<T>) address;
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    @Override
+    public <T> T getAddress() {
+        return (T) getFirst(address);
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     * @param address Text value to set.
+     */
+    @Override
+    public void addAddress(Text address) {
+        this.address = add(this.address, address);
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param address PostalAddress value to set.
+     */
+    @Override
+    public void addAddress(PostalAddress address) {
+        this.address = add(this.address, address);
     }
 
     @JsonLdFieldTypes({ GeoCoordinates.class, GeoShape.class })
@@ -1623,36 +1132,296 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.geo = add(this.geo, geo);
     }
 
-    private List<Event> events;
+    private List<OpeningHoursSpecification> openingHoursSpecification;
 
     /**
-     * Upcoming or past events associated with this place or organization.
+     * The opening hours of a certain place.
      *
-     * @return {@link Event}
+     * @return {@link OpeningHoursSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public List<Event> getEventsList() {
-        return events;
+    public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
+        return openingHoursSpecification;
     }
 
     /**
-     * Upcoming or past events associated with this place or organization.
+     * The opening hours of a certain place.
      *
-     * @return {@link Event}
+     * @return {@link OpeningHoursSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Event getEvents() {
-        return getFirst(events);
+    public OpeningHoursSpecification getOpeningHoursSpecification() {
+        return getFirst(openingHoursSpecification);
     }
 
     /**
-     * Upcoming or past events associated with this place or organization.
+     * The opening hours of a certain place.
      *
-     * @param events Event value to set.
+     * @param openingHoursSpecification OpeningHoursSpecification value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void addEvents(Event events) {
-        this.events = add(this.events, events);
+    public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
+        this.openingHoursSpecification = add(this.openingHoursSpecification, openingHoursSpecification);
+    }
+
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoDisjoint;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoDisjointList() {
+        return (List<T>) geoDisjoint;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoDisjoint() {
+        return (T) getFirst(geoDisjoint);
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoDisjoint GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoDisjoint(GeospatialGeometry geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoDisjoint Place value to set.
+     */
+    @Override
+    public void addGeoDisjoint(Place geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
+    }
+
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoIntersects;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoIntersectsList() {
+        return (List<T>) geoIntersects;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoIntersects() {
+        return (T) getFirst(geoIntersects);
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoIntersects(GeospatialGeometry geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects Place value to set.
+     */
+    @Override
+    public void addGeoIntersects(Place geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
+    }
+
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> latitude;
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getLatitudeList() {
+        return (List<T>) latitude;
+    }
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> T getLatitude() {
+        return (T) getFirst(latitude);
+    }
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param latitude Number value to set.
+     */
+    @Override
+    public void addLatitude(Number latitude) {
+        this.latitude = add(this.latitude, latitude);
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param latitude Text value to set.
+     */
+    @Override
+    public void addLatitude(Text latitude) {
+        this.latitude = add(this.latitude, latitude);
+    }
+
+    private List<Integer> maximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getMaximumAttendeeCapacityList() {
+        return maximumAttendeeCapacity;
+    }
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getMaximumAttendeeCapacity() {
+        return getFirst(maximumAttendeeCapacity);
+    }
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @param maximumAttendeeCapacity Integer value to set.
+     */
+    @Override
+    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
+    }
+
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return getFirst(aggregateRating);
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    @Override
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
+    }
+
+    private List<URL> map;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getMapList() {
+        return map;
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getMap() {
+        return getFirst(map);
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @param map URL value to set.
+     */
+    @Override
+    public void addMap(URL map) {
+        this.map = add(this.map, map);
+    }
+
+    private List<Text> branchCode;
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getBranchCodeList() {
+        return branchCode;
+    }
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getBranchCode() {
+        return getFirst(branchCode);
+    }
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @param branchCode Text value to set.
+     */
+    @Override
+    public void addBranchCode(Text branchCode) {
+        this.branchCode = add(this.branchCode, branchCode);
     }
 
     private List<Text> faxNumber;
@@ -1687,142 +1456,267 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.faxNumber = add(this.faxNumber, faxNumber);
     }
 
-    private List<Event> event;
+    private List<Boolean> publicAccess;
 
     /**
-     * Upcoming or past event associated with this place, organization, or action.
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
-     * @return {@link Event}
+     * @return {@link Boolean}
      */
     @Override
-    public List<Event> getEventList() {
-        return event;
+    public List<Boolean> getPublicAccessList() {
+        return publicAccess;
     }
 
     /**
-     * Upcoming or past event associated with this place, organization, or action.
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
-     * @return {@link Event}
+     * @return {@link Boolean}
      */
     @Override
-    public Event getEvent() {
-        return getFirst(event);
+    public Boolean getPublicAccess() {
+        return getFirst(publicAccess);
     }
 
     /**
-     * Upcoming or past event associated with this place, organization, or action.
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
-     * @param event Event value to set.
+     * @param publicAccess Boolean value to set.
      */
     @Override
-    public void addEvent(Event event) {
-        this.event = add(this.event, event);
+    public void addPublicAccess(Boolean publicAccess) {
+        this.publicAccess = add(this.publicAccess, publicAccess);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoTouches;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public <T> List<T> getGeoTouchesList() {
+        return (List<T>) geoTouches;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public <T> T getGeoTouches() {
+        return (T) getFirst(geoTouches);
     }
+
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
      *
-     * @param mainEntityOfPage URL value to set.
+     * @param geoTouches GeospatialGeometry value to set.
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addGeoTouches(GeospatialGeometry geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoTouches Place value to set.
+     */
+    @Override
+    public void addGeoTouches(Place geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
     }
 
-    private List<Text> alternateName;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoCoveredBy;
 
     /**
-     * An alias for the item.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getGeoCoveredByList() {
+        return (List<T>) geoCoveredBy;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoCoveredBy() {
+        return (T) getFirst(geoCoveredBy);
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCoveredBy GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
+        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCoveredBy Place value to set.
+     */
+    @Override
+    public void addGeoCoveredBy(Place geoCoveredBy) {
+        this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
+    }
+
+    private List<Text> telephone;
+
+    /**
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Text> getTelephoneList() {
+        return telephone;
     }
 
     /**
-     * An alias for the item.
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Text getTelephone() {
+        return getFirst(telephone);
     }
 
     /**
-     * An alias for the item.
+     * The telephone number.
      *
-     * @param alternateName Text value to set.
+     * @param telephone Text value to set.
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
-    private List<Text> name;
+    private List<Boolean> hasDriveThroughService;
 
     /**
-     * The name of the item.
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
      *
-     * @return {@link Text}
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
+    public List<Boolean> getHasDriveThroughServiceList() {
+        return hasDriveThroughService;
     }
 
     /**
-     * The name of the item.
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
      *
-     * @param name Text value to set.
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public Boolean getHasDriveThroughService() {
+        return getFirst(hasDriveThroughService);
+    }
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @param hasDriveThroughService Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public void addHasDriveThroughService(Boolean hasDriveThroughService) {
+        this.hasDriveThroughService = add(this.hasDriveThroughService, hasDriveThroughService);
+    }
+
+    private List<OpeningHoursSpecification> specialOpeningHoursSpecification;
+
+    /**
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public List<OpeningHoursSpecification> getSpecialOpeningHoursSpecificationList() {
+        return specialOpeningHoursSpecification;
+    }
+
+    /**
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
+        return getFirst(specialOpeningHoursSpecification);
+    }
+
+    /**
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
+     *
+     * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
+     */
+    @Override
+    public void addSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
+        this.specialOpeningHoursSpecification = add(this.specialOpeningHoursSpecification, specialOpeningHoursSpecification);
+    }
+
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoContains;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoContainsList() {
+        return (List<T>) geoContains;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoContains() {
+        return (T) getFirst(geoContains);
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoContains Place value to set.
+     */
+    @Override
+    public void addGeoContains(Place geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoContains GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoContains(GeospatialGeometry geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
     }
 
     private List<Action> potentialAction;
@@ -1857,110 +1751,46 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -2009,68 +1839,68 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -2105,14 +1935,78 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -2123,13 +2017,23 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -2150,14 +2054,110 @@ public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.Jso
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

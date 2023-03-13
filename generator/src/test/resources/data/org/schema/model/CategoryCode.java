@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Text;
-import org.schema.model.CategoryCodeSet;
 import org.schema.model.datatype.URL;
+import org.schema.model.CategoryCodeSet;
 
 /**
  * A Category Code.
@@ -49,7 +49,7 @@ public interface CategoryCode extends DefinedTerm {
     /**
      * A [[CategoryCodeSet]] that contains this category code.
      *
-     * @return {@link CategoryCodeSet} or {@link URL}
+     * @return {@link URL} or {@link CategoryCodeSet}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
@@ -58,7 +58,7 @@ public interface CategoryCode extends DefinedTerm {
     /**
      * A [[CategoryCodeSet]] that contains this category code.
      *
-     * @return {@link CategoryCodeSet} or {@link URL}
+     * @return {@link URL} or {@link CategoryCodeSet}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
@@ -67,17 +67,17 @@ public interface CategoryCode extends DefinedTerm {
     /**
      * A [[CategoryCodeSet]] that contains this category code.
      *
-     * @param inCodeSet CategoryCodeSet value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void addInCodeSet(CategoryCodeSet inCodeSet);
-    /**
-     * A [[CategoryCodeSet]] that contains this category code.
-     *
      * @param inCodeSet URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     void addInCodeSet(URL inCodeSet);
+    /**
+     * A [[CategoryCodeSet]] that contains this category code.
+     *
+     * @param inCodeSet CategoryCodeSet value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    void addInCodeSet(CategoryCodeSet inCodeSet);
 }

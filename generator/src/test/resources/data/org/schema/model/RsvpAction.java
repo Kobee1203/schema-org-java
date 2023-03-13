@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.RsvpResponseType;
-import org.schema.model.Comment;
 import org.schema.model.datatype.Number;
+import org.schema.model.Comment;
+import org.schema.model.RsvpResponseType;
 
 /**
  * The act of notifying an event organizer as to whether you expect to attend the event.
@@ -18,25 +18,25 @@ import org.schema.model.datatype.Number;
 public interface RsvpAction extends InformAction {
 
     /**
-     * The response (yes, no, maybe) to the RSVP.
+     * If responding yes, the number of guests who will attend in addition to the invitee.
      *
-     * @return {@link RsvpResponseType}
+     * @return {@link Number}
      */
-    List<RsvpResponseType> getRsvpResponseList();
+    List<Number> getAdditionalNumberOfGuestsList();
 
     /**
-     * The response (yes, no, maybe) to the RSVP.
+     * If responding yes, the number of guests who will attend in addition to the invitee.
      *
-     * @return {@link RsvpResponseType}
+     * @return {@link Number}
      */
-    RsvpResponseType getRsvpResponse();
+    Number getAdditionalNumberOfGuests();
 
     /**
-     * The response (yes, no, maybe) to the RSVP.
+     * If responding yes, the number of guests who will attend in addition to the invitee.
      *
-     * @param rsvpResponse RsvpResponseType value to set.
+     * @param additionalNumberOfGuests Number value to set.
      */
-    void addRsvpResponse(RsvpResponseType rsvpResponse);
+    void addAdditionalNumberOfGuests(Number additionalNumberOfGuests);
 
     /**
      * Comments, typically from users.
@@ -60,23 +60,23 @@ public interface RsvpAction extends InformAction {
     void addComment(Comment comment);
 
     /**
-     * If responding yes, the number of guests who will attend in addition to the invitee.
+     * The response (yes, no, maybe) to the RSVP.
      *
-     * @return {@link Number}
+     * @return {@link RsvpResponseType}
      */
-    List<Number> getAdditionalNumberOfGuestsList();
+    List<RsvpResponseType> getRsvpResponseList();
 
     /**
-     * If responding yes, the number of guests who will attend in addition to the invitee.
+     * The response (yes, no, maybe) to the RSVP.
      *
-     * @return {@link Number}
+     * @return {@link RsvpResponseType}
      */
-    Number getAdditionalNumberOfGuests();
+    RsvpResponseType getRsvpResponse();
 
     /**
-     * If responding yes, the number of guests who will attend in addition to the invitee.
+     * The response (yes, no, maybe) to the RSVP.
      *
-     * @param additionalNumberOfGuests Number value to set.
+     * @param rsvpResponse RsvpResponseType value to set.
      */
-    void addAdditionalNumberOfGuests(Number additionalNumberOfGuests);
+    void addRsvpResponse(RsvpResponseType rsvpResponse);
 }

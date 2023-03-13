@@ -6,19 +6,19 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalTherapy;
-import org.schema.model.EventStatusType;
-import org.schema.model.MedicalStudyStatus;
-import org.schema.model.DDxElement;
-import org.schema.model.MedicalConditionStage;
-import org.schema.model.Drug;
-import org.schema.model.AnatomicalStructure;
-import org.schema.model.AnatomicalSystem;
-import org.schema.model.SuperficialAnatomy;
-import org.schema.model.MedicalSignOrSymptom;
-import org.schema.model.MedicalTest;
 import org.schema.model.MedicalRiskFactor;
+import org.schema.model.MedicalTherapy;
+import org.schema.model.datatype.Text;
+import org.schema.model.MedicalTest;
+import org.schema.model.DDxElement;
+import org.schema.model.MedicalStudyStatus;
+import org.schema.model.EventStatusType;
+import org.schema.model.Drug;
+import org.schema.model.MedicalSignOrSymptom;
+import org.schema.model.SuperficialAnatomy;
+import org.schema.model.AnatomicalSystem;
+import org.schema.model.AnatomicalStructure;
+import org.schema.model.MedicalConditionStage;
 
 /**
  * Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.
@@ -29,52 +29,28 @@ import org.schema.model.MedicalRiskFactor;
 public interface MedicalCondition extends MedicalEntity {
 
     /**
-     * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
+     * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
      *
-     * @return {@link Text}
+     * @return {@link MedicalRiskFactor}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getPossibleComplicationList();
+    List<MedicalRiskFactor> getRiskFactorList();
 
     /**
-     * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
+     * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
      *
-     * @return {@link Text}
+     * @return {@link MedicalRiskFactor}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getPossibleComplication();
+    MedicalRiskFactor getRiskFactor();
 
     /**
-     * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
+     * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
      *
-     * @param possibleComplication Text value to set.
+     * @param riskFactor MedicalRiskFactor value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addPossibleComplication(Text possibleComplication);
-
-    /**
-     * The expected progression of the condition if it is not treated and allowed to progress naturally.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getNaturalProgressionList();
-
-    /**
-     * The expected progression of the condition if it is not treated and allowed to progress naturally.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getNaturalProgression();
-
-    /**
-     * The expected progression of the condition if it is not treated and allowed to progress naturally.
-     *
-     * @param naturalProgression Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addNaturalProgression(Text naturalProgression);
+    void addRiskFactor(MedicalRiskFactor riskFactor);
 
     /**
      * A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
@@ -101,42 +77,52 @@ public interface MedicalCondition extends MedicalEntity {
     void addPrimaryPrevention(MedicalTherapy primaryPrevention);
 
     /**
-     * The status of the study (enumerated).
+     * The likely outcome in either the short term or long term of the medical condition.
      *
-     * @return {@link Text} or {@link EventStatusType} or {@link MedicalStudyStatus}
+     * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    <T> List<T> getStatusList();
+    List<Text> getExpectedPrognosisList();
 
     /**
-     * The status of the study (enumerated).
+     * The likely outcome in either the short term or long term of the medical condition.
      *
-     * @return {@link Text} or {@link EventStatusType} or {@link MedicalStudyStatus}
+     * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    <T> T getStatus();
+    Text getExpectedPrognosis();
 
     /**
-     * The status of the study (enumerated).
+     * The likely outcome in either the short term or long term of the medical condition.
      *
-     * @param status Text value to set.
+     * @param expectedPrognosis Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addStatus(Text status);
+    void addExpectedPrognosis(Text expectedPrognosis);
+
     /**
-     * The status of the study (enumerated).
+     * A medical test typically performed given this condition.
      *
-     * @param status EventStatusType value to set.
+     * @return {@link MedicalTest}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addStatus(EventStatusType status);
+    List<MedicalTest> getTypicalTestList();
+
     /**
-     * The status of the study (enumerated).
+     * A medical test typically performed given this condition.
      *
-     * @param status MedicalStudyStatus value to set.
+     * @return {@link MedicalTest}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addStatus(MedicalStudyStatus status);
+    MedicalTest getTypicalTest();
+
+    /**
+     * A medical test typically performed given this condition.
+     *
+     * @param typicalTest MedicalTest value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addTypicalTest(MedicalTest typicalTest);
 
     /**
      * One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.
@@ -163,30 +149,6 @@ public interface MedicalCondition extends MedicalEntity {
     void addDifferentialDiagnosis(DDxElement differentialDiagnosis);
 
     /**
-     * The stage of the condition, if applicable.
-     *
-     * @return {@link MedicalConditionStage}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalConditionStage> getStageList();
-
-    /**
-     * The stage of the condition, if applicable.
-     *
-     * @return {@link MedicalConditionStage}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalConditionStage getStage();
-
-    /**
-     * The stage of the condition, if applicable.
-     *
-     * @param stage MedicalConditionStage value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStage(MedicalConditionStage stage);
-
-    /**
      * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
      *
      * @return {@link Text}
@@ -209,6 +171,68 @@ public interface MedicalCondition extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addPathophysiology(Text pathophysiology);
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @return {@link MedicalStudyStatus} or {@link Text} or {@link EventStatusType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getStatusList();
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @return {@link MedicalStudyStatus} or {@link Text} or {@link EventStatusType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getStatus();
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status MedicalStudyStatus value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(MedicalStudyStatus status);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(Text status);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status EventStatusType value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(EventStatusType status);
+
+    /**
+     * The expected progression of the condition if it is not treated and allowed to progress naturally.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getNaturalProgressionList();
+
+    /**
+     * The expected progression of the condition if it is not treated and allowed to progress naturally.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getNaturalProgression();
+
+    /**
+     * The expected progression of the condition if it is not treated and allowed to progress naturally.
+     *
+     * @param naturalProgression Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addNaturalProgression(Text naturalProgression);
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
@@ -259,44 +283,6 @@ public interface MedicalCondition extends MedicalEntity {
     void addSecondaryPrevention(MedicalTherapy secondaryPrevention);
 
     /**
-     * The anatomy of the underlying organ system or structures associated with this entity.
-     *
-     * @return {@link AnatomicalStructure} or {@link AnatomicalSystem} or {@link SuperficialAnatomy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getAssociatedAnatomyList();
-
-    /**
-     * The anatomy of the underlying organ system or structures associated with this entity.
-     *
-     * @return {@link AnatomicalStructure} or {@link AnatomicalSystem} or {@link SuperficialAnatomy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getAssociatedAnatomy();
-
-    /**
-     * The anatomy of the underlying organ system or structures associated with this entity.
-     *
-     * @param associatedAnatomy AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAssociatedAnatomy(AnatomicalStructure associatedAnatomy);
-    /**
-     * The anatomy of the underlying organ system or structures associated with this entity.
-     *
-     * @param associatedAnatomy AnatomicalSystem value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAssociatedAnatomy(AnatomicalSystem associatedAnatomy);
-    /**
-     * The anatomy of the underlying organ system or structures associated with this entity.
-     *
-     * @param associatedAnatomy SuperficialAnatomy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAssociatedAnatomy(SuperficialAnatomy associatedAnatomy);
-
-    /**
      * A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.
      *
      * @return {@link MedicalSignOrSymptom}
@@ -321,28 +307,28 @@ public interface MedicalCondition extends MedicalEntity {
     void addSignOrSymptom(MedicalSignOrSymptom signOrSymptom);
 
     /**
-     * A medical test typically performed given this condition.
+     * A possible treatment to address this condition, sign or symptom.
      *
-     * @return {@link MedicalTest}
+     * @return {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalTest> getTypicalTestList();
+    List<MedicalTherapy> getPossibleTreatmentList();
 
     /**
-     * A medical test typically performed given this condition.
+     * A possible treatment to address this condition, sign or symptom.
      *
-     * @return {@link MedicalTest}
+     * @return {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalTest getTypicalTest();
+    MedicalTherapy getPossibleTreatment();
 
     /**
-     * A medical test typically performed given this condition.
+     * A possible treatment to address this condition, sign or symptom.
      *
-     * @param typicalTest MedicalTest value to set.
+     * @param possibleTreatment MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addTypicalTest(MedicalTest typicalTest);
+    void addPossibleTreatment(MedicalTherapy possibleTreatment);
 
     /**
      * The characteristics of associated patients, such as age, gender, race etc.
@@ -369,74 +355,88 @@ public interface MedicalCondition extends MedicalEntity {
     void addEpidemiology(Text epidemiology);
 
     /**
-     * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
+     * The anatomy of the underlying organ system or structures associated with this entity.
      *
-     * @return {@link MedicalRiskFactor}
+     * @return {@link SuperficialAnatomy} or {@link AnatomicalSystem} or {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalRiskFactor> getRiskFactorList();
+    <T> List<T> getAssociatedAnatomyList();
 
     /**
-     * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
+     * The anatomy of the underlying organ system or structures associated with this entity.
      *
-     * @return {@link MedicalRiskFactor}
+     * @return {@link SuperficialAnatomy} or {@link AnatomicalSystem} or {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalRiskFactor getRiskFactor();
+    <T> T getAssociatedAnatomy();
 
     /**
-     * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
+     * The anatomy of the underlying organ system or structures associated with this entity.
      *
-     * @param riskFactor MedicalRiskFactor value to set.
+     * @param associatedAnatomy SuperficialAnatomy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addRiskFactor(MedicalRiskFactor riskFactor);
+    void addAssociatedAnatomy(SuperficialAnatomy associatedAnatomy);
+    /**
+     * The anatomy of the underlying organ system or structures associated with this entity.
+     *
+     * @param associatedAnatomy AnatomicalSystem value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAssociatedAnatomy(AnatomicalSystem associatedAnatomy);
+    /**
+     * The anatomy of the underlying organ system or structures associated with this entity.
+     *
+     * @param associatedAnatomy AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAssociatedAnatomy(AnatomicalStructure associatedAnatomy);
 
     /**
-     * The likely outcome in either the short term or long term of the medical condition.
+     * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getExpectedPrognosisList();
+    List<Text> getPossibleComplicationList();
 
     /**
-     * The likely outcome in either the short term or long term of the medical condition.
+     * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getExpectedPrognosis();
+    Text getPossibleComplication();
 
     /**
-     * The likely outcome in either the short term or long term of the medical condition.
+     * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
      *
-     * @param expectedPrognosis Text value to set.
+     * @param possibleComplication Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addExpectedPrognosis(Text expectedPrognosis);
+    void addPossibleComplication(Text possibleComplication);
 
     /**
-     * A possible treatment to address this condition, sign or symptom.
+     * The stage of the condition, if applicable.
      *
-     * @return {@link MedicalTherapy}
+     * @return {@link MedicalConditionStage}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalTherapy> getPossibleTreatmentList();
+    List<MedicalConditionStage> getStageList();
 
     /**
-     * A possible treatment to address this condition, sign or symptom.
+     * The stage of the condition, if applicable.
      *
-     * @return {@link MedicalTherapy}
+     * @return {@link MedicalConditionStage}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalTherapy getPossibleTreatment();
+    MedicalConditionStage getStage();
 
     /**
-     * A possible treatment to address this condition, sign or symptom.
+     * The stage of the condition, if applicable.
      *
-     * @param possibleTreatment MedicalTherapy value to set.
+     * @param stage MedicalConditionStage value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addPossibleTreatment(MedicalTherapy possibleTreatment);
+    void addStage(MedicalConditionStage stage);
 }

@@ -6,23 +6,23 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.RefundTypeEnumeration;
+import org.schema.model.ReturnFeesEnumeration;
+import org.schema.model.PropertyValue;
+import org.schema.model.ReturnLabelSourceEnumeration;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.OfferItemCondition;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.datatype.Number;
 import org.schema.model.MerchantReturnEnumeration;
 import org.schema.model.Country;
 import org.schema.model.datatype.Text;
+import org.schema.model.ReturnMethodEnumeration;
+import org.schema.model.MerchantReturnPolicySeasonalOverride;
 import org.schema.model.datatype.URL;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Number;
-import org.schema.model.ReturnFeesEnumeration;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.OfferItemCondition;
-import org.schema.model.ReturnLabelSourceEnumeration;
-import org.schema.model.RefundTypeEnumeration;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Date;
-import org.schema.model.ReturnMethodEnumeration;
-import org.schema.model.PropertyValue;
-import org.schema.model.MerchantReturnPolicySeasonalOverride;
 
 /**
  * A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
@@ -34,93 +34,154 @@ import org.schema.model.MerchantReturnPolicySeasonalOverride;
 public interface MerchantReturnPolicy extends Intangible {
 
     /**
-     * Specifies an applicable return policy (from an enumeration).
+     * A refund type, from an enumerated list.
      *
-     * @return {@link MerchantReturnEnumeration}
+     * @return {@link RefundTypeEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    List<MerchantReturnEnumeration> getReturnPolicyCategoryList();
+    List<RefundTypeEnumeration> getRefundTypeList();
 
     /**
-     * Specifies an applicable return policy (from an enumeration).
+     * A refund type, from an enumerated list.
      *
-     * @return {@link MerchantReturnEnumeration}
+     * @return {@link RefundTypeEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    MerchantReturnEnumeration getReturnPolicyCategory();
+    RefundTypeEnumeration getRefundType();
 
     /**
-     * Specifies an applicable return policy (from an enumeration).
+     * A refund type, from an enumerated list.
      *
-     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
+     * @param refundType RefundTypeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void addReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory);
+    void addRefundType(RefundTypeEnumeration refundType);
 
     /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     * The type of return fees if the product is returned due to customer remorse.
      *
-     * @return {@link Country} or {@link Text}
+     * @return {@link ReturnFeesEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    <T> List<T> getReturnPolicyCountryList();
+    List<ReturnFeesEnumeration> getCustomerRemorseReturnFeesList();
 
     /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     * The type of return fees if the product is returned due to customer remorse.
      *
-     * @return {@link Country} or {@link Text}
+     * @return {@link ReturnFeesEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    <T> T getReturnPolicyCountry();
+    ReturnFeesEnumeration getCustomerRemorseReturnFees();
 
     /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     * The type of return fees if the product is returned due to customer remorse.
      *
-     * @param returnPolicyCountry Country value to set.
+     * @param customerRemorseReturnFees ReturnFeesEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void addReturnPolicyCountry(Country returnPolicyCountry);
+    void addCustomerRemorseReturnFees(ReturnFeesEnumeration customerRemorseReturnFees);
+
     /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
-     * @param returnPolicyCountry Text value to set.
+     * @return {@link PropertyValue}
+     */
+    List<PropertyValue> getAdditionalPropertyList();
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    PropertyValue getAdditionalProperty();
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @param additionalProperty PropertyValue value to set.
+     */
+    void addAdditionalProperty(PropertyValue additionalProperty);
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
+     *
+     * @return {@link ReturnLabelSourceEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void addReturnPolicyCountry(Text returnPolicyCountry);
+    List<ReturnLabelSourceEnumeration> getItemDefectReturnLabelSourceList();
 
     /**
-     * Specifies a Web page or service by URL, for product returns.
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
      *
-     * @return {@link URL}
+     * @return {@link ReturnLabelSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    ReturnLabelSourceEnumeration getItemDefectReturnLabelSource();
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
+     *
+     * @param itemDefectReturnLabelSource ReturnLabelSourceEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addItemDefectReturnLabelSource(ReturnLabelSourceEnumeration itemDefectReturnLabelSource);
+
+    /**
+     * Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
+     *
+     * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    List<URL> getMerchantReturnLinkList();
+    List<Boolean> getInStoreReturnsOfferedList();
 
     /**
-     * Specifies a Web page or service by URL, for product returns.
+     * Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
      *
-     * @return {@link URL}
+     * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    URL getMerchantReturnLink();
+    Boolean getInStoreReturnsOffered();
 
     /**
-     * Specifies a Web page or service by URL, for product returns.
+     * Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
      *
-     * @param merchantReturnLink URL value to set.
+     * @param inStoreReturnsOffered Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void addMerchantReturnLink(URL merchantReturnLink);
+    void addInStoreReturnsOffered(Boolean inStoreReturnsOffered);
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    List<OfferItemCondition> getItemConditionList();
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    OfferItemCondition getItemCondition();
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @param itemCondition OfferItemCondition value to set.
+     */
+    void addItemCondition(OfferItemCondition itemCondition);
 
     /**
      * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
@@ -158,133 +219,31 @@ public interface MerchantReturnPolicy extends Intangible {
     void addRestockingFee(Number restockingFee);
 
     /**
-     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+     * Specifies an applicable return policy (from an enumeration).
      *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    List<MonetaryAmount> getItemDefectReturnShippingFeesAmountList();
-
-    /**
-     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    MonetaryAmount getItemDefectReturnShippingFeesAmount();
-
-    /**
-     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @param itemDefectReturnShippingFeesAmount MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addItemDefectReturnShippingFeesAmount(MonetaryAmount itemDefectReturnShippingFeesAmount);
-
-    /**
-     * The type of return fees for returns of defect products.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    List<ReturnFeesEnumeration> getItemDefectReturnFeesList();
-
-    /**
-     * The type of return fees for returns of defect products.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    ReturnFeesEnumeration getItemDefectReturnFees();
-
-    /**
-     * The type of return fees for returns of defect products.
-     *
-     * @param itemDefectReturnFees ReturnFeesEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addItemDefectReturnFees(ReturnFeesEnumeration itemDefectReturnFees);
-
-    /**
-     * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
-     *
-     * @return {@link Boolean}
+     * @return {@link MerchantReturnEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    List<Boolean> getInStoreReturnsOfferedList();
+    List<MerchantReturnEnumeration> getReturnPolicyCategoryList();
 
     /**
-     * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
+     * Specifies an applicable return policy (from an enumeration).
      *
-     * @return {@link Boolean}
+     * @return {@link MerchantReturnEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    Boolean getInStoreReturnsOffered();
+    MerchantReturnEnumeration getReturnPolicyCategory();
 
     /**
-     * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
+     * Specifies an applicable return policy (from an enumeration).
      *
-     * @param inStoreReturnsOffered Boolean value to set.
+     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void addInStoreReturnsOffered(Boolean inStoreReturnsOffered);
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    List<OfferItemCondition> getItemConditionList();
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    OfferItemCondition getItemCondition();
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @param itemCondition OfferItemCondition value to set.
-     */
-    void addItemCondition(OfferItemCondition itemCondition);
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    List<ReturnLabelSourceEnumeration> getItemDefectReturnLabelSourceList();
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    ReturnLabelSourceEnumeration getItemDefectReturnLabelSource();
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
-     *
-     * @param itemDefectReturnLabelSource ReturnLabelSourceEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addItemDefectReturnLabelSource(ReturnLabelSourceEnumeration itemDefectReturnLabelSource);
+    void addReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory);
 
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
@@ -314,58 +273,66 @@ public interface MerchantReturnPolicy extends Intangible {
     void addReturnLabelSource(ReturnLabelSourceEnumeration returnLabelSource);
 
     /**
-     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
      *
-     * @return {@link MonetaryAmount}
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    <T> List<T> getApplicableCountryList();
+
+    /**
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    <T> T getApplicableCountry();
+
+    /**
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @param applicableCountry Country value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    void addApplicableCountry(Country applicableCountry);
+    /**
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @param applicableCountry Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    void addApplicableCountry(Text applicableCountry);
+
+    /**
+     * The type of return method offered, specified from an enumeration.
+     *
+     * @return {@link ReturnMethodEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    List<MonetaryAmount> getCustomerRemorseReturnShippingFeesAmountList();
+    List<ReturnMethodEnumeration> getReturnMethodList();
 
     /**
-     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     * The type of return method offered, specified from an enumeration.
      *
-     * @return {@link MonetaryAmount}
+     * @return {@link ReturnMethodEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    MonetaryAmount getCustomerRemorseReturnShippingFeesAmount();
+    ReturnMethodEnumeration getReturnMethod();
 
     /**
-     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     * The type of return method offered, specified from an enumeration.
      *
-     * @param customerRemorseReturnShippingFeesAmount MonetaryAmount value to set.
+     * @param returnMethod ReturnMethodEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void addCustomerRemorseReturnShippingFeesAmount(MonetaryAmount customerRemorseReturnShippingFeesAmount);
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @return {@link RefundTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    List<RefundTypeEnumeration> getRefundTypeList();
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @return {@link RefundTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    RefundTypeEnumeration getRefundType();
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @param refundType RefundTypeEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void addRefundType(RefundTypeEnumeration refundType);
+    void addReturnMethod(ReturnMethodEnumeration returnMethod);
 
     /**
      * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
@@ -393,6 +360,195 @@ public interface MerchantReturnPolicy extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     void addReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount);
+
+    /**
+     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    List<MonetaryAmount> getItemDefectReturnShippingFeesAmountList();
+
+    /**
+     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    MonetaryAmount getItemDefectReturnShippingFeesAmount();
+
+    /**
+     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @param itemDefectReturnShippingFeesAmount MonetaryAmount value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addItemDefectReturnShippingFeesAmount(MonetaryAmount itemDefectReturnShippingFeesAmount);
+
+    /**
+     * Seasonal override of a return policy.
+     *
+     * @return {@link MerchantReturnPolicySeasonalOverride}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    List<MerchantReturnPolicySeasonalOverride> getReturnPolicySeasonalOverrideList();
+
+    /**
+     * Seasonal override of a return policy.
+     *
+     * @return {@link MerchantReturnPolicySeasonalOverride}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    MerchantReturnPolicySeasonalOverride getReturnPolicySeasonalOverride();
+
+    /**
+     * Seasonal override of a return policy.
+     *
+     * @param returnPolicySeasonalOverride MerchantReturnPolicySeasonalOverride value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride);
+
+    /**
+     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    List<MonetaryAmount> getCustomerRemorseReturnShippingFeesAmountList();
+
+    /**
+     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    MonetaryAmount getCustomerRemorseReturnShippingFeesAmount();
+
+    /**
+     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     *
+     * @param customerRemorseReturnShippingFeesAmount MonetaryAmount value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addCustomerRemorseReturnShippingFeesAmount(MonetaryAmount customerRemorseReturnShippingFeesAmount);
+
+    /**
+     * The type of return fees for purchased products (for any return reason).
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    List<ReturnFeesEnumeration> getReturnFeesList();
+
+    /**
+     * The type of return fees for purchased products (for any return reason).
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    ReturnFeesEnumeration getReturnFees();
+
+    /**
+     * The type of return fees for purchased products (for any return reason).
+     *
+     * @param returnFees ReturnFeesEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void addReturnFees(ReturnFeesEnumeration returnFees);
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+     *
+     * @return {@link ReturnLabelSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    List<ReturnLabelSourceEnumeration> getCustomerRemorseReturnLabelSourceList();
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+     *
+     * @return {@link ReturnLabelSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    ReturnLabelSourceEnumeration getCustomerRemorseReturnLabelSource();
+
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+     *
+     * @param customerRemorseReturnLabelSource ReturnLabelSourceEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration customerRemorseReturnLabelSource);
+
+    /**
+     * Specifies a Web page or service by URL, for product returns.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    List<URL> getMerchantReturnLinkList();
+
+    /**
+     * Specifies a Web page or service by URL, for product returns.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    URL getMerchantReturnLink();
+
+    /**
+     * Specifies a Web page or service by URL, for product returns.
+     *
+     * @param merchantReturnLink URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void addMerchantReturnLink(URL merchantReturnLink);
+
+    /**
+     * The type of return fees for returns of defect products.
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    List<ReturnFeesEnumeration> getItemDefectReturnFeesList();
+
+    /**
+     * The type of return fees for returns of defect products.
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    ReturnFeesEnumeration getItemDefectReturnFees();
+
+    /**
+     * The type of return fees for returns of defect products.
+     *
+     * @param itemDefectReturnFees ReturnFeesEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addItemDefectReturnFees(ReturnFeesEnumeration itemDefectReturnFees);
 
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -438,193 +594,37 @@ public interface MerchantReturnPolicy extends Intangible {
     void addMerchantReturnDays(Date merchantReturnDays);
 
     /**
-     * The type of return method offered, specified from an enumeration.
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
      *
-     * @return {@link ReturnMethodEnumeration}
+     * @return {@link Country} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    List<ReturnMethodEnumeration> getReturnMethodList();
+    <T> List<T> getReturnPolicyCountryList();
 
     /**
-     * The type of return method offered, specified from an enumeration.
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
      *
-     * @return {@link ReturnMethodEnumeration}
+     * @return {@link Country} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    ReturnMethodEnumeration getReturnMethod();
+    <T> T getReturnPolicyCountry();
 
     /**
-     * The type of return method offered, specified from an enumeration.
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
      *
-     * @param returnMethod ReturnMethodEnumeration value to set.
+     * @param returnPolicyCountry Country value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void addReturnMethod(ReturnMethodEnumeration returnMethod);
-
+    void addReturnPolicyCountry(Country returnPolicyCountry);
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
      *
-     * @return {@link PropertyValue}
-     */
-    List<PropertyValue> getAdditionalPropertyList();
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    PropertyValue getAdditionalProperty();
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @param additionalProperty PropertyValue value to set.
-     */
-    void addAdditionalProperty(PropertyValue additionalProperty);
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
+     * @param returnPolicyCountry Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    List<ReturnLabelSourceEnumeration> getCustomerRemorseReturnLabelSourceList();
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    ReturnLabelSourceEnumeration getCustomerRemorseReturnLabelSource();
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
-     *
-     * @param customerRemorseReturnLabelSource ReturnLabelSourceEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration customerRemorseReturnLabelSource);
-
-    /**
-     * The type of return fees if the product is returned due to customer remorse.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    List<ReturnFeesEnumeration> getCustomerRemorseReturnFeesList();
-
-    /**
-     * The type of return fees if the product is returned due to customer remorse.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    ReturnFeesEnumeration getCustomerRemorseReturnFees();
-
-    /**
-     * The type of return fees if the product is returned due to customer remorse.
-     *
-     * @param customerRemorseReturnFees ReturnFeesEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addCustomerRemorseReturnFees(ReturnFeesEnumeration customerRemorseReturnFees);
-
-    /**
-     * Seasonal override of a return policy.
-     *
-     * @return {@link MerchantReturnPolicySeasonalOverride}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    List<MerchantReturnPolicySeasonalOverride> getReturnPolicySeasonalOverrideList();
-
-    /**
-     * Seasonal override of a return policy.
-     *
-     * @return {@link MerchantReturnPolicySeasonalOverride}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    MerchantReturnPolicySeasonalOverride getReturnPolicySeasonalOverride();
-
-    /**
-     * Seasonal override of a return policy.
-     *
-     * @param returnPolicySeasonalOverride MerchantReturnPolicySeasonalOverride value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride);
-
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @return {@link Text} or {@link Country}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    <T> List<T> getApplicableCountryList();
-
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @return {@link Text} or {@link Country}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    <T> T getApplicableCountry();
-
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @param applicableCountry Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    void addApplicableCountry(Text applicableCountry);
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @param applicableCountry Country value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    void addApplicableCountry(Country applicableCountry);
-
-    /**
-     * The type of return fees for purchased products (for any return reason)
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    List<ReturnFeesEnumeration> getReturnFeesList();
-
-    /**
-     * The type of return fees for purchased products (for any return reason)
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    ReturnFeesEnumeration getReturnFees();
-
-    /**
-     * The type of return fees for purchased products (for any return reason)
-     *
-     * @param returnFees ReturnFeesEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void addReturnFees(ReturnFeesEnumeration returnFees);
+    void addReturnPolicyCountry(Text returnPolicyCountry);
 }

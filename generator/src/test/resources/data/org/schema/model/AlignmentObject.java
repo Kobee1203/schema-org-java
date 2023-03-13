@@ -20,69 +20,6 @@ import org.schema.model.datatype.URL;
 public interface AlignmentObject extends Intangible {
 
     /**
-     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAlignmentTypeList();
-
-    /**
-     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
-     *
-     * @return {@link Text}
-     */
-    Text getAlignmentType();
-
-    /**
-     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
-     *
-     * @param alignmentType Text value to set.
-     */
-    void addAlignmentType(Text alignmentType);
-
-    /**
-     * The framework to which the resource being described is aligned.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getEducationalFrameworkList();
-
-    /**
-     * The framework to which the resource being described is aligned.
-     *
-     * @return {@link Text}
-     */
-    Text getEducationalFramework();
-
-    /**
-     * The framework to which the resource being described is aligned.
-     *
-     * @param educationalFramework Text value to set.
-     */
-    void addEducationalFramework(Text educationalFramework);
-
-    /**
-     * The description of a node in an established educational framework.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTargetDescriptionList();
-
-    /**
-     * The description of a node in an established educational framework.
-     *
-     * @return {@link Text}
-     */
-    Text getTargetDescription();
-
-    /**
-     * The description of a node in an established educational framework.
-     *
-     * @param targetDescription Text value to set.
-     */
-    void addTargetDescription(Text targetDescription);
-
-    /**
      * The name of a node in an established educational framework.
      *
      * @return {@link Text}
@@ -123,4 +60,67 @@ public interface AlignmentObject extends Intangible {
      * @param targetUrl URL value to set.
      */
     void addTargetUrl(URL targetUrl);
+
+    /**
+     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAlignmentTypeList();
+
+    /**
+     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+     *
+     * @return {@link Text}
+     */
+    Text getAlignmentType();
+
+    /**
+     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+     *
+     * @param alignmentType Text value to set.
+     */
+    void addAlignmentType(Text alignmentType);
+
+    /**
+     * The description of a node in an established educational framework.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTargetDescriptionList();
+
+    /**
+     * The description of a node in an established educational framework.
+     *
+     * @return {@link Text}
+     */
+    Text getTargetDescription();
+
+    /**
+     * The description of a node in an established educational framework.
+     *
+     * @param targetDescription Text value to set.
+     */
+    void addTargetDescription(Text targetDescription);
+
+    /**
+     * The framework to which the resource being described is aligned.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEducationalFrameworkList();
+
+    /**
+     * The framework to which the resource being described is aligned.
+     *
+     * @return {@link Text}
+     */
+    Text getEducationalFramework();
+
+    /**
+     * The framework to which the resource being described is aligned.
+     *
+     * @param educationalFramework Text value to set.
+     */
+    void addEducationalFramework(Text educationalFramework);
 }

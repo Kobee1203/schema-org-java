@@ -5,26 +5,26 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.WarrantyPromise;
-import org.schema.model.Person;
 import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.WarrantyPromise;
 import org.schema.model.datatype.Text;
-import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.Number;
+import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Time;
-import org.schema.model.ActionStatusType;
 import org.schema.model.Thing;
-import org.schema.model.PostalAddress;
+import org.schema.model.ActionStatusType;
+import org.schema.model.datatype.URL;
+import org.schema.model.EntryPoint;
 import org.schema.model.Place;
 import org.schema.model.VirtualLocation;
-import org.schema.model.EntryPoint;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
+import org.schema.model.PostalAddress;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
@@ -38,6 +38,48 @@ import org.schema.model.SellAction;
  */
 @JsonLdTypeName("SellAction")
 public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SellAction {
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> buyer;
+
+    /**
+     * A sub property of participant. The participant/person/organization that bought the object.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getBuyerList() {
+        return (List<T>) buyer;
+    }
+
+    /**
+     * A sub property of participant. The participant/person/organization that bought the object.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getBuyer() {
+        return (T) getFirst(buyer);
+    }
+
+    /**
+     * A sub property of participant. The participant/person/organization that bought the object.
+     *
+     * @param buyer Organization value to set.
+     */
+    @Override
+    public void addBuyer(Organization buyer) {
+        this.buyer = add(this.buyer, buyer);
+    }
+    /**
+     * A sub property of participant. The participant/person/organization that bought the object.
+     *
+     * @param buyer Person value to set.
+     */
+    @Override
+    public void addBuyer(Person buyer) {
+        this.buyer = add(this.buyer, buyer);
+    }
 
     private List<WarrantyPromise> warrantyPromise;
 
@@ -71,78 +113,50 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.warrantyPromise = add(this.warrantyPromise, warrantyPromise);
     }
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> buyer;
+    @JsonLdFieldTypes({ Text.class, Number.class })
+    private List<Object> price;
 
     /**
-     * A sub property of participant. The participant/person/organization that bought the object.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Text} or {@link Number}
      */
     @Override
-    public <T> List<T> getBuyerList() {
-        return (List<T>) buyer;
+    public <T> List<T> getPriceList() {
+        return (List<T>) price;
     }
 
     /**
-     * A sub property of participant. The participant/person/organization that bought the object.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Text} or {@link Number}
      */
     @Override
-    public <T> T getBuyer() {
-        return (T) getFirst(buyer);
+    public <T> T getPrice() {
+        return (T) getFirst(price);
     }
 
     /**
-     * A sub property of participant. The participant/person/organization that bought the object.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
      *
-     * @param buyer Person value to set.
+     * @param price Text value to set.
      */
     @Override
-    public void addBuyer(Person buyer) {
-        this.buyer = add(this.buyer, buyer);
+    public void addPrice(Text price) {
+        this.price = add(this.price, price);
     }
     /**
-     * A sub property of participant. The participant/person/organization that bought the object.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
      *
-     * @param buyer Organization value to set.
+     * @param price Number value to set.
      */
     @Override
-    public void addBuyer(Organization buyer) {
-        this.buyer = add(this.buyer, buyer);
-    }
-
-    private List<Text> priceCurrency;
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getPriceCurrencyList() {
-        return priceCurrency;
-    }
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getPriceCurrency() {
-        return getFirst(priceCurrency);
-    }
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @param priceCurrency Text value to set.
-     */
-    @Override
-    public void addPriceCurrency(Text priceCurrency) {
-        this.priceCurrency = add(this.priceCurrency, priceCurrency);
+    public void addPrice(Number price) {
+        this.price = add(this.price, price);
     }
 
     private List<PriceSpecification> priceSpecification;
@@ -180,101 +194,145 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.priceSpecification = add(this.priceSpecification, priceSpecification);
     }
 
-    @JsonLdFieldTypes({ Number.class, Text.class })
-    private List<Object> price;
+    private List<Text> priceCurrency;
 
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @return {@link Number} or {@link Text}
+     * @return {@link Text}
      */
     @Override
-    public <T> List<T> getPriceList() {
-        return (List<T>) price;
+    public List<Text> getPriceCurrencyList() {
+        return priceCurrency;
     }
 
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @return {@link Number} or {@link Text}
+     * @return {@link Text}
      */
     @Override
-    public <T> T getPrice() {
-        return (T) getFirst(price);
+    public Text getPriceCurrency() {
+        return getFirst(priceCurrency);
     }
 
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @param price Number value to set.
+     * @param priceCurrency Text value to set.
      */
     @Override
-    public void addPrice(Number price) {
-        this.price = add(this.price, price);
-    }
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     * @param price Text value to set.
-     */
-    @Override
-    public void addPrice(Text price) {
-        this.price = add(this.price, price);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> agent;
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getAgentList() {
-        return (List<T>) agent;
-    }
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getAgent() {
-        return (T) getFirst(agent);
-    }
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @param agent Organization value to set.
-     */
-    @Override
-    public void addAgent(Organization agent) {
-        this.agent = add(this.agent, agent);
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @param agent Person value to set.
-     */
-    @Override
-    public void addAgent(Person agent) {
-        this.agent = add(this.agent, agent);
+    public void addPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = add(this.priceCurrency, priceCurrency);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> endTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getEndTimeList() {
+        return (List<T>) endTime;
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getEndTime() {
+        return (T) getFirst(endTime);
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addEndTime(DateTime endTime) {
+        this.endTime = add(this.endTime, endTime);
+    }
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addEndTime(Time endTime) {
+        this.endTime = add(this.endTime, endTime);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
     private List<Object> startTime;
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link DateTime} or {@link Time}
+     * @return {@link Time} or {@link DateTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
@@ -283,9 +341,9 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     }
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link DateTime} or {@link Time}
+     * @return {@link Time} or {@link DateTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
@@ -294,7 +352,17 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     }
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addStartTime(Time startTime) {
+        this.startTime = add(this.startTime, startTime);
+    }
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
@@ -303,15 +371,37 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     public void addStartTime(DateTime startTime) {
         this.startTime = add(this.startTime, startTime);
     }
+
+    private List<Thing> result;
+
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The result produced in the action. E.g. John wrote *a book*.
      *
-     * @param startTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @return {@link Thing}
      */
     @Override
-    public void addStartTime(Time startTime) {
-        this.startTime = add(this.startTime, startTime);
+    public List<Thing> getResultList() {
+        return result;
+    }
+
+    /**
+     * The result produced in the action. E.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getResult() {
+        return getFirst(result);
+    }
+
+    /**
+     * The result produced in the action. E.g. John wrote *a book*.
+     *
+     * @param result Thing value to set.
+     */
+    @Override
+    public void addResult(Thing result) {
+        this.result = add(this.result, result);
     }
 
     private List<ActionStatusType> actionStatus;
@@ -347,307 +437,51 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> provider;
+    private List<Object> agent;
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
-    }
-
-    private List<Thing> result;
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public List<Thing> getResultList() {
-        return result;
-    }
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getResult() {
-        return getFirst(result);
-    }
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @param result Thing value to set.
-     */
-    @Override
-    public void addResult(Thing result) {
-        this.result = add(this.result, result);
-    }
-
-    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
-    private List<Object> location;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> List<T> getLocationList() {
-        return (List<T>) location;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) getFirst(location);
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
-    @Override
-    public void addLocation(PostalAddress location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
-    @Override
-    public void addLocation(Text location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
-    @Override
-    public void addLocation(Place location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
-    @Override
-    public void addLocation(VirtualLocation location) {
-        this.location = add(this.location, location);
-    }
-
-    private List<Thing> object;
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public List<Thing> getObjectList() {
-        return object;
-    }
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getObject() {
-        return getFirst(object);
-    }
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @param object Thing value to set.
-     */
-    @Override
-    public void addObject(Thing object) {
-        this.object = add(this.object, object);
-    }
-
-    private List<EntryPoint> target;
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    @Override
-    public List<EntryPoint> getTargetList() {
-        return target;
-    }
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    @Override
-    public EntryPoint getTarget() {
-        return getFirst(target);
-    }
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @param target EntryPoint value to set.
-     */
-    @Override
-    public void addTarget(EntryPoint target) {
-        this.target = add(this.target, target);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Time.class })
-    private List<Object> endTime;
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> List<T> getEndTimeList() {
-        return (List<T>) endTime;
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getEndTime() {
-        return (T) getFirst(endTime);
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addEndTime(DateTime endTime) {
-        this.endTime = add(this.endTime, endTime);
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addEndTime(Time endTime) {
-        this.endTime = add(this.endTime, endTime);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> participant;
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> List<T> getParticipantList() {
-        return (List<T>) participant;
+    public <T> List<T> getAgentList() {
+        return (List<T>) agent;
     }
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getParticipant() {
-        return (T) getFirst(participant);
+    public <T> T getAgent() {
+        return (T) getFirst(agent);
     }
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
-     * @param participant Organization value to set.
+     * @param agent Organization value to set.
      */
     @Override
-    public void addParticipant(Organization participant) {
-        this.participant = add(this.participant, participant);
+    public void addAgent(Organization agent) {
+        this.agent = add(this.agent, agent);
     }
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
      *
-     * @param participant Person value to set.
+     * @param agent Person value to set.
      */
     @Override
-    public void addParticipant(Person participant) {
-        this.participant = add(this.participant, participant);
+    public void addAgent(Person agent) {
+        this.agent = add(this.agent, agent);
     }
 
     private List<Thing> instrument;
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @return {@link Thing}
      */
@@ -657,7 +491,7 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     }
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @return {@link Thing}
      */
@@ -667,13 +501,45 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     }
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
      *
      * @param instrument Thing value to set.
      */
     @Override
     public void addInstrument(Thing instrument) {
         this.instrument = add(this.instrument, instrument);
+    }
+
+    private List<Thing> object;
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getObjectList() {
+        return object;
+    }
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getObject() {
+        return getFirst(object);
+    }
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
+     *
+     * @param object Thing value to set.
+     */
+    @Override
+    public void addObject(Thing object) {
+        this.object = add(this.object, object);
     }
 
     private List<Thing> error;
@@ -708,110 +574,148 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.error = add(this.error, error);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    @JsonLdFieldTypes({ URL.class, EntryPoint.class })
+    private List<Object> target;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link URL} or {@link EntryPoint}
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public <T> List<T> getTargetList() {
+        return (List<T>) target;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link URL} or {@link EntryPoint}
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public <T> T getTarget() {
+        return (T) getFirst(target);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param target URL value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addTarget(URL target) {
+        this.target = add(this.target, target);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates a target EntryPoint, or url, for an Action.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @param target EntryPoint value to set.
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addTarget(EntryPoint target) {
+        this.target = add(this.target, target);
     }
 
-    private List<Text> alternateName;
+    @JsonLdFieldTypes({ Place.class, Text.class, VirtualLocation.class, PostalAddress.class })
+    private List<Object> location;
 
     /**
-     * An alias for the item.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Text}
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
     }
 
     /**
-     * An alias for the item.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param alternateName Text value to set.
+     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
+    public <T> T getLocation() {
+        return (T) getFirst(location);
     }
 
     /**
-     * The name of the item.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Text}
+     * @param location Place value to set.
      */
     @Override
-    public Text getName() {
-        return getFirst(name);
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    @Override
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    @Override
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location PostalAddress value to set.
+     */
+    @Override
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> participant;
+
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getParticipantList() {
+        return (List<T>) participant;
     }
 
     /**
-     * The name of the item.
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
      *
-     * @param name Text value to set.
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public <T> T getParticipant() {
+        return (T) getFirst(participant);
+    }
+
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @param participant Organization value to set.
+     */
+    @Override
+    public void addParticipant(Organization participant) {
+        this.participant = add(this.participant, participant);
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
+     *
+     * @param participant Person value to set.
+     */
+    @Override
+    public void addParticipant(Person participant) {
+        this.participant = add(this.participant, participant);
     }
 
     private List<Action> potentialAction;
@@ -846,110 +750,46 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -998,68 +838,68 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -1094,14 +934,78 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -1112,13 +1016,23 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -1139,14 +1053,110 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

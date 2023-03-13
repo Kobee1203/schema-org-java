@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.datatype.Time;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.OpeningHoursSpecification;
-import org.schema.model.datatype.Time;
 
 /**
  * ShippingDeliveryTime provides various pieces of information about delivery times for shipping.
@@ -18,6 +18,33 @@ import org.schema.model.datatype.Time;
  * @see <a href="https://schema.org/ShippingDeliveryTime">https://schema.org/ShippingDeliveryTime</a>
  */
 public interface ShippingDeliveryTime extends StructuredValue {
+
+    /**
+     * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
+     *
+     * @return {@link Time}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    List<Time> getCutoffTimeList();
+
+    /**
+     * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
+     *
+     * @return {@link Time}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    Time getCutoffTime();
+
+    /**
+     * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
+     *
+     * @param cutoffTime Time value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addCutoffTime(Time cutoffTime);
 
     /**
      * The typical delay the order has been sent for delivery and the goods reach the final customer. Typical properties: minValue, maxValue, unitCode (d for DAY).
@@ -47,33 +74,6 @@ public interface ShippingDeliveryTime extends StructuredValue {
     void addTransitTime(QuantitativeValue transitTime);
 
     /**
-     * Days of the week when the merchant typically operates, indicated via opening hours markup.
-     *
-     * @return {@link OpeningHoursSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<OpeningHoursSpecification> getBusinessDaysList();
-
-    /**
-     * Days of the week when the merchant typically operates, indicated via opening hours markup.
-     *
-     * @return {@link OpeningHoursSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    OpeningHoursSpecification getBusinessDays();
-
-    /**
-     * Days of the week when the merchant typically operates, indicated via opening hours markup.
-     *
-     * @param businessDays OpeningHoursSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addBusinessDays(OpeningHoursSpecification businessDays);
-
-    /**
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup. Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as "d"), i.e. only counting days when the business normally operates.
      *
      * @return {@link QuantitativeValue}
@@ -101,29 +101,29 @@ public interface ShippingDeliveryTime extends StructuredValue {
     void addHandlingTime(QuantitativeValue handlingTime);
 
     /**
-     * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
+     * Days of the week when the merchant typically operates, indicated via opening hours markup.
      *
-     * @return {@link Time}
+     * @return {@link OpeningHoursSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    List<Time> getCutoffTimeList();
+    List<OpeningHoursSpecification> getBusinessDaysList();
 
     /**
-     * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
+     * Days of the week when the merchant typically operates, indicated via opening hours markup.
      *
-     * @return {@link Time}
+     * @return {@link OpeningHoursSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    Time getCutoffTime();
+    OpeningHoursSpecification getBusinessDays();
 
     /**
-     * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
+     * Days of the week when the merchant typically operates, indicated via opening hours markup.
      *
-     * @param cutoffTime Time value to set.
+     * @param businessDays OpeningHoursSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void addCutoffTime(Time cutoffTime);
+    void addBusinessDays(OpeningHoursSpecification businessDays);
 }

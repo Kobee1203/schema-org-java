@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
-import org.schema.model.Thing;
-import org.schema.model.ListItem;
-import org.schema.model.datatype.Text;
 import org.schema.model.ItemListOrderType;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Integer;
+import org.schema.model.ListItem;
+import org.schema.model.Thing;
 
 /**
  * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
@@ -18,6 +18,33 @@ import org.schema.model.ItemListOrderType;
  * @see <a href="https://schema.org/ItemList">https://schema.org/ItemList</a>
  */
 public interface ItemList extends Intangible {
+
+    /**
+     * Type of ordering (e.g. Ascending, Descending, Unordered).
+     *
+     * @return {@link ItemListOrderType} or {@link Text}
+     */
+    <T> List<T> getItemListOrderList();
+
+    /**
+     * Type of ordering (e.g. Ascending, Descending, Unordered).
+     *
+     * @return {@link ItemListOrderType} or {@link Text}
+     */
+    <T> T getItemListOrder();
+
+    /**
+     * Type of ordering (e.g. Ascending, Descending, Unordered).
+     *
+     * @param itemListOrder ItemListOrderType value to set.
+     */
+    void addItemListOrder(ItemListOrderType itemListOrder);
+    /**
+     * Type of ordering (e.g. Ascending, Descending, Unordered).
+     *
+     * @param itemListOrder Text value to set.
+     */
+    void addItemListOrder(Text itemListOrder);
 
     /**
      * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
@@ -43,23 +70,17 @@ public interface ItemList extends Intangible {
     /**
      * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      *
-     * @return {@link Thing} or {@link ListItem} or {@link Text}
+     * @return {@link ListItem} or {@link Text} or {@link Thing}
      */
     <T> List<T> getItemListElementList();
 
     /**
      * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      *
-     * @return {@link Thing} or {@link ListItem} or {@link Text}
+     * @return {@link ListItem} or {@link Text} or {@link Thing}
      */
     <T> T getItemListElement();
 
-    /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
-     *
-     * @param itemListElement Thing value to set.
-     */
-    void addItemListElement(Thing itemListElement);
     /**
      * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      *
@@ -72,31 +93,10 @@ public interface ItemList extends Intangible {
      * @param itemListElement Text value to set.
      */
     void addItemListElement(Text itemListElement);
-
     /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
+     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      *
-     * @return {@link Text} or {@link ItemListOrderType}
+     * @param itemListElement Thing value to set.
      */
-    <T> List<T> getItemListOrderList();
-
-    /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
-     *
-     * @return {@link Text} or {@link ItemListOrderType}
-     */
-    <T> T getItemListOrder();
-
-    /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
-     *
-     * @param itemListOrder Text value to set.
-     */
-    void addItemListOrder(Text itemListOrder);
-    /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
-     *
-     * @param itemListOrder ItemListOrderType value to set.
-     */
-    void addItemListOrder(ItemListOrderType itemListOrder);
+    void addItemListElement(Thing itemListElement);
 }

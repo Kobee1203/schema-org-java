@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalSpecialty;
+import org.schema.model.datatype.Boolean;
 
 /**
  * A medical organization (physical or not), such as hospital, institution or clinic.
@@ -18,34 +18,7 @@ import org.schema.model.MedicalSpecialty;
 public interface MedicalOrganization extends Organization {
 
     /**
-     * Whether the provider is accepting new patients.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<Boolean> getIsAcceptingNewPatientsList();
-
-    /**
-     * Whether the provider is accepting new patients.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    Boolean getIsAcceptingNewPatients();
-
-    /**
-     * Whether the provider is accepting new patients.
-     *
-     * @param isAcceptingNewPatients Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addIsAcceptingNewPatients(Boolean isAcceptingNewPatients);
-
-    /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -54,7 +27,7 @@ public interface MedicalOrganization extends Organization {
     List<Text> getHealthPlanNetworkIdList();
 
     /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -63,7 +36,7 @@ public interface MedicalOrganization extends Organization {
     Text getHealthPlanNetworkId();
 
     /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
      *
      * @param healthPlanNetworkId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -94,4 +67,31 @@ public interface MedicalOrganization extends Organization {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
+
+    /**
+     * Whether the provider is accepting new patients.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Boolean> getIsAcceptingNewPatientsList();
+
+    /**
+     * Whether the provider is accepting new patients.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    Boolean getIsAcceptingNewPatients();
+
+    /**
+     * Whether the provider is accepting new patients.
+     *
+     * @param isAcceptingNewPatients Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addIsAcceptingNewPatients(Boolean isAcceptingNewPatients);
 }

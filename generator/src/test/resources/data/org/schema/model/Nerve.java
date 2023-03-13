@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.SuperficialAnatomy;
+import org.schema.model.Muscle;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.BrainStructure;
-import org.schema.model.Muscle;
+import org.schema.model.SuperficialAnatomy;
 
 /**
  * A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.
@@ -20,35 +20,28 @@ import org.schema.model.Muscle;
 public interface Nerve extends AnatomicalStructure {
 
     /**
-     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     * The neurological pathway extension that involves muscle control.
      *
-     * @return {@link SuperficialAnatomy} or {@link AnatomicalStructure}
+     * @return {@link Muscle}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    <T> List<T> getSensoryUnitList();
+    List<Muscle> getNerveMotorList();
 
     /**
-     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     * The neurological pathway extension that involves muscle control.
      *
-     * @return {@link SuperficialAnatomy} or {@link AnatomicalStructure}
+     * @return {@link Muscle}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    <T> T getSensoryUnit();
+    Muscle getNerveMotor();
 
     /**
-     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     * The neurological pathway extension that involves muscle control.
      *
-     * @param sensoryUnit SuperficialAnatomy value to set.
+     * @param nerveMotor Muscle value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addSensoryUnit(SuperficialAnatomy sensoryUnit);
-    /**
-     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
-     *
-     * @param sensoryUnit AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSensoryUnit(AnatomicalStructure sensoryUnit);
+    void addNerveMotor(Muscle nerveMotor);
 
     /**
      * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
@@ -99,26 +92,33 @@ public interface Nerve extends AnatomicalStructure {
     void addSourcedFrom(BrainStructure sourcedFrom);
 
     /**
-     * The neurological pathway extension that involves muscle control.
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
-     * @return {@link Muscle}
+     * @return {@link AnatomicalStructure} or {@link SuperficialAnatomy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Muscle> getNerveMotorList();
+    <T> List<T> getSensoryUnitList();
 
     /**
-     * The neurological pathway extension that involves muscle control.
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
-     * @return {@link Muscle}
+     * @return {@link AnatomicalStructure} or {@link SuperficialAnatomy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Muscle getNerveMotor();
+    <T> T getSensoryUnit();
 
     /**
-     * The neurological pathway extension that involves muscle control.
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
-     * @param nerveMotor Muscle value to set.
+     * @param sensoryUnit AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addNerveMotor(Muscle nerveMotor);
+    void addSensoryUnit(AnatomicalStructure sensoryUnit);
+    /**
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     *
+     * @param sensoryUnit SuperficialAnatomy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addSensoryUnit(SuperficialAnatomy sensoryUnit);
 }

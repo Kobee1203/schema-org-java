@@ -7,23 +7,24 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Text;
-import org.schema.model.MonetaryAmountDistribution;
+import org.schema.model.datatype.URL;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.datatype.Number;
-import org.schema.model.Place;
-import org.schema.model.datatype.URL;
-import org.schema.model.DefinedTerm;
+import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.Boolean;
-import org.schema.model.AdministrativeArea;
-import org.schema.model.datatype.Date;
-import org.schema.model.ContactPoint;
-import org.schema.model.Occupation;
-import org.schema.model.datatype.Integer;
+import org.schema.model.DefinedTerm;
 import org.schema.model.OccupationalExperienceRequirements;
 import org.schema.model.EducationalOccupationalCredential;
-import org.schema.model.PriceSpecification;
+import org.schema.model.datatype.Date;
+import org.schema.model.Occupation;
+import org.schema.model.Place;
+import org.schema.model.MonetaryAmountDistribution;
 import org.schema.model.datatype.DateTime;
-import org.schema.model.Organization;
+import org.schema.model.datatype.Integer;
+import org.schema.model.ContactPoint;
+import org.schema.model.AdministrativeArea;
 import org.schema.model.CategoryCode;
 
 /**
@@ -32,6 +33,170 @@ import org.schema.model.CategoryCode;
  * @see <a href="https://schema.org/JobPosting">https://schema.org/JobPosting</a>
  */
 public interface JobPosting extends Intangible {
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIncentiveCompensationList();
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    Text getIncentiveCompensation();
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @param incentiveCompensation Text value to set.
+     */
+    void addIncentiveCompensation(Text incentiveCompensation);
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    <T> List<T> getSecurityClearanceRequirementList();
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    <T> T getSecurityClearanceRequirement();
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @param securityClearanceRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void addSecurityClearanceRequirement(Text securityClearanceRequirement);
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @param securityClearanceRequirement URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void addSecurityClearanceRequirement(URL securityClearanceRequirement);
+
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getHiringOrganizationList();
+
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getHiringOrganization();
+
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @param hiringOrganization Organization value to set.
+     */
+    void addHiringOrganization(Organization hiringOrganization);
+    /**
+     * Organization or Person offering the job position.
+     *
+     * @param hiringOrganization Person value to set.
+     */
+    void addHiringOrganization(Person hiringOrganization);
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
+     */
+    <T> List<T> getBaseSalaryList();
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
+     */
+    <T> T getBaseSalary();
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary MonetaryAmount value to set.
+     */
+    void addBaseSalary(MonetaryAmount baseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary Number value to set.
+     */
+    void addBaseSalary(Number baseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary PriceSpecification value to set.
+     */
+    void addBaseSalary(PriceSpecification baseSalary);
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getWorkHoursList();
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @return {@link Text}
+     */
+    Text getWorkHours();
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @param workHours Text value to set.
+     */
+    void addWorkHours(Text workHours);
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    List<Boolean> getJobImmediateStartList();
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    Boolean getJobImmediateStart();
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @param jobImmediateStart Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    void addJobImmediateStart(Boolean jobImmediateStart);
 
     /**
      * A description of the employer, career opportunities and work environment for this position.
@@ -61,119 +226,44 @@ public interface JobPosting extends Intangible {
     void addEmployerOverview(Text employerOverview);
 
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @return {@link Text} or {@link DefinedTerm}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
-    <T> List<T> getEstimatedSalaryList();
+    <T> List<T> getSkillsList();
 
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @return {@link Text} or {@link DefinedTerm}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
-    <T> T getEstimatedSalary();
+    <T> T getSkills();
 
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @param estimatedSalary MonetaryAmountDistribution value to set.
+     * @param skills Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
-    void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
+    void addSkills(Text skills);
     /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @param estimatedSalary MonetaryAmount value to set.
+     * @param skills DefinedTerm value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      */
-    void addEstimatedSalary(MonetaryAmount estimatedSalary);
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @param estimatedSalary Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addEstimatedSalary(Number estimatedSalary);
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    List<Text> getJobLocationTypeList();
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    Text getJobLocationType();
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @param jobLocationType Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    void addJobLocationType(Text jobLocationType);
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    List<Text> getResponsibilitiesList();
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    Text getResponsibilities();
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @param responsibilities Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addResponsibilities(Text responsibilities);
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getJobLocationList();
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     * @return {@link Place}
-     */
-    Place getJobLocation();
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     * @param jobLocation Place value to set.
-     */
-    void addJobLocation(Place jobLocation);
+    void addSkills(DefinedTerm skills);
 
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
@@ -182,7 +272,7 @@ public interface JobPosting extends Intangible {
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
@@ -191,11 +281,11 @@ public interface JobPosting extends Intangible {
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param physicalRequirement URL value to set.
+     * @param physicalRequirement DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void addPhysicalRequirement(URL physicalRequirement);
+    void addPhysicalRequirement(DefinedTerm physicalRequirement);
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
@@ -207,206 +297,81 @@ public interface JobPosting extends Intangible {
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param physicalRequirement DefinedTerm value to set.
+     * @param physicalRequirement URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void addPhysicalRequirement(DefinedTerm physicalRequirement);
+    void addPhysicalRequirement(URL physicalRequirement);
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * Description of skills and experience needed for the position or Occupation.
      *
-     * @return {@link Text}
+     * @return {@link OccupationalExperienceRequirements} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    List<Text> getIncentivesList();
+    <T> List<T> getExperienceRequirementsList();
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * Description of skills and experience needed for the position or Occupation.
      *
-     * @return {@link Text}
+     * @return {@link OccupationalExperienceRequirements} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    Text getIncentives();
+    <T> T getExperienceRequirements();
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * Description of skills and experience needed for the position or Occupation.
      *
-     * @param incentives Text value to set.
+     * @param experienceRequirements OccupationalExperienceRequirements value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void addIncentives(Text incentives);
+    void addExperienceRequirements(OccupationalExperienceRequirements experienceRequirements);
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @param experienceRequirements Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addExperienceRequirements(Text experienceRequirements);
 
     /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @return {@link Boolean}
+     * @return {@link EducationalOccupationalCredential} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    List<Boolean> getDirectApplyList();
+    <T> List<T> getQualificationsList();
 
     /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @return {@link Boolean}
+     * @return {@link EducationalOccupationalCredential} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    Boolean getDirectApply();
+    <T> T getQualifications();
 
     /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @param directApply Boolean value to set.
+     * @param qualifications EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void addDirectApply(Boolean directApply);
-
+    void addQualifications(EducationalOccupationalCredential qualifications);
     /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     * Specific qualifications required for this role or Occupation.
      *
-     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
+     * @param qualifications Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    <T> List<T> getSensoryRequirementList();
-
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    <T> T getSensoryRequirement();
-
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param sensoryRequirement DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    void addSensoryRequirement(DefinedTerm sensoryRequirement);
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param sensoryRequirement URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    void addSensoryRequirement(URL sensoryRequirement);
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param sensoryRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    void addSensoryRequirement(Text sensoryRequirement);
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    List<AdministrativeArea> getApplicantLocationRequirementsList();
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    AdministrativeArea getApplicantLocationRequirements();
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @param applicantLocationRequirements AdministrativeArea value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    void addApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements);
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getWorkHoursList();
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @return {@link Text}
-     */
-    Text getWorkHours();
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @param workHours Text value to set.
-     */
-    void addWorkHours(Text workHours);
-
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @return {@link Date} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    <T> List<T> getJobStartDateList();
-
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @return {@link Date} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    <T> T getJobStartDate();
-
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @param jobStartDate Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    void addJobStartDate(Date jobStartDate);
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @param jobStartDate Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    void addJobStartDate(Text jobStartDate);
-
-    /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getEmploymentTypeList();
-
-    /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-     *
-     * @return {@link Text}
-     */
-    Text getEmploymentType();
-
-    /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-     *
-     * @param employmentType Text value to set.
-     */
-    void addEmploymentType(Text employmentType);
+    void addQualifications(Text qualifications);
 
     /**
      * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
@@ -430,52 +395,60 @@ public interface JobPosting extends Intangible {
     void addSpecialCommitments(Text specialCommitments);
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @return {@link ContactPoint}
+     * @return {@link Text} or {@link Date}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
-    List<ContactPoint> getApplicationContactList();
+    <T> List<T> getJobStartDateList();
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @return {@link ContactPoint}
+     * @return {@link Text} or {@link Date}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
-    ContactPoint getApplicationContact();
+    <T> T getJobStartDate();
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @param applicationContact ContactPoint value to set.
+     * @param jobStartDate Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
-    void addApplicationContact(ContactPoint applicationContact);
+    void addJobStartDate(Text jobStartDate);
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @param jobStartDate Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    void addJobStartDate(Date jobStartDate);
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * The title of the job.
      *
      * @return {@link Text}
      */
-    List<Text> getIncentiveCompensationList();
+    List<Text> getTitleList();
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * The title of the job.
      *
      * @return {@link Text}
      */
-    Text getIncentiveCompensation();
+    Text getTitle();
 
     /**
-     * Description of bonus and commission compensation aspects of the job.
+     * The title of the job.
      *
-     * @param incentiveCompensation Text value to set.
+     * @param title Text value to set.
      */
-    void addIncentiveCompensation(Text incentiveCompensation);
+    void addTitle(Text title);
 
     /**
      * The Occupation for the JobPosting.
@@ -502,193 +475,25 @@ public interface JobPosting extends Intangible {
     void addRelevantOccupation(Occupation relevantOccupation);
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * A (typically single) geographic location associated with the job position.
      *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     * @return {@link Place}
      */
-    List<Integer> getTotalJobOpeningsList();
+    List<Place> getJobLocationList();
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * A (typically single) geographic location associated with the job position.
      *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     * @return {@link Place}
      */
-    Integer getTotalJobOpenings();
+    Place getJobLocation();
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * A (typically single) geographic location associated with the job position.
      *
-     * @param totalJobOpenings Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     * @param jobLocation Place value to set.
      */
-    void addTotalJobOpenings(Integer totalJobOpenings);
-
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @return {@link Text} or {@link OccupationalExperienceRequirements}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> List<T> getExperienceRequirementsList();
-
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @return {@link Text} or {@link OccupationalExperienceRequirements}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> T getExperienceRequirements();
-
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @param experienceRequirements Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addExperienceRequirements(Text experienceRequirements);
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @param experienceRequirements OccupationalExperienceRequirements value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addExperienceRequirements(OccupationalExperienceRequirements experienceRequirements);
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getJobBenefitsList();
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @return {@link Text}
-     */
-    Text getJobBenefits();
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @param jobBenefits Text value to set.
-     */
-    void addJobBenefits(Text jobBenefits);
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSalaryCurrencyList();
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @return {@link Text}
-     */
-    Text getSalaryCurrency();
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @param salaryCurrency Text value to set.
-     */
-    void addSalaryCurrency(Text salaryCurrency);
-
-    /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    List<Boolean> getExperienceInPlaceOfEducationList();
-
-    /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    Boolean getExperienceInPlaceOfEducation();
-
-    /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
-     *
-     * @param experienceInPlaceOfEducation Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    void addExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation);
-
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    <T> List<T> getSecurityClearanceRequirementList();
-
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    <T> T getSecurityClearanceRequirement();
-
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @param securityClearanceRequirement URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    void addSecurityClearanceRequirement(URL securityClearanceRequirement);
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @param securityClearanceRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    void addSecurityClearanceRequirement(Text securityClearanceRequirement);
-
-    /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    List<Text> getEligibilityToWorkRequirementList();
-
-    /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    Text getEligibilityToWorkRequirement();
-
-    /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
-     *
-     * @param eligibilityToWorkRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    void addEligibilityToWorkRequirement(Text eligibilityToWorkRequirement);
+    void addJobLocation(Place jobLocation);
 
     /**
      * Educational background needed for the position or Occupation.
@@ -730,25 +535,400 @@ public interface JobPosting extends Intangible {
     void addEducationRequirements(Text educationRequirements);
 
     /**
-     * Description of benefits associated with the job.
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    List<Text> getEligibilityToWorkRequirementList();
+
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    Text getEligibilityToWorkRequirement();
+
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @param eligibilityToWorkRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void addEligibilityToWorkRequirement(Text eligibilityToWorkRequirement);
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link MonetaryAmountDistribution}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getEstimatedSalaryList();
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmount} or {@link Number} or {@link MonetaryAmountDistribution}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> T getEstimatedSalary();
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEstimatedSalary(MonetaryAmount estimatedSalary);
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEstimatedSalary(Number estimatedSalary);
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary MonetaryAmountDistribution value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getValidThroughList();
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> T getValidThrough();
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void addValidThrough(Date validThrough);
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough DateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void addValidThrough(DateTime validThrough);
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    <T> List<T> getSensoryRequirementList();
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    <T> T getSensoryRequirement();
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param sensoryRequirement URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void addSensoryRequirement(URL sensoryRequirement);
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param sensoryRequirement DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void addSensoryRequirement(DefinedTerm sensoryRequirement);
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param sensoryRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void addSensoryRequirement(Text sensoryRequirement);
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
      *
      * @return {@link Text}
      */
-    List<Text> getBenefitsList();
+    List<Text> getEmploymentTypeList();
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @return {@link Text}
+     */
+    Text getEmploymentType();
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @param employmentType Text value to set.
+     */
+    void addEmploymentType(Text employmentType);
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    List<Integer> getTotalJobOpeningsList();
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    Integer getTotalJobOpenings();
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @param totalJobOpenings Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    void addTotalJobOpenings(Integer totalJobOpenings);
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSalaryCurrencyList();
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    Text getSalaryCurrency();
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+     *
+     * @param salaryCurrency Text value to set.
+     */
+    void addSalaryCurrency(Text salaryCurrency);
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @return {@link ContactPoint}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    List<ContactPoint> getApplicationContactList();
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @return {@link ContactPoint}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    ContactPoint getApplicationContact();
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @param applicationContact ContactPoint value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    void addApplicationContact(ContactPoint applicationContact);
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    List<Boolean> getExperienceInPlaceOfEducationList();
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    Boolean getExperienceInPlaceOfEducation();
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @param experienceInPlaceOfEducation Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    void addExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation);
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    <T> List<T> getDatePostedList();
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    <T> T getDatePosted();
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void addDatePosted(DateTime datePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void addDatePosted(Date datePosted);
 
     /**
      * Description of benefits associated with the job.
      *
      * @return {@link Text}
      */
-    Text getBenefits();
+    List<Text> getJobBenefitsList();
 
     /**
      * Description of benefits associated with the job.
      *
-     * @param benefits Text value to set.
+     * @return {@link Text}
      */
-    void addBenefits(Text benefits);
+    Text getJobBenefits();
+
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @param jobBenefits Text value to set.
+     */
+    void addJobBenefits(Text jobBenefits);
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    List<AdministrativeArea> getApplicantLocationRequirementsList();
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    AdministrativeArea getApplicantLocationRequirements();
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @param applicantLocationRequirements AdministrativeArea value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    void addApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements);
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link Text} or {@link CategoryCode}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    <T> List<T> getOccupationalCategoryList();
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link Text} or {@link CategoryCode}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    <T> T getOccupationalCategory();
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    void addOccupationalCategory(Text occupationalCategory);
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory CategoryCode value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    void addOccupationalCategory(CategoryCode occupationalCategory);
 
     /**
      * The industry associated with the job position.
@@ -778,209 +958,6 @@ public interface JobPosting extends Intangible {
     void addIndustry(Text industry);
 
     /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    <T> List<T> getBaseSalaryList();
-
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    <T> T getBaseSalary();
-
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @param baseSalary Number value to set.
-     */
-    void addBaseSalary(Number baseSalary);
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @param baseSalary PriceSpecification value to set.
-     */
-    void addBaseSalary(PriceSpecification baseSalary);
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @param baseSalary MonetaryAmount value to set.
-     */
-    void addBaseSalary(MonetaryAmount baseSalary);
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    <T> List<T> getDatePostedList();
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    <T> T getDatePosted();
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void addDatePosted(Date datePosted);
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void addDatePosted(DateTime datePosted);
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> List<T> getSkillsList();
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> T getSkills();
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @param skills Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addSkills(Text skills);
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @param skills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addSkills(DefinedTerm skills);
-
-    /**
-     * The title of the job.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTitleList();
-
-    /**
-     * The title of the job.
-     *
-     * @return {@link Text}
-     */
-    Text getTitle();
-
-    /**
-     * The title of the job.
-     *
-     * @param title Text value to set.
-     */
-    void addTitle(Text title);
-
-    /**
-     * Organization offering the job position.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getHiringOrganizationList();
-
-    /**
-     * Organization offering the job position.
-     *
-     * @return {@link Organization}
-     */
-    Organization getHiringOrganization();
-
-    /**
-     * Organization offering the job position.
-     *
-     * @param hiringOrganization Organization value to set.
-     */
-    void addHiringOrganization(Organization hiringOrganization);
-
-    /**
-     * An indicator as to whether a position is available for an immediate start.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    List<Boolean> getJobImmediateStartList();
-
-    /**
-     * An indicator as to whether a position is available for an immediate start.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    Boolean getJobImmediateStart();
-
-    /**
-     * An indicator as to whether a position is available for an immediate start.
-     *
-     * @param jobImmediateStart Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    void addJobImmediateStart(Boolean jobImmediateStart);
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getValidThroughList();
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getValidThrough();
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addValidThrough(DateTime validThrough);
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addValidThrough(Date validThrough);
-
-    /**
      * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
      *
      * @return {@link Organization}
@@ -1008,92 +985,122 @@ public interface JobPosting extends Intangible {
     void addEmploymentUnit(Organization employmentUnit);
 
     /**
-     * Specific qualifications required for this role or Occupation.
+     * Description of benefits associated with the job.
      *
-     * @return {@link Text} or {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Text}
      */
-    <T> List<T> getQualificationsList();
+    List<Text> getBenefitsList();
 
     /**
-     * Specific qualifications required for this role or Occupation.
+     * Description of benefits associated with the job.
      *
-     * @return {@link Text} or {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Text}
      */
-    <T> T getQualifications();
+    Text getBenefits();
 
     /**
-     * Specific qualifications required for this role or Occupation.
+     * Description of benefits associated with the job.
      *
-     * @param qualifications Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @param benefits Text value to set.
      */
-    void addQualifications(Text qualifications);
-    /**
-     * Specific qualifications required for this role or Occupation.
-     *
-     * @param qualifications EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void addQualifications(EducationalOccupationalCredential qualifications);
+    void addBenefits(Text benefits);
 
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
      *
-     * @return {@link CategoryCode} or {@link Text}
+     * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
      */
-    <T> List<T> getOccupationalCategoryList();
+    List<Text> getJobLocationTypeList();
 
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
      *
-     * @return {@link CategoryCode} or {@link Text}
+     * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
      */
-    <T> T getOccupationalCategory();
+    Text getJobLocationType();
 
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
      *
-     * @param occupationalCategory CategoryCode value to set.
+     * @param jobLocationType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
      */
-    void addOccupationalCategory(CategoryCode occupationalCategory);
+    void addJobLocationType(Text jobLocationType);
+
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * Responsibilities associated with this role or Occupation.
      *
-     * @param occupationalCategory Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @return {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void addOccupationalCategory(Text occupationalCategory);
+    List<Text> getResponsibilitiesList();
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    Text getResponsibilities();
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @param responsibilities Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addResponsibilities(Text responsibilities);
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    List<Boolean> getDirectApplyList();
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    Boolean getDirectApply();
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @param directApply Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    void addDirectApply(Boolean directApply);
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIncentivesList();
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    Text getIncentives();
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @param incentives Text value to set.
+     */
+    void addIncentives(Text incentives);
 }

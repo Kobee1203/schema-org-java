@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Number;
 import org.schema.model.MedicalCondition;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Integer;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.GenderType;
 
 /**
@@ -19,48 +19,6 @@ import org.schema.model.GenderType;
  * @see <a href="https://schema.org/PeopleAudience">https://schema.org/PeopleAudience</a>
  */
 public interface PeopleAudience extends Audience {
-
-    /**
-     * Audiences defined by a person's minimum age.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getRequiredMinAgeList();
-
-    /**
-     * Audiences defined by a person's minimum age.
-     *
-     * @return {@link Integer}
-     */
-    Integer getRequiredMinAge();
-
-    /**
-     * Audiences defined by a person's minimum age.
-     *
-     * @param requiredMinAge Integer value to set.
-     */
-    void addRequiredMinAge(Integer requiredMinAge);
-
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    List<Number> getSuggestedMaxAgeList();
-
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    Number getSuggestedMaxAge();
-
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     * @param suggestedMaxAge Number value to set.
-     */
-    void addSuggestedMaxAge(Number suggestedMaxAge);
 
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
@@ -85,6 +43,69 @@ public interface PeopleAudience extends Audience {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addHealthCondition(MedicalCondition healthCondition);
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRequiredGenderList();
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    Text getRequiredGender();
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @param requiredGender Text value to set.
+     */
+    void addRequiredGender(Text requiredGender);
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getSuggestedMinAgeList();
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    Number getSuggestedMinAge();
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @param suggestedMinAge Number value to set.
+     */
+    void addSuggestedMinAge(Number suggestedMinAge);
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getRequiredMinAgeList();
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @return {@link Integer}
+     */
+    Integer getRequiredMinAge();
+
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @param requiredMinAge Integer value to set.
+     */
+    void addRequiredMinAge(Integer requiredMinAge);
 
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
@@ -114,6 +135,54 @@ public interface PeopleAudience extends Audience {
     void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
 
     /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    <T> List<T> getSuggestedGenderList();
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    <T> T getSuggestedGender();
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender GenderType value to set.
+     */
+    void addSuggestedGender(GenderType suggestedGender);
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender Text value to set.
+     */
+    void addSuggestedGender(Text suggestedGender);
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getRequiredMaxAgeList();
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @return {@link Integer}
+     */
+    Integer getRequiredMaxAge();
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @param requiredMaxAge Integer value to set.
+     */
+    void addRequiredMaxAge(Integer requiredMaxAge);
+
+    /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
      *
      * @return {@link QuantitativeValue}
@@ -141,92 +210,23 @@ public interface PeopleAudience extends Audience {
     void addSuggestedAge(QuantitativeValue suggestedAge);
 
     /**
-     * Audiences defined by a person's maximum age.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getRequiredMaxAgeList();
-
-    /**
-     * Audiences defined by a person's maximum age.
-     *
-     * @return {@link Integer}
-     */
-    Integer getRequiredMaxAge();
-
-    /**
-     * Audiences defined by a person's maximum age.
-     *
-     * @param requiredMaxAge Integer value to set.
-     */
-    void addRequiredMaxAge(Integer requiredMaxAge);
-
-    /**
-     * Minimum recommended age in years for the audience or user.
+     * Maximum recommended age in years for the audience or user.
      *
      * @return {@link Number}
      */
-    List<Number> getSuggestedMinAgeList();
+    List<Number> getSuggestedMaxAgeList();
 
     /**
-     * Minimum recommended age in years for the audience or user.
+     * Maximum recommended age in years for the audience or user.
      *
      * @return {@link Number}
      */
-    Number getSuggestedMinAge();
+    Number getSuggestedMaxAge();
 
     /**
-     * Minimum recommended age in years for the audience or user.
+     * Maximum recommended age in years for the audience or user.
      *
-     * @param suggestedMinAge Number value to set.
+     * @param suggestedMaxAge Number value to set.
      */
-    void addSuggestedMinAge(Number suggestedMinAge);
-
-    /**
-     * Audiences defined by a person's gender.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getRequiredGenderList();
-
-    /**
-     * Audiences defined by a person's gender.
-     *
-     * @return {@link Text}
-     */
-    Text getRequiredGender();
-
-    /**
-     * Audiences defined by a person's gender.
-     *
-     * @param requiredGender Text value to set.
-     */
-    void addRequiredGender(Text requiredGender);
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    <T> List<T> getSuggestedGenderList();
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    <T> T getSuggestedGender();
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @param suggestedGender GenderType value to set.
-     */
-    void addSuggestedGender(GenderType suggestedGender);
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @param suggestedGender Text value to set.
-     */
-    void addSuggestedGender(Text suggestedGender);
+    void addSuggestedMaxAge(Number suggestedMaxAge);
 }

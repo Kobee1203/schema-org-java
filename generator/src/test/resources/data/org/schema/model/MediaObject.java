@@ -6,410 +6,29 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Text;
 import org.schema.model.Distance;
-import org.schema.model.Place;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Time;
 import org.schema.model.NewsArticle;
-import org.schema.model.GeoShape;
+import org.schema.model.Claim;
+import org.schema.model.Duration;
 import org.schema.model.MediaSubscription;
 import org.schema.model.datatype.Boolean;
-import org.schema.model.CreativeWork;
-import org.schema.model.Duration;
-import org.schema.model.datatype.Date;
+import org.schema.model.Place;
 import org.schema.model.Organization;
-import org.schema.model.Claim;
+import org.schema.model.CreativeWork;
+import org.schema.model.datatype.Date;
+import org.schema.model.GeoShape;
 
 /**
- * A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).
+ * A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset, i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 [[AudioObject]]s).
  *
  * @see <a href="https://schema.org/MediaObject">https://schema.org/MediaObject</a>
  */
 public interface MediaObject extends CreativeWork {
-
-    /**
-     * File size in (mega/kilo) bytes.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getContentSizeList();
-
-    /**
-     * File size in (mega/kilo) bytes.
-     *
-     * @return {@link Text}
-     */
-    Text getContentSize();
-
-    /**
-     * File size in (mega/kilo) bytes.
-     *
-     * @param contentSize Text value to set.
-     */
-    void addContentSize(Text contentSize);
-
-    /**
-     * Actual bytes of the media object, for example the image file or video file.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getContentUrlList();
-
-    /**
-     * Actual bytes of the media object, for example the image file or video file.
-     *
-     * @return {@link URL}
-     */
-    URL getContentUrl();
-
-    /**
-     * Actual bytes of the media object, for example the image file or video file.
-     *
-     * @param contentUrl URL value to set.
-     */
-    void addContentUrl(URL contentUrl);
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     */
-    <T> List<T> getWidthList();
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     */
-    <T> T getWidth();
-
-    /**
-     * The width of the item.
-     *
-     * @param width QuantitativeValue value to set.
-     */
-    void addWidth(QuantitativeValue width);
-    /**
-     * The width of the item.
-     *
-     * @param width Distance value to set.
-     */
-    void addWidth(Distance width);
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     */
-    <T> List<T> getHeightList();
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     */
-    <T> T getHeight();
-
-    /**
-     * The height of the item.
-     *
-     * @param height Distance value to set.
-     */
-    void addHeight(Distance height);
-    /**
-     * The height of the item.
-     *
-     * @param height QuantitativeValue value to set.
-     */
-    void addHeight(QuantitativeValue height);
-
-    /**
-     * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
-     *
-     * @return {@link Place}
-     */
-    List<Place> getRegionsAllowedList();
-
-    /**
-     * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
-     *
-     * @return {@link Place}
-     */
-    Place getRegionsAllowed();
-
-    /**
-     * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
-     *
-     * @param regionsAllowed Place value to set.
-     */
-    void addRegionsAllowed(Place regionsAllowed);
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    <T> List<T> getStartTimeList();
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    <T> T getStartTime();
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param startTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void addStartTime(DateTime startTime);
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param startTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void addStartTime(Time startTime);
-
-    /**
-     * A NewsArticle associated with the Media Object.
-     *
-     * @return {@link NewsArticle}
-     */
-    List<NewsArticle> getAssociatedArticleList();
-
-    /**
-     * A NewsArticle associated with the Media Object.
-     *
-     * @return {@link NewsArticle}
-     */
-    NewsArticle getAssociatedArticle();
-
-    /**
-     * A NewsArticle associated with the Media Object.
-     *
-     * @param associatedArticle NewsArticle value to set.
-     */
-    void addAssociatedArticle(NewsArticle associatedArticle);
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    <T> List<T> getIneligibleRegionList();
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    <T> T getIneligibleRegion();
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param ineligibleRegion Place value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void addIneligibleRegion(Place ineligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param ineligibleRegion Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void addIneligibleRegion(Text ineligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param ineligibleRegion GeoShape value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void addIneligibleRegion(GeoShape ineligibleRegion);
-
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @return {@link MediaSubscription} or {@link Boolean}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> List<T> getRequiresSubscriptionList();
-
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @return {@link MediaSubscription} or {@link Boolean}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> T getRequiresSubscription();
-
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @param requiresSubscription MediaSubscription value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addRequiresSubscription(MediaSubscription requiresSubscription);
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @param requiresSubscription Boolean value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addRequiresSubscription(Boolean requiresSubscription);
-
-    /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPlayerTypeList();
-
-    /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
-     *
-     * @return {@link Text}
-     */
-    Text getPlayerType();
-
-    /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
-     *
-     * @param playerType Text value to set.
-     */
-    void addPlayerType(Text playerType);
-
-    /**
-     * The CreativeWork encoded by this media object.
-     *
-     * @return {@link CreativeWork}
-     */
-    List<CreativeWork> getEncodesCreativeWorkList();
-
-    /**
-     * The CreativeWork encoded by this media object.
-     *
-     * @return {@link CreativeWork}
-     */
-    CreativeWork getEncodesCreativeWork();
-
-    /**
-     * The CreativeWork encoded by this media object.
-     *
-     * @param encodesCreativeWork CreativeWork value to set.
-     */
-    void addEncodesCreativeWork(CreativeWork encodesCreativeWork);
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    List<Duration> getDurationList();
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    Duration getDuration();
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @param duration Duration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    void addDuration(Duration duration);
-
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> List<T> getEncodingFormatList();
-
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> T getEncodingFormat();
-
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param encodingFormat Text value to set.
-     */
-    void addEncodingFormat(Text encodingFormat);
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param encodingFormat URL value to set.
-     */
-    void addEncodingFormat(URL encodingFormat);
-
-    /**
-     * Date when this media object was uploaded to this site.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getUploadDateList();
-
-    /**
-     * Date when this media object was uploaded to this site.
-     *
-     * @return {@link Date}
-     */
-    Date getUploadDate();
-
-    /**
-     * Date when this media object was uploaded to this site.
-     *
-     * @param uploadDate Date value to set.
-     */
-    void addUploadDate(Date uploadDate);
 
     /**
      * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
@@ -454,56 +73,31 @@ public interface MediaObject extends CreativeWork {
     void addBitrate(Text bitrate);
 
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The width of the item.
      *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @return {@link Distance} or {@link QuantitativeValue}
      */
-    <T> List<T> getEndTimeList();
+    <T> List<T> getWidthList();
 
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The width of the item.
      *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @return {@link Distance} or {@link QuantitativeValue}
      */
-    <T> T getEndTime();
+    <T> T getWidth();
 
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The width of the item.
      *
-     * @param endTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @param width Distance value to set.
      */
-    void addEndTime(DateTime endTime);
+    void addWidth(Distance width);
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The width of the item.
      *
-     * @param endTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @param width QuantitativeValue value to set.
      */
-    void addEndTime(Time endTime);
-
-    /**
-     * The production company or studio responsible for the item e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getProductionCompanyList();
-
-    /**
-     * The production company or studio responsible for the item e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    Organization getProductionCompany();
-
-    /**
-     * The production company or studio responsible for the item e.g. series, video game, episode etc.
-     *
-     * @param productionCompany Organization value to set.
-     */
-    void addProductionCompany(Organization productionCompany);
+    void addWidth(QuantitativeValue width);
 
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
@@ -533,6 +127,158 @@ public interface MediaObject extends CreativeWork {
     void addSha256(Text sha256);
 
     /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> List<T> getEndTimeList();
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> T getEndTime();
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addEndTime(DateTime endTime);
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addEndTime(Time endTime);
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link Time} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> List<T> getStartTimeList();
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link Time} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> T getStartTime();
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addStartTime(Time startTime);
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addStartTime(DateTime startTime);
+
+    /**
+     * File size in (mega/kilo)bytes.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getContentSizeList();
+
+    /**
+     * File size in (mega/kilo)bytes.
+     *
+     * @return {@link Text}
+     */
+    Text getContentSize();
+
+    /**
+     * File size in (mega/kilo)bytes.
+     *
+     * @param contentSize Text value to set.
+     */
+    void addContentSize(Text contentSize);
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
+    <T> List<T> getHeightList();
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
+    <T> T getHeight();
+
+    /**
+     * The height of the item.
+     *
+     * @param height QuantitativeValue value to set.
+     */
+    void addHeight(QuantitativeValue height);
+    /**
+     * The height of the item.
+     *
+     * @param height Distance value to set.
+     */
+    void addHeight(Distance height);
+
+    /**
+     * Player type required&#x2014;for example, Flash or Silverlight.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPlayerTypeList();
+
+    /**
+     * Player type required&#x2014;for example, Flash or Silverlight.
+     *
+     * @return {@link Text}
+     */
+    Text getPlayerType();
+
+    /**
+     * Player type required&#x2014;for example, Flash or Silverlight.
+     *
+     * @param playerType Text value to set.
+     */
+    void addPlayerType(Text playerType);
+
+    /**
+     * A NewsArticle associated with the Media Object.
+     *
+     * @return {@link NewsArticle}
+     */
+    List<NewsArticle> getAssociatedArticleList();
+
+    /**
+     * A NewsArticle associated with the Media Object.
+     *
+     * @return {@link NewsArticle}
+     */
+    NewsArticle getAssociatedArticle();
+
+    /**
+     * A NewsArticle associated with the Media Object.
+     *
+     * @param associatedArticle NewsArticle value to set.
+     */
+    void addAssociatedArticle(NewsArticle associatedArticle);
+
+    /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
      * @return {@link Claim}
@@ -558,4 +304,258 @@ public interface MediaObject extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void addInterpretedAsClaim(Claim interpretedAsClaim);
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Duration> getDurationList();
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    Duration getDuration();
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param duration Duration value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addDuration(Duration duration);
+
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @return {@link MediaSubscription} or {@link Boolean}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getRequiresSubscriptionList();
+
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @return {@link MediaSubscription} or {@link Boolean}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> T getRequiresSubscription();
+
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @param requiresSubscription MediaSubscription value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addRequiresSubscription(MediaSubscription requiresSubscription);
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @param requiresSubscription Boolean value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addRequiresSubscription(Boolean requiresSubscription);
+
+    /**
+     * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
+     *
+     * @return {@link Place}
+     */
+    List<Place> getRegionsAllowedList();
+
+    /**
+     * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
+     *
+     * @return {@link Place}
+     */
+    Place getRegionsAllowed();
+
+    /**
+     * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
+     *
+     * @param regionsAllowed Place value to set.
+     */
+    void addRegionsAllowed(Place regionsAllowed);
+
+    /**
+     * Actual bytes of the media object, for example the image file or video file.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getContentUrlList();
+
+    /**
+     * Actual bytes of the media object, for example the image file or video file.
+     *
+     * @return {@link URL}
+     */
+    URL getContentUrl();
+
+    /**
+     * Actual bytes of the media object, for example the image file or video file.
+     *
+     * @param contentUrl URL value to set.
+     */
+    void addContentUrl(URL contentUrl);
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    Organization getProductionCompany();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @param productionCompany Organization value to set.
+     */
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * The CreativeWork encoded by this media object.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getEncodesCreativeWorkList();
+
+    /**
+     * The CreativeWork encoded by this media object.
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getEncodesCreativeWork();
+
+    /**
+     * The CreativeWork encoded by this media object.
+     *
+     * @param encodesCreativeWork CreativeWork value to set.
+     */
+    void addEncodesCreativeWork(CreativeWork encodesCreativeWork);
+
+    /**
+     * Date when this media object was uploaded to this site.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getUploadDateList();
+
+    /**
+     * Date when this media object was uploaded to this site.
+     *
+     * @return {@link Date}
+     */
+    Date getUploadDate();
+
+    /**
+     * Date when this media object was uploaded to this site.
+     *
+     * @param uploadDate Date value to set.
+     */
+    void addUploadDate(Date uploadDate);
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @return {@link Place} or {@link GeoShape} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    <T> List<T> getIneligibleRegionList();
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @return {@link Place} or {@link GeoShape} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    <T> T getIneligibleRegion();
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion Place value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    void addIneligibleRegion(Place ineligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion GeoShape value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    void addIneligibleRegion(GeoShape ineligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    void addIneligibleRegion(Text ineligibleRegion);
+
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getEncodingFormatList();
+
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getEncodingFormat();
+
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param encodingFormat URL value to set.
+     */
+    void addEncodingFormat(URL encodingFormat);
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param encodingFormat Text value to set.
+     */
+    void addEncodingFormat(Text encodingFormat);
 }

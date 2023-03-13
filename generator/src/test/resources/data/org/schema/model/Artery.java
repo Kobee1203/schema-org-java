@@ -17,30 +17,6 @@ import org.schema.model.AnatomicalStructure;
 public interface Artery extends Vessel {
 
     /**
-     * The area to which the artery supplies blood.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AnatomicalStructure> getSupplyToList();
-
-    /**
-     * The area to which the artery supplies blood.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AnatomicalStructure getSupplyTo();
-
-    /**
-     * The area to which the artery supplies blood.
-     *
-     * @param supplyTo AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSupplyTo(AnatomicalStructure supplyTo);
-
-    /**
      * The branches that comprise the arterial structure.
      *
      * @return {@link AnatomicalStructure}
@@ -63,4 +39,28 @@ public interface Artery extends Vessel {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addArterialBranch(AnatomicalStructure arterialBranch);
+
+    /**
+     * The area to which the artery supplies blood.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getSupplyToList();
+
+    /**
+     * The area to which the artery supplies blood.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AnatomicalStructure getSupplyTo();
+
+    /**
+     * The area to which the artery supplies blood.
+     *
+     * @param supplyTo AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addSupplyTo(AnatomicalStructure supplyTo);
 }

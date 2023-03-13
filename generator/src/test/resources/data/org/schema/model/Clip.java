@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Person;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
+import org.schema.model.Episode;
+import org.schema.model.CreativeWorkSeason;
 import org.schema.model.datatype.Number;
 import org.schema.model.HyperTocEntry;
-import org.schema.model.Person;
-import org.schema.model.Episode;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Integer;
 import org.schema.model.CreativeWorkSeries;
-import org.schema.model.CreativeWorkSeason;
 import org.schema.model.MusicGroup;
 
 /**
@@ -22,6 +22,117 @@ import org.schema.model.MusicGroup;
  * @see <a href="https://schema.org/Clip">https://schema.org/Clip</a>
  */
 public interface Clip extends CreativeWork {
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getActors();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actors Person value to set.
+     */
+    void addActors(Person actors);
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getActor();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor Person value to set.
+     */
+    void addActor(Person actor);
+
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @return {@link Integer} or {@link Text}
+     */
+    <T> List<T> getClipNumberList();
+
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @return {@link Integer} or {@link Text}
+     */
+    <T> T getClipNumber();
+
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @param clipNumber Integer value to set.
+     */
+    void addClipNumber(Integer clipNumber);
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @param clipNumber Text value to set.
+     */
+    void addClipNumber(Text clipNumber);
+
+    /**
+     * The episode to which this clip belongs.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getPartOfEpisodeList();
+
+    /**
+     * The episode to which this clip belongs.
+     *
+     * @return {@link Episode}
+     */
+    Episode getPartOfEpisode();
+
+    /**
+     * The episode to which this clip belongs.
+     *
+     * @param partOfEpisode Episode value to set.
+     */
+    void addPartOfEpisode(Episode partOfEpisode);
+
+    /**
+     * The season to which this episode belongs.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getPartOfSeasonList();
+
+    /**
+     * The season to which this episode belongs.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    CreativeWorkSeason getPartOfSeason();
+
+    /**
+     * The season to which this episode belongs.
+     *
+     * @param partOfSeason CreativeWorkSeason value to set.
+     */
+    void addPartOfSeason(CreativeWorkSeason partOfSeason);
 
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
@@ -59,6 +170,27 @@ public interface Clip extends CreativeWork {
     void addStartOffset(HyperTocEntry startOffset);
 
     /**
+     * The series to which this episode or season belongs.
+     *
+     * @return {@link CreativeWorkSeries}
+     */
+    List<CreativeWorkSeries> getPartOfSeriesList();
+
+    /**
+     * The series to which this episode or season belongs.
+     *
+     * @return {@link CreativeWorkSeries}
+     */
+    CreativeWorkSeries getPartOfSeries();
+
+    /**
+     * The series to which this episode or season belongs.
+     *
+     * @param partOfSeries CreativeWorkSeries value to set.
+     */
+    void addPartOfSeries(CreativeWorkSeries partOfSeries);
+
+    /**
      * The end time of the clip expressed as the number of seconds from the beginning of the work.
      *
      * @return {@link Number} or {@link HyperTocEntry}
@@ -94,203 +226,71 @@ public interface Clip extends CreativeWork {
     void addEndOffset(HyperTocEntry endOffset);
 
     /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
     List<Person> getDirectorList();
 
     /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
     Person getDirector();
 
     /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
      * @param director Person value to set.
      */
     void addDirector(Person director);
 
     /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorList();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActor();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actor Person value to set.
-     */
-    void addActor(Person actor);
-
-    /**
-     * The episode to which this clip belongs.
-     *
-     * @return {@link Episode}
-     */
-    List<Episode> getPartOfEpisodeList();
-
-    /**
-     * The episode to which this clip belongs.
-     *
-     * @return {@link Episode}
-     */
-    Episode getPartOfEpisode();
-
-    /**
-     * The episode to which this clip belongs.
-     *
-     * @param partOfEpisode Episode value to set.
-     */
-    void addPartOfEpisode(Episode partOfEpisode);
-
-    /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    <T> List<T> getClipNumberList();
-
-    /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    <T> T getClipNumber();
-
-    /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @param clipNumber Text value to set.
-     */
-    void addClipNumber(Text clipNumber);
-    /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @param clipNumber Integer value to set.
-     */
-    void addClipNumber(Integer clipNumber);
-
-    /**
-     * The series to which this episode or season belongs.
-     *
-     * @return {@link CreativeWorkSeries}
-     */
-    List<CreativeWorkSeries> getPartOfSeriesList();
-
-    /**
-     * The series to which this episode or season belongs.
-     *
-     * @return {@link CreativeWorkSeries}
-     */
-    CreativeWorkSeries getPartOfSeries();
-
-    /**
-     * The series to which this episode or season belongs.
-     *
-     * @param partOfSeries CreativeWorkSeries value to set.
-     */
-    void addPartOfSeries(CreativeWorkSeries partOfSeries);
-
-    /**
-     * The season to which this episode belongs.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    List<CreativeWorkSeason> getPartOfSeasonList();
-
-    /**
-     * The season to which this episode belongs.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    CreativeWorkSeason getPartOfSeason();
-
-    /**
-     * The season to which this episode belongs.
-     *
-     * @param partOfSeason CreativeWorkSeason value to set.
-     */
-    void addPartOfSeason(CreativeWorkSeason partOfSeason);
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorsList();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActors();
-
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actors Person value to set.
-     */
-    void addActors(Person actors);
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link Person} or {@link MusicGroup}
-     */
-    <T> List<T> getMusicByList();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link Person} or {@link MusicGroup}
-     */
-    <T> T getMusicBy();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy Person value to set.
-     */
-    void addMusicBy(Person musicBy);
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy MusicGroup value to set.
-     */
-    void addMusicBy(MusicGroup musicBy);
-
-    /**
-     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
     List<Person> getDirectorsList();
 
     /**
-     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
      */
     Person getDirectors();
 
     /**
-     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
      * @param directors Person value to set.
      */
     void addDirectors(Person directors);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> List<T> getMusicByList();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> T getMusicBy();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void addMusicBy(MusicGroup musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy Person value to set.
+     */
+    void addMusicBy(Person musicBy);
 }

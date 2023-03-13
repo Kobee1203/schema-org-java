@@ -46,27 +46,27 @@ public interface ChooseAction extends AssessAction {
     /**
      * A sub property of object. The options subject to this action.
      *
-     * @return {@link Thing} or {@link Text}
+     * @return {@link Text} or {@link Thing}
      */
     <T> List<T> getActionOptionList();
 
     /**
      * A sub property of object. The options subject to this action.
      *
-     * @return {@link Thing} or {@link Text}
+     * @return {@link Text} or {@link Thing}
      */
     <T> T getActionOption();
 
     /**
      * A sub property of object. The options subject to this action.
      *
-     * @param actionOption Thing value to set.
-     */
-    void addActionOption(Thing actionOption);
-    /**
-     * A sub property of object. The options subject to this action.
-     *
      * @param actionOption Text value to set.
      */
     void addActionOption(Text actionOption);
+    /**
+     * A sub property of object. The options subject to this action.
+     *
+     * @param actionOption Thing value to set.
+     */
+    void addActionOption(Thing actionOption);
 }

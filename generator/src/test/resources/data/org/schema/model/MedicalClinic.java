@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.MedicalSpecialty;
+import org.schema.model.MedicalTherapy;
 import org.schema.model.MedicalTest;
 import org.schema.model.MedicalProcedure;
-import org.schema.model.MedicalTherapy;
-import org.schema.model.MedicalSpecialty;
 
 /**
  * A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.
@@ -17,45 +17,7 @@ import org.schema.model.MedicalSpecialty;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalClinic">https://schema.org/MedicalClinic</a>
  */
-public interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
-
-    /**
-     * A medical service available from this provider.
-     *
-     * @return {@link MedicalTest} or {@link MedicalProcedure} or {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getAvailableServiceList();
-
-    /**
-     * A medical service available from this provider.
-     *
-     * @return {@link MedicalTest} or {@link MedicalProcedure} or {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getAvailableService();
-
-    /**
-     * A medical service available from this provider.
-     *
-     * @param availableService MedicalTest value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAvailableService(MedicalTest availableService);
-    /**
-     * A medical service available from this provider.
-     *
-     * @param availableService MedicalProcedure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAvailableService(MedicalProcedure availableService);
-    /**
-     * A medical service available from this provider.
-     *
-     * @param availableService MedicalTherapy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAvailableService(MedicalTherapy availableService);
+public interface MedicalClinic extends MedicalBusiness, MedicalOrganization {
 
     /**
      * A medical specialty of the provider.
@@ -80,4 +42,42 @@ public interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
+
+    /**
+     * A medical service available from this provider.
+     *
+     * @return {@link MedicalTherapy} or {@link MedicalTest} or {@link MedicalProcedure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getAvailableServiceList();
+
+    /**
+     * A medical service available from this provider.
+     *
+     * @return {@link MedicalTherapy} or {@link MedicalTest} or {@link MedicalProcedure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getAvailableService();
+
+    /**
+     * A medical service available from this provider.
+     *
+     * @param availableService MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAvailableService(MedicalTherapy availableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param availableService MedicalTest value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAvailableService(MedicalTest availableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param availableService MedicalProcedure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAvailableService(MedicalProcedure availableService);
 }

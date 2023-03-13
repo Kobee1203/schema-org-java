@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.AdministrativeArea;
 import org.schema.model.datatype.Text;
-import org.schema.model.MaximumDoseSchedule;
+import org.schema.model.AdministrativeArea;
 import org.schema.model.datatype.Number;
+import org.schema.model.MaximumDoseSchedule;
 
 /**
  * A specific strength in which a medical drug is available in a specific country.
@@ -18,6 +18,30 @@ import org.schema.model.datatype.Number;
  * @see <a href="https://schema.org/DrugStrength">https://schema.org/DrugStrength</a>
  */
 public interface DrugStrength extends MedicalIntangible {
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getActiveIngredientList();
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getActiveIngredient();
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @param activeIngredient Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addActiveIngredient(Text activeIngredient);
 
     /**
      * The location in which the strength is available.
@@ -42,6 +66,30 @@ public interface DrugStrength extends MedicalIntangible {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addAvailableIn(AdministrativeArea availableIn);
+
+    /**
+     * The value of an active ingredient's strength, e.g. 325.
+     *
+     * @return {@link Number}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Number> getStrengthValueList();
+
+    /**
+     * The value of an active ingredient's strength, e.g. 325.
+     *
+     * @return {@link Number}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Number getStrengthValue();
+
+    /**
+     * The value of an active ingredient's strength, e.g. 325.
+     *
+     * @param strengthValue Number value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStrengthValue(Number strengthValue);
 
     /**
      * The units of an active ingredient's strength, e.g. mg.
@@ -90,52 +138,4 @@ public interface DrugStrength extends MedicalIntangible {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addMaximumIntake(MaximumDoseSchedule maximumIntake);
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getActiveIngredientList();
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getActiveIngredient();
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @param activeIngredient Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addActiveIngredient(Text activeIngredient);
-
-    /**
-     * The value of an active ingredient's strength, e.g. 325.
-     *
-     * @return {@link Number}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Number> getStrengthValueList();
-
-    /**
-     * The value of an active ingredient's strength, e.g. 325.
-     *
-     * @return {@link Number}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Number getStrengthValue();
-
-    /**
-     * The value of an active ingredient's strength, e.g. 325.
-     *
-     * @param strengthValue Number value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStrengthValue(Number strengthValue);
 }

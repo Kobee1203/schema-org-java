@@ -13,5 +13,5 @@ import java.util.List;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PalliativeProcedure">https://schema.org/PalliativeProcedure</a>
  */
-public interface PalliativeProcedure extends MedicalTherapy, MedicalProcedure {
+public interface PalliativeProcedure extends MedicalProcedure, MedicalTherapy {
 }

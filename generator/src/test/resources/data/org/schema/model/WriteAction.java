@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.Language;
+import org.schema.model.datatype.Text;
 
 /**
  * The act of authoring written creative content.
@@ -15,6 +15,27 @@ import org.schema.model.Language;
  * @see <a href="https://schema.org/WriteAction">https://schema.org/WriteAction</a>
  */
 public interface WriteAction extends CreateAction {
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @return {@link Language}
+     */
+    List<Language> getLanguageList();
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @return {@link Language}
+     */
+    Language getLanguage();
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @param language Language value to set.
+     */
+    void addLanguage(Language language);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -46,25 +67,4 @@ public interface WriteAction extends CreateAction {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     void addInLanguage(Language inLanguage);
-
-    /**
-     * A sub property of instrument. The language used on this action.
-     *
-     * @return {@link Language}
-     */
-    List<Language> getLanguageList();
-
-    /**
-     * A sub property of instrument. The language used on this action.
-     *
-     * @return {@link Language}
-     */
-    Language getLanguage();
-
-    /**
-     * A sub property of instrument. The language used on this action.
-     *
-     * @param language Language value to set.
-     */
-    void addLanguage(Language language);
 }

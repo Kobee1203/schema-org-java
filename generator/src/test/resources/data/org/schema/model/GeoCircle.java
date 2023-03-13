@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.GeoCoordinates;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
 import org.schema.model.Distance;
-import org.schema.model.GeoCoordinates;
 
 /**
  * A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape
@@ -20,6 +20,27 @@ import org.schema.model.GeoCoordinates;
  * @see <a href="https://schema.org/GeoCircle">https://schema.org/GeoCircle</a>
  */
 public interface GeoCircle extends GeoShape {
+
+    /**
+     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+     *
+     * @return {@link GeoCoordinates}
+     */
+    List<GeoCoordinates> getGeoMidpointList();
+
+    /**
+     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+     *
+     * @return {@link GeoCoordinates}
+     */
+    GeoCoordinates getGeoMidpoint();
+
+    /**
+     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+     *
+     * @param geoMidpoint GeoCoordinates value to set.
+     */
+    void addGeoMidpoint(GeoCoordinates geoMidpoint);
 
     /**
      * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
@@ -53,25 +74,4 @@ public interface GeoCircle extends GeoShape {
      * @param geoRadius Distance value to set.
      */
     void addGeoRadius(Distance geoRadius);
-
-    /**
-     * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
-     *
-     * @return {@link GeoCoordinates}
-     */
-    List<GeoCoordinates> getGeoMidpointList();
-
-    /**
-     * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
-     *
-     * @return {@link GeoCoordinates}
-     */
-    GeoCoordinates getGeoMidpoint();
-
-    /**
-     * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
-     *
-     * @param geoMidpoint GeoCoordinates value to set.
-     */
-    void addGeoMidpoint(GeoCoordinates geoMidpoint);
 }

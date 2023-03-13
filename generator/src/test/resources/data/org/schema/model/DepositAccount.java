@@ -13,5 +13,5 @@ import java.util.List;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/DepositAccount">https://schema.org/DepositAccount</a>
  */
-public interface DepositAccount extends InvestmentOrDeposit, BankAccount {
+public interface DepositAccount extends BankAccount, InvestmentOrDeposit {
 }

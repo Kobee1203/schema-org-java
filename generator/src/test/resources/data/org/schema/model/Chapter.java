@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * One of the sections into which a book is divided. A chapter usually has a section number or a name.
@@ -18,40 +18,9 @@ import org.schema.model.datatype.Integer;
 public interface Chapter extends CreativeWork {
 
     /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @return {@link Text} or {@link Integer}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    <T> List<T> getPageStartList();
-
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @return {@link Text} or {@link Integer}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    <T> T getPageStart();
-
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param pageStart Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addPageStart(Text pageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param pageStart Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addPageStart(Integer pageStart);
-
-    /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link Integer} or {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     <T> List<T> getPageEndList();
@@ -59,7 +28,7 @@ public interface Chapter extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link Integer} or {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     <T> T getPageEnd();
@@ -67,17 +36,17 @@ public interface Chapter extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param pageEnd Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addPageEnd(Text pageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
      * @param pageEnd Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     void addPageEnd(Integer pageEnd);
+    /**
+     * The page on which the work ends; for example "138" or "xvi".
+     *
+     * @param pageEnd Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void addPageEnd(Text pageEnd);
 
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
@@ -102,4 +71,35 @@ public interface Chapter extends CreativeWork {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     void addPagination(Text pagination);
+
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @return {@link Integer} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    <T> List<T> getPageStartList();
+
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @return {@link Integer} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    <T> T getPageStart();
+
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @param pageStart Integer value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void addPageStart(Integer pageStart);
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @param pageStart Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void addPageStart(Text pageStart);
 }

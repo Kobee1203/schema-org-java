@@ -20,6 +20,41 @@ import org.schema.model.QuantitativeValue;
 public interface BroadcastFrequencySpecification extends Intangible {
 
     /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    <T> List<T> getBroadcastSignalModulationList();
+
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    <T> T getBroadcastSignalModulation();
+
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @param broadcastSignalModulation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    void addBroadcastSignalModulation(Text broadcastSignalModulation);
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @param broadcastSignalModulation QualitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    void addBroadcastSignalModulation(QualitativeValue broadcastSignalModulation);
+
+    /**
      * The subchannel used for the broadcast.
      *
      * @return {@link Text}
@@ -45,41 +80,6 @@ public interface BroadcastFrequencySpecification extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
     void addBroadcastSubChannel(Text broadcastSubChannel);
-
-    /**
-     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
-     */
-    <T> List<T> getBroadcastSignalModulationList();
-
-    /**
-     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
-     */
-    <T> T getBroadcastSignalModulation();
-
-    /**
-     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
-     *
-     * @param broadcastSignalModulation QualitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
-     */
-    void addBroadcastSignalModulation(QualitativeValue broadcastSignalModulation);
-    /**
-     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
-     *
-     * @param broadcastSignalModulation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
-     */
-    void addBroadcastSignalModulation(Text broadcastSignalModulation);
 
     /**
      * The frequency in MHz for a particular broadcast.

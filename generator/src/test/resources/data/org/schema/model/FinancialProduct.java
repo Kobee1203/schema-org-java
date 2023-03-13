@@ -51,37 +51,6 @@ public interface FinancialProduct extends Service {
     void addAnnualPercentageRate(QuantitativeValue annualPercentageRate);
 
     /**
-     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    <T> List<T> getFeesAndCommissionsSpecificationList();
-
-    /**
-     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    <T> T getFeesAndCommissionsSpecification();
-
-    /**
-     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-     *
-     * @param feesAndCommissionsSpecification URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
-    /**
-     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-     *
-     * @param feesAndCommissionsSpecification Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
-
-    /**
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link Number} or {@link QuantitativeValue}
@@ -111,4 +80,35 @@ public interface FinancialProduct extends Service {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     void addInterestRate(QuantitativeValue interestRate);
+
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    <T> List<T> getFeesAndCommissionsSpecificationList();
+
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    <T> T getFeesAndCommissionsSpecification();
+
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
 }

@@ -27,5 +27,5 @@ import java.util.List;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/447">https://github.com/schemaorg/schemaorg/issues/447</a>
  * @see <a href="https://schema.org/EventSeries">https://schema.org/EventSeries</a>
  */
-public interface EventSeries extends Series, Event {
+public interface EventSeries extends Event, Series {
 }

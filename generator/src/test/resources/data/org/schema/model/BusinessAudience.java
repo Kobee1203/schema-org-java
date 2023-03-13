@@ -37,21 +37,21 @@ public interface BusinessAudience extends Audience {
     void addYearlyRevenue(QuantitativeValue yearlyRevenue);
 
     /**
-     * The number of employees in an organization e.g. business.
+     * The number of employees in an organization, e.g. business.
      *
      * @return {@link QuantitativeValue}
      */
     List<QuantitativeValue> getNumberOfEmployeesList();
 
     /**
-     * The number of employees in an organization e.g. business.
+     * The number of employees in an organization, e.g. business.
      *
      * @return {@link QuantitativeValue}
      */
     QuantitativeValue getNumberOfEmployees();
 
     /**
-     * The number of employees in an organization e.g. business.
+     * The number of employees in an organization, e.g. business.
      *
      * @param numberOfEmployees QuantitativeValue value to set.
      */

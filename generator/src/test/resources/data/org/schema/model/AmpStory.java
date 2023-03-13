@@ -14,5 +14,5 @@ import java.util.List;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2646">https://github.com/schemaorg/schemaorg/issues/2646</a>
  * @see <a href="https://schema.org/AmpStory">https://schema.org/AmpStory</a>
  */
-public interface AmpStory extends CreativeWork, MediaObject {
+public interface AmpStory extends MediaObject, CreativeWork {
 }

@@ -12,7 +12,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.BroadcastService;
 
 /**
- * A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
+ * A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
  *
  * @see <a href="https://schema.org/PublicationEvent">https://schema.org/PublicationEvent</a>
  */

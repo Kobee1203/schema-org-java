@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Text;
-import org.schema.model.ListItem;
 import org.schema.model.Thing;
+import org.schema.model.ListItem;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Integer;
 
 /**
  * An list item, e.g. a step in a checklist or how-to description.
@@ -19,31 +19,25 @@ import org.schema.model.Thing;
 public interface ListItem extends Intangible {
 
     /**
-     * The position of an item in a series or sequence of items.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
      *
-     * @return {@link Integer} or {@link Text}
+     * @return {@link Thing}
      */
-    <T> List<T> getPositionList();
+    List<Thing> getItemList();
 
     /**
-     * The position of an item in a series or sequence of items.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
      *
-     * @return {@link Integer} or {@link Text}
+     * @return {@link Thing}
      */
-    <T> T getPosition();
+    Thing getItem();
 
     /**
-     * The position of an item in a series or sequence of items.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
      *
-     * @param position Integer value to set.
+     * @param item Thing value to set.
      */
-    void addPosition(Integer position);
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param position Text value to set.
-     */
-    void addPosition(Text position);
+    void addItem(Thing item);
 
     /**
      * A link to the ListItem that follows the current one.
@@ -67,44 +61,50 @@ public interface ListItem extends Intangible {
     void addNextItem(ListItem nextItem);
 
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getItemList();
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-     *
-     * @return {@link Thing}
-     */
-    Thing getItem();
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-     *
-     * @param item Thing value to set.
-     */
-    void addItem(Thing item);
-
-    /**
-     * A link to the ListItem that preceeds the current one.
+     * A link to the ListItem that precedes the current one.
      *
      * @return {@link ListItem}
      */
     List<ListItem> getPreviousItemList();
 
     /**
-     * A link to the ListItem that preceeds the current one.
+     * A link to the ListItem that precedes the current one.
      *
      * @return {@link ListItem}
      */
     ListItem getPreviousItem();
 
     /**
-     * A link to the ListItem that preceeds the current one.
+     * A link to the ListItem that precedes the current one.
      *
      * @param previousItem ListItem value to set.
      */
     void addPreviousItem(ListItem previousItem);
+
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> List<T> getPositionList();
+
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> T getPosition();
+
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @param position Text value to set.
+     */
+    void addPosition(Text position);
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @param position Integer value to set.
+     */
+    void addPosition(Integer position);
 }

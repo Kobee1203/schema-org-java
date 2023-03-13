@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Number;
+import org.schema.model.QuantitativeValue;
 
 /**
  * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
@@ -18,41 +18,6 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/ProgramMembership">https://schema.org/ProgramMembership</a>
  */
 public interface ProgramMembership extends Intangible {
-
-    /**
-     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
-     */
-    <T> List<T> getMembershipPointsEarnedList();
-
-    /**
-     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
-     */
-    <T> T getMembershipPointsEarned();
-
-    /**
-     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
-     *
-     * @param membershipPointsEarned Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
-     */
-    void addMembershipPointsEarned(Number membershipPointsEarned);
-    /**
-     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
-     *
-     * @param membershipPointsEarned QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
-     */
-    void addMembershipPointsEarned(QuantitativeValue membershipPointsEarned);
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -82,27 +47,6 @@ public interface ProgramMembership extends Intangible {
     void addMember(Person member);
 
     /**
-     * A unique identifier for the membership.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getMembershipNumberList();
-
-    /**
-     * A unique identifier for the membership.
-     *
-     * @return {@link Text}
-     */
-    Text getMembershipNumber();
-
-    /**
-     * A unique identifier for the membership.
-     *
-     * @param membershipNumber Text value to set.
-     */
-    void addMembershipNumber(Text membershipNumber);
-
-    /**
      * The organization (airline, travelers' club, etc.) the membership is made with.
      *
      * @return {@link Organization}
@@ -124,6 +68,89 @@ public interface ProgramMembership extends Intangible {
     void addHostingOrganization(Organization hostingOrganization);
 
     /**
+     * A unique identifier for the membership.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getMembershipNumberList();
+
+    /**
+     * A unique identifier for the membership.
+     *
+     * @return {@link Text}
+     */
+    Text getMembershipNumber();
+
+    /**
+     * A unique identifier for the membership.
+     *
+     * @param membershipNumber Text value to set.
+     */
+    void addMembershipNumber(Text membershipNumber);
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getMembersList();
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getMembers();
+
+    /**
+     * A member of this organization.
+     *
+     * @param members Organization value to set.
+     */
+    void addMembers(Organization members);
+    /**
+     * A member of this organization.
+     *
+     * @param members Person value to set.
+     */
+    void addMembers(Person members);
+
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    <T> List<T> getMembershipPointsEarnedList();
+
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    <T> T getMembershipPointsEarned();
+
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)
+     *
+     * @param membershipPointsEarned Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    void addMembershipPointsEarned(Number membershipPointsEarned);
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)
+     *
+     * @param membershipPointsEarned QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    void addMembershipPointsEarned(QuantitativeValue membershipPointsEarned);
+
+    /**
      * The program providing the membership.
      *
      * @return {@link Text}
@@ -143,31 +170,4 @@ public interface ProgramMembership extends Intangible {
      * @param programName Text value to set.
      */
     void addProgramName(Text programName);
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getMembersList();
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getMembers();
-
-    /**
-     * A member of this organization.
-     *
-     * @param members Person value to set.
-     */
-    void addMembers(Person members);
-    /**
-     * A member of this organization.
-     *
-     * @param members Organization value to set.
-     */
-    void addMembers(Organization members);
 }

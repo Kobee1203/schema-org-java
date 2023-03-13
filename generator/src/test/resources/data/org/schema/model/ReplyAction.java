@@ -9,7 +9,7 @@ import java.util.List;
 import org.schema.model.Comment;
 
 /**
- * The act of responding to a question/message asked/sent by the object. Related to [[AskAction]]<br/><br/>Related actions:<br/><br/>* [[AskAction]]: Appears generally as an origin of a ReplyAction.
+ * The act of responding to a question/message asked/sent by the object. Related to [[AskAction]].<br/><br/>Related actions:<br/><br/>* [[AskAction]]: Appears generally as an origin of a ReplyAction.
  *
  * @see <a href="https://schema.org/ReplyAction">https://schema.org/ReplyAction</a>
  */

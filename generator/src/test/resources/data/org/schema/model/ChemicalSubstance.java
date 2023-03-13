@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.DefinedTerm;
+import org.schema.model.datatype.Text;
 
 /**
  * A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)).
@@ -18,28 +18,28 @@ import org.schema.model.DefinedTerm;
 public interface ChemicalSubstance extends BioChemEntity {
 
     /**
-     * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
+     * A role played by the BioChemEntity within a chemical context.
      *
-     * @return {@link Text}
+     * @return {@link DefinedTerm}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    List<Text> getChemicalCompositionList();
+    List<DefinedTerm> getChemicalRoleList();
 
     /**
-     * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
+     * A role played by the BioChemEntity within a chemical context.
      *
-     * @return {@link Text}
+     * @return {@link DefinedTerm}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    Text getChemicalComposition();
+    DefinedTerm getChemicalRole();
 
     /**
-     * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
+     * A role played by the BioChemEntity within a chemical context.
      *
-     * @param chemicalComposition Text value to set.
+     * @param chemicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void addChemicalComposition(Text chemicalComposition);
+    void addChemicalRole(DefinedTerm chemicalRole);
 
     /**
      * Intended use of the BioChemEntity by humans.
@@ -66,26 +66,26 @@ public interface ChemicalSubstance extends BioChemEntity {
     void addPotentialUse(DefinedTerm potentialUse);
 
     /**
-     * A role played by the BioChemEntity within a chemical context.
+     * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
      *
-     * @return {@link DefinedTerm}
+     * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    List<DefinedTerm> getChemicalRoleList();
+    List<Text> getChemicalCompositionList();
 
     /**
-     * A role played by the BioChemEntity within a chemical context.
+     * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
      *
-     * @return {@link DefinedTerm}
+     * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    DefinedTerm getChemicalRole();
+    Text getChemicalComposition();
 
     /**
-     * A role played by the BioChemEntity within a chemical context.
+     * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
      *
-     * @param chemicalRole DefinedTerm value to set.
+     * @param chemicalComposition Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void addChemicalRole(DefinedTerm chemicalRole);
+    void addChemicalComposition(Text chemicalComposition);
 }

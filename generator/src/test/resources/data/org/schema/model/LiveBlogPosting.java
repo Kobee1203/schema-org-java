@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.BlogPosting;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.
@@ -17,25 +17,25 @@ import org.schema.model.BlogPosting;
 public interface LiveBlogPosting extends BlogPosting {
 
     /**
-     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+     * An update to the LiveBlog.
      *
-     * @return {@link DateTime}
+     * @return {@link BlogPosting}
      */
-    List<DateTime> getCoverageEndTimeList();
+    List<BlogPosting> getLiveBlogUpdateList();
 
     /**
-     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+     * An update to the LiveBlog.
      *
-     * @return {@link DateTime}
+     * @return {@link BlogPosting}
      */
-    DateTime getCoverageEndTime();
+    BlogPosting getLiveBlogUpdate();
 
     /**
-     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+     * An update to the LiveBlog.
      *
-     * @param coverageEndTime DateTime value to set.
+     * @param liveBlogUpdate BlogPosting value to set.
      */
-    void addCoverageEndTime(DateTime coverageEndTime);
+    void addLiveBlogUpdate(BlogPosting liveBlogUpdate);
 
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
@@ -59,23 +59,23 @@ public interface LiveBlogPosting extends BlogPosting {
     void addCoverageStartTime(DateTime coverageStartTime);
 
     /**
-     * An update to the LiveBlog.
+     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
      *
-     * @return {@link BlogPosting}
+     * @return {@link DateTime}
      */
-    List<BlogPosting> getLiveBlogUpdateList();
+    List<DateTime> getCoverageEndTimeList();
 
     /**
-     * An update to the LiveBlog.
+     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
      *
-     * @return {@link BlogPosting}
+     * @return {@link DateTime}
      */
-    BlogPosting getLiveBlogUpdate();
+    DateTime getCoverageEndTime();
 
     /**
-     * An update to the LiveBlog.
+     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
      *
-     * @param liveBlogUpdate BlogPosting value to set.
+     * @param coverageEndTime DateTime value to set.
      */
-    void addLiveBlogUpdate(BlogPosting liveBlogUpdate);
+    void addCoverageEndTime(DateTime coverageEndTime);
 }

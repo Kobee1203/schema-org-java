@@ -19,54 +19,6 @@ import org.schema.model.Person;
 public interface ComicStory extends CreativeWork {
 
     /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getLettererList();
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getLetterer();
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @param letterer Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addLetterer(Person letterer);
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getColoristList();
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getColorist();
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @param colorist Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addColorist(Person colorist);
-
-    /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
      *
      * @return {@link Person}
@@ -89,6 +41,30 @@ public interface ComicStory extends CreativeWork {
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void addInker(Person inker);
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getLettererList();
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getLetterer();
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @param letterer Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addLetterer(Person letterer);
 
     /**
      * The individual who draws the primary narrative artwork.
@@ -143,4 +119,28 @@ public interface ComicStory extends CreativeWork {
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void addArtist(Person artist);
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getColoristList();
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getColorist();
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @param colorist Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addColorist(Person colorist);
 }

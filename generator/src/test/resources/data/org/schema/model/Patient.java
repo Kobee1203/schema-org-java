@@ -42,30 +42,6 @@ public interface Patient extends MedicalAudience, Person {
     void addHealthCondition(MedicalCondition healthCondition);
 
     /**
-     * Specifying a drug or medicine used in a medication procedure.
-     *
-     * @return {@link Drug}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Drug> getDrugList();
-
-    /**
-     * Specifying a drug or medicine used in a medication procedure.
-     *
-     * @return {@link Drug}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Drug getDrug();
-
-    /**
-     * Specifying a drug or medicine used in a medication procedure.
-     *
-     * @param drug Drug value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addDrug(Drug drug);
-
-    /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
      *
      * @return {@link MedicalCondition}
@@ -88,4 +64,28 @@ public interface Patient extends MedicalAudience, Person {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addDiagnosis(MedicalCondition diagnosis);
+
+    /**
+     * Specifying a drug or medicine used in a medication procedure.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Drug> getDrugList();
+
+    /**
+     * Specifying a drug or medicine used in a medication procedure.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Drug getDrug();
+
+    /**
+     * Specifying a drug or medicine used in a medication procedure.
+     *
+     * @param drug Drug value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addDrug(Drug drug);
 }

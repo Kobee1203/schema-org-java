@@ -18,8 +18,8 @@ import java.util.List;
  * A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked with an additional type of [[AnalysisNewsArticle]].
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+ * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
  * @see <a href="https://schema.org/ReportageNewsArticle">https://schema.org/ReportageNewsArticle</a>
  */
 public interface ReportageNewsArticle extends NewsArticle {

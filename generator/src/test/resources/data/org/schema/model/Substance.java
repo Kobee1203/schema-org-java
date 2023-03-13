@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MaximumDoseSchedule;
 import org.schema.model.datatype.Text;
+import org.schema.model.MaximumDoseSchedule;
 
 /**
  * Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.
@@ -16,30 +16,6 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/Substance">https://schema.org/Substance</a>
  */
 public interface Substance extends MedicalEntity {
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @return {@link MaximumDoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MaximumDoseSchedule> getMaximumIntakeList();
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @return {@link MaximumDoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MaximumDoseSchedule getMaximumIntake();
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @param maximumIntake MaximumDoseSchedule value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMaximumIntake(MaximumDoseSchedule maximumIntake);
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -64,4 +40,28 @@ public interface Substance extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addActiveIngredient(Text activeIngredient);
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MaximumDoseSchedule> getMaximumIntakeList();
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MaximumDoseSchedule getMaximumIntake();
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @param maximumIntake MaximumDoseSchedule value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMaximumIntake(MaximumDoseSchedule maximumIntake);
 }

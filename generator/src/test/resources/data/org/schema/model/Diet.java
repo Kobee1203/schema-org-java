@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.Person;
 import org.schema.model.Organization;
+import org.schema.model.datatype.Text;
 
 /**
  * A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.
@@ -16,79 +16,7 @@ import org.schema.model.Organization;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Diet">https://schema.org/Diet</a>
  */
-public interface Diet extends LifestyleModification, CreativeWork {
-
-    /**
-     * Medical expert advice related to the plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getExpertConsiderationsList();
-
-    /**
-     * Medical expert advice related to the plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getExpertConsiderations();
-
-    /**
-     * Medical expert advice related to the plan.
-     *
-     * @param expertConsiderations Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addExpertConsiderations(Text expertConsiderations);
-
-    /**
-     * Specific physiologic risks associated to the diet plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getRisksList();
-
-    /**
-     * Specific physiologic risks associated to the diet plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getRisks();
-
-    /**
-     * Specific physiologic risks associated to the diet plan.
-     *
-     * @param risks Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRisks(Text risks);
-
-    /**
-     * Specific physiologic benefits associated to the plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getPhysiologicalBenefitsList();
-
-    /**
-     * Specific physiologic benefits associated to the plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getPhysiologicalBenefits();
-
-    /**
-     * Specific physiologic benefits associated to the plan.
-     *
-     * @param physiologicalBenefits Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addPhysiologicalBenefits(Text physiologicalBenefits);
+public interface Diet extends CreativeWork, LifestyleModification {
 
     /**
      * People or organizations that endorse the plan.
@@ -144,4 +72,76 @@ public interface Diet extends LifestyleModification, CreativeWork {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addDietFeatures(Text dietFeatures);
+
+    /**
+     * Specific physiologic benefits associated to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getPhysiologicalBenefitsList();
+
+    /**
+     * Specific physiologic benefits associated to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getPhysiologicalBenefits();
+
+    /**
+     * Specific physiologic benefits associated to the plan.
+     *
+     * @param physiologicalBenefits Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addPhysiologicalBenefits(Text physiologicalBenefits);
+
+    /**
+     * Medical expert advice related to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getExpertConsiderationsList();
+
+    /**
+     * Medical expert advice related to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getExpertConsiderations();
+
+    /**
+     * Medical expert advice related to the plan.
+     *
+     * @param expertConsiderations Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addExpertConsiderations(Text expertConsiderations);
+
+    /**
+     * Specific physiologic risks associated to the diet plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getRisksList();
+
+    /**
+     * Specific physiologic risks associated to the diet plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getRisks();
+
+    /**
+     * Specific physiologic risks associated to the diet plan.
+     *
+     * @param risks Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRisks(Text risks);
 }

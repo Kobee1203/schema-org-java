@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.HyperTocEntry;
 import org.schema.model.MediaObject;
+import org.schema.model.HyperTocEntry;
 
 /**
  * A HyperToc represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. Items in the table of contents are indicated using the [[tocEntry]] property, and typed [[HyperTocEntry]]. For cases where the same larger work is split into multiple files, [[associatedMedia]] can be used on individual [[HyperTocEntry]] items.
@@ -17,6 +17,27 @@ import org.schema.model.MediaObject;
  * @see <a href="https://schema.org/HyperToc">https://schema.org/HyperToc</a>
  */
 public interface HyperToc extends CreativeWork {
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getAssociatedMediaList();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    MediaObject getAssociatedMedia();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @param associatedMedia MediaObject value to set.
+     */
+    void addAssociatedMedia(MediaObject associatedMedia);
 
     /**
      * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
@@ -44,25 +65,4 @@ public interface HyperToc extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
     void addTocEntry(HyperTocEntry tocEntry);
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @return {@link MediaObject}
-     */
-    List<MediaObject> getAssociatedMediaList();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @return {@link MediaObject}
-     */
-    MediaObject getAssociatedMedia();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @param associatedMedia MediaObject value to set.
-     */
-    void addAssociatedMedia(MediaObject associatedMedia);
 }

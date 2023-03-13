@@ -21,7 +21,7 @@ class SchemaDefinitionReaderImplTest {
 
         Assertions.assertThat(schemaDefinition).isNotNull();
         Assertions.assertThat(schemaDefinition.getContext()).isNotEmpty()
-                .contains(
+                .containsExactly(
                         entry("brick", "https://brickschema.org/schema/Brick#"),
                         entry("csvw", "http://www.w3.org/ns/csvw#"),
                         entry("dc", "http://purl.org/dc/elements/1.1/"),
@@ -31,6 +31,7 @@ class SchemaDefinitionReaderImplTest {
                         entry("dcterms", "http://purl.org/dc/terms/"),
                         entry("doap", "http://usefulinc.com/ns/doap#"),
                         entry("foaf", "http://xmlns.com/foaf/0.1/"),
+                        entry("geo", "http://www.opengis.net/ont/geosparql#"),
                         entry("odrl", "http://www.w3.org/ns/odrl/2/"),
                         entry("org", "http://www.w3.org/ns/org#"),
                         entry("owl", "http://www.w3.org/2002/07/owl#"),
@@ -47,9 +48,10 @@ class SchemaDefinitionReaderImplTest {
                         entry("time", "http://www.w3.org/2006/time#"),
                         entry("vann", "http://purl.org/vocab/vann/"),
                         entry("void", "http://rdfs.org/ns/void#"),
+                        entry("wgs", "https://www.w3.org/2003/01/geo/wgs84_pos#"),
                         entry("xsd", "http://www.w3.org/2001/XMLSchema#")
                 );
-        Assertions.assertThat(schemaDefinition.getGraph()).hasSize(2801);
+        Assertions.assertThat(schemaDefinition.getGraph()).hasSize(2805);
 
         Assertions.assertThat(filter(schemaDefinition, graphItem -> graphItem instanceof DefaultItem)).hasSize(466);
         // Example with one DefaultItem
@@ -119,18 +121,10 @@ class SchemaDefinitionReaderImplTest {
                 .containsExactly(
                         Tuple.tuple(
                                 DefaultItem.class,
-                                "schema:Boolean",
+                                "schema:Text",
                                 List.of("rdfs:Class", "schema:DataType"),
-                                comment("en", "Boolean: True or False."),
-                                label("en", "Boolean"),
-                                null, null, null, null, null, null
-                        ),
-                        Tuple.tuple(
-                                DefaultItem.class,
-                                "schema:Time",
-                                List.of("schema:DataType", "rdfs:Class"),
-                                comment("en", "A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see [XML schema for details](http://www.w3.org/TR/xmlschema-2/#time))."),
-                                label("en", "Time"),
+                                comment("en", "Data type: Text."),
+                                label("en", "Text"),
                                 null, null, null, null, null, null
                         ),
                         Tuple.tuple(
@@ -143,20 +137,12 @@ class SchemaDefinitionReaderImplTest {
                         ),
                         Tuple.tuple(
                                 DefaultItem.class,
-                                "schema:DateTime",
-                                List.of("schema:DataType", "rdfs:Class"),
-                                comment("en", "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601)."),
-                                label("en", "DateTime"),
-                                null, null, null, null, null, null
-                        ),
-                        Tuple.tuple(
-                                DefaultItem.class,
                                 "schema:Number",
                                 List.of("rdfs:Class", "schema:DataType"),
                                 comment("en",
                                         "Data type: Number.\\n\\n" +
                                                 "Usage guidelines:\\n\\n" +
-                                                "* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n" +
+                                                "* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\\n" +
                                                 "* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator."
                                 ),
                                 label("en", "Number"),
@@ -164,15 +150,31 @@ class SchemaDefinitionReaderImplTest {
                         ),
                         Tuple.tuple(
                                 DefaultItem.class,
-                                "schema:Text",
+                                "schema:Time",
                                 List.of("schema:DataType", "rdfs:Class"),
-                                comment("en", "Data type: Text."),
-                                label("en", "Text"),
+                                comment("en", "A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see [XML schema for details](http://www.w3.org/TR/xmlschema-2/#time))."),
+                                label("en", "Time"),
+                                null, null, null, null, null, null
+                        ),
+                        Tuple.tuple(
+                                DefaultItem.class,
+                                "schema:Boolean",
+                                List.of("schema:DataType", "rdfs:Class"),
+                                comment("en", "Boolean: True or False."),
+                                label("en", "Boolean"),
+                                null, null, null, null, null, null
+                        ),
+                        Tuple.tuple(
+                                DefaultItem.class,
+                                "schema:DateTime",
+                                List.of("schema:DataType", "rdfs:Class"),
+                                comment("en", "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601)."),
+                                label("en", "DateTime"),
                                 null, null, null, null, null, null
                         )
                 );
 
-        Assertions.assertThat(filter(schemaDefinition, graphItem -> graphItem instanceof PropertyItem)).hasSize(1448);
+        Assertions.assertThat(filter(schemaDefinition, graphItem -> graphItem instanceof PropertyItem)).hasSize(1452);
         // Example with PropertyItems
         Assertions.assertThat(filter(schemaDefinition, graphItem -> "schema:season".equals(graphItem.getId())))
                 .extracting("class", "id", "types", "comment", "label", "domainIncludes", "rangeIncludes", "supersededBy", "subClassOf", "partOf", "source")
@@ -183,7 +185,7 @@ class SchemaDefinitionReaderImplTest {
                                 List.of("rdf:Property"),
                                 comment("en", "A season in a media series."),
                                 label("en", "season"),
-                                List.of(domainInclude("schema:TVSeries"), domainInclude("schema:VideoGameSeries"), domainInclude("schema:RadioSeries")),
+                                List.of(domainInclude("schema:VideoGameSeries"), domainInclude("schema:TVSeries"), domainInclude("schema:RadioSeries")),
                                 List.of(rangeInclude("schema:URL"), rangeInclude("schema:CreativeWorkSeason")),
                                 supersededBy("schema:containsSeason"),
                                 null, null, null
@@ -198,7 +200,7 @@ class SchemaDefinitionReaderImplTest {
                                 List.of("rdf:Property"),
                                 comment("en", "The telephone number."),
                                 label("en", "telephone"),
-                                List.of(domainInclude("schema:Person"), domainInclude("schema:Organization"), domainInclude("schema:Place"), domainInclude("schema:ContactPoint")),
+                                List.of(domainInclude("schema:Place"), domainInclude("schema:Organization"), domainInclude("schema:ContactPoint"), domainInclude("schema:Person")),
                                 List.of(rangeInclude("schema:Text")),
                                 null, null, null, null
                         )

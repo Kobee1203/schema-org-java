@@ -6,50 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
+import org.schema.model.DeliveryMethod;
 import org.schema.model.Audience;
 import org.schema.model.Organization;
-import org.schema.model.DeliveryMethod;
+import org.schema.model.Person;
 
 /**
- * The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.<br/><br/>Related actions:<br/><br/>* [[SendAction]]: The reciprocal of ReceiveAction.<br/>* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).
+ * The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.<br/><br/>Related actions:<br/><br/>* [[SendAction]]: The reciprocal of ReceiveAction.<br/>* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine).
  *
  * @see <a href="https://schema.org/ReceiveAction">https://schema.org/ReceiveAction</a>
  */
 public interface ReceiveAction extends TransferAction {
-
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     *
-     * @return {@link Person} or {@link Audience} or {@link Organization}
-     */
-    <T> List<T> getSenderList();
-
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     *
-     * @return {@link Person} or {@link Audience} or {@link Organization}
-     */
-    <T> T getSender();
-
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     *
-     * @param sender Person value to set.
-     */
-    void addSender(Person sender);
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     *
-     * @param sender Audience value to set.
-     */
-    void addSender(Audience sender);
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     *
-     * @param sender Organization value to set.
-     */
-    void addSender(Organization sender);
 
     /**
      * A sub property of instrument. The method of delivery.
@@ -71,4 +38,37 @@ public interface ReceiveAction extends TransferAction {
      * @param deliveryMethod DeliveryMethod value to set.
      */
     void addDeliveryMethod(DeliveryMethod deliveryMethod);
+
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @return {@link Audience} or {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSenderList();
+
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @return {@link Audience} or {@link Organization} or {@link Person}
+     */
+    <T> T getSender();
+
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @param sender Audience value to set.
+     */
+    void addSender(Audience sender);
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @param sender Organization value to set.
+     */
+    void addSender(Organization sender);
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @param sender Person value to set.
+     */
+    void addSender(Person sender);
 }

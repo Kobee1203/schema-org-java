@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.
+ * Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 kg' or '4 milligrams'.
  *
  * @see <a href="https://schema.org/Quantity">https://schema.org/Quantity</a>
  */

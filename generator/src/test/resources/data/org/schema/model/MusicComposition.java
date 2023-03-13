@@ -7,12 +7,12 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Text;
-import org.schema.model.Organization;
-import org.schema.model.Person;
+import org.schema.model.CreativeWork;
 import org.schema.model.MusicComposition;
 import org.schema.model.MusicRecording;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.Event;
-import org.schema.model.CreativeWork;
 
 /**
  * A musical composition.
@@ -45,6 +45,102 @@ public interface MusicComposition extends CreativeWork {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addIswcCode(Text iswcCode);
+
+    /**
+     * The words in the song.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    List<CreativeWork> getLyricsList();
+
+    /**
+     * The words in the song.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    CreativeWork getLyrics();
+
+    /**
+     * The words in the song.
+     *
+     * @param lyrics CreativeWork value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void addLyrics(CreativeWork lyrics);
+
+    /**
+     * The key, mode, or scale this composition uses.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    List<Text> getMusicalKeyList();
+
+    /**
+     * The key, mode, or scale this composition uses.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    Text getMusicalKey();
+
+    /**
+     * The key, mode, or scale this composition uses.
+     *
+     * @param musicalKey Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void addMusicalKey(Text musicalKey);
+
+    /**
+     * Smaller compositions included in this work (e.g. a movement in a symphony).
+     *
+     * @return {@link MusicComposition}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    List<MusicComposition> getIncludedCompositionList();
+
+    /**
+     * Smaller compositions included in this work (e.g. a movement in a symphony).
+     *
+     * @return {@link MusicComposition}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    MusicComposition getIncludedComposition();
+
+    /**
+     * Smaller compositions included in this work (e.g. a movement in a symphony).
+     *
+     * @param includedComposition MusicComposition value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void addIncludedComposition(MusicComposition includedComposition);
+
+    /**
+     * An audio recording of the work.
+     *
+     * @return {@link MusicRecording}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    List<MusicRecording> getRecordedAsList();
+
+    /**
+     * An audio recording of the work.
+     *
+     * @return {@link MusicRecording}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    MusicRecording getRecordedAs();
+
+    /**
+     * An audio recording of the work.
+     *
+     * @param recordedAs MusicRecording value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void addRecordedAs(MusicRecording recordedAs);
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -102,54 +198,6 @@ public interface MusicComposition extends CreativeWork {
     void addMusicCompositionForm(Text musicCompositionForm);
 
     /**
-     * Smaller compositions included in this work (e.g. a movement in a symphony).
-     *
-     * @return {@link MusicComposition}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<MusicComposition> getIncludedCompositionList();
-
-    /**
-     * Smaller compositions included in this work (e.g. a movement in a symphony).
-     *
-     * @return {@link MusicComposition}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    MusicComposition getIncludedComposition();
-
-    /**
-     * Smaller compositions included in this work (e.g. a movement in a symphony).
-     *
-     * @param includedComposition MusicComposition value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addIncludedComposition(MusicComposition includedComposition);
-
-    /**
-     * An audio recording of the work.
-     *
-     * @return {@link MusicRecording}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<MusicRecording> getRecordedAsList();
-
-    /**
-     * An audio recording of the work.
-     *
-     * @return {@link MusicRecording}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    MusicRecording getRecordedAs();
-
-    /**
-     * An audio recording of the work.
-     *
-     * @param recordedAs MusicRecording value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addRecordedAs(MusicRecording recordedAs);
-
-    /**
      * The date and place the work was first performed.
      *
      * @return {@link Event}
@@ -174,78 +222,6 @@ public interface MusicComposition extends CreativeWork {
     void addFirstPerformance(Event firstPerformance);
 
     /**
-     * An arrangement derived from the composition.
-     *
-     * @return {@link MusicComposition}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<MusicComposition> getMusicArrangementList();
-
-    /**
-     * An arrangement derived from the composition.
-     *
-     * @return {@link MusicComposition}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    MusicComposition getMusicArrangement();
-
-    /**
-     * An arrangement derived from the composition.
-     *
-     * @param musicArrangement MusicComposition value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addMusicArrangement(MusicComposition musicArrangement);
-
-    /**
-     * The words in the song.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<CreativeWork> getLyricsList();
-
-    /**
-     * The words in the song.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    CreativeWork getLyrics();
-
-    /**
-     * The words in the song.
-     *
-     * @param lyrics CreativeWork value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addLyrics(CreativeWork lyrics);
-
-    /**
-     * The key, mode, or scale this composition uses.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<Text> getMusicalKeyList();
-
-    /**
-     * The key, mode, or scale this composition uses.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    Text getMusicalKey();
-
-    /**
-     * The key, mode, or scale this composition uses.
-     *
-     * @param musicalKey Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addMusicalKey(Text musicalKey);
-
-    /**
      * The person who wrote the words.
      *
      * @return {@link Person}
@@ -268,4 +244,28 @@ public interface MusicComposition extends CreativeWork {
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addLyricist(Person lyricist);
+
+    /**
+     * An arrangement derived from the composition.
+     *
+     * @return {@link MusicComposition}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    List<MusicComposition> getMusicArrangementList();
+
+    /**
+     * An arrangement derived from the composition.
+     *
+     * @return {@link MusicComposition}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    MusicComposition getMusicArrangement();
+
+    /**
+     * An arrangement derived from the composition.
+     *
+     * @param musicArrangement MusicComposition value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void addMusicArrangement(MusicComposition musicArrangement);
 }

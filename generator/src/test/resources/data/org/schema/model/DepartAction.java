@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.
+ * The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.
  *
  * @see <a href="https://schema.org/DepartAction">https://schema.org/DepartAction</a>
  */

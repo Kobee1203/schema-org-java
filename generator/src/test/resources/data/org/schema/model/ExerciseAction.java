@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.SportsTeam;
 import org.schema.model.Place;
 import org.schema.model.Diet;
-import org.schema.model.SportsActivityLocation;
-import org.schema.model.Distance;
-import org.schema.model.ExercisePlan;
-import org.schema.model.SportsEvent;
 import org.schema.model.Person;
+import org.schema.model.SportsTeam;
+import org.schema.model.SportsEvent;
+import org.schema.model.ExercisePlan;
 import org.schema.model.datatype.Text;
+import org.schema.model.Distance;
+import org.schema.model.SportsActivityLocation;
 
 /**
  * The act of participating in exertive activity for the purposes of improving health and fitness.
@@ -24,25 +24,25 @@ import org.schema.model.datatype.Text;
 public interface ExerciseAction extends PlayAction {
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * A sub property of location. The final location of the object or the agent after the action.
      *
-     * @return {@link SportsTeam}
+     * @return {@link Place}
      */
-    List<SportsTeam> getSportsTeamList();
+    List<Place> getToLocationList();
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * A sub property of location. The final location of the object or the agent after the action.
      *
-     * @return {@link SportsTeam}
+     * @return {@link Place}
      */
-    SportsTeam getSportsTeam();
+    Place getToLocation();
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * A sub property of location. The final location of the object or the agent after the action.
      *
-     * @param sportsTeam SportsTeam value to set.
+     * @param toLocation Place value to set.
      */
-    void addSportsTeam(SportsTeam sportsTeam);
+    void addToLocation(Place toLocation);
 
     /**
      * A sub property of location. The course where this action was taken.
@@ -92,7 +92,7 @@ public interface ExerciseAction extends PlayAction {
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Diet> getDietList();
+    List<Diet> getExerciseRelatedDietList();
 
     /**
      * A sub property of instrument. The diet used in this action.
@@ -100,81 +100,78 @@ public interface ExerciseAction extends PlayAction {
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Diet getDiet();
+    Diet getExerciseRelatedDiet();
 
     /**
      * A sub property of instrument. The diet used in this action.
      *
-     * @param diet Diet value to set.
+     * @param exerciseRelatedDiet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addDiet(Diet diet);
+    void addExerciseRelatedDiet(Diet exerciseRelatedDiet);
 
     /**
-     * A sub property of location. The sports activity location where this action occurred.
+     * A sub property of location. The course where this action was taken.
      *
-     * @return {@link SportsActivityLocation}
+     * @return {@link Place}
      */
-    List<SportsActivityLocation> getSportsActivityLocationList();
+    List<Place> getExerciseCourseList();
 
     /**
-     * A sub property of location. The sports activity location where this action occurred.
+     * A sub property of location. The course where this action was taken.
      *
-     * @return {@link SportsActivityLocation}
+     * @return {@link Place}
      */
-    SportsActivityLocation getSportsActivityLocation();
+    Place getExerciseCourse();
 
     /**
-     * A sub property of location. The sports activity location where this action occurred.
+     * A sub property of location. The course where this action was taken.
      *
-     * @param sportsActivityLocation SportsActivityLocation value to set.
+     * @param exerciseCourse Place value to set.
      */
-    void addSportsActivityLocation(SportsActivityLocation sportsActivityLocation);
+    void addExerciseCourse(Place exerciseCourse);
 
     /**
-     * The distance travelled, e.g. exercising or travelling.
+     * A sub property of participant. The opponent on this action.
      *
-     * @return {@link Distance}
+     * @return {@link Person}
      */
-    List<Distance> getDistanceList();
+    List<Person> getOpponentList();
 
     /**
-     * The distance travelled, e.g. exercising or travelling.
+     * A sub property of participant. The opponent on this action.
      *
-     * @return {@link Distance}
+     * @return {@link Person}
      */
-    Distance getDistance();
+    Person getOpponent();
 
     /**
-     * The distance travelled, e.g. exercising or travelling.
+     * A sub property of participant. The opponent on this action.
      *
-     * @param distance Distance value to set.
+     * @param opponent Person value to set.
      */
-    void addDistance(Distance distance);
+    void addOpponent(Person opponent);
 
     /**
-     * A sub property of instrument. The exercise plan used on this action.
+     * A sub property of participant. The sports team that participated on this action.
      *
-     * @return {@link ExercisePlan}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link SportsTeam}
      */
-    List<ExercisePlan> getExercisePlanList();
+    List<SportsTeam> getSportsTeamList();
 
     /**
-     * A sub property of instrument. The exercise plan used on this action.
+     * A sub property of participant. The sports team that participated on this action.
      *
-     * @return {@link ExercisePlan}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link SportsTeam}
      */
-    ExercisePlan getExercisePlan();
+    SportsTeam getSportsTeam();
 
     /**
-     * A sub property of instrument. The exercise plan used on this action.
+     * A sub property of participant. The sports team that participated on this action.
      *
-     * @param exercisePlan ExercisePlan value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @param sportsTeam SportsTeam value to set.
      */
-    void addExercisePlan(ExercisePlan exercisePlan);
+    void addSportsTeam(SportsTeam sportsTeam);
 
     /**
      * A sub property of location. The sports event where this action occurred.
@@ -203,7 +200,7 @@ public interface ExerciseAction extends PlayAction {
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Diet> getExerciseRelatedDietList();
+    List<Diet> getDietList();
 
     /**
      * A sub property of instrument. The diet used in this action.
@@ -211,78 +208,39 @@ public interface ExerciseAction extends PlayAction {
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Diet getExerciseRelatedDiet();
+    Diet getDiet();
 
     /**
      * A sub property of instrument. The diet used in this action.
      *
-     * @param exerciseRelatedDiet Diet value to set.
+     * @param diet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addExerciseRelatedDiet(Diet exerciseRelatedDiet);
+    void addDiet(Diet diet);
 
     /**
-     * A sub property of participant. The opponent on this action.
+     * A sub property of instrument. The exercise plan used on this action.
      *
-     * @return {@link Person}
+     * @return {@link ExercisePlan}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Person> getOpponentList();
+    List<ExercisePlan> getExercisePlanList();
 
     /**
-     * A sub property of participant. The opponent on this action.
+     * A sub property of instrument. The exercise plan used on this action.
      *
-     * @return {@link Person}
+     * @return {@link ExercisePlan}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Person getOpponent();
+    ExercisePlan getExercisePlan();
 
     /**
-     * A sub property of participant. The opponent on this action.
+     * A sub property of instrument. The exercise plan used on this action.
      *
-     * @param opponent Person value to set.
+     * @param exercisePlan ExercisePlan value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addOpponent(Person opponent);
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getExerciseCourseList();
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @return {@link Place}
-     */
-    Place getExerciseCourse();
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @param exerciseCourse Place value to set.
-     */
-    void addExerciseCourse(Place exerciseCourse);
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getToLocationList();
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @return {@link Place}
-     */
-    Place getToLocation();
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @param toLocation Place value to set.
-     */
-    void addToLocation(Place toLocation);
+    void addExercisePlan(ExercisePlan exercisePlan);
 
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
@@ -307,4 +265,46 @@ public interface ExerciseAction extends PlayAction {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addExerciseType(Text exerciseType);
+
+    /**
+     * The distance travelled, e.g. exercising or travelling.
+     *
+     * @return {@link Distance}
+     */
+    List<Distance> getDistanceList();
+
+    /**
+     * The distance travelled, e.g. exercising or travelling.
+     *
+     * @return {@link Distance}
+     */
+    Distance getDistance();
+
+    /**
+     * The distance travelled, e.g. exercising or travelling.
+     *
+     * @param distance Distance value to set.
+     */
+    void addDistance(Distance distance);
+
+    /**
+     * A sub property of location. The sports activity location where this action occurred.
+     *
+     * @return {@link SportsActivityLocation}
+     */
+    List<SportsActivityLocation> getSportsActivityLocationList();
+
+    /**
+     * A sub property of location. The sports activity location where this action occurred.
+     *
+     * @return {@link SportsActivityLocation}
+     */
+    SportsActivityLocation getSportsActivityLocation();
+
+    /**
+     * A sub property of location. The sports activity location where this action occurred.
+     *
+     * @param sportsActivityLocation SportsActivityLocation value to set.
+     */
+    void addSportsActivityLocation(SportsActivityLocation sportsActivityLocation);
 }

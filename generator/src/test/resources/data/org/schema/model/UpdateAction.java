@@ -20,27 +20,6 @@ public interface UpdateAction extends Action {
      *
      * @return {@link Thing}
      */
-    List<Thing> getTargetCollectionList();
-
-    /**
-     * A sub property of object. The collection target of the action.
-     *
-     * @return {@link Thing}
-     */
-    Thing getTargetCollection();
-
-    /**
-     * A sub property of object. The collection target of the action.
-     *
-     * @param targetCollection Thing value to set.
-     */
-    void addTargetCollection(Thing targetCollection);
-
-    /**
-     * A sub property of object. The collection target of the action.
-     *
-     * @return {@link Thing}
-     */
     List<Thing> getCollectionList();
 
     /**
@@ -56,4 +35,25 @@ public interface UpdateAction extends Action {
      * @param collection Thing value to set.
      */
     void addCollection(Thing collection);
+
+    /**
+     * A sub property of object. The collection target of the action.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getTargetCollectionList();
+
+    /**
+     * A sub property of object. The collection target of the action.
+     *
+     * @return {@link Thing}
+     */
+    Thing getTargetCollection();
+
+    /**
+     * A sub property of object. The collection target of the action.
+     *
+     * @param targetCollection Thing value to set.
+     */
+    void addTargetCollection(Thing targetCollection);
 }

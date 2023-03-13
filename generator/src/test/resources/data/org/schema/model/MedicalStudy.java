@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalCondition;
-import org.schema.model.datatype.Text;
-import org.schema.model.EventStatusType;
-import org.schema.model.MedicalStudyStatus;
 import org.schema.model.MedicalEntity;
 import org.schema.model.AdministrativeArea;
+import org.schema.model.MedicalCondition;
+import org.schema.model.MedicalStudyStatus;
+import org.schema.model.datatype.Text;
+import org.schema.model.EventStatusType;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 
@@ -22,68 +22,6 @@ import org.schema.model.Person;
  * @see <a href="https://schema.org/MedicalStudy">https://schema.org/MedicalStudy</a>
  */
 public interface MedicalStudy extends MedicalEntity {
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalCondition> getHealthConditionList();
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalCondition getHealthCondition();
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @param healthCondition MedicalCondition value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addHealthCondition(MedicalCondition healthCondition);
-
-    /**
-     * The status of the study (enumerated).
-     *
-     * @return {@link Text} or {@link EventStatusType} or {@link MedicalStudyStatus}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getStatusList();
-
-    /**
-     * The status of the study (enumerated).
-     *
-     * @return {@link Text} or {@link EventStatusType} or {@link MedicalStudyStatus}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getStatus();
-
-    /**
-     * The status of the study (enumerated).
-     *
-     * @param status Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStatus(Text status);
-    /**
-     * The status of the study (enumerated).
-     *
-     * @param status EventStatusType value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStatus(EventStatusType status);
-    /**
-     * The status of the study (enumerated).
-     *
-     * @param status MedicalStudyStatus value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStatus(MedicalStudyStatus status);
 
     /**
      * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
@@ -134,27 +72,89 @@ public interface MedicalStudy extends MedicalEntity {
     void addStudyLocation(AdministrativeArea studyLocation);
 
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getHealthConditionList();
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalCondition getHealthCondition();
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @param healthCondition MedicalCondition value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addHealthCondition(MedicalCondition healthCondition);
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @return {@link MedicalStudyStatus} or {@link Text} or {@link EventStatusType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getStatusList();
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @return {@link MedicalStudyStatus} or {@link Text} or {@link EventStatusType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getStatus();
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status MedicalStudyStatus value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(MedicalStudyStatus status);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(Text status);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status EventStatusType value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(EventStatusType status);
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @return {@link Organization} or {@link Person}
      */
     <T> List<T> getSponsorList();
 
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @return {@link Organization} or {@link Person}
      */
     <T> T getSponsor();
 
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @param sponsor Organization value to set.
      */
     void addSponsor(Organization sponsor);
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @param sponsor Person value to set.
      */

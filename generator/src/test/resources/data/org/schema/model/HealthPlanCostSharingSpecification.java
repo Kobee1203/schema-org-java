@@ -20,7 +20,7 @@ import org.schema.model.PriceSpecification;
 public interface HealthPlanCostSharingSpecification extends Intangible {
 
     /**
-     * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
+     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
      *
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -29,7 +29,7 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     List<Number> getHealthPlanCoinsuranceRateList();
 
     /**
-     * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
+     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
      *
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -38,7 +38,7 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     Number getHealthPlanCoinsuranceRate();
 
     /**
-     * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
+     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
      *
      * @param healthPlanCoinsuranceRate Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -47,31 +47,31 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     void addHealthPlanCoinsuranceRate(Number healthPlanCoinsuranceRate);
 
     /**
-     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
+     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    List<Text> getHealthPlanCoinsuranceOptionList();
+    List<Text> getHealthPlanCopayOptionList();
 
     /**
-     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
+     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    Text getHealthPlanCoinsuranceOption();
+    Text getHealthPlanCopayOption();
 
     /**
-     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
+     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
      *
-     * @param healthPlanCoinsuranceOption Text value to set.
+     * @param healthPlanCopayOption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void addHealthPlanCoinsuranceOption(Text healthPlanCoinsuranceOption);
+    void addHealthPlanCopayOption(Text healthPlanCopayOption);
 
     /**
      * The category or type of pharmacy associated with this cost sharing.
@@ -101,7 +101,7 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     void addHealthPlanPharmacyCategory(Text healthPlanPharmacyCategory);
 
     /**
-     * Whether The copay amount.
+     * The copay amount.
      *
      * @return {@link PriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -110,7 +110,7 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     List<PriceSpecification> getHealthPlanCopayList();
 
     /**
-     * Whether The copay amount.
+     * The copay amount.
      *
      * @return {@link PriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -119,7 +119,7 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     PriceSpecification getHealthPlanCopay();
 
     /**
-     * Whether The copay amount.
+     * The copay amount.
      *
      * @param healthPlanCopay PriceSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -128,29 +128,29 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     void addHealthPlanCopay(PriceSpecification healthPlanCopay);
 
     /**
-     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
+     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    List<Text> getHealthPlanCopayOptionList();
+    List<Text> getHealthPlanCoinsuranceOptionList();
 
     /**
-     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
+     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    Text getHealthPlanCopayOption();
+    Text getHealthPlanCoinsuranceOption();
 
     /**
-     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
+     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
      *
-     * @param healthPlanCopayOption Text value to set.
+     * @param healthPlanCoinsuranceOption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void addHealthPlanCopayOption(Text healthPlanCopayOption);
+    void addHealthPlanCoinsuranceOption(Text healthPlanCoinsuranceOption);
 }

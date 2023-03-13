@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Distance;
 import org.schema.model.Person;
+import org.schema.model.Distance;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Integer;
@@ -20,135 +20,6 @@ import org.schema.model.datatype.Integer;
  * @see <a href="https://schema.org/VisualArtwork">https://schema.org/VisualArtwork</a>
  */
 public interface VisualArtwork extends CreativeWork {
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     */
-    <T> List<T> getWidthList();
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     */
-    <T> T getWidth();
-
-    /**
-     * The width of the item.
-     *
-     * @param width QuantitativeValue value to set.
-     */
-    void addWidth(QuantitativeValue width);
-    /**
-     * The width of the item.
-     *
-     * @param width Distance value to set.
-     */
-    void addWidth(Distance width);
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getLettererList();
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getLetterer();
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @param letterer Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addLetterer(Person letterer);
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     */
-    <T> List<T> getHeightList();
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     */
-    <T> T getHeight();
-
-    /**
-     * The height of the item.
-     *
-     * @param height Distance value to set.
-     */
-    void addHeight(Distance height);
-    /**
-     * The height of the item.
-     *
-     * @param height QuantitativeValue value to set.
-     */
-    void addHeight(QuantitativeValue height);
-
-    /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getSurfaceList();
-
-    /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getSurface();
-
-    /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @param surface URL value to set.
-     */
-    void addSurface(URL surface);
-    /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @param surface Text value to set.
-     */
-    void addSurface(Text surface);
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getColoristList();
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getColorist();
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @param colorist Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addColorist(Person colorist);
 
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
@@ -175,90 +46,60 @@ public interface VisualArtwork extends CreativeWork {
     void addInker(Person inker);
 
     /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     * The width of the item.
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link Distance} or {@link QuantitativeValue}
      */
-    <T> List<T> getArtformList();
+    <T> List<T> getWidthList();
 
     /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     * The width of the item.
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link Distance} or {@link QuantitativeValue}
      */
-    <T> T getArtform();
+    <T> T getWidth();
 
     /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     * The width of the item.
      *
-     * @param artform Text value to set.
+     * @param width Distance value to set.
      */
-    void addArtform(Text artform);
+    void addWidth(Distance width);
     /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     * The width of the item.
      *
-     * @param artform URL value to set.
+     * @param width QuantitativeValue value to set.
      */
-    void addArtform(URL artform);
+    void addWidth(QuantitativeValue width);
 
     /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    <T> List<T> getArtworkSurfaceList();
+    List<Person> getLettererList();
 
     /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    <T> T getArtworkSurface();
+    Person getLetterer();
 
     /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
      *
-     * @param artworkSurface URL value to set.
+     * @param letterer Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void addArtworkSurface(URL artworkSurface);
-    /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @param artworkSurface Text value to set.
-     */
-    void addArtworkSurface(Text artworkSurface);
-
-    /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
-     *
-     * @return {@link Integer} or {@link Text}
-     */
-    <T> List<T> getArtEditionList();
-
-    /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
-     *
-     * @return {@link Integer} or {@link Text}
-     */
-    <T> T getArtEdition();
-
-    /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
-     *
-     * @param artEdition Integer value to set.
-     */
-    void addArtEdition(Integer artEdition);
-    /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
-     *
-     * @param artEdition Text value to set.
-     */
-    void addArtEdition(Text artEdition);
+    void addLetterer(Person letterer);
 
     /**
      * The depth of the item.
      *
-     * @return {@link Distance} or {@link QuantitativeValue}
+     * @return {@link QuantitativeValue} or {@link Distance}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     <T> List<T> getDepthList();
@@ -266,7 +107,7 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The depth of the item.
      *
-     * @return {@link Distance} or {@link QuantitativeValue}
+     * @return {@link QuantitativeValue} or {@link Distance}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     <T> T getDepth();
@@ -274,17 +115,17 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The depth of the item.
      *
-     * @param depth Distance value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addDepth(Distance depth);
-    /**
-     * The depth of the item.
-     *
      * @param depth QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addDepth(QuantitativeValue depth);
+    /**
+     * The depth of the item.
+     *
+     * @param depth Distance value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void addDepth(Distance depth);
 
     /**
      * The individual who draws the primary narrative artwork.
@@ -341,29 +182,188 @@ public interface VisualArtwork extends CreativeWork {
     void addArtist(Person artist);
 
     /**
-     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     * The height of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
+    <T> List<T> getHeightList();
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
+    <T> T getHeight();
+
+    /**
+     * The height of the item.
+     *
+     * @param height QuantitativeValue value to set.
+     */
+    void addHeight(QuantitativeValue height);
+    /**
+     * The height of the item.
+     *
+     * @param height Distance value to set.
+     */
+    void addHeight(Distance height);
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getColoristList();
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getColorist();
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @param colorist Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addColorist(Person colorist);
+
+    /**
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @return {@link URL} or {@link Text}
      */
     <T> List<T> getArtMediumList();
 
     /**
-     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @return {@link URL} or {@link Text}
      */
     <T> T getArtMedium();
 
     /**
-     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @param artMedium URL value to set.
      */
     void addArtMedium(URL artMedium);
     /**
-     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @param artMedium Text value to set.
      */
     void addArtMedium(Text artMedium);
+
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getSurfaceList();
+
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> T getSurface();
+
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param surface Text value to set.
+     */
+    void addSurface(Text surface);
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param surface URL value to set.
+     */
+    void addSurface(URL surface);
+
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getArtformList();
+
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getArtform();
+
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @param artform URL value to set.
+     */
+    void addArtform(URL artform);
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @param artform Text value to set.
+     */
+    void addArtform(Text artform);
+
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @return {@link Integer} or {@link Text}
+     */
+    <T> List<T> getArtEditionList();
+
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @return {@link Integer} or {@link Text}
+     */
+    <T> T getArtEdition();
+
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @param artEdition Integer value to set.
+     */
+    void addArtEdition(Integer artEdition);
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @param artEdition Text value to set.
+     */
+    void addArtEdition(Text artEdition);
+
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getArtworkSurfaceList();
+
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getArtworkSurface();
+
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param artworkSurface URL value to set.
+     */
+    void addArtworkSurface(URL artworkSurface);
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param artworkSurface Text value to set.
+     */
+    void addArtworkSurface(Text artworkSurface);
 }

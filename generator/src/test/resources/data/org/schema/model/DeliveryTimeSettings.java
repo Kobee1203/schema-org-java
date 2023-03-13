@@ -7,12 +7,12 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.DefinedRegion;
+import org.schema.model.ShippingDeliveryTime;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Boolean;
-import org.schema.model.ShippingDeliveryTime;
 
 /**
- * A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of a [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].
+ * A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
@@ -21,7 +21,7 @@ import org.schema.model.ShippingDeliveryTime;
 public interface DeliveryTimeSettings extends StructuredValue {
 
     /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
      *
      * @return {@link DefinedRegion}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -30,7 +30,7 @@ public interface DeliveryTimeSettings extends StructuredValue {
     List<DefinedRegion> getShippingDestinationList();
 
     /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
      *
      * @return {@link DefinedRegion}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -39,13 +39,40 @@ public interface DeliveryTimeSettings extends StructuredValue {
     DefinedRegion getShippingDestination();
 
     /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
      *
      * @param shippingDestination DefinedRegion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addShippingDestination(DefinedRegion shippingDestination);
+
+    /**
+     * The total delay between the receipt of the order and the goods reaching the final customer.
+     *
+     * @return {@link ShippingDeliveryTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    List<ShippingDeliveryTime> getDeliveryTimeList();
+
+    /**
+     * The total delay between the receipt of the order and the goods reaching the final customer.
+     *
+     * @return {@link ShippingDeliveryTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    ShippingDeliveryTime getDeliveryTime();
+
+    /**
+     * The total delay between the receipt of the order and the goods reaching the final customer.
+     *
+     * @param deliveryTime ShippingDeliveryTime value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addDeliveryTime(ShippingDeliveryTime deliveryTime);
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -100,31 +127,4 @@ public interface DeliveryTimeSettings extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addIsUnlabelledFallback(Boolean isUnlabelledFallback);
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @return {@link ShippingDeliveryTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<ShippingDeliveryTime> getDeliveryTimeList();
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @return {@link ShippingDeliveryTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    ShippingDeliveryTime getDeliveryTime();
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @param deliveryTime ShippingDeliveryTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addDeliveryTime(ShippingDeliveryTime deliveryTime);
 }

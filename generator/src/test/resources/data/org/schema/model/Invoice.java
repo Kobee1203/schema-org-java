@@ -6,21 +6,21 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.datatype.Text;
+import org.schema.model.Person;
+import org.schema.model.Organization;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.PriceSpecification;
 import org.schema.model.Duration;
-import org.schema.model.Order;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.URL;
-import org.schema.model.PhysicalActivityCategory;
-import org.schema.model.Thing;
-import org.schema.model.CategoryCode;
-import org.schema.model.datatype.Date;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.PaymentStatusType;
 import org.schema.model.PaymentMethod;
+import org.schema.model.Order;
+import org.schema.model.datatype.URL;
+import org.schema.model.CategoryCode;
+import org.schema.model.Thing;
+import org.schema.model.PhysicalActivityCategory;
 
 /**
  * A statement of the money due for goods or services; a bill.
@@ -28,176 +28,6 @@ import org.schema.model.PaymentMethod;
  * @see <a href="https://schema.org/Invoice">https://schema.org/Invoice</a>
  */
 public interface Invoice extends Intangible {
-
-    /**
-     * The total amount due.
-     *
-     * @return {@link MonetaryAmount} or {@link PriceSpecification}
-     */
-    <T> List<T> getTotalPaymentDueList();
-
-    /**
-     * The total amount due.
-     *
-     * @return {@link MonetaryAmount} or {@link PriceSpecification}
-     */
-    <T> T getTotalPaymentDue();
-
-    /**
-     * The total amount due.
-     *
-     * @param totalPaymentDue MonetaryAmount value to set.
-     */
-    void addTotalPaymentDue(MonetaryAmount totalPaymentDue);
-    /**
-     * The total amount due.
-     *
-     * @param totalPaymentDue PriceSpecification value to set.
-     */
-    void addTotalPaymentDue(PriceSpecification totalPaymentDue);
-
-    /**
-     * The time interval used to compute the invoice.
-     *
-     * @return {@link Duration}
-     */
-    List<Duration> getBillingPeriodList();
-
-    /**
-     * The time interval used to compute the invoice.
-     *
-     * @return {@link Duration}
-     */
-    Duration getBillingPeriod();
-
-    /**
-     * The time interval used to compute the invoice.
-     *
-     * @param billingPeriod Duration value to set.
-     */
-    void addBillingPeriod(Duration billingPeriod);
-
-    /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-     *
-     * @return {@link Order}
-     */
-    List<Order> getReferencesOrderList();
-
-    /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-     *
-     * @return {@link Order}
-     */
-    Order getReferencesOrder();
-
-    /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-     *
-     * @param referencesOrder Order value to set.
-     */
-    void addReferencesOrder(Order referencesOrder);
-
-    /**
-     * The identifier for the account the payment will be applied to.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAccountIdList();
-
-    /**
-     * The identifier for the account the payment will be applied to.
-     *
-     * @return {@link Text}
-     */
-    Text getAccountId();
-
-    /**
-     * The identifier for the account the payment will be applied to.
-     *
-     * @param accountId Text value to set.
-     */
-    void addAccountId(Text accountId);
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> List<T> getCategoryList();
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> T getCategory();
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category URL value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addCategory(URL category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addCategory(Text category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category PhysicalActivityCategory value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addCategory(PhysicalActivityCategory category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addCategory(Thing category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addCategory(CategoryCode category);
-
-    /**
-     * The date the invoice is scheduled to be paid.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getScheduledPaymentDateList();
-
-    /**
-     * The date the invoice is scheduled to be paid.
-     *
-     * @return {@link Date}
-     */
-    Date getScheduledPaymentDate();
-
-    /**
-     * The date the invoice is scheduled to be paid.
-     *
-     * @param scheduledPaymentDate Date value to set.
-     */
-    void addScheduledPaymentDate(Date scheduledPaymentDate);
 
     /**
      * A number that confirms the given order or payment has been received.
@@ -219,126 +49,6 @@ public interface Invoice extends Intangible {
      * @param confirmationNumber Text value to set.
      */
     void addConfirmationNumber(Text confirmationNumber);
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getCustomerList();
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getCustomer();
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Organization value to set.
-     */
-    void addCustomer(Organization customer);
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Person value to set.
-     */
-    void addCustomer(Person customer);
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    <T> List<T> getProviderList();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    <T> T getProvider();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    void addProvider(Organization provider);
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    void addProvider(Person provider);
-
-    /**
-     * The minimum payment required at this time.
-     *
-     * @return {@link MonetaryAmount} or {@link PriceSpecification}
-     */
-    <T> List<T> getMinimumPaymentDueList();
-
-    /**
-     * The minimum payment required at this time.
-     *
-     * @return {@link MonetaryAmount} or {@link PriceSpecification}
-     */
-    <T> T getMinimumPaymentDue();
-
-    /**
-     * The minimum payment required at this time.
-     *
-     * @param minimumPaymentDue MonetaryAmount value to set.
-     */
-    void addMinimumPaymentDue(MonetaryAmount minimumPaymentDue);
-    /**
-     * The minimum payment required at this time.
-     *
-     * @param minimumPaymentDue PriceSpecification value to set.
-     */
-    void addMinimumPaymentDue(PriceSpecification minimumPaymentDue);
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getPaymentDueDateList();
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getPaymentDueDate();
-
-    /**
-     * The date that payment is due.
-     *
-     * @param paymentDueDate DateTime value to set.
-     */
-    void addPaymentDueDate(DateTime paymentDueDate);
-    /**
-     * The date that payment is due.
-     *
-     * @param paymentDueDate Date value to set.
-     */
-    void addPaymentDueDate(Date paymentDueDate);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -368,52 +78,145 @@ public interface Invoice extends Intangible {
     void addBroker(Organization broker);
 
     /**
-     * The status of payment; whether the invoice has been paid or not.
+     * The date that payment is due.
      *
-     * @return {@link PaymentStatusType} or {@link Text}
+     * @return {@link Date} or {@link DateTime}
      */
-    <T> List<T> getPaymentStatusList();
+    <T> List<T> getPaymentDueDateList();
 
     /**
-     * The status of payment; whether the invoice has been paid or not.
+     * The date that payment is due.
      *
-     * @return {@link PaymentStatusType} or {@link Text}
+     * @return {@link Date} or {@link DateTime}
      */
-    <T> T getPaymentStatus();
+    <T> T getPaymentDueDate();
 
     /**
-     * The status of payment; whether the invoice has been paid or not.
+     * The date that payment is due.
      *
-     * @param paymentStatus PaymentStatusType value to set.
+     * @param paymentDueDate Date value to set.
      */
-    void addPaymentStatus(PaymentStatusType paymentStatus);
+    void addPaymentDueDate(Date paymentDueDate);
     /**
-     * The status of payment; whether the invoice has been paid or not.
+     * The date that payment is due.
      *
-     * @param paymentStatus Text value to set.
+     * @param paymentDueDate DateTime value to set.
      */
-    void addPaymentStatus(Text paymentStatus);
+    void addPaymentDueDate(DateTime paymentDueDate);
 
     /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getProviderList();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> T getProvider();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Organization provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Person provider);
+
+    /**
+     * The total amount due.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
+    <T> List<T> getTotalPaymentDueList();
+
+    /**
+     * The total amount due.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
+    <T> T getTotalPaymentDue();
+
+    /**
+     * The total amount due.
+     *
+     * @param totalPaymentDue MonetaryAmount value to set.
+     */
+    void addTotalPaymentDue(MonetaryAmount totalPaymentDue);
+    /**
+     * The total amount due.
+     *
+     * @param totalPaymentDue PriceSpecification value to set.
+     */
+    void addTotalPaymentDue(PriceSpecification totalPaymentDue);
+
+    /**
+     * The identifier for the account the payment will be applied to.
      *
      * @return {@link Text}
      */
-    List<Text> getPaymentMethodIdList();
+    List<Text> getAccountIdList();
 
     /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     * The identifier for the account the payment will be applied to.
      *
      * @return {@link Text}
      */
-    Text getPaymentMethodId();
+    Text getAccountId();
 
     /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     * The identifier for the account the payment will be applied to.
      *
-     * @param paymentMethodId Text value to set.
+     * @param accountId Text value to set.
      */
-    void addPaymentMethodId(Text paymentMethodId);
+    void addAccountId(Text accountId);
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getCustomerList();
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getCustomer();
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @param customer Organization value to set.
+     */
+    void addCustomer(Organization customer);
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @param customer Person value to set.
+     */
+    void addCustomer(Person customer);
 
     /**
      * The date that payment is due.
@@ -437,6 +240,75 @@ public interface Invoice extends Intangible {
     void addPaymentDue(DateTime paymentDue);
 
     /**
+     * The time interval used to compute the invoice.
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getBillingPeriodList();
+
+    /**
+     * The time interval used to compute the invoice.
+     *
+     * @return {@link Duration}
+     */
+    Duration getBillingPeriod();
+
+    /**
+     * The time interval used to compute the invoice.
+     *
+     * @param billingPeriod Duration value to set.
+     */
+    void addBillingPeriod(Duration billingPeriod);
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPaymentMethodIdList();
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    Text getPaymentMethodId();
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @param paymentMethodId Text value to set.
+     */
+    void addPaymentMethodId(Text paymentMethodId);
+
+    /**
+     * The status of payment; whether the invoice has been paid or not.
+     *
+     * @return {@link Text} or {@link PaymentStatusType}
+     */
+    <T> List<T> getPaymentStatusList();
+
+    /**
+     * The status of payment; whether the invoice has been paid or not.
+     *
+     * @return {@link Text} or {@link PaymentStatusType}
+     */
+    <T> T getPaymentStatus();
+
+    /**
+     * The status of payment; whether the invoice has been paid or not.
+     *
+     * @param paymentStatus Text value to set.
+     */
+    void addPaymentStatus(Text paymentStatus);
+    /**
+     * The status of payment; whether the invoice has been paid or not.
+     *
+     * @param paymentStatus PaymentStatusType value to set.
+     */
+    void addPaymentStatus(PaymentStatusType paymentStatus);
+
+    /**
      * The name of the credit card or other method of payment for the order.
      *
      * @return {@link PaymentMethod}
@@ -456,4 +328,132 @@ public interface Invoice extends Intangible {
      * @param paymentMethod PaymentMethod value to set.
      */
     void addPaymentMethod(PaymentMethod paymentMethod);
+
+    /**
+     * The date the invoice is scheduled to be paid.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getScheduledPaymentDateList();
+
+    /**
+     * The date the invoice is scheduled to be paid.
+     *
+     * @return {@link Date}
+     */
+    Date getScheduledPaymentDate();
+
+    /**
+     * The date the invoice is scheduled to be paid.
+     *
+     * @param scheduledPaymentDate Date value to set.
+     */
+    void addScheduledPaymentDate(Date scheduledPaymentDate);
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @return {@link Order}
+     */
+    List<Order> getReferencesOrderList();
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @return {@link Order}
+     */
+    Order getReferencesOrder();
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @param referencesOrder Order value to set.
+     */
+    void addReferencesOrder(Order referencesOrder);
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> List<T> getCategoryList();
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> T getCategory();
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(URL category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(CategoryCode category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(Text category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(Thing category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(PhysicalActivityCategory category);
+
+    /**
+     * The minimum payment required at this time.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
+    <T> List<T> getMinimumPaymentDueList();
+
+    /**
+     * The minimum payment required at this time.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
+    <T> T getMinimumPaymentDue();
+
+    /**
+     * The minimum payment required at this time.
+     *
+     * @param minimumPaymentDue MonetaryAmount value to set.
+     */
+    void addMinimumPaymentDue(MonetaryAmount minimumPaymentDue);
+    /**
+     * The minimum payment required at this time.
+     *
+     * @param minimumPaymentDue PriceSpecification value to set.
+     */
+    void addMinimumPaymentDue(PriceSpecification minimumPaymentDue);
 }

@@ -7,9 +7,9 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Number;
-import org.schema.model.Person;
 import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.datatype.Number;
 
 /**
  * A rating is an evaluation on a numeric scale, such as 1 to 5 stars.
@@ -43,58 +43,58 @@ public interface Rating extends Intangible {
     void addReviewAspect(Text reviewAspect);
 
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> List<T> getWorstRatingList();
-
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> T getWorstRating();
-
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     *
-     * @param worstRating Text value to set.
-     */
-    void addWorstRating(Text worstRating);
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     *
-     * @param worstRating Number value to set.
-     */
-    void addWorstRating(Number worstRating);
-
-    /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     <T> List<T> getAuthorList();
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     <T> T getAuthor();
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @param author Person value to set.
-     */
-    void addAuthor(Person author);
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
      * @param author Organization value to set.
      */
     void addAuthor(Organization author);
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param author Person value to set.
+     */
+    void addAuthor(Person author);
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    List<Text> getRatingExplanationList();
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    Text getRatingExplanation();
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @param ratingExplanation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    void addRatingExplanation(Text ratingExplanation);
 
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
@@ -124,56 +124,56 @@ public interface Rating extends Intangible {
     void addBestRating(Number bestRating);
 
     /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Number} or {@link Text}
      */
     <T> List<T> getRatingValueList();
 
     /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Number} or {@link Text}
      */
     <T> T getRatingValue();
 
     /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param ratingValue Number value to set.
      */
     void addRatingValue(Number ratingValue);
     /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param ratingValue Text value to set.
      */
     void addRatingValue(Text ratingValue);
 
     /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     * @return {@link Text} or {@link Number}
      */
-    List<Text> getRatingExplanationList();
+    <T> List<T> getWorstRatingList();
 
     /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     * @return {@link Text} or {@link Number}
      */
-    Text getRatingExplanation();
+    <T> T getWorstRating();
 
     /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      *
-     * @param ratingExplanation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     * @param worstRating Text value to set.
      */
-    void addRatingExplanation(Text ratingExplanation);
+    void addWorstRating(Text worstRating);
+    /**
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     *
+     * @param worstRating Number value to set.
+     */
+    void addWorstRating(Number worstRating);
 }

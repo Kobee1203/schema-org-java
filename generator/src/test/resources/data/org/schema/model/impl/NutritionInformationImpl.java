@@ -6,14 +6,14 @@
 package org.schema.model.impl;
 
 import org.schema.model.Mass;
-import org.schema.model.datatype.Text;
 import org.schema.model.Energy;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Text;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -29,134 +29,6 @@ import org.schema.model.NutritionInformation;
  */
 @JsonLdTypeName("NutritionInformation")
 public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NutritionInformation {
-
-    private List<Mass> fatContent;
-
-    /**
-     * The number of grams of fat.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public List<Mass> getFatContentList() {
-        return fatContent;
-    }
-
-    /**
-     * The number of grams of fat.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getFatContent() {
-        return getFirst(fatContent);
-    }
-
-    /**
-     * The number of grams of fat.
-     *
-     * @param fatContent Mass value to set.
-     */
-    @Override
-    public void addFatContent(Mass fatContent) {
-        this.fatContent = add(this.fatContent, fatContent);
-    }
-
-    private List<Text> servingSize;
-
-    /**
-     * The serving size, in terms of the number of volume or mass.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getServingSizeList() {
-        return servingSize;
-    }
-
-    /**
-     * The serving size, in terms of the number of volume or mass.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getServingSize() {
-        return getFirst(servingSize);
-    }
-
-    /**
-     * The serving size, in terms of the number of volume or mass.
-     *
-     * @param servingSize Text value to set.
-     */
-    @Override
-    public void addServingSize(Text servingSize) {
-        this.servingSize = add(this.servingSize, servingSize);
-    }
-
-    private List<Mass> proteinContent;
-
-    /**
-     * The number of grams of protein.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public List<Mass> getProteinContentList() {
-        return proteinContent;
-    }
-
-    /**
-     * The number of grams of protein.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getProteinContent() {
-        return getFirst(proteinContent);
-    }
-
-    /**
-     * The number of grams of protein.
-     *
-     * @param proteinContent Mass value to set.
-     */
-    @Override
-    public void addProteinContent(Mass proteinContent) {
-        this.proteinContent = add(this.proteinContent, proteinContent);
-    }
-
-    private List<Energy> calories;
-
-    /**
-     * The number of calories.
-     *
-     * @return {@link Energy}
-     */
-    @Override
-    public List<Energy> getCaloriesList() {
-        return calories;
-    }
-
-    /**
-     * The number of calories.
-     *
-     * @return {@link Energy}
-     */
-    @Override
-    public Energy getCalories() {
-        return getFirst(calories);
-    }
-
-    /**
-     * The number of calories.
-     *
-     * @param calories Energy value to set.
-     */
-    @Override
-    public void addCalories(Energy calories) {
-        this.calories = add(this.calories, calories);
-    }
 
     private List<Mass> sodiumContent;
 
@@ -188,70 +60,6 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
     @Override
     public void addSodiumContent(Mass sodiumContent) {
         this.sodiumContent = add(this.sodiumContent, sodiumContent);
-    }
-
-    private List<Mass> cholesterolContent;
-
-    /**
-     * The number of milligrams of cholesterol.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public List<Mass> getCholesterolContentList() {
-        return cholesterolContent;
-    }
-
-    /**
-     * The number of milligrams of cholesterol.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getCholesterolContent() {
-        return getFirst(cholesterolContent);
-    }
-
-    /**
-     * The number of milligrams of cholesterol.
-     *
-     * @param cholesterolContent Mass value to set.
-     */
-    @Override
-    public void addCholesterolContent(Mass cholesterolContent) {
-        this.cholesterolContent = add(this.cholesterolContent, cholesterolContent);
-    }
-
-    private List<Mass> sugarContent;
-
-    /**
-     * The number of grams of sugar.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public List<Mass> getSugarContentList() {
-        return sugarContent;
-    }
-
-    /**
-     * The number of grams of sugar.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getSugarContent() {
-        return getFirst(sugarContent);
-    }
-
-    /**
-     * The number of grams of sugar.
-     *
-     * @param sugarContent Mass value to set.
-     */
-    @Override
-    public void addSugarContent(Mass sugarContent) {
-        this.sugarContent = add(this.sugarContent, sugarContent);
     }
 
     private List<Mass> carbohydrateContent;
@@ -286,68 +94,100 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
         this.carbohydrateContent = add(this.carbohydrateContent, carbohydrateContent);
     }
 
-    private List<Mass> transFatContent;
+    private List<Mass> fatContent;
 
     /**
-     * The number of grams of trans fat.
+     * The number of grams of fat.
      *
      * @return {@link Mass}
      */
     @Override
-    public List<Mass> getTransFatContentList() {
-        return transFatContent;
+    public List<Mass> getFatContentList() {
+        return fatContent;
     }
 
     /**
-     * The number of grams of trans fat.
+     * The number of grams of fat.
      *
      * @return {@link Mass}
      */
     @Override
-    public Mass getTransFatContent() {
-        return getFirst(transFatContent);
+    public Mass getFatContent() {
+        return getFirst(fatContent);
     }
 
     /**
-     * The number of grams of trans fat.
+     * The number of grams of fat.
      *
-     * @param transFatContent Mass value to set.
+     * @param fatContent Mass value to set.
      */
     @Override
-    public void addTransFatContent(Mass transFatContent) {
-        this.transFatContent = add(this.transFatContent, transFatContent);
+    public void addFatContent(Mass fatContent) {
+        this.fatContent = add(this.fatContent, fatContent);
     }
 
-    private List<Mass> fiberContent;
+    private List<Mass> cholesterolContent;
 
     /**
-     * The number of grams of fiber.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public List<Mass> getFiberContentList() {
-        return fiberContent;
-    }
-
-    /**
-     * The number of grams of fiber.
+     * The number of milligrams of cholesterol.
      *
      * @return {@link Mass}
      */
     @Override
-    public Mass getFiberContent() {
-        return getFirst(fiberContent);
+    public List<Mass> getCholesterolContentList() {
+        return cholesterolContent;
     }
 
     /**
-     * The number of grams of fiber.
+     * The number of milligrams of cholesterol.
      *
-     * @param fiberContent Mass value to set.
+     * @return {@link Mass}
      */
     @Override
-    public void addFiberContent(Mass fiberContent) {
-        this.fiberContent = add(this.fiberContent, fiberContent);
+    public Mass getCholesterolContent() {
+        return getFirst(cholesterolContent);
+    }
+
+    /**
+     * The number of milligrams of cholesterol.
+     *
+     * @param cholesterolContent Mass value to set.
+     */
+    @Override
+    public void addCholesterolContent(Mass cholesterolContent) {
+        this.cholesterolContent = add(this.cholesterolContent, cholesterolContent);
+    }
+
+    private List<Energy> calories;
+
+    /**
+     * The number of calories.
+     *
+     * @return {@link Energy}
+     */
+    @Override
+    public List<Energy> getCaloriesList() {
+        return calories;
+    }
+
+    /**
+     * The number of calories.
+     *
+     * @return {@link Energy}
+     */
+    @Override
+    public Energy getCalories() {
+        return getFirst(calories);
+    }
+
+    /**
+     * The number of calories.
+     *
+     * @param calories Energy value to set.
+     */
+    @Override
+    public void addCalories(Energy calories) {
+        this.calories = add(this.calories, calories);
     }
 
     private List<Mass> unsaturatedFatContent;
@@ -382,6 +222,102 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
         this.unsaturatedFatContent = add(this.unsaturatedFatContent, unsaturatedFatContent);
     }
 
+    private List<Mass> sugarContent;
+
+    /**
+     * The number of grams of sugar.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getSugarContentList() {
+        return sugarContent;
+    }
+
+    /**
+     * The number of grams of sugar.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getSugarContent() {
+        return getFirst(sugarContent);
+    }
+
+    /**
+     * The number of grams of sugar.
+     *
+     * @param sugarContent Mass value to set.
+     */
+    @Override
+    public void addSugarContent(Mass sugarContent) {
+        this.sugarContent = add(this.sugarContent, sugarContent);
+    }
+
+    private List<Mass> transFatContent;
+
+    /**
+     * The number of grams of trans fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getTransFatContentList() {
+        return transFatContent;
+    }
+
+    /**
+     * The number of grams of trans fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getTransFatContent() {
+        return getFirst(transFatContent);
+    }
+
+    /**
+     * The number of grams of trans fat.
+     *
+     * @param transFatContent Mass value to set.
+     */
+    @Override
+    public void addTransFatContent(Mass transFatContent) {
+        this.transFatContent = add(this.transFatContent, transFatContent);
+    }
+
+    private List<Mass> proteinContent;
+
+    /**
+     * The number of grams of protein.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public List<Mass> getProteinContentList() {
+        return proteinContent;
+    }
+
+    /**
+     * The number of grams of protein.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getProteinContent() {
+        return getFirst(proteinContent);
+    }
+
+    /**
+     * The number of grams of protein.
+     *
+     * @param proteinContent Mass value to set.
+     */
+    @Override
+    public void addProteinContent(Mass proteinContent) {
+        this.proteinContent = add(this.proteinContent, proteinContent);
+    }
+
     private List<Mass> saturatedFatContent;
 
     /**
@@ -414,110 +350,68 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
         this.saturatedFatContent = add(this.saturatedFatContent, saturatedFatContent);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    private List<Text> servingSize;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
+     * The serving size, in terms of the number of volume or mass.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Text> getServingSizeList() {
+        return servingSize;
     }
 
     /**
-     * An alias for the item.
+     * The serving size, in terms of the number of volume or mass.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Text getServingSize() {
+        return getFirst(servingSize);
     }
 
     /**
-     * An alias for the item.
+     * The serving size, in terms of the number of volume or mass.
      *
-     * @param alternateName Text value to set.
+     * @param servingSize Text value to set.
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
+    public void addServingSize(Text servingSize) {
+        this.servingSize = add(this.servingSize, servingSize);
     }
 
-    private List<Text> name;
+    private List<Mass> fiberContent;
 
     /**
-     * The name of the item.
+     * The number of grams of fiber.
      *
-     * @return {@link Text}
+     * @return {@link Mass}
      */
     @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
+    public List<Mass> getFiberContentList() {
+        return fiberContent;
     }
 
     /**
-     * The name of the item.
+     * The number of grams of fiber.
      *
-     * @param name Text value to set.
+     * @return {@link Mass}
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public Mass getFiberContent() {
+        return getFirst(fiberContent);
+    }
+
+    /**
+     * The number of grams of fiber.
+     *
+     * @param fiberContent Mass value to set.
+     */
+    @Override
+    public void addFiberContent(Mass fiberContent) {
+        this.fiberContent = add(this.fiberContent, fiberContent);
     }
 
     private List<Action> potentialAction;
@@ -552,110 +446,46 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -704,68 +534,68 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -800,14 +630,78 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -818,13 +712,23 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -845,14 +749,110 @@ public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

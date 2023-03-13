@@ -12,8 +12,8 @@ import org.schema.model.LegalValueLevel;
  * A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+ * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://schema.org/LegislationObject">https://schema.org/LegislationObject</a>
  */
 public interface LegislationObject extends Legislation, MediaObject {

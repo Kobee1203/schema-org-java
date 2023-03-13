@@ -5,16 +5,16 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Enumeration;
 import org.schema.model.Class;
 import org.schema.model.Property;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
+import org.schema.model.Enumeration;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
+import org.schema.model.datatype.Text;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -31,35 +31,35 @@ import org.schema.model.HealthAspectEnumeration;
  */
 @JsonLdTypeName("HealthAspectEnumeration")
 public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
-    SIDE_EFFECTS_HEALTH_ASPECT("SideEffectsHealthAspect"),
-    ALLERGIES_HEALTH_ASPECT("AllergiesHealthAspect"),
-    BENEFITS_HEALTH_ASPECT("BenefitsHealthAspect"),
-    SYMPTOMS_HEALTH_ASPECT("SymptomsHealthAspect"),
-    STAGES_HEALTH_ASPECT("StagesHealthAspect"),
     PROGNOSIS_HEALTH_ASPECT("PrognosisHealthAspect"),
-    HOW_IT_WORKS_HEALTH_ASPECT("HowItWorksHealthAspect"),
-    PREGNANCY_HEALTH_ASPECT("PregnancyHealthAspect"),
-    SELF_CARE_HEALTH_ASPECT("SelfCareHealthAspect"),
-    SEE_DOCTOR_HEALTH_ASPECT("SeeDoctorHealthAspect"),
-    TREATMENTS_HEALTH_ASPECT("TreatmentsHealthAspect"),
-    HOW_OR_WHERE_HEALTH_ASPECT("HowOrWhereHealthAspect"),
-    OVERVIEW_HEALTH_ASPECT("OverviewHealthAspect"),
-    EFFECTIVENESS_HEALTH_ASPECT("EffectivenessHealthAspect"),
-    TYPES_HEALTH_ASPECT("TypesHealthAspect"),
-    CONTAGIOUSNESS_HEALTH_ASPECT("ContagiousnessHealthAspect"),
-    SAFETY_HEALTH_ASPECT("SafetyHealthAspect"),
-    PREVENTION_HEALTH_ASPECT("PreventionHealthAspect"),
-    LIVING_WITH_HEALTH_ASPECT("LivingWithHealthAspect"),
-    SCREENING_HEALTH_ASPECT("ScreeningHealthAspect"),
-    MAY_TREAT_HEALTH_ASPECT("MayTreatHealthAspect"),
-    USAGE_OR_SCHEDULE_HEALTH_ASPECT("UsageOrScheduleHealthAspect"),
-    RISKS_OR_COMPLICATIONS_HEALTH_ASPECT("RisksOrComplicationsHealthAspect"),
-    INGREDIENTS_HEALTH_ASPECT("IngredientsHealthAspect"),
     CAUSES_HEALTH_ASPECT("CausesHealthAspect"),
-    GETTING_ACCESS_HEALTH_ASPECT("GettingAccessHealthAspect"),
-    PATIENT_EXPERIENCE_HEALTH_ASPECT("PatientExperienceHealthAspect"),
+    OVERVIEW_HEALTH_ASPECT("OverviewHealthAspect"),
+    SYMPTOMS_HEALTH_ASPECT("SymptomsHealthAspect"),
+    SEE_DOCTOR_HEALTH_ASPECT("SeeDoctorHealthAspect"),
+    SCREENING_HEALTH_ASPECT("ScreeningHealthAspect"),
+    SIDE_EFFECTS_HEALTH_ASPECT("SideEffectsHealthAspect"),
+    LIVING_WITH_HEALTH_ASPECT("LivingWithHealthAspect"),
+    CONTAGIOUSNESS_HEALTH_ASPECT("ContagiousnessHealthAspect"),
+    INGREDIENTS_HEALTH_ASPECT("IngredientsHealthAspect"),
+    TYPES_HEALTH_ASPECT("TypesHealthAspect"),
+    STAGES_HEALTH_ASPECT("StagesHealthAspect"),
     RELATED_TOPICS_HEALTH_ASPECT("RelatedTopicsHealthAspect"),
-    MISCONCEPTIONS_HEALTH_ASPECT("MisconceptionsHealthAspect")
+    TREATMENTS_HEALTH_ASPECT("TreatmentsHealthAspect"),
+    MISCONCEPTIONS_HEALTH_ASPECT("MisconceptionsHealthAspect"),
+    EFFECTIVENESS_HEALTH_ASPECT("EffectivenessHealthAspect"),
+    PREVENTION_HEALTH_ASPECT("PreventionHealthAspect"),
+    PREGNANCY_HEALTH_ASPECT("PregnancyHealthAspect"),
+    HOW_OR_WHERE_HEALTH_ASPECT("HowOrWhereHealthAspect"),
+    GETTING_ACCESS_HEALTH_ASPECT("GettingAccessHealthAspect"),
+    USAGE_OR_SCHEDULE_HEALTH_ASPECT("UsageOrScheduleHealthAspect"),
+    PATIENT_EXPERIENCE_HEALTH_ASPECT("PatientExperienceHealthAspect"),
+    HOW_IT_WORKS_HEALTH_ASPECT("HowItWorksHealthAspect"),
+    MAY_TREAT_HEALTH_ASPECT("MayTreatHealthAspect"),
+    ALLERGIES_HEALTH_ASPECT("AllergiesHealthAspect"),
+    SAFETY_HEALTH_ASPECT("SafetyHealthAspect"),
+    BENEFITS_HEALTH_ASPECT("BenefitsHealthAspect"),
+    SELF_CARE_HEALTH_ASPECT("SelfCareHealthAspect"),
+    RISKS_OR_COMPLICATIONS_HEALTH_ASPECT("RisksOrComplicationsHealthAspect")
     ;
 
     private final String enumValue;
@@ -123,11 +123,6 @@ public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Enumeration supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum HealthAspectEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
     public void addSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum HealthAspectEnumerationEnum");
     }
@@ -138,47 +133,8 @@ public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getMainEntityOfPageList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getMainEntityOfPage() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum HealthAspectEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum HealthAspectEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getAlternateNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getAlternateName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum HealthAspectEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum HealthAspectEnumerationEnum");
+    public void addSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum HealthAspectEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -195,47 +151,21 @@ public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getImageList() { return null; }
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getImage() { return null; }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum HealthAspectEnumerationEnum");
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum HealthAspectEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum HealthAspectEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<URL> getUrlList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getUrl() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum HealthAspectEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getDescriptionList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getDescription() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum HealthAspectEnumerationEnum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum HealthAspectEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -257,29 +187,29 @@ public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getAdditionalTypeList() { return null; }
+    public List<URL> getUrlList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getAdditionalType() { return null; }
+    public URL getUrl() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum HealthAspectEnumerationEnum");
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum HealthAspectEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Text> getDisambiguatingDescriptionList() { return null; }
+    public List<Text> getAlternateNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDisambiguatingDescription() { return null; }
+    public Text getAlternateName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum HealthAspectEnumerationEnum");
+    public void addAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum HealthAspectEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -296,12 +226,43 @@ public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
+    public List<Text> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum HealthAspectEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getDisambiguatingDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum HealthAspectEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
     public <T> List<T> getIdentifierList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getIdentifier() { return null; }
 
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum HealthAspectEnumerationEnum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public void addIdentifier(URL identifier) {
@@ -314,7 +275,46 @@ public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum HealthAspectEnumerationEnum");
+    public <T> List<T> getImageList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getImage() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum HealthAspectEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum HealthAspectEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getNameList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getName() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum HealthAspectEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<URL> getAdditionalTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public URL getAdditionalType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum HealthAspectEnumerationEnum");
     }
 }

@@ -16,27 +16,6 @@ import org.schema.model.datatype.Text;
 public interface TechArticle extends Article {
 
     /**
-     * Prerequisites needed to fulfill steps in article.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getDependenciesList();
-
-    /**
-     * Prerequisites needed to fulfill steps in article.
-     *
-     * @return {@link Text}
-     */
-    Text getDependencies();
-
-    /**
-     * Prerequisites needed to fulfill steps in article.
-     *
-     * @param dependencies Text value to set.
-     */
-    void addDependencies(Text dependencies);
-
-    /**
      * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
      *
      * @return {@link Text}
@@ -56,4 +35,25 @@ public interface TechArticle extends Article {
      * @param proficiencyLevel Text value to set.
      */
     void addProficiencyLevel(Text proficiencyLevel);
+
+    /**
+     * Prerequisites needed to fulfill steps in article.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDependenciesList();
+
+    /**
+     * Prerequisites needed to fulfill steps in article.
+     *
+     * @return {@link Text}
+     */
+    Text getDependencies();
+
+    /**
+     * Prerequisites needed to fulfill steps in article.
+     *
+     * @param dependencies Text value to set.
+     */
+    void addDependencies(Text dependencies);
 }

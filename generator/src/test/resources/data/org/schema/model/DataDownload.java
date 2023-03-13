@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Text;
 
 /**
- * A dataset in downloadable form.
+ * All or part of a [[Dataset]] in downloadable form. 
  *
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass</a>
  * @see <a href="https://schema.org/DataDownload">https://schema.org/DataDownload</a>
@@ -28,7 +28,7 @@ public interface DataDownload extends MediaObject {
      * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
      *       
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
@@ -45,7 +45,7 @@ public interface DataDownload extends MediaObject {
      * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
      *       
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
@@ -62,11 +62,11 @@ public interface DataDownload extends MediaObject {
      * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
      *       
      *
-     * @param measurementTechnique Text value to set.
+     * @param measurementTechnique URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
-    void addMeasurementTechnique(Text measurementTechnique);
+    void addMeasurementTechnique(URL measurementTechnique);
     /**
      * A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),
      * corresponding to the method used for measuring the corresponding variable(s) (described using [[variableMeasured]]). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.
@@ -78,9 +78,9 @@ public interface DataDownload extends MediaObject {
      * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
      *       
      *
-     * @param measurementTechnique URL value to set.
+     * @param measurementTechnique Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
-    void addMeasurementTechnique(URL measurementTechnique);
+    void addMeasurementTechnique(Text measurementTechnique);
 }

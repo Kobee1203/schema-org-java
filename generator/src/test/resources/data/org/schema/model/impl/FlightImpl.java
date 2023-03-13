@@ -5,27 +5,27 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Distance;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Vehicle;
 import org.schema.model.Organization;
 import org.schema.model.Person;
+import org.schema.model.BoardingPolicyType;
+import org.schema.model.datatype.DateTime;
 import org.schema.model.Airport;
 import org.schema.model.Duration;
-import org.schema.model.BoardingPolicyType;
+import org.schema.model.datatype.Text;
+import org.schema.model.Distance;
+import org.schema.model.Vehicle;
 import org.schema.model.datatype.Time;
-import org.schema.model.Offer;
-import org.schema.model.Demand;
-import org.schema.model.Trip;
 import org.schema.model.ItemList;
 import org.schema.model.Place;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
+import org.schema.model.Trip;
+import org.schema.model.Demand;
+import org.schema.model.Offer;
 import org.schema.model.Action;
-import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.CreativeWork;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -40,122 +40,6 @@ import org.schema.model.Flight;
  */
 @JsonLdTypeName("Flight")
 public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Flight {
-
-    @JsonLdFieldTypes({ Distance.class, Text.class })
-    private List<Object> flightDistance;
-
-    /**
-     * The distance of the flight.
-     *
-     * @return {@link Distance} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getFlightDistanceList() {
-        return (List<T>) flightDistance;
-    }
-
-    /**
-     * The distance of the flight.
-     *
-     * @return {@link Distance} or {@link Text}
-     */
-    @Override
-    public <T> T getFlightDistance() {
-        return (T) getFirst(flightDistance);
-    }
-
-    /**
-     * The distance of the flight.
-     *
-     * @param flightDistance Distance value to set.
-     */
-    @Override
-    public void addFlightDistance(Distance flightDistance) {
-        this.flightDistance = add(this.flightDistance, flightDistance);
-    }
-    /**
-     * The distance of the flight.
-     *
-     * @param flightDistance Text value to set.
-     */
-    @Override
-    public void addFlightDistance(Text flightDistance) {
-        this.flightDistance = add(this.flightDistance, flightDistance);
-    }
-
-    private List<DateTime> webCheckinTime;
-
-    /**
-     * The time when a passenger can check into the flight online.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public List<DateTime> getWebCheckinTimeList() {
-        return webCheckinTime;
-    }
-
-    /**
-     * The time when a passenger can check into the flight online.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public DateTime getWebCheckinTime() {
-        return getFirst(webCheckinTime);
-    }
-
-    /**
-     * The time when a passenger can check into the flight online.
-     *
-     * @param webCheckinTime DateTime value to set.
-     */
-    @Override
-    public void addWebCheckinTime(DateTime webCheckinTime) {
-        this.webCheckinTime = add(this.webCheckinTime, webCheckinTime);
-    }
-
-    @JsonLdFieldTypes({ Vehicle.class, Text.class })
-    private List<Object> aircraft;
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @return {@link Vehicle} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAircraftList() {
-        return (List<T>) aircraft;
-    }
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @return {@link Vehicle} or {@link Text}
-     */
-    @Override
-    public <T> T getAircraft() {
-        return (T) getFirst(aircraft);
-    }
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @param aircraft Vehicle value to set.
-     */
-    @Override
-    public void addAircraft(Vehicle aircraft) {
-        this.aircraft = add(this.aircraft, aircraft);
-    }
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @param aircraft Text value to set.
-     */
-    @Override
-    public void addAircraft(Text aircraft) {
-        this.aircraft = add(this.aircraft, aircraft);
-    }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
     private List<Object> seller;
@@ -199,6 +83,70 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.seller = add(this.seller, seller);
     }
 
+    private List<BoardingPolicyType> boardingPolicy;
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     * @return {@link BoardingPolicyType}
+     */
+    @Override
+    public List<BoardingPolicyType> getBoardingPolicyList() {
+        return boardingPolicy;
+    }
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     * @return {@link BoardingPolicyType}
+     */
+    @Override
+    public BoardingPolicyType getBoardingPolicy() {
+        return getFirst(boardingPolicy);
+    }
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     * @param boardingPolicy BoardingPolicyType value to set.
+     */
+    @Override
+    public void addBoardingPolicy(BoardingPolicyType boardingPolicy) {
+        this.boardingPolicy = add(this.boardingPolicy, boardingPolicy);
+    }
+
+    private List<DateTime> webCheckinTime;
+
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public List<DateTime> getWebCheckinTimeList() {
+        return webCheckinTime;
+    }
+
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public DateTime getWebCheckinTime() {
+        return getFirst(webCheckinTime);
+    }
+
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     * @param webCheckinTime DateTime value to set.
+     */
+    @Override
+    public void addWebCheckinTime(DateTime webCheckinTime) {
+        this.webCheckinTime = add(this.webCheckinTime, webCheckinTime);
+    }
+
     private List<Airport> arrivalAirport;
 
     /**
@@ -231,132 +179,46 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.arrivalAirport = add(this.arrivalAirport, arrivalAirport);
     }
 
-    private List<Text> arrivalTerminal;
+    @JsonLdFieldTypes({ Duration.class, Text.class })
+    private List<Object> estimatedFlightDuration;
 
     /**
-     * Identifier of the flight's arrival terminal.
+     * The estimated time the flight will take.
      *
-     * @return {@link Text}
+     * @return {@link Duration} or {@link Text}
      */
     @Override
-    public List<Text> getArrivalTerminalList() {
-        return arrivalTerminal;
+    public <T> List<T> getEstimatedFlightDurationList() {
+        return (List<T>) estimatedFlightDuration;
     }
 
     /**
-     * Identifier of the flight's arrival terminal.
+     * The estimated time the flight will take.
      *
-     * @return {@link Text}
+     * @return {@link Duration} or {@link Text}
      */
     @Override
-    public Text getArrivalTerminal() {
-        return getFirst(arrivalTerminal);
+    public <T> T getEstimatedFlightDuration() {
+        return (T) getFirst(estimatedFlightDuration);
     }
 
     /**
-     * Identifier of the flight's arrival terminal.
+     * The estimated time the flight will take.
      *
-     * @param arrivalTerminal Text value to set.
+     * @param estimatedFlightDuration Duration value to set.
      */
     @Override
-    public void addArrivalTerminal(Text arrivalTerminal) {
-        this.arrivalTerminal = add(this.arrivalTerminal, arrivalTerminal);
+    public void addEstimatedFlightDuration(Duration estimatedFlightDuration) {
+        this.estimatedFlightDuration = add(this.estimatedFlightDuration, estimatedFlightDuration);
     }
-
-    private List<Airport> departureAirport;
-
     /**
-     * The airport where the flight originates.
+     * The estimated time the flight will take.
      *
-     * @return {@link Airport}
+     * @param estimatedFlightDuration Text value to set.
      */
     @Override
-    public List<Airport> getDepartureAirportList() {
-        return departureAirport;
-    }
-
-    /**
-     * The airport where the flight originates.
-     *
-     * @return {@link Airport}
-     */
-    @Override
-    public Airport getDepartureAirport() {
-        return getFirst(departureAirport);
-    }
-
-    /**
-     * The airport where the flight originates.
-     *
-     * @param departureAirport Airport value to set.
-     */
-    @Override
-    public void addDepartureAirport(Airport departureAirport) {
-        this.departureAirport = add(this.departureAirport, departureAirport);
-    }
-
-    private List<Text> arrivalGate;
-
-    /**
-     * Identifier of the flight's arrival gate.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getArrivalGateList() {
-        return arrivalGate;
-    }
-
-    /**
-     * Identifier of the flight's arrival gate.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getArrivalGate() {
-        return getFirst(arrivalGate);
-    }
-
-    /**
-     * Identifier of the flight's arrival gate.
-     *
-     * @param arrivalGate Text value to set.
-     */
-    @Override
-    public void addArrivalGate(Text arrivalGate) {
-        this.arrivalGate = add(this.arrivalGate, arrivalGate);
-    }
-
-    private List<Text> departureTerminal;
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDepartureTerminalList() {
-        return departureTerminal;
-    }
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDepartureTerminal() {
-        return getFirst(departureTerminal);
-    }
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     * @param departureTerminal Text value to set.
-     */
-    @Override
-    public void addDepartureTerminal(Text departureTerminal) {
-        this.departureTerminal = add(this.departureTerminal, departureTerminal);
+    public void addEstimatedFlightDuration(Text estimatedFlightDuration) {
+        this.estimatedFlightDuration = add(this.estimatedFlightDuration, estimatedFlightDuration);
     }
 
     private List<Organization> carrier;
@@ -391,110 +253,36 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.carrier = add(this.carrier, carrier);
     }
 
-    @JsonLdFieldTypes({ Text.class, Duration.class })
-    private List<Object> estimatedFlightDuration;
+    private List<Airport> departureAirport;
 
     /**
-     * The estimated time the flight will take.
+     * The airport where the flight originates.
      *
-     * @return {@link Text} or {@link Duration}
+     * @return {@link Airport}
      */
     @Override
-    public <T> List<T> getEstimatedFlightDurationList() {
-        return (List<T>) estimatedFlightDuration;
+    public List<Airport> getDepartureAirportList() {
+        return departureAirport;
     }
 
     /**
-     * The estimated time the flight will take.
+     * The airport where the flight originates.
      *
-     * @return {@link Text} or {@link Duration}
+     * @return {@link Airport}
      */
     @Override
-    public <T> T getEstimatedFlightDuration() {
-        return (T) getFirst(estimatedFlightDuration);
+    public Airport getDepartureAirport() {
+        return getFirst(departureAirport);
     }
 
     /**
-     * The estimated time the flight will take.
+     * The airport where the flight originates.
      *
-     * @param estimatedFlightDuration Text value to set.
+     * @param departureAirport Airport value to set.
      */
     @Override
-    public void addEstimatedFlightDuration(Text estimatedFlightDuration) {
-        this.estimatedFlightDuration = add(this.estimatedFlightDuration, estimatedFlightDuration);
-    }
-    /**
-     * The estimated time the flight will take.
-     *
-     * @param estimatedFlightDuration Duration value to set.
-     */
-    @Override
-    public void addEstimatedFlightDuration(Duration estimatedFlightDuration) {
-        this.estimatedFlightDuration = add(this.estimatedFlightDuration, estimatedFlightDuration);
-    }
-
-    private List<Text> departureGate;
-
-    /**
-     * Identifier of the flight's departure gate.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDepartureGateList() {
-        return departureGate;
-    }
-
-    /**
-     * Identifier of the flight's departure gate.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDepartureGate() {
-        return getFirst(departureGate);
-    }
-
-    /**
-     * Identifier of the flight's departure gate.
-     *
-     * @param departureGate Text value to set.
-     */
-    @Override
-    public void addDepartureGate(Text departureGate) {
-        this.departureGate = add(this.departureGate, departureGate);
-    }
-
-    private List<Text> flightNumber;
-
-    /**
-     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getFlightNumberList() {
-        return flightNumber;
-    }
-
-    /**
-     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getFlightNumber() {
-        return getFirst(flightNumber);
-    }
-
-    /**
-     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-     *
-     * @param flightNumber Text value to set.
-     */
-    @Override
-    public void addFlightNumber(Text flightNumber) {
-        this.flightNumber = add(this.flightNumber, flightNumber);
+    public void addDepartureAirport(Airport departureAirport) {
+        this.departureAirport = add(this.departureAirport, departureAirport);
     }
 
     private List<Text> mealService;
@@ -529,128 +317,248 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.mealService = add(this.mealService, mealService);
     }
 
-    private List<BoardingPolicyType> boardingPolicy;
+    @JsonLdFieldTypes({ Text.class, Distance.class })
+    private List<Object> flightDistance;
 
     /**
-     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     * The distance of the flight.
      *
-     * @return {@link BoardingPolicyType}
+     * @return {@link Text} or {@link Distance}
      */
     @Override
-    public List<BoardingPolicyType> getBoardingPolicyList() {
-        return boardingPolicy;
+    public <T> List<T> getFlightDistanceList() {
+        return (List<T>) flightDistance;
     }
 
     /**
-     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     * The distance of the flight.
      *
-     * @return {@link BoardingPolicyType}
+     * @return {@link Text} or {@link Distance}
      */
     @Override
-    public BoardingPolicyType getBoardingPolicy() {
-        return getFirst(boardingPolicy);
+    public <T> T getFlightDistance() {
+        return (T) getFirst(flightDistance);
     }
 
     /**
-     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     * The distance of the flight.
      *
-     * @param boardingPolicy BoardingPolicyType value to set.
+     * @param flightDistance Text value to set.
      */
     @Override
-    public void addBoardingPolicy(BoardingPolicyType boardingPolicy) {
-        this.boardingPolicy = add(this.boardingPolicy, boardingPolicy);
-    }
-
-    @JsonLdFieldTypes({ Time.class, DateTime.class })
-    private List<Object> arrivalTime;
-
-    /**
-     * The expected arrival time.
-     *
-     * @return {@link Time} or {@link DateTime}
-     */
-    @Override
-    public <T> List<T> getArrivalTimeList() {
-        return (List<T>) arrivalTime;
-    }
-
-    /**
-     * The expected arrival time.
-     *
-     * @return {@link Time} or {@link DateTime}
-     */
-    @Override
-    public <T> T getArrivalTime() {
-        return (T) getFirst(arrivalTime);
-    }
-
-    /**
-     * The expected arrival time.
-     *
-     * @param arrivalTime Time value to set.
-     */
-    @Override
-    public void addArrivalTime(Time arrivalTime) {
-        this.arrivalTime = add(this.arrivalTime, arrivalTime);
+    public void addFlightDistance(Text flightDistance) {
+        this.flightDistance = add(this.flightDistance, flightDistance);
     }
     /**
-     * The expected arrival time.
+     * The distance of the flight.
      *
-     * @param arrivalTime DateTime value to set.
+     * @param flightDistance Distance value to set.
      */
     @Override
-    public void addArrivalTime(DateTime arrivalTime) {
-        this.arrivalTime = add(this.arrivalTime, arrivalTime);
+    public void addFlightDistance(Distance flightDistance) {
+        this.flightDistance = add(this.flightDistance, flightDistance);
     }
 
-    @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private List<Object> offers;
+    private List<Text> departureGate;
 
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Identifier of the flight's departure gate.
      *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Text}
      */
     @Override
-    public <T> List<T> getOffersList() {
-        return (List<T>) offers;
+    public List<Text> getDepartureGateList() {
+        return departureGate;
     }
 
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Identifier of the flight's departure gate.
      *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Text}
      */
     @Override
-    public <T> T getOffers() {
-        return (T) getFirst(offers);
+    public Text getDepartureGate() {
+        return getFirst(departureGate);
     }
 
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Identifier of the flight's departure gate.
      *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param departureGate Text value to set.
      */
     @Override
-    public void addOffers(Offer offers) {
-        this.offers = add(this.offers, offers);
+    public void addDepartureGate(Text departureGate) {
+        this.departureGate = add(this.departureGate, departureGate);
+    }
+
+    private List<Text> departureTerminal;
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDepartureTerminalList() {
+        return departureTerminal;
+    }
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDepartureTerminal() {
+        return getFirst(departureTerminal);
+    }
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @param departureTerminal Text value to set.
+     */
+    @Override
+    public void addDepartureTerminal(Text departureTerminal) {
+        this.departureTerminal = add(this.departureTerminal, departureTerminal);
+    }
+
+    private List<Text> arrivalTerminal;
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getArrivalTerminalList() {
+        return arrivalTerminal;
+    }
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getArrivalTerminal() {
+        return getFirst(arrivalTerminal);
+    }
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @param arrivalTerminal Text value to set.
+     */
+    @Override
+    public void addArrivalTerminal(Text arrivalTerminal) {
+        this.arrivalTerminal = add(this.arrivalTerminal, arrivalTerminal);
+    }
+
+    private List<Text> flightNumber;
+
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFlightNumberList() {
+        return flightNumber;
+    }
+
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getFlightNumber() {
+        return getFirst(flightNumber);
+    }
+
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     * @param flightNumber Text value to set.
+     */
+    @Override
+    public void addFlightNumber(Text flightNumber) {
+        this.flightNumber = add(this.flightNumber, flightNumber);
+    }
+
+    private List<Text> arrivalGate;
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getArrivalGateList() {
+        return arrivalGate;
+    }
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getArrivalGate() {
+        return getFirst(arrivalGate);
+    }
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @param arrivalGate Text value to set.
+     */
+    @Override
+    public void addArrivalGate(Text arrivalGate) {
+        this.arrivalGate = add(this.arrivalGate, arrivalGate);
+    }
+
+    @JsonLdFieldTypes({ Text.class, Vehicle.class })
+    private List<Object> aircraft;
+
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @return {@link Text} or {@link Vehicle}
+     */
+    @Override
+    public <T> List<T> getAircraftList() {
+        return (List<T>) aircraft;
+    }
+
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @return {@link Text} or {@link Vehicle}
+     */
+    @Override
+    public <T> T getAircraft() {
+        return (T) getFirst(aircraft);
+    }
+
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @param aircraft Text value to set.
+     */
+    @Override
+    public void addAircraft(Text aircraft) {
+        this.aircraft = add(this.aircraft, aircraft);
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * The kind of aircraft (e.g., "Boeing 747").
      *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param aircraft Vehicle value to set.
      */
     @Override
-    public void addOffers(Demand offers) {
-        this.offers = add(this.offers, offers);
+    public void addAircraft(Vehicle aircraft) {
+        this.aircraft = add(this.aircraft, aircraft);
     }
 
     @JsonLdFieldTypes({ Time.class, DateTime.class })
@@ -695,101 +603,6 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.departureTime = add(this.departureTime, departureTime);
     }
 
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> provider;
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
-    }
-
-    private List<Trip> subTrip;
-
-    /**
-     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
-     *
-     * @return {@link Trip}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    @Override
-    public List<Trip> getSubTripList() {
-        return subTrip;
-    }
-
-    /**
-     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
-     *
-     * @return {@link Trip}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    @Override
-    public Trip getSubTrip() {
-        return getFirst(subTrip);
-    }
-
-    /**
-     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
-     *
-     * @param subTrip Trip value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    @Override
-    public void addSubTrip(Trip subTrip) {
-        this.subTrip = add(this.subTrip, subTrip);
-    }
-
     @JsonLdFieldTypes({ ItemList.class, Place.class })
     private List<Object> itinerary;
 
@@ -798,8 +611,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @return {@link ItemList} or {@link Place}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      */
     @Override
     public <T> List<T> getItineraryList() {
@@ -811,8 +624,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @return {@link ItemList} or {@link Place}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      */
     @Override
     public <T> T getItinerary() {
@@ -824,8 +637,8 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @param itinerary ItemList value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      */
     @Override
     public void addItinerary(ItemList itinerary) {
@@ -836,12 +649,66 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @param itinerary Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      */
     @Override
     public void addItinerary(Place itinerary) {
         this.itinerary = add(this.itinerary, itinerary);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
     }
 
     private List<Trip> partOfTrip;
@@ -885,110 +752,137 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.partOfTrip = add(this.partOfTrip, partOfTrip);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> arrivalTime;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The expected arrival time.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link DateTime} or {@link Time}
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public <T> List<T> getArrivalTimeList() {
+        return (List<T>) arrivalTime;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The expected arrival time.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link DateTime} or {@link Time}
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public <T> T getArrivalTime() {
+        return (T) getFirst(arrivalTime);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The expected arrival time.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param arrivalTime DateTime value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addArrivalTime(DateTime arrivalTime) {
+        this.arrivalTime = add(this.arrivalTime, arrivalTime);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The expected arrival time.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @param arrivalTime Time value to set.
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addArrivalTime(Time arrivalTime) {
+        this.arrivalTime = add(this.arrivalTime, arrivalTime);
     }
 
-    private List<Text> alternateName;
+    private List<Trip> subTrip;
 
     /**
-     * An alias for the item.
+     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      *
-     * @return {@link Text}
+     * @return {@link Trip}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public List<Trip> getSubTripList() {
+        return subTrip;
     }
 
     /**
-     * An alias for the item.
+     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      *
-     * @param alternateName Text value to set.
+     * @return {@link Trip}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
+    public Trip getSubTrip() {
+        return getFirst(subTrip);
     }
 
     /**
-     * The name of the item.
+     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      *
-     * @return {@link Text}
+     * @param subTrip Trip value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public Text getName() {
-        return getFirst(name);
+    public void addSubTrip(Trip subTrip) {
+        this.subTrip = add(this.subTrip, subTrip);
+    }
+
+    @JsonLdFieldTypes({ Demand.class, Offer.class })
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Demand} or {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
     }
 
     /**
-     * The name of the item.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      *
-     * @param name Text value to set.
+     * @return {@link Demand} or {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public <T> T getOffers() {
+        return (T) getFirst(offers);
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Offer value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
 
     private List<Action> potentialAction;
@@ -1023,110 +917,46 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link URL} or {@link CreativeWork}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param image ImageObject value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    private List<Text> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -1175,68 +1005,68 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> additionalType;
+    private List<URL> url;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * URL of the item.
      *
-     * @param additionalType URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> disambiguatingDescription;
+    private List<Text> alternateName;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<URL> sameAs;
@@ -1271,14 +1101,78 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
     private List<Object> identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> List<T> getIdentifierList() {
@@ -1289,13 +1183,23 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link PropertyValue} or {@link URL} or {@link Text}
      */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
@@ -1316,14 +1220,110 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param identifier PropertyValue value to set.
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 }

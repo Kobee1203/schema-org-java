@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.Person;
-import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.BookFormatType;
+import org.schema.model.Person;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Integer;
 
 /**
  * A book.
@@ -18,69 +18,6 @@ import org.schema.model.BookFormatType;
  * @see <a href="https://schema.org/Book">https://schema.org/Book</a>
  */
 public interface Book extends CreativeWork {
-
-    /**
-     * The ISBN of the book.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getIsbnList();
-
-    /**
-     * The ISBN of the book.
-     *
-     * @return {@link Text}
-     */
-    Text getIsbn();
-
-    /**
-     * The ISBN of the book.
-     *
-     * @param isbn Text value to set.
-     */
-    void addIsbn(Text isbn);
-
-    /**
-     * The illustrator of the book.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getIllustratorList();
-
-    /**
-     * The illustrator of the book.
-     *
-     * @return {@link Person}
-     */
-    Person getIllustrator();
-
-    /**
-     * The illustrator of the book.
-     *
-     * @param illustrator Person value to set.
-     */
-    void addIllustrator(Person illustrator);
-
-    /**
-     * The number of pages in the book.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getNumberOfPagesList();
-
-    /**
-     * The number of pages in the book.
-     *
-     * @return {@link Integer}
-     */
-    Integer getNumberOfPages();
-
-    /**
-     * The number of pages in the book.
-     *
-     * @param numberOfPages Integer value to set.
-     */
-    void addNumberOfPages(Integer numberOfPages);
 
     /**
      * Indicates whether the book is an abridged edition.
@@ -128,6 +65,27 @@ public interface Book extends CreativeWork {
     void addBookFormat(BookFormatType bookFormat);
 
     /**
+     * The illustrator of the book.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getIllustratorList();
+
+    /**
+     * The illustrator of the book.
+     *
+     * @return {@link Person}
+     */
+    Person getIllustrator();
+
+    /**
+     * The illustrator of the book.
+     *
+     * @param illustrator Person value to set.
+     */
+    void addIllustrator(Person illustrator);
+
+    /**
      * The edition of the book.
      *
      * @return {@link Text}
@@ -147,4 +105,46 @@ public interface Book extends CreativeWork {
      * @param bookEdition Text value to set.
      */
     void addBookEdition(Text bookEdition);
+
+    /**
+     * The number of pages in the book.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfPagesList();
+
+    /**
+     * The number of pages in the book.
+     *
+     * @return {@link Integer}
+     */
+    Integer getNumberOfPages();
+
+    /**
+     * The number of pages in the book.
+     *
+     * @param numberOfPages Integer value to set.
+     */
+    void addNumberOfPages(Integer numberOfPages);
+
+    /**
+     * The ISBN of the book.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIsbnList();
+
+    /**
+     * The ISBN of the book.
+     *
+     * @return {@link Text}
+     */
+    Text getIsbn();
+
+    /**
+     * The ISBN of the book.
+     *
+     * @param isbn Text value to set.
+     */
+    void addIsbn(Text isbn);
 }

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
 import org.schema.model.DeliveryMethod;
 
 /**
@@ -16,27 +16,6 @@ import org.schema.model.DeliveryMethod;
  * @see <a href="https://schema.org/DeliveryEvent">https://schema.org/DeliveryEvent</a>
  */
 public interface DeliveryEvent extends Event {
-
-    /**
-     * Password, PIN, or access code needed for delivery (e.g. from a locker).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAccessCodeList();
-
-    /**
-     * Password, PIN, or access code needed for delivery (e.g. from a locker).
-     *
-     * @return {@link Text}
-     */
-    Text getAccessCode();
-
-    /**
-     * Password, PIN, or access code needed for delivery (e.g. from a locker).
-     *
-     * @param accessCode Text value to set.
-     */
-    void addAccessCode(Text accessCode);
 
     /**
      * After this date, the item will no longer be available for pickup.
@@ -58,6 +37,27 @@ public interface DeliveryEvent extends Event {
      * @param availableThrough DateTime value to set.
      */
     void addAvailableThrough(DateTime availableThrough);
+
+    /**
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAccessCodeList();
+
+    /**
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     *
+     * @return {@link Text}
+     */
+    Text getAccessCode();
+
+    /**
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     *
+     * @param accessCode Text value to set.
+     */
+    void addAccessCode(Text accessCode);
 
     /**
      * Method used for delivery or shipping.

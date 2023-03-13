@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
+ * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
  *
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicAlbumProductionType">https://schema.org/MusicAlbumProductionType</a>

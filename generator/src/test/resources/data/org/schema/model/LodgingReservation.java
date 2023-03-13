@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QualitativeValue;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Time;
+import org.schema.model.datatype.Text;
+import org.schema.model.QualitativeValue;
 import org.schema.model.datatype.Integer;
 import org.schema.model.QuantitativeValue;
 
@@ -19,54 +19,6 @@ import org.schema.model.QuantitativeValue;
  * @see <a href="https://schema.org/LodgingReservation">https://schema.org/LodgingReservation</a>
  */
 public interface LodgingReservation extends Reservation {
-
-    /**
-     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     */
-    <T> List<T> getLodgingUnitTypeList();
-
-    /**
-     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-     *
-     * @return {@link QualitativeValue} or {@link Text}
-     */
-    <T> T getLodgingUnitType();
-
-    /**
-     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-     *
-     * @param lodgingUnitType QualitativeValue value to set.
-     */
-    void addLodgingUnitType(QualitativeValue lodgingUnitType);
-    /**
-     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-     *
-     * @param lodgingUnitType Text value to set.
-     */
-    void addLodgingUnitType(Text lodgingUnitType);
-
-    /**
-     * A full description of the lodging unit.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getLodgingUnitDescriptionList();
-
-    /**
-     * A full description of the lodging unit.
-     *
-     * @return {@link Text}
-     */
-    Text getLodgingUnitDescription();
-
-    /**
-     * A full description of the lodging unit.
-     *
-     * @param lodgingUnitDescription Text value to set.
-     */
-    void addLodgingUnitDescription(Text lodgingUnitDescription);
 
     /**
      * The latest someone may check out of a lodging establishment.
@@ -96,31 +48,85 @@ public interface LodgingReservation extends Reservation {
     void addCheckoutTime(Time checkoutTime);
 
     /**
-     * The number of adults staying in the unit.
+     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     */
+    <T> List<T> getLodgingUnitTypeList();
+
+    /**
+     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+     *
+     * @return {@link Text} or {@link QualitativeValue}
+     */
+    <T> T getLodgingUnitType();
+
+    /**
+     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+     *
+     * @param lodgingUnitType Text value to set.
+     */
+    void addLodgingUnitType(Text lodgingUnitType);
+    /**
+     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+     *
+     * @param lodgingUnitType QualitativeValue value to set.
+     */
+    void addLodgingUnitType(QualitativeValue lodgingUnitType);
+
+    /**
+     * The number of children staying in the unit.
      *
      * @return {@link Integer} or {@link QuantitativeValue}
+     */
+    <T> List<T> getNumChildrenList();
+
+    /**
+     * The number of children staying in the unit.
+     *
+     * @return {@link Integer} or {@link QuantitativeValue}
+     */
+    <T> T getNumChildren();
+
+    /**
+     * The number of children staying in the unit.
+     *
+     * @param numChildren Integer value to set.
+     */
+    void addNumChildren(Integer numChildren);
+    /**
+     * The number of children staying in the unit.
+     *
+     * @param numChildren QuantitativeValue value to set.
+     */
+    void addNumChildren(QuantitativeValue numChildren);
+
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @return {@link QuantitativeValue} or {@link Integer}
      */
     <T> List<T> getNumAdultsList();
 
     /**
      * The number of adults staying in the unit.
      *
-     * @return {@link Integer} or {@link QuantitativeValue}
+     * @return {@link QuantitativeValue} or {@link Integer}
      */
     <T> T getNumAdults();
 
     /**
      * The number of adults staying in the unit.
      *
-     * @param numAdults Integer value to set.
-     */
-    void addNumAdults(Integer numAdults);
-    /**
-     * The number of adults staying in the unit.
-     *
      * @param numAdults QuantitativeValue value to set.
      */
     void addNumAdults(QuantitativeValue numAdults);
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @param numAdults Integer value to set.
+     */
+    void addNumAdults(Integer numAdults);
 
     /**
      * The earliest someone may check into a lodging establishment.
@@ -150,29 +156,23 @@ public interface LodgingReservation extends Reservation {
     void addCheckinTime(Time checkinTime);
 
     /**
-     * The number of children staying in the unit.
+     * A full description of the lodging unit.
      *
-     * @return {@link Integer} or {@link QuantitativeValue}
+     * @return {@link Text}
      */
-    <T> List<T> getNumChildrenList();
+    List<Text> getLodgingUnitDescriptionList();
 
     /**
-     * The number of children staying in the unit.
+     * A full description of the lodging unit.
      *
-     * @return {@link Integer} or {@link QuantitativeValue}
+     * @return {@link Text}
      */
-    <T> T getNumChildren();
+    Text getLodgingUnitDescription();
 
     /**
-     * The number of children staying in the unit.
+     * A full description of the lodging unit.
      *
-     * @param numChildren Integer value to set.
+     * @param lodgingUnitDescription Text value to set.
      */
-    void addNumChildren(Integer numChildren);
-    /**
-     * The number of children staying in the unit.
-     *
-     * @param numChildren QuantitativeValue value to set.
-     */
-    void addNumChildren(QuantitativeValue numChildren);
+    void addLodgingUnitDescription(Text lodgingUnitDescription);
 }

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
 import org.schema.model.MonetaryAmount;
+import org.schema.model.datatype.Number;
 
 /**
  * A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.
@@ -20,7 +20,7 @@ public interface InvestmentOrDeposit extends FinancialProduct {
     /**
      * The amount of money.
      *
-     * @return {@link Number} or {@link MonetaryAmount}
+     * @return {@link MonetaryAmount} or {@link Number}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
@@ -29,7 +29,7 @@ public interface InvestmentOrDeposit extends FinancialProduct {
     /**
      * The amount of money.
      *
-     * @return {@link Number} or {@link MonetaryAmount}
+     * @return {@link MonetaryAmount} or {@link Number}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
@@ -38,17 +38,17 @@ public interface InvestmentOrDeposit extends FinancialProduct {
     /**
      * The amount of money.
      *
-     * @param amount Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void addAmount(Number amount);
-    /**
-     * The amount of money.
-     *
      * @param amount MonetaryAmount value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
     void addAmount(MonetaryAmount amount);
+    /**
+     * The amount of money.
+     *
+     * @param amount Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void addAmount(Number amount);
 }

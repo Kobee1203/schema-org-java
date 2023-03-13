@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Gene;
-import org.schema.model.datatype.Text;
-import org.schema.model.BioChemEntity;
-import org.schema.model.AnatomicalStructure;
 import org.schema.model.DefinedTerm;
+import org.schema.model.BioChemEntity;
 import org.schema.model.AnatomicalSystem;
+import org.schema.model.AnatomicalStructure;
+import org.schema.model.datatype.Text;
+import org.schema.model.Gene;
 
 /**
  * A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).
@@ -22,31 +22,52 @@ import org.schema.model.AnatomicalSystem;
 public interface Gene extends BioChemEntity {
 
     /**
-     * Another gene which is a variation of this one.
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
      *
-     * @return {@link Gene}
+     * @return {@link DefinedTerm} or {@link BioChemEntity} or {@link AnatomicalSystem} or {@link AnatomicalStructure}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    List<Gene> getAlternativeOfList();
+    <T> List<T> getExpressedInList();
 
     /**
-     * Another gene which is a variation of this one.
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
      *
-     * @return {@link Gene}
+     * @return {@link DefinedTerm} or {@link BioChemEntity} or {@link AnatomicalSystem} or {@link AnatomicalStructure}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    Gene getAlternativeOf();
+    <T> T getExpressedIn();
 
     /**
-     * Another gene which is a variation of this one.
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
      *
-     * @param alternativeOf Gene value to set.
+     * @param expressedIn DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void addAlternativeOf(Gene alternativeOf);
+    void addExpressedIn(DefinedTerm expressedIn);
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @param expressedIn BioChemEntity value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void addExpressedIn(BioChemEntity expressedIn);
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @param expressedIn AnatomicalSystem value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void addExpressedIn(AnatomicalSystem expressedIn);
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @param expressedIn AnatomicalStructure value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void addExpressedIn(AnatomicalStructure expressedIn);
 
     /**
-     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -54,7 +75,7 @@ public interface Gene extends BioChemEntity {
     List<Text> getHasBioPolymerSequenceList();
 
     /**
-     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -62,7 +83,7 @@ public interface Gene extends BioChemEntity {
     Text getHasBioPolymerSequence();
 
     /**
-     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
      * @param hasBioPolymerSequence Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -94,47 +115,26 @@ public interface Gene extends BioChemEntity {
     void addEncodesBioChemEntity(BioChemEntity encodesBioChemEntity);
 
     /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     * Another gene which is a variation of this one.
      *
-     * @return {@link AnatomicalStructure} or {@link BioChemEntity} or {@link DefinedTerm} or {@link AnatomicalSystem}
+     * @return {@link Gene}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    <T> List<T> getExpressedInList();
+    List<Gene> getAlternativeOfList();
 
     /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     * Another gene which is a variation of this one.
      *
-     * @return {@link AnatomicalStructure} or {@link BioChemEntity} or {@link DefinedTerm} or {@link AnatomicalSystem}
+     * @return {@link Gene}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    <T> T getExpressedIn();
+    Gene getAlternativeOf();
 
     /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     * Another gene which is a variation of this one.
      *
-     * @param expressedIn AnatomicalStructure value to set.
+     * @param alternativeOf Gene value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void addExpressedIn(AnatomicalStructure expressedIn);
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @param expressedIn BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addExpressedIn(BioChemEntity expressedIn);
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @param expressedIn DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addExpressedIn(DefinedTerm expressedIn);
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @param expressedIn AnatomicalSystem value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addExpressedIn(AnatomicalSystem expressedIn);
+    void addAlternativeOf(Gene alternativeOf);
 }
