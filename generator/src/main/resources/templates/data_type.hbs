@@ -25,7 +25,7 @@ public class {{this.name}}{{#if this.parents}} extends {{#each this.parents}}{{t
 
 {{#with this.accessor}}
     {{> templates/fragment/javadoc_getter}}
-    public {{&this.returnFieldType}} {{this.getterMethod}}() {
+    public {{&this.returnFieldType}} {{this.firstGetterMethod}}() {
         return {{#if this.cast}}{{&this.cast}} {{/if}}{{../this.field.fieldName}};
     }
 {{/with}}
