@@ -60,6 +60,7 @@ public enum MedicalSpecialtyEnum implements MedicalSpecialty {
     NURSING("Nursing"),
     PULMONARY("Pulmonary"),
     DERMATOLOGIC("Dermatologic"),
+    RADIOGRAPHY("Radiography"),
     OTOLARYNGOLOGIC("Otolaryngologic"),
     EMERGENCY("Emergency"),
     PATHOLOGY("Pathology"),

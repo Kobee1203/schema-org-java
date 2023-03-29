@@ -33,6 +33,7 @@ import org.schema.model.MedicalImagingTechnique;
 public enum MedicalImagingTechniqueEnum implements MedicalImagingTechnique {
     X_RAY("XRay"),
     PET("PET"),
+    RADIOGRAPHY("Radiography"),
     MRI("MRI"),
     CT("CT"),
     ULTRASOUND("Ultrasound")

@@ -41,13 +41,13 @@ class EnumerationMemberModelHandlerImplTest {
         Map<String, Type> schemaDefinitions = new HashMap<>();
 
         GraphItem graphItem = mock(GraphItem.class);
-        when(graphItem.getTypes()).thenReturn(List.of("schema:ActionStatusType"));
-        when(graphItem.getLabel()).thenReturn(label("en", "PotentialActionStatus"));
+        when(graphItem.getTypes()).thenReturn(List.of("schema:MedicalImagingTechnique"));
+        when(graphItem.getLabel()).thenReturn(label("en", "Radiography"));
 
         modelHandler.handle(schemaDefinitions, graphItem);
 
-        Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:ActionStatusType");
-        Assertions.assertThat(schemaDefinitions.get("schema:ActionStatusType"))
+        Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:MedicalImagingTechnique");
+        Assertions.assertThat(schemaDefinitions.get("schema:MedicalImagingTechnique"))
                 .extracting(
                         "id", "javaType", "name", "description",
                         "properties", "allProperties",
@@ -56,19 +56,63 @@ class EnumerationMemberModelHandlerImplTest {
                         "partOf", "source"
                 )
                 .containsExactly(
-                        "schema:ActionStatusType", null, null, null,
+                        "schema:MedicalImagingTechnique", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(),
-                        false /* Parent is not added */, List.of("PotentialActionStatus"),
+                        false /* Parent is not added */, List.of("Radiography"),
+                        Collections.emptyList(), Collections.emptyList()
+                );
+    }
+
+    @Test
+    void handle_with_multiple_enums() {
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getTypes()).thenReturn(List.of("schema:MedicalImagingTechnique", "schema:MedicalSpecialty"));
+        when(graphItem.getLabel()).thenReturn(label("en", "Radiography"));
+
+        modelHandler.handle(schemaDefinitions, graphItem);
+
+        Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:MedicalImagingTechnique", "schema:MedicalSpecialty");
+        Assertions.assertThat(schemaDefinitions.get("schema:MedicalImagingTechnique"))
+                .extracting(
+                        "id", "javaType", "name", "description",
+                        "properties", "allProperties",
+                        "parents",
+                        "enumerationType", "enumerationMembers",
+                        "partOf", "source"
+                )
+                .containsExactly(
+                        "schema:MedicalImagingTechnique", null, null, null,
+                        Collections.emptySet(), Collections.emptySet(),
+                        Collections.emptyList(),
+                        false /* Parent is not added */, List.of("Radiography"),
+                        Collections.emptyList(), Collections.emptyList()
+                );
+        Assertions.assertThat(schemaDefinitions.get("schema:MedicalSpecialty"))
+                .extracting(
+                        "id", "javaType", "name", "description",
+                        "properties", "allProperties",
+                        "parents",
+                        "enumerationType", "enumerationMembers",
+                        "partOf", "source"
+                )
+                .containsExactly(
+                        "schema:MedicalSpecialty", null, null, null,
+                        Collections.emptySet(), Collections.emptySet(),
+                        Collections.emptyList(),
+                        false /* Parent is not added */, List.of("Radiography"),
                         Collections.emptyList(), Collections.emptyList()
                 );
     }
 
     private static Stream<Arguments> supports() {
         return Stream.of(
-                Arguments.of(List.of("schema:ActionStatusType"), true),
-                Arguments.of(List.of("schema:ActionStatusType", "rdfs:Class"), false), // types size not equal to 1
-                Arguments.of(List.of("rdfs:ActionStatusType"), false), // type not started with "schema:"
+                Arguments.of(List.of("schema:MedicalImagingTechnique"), true),
+                Arguments.of(List.of("schema:MedicalImagingTechnique", "schema:MedicalSpecialty"), true),
+                Arguments.of(List.of("schema:MedicalImagingTechnique", "rdfs:Class"), false), // types don't contain only 'schema:*'
+                Arguments.of(List.of("rdfs:MedicalImagingTechnique"), false), // type not started with "schema:"
                 Arguments.of(List.of("schema:DataType"), false) // "schema:DataType" not allowed
         );
     }
