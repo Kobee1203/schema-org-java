@@ -10,6 +10,32 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+## [0.5.0] - 2023-03-29
+
+### Added
+
+- [generator] Handle Enumeration Member defined for multiple Enumeration types [#74](https://github.com/Kobee1203/schema-org-java/issues/74)
+
+### Changed
+
+- [generator] Upgrade the version of the internal Vocabulary Definition File (schemaorg-current-https.jsonld) to 15.0 [#62](https://github.com/Kobee1203/schema-org-java/issues/62)
+- Bump logback-classic from 1.4.5 to 1.4.6
+- Bump mockito-junit-jupiter from 5.1.1 to 5.2.0
+- Bump maven-compiler-plugin from 3.10.1 to 3.11.0
+- Bump maven-plugin-api from 3.9.0 to 3.9.1
+- Bump maven-plugin-plugin from 3.7.1 to 3.8.1
+- Bump maven-plugin-annotations from 3.7.1 to 3.8.1
+- Bump maven-assembly-plugin from 3.4.2 to 3.5.0
+- Bump maven-javadoc-plugin from 3.4.1 to 3.5.0
+- Bump maven-release-plugin from 3.0.0-M7 to 3.0.0
+- Bump maven-surefire-plugin from 3.0.0-M8 to 3.0.0
+- Bump maven-failsafe-plugin from 3.0.0-M8 to 3.0.0
+- Bump equalsverifier from 3.13 to 3.14.1
+
+### Fixed
+
+- [generator] Fix getters method name for DataTypes without 'List' prefix
+
 ## [0.4.0] - 2023-02-07
 
 ### Added
@@ -132,6 +158,7 @@ All notable changes to this project will be documented in this file.
 schema-org-java is alive!
 
 [unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.4.0...HEAD
+[0.5.0]: https://github.com/Kobee1203/schema-org-java/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/Kobee1203/schema-org-java/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/Kobee1203/schema-org-java/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/Kobee1203/schema-org-java/compare/0.2.2...0.3.0
