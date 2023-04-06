@@ -198,7 +198,7 @@ final class DeserializerUtils {
 }
 ```
 
-If we want to add several types, there is a constructor to get all classes from a package:
+If we want to add custom types, there is a constructor to get all classes from a package:
 ```java
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.serializer.deserialization.JsonLdDeserializer;

@@ -39,6 +39,7 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
         this(
                 PackageScanner.getClassesIn(packageName)
                         .stream()
+                        .filter(clazz -> !clazz.isInterface())
                         .collect(Collectors.toMap(
                                 clazz -> {
                                     final JsonLdTypeName jsonLdTypeName = clazz.getAnnotation(JsonLdTypeName.class);
