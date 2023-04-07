@@ -2,6 +2,8 @@ package com.weedow.schemaorg.serializer.deserialization;
 
 import com.adelean.inject.resources.junit.jupiter.GivenTextResource;
 import com.adelean.inject.resources.junit.jupiter.TestWithResources;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdException;
@@ -10,6 +12,7 @@ import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.Test;
+import org.schema.model.Thing;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Float;
 import org.schema.model.datatype.Integer;
@@ -105,6 +108,7 @@ class JsonLdDeserializerImplTest {
         Assertions.assertThat(identifiers.get(0))
                 .isInstanceOf(PropertyValueImpl.class)
                 .extracting("valueList", InstanceOfAssertFactories.list(List.class))
+                .hasOnlyElementsOfType(Number.class)
                 .extracting("value")
                 .containsExactly(123456, 789012);
 
@@ -191,17 +195,85 @@ class JsonLdDeserializerImplTest {
 
     @Test
     void throws_exception_when_deserialize_invalid_data() {
+        final JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
+
+        Assertions.assertThatThrownBy(() -> jsonLdDeserializer.deserialize("{}"))
+                .isInstanceOf(JsonLdException.class)
+                .hasMessage("JSON-LD deserialization internal error: Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
+                        " at [Source: (String)\"{}\"; line: 1, column: 2].")
+                .hasCauseInstanceOf(JsonMappingException.class)
+                .hasMessage("JSON-LD deserialization internal error: Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
+                        " at [Source: (String)\"{}\"; line: 1, column: 2].")
+                .hasRootCauseInstanceOf(InvalidTypeIdException.class)
+                .hasRootCauseMessage("Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
+                        " at [Source: (String)\"{}\"; line: 1, column: 2]");
     }
 
     @Test
     void deserialize_list(@GivenTextResource("/data/List.json") String json) throws MalformedURLException, JsonLdException {
+        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl("com.weedow.schemaorg.serializer.data");
+        List<JsonLdNode> result = jsonLdDeserializer.deserializeList(json);
+
+        Assertions.assertThat(result).isNotNull().hasSize(2);
+
+        Assertions.assertThat(result.get(0)).isInstanceOf(ThingImpl.class);
+
+        Thing thing = (Thing) result.get(0);
+
+        Assertions.assertThat(thing).isInstanceOf(ThingImpl.class)
+                .extracting("context", "id", "name.value", "description.value", "url.value", "image")
+                .containsExactly("https://schema.org", "my_id", "My Thing", "This is my thing.", "https://github.com/Kobee1203/schema-org-java", null);
+
+        List<Object> identifiers = thing.getIdentifierList();
+        Assertions.assertThat(identifiers).hasSize(1);
+        Assertions.assertThat(identifiers.get(0))
+                .isInstanceOf(PropertyValueImpl.class)
+                .extracting("valueList", InstanceOfAssertFactories.list(List.class))
+                .hasOnlyElementsOfType(Number.class)
+                .extracting("value")
+                .containsExactly(123456, 789012);
+
+        Assertions.assertThat(result.get(1)).isInstanceOf(Example.class)
+                .extracting(
+                        "context", "id", "bool.value",
+                        "date.value", "dateTime.value", "time.value",
+                        "number.value", "integer.value", "aFloat.value",
+                        "text.value", "pronounceableText.value", "url.value", "xPathType.value", "cssSelectorType.value"
+                )
+                .containsExactly(
+                        "https://schema.org", null, true,
+                        LocalDate.of(2022, Month.MARCH, 12), LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30), LocalTime.of(10, 36, 30),
+                        12345.67d, 12345, 12345.67f,
+                        "My Thing", "This is my thing.", "https://github.com/Kobee1203/schema-org-java", "/xpath/example/title", ".css-selector-type"
+                );
     }
 
     @Test
     void deserialize_list_with_one_object(@GivenTextResource("/data/Thing.json") String json) throws JsonLdException, MalformedURLException {
+        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
+        List<JsonLdNode> result = jsonLdDeserializer.deserializeList(json);
+
+        Assertions.assertThat(result).isNotNull().hasSize(1);
+
+        Assertions.assertThat(result.get(0))
+                .isInstanceOf(ThingImpl.class)
+                .extracting("context", "id", "name.value", "description.value", "url.value", "image")
+                .containsExactly("https://schema.org", "my_id", "My Thing", "This is my thing.", "https://github.com/Kobee1203/schema-org-java", null);
     }
 
     @Test
     void throws_exception_when_deserialize_invalid_data_list() {
+        final JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
+
+        Assertions.assertThatThrownBy(() -> jsonLdDeserializer.deserializeList("[{}]"))
+                .isInstanceOf(JsonLdException.class)
+                .hasMessage("JSON-LD deserialization internal error: Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
+                        " at [Source: UNKNOWN; byte offset: #UNKNOWN].")
+                .hasCauseInstanceOf(JsonMappingException.class)
+                .hasMessage("JSON-LD deserialization internal error: Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
+                        " at [Source: UNKNOWN; byte offset: #UNKNOWN].")
+                .hasRootCauseInstanceOf(InvalidTypeIdException.class)
+                .hasRootCauseMessage("Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
+                        " at [Source: UNKNOWN; byte offset: #UNKNOWN]");
     }
 }
