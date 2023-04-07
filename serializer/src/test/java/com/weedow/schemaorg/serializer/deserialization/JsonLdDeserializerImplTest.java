@@ -8,6 +8,7 @@ import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.data.Example;
+import com.weedow.schemaorg.serializer.data.MyDataset;
 import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.InstanceOfAssertFactories;
@@ -85,7 +86,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
-    void deserialize_thing_with_multiple_values_by_field(@GivenTextResource("/data/Thing_mutliple_values_by_field.json") String json) throws JsonLdException, MalformedURLException {
+    void deserialize_thing_with_multiple_values_by_field(@GivenTextResource("/data/Thing_mutliple_values_by_field.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
         JsonLdNode result = jsonLdDeserializer.deserialize(json);
 
@@ -210,7 +211,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
-    void deserialize_list(@GivenTextResource("/data/List.json") String json) throws MalformedURLException, JsonLdException {
+    void deserialize_list(@GivenTextResource("/data/List.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl("com.weedow.schemaorg.serializer.data");
         List<JsonLdNode> result = jsonLdDeserializer.deserializeList(json);
 
@@ -249,7 +250,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
-    void deserialize_list_with_one_object(@GivenTextResource("/data/Thing.json") String json) throws JsonLdException, MalformedURLException {
+    void deserialize_list_with_one_object(@GivenTextResource("/data/Thing.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
         List<JsonLdNode> result = jsonLdDeserializer.deserializeList(json);
 
@@ -275,5 +276,17 @@ class JsonLdDeserializerImplTest {
                 .hasRootCauseInstanceOf(InvalidTypeIdException.class)
                 .hasRootCauseMessage("Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
                         " at [Source: UNKNOWN; byte offset: #UNKNOWN]");
+    }
+
+    @Test
+    void deserialize_field_with_special_character_using_JsonProperty_annotation(@GivenTextResource("/data/MyDataset.json") String json) throws JsonLdException {
+        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl("com.weedow.schemaorg.serializer.data");
+        MyDataset myDataset = jsonLdDeserializer.deserialize(json);
+
+        Assertions.assertThat(myDataset.getContext()).isEqualTo("https://schema.org");
+        Assertions.assertThat(myDataset.getType()).isEqualTo("MyDataset");
+        Assertions.assertThat(myDataset.getProvWasDerivedFrom()).isNotNull()
+                .extracting("type", "name.value")
+                .containsExactly("MyDataset", "MyName");
     }
 }

@@ -272,4 +272,19 @@ class JsonLdSerializerImplTest {
                 .hasRootCauseInstanceOf(RuntimeException.class)
                 .hasRootCauseMessage("Unexpected error");
     }
+
+    @Test
+    void serialize_field_with_special_character_using_JsonProperty_annotation(@GivenTextResource("/data/MyDataset.json") String expected) throws JsonLdException {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
+
+        MyDataset provWasDerivedFrom = new MyDatasetImpl();
+        provWasDerivedFrom.addName(Text.of("MyName"));
+
+        MyDataset myDataset = new MyDatasetImpl();
+        myDataset.setProvWasDerivedFrom(provWasDerivedFrom);
+
+        String result = jsonLdSerializer.serialize(myDataset);
+
+        assertThatJson(result).isEqualTo(expected);
+    }
 }
