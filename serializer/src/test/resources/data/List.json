@@ -1,26 +1,33 @@
 [
   {
-    "@context" : "https://schema.org",
-    "@id" : "my_id",
-    "@type" : "Thing",
-    "description" : "This is my thing.",
-    "name" : "My Thing",
-    "url" : "https://github.com/Kobee1203/schema-org-java"
+    "@context": "https://schema.org",
+    "@id": "my_id",
+    "@type": "Thing",
+    "description": "This is my thing.",
+    "name": "My Thing",
+    "url": "https://github.com/Kobee1203/schema-org-java",
+    "identifier": {
+      "@type": "PropertyValue",
+      "value": [
+        123456,
+        789012
+      ]
+    }
   },
   {
-    "@context" : "https://schema.org",
-    "@type" : "Example",
-    "aFloat" : 12345.67,
-    "bool" : true,
-    "cssSelectorType" : ".css-selector-type",
-    "date" : "2022-03-12",
-    "dateTime" : "2022-03-12T10:36:30",
-    "integer" : 12345,
-    "number" : 12345.67,
-    "pronounceableText" : "This is my thing.",
-    "text" : "My Thing",
-    "time" : "10:36:30",
-    "url" : "https://github.com/Kobee1203/schema-org-java",
-    "xPathType" : "/xpath/example/title"
+    "@context": "https://schema.org",
+    "@type": "Example",
+    "aFloat": 12345.67,
+    "bool": true,
+    "cssSelectorType": ".css-selector-type",
+    "date": "2022-03-12",
+    "dateTime": "2022-03-12T10:36:30",
+    "integer": 12345,
+    "number": 12345.67,
+    "pronounceableText": "This is my thing.",
+    "text": "My Thing",
+    "time": "10:36:30",
+    "url": "https://github.com/Kobee1203/schema-org-java",
+    "xPathType": "/xpath/example/title"
   }
 ]

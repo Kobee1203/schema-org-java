@@ -146,9 +146,29 @@ final class DeserializerUtils {
   private DeserializerUtils() {
   }
 
+  /**
+   * Deserializes the JSON-LD string into schema.org object.
+   *
+   * @param json JSON-LD String to deserialize
+   * @return a JsonLdNode object resulting from the given deserialized String
+   * @throws JsonLdException if the String cannot be deserialized
+   */
   public static <T extends JsonLdNode> T deserialize(String json) throws JsonLdException {
     JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
     return jsonLdDeserializer.deserialize(json);
+  }
+
+  /**
+   * Deserializes the JSON-LD string into schema.org objects.<br>
+   * The method supports the deserialization of a JSON string representing a single object.
+   *
+   * @param json JSON-LD String to deserialize
+   * @return a List of JsonLdNode objects resulting from the given deserialized String
+   * @throws JsonLdException if the String cannot be deserialized
+   */
+  public static <T extends JsonLdNode> List<T> deserializeList(String json) throws JsonLdException {
+    JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
+    return jsonLdDeserializer.deserializeList(json);
   }
 }
 ```
@@ -198,7 +218,7 @@ final class DeserializerUtils {
 }
 ```
 
-If we want to add several types, there is a constructor to get all classes from a package:
+If we want to add custom types, there is a constructor to get all classes from a package:
 ```java
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.serializer.deserialization.JsonLdDeserializer;

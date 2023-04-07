@@ -7,10 +7,7 @@ import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.JsonLdSerializerOptions;
-import com.weedow.schemaorg.serializer.data.Example;
-import com.weedow.schemaorg.serializer.data.ExampleUtils;
-import com.weedow.schemaorg.serializer.data.InvalidData;
-import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
+import com.weedow.schemaorg.serializer.data.*;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -221,6 +218,10 @@ class JsonLdSerializerImplTest {
         thing.addName(Text.of("My Thing"));
         thing.addDescription(Text.of("This is my thing."));
         thing.addUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+        PropertyValue propertyValue1 = new PropertyValueImpl();
+        propertyValue1.addValue(Number.of(123456));
+        propertyValue1.addValue(Number.of(789012));
+        thing.addIdentifier(propertyValue1);
 
         Example example = new Example();
         example.setBool(Boolean.of(true));
@@ -258,7 +259,7 @@ class JsonLdSerializerImplTest {
     }
 
     @Test
-    @Disabled("The Serializer calls diredctly the field to get the value, not the getter that throws an exception")
+    @Disabled("The Serializer calls directly the field to get the value, not the getter that throws an exception")
     void throws_exception_when_serialize_invalid_data_list() {
         final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl();
 

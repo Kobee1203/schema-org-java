@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,6 +22,7 @@ import com.weedow.schemaorg.serializer.deserialization.processor.PostProcessor;
 import com.weedow.schemaorg.serializer.serialization.JsonLdDataTypeSerializer;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -39,6 +41,7 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
         this(
                 PackageScanner.getClassesIn(packageName)
                         .stream()
+                        .filter(clazz -> !clazz.isInterface())
                         .collect(Collectors.toMap(
                                 clazz -> {
                                     final JsonLdTypeName jsonLdTypeName = clazz.getAnnotation(JsonLdTypeName.class);
@@ -92,6 +95,20 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
         try {
             @SuppressWarnings("unchecked")
             T obj = (T) objectMapper.readValue(json, JsonLdNode.class);
+
+            obj = postProcessor.process(obj);
+
+            return obj;
+        } catch (JsonProcessingException e) {
+            throw new JsonLdException(String.format("JSON-LD deserialization internal error: %s.", e.getMessage()), e);
+        }
+    }
+
+    @Override
+    public <T extends JsonLdNode> List<T> deserializeList(String json) throws JsonLdException {
+        try {
+            List<T> obj = objectMapper.readValue(json, new TypeReference<>() {
+            });
 
             obj = postProcessor.process(obj);
 
