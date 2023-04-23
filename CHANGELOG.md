@@ -10,6 +10,23 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+## [0.6.0] - 2023-04-23
+
+### Added
+
+- [serializer] Deserialize a List of JSON-LD objects [#91](https://github.com/Kobee1203/schema-org-java/issues/91)
+- [serializer] Unit test to check serialization/deserialization of field with special characters (eg. ':' -> prov:wasDerivedFrom) [#84](https://github.com/Kobee1203/schema-org-java/issues/84), [8af18334](https://github.com/Kobee1203/schema-org-java/commit/8af18334ab3c956abfc10a5e27382ebaeb026d8e)
+
+### Changed
+
+- Bump json-unit-assertj from 2.36.1 to 2.37.0
+- Bump maven-core from 3.9.0 to 3.9.1
+- Bump logcaptor from 2.8.0 to 2.9.0
+
+### Fixed
+
+- [serializer] Exclude interfaces from the package that contains custom types [453b0b84](https://github.com/Kobee1203/schema-org-java/commit/453b0b84dccb93fd5caa774b799452fea7764e7e)
+
 ## [0.5.0] - 2023-03-29
 
 ### Added
@@ -157,7 +174,8 @@ All notable changes to this project will be documented in this file.
 
 schema-org-java is alive!
 
-[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.4.0...HEAD
+[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/Kobee1203/schema-org-java/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/Kobee1203/schema-org-java/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/Kobee1203/schema-org-java/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/Kobee1203/schema-org-java/compare/0.3.0...0.3.1
