@@ -84,7 +84,7 @@
         <maven-release-plugin.version>3.0.0</maven-release-plugin.version>
         <maven-jxr-plugin.version>3.3.0</maven-jxr-plugin.version>
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
-        <maven-project-info-reports-plugin.version>3.4.2</maven-project-info-reports-plugin.version>
+        <maven-project-info-reports-plugin.version>3.4.3</maven-project-info-reports-plugin.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.9</jacoco-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
