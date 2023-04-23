@@ -4,7 +4,7 @@
 
     <groupId>com.weedow</groupId>
     <artifactId>schema-org-parent</artifactId>
-    <version>0.5.1-SNAPSHOT</version>
+    <version>0.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>schema-org-java-parent</name>
