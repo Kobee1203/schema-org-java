@@ -64,7 +64,7 @@
         <commons-cli.version>1.5.0</commons-cli.version>
 
         <!-- Test Dependencies -->
-        <junit-jupiter-engine.version>5.9.2</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>5.9.3</junit-jupiter-engine.version>
         <assertj-core.version>3.24.2</assertj-core.version>
         <mockito-junit-jupiter.version>5.3.1</mockito-junit-jupiter.version>
         <equalsverifier.version>3.14.1</equalsverifier.version>
