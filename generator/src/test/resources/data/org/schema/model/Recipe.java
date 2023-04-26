@@ -25,6 +25,7 @@ public interface Recipe extends HowTo {
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     <T> List<T> getRecipeYieldList();
 
@@ -32,6 +33,7 @@ public interface Recipe extends HowTo {
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     <T> T getRecipeYield();
 
@@ -39,12 +41,14 @@ public interface Recipe extends HowTo {
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @param recipeYield QuantitativeValue value to set.
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     void addRecipeYield(QuantitativeValue recipeYield);
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @param recipeYield Text value to set.
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     void addRecipeYield(Text recipeYield);
 
@@ -115,6 +119,7 @@ public interface Recipe extends HowTo {
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return {@link Duration}
+     * @see <a href="https://schema.org/performTime">https://schema.org/performTime</a> <i>cookTime</i> is a sub property of <i>performTime</i>
      */
     List<Duration> getCookTimeList();
 
@@ -122,6 +127,7 @@ public interface Recipe extends HowTo {
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return {@link Duration}
+     * @see <a href="https://schema.org/performTime">https://schema.org/performTime</a> <i>cookTime</i> is a sub property of <i>performTime</i>
      */
     Duration getCookTime();
 
@@ -129,6 +135,7 @@ public interface Recipe extends HowTo {
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @param cookTime Duration value to set.
+     * @see <a href="https://schema.org/performTime">https://schema.org/performTime</a> <i>cookTime</i> is a sub property of <i>performTime</i>
      */
     void addCookTime(Duration cookTime);
 
@@ -136,6 +143,7 @@ public interface Recipe extends HowTo {
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>ingredients</i> is a sub property of <i>supply</i>
      */
     List<Text> getIngredientsList();
 
@@ -143,6 +151,7 @@ public interface Recipe extends HowTo {
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>ingredients</i> is a sub property of <i>supply</i>
      */
     Text getIngredients();
 
@@ -150,6 +159,7 @@ public interface Recipe extends HowTo {
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @param ingredients Text value to set.
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>ingredients</i> is a sub property of <i>supply</i>
      */
     void addIngredients(Text ingredients);
 
@@ -178,6 +188,7 @@ public interface Recipe extends HowTo {
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     <T> List<T> getRecipeInstructionsList();
 
@@ -185,6 +196,7 @@ public interface Recipe extends HowTo {
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     <T> T getRecipeInstructions();
 
@@ -192,18 +204,21 @@ public interface Recipe extends HowTo {
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions Text value to set.
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     void addRecipeInstructions(Text recipeInstructions);
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions ItemList value to set.
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     void addRecipeInstructions(ItemList recipeInstructions);
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions CreativeWork value to set.
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     void addRecipeInstructions(CreativeWork recipeInstructions);
 
@@ -211,6 +226,7 @@ public interface Recipe extends HowTo {
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>recipeIngredient</i> is a sub property of <i>supply</i>
      */
     List<Text> getRecipeIngredientList();
 
@@ -218,6 +234,7 @@ public interface Recipe extends HowTo {
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>recipeIngredient</i> is a sub property of <i>supply</i>
      */
     Text getRecipeIngredient();
 
@@ -225,6 +242,7 @@ public interface Recipe extends HowTo {
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @param recipeIngredient Text value to set.
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>recipeIngredient</i> is a sub property of <i>supply</i>
      */
     void addRecipeIngredient(Text recipeIngredient);
 

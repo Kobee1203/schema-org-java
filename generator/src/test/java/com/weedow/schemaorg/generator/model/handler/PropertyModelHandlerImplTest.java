@@ -46,6 +46,7 @@ class PropertyModelHandlerImplTest {
         when(graphItem.getComment()).thenReturn(comment("en", "This is my Property"));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
+        when(graphItem.getSubPropertyOf()).thenReturn(List.of(subPropertyOf("schema:prop1"), subPropertyOf("schema:prop2")));
         when(graphItem.getDomainIncludes()).thenReturn(List.of(domainInclude("schema:MyType")));
 
         modelHandler.handle(schemaDefinitions, graphItem);
@@ -92,15 +93,15 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(properties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "subPropertyOf", "fieldTypeLinks", "returnFieldType", "cast")
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
+                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("prop1", "prop2"), "{@link null}", null, null)
                 );
         Assertions.assertThat(properties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "subPropertyOf", "paramType", "paramValue")
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty")
+                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("prop1", "prop2"), null, "myProperty")
                 );
 
         Set<Property> allProperties = myType.getAllProperties();
@@ -111,15 +112,15 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(allProperties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "subPropertyOf", "fieldTypeLinks", "returnFieldType", "cast")
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
+                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("prop1", "prop2"), "{@link null}", null, null)
                 );
         Assertions.assertThat(allProperties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "subPropertyOf", "paramType", "paramValue")
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty")
+                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("prop1", "prop2"), null, "myProperty")
                 );
     }
 

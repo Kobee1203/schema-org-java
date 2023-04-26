@@ -20,6 +20,7 @@ public interface BorrowAction extends TransferAction {
      * A sub property of participant. The person that lends the object being borrowed.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>lender</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getLenderList();
 
@@ -27,6 +28,7 @@ public interface BorrowAction extends TransferAction {
      * A sub property of participant. The person that lends the object being borrowed.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>lender</i> is a sub property of <i>participant</i>
      */
     <T> T getLender();
 
@@ -34,12 +36,14 @@ public interface BorrowAction extends TransferAction {
      * A sub property of participant. The person that lends the object being borrowed.
      *
      * @param lender Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>lender</i> is a sub property of <i>participant</i>
      */
     void addLender(Organization lender);
     /**
      * A sub property of participant. The person that lends the object being borrowed.
      *
      * @param lender Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>lender</i> is a sub property of <i>participant</i>
      */
     void addLender(Person lender);
 }

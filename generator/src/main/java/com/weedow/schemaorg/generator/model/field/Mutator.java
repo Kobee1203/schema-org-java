@@ -13,6 +13,7 @@ public class Mutator {
     String description;
     List<String> partOf;
     List<String> source;
+    List<String> subPropertyOf;
     Supplier<String> paramType;
     Supplier<String> paramValue;
 
@@ -26,6 +27,7 @@ public class Mutator {
             String description,
             List<String> partOf,
             List<String> source,
+            List<String> subPropertyOf,
             Supplier<String> paramType,
             Supplier<String> paramValue
     ) {
@@ -33,6 +35,7 @@ public class Mutator {
         this.description = description;
         this.partOf = partOf;
         this.source = source;
+        this.subPropertyOf = subPropertyOf;
         this.paramType = paramType;
         this.paramValue = paramValue;
 
@@ -40,22 +43,6 @@ public class Mutator {
         this.setterMethod = ModelUtils.getMethodName(name, "set", "");
         this.addMethod = ModelUtils.getMethodName(name, "add", "");
         this.splitDescription = ModelUtils.getSplitDescription(description);
-    }
-
-    public String getFieldName() {
-        return fieldName;
-    }
-
-    public String getSetterMethod() {
-        return setterMethod;
-    }
-
-    public String getAddMethod() {
-        return addMethod;
-    }
-
-    public String[] getSplitDescription() {
-        return splitDescription;
     }
 
     public String getParamType() {

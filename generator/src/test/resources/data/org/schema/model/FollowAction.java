@@ -20,6 +20,7 @@ public interface FollowAction extends InteractAction {
      * A sub property of object. The person or organization being followed.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>followee</i> is a sub property of <i>object</i>
      */
     <T> List<T> getFolloweeList();
 
@@ -27,6 +28,7 @@ public interface FollowAction extends InteractAction {
      * A sub property of object. The person or organization being followed.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>followee</i> is a sub property of <i>object</i>
      */
     <T> T getFollowee();
 
@@ -34,12 +36,14 @@ public interface FollowAction extends InteractAction {
      * A sub property of object. The person or organization being followed.
      *
      * @param followee Organization value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>followee</i> is a sub property of <i>object</i>
      */
     void addFollowee(Organization followee);
     /**
      * A sub property of object. The person or organization being followed.
      *
      * @param followee Person value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>followee</i> is a sub property of <i>object</i>
      */
     void addFollowee(Person followee);
 }

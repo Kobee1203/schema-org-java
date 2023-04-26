@@ -11,4 +11,7 @@
 {{#each this.source}}
  * @see <a href="{{&this}}">{{&this}}</a>
 {{/each}}
+{{#each this.subPropertyOf}}
+ * @see <a href="https://schema.org/{{this}}">https://schema.org/{{this}}</a> <i>{{../this.name}}</i> is a sub property of <i>{{this}}</i>
+{{/each}}
  */

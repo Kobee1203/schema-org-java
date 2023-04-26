@@ -53,6 +53,7 @@ public interface PublicationIssue extends CreativeWork {
      *
      * @return {@link Integer} or {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>issueNumber</i> is a sub property of <i>position</i>
      */
     <T> List<T> getIssueNumberList();
 
@@ -61,6 +62,7 @@ public interface PublicationIssue extends CreativeWork {
      *
      * @return {@link Integer} or {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>issueNumber</i> is a sub property of <i>position</i>
      */
     <T> T getIssueNumber();
 
@@ -69,6 +71,7 @@ public interface PublicationIssue extends CreativeWork {
      *
      * @param issueNumber Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>issueNumber</i> is a sub property of <i>position</i>
      */
     void addIssueNumber(Integer issueNumber);
     /**
@@ -76,6 +79,7 @@ public interface PublicationIssue extends CreativeWork {
      *
      * @param issueNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>issueNumber</i> is a sub property of <i>position</i>
      */
     void addIssueNumber(Text issueNumber);
 

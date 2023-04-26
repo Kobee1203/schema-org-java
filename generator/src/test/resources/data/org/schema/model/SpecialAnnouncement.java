@@ -429,6 +429,7 @@ public interface SpecialAnnouncement extends CreativeWork {
      * @return {@link CivicStructure} or {@link LocalBusiness}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2514">https://github.com/schemaorg/schemaorg/issues/2514</a>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>announcementLocation</i> is a sub property of <i>spatialCoverage</i>
      */
     <T> List<T> getAnnouncementLocationList();
 
@@ -438,6 +439,7 @@ public interface SpecialAnnouncement extends CreativeWork {
      * @return {@link CivicStructure} or {@link LocalBusiness}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2514">https://github.com/schemaorg/schemaorg/issues/2514</a>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>announcementLocation</i> is a sub property of <i>spatialCoverage</i>
      */
     <T> T getAnnouncementLocation();
 
@@ -447,6 +449,7 @@ public interface SpecialAnnouncement extends CreativeWork {
      * @param announcementLocation CivicStructure value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2514">https://github.com/schemaorg/schemaorg/issues/2514</a>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>announcementLocation</i> is a sub property of <i>spatialCoverage</i>
      */
     void addAnnouncementLocation(CivicStructure announcementLocation);
     /**
@@ -455,6 +458,7 @@ public interface SpecialAnnouncement extends CreativeWork {
      * @param announcementLocation LocalBusiness value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2514">https://github.com/schemaorg/schemaorg/issues/2514</a>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>announcementLocation</i> is a sub property of <i>spatialCoverage</i>
      */
     void addAnnouncementLocation(LocalBusiness announcementLocation);
 

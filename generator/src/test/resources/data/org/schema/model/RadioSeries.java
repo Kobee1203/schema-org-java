@@ -47,6 +47,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * A season that is part of the media series.
      *
      * @return {@link CreativeWorkSeason}
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>containsSeason</i> is a sub property of <i>hasPart</i>
      */
     List<CreativeWorkSeason> getContainsSeasonList();
 
@@ -54,6 +55,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * A season that is part of the media series.
      *
      * @return {@link CreativeWorkSeason}
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>containsSeason</i> is a sub property of <i>hasPart</i>
      */
     CreativeWorkSeason getContainsSeason();
 
@@ -61,6 +63,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * A season that is part of the media series.
      *
      * @param containsSeason CreativeWorkSeason value to set.
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>containsSeason</i> is a sub property of <i>hasPart</i>
      */
     void addContainsSeason(CreativeWorkSeason containsSeason);
 
@@ -110,6 +113,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * A season in a media series.
      *
      * @return {@link URL} or {@link CreativeWorkSeason}
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>season</i> is a sub property of <i>hasPart</i>
      */
     <T> List<T> getSeasonList();
 
@@ -117,6 +121,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * A season in a media series.
      *
      * @return {@link URL} or {@link CreativeWorkSeason}
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>season</i> is a sub property of <i>hasPart</i>
      */
     <T> T getSeason();
 
@@ -124,12 +129,14 @@ public interface RadioSeries extends CreativeWorkSeries {
      * A season in a media series.
      *
      * @param season URL value to set.
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>season</i> is a sub property of <i>hasPart</i>
      */
     void addSeason(URL season);
     /**
      * A season in a media series.
      *
      * @param season CreativeWorkSeason value to set.
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>season</i> is a sub property of <i>hasPart</i>
      */
     void addSeason(CreativeWorkSeason season);
 
@@ -221,6 +228,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * An episode of a TV, radio or game media within a series or season.
      *
      * @return {@link Episode}
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>episode</i> is a sub property of <i>hasPart</i>
      */
     List<Episode> getEpisodeList();
 
@@ -228,6 +236,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * An episode of a TV, radio or game media within a series or season.
      *
      * @return {@link Episode}
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>episode</i> is a sub property of <i>hasPart</i>
      */
     Episode getEpisode();
 
@@ -235,6 +244,7 @@ public interface RadioSeries extends CreativeWorkSeries {
      * An episode of a TV, radio or game media within a series or season.
      *
      * @param episode Episode value to set.
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>episode</i> is a sub property of <i>hasPart</i>
      */
     void addEpisode(Episode episode);
 

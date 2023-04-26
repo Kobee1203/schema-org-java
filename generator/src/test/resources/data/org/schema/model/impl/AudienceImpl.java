@@ -346,6 +346,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -356,6 +357,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -366,6 +368,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -476,6 +479,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -486,6 +490,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -496,6 +501,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -508,6 +514,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -518,6 +525,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -528,6 +536,7 @@ public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

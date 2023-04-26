@@ -47,6 +47,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>smiles</i> is a sub property of <i>hasRepresentation</i>
      */
     List<Text> getSmilesList();
 
@@ -55,6 +56,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>smiles</i> is a sub property of <i>hasRepresentation</i>
      */
     Text getSmiles();
 
@@ -63,6 +65,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @param smiles Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>smiles</i> is a sub property of <i>hasRepresentation</i>
      */
     void addSmiles(Text smiles);
 
@@ -157,6 +160,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>inChIKey</i> is a sub property of <i>hasRepresentation</i>
      */
     List<Text> getInChIKeyList();
 
@@ -165,6 +169,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>inChIKey</i> is a sub property of <i>hasRepresentation</i>
      */
     Text getInChIKey();
 
@@ -173,6 +178,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @param inChIKey Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>inChIKey</i> is a sub property of <i>hasRepresentation</i>
      */
     void addInChIKey(Text inChIKey);
 
@@ -229,6 +235,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>inChI</i> is a sub property of <i>hasRepresentation</i>
      */
     List<Text> getInChIList();
 
@@ -237,6 +244,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>inChI</i> is a sub property of <i>hasRepresentation</i>
      */
     Text getInChI();
 
@@ -245,6 +253,7 @@ public interface MolecularEntity extends BioChemEntity {
      *
      * @param inChI Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>inChI</i> is a sub property of <i>hasRepresentation</i>
      */
     void addInChI(Text inChI);
 }

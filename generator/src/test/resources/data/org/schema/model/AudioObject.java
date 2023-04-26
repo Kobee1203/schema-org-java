@@ -50,6 +50,7 @@ public interface AudioObject extends MediaObject {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/caption">https://schema.org/caption</a> <i>embeddedTextCaption</i> is a sub property of <i>caption</i>
      */
     List<Text> getEmbeddedTextCaptionList();
 
@@ -59,6 +60,7 @@ public interface AudioObject extends MediaObject {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/caption">https://schema.org/caption</a> <i>embeddedTextCaption</i> is a sub property of <i>caption</i>
      */
     Text getEmbeddedTextCaption();
 
@@ -68,6 +70,7 @@ public interface AudioObject extends MediaObject {
      * @param embeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/caption">https://schema.org/caption</a> <i>embeddedTextCaption</i> is a sub property of <i>caption</i>
      */
     void addEmbeddedTextCaption(Text embeddedTextCaption);
 

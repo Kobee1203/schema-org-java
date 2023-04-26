@@ -53,6 +53,7 @@ public interface ArchiveComponent extends CreativeWork {
      * @return {@link Place} or {@link Text} or {@link PostalAddress}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>itemLocation</i> is a sub property of <i>location</i>
      */
     <T> List<T> getItemLocationList();
 
@@ -62,6 +63,7 @@ public interface ArchiveComponent extends CreativeWork {
      * @return {@link Place} or {@link Text} or {@link PostalAddress}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>itemLocation</i> is a sub property of <i>location</i>
      */
     <T> T getItemLocation();
 
@@ -71,6 +73,7 @@ public interface ArchiveComponent extends CreativeWork {
      * @param itemLocation Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>itemLocation</i> is a sub property of <i>location</i>
      */
     void addItemLocation(Place itemLocation);
     /**
@@ -79,6 +82,7 @@ public interface ArchiveComponent extends CreativeWork {
      * @param itemLocation Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>itemLocation</i> is a sub property of <i>location</i>
      */
     void addItemLocation(Text itemLocation);
     /**
@@ -87,6 +91,7 @@ public interface ArchiveComponent extends CreativeWork {
      * @param itemLocation PostalAddress value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>itemLocation</i> is a sub property of <i>location</i>
      */
     void addItemLocation(PostalAddress itemLocation);
 }

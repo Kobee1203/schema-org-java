@@ -75,6 +75,7 @@ public interface Movie extends CreativeWork {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getTitleEIDRList();
 
@@ -88,6 +89,7 @@ public interface Movie extends CreativeWork {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     <T> T getTitleEIDR();
 
@@ -101,6 +103,7 @@ public interface Movie extends CreativeWork {
      * @param titleEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     void addTitleEIDR(URL titleEIDR);
     /**
@@ -113,6 +116,7 @@ public interface Movie extends CreativeWork {
      * @param titleEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     void addTitleEIDR(Text titleEIDR);
 

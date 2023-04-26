@@ -22,6 +22,7 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/termCode">https://schema.org/termCode</a> <i>codeValue</i> is a sub property of <i>termCode</i>
      */
     List<Text> getCodeValueList();
 
@@ -31,6 +32,7 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/termCode">https://schema.org/termCode</a> <i>codeValue</i> is a sub property of <i>termCode</i>
      */
     Text getCodeValue();
 
@@ -40,6 +42,7 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
      * @param codeValue Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/termCode">https://schema.org/termCode</a> <i>codeValue</i> is a sub property of <i>termCode</i>
      */
     void addCodeValue(Text codeValue);
 

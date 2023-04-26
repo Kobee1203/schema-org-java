@@ -71,6 +71,7 @@ public interface Gene extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>hasBioPolymerSequence</i> is a sub property of <i>hasRepresentation</i>
      */
     List<Text> getHasBioPolymerSequenceList();
 
@@ -79,6 +80,7 @@ public interface Gene extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>hasBioPolymerSequence</i> is a sub property of <i>hasRepresentation</i>
      */
     Text getHasBioPolymerSequence();
 
@@ -87,6 +89,7 @@ public interface Gene extends BioChemEntity {
      *
      * @param hasBioPolymerSequence Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://schema.org/hasRepresentation">https://schema.org/hasRepresentation</a> <i>hasBioPolymerSequence</i> is a sub property of <i>hasRepresentation</i>
      */
     void addHasBioPolymerSequence(Text hasBioPolymerSequence);
 

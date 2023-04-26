@@ -403,6 +403,7 @@ public interface Service extends Intangible {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> List<T> getLogoList();
 
@@ -411,6 +412,7 @@ public interface Service extends Intangible {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> T getLogo();
 
@@ -419,6 +421,7 @@ public interface Service extends Intangible {
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(ImageObject logo);
     /**
@@ -426,6 +429,7 @@ public interface Service extends Intangible {
      *
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(URL logo);
 

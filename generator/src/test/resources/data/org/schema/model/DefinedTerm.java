@@ -25,6 +25,7 @@ public interface DefinedTerm extends Intangible {
      * @return {@link DefinedTermSet} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>inDefinedTermSet</i> is a sub property of <i>isPartOf</i>
      */
     <T> List<T> getInDefinedTermSetList();
 
@@ -34,6 +35,7 @@ public interface DefinedTerm extends Intangible {
      * @return {@link DefinedTermSet} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>inDefinedTermSet</i> is a sub property of <i>isPartOf</i>
      */
     <T> T getInDefinedTermSet();
 
@@ -43,6 +45,7 @@ public interface DefinedTerm extends Intangible {
      * @param inDefinedTermSet DefinedTermSet value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>inDefinedTermSet</i> is a sub property of <i>isPartOf</i>
      */
     void addInDefinedTermSet(DefinedTermSet inDefinedTermSet);
     /**
@@ -51,6 +54,7 @@ public interface DefinedTerm extends Intangible {
      * @param inDefinedTermSet URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>inDefinedTermSet</i> is a sub property of <i>isPartOf</i>
      */
     void addInDefinedTermSet(URL inDefinedTermSet);
 

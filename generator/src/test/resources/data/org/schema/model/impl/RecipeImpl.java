@@ -76,6 +76,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     @Override
     public <T> List<T> getRecipeYieldList() {
@@ -86,6 +87,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     @Override
     public <T> T getRecipeYield() {
@@ -96,6 +98,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @param recipeYield QuantitativeValue value to set.
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     @Override
     public void addRecipeYield(QuantitativeValue recipeYield) {
@@ -105,6 +108,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
      * @param recipeYield Text value to set.
+     * @see <a href="https://schema.org/yield">https://schema.org/yield</a> <i>recipeYield</i> is a sub property of <i>yield</i>
      */
     @Override
     public void addRecipeYield(Text recipeYield) {
@@ -213,6 +217,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return {@link Duration}
+     * @see <a href="https://schema.org/performTime">https://schema.org/performTime</a> <i>cookTime</i> is a sub property of <i>performTime</i>
      */
     @Override
     public List<Duration> getCookTimeList() {
@@ -223,6 +228,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return {@link Duration}
+     * @see <a href="https://schema.org/performTime">https://schema.org/performTime</a> <i>cookTime</i> is a sub property of <i>performTime</i>
      */
     @Override
     public Duration getCookTime() {
@@ -233,6 +239,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @param cookTime Duration value to set.
+     * @see <a href="https://schema.org/performTime">https://schema.org/performTime</a> <i>cookTime</i> is a sub property of <i>performTime</i>
      */
     @Override
     public void addCookTime(Duration cookTime) {
@@ -245,6 +252,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>ingredients</i> is a sub property of <i>supply</i>
      */
     @Override
     public List<Text> getIngredientsList() {
@@ -255,6 +263,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>ingredients</i> is a sub property of <i>supply</i>
      */
     @Override
     public Text getIngredients() {
@@ -265,6 +274,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @param ingredients Text value to set.
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>ingredients</i> is a sub property of <i>supply</i>
      */
     @Override
     public void addIngredients(Text ingredients) {
@@ -310,6 +320,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     @Override
     public <T> List<T> getRecipeInstructionsList() {
@@ -320,6 +331,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     @Override
     public <T> T getRecipeInstructions() {
@@ -330,6 +342,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions Text value to set.
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     @Override
     public void addRecipeInstructions(Text recipeInstructions) {
@@ -339,6 +352,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions ItemList value to set.
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     @Override
     public void addRecipeInstructions(ItemList recipeInstructions) {
@@ -348,6 +362,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
      * @param recipeInstructions CreativeWork value to set.
+     * @see <a href="https://schema.org/step">https://schema.org/step</a> <i>recipeInstructions</i> is a sub property of <i>step</i>
      */
     @Override
     public void addRecipeInstructions(CreativeWork recipeInstructions) {
@@ -360,6 +375,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>recipeIngredient</i> is a sub property of <i>supply</i>
      */
     @Override
     public List<Text> getRecipeIngredientList() {
@@ -370,6 +386,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>recipeIngredient</i> is a sub property of <i>supply</i>
      */
     @Override
     public Text getRecipeIngredient() {
@@ -380,6 +397,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @param recipeIngredient Text value to set.
+     * @see <a href="https://schema.org/supply">https://schema.org/supply</a> <i>recipeIngredient</i> is a sub property of <i>supply</i>
      */
     @Override
     public void addRecipeIngredient(Text recipeIngredient) {
@@ -592,6 +610,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @return {@link HowToTool} or {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> List<T> getToolList() {
@@ -602,6 +621,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @return {@link HowToTool} or {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> T getTool() {
@@ -612,6 +632,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool HowToTool value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addTool(HowToTool tool) {
@@ -621,6 +642,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool Text value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addTool(Text tool) {
@@ -726,6 +748,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @return {@link Text} or {@link HowToSupply}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> List<T> getSupplyList() {
@@ -736,6 +759,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @return {@link Text} or {@link HowToSupply}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> T getSupply() {
@@ -746,6 +770,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply Text value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addSupply(Text supply) {
@@ -755,6 +780,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply HowToSupply value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addSupply(HowToSupply supply) {
@@ -1071,6 +1097,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public <T> List<T> getAcquireLicensePageList() {
@@ -1083,6 +1110,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public <T> T getAcquireLicensePage() {
@@ -1095,6 +1123,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param acquireLicensePage CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public void addAcquireLicensePage(CreativeWork acquireLicensePage) {
@@ -1106,6 +1135,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param acquireLicensePage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public void addAcquireLicensePage(URL acquireLicensePage) {
@@ -2530,6 +2560,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Claim> getInterpretedAsClaimList() {
@@ -2542,6 +2573,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     @Override
     public Claim getInterpretedAsClaim() {
@@ -2554,6 +2586,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     @Override
     public void addInterpretedAsClaim(Claim interpretedAsClaim) {
@@ -2897,6 +2930,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> List<T> getFunderList() {
@@ -2907,6 +2941,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> T getFunder() {
@@ -2917,6 +2952,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Organization funder) {
@@ -2926,6 +2962,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Person funder) {
@@ -4075,6 +4112,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     @Override
     public List<Place> getSpatialCoverageList() {
@@ -4087,6 +4125,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     @Override
     public Place getSpatialCoverage() {
@@ -4099,6 +4138,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @param spatialCoverage Place value to set.
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     @Override
     public void addSpatialCoverage(Place spatialCoverage) {
@@ -4153,6 +4193,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> List<T> getEditEIDRList() {
@@ -4169,6 +4210,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> T getEditEIDR() {
@@ -4185,6 +4227,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param editEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addEditEIDR(URL editEIDR) {
@@ -4200,6 +4243,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param editEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addEditEIDR(Text editEIDR) {
@@ -4402,6 +4446,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     @Override
     public List<Thing> getMainEntityList() {
@@ -4412,6 +4457,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     @Override
     public Thing getMainEntity() {
@@ -4422,6 +4468,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @param mainEntity Thing value to set.
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     @Override
     public void addMainEntity(Thing mainEntity) {
@@ -5598,6 +5645,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -5608,6 +5656,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -5618,6 +5667,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -5728,6 +5778,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -5738,6 +5789,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -5748,6 +5800,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -5760,6 +5813,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -5770,6 +5824,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -5780,6 +5835,7 @@ public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

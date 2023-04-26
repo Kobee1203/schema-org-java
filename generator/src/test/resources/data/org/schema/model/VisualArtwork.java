@@ -236,6 +236,7 @@ public interface VisualArtwork extends CreativeWork {
      * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>artMedium</i> is a sub property of <i>material</i>
      */
     <T> List<T> getArtMediumList();
 
@@ -243,6 +244,7 @@ public interface VisualArtwork extends CreativeWork {
      * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>artMedium</i> is a sub property of <i>material</i>
      */
     <T> T getArtMedium();
 
@@ -250,12 +252,14 @@ public interface VisualArtwork extends CreativeWork {
      * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @param artMedium URL value to set.
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>artMedium</i> is a sub property of <i>material</i>
      */
     void addArtMedium(URL artMedium);
     /**
      * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @param artMedium Text value to set.
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>artMedium</i> is a sub property of <i>material</i>
      */
     void addArtMedium(Text artMedium);
 
@@ -263,6 +267,7 @@ public interface VisualArtwork extends CreativeWork {
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @return {@link Text} or {@link URL}
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>surface</i> is a sub property of <i>material</i>
      */
     <T> List<T> getSurfaceList();
 
@@ -270,6 +275,7 @@ public interface VisualArtwork extends CreativeWork {
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @return {@link Text} or {@link URL}
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>surface</i> is a sub property of <i>material</i>
      */
     <T> T getSurface();
 
@@ -277,12 +283,14 @@ public interface VisualArtwork extends CreativeWork {
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @param surface Text value to set.
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>surface</i> is a sub property of <i>material</i>
      */
     void addSurface(Text surface);
     /**
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @param surface URL value to set.
+     * @see <a href="https://schema.org/material">https://schema.org/material</a> <i>surface</i> is a sub property of <i>material</i>
      */
     void addSurface(URL surface);
 

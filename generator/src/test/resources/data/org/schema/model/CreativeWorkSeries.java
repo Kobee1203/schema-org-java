@@ -23,6 +23,7 @@ public interface CreativeWorkSeries extends Series, CreativeWork {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>issn</i> is a sub property of <i>identifier</i>
      */
     List<Text> getIssnList();
 
@@ -31,6 +32,7 @@ public interface CreativeWorkSeries extends Series, CreativeWork {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>issn</i> is a sub property of <i>identifier</i>
      */
     Text getIssn();
 
@@ -39,6 +41,7 @@ public interface CreativeWorkSeries extends Series, CreativeWork {
      *
      * @param issn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>issn</i> is a sub property of <i>identifier</i>
      */
     void addIssn(Text issn);
 

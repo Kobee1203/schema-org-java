@@ -20,6 +20,7 @@ public interface ChooseAction extends AssessAction {
      * A sub property of object. The options subject to this action.
      *
      * @return {@link Text} or {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>option</i> is a sub property of <i>object</i>
      */
     <T> List<T> getOptionList();
 
@@ -27,6 +28,7 @@ public interface ChooseAction extends AssessAction {
      * A sub property of object. The options subject to this action.
      *
      * @return {@link Text} or {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>option</i> is a sub property of <i>object</i>
      */
     <T> T getOption();
 
@@ -34,12 +36,14 @@ public interface ChooseAction extends AssessAction {
      * A sub property of object. The options subject to this action.
      *
      * @param option Text value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>option</i> is a sub property of <i>object</i>
      */
     void addOption(Text option);
     /**
      * A sub property of object. The options subject to this action.
      *
      * @param option Thing value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>option</i> is a sub property of <i>object</i>
      */
     void addOption(Thing option);
 
@@ -47,6 +51,7 @@ public interface ChooseAction extends AssessAction {
      * A sub property of object. The options subject to this action.
      *
      * @return {@link Text} or {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>actionOption</i> is a sub property of <i>object</i>
      */
     <T> List<T> getActionOptionList();
 
@@ -54,6 +59,7 @@ public interface ChooseAction extends AssessAction {
      * A sub property of object. The options subject to this action.
      *
      * @return {@link Text} or {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>actionOption</i> is a sub property of <i>object</i>
      */
     <T> T getActionOption();
 
@@ -61,12 +67,14 @@ public interface ChooseAction extends AssessAction {
      * A sub property of object. The options subject to this action.
      *
      * @param actionOption Text value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>actionOption</i> is a sub property of <i>object</i>
      */
     void addActionOption(Text actionOption);
     /**
      * A sub property of object. The options subject to this action.
      *
      * @param actionOption Thing value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>actionOption</i> is a sub property of <i>object</i>
      */
     void addActionOption(Thing actionOption);
 }

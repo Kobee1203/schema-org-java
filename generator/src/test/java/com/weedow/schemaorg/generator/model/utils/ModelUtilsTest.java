@@ -155,6 +155,22 @@ class ModelUtilsTest {
         Assertions.assertThat(ModelUtils.getPartOf(graphItem)).isEmpty();
     }
 
+    @Test
+    void getSubPropertyOf() {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getSubPropertyOf()).thenReturn(List.of(subPropertyOf("subPropertyOf1"), subPropertyOf("subPropertyOf2")));
+
+        Assertions.assertThat(ModelUtils.getSubPropertyOf(graphItem)).containsExactly("subPropertyOf1", "subPropertyOf2");
+    }
+
+    @Test
+    void getSubPropertyOf_when_partOf_is_null() {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getSubPropertyOf()).thenReturn(null);
+
+        Assertions.assertThat(ModelUtils.getSubPropertyOf(graphItem)).isEmpty();
+    }
+
     @ParameterizedTest
     @CsvSource(value = {
             "myField, myField",

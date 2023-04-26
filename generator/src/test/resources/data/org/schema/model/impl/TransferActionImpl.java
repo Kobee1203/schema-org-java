@@ -41,6 +41,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public List<Place> getToLocationList() {
@@ -51,6 +52,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public Place getToLocation() {
@@ -61,6 +63,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @param toLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addToLocation(Place toLocation) {
@@ -73,6 +76,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public List<Place> getFromLocationList() {
@@ -83,6 +87,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public Place getFromLocation() {
@@ -93,6 +98,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @param fromLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addFromLocation(Place fromLocation) {
@@ -845,6 +851,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -855,6 +862,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -865,6 +873,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -975,6 +984,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -985,6 +995,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -995,6 +1006,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -1007,6 +1019,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -1017,6 +1030,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -1027,6 +1041,7 @@ public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

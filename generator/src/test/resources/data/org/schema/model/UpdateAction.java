@@ -19,6 +19,7 @@ public interface UpdateAction extends Action {
      * A sub property of object. The collection target of the action.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>collection</i> is a sub property of <i>object</i>
      */
     List<Thing> getCollectionList();
 
@@ -26,6 +27,7 @@ public interface UpdateAction extends Action {
      * A sub property of object. The collection target of the action.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>collection</i> is a sub property of <i>object</i>
      */
     Thing getCollection();
 
@@ -33,6 +35,7 @@ public interface UpdateAction extends Action {
      * A sub property of object. The collection target of the action.
      *
      * @param collection Thing value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>collection</i> is a sub property of <i>object</i>
      */
     void addCollection(Thing collection);
 
@@ -40,6 +43,7 @@ public interface UpdateAction extends Action {
      * A sub property of object. The collection target of the action.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>targetCollection</i> is a sub property of <i>object</i>
      */
     List<Thing> getTargetCollectionList();
 
@@ -47,6 +51,7 @@ public interface UpdateAction extends Action {
      * A sub property of object. The collection target of the action.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>targetCollection</i> is a sub property of <i>object</i>
      */
     Thing getTargetCollection();
 
@@ -54,6 +59,7 @@ public interface UpdateAction extends Action {
      * A sub property of object. The collection target of the action.
      *
      * @param targetCollection Thing value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>targetCollection</i> is a sub property of <i>object</i>
      */
     void addTargetCollection(Thing targetCollection);
 }

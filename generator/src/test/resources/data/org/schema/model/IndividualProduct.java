@@ -21,6 +21,7 @@ public interface IndividualProduct extends Product {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>serialNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getSerialNumberList();
 
@@ -29,6 +30,7 @@ public interface IndividualProduct extends Product {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>serialNumber</i> is a sub property of <i>identifier</i>
      */
     Text getSerialNumber();
 
@@ -37,6 +39,7 @@ public interface IndividualProduct extends Product {
      *
      * @param serialNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>serialNumber</i> is a sub property of <i>identifier</i>
      */
     void addSerialNumber(Text serialNumber);
 }

@@ -20,6 +20,7 @@ public interface WriteAction extends CreateAction {
      * A sub property of instrument. The language used on this action.
      *
      * @return {@link Language}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>language</i> is a sub property of <i>instrument</i>
      */
     List<Language> getLanguageList();
 
@@ -27,6 +28,7 @@ public interface WriteAction extends CreateAction {
      * A sub property of instrument. The language used on this action.
      *
      * @return {@link Language}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>language</i> is a sub property of <i>instrument</i>
      */
     Language getLanguage();
 
@@ -34,6 +36,7 @@ public interface WriteAction extends CreateAction {
      * A sub property of instrument. The language used on this action.
      *
      * @param language Language value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>language</i> is a sub property of <i>instrument</i>
      */
     void addLanguage(Language language);
 

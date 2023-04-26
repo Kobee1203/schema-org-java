@@ -141,6 +141,7 @@ public interface Place extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGlobalLocationNumberList();
 
@@ -149,6 +150,7 @@ public interface Place extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     Text getGlobalLocationNumber();
 
@@ -157,6 +159,7 @@ public interface Place extends Thing {
      *
      * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     void addGlobalLocationNumber(Text globalLocationNumber);
 
@@ -593,6 +596,7 @@ public interface Place extends Thing {
      * A photograph of this place.
      *
      * @return {@link Photograph} or {@link ImageObject}
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     <T> List<T> getPhotoList();
 
@@ -600,6 +604,7 @@ public interface Place extends Thing {
      * A photograph of this place.
      *
      * @return {@link Photograph} or {@link ImageObject}
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     <T> T getPhoto();
 
@@ -607,12 +612,14 @@ public interface Place extends Thing {
      * A photograph of this place.
      *
      * @param photo Photograph value to set.
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     void addPhoto(Photograph photo);
     /**
      * A photograph of this place.
      *
      * @param photo ImageObject value to set.
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     void addPhoto(ImageObject photo);
 
@@ -642,6 +649,7 @@ public interface Place extends Thing {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> List<T> getLogoList();
 
@@ -650,6 +658,7 @@ public interface Place extends Thing {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> T getLogo();
 
@@ -658,6 +667,7 @@ public interface Place extends Thing {
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(ImageObject logo);
     /**
@@ -665,6 +675,7 @@ public interface Place extends Thing {
      *
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(URL logo);
 

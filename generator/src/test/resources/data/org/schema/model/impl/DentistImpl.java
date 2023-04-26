@@ -388,6 +388,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -399,6 +400,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -410,6 +412,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1077,6 +1080,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A photograph of this place.
      *
      * @return {@link Photograph} or {@link ImageObject}
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     @Override
     public <T> List<T> getPhotoList() {
@@ -1087,6 +1091,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A photograph of this place.
      *
      * @return {@link Photograph} or {@link ImageObject}
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     @Override
     public <T> T getPhoto() {
@@ -1097,6 +1102,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A photograph of this place.
      *
      * @param photo Photograph value to set.
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     @Override
     public void addPhoto(Photograph photo) {
@@ -1106,6 +1112,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A photograph of this place.
      *
      * @param photo ImageObject value to set.
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>photo</i> is a sub property of <i>image</i>
      */
     @Override
     public void addPhoto(ImageObject photo) {
@@ -1152,6 +1159,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -1163,6 +1171,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public <T> T getLogo() {
@@ -1174,6 +1183,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -1184,6 +1194,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public void addLogo(URL logo) {
@@ -2157,6 +2168,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -2167,6 +2179,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -2177,6 +2190,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -2287,6 +2301,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -2297,6 +2312,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -2307,6 +2323,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -2319,6 +2336,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -2329,6 +2347,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -2339,6 +2358,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {
@@ -2616,6 +2636,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> List<T> getOwnershipFundingInfoList() {
@@ -2629,6 +2650,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> T getOwnershipFundingInfo() {
@@ -2642,6 +2664,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
@@ -2654,6 +2677,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addOwnershipFundingInfo(Text ownershipFundingInfo) {
@@ -2666,6 +2690,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
@@ -2678,6 +2703,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addOwnershipFundingInfo(URL ownershipFundingInfo) {
@@ -2761,6 +2787,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> List<T> getActionableFeedbackPolicyList() {
@@ -2774,6 +2801,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> T getActionableFeedbackPolicy() {
@@ -2787,6 +2815,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
@@ -2799,6 +2828,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
@@ -3159,6 +3189,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> List<T> getDiversityStaffingReportList() {
@@ -3172,6 +3203,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> T getDiversityStaffingReport() {
@@ -3185,6 +3217,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addDiversityStaffingReport(Article diversityStaffingReport) {
@@ -3197,6 +3230,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addDiversityStaffingReport(URL diversityStaffingReport) {
@@ -3498,6 +3532,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> List<T> getUnnamedSourcesPolicyList() {
@@ -3511,6 +3546,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> T getUnnamedSourcesPolicy() {
@@ -3524,6 +3560,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
@@ -3536,6 +3573,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
@@ -3613,6 +3651,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> List<T> getFunderList() {
@@ -3623,6 +3662,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> T getFunder() {
@@ -3633,6 +3673,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Organization funder) {
@@ -3642,6 +3683,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Person funder) {
@@ -3785,6 +3827,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getDunsList() {
@@ -3796,6 +3839,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getDuns() {
@@ -3807,6 +3851,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param duns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addDuns(Text duns) {
@@ -3903,6 +3948,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>leiCode</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getLeiCodeList() {
@@ -3915,6 +3961,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>leiCode</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getLeiCode() {
@@ -3927,6 +3974,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param leiCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>leiCode</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addLeiCode(Text leiCode) {
@@ -4032,6 +4080,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> List<T> getCorrectionsPolicyList() {
@@ -4045,6 +4094,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public <T> T getCorrectionsPolicy() {
@@ -4058,6 +4108,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addCorrectionsPolicy(URL correctionsPolicy) {
@@ -4070,6 +4121,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     @Override
     public void addCorrectionsPolicy(CreativeWork correctionsPolicy) {
@@ -4307,6 +4359,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getTaxIDList() {
@@ -4318,6 +4371,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getTaxID() {
@@ -4329,6 +4383,7 @@ public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param taxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addTaxID(Text taxID) {

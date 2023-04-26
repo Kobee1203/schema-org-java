@@ -567,6 +567,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="https://schema.org/serialNumber">https://schema.org/serialNumber</a> <i>vehicleIdentificationNumber</i> is a sub property of <i>serialNumber</i>
      */
     @Override
     public List<Text> getVehicleIdentificationNumberList() {
@@ -578,6 +579,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="https://schema.org/serialNumber">https://schema.org/serialNumber</a> <i>vehicleIdentificationNumber</i> is a sub property of <i>serialNumber</i>
      */
     @Override
     public Text getVehicleIdentificationNumber() {
@@ -589,6 +591,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param vehicleIdentificationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="https://schema.org/serialNumber">https://schema.org/serialNumber</a> <i>vehicleIdentificationNumber</i> is a sub property of <i>serialNumber</i>
      */
     @Override
     public void addVehicleIdentificationNumber(Text vehicleIdentificationNumber) {
@@ -1468,6 +1471,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getCallSignList() {
@@ -1480,6 +1484,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getCallSign() {
@@ -1492,6 +1497,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param callSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addCallSign(Text callSign) {
@@ -2042,6 +2048,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getGtin14List() {
@@ -2053,6 +2061,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getGtin14() {
@@ -2064,6 +2074,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param gtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGtin14(Text gtin14) {
@@ -2405,6 +2417,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>nsn</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getNsnList() {
@@ -2417,6 +2430,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>nsn</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getNsn() {
@@ -2429,6 +2443,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param nsn Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>nsn</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addNsn(Text nsn) {
@@ -2512,6 +2527,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> List<T> getGtinList() {
@@ -2528,6 +2544,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> T getGtin() {
@@ -2544,6 +2561,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param gtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGtin(Text gtin) {
@@ -2559,6 +2577,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param gtin URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGtin(URL gtin) {
@@ -3000,6 +3019,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getGtin12List() {
@@ -3010,6 +3031,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getGtin12() {
@@ -3020,6 +3043,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin12 Text value to set.
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGtin12(Text gtin12) {
@@ -3078,6 +3103,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>productID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getProductIDList() {
@@ -3088,6 +3114,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>productID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getProductID() {
@@ -3098,6 +3125,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
      * @param productID Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>productID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addProductID(Text productID) {
@@ -3226,6 +3254,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -3237,6 +3266,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public <T> T getLogo() {
@@ -3248,6 +3278,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -3258,6 +3289,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     @Override
     public void addLogo(URL logo) {
@@ -3314,6 +3346,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> List<T> getAsinList() {
@@ -3329,6 +3362,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> T getAsin() {
@@ -3344,6 +3378,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param asin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addAsin(Text asin) {
@@ -3358,6 +3393,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param asin URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addAsin(URL asin) {
@@ -3371,6 +3407,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getGtin8List() {
@@ -3382,6 +3420,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getGtin8() {
@@ -3393,6 +3433,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param gtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGtin8(Text gtin8) {
@@ -3879,6 +3921,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getGtin13List() {
@@ -3890,6 +3934,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getGtin13() {
@@ -3901,6 +3947,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param gtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGtin13(Text gtin13) {
@@ -3914,6 +3962,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getSkuList() {
@@ -3925,6 +3974,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getSku() {
@@ -3936,6 +3986,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param sku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addSku(Text sku) {
@@ -4196,6 +4247,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -4206,6 +4258,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -4216,6 +4269,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -4326,6 +4380,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -4336,6 +4391,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -4346,6 +4402,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -4358,6 +4415,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -4368,6 +4426,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -4378,6 +4437,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

@@ -20,6 +20,7 @@ public interface TVSeason extends CreativeWorkSeason, CreativeWork {
      * The TV series to which this episode or season belongs.
      *
      * @return {@link TVSeries}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfTVSeries</i> is a sub property of <i>isPartOf</i>
      */
     List<TVSeries> getPartOfTVSeriesList();
 
@@ -27,6 +28,7 @@ public interface TVSeason extends CreativeWorkSeason, CreativeWork {
      * The TV series to which this episode or season belongs.
      *
      * @return {@link TVSeries}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfTVSeries</i> is a sub property of <i>isPartOf</i>
      */
     TVSeries getPartOfTVSeries();
 
@@ -34,6 +36,7 @@ public interface TVSeason extends CreativeWorkSeason, CreativeWork {
      * The TV series to which this episode or season belongs.
      *
      * @param partOfTVSeries TVSeries value to set.
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfTVSeries</i> is a sub property of <i>isPartOf</i>
      */
     void addPartOfTVSeries(TVSeries partOfTVSeries);
 

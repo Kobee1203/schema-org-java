@@ -53,6 +53,7 @@ public interface PublicationVolume extends CreativeWork {
      *
      * @return {@link Text} or {@link Integer}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>volumeNumber</i> is a sub property of <i>position</i>
      */
     <T> List<T> getVolumeNumberList();
 
@@ -61,6 +62,7 @@ public interface PublicationVolume extends CreativeWork {
      *
      * @return {@link Text} or {@link Integer}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>volumeNumber</i> is a sub property of <i>position</i>
      */
     <T> T getVolumeNumber();
 
@@ -69,6 +71,7 @@ public interface PublicationVolume extends CreativeWork {
      *
      * @param volumeNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>volumeNumber</i> is a sub property of <i>position</i>
      */
     void addVolumeNumber(Text volumeNumber);
     /**
@@ -76,6 +79,7 @@ public interface PublicationVolume extends CreativeWork {
      *
      * @param volumeNumber Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>volumeNumber</i> is a sub property of <i>position</i>
      */
     void addVolumeNumber(Integer volumeNumber);
 

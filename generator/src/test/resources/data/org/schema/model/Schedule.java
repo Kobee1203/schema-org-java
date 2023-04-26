@@ -141,6 +141,7 @@ public interface Schedule extends Intangible {
      * @return {@link Text} or {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://schema.org/frequency">https://schema.org/frequency</a> <i>repeatFrequency</i> is a sub property of <i>frequency</i>
      */
     <T> List<T> getRepeatFrequencyList();
 
@@ -151,6 +152,7 @@ public interface Schedule extends Intangible {
      * @return {@link Text} or {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://schema.org/frequency">https://schema.org/frequency</a> <i>repeatFrequency</i> is a sub property of <i>frequency</i>
      */
     <T> T getRepeatFrequency();
 
@@ -161,6 +163,7 @@ public interface Schedule extends Intangible {
      * @param repeatFrequency Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://schema.org/frequency">https://schema.org/frequency</a> <i>repeatFrequency</i> is a sub property of <i>frequency</i>
      */
     void addRepeatFrequency(Text repeatFrequency);
     /**
@@ -170,6 +173,7 @@ public interface Schedule extends Intangible {
      * @param repeatFrequency Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://schema.org/frequency">https://schema.org/frequency</a> <i>repeatFrequency</i> is a sub property of <i>frequency</i>
      */
     void addRepeatFrequency(Duration repeatFrequency);
 

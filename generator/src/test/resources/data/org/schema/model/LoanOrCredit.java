@@ -183,6 +183,7 @@ public interface LoanOrCredit extends FinancialProduct {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/duration">https://schema.org/duration</a> <i>loanTerm</i> is a sub property of <i>duration</i>
      */
     List<QuantitativeValue> getLoanTermList();
 
@@ -191,6 +192,7 @@ public interface LoanOrCredit extends FinancialProduct {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/duration">https://schema.org/duration</a> <i>loanTerm</i> is a sub property of <i>duration</i>
      */
     QuantitativeValue getLoanTerm();
 
@@ -199,6 +201,7 @@ public interface LoanOrCredit extends FinancialProduct {
      *
      * @param loanTerm QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/duration">https://schema.org/duration</a> <i>loanTerm</i> is a sub property of <i>duration</i>
      */
     void addLoanTerm(QuantitativeValue loanTerm);
 

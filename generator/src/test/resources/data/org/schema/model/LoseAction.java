@@ -19,6 +19,7 @@ public interface LoseAction extends AchieveAction {
      * A sub property of participant. The winner of the action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>winner</i> is a sub property of <i>participant</i>
      */
     List<Person> getWinnerList();
 
@@ -26,6 +27,7 @@ public interface LoseAction extends AchieveAction {
      * A sub property of participant. The winner of the action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>winner</i> is a sub property of <i>participant</i>
      */
     Person getWinner();
 
@@ -33,6 +35,7 @@ public interface LoseAction extends AchieveAction {
      * A sub property of participant. The winner of the action.
      *
      * @param winner Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>winner</i> is a sub property of <i>participant</i>
      */
     void addWinner(Person winner);
 }

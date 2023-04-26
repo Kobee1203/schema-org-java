@@ -10,6 +10,8 @@ public final class SchemaModelGeneratorConstants {
     private SchemaModelGeneratorConstants() {
     }
 
+    public static final String SCHEMA_PREFIX = "schema:";
+
     static final String VERBOSE_KEY = "com.weedow.shemaorg.generator.verbose";
 
     public static void setVerbose(boolean verbose) {

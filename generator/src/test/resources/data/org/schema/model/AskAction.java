@@ -19,6 +19,7 @@ public interface AskAction extends CommunicateAction {
      * A sub property of object. A question.
      *
      * @return {@link Question}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>question</i> is a sub property of <i>object</i>
      */
     List<Question> getQuestionList();
 
@@ -26,6 +27,7 @@ public interface AskAction extends CommunicateAction {
      * A sub property of object. A question.
      *
      * @return {@link Question}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>question</i> is a sub property of <i>object</i>
      */
     Question getQuestion();
 
@@ -33,6 +35,7 @@ public interface AskAction extends CommunicateAction {
      * A sub property of object. A question.
      *
      * @param question Question value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>question</i> is a sub property of <i>object</i>
      */
     void addQuestion(Question question);
 }

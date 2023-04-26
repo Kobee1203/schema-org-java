@@ -27,6 +27,7 @@ public interface Flight extends Trip {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getSellerList();
 
@@ -34,6 +35,7 @@ public interface Flight extends Trip {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> T getSeller();
 
@@ -41,12 +43,14 @@ public interface Flight extends Trip {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Person seller);
 
@@ -297,6 +301,7 @@ public interface Flight extends Trip {
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>flightNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getFlightNumberList();
 
@@ -304,6 +309,7 @@ public interface Flight extends Trip {
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>flightNumber</i> is a sub property of <i>identifier</i>
      */
     Text getFlightNumber();
 
@@ -311,6 +317,7 @@ public interface Flight extends Trip {
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
      * @param flightNumber Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>flightNumber</i> is a sub property of <i>identifier</i>
      */
     void addFlightNumber(Text flightNumber);
 

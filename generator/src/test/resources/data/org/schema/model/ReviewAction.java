@@ -19,6 +19,7 @@ public interface ReviewAction extends AssessAction {
      * A sub property of result. The review that resulted in the performing of the action.
      *
      * @return {@link Review}
+     * @see <a href="https://schema.org/result">https://schema.org/result</a> <i>resultReview</i> is a sub property of <i>result</i>
      */
     List<Review> getResultReviewList();
 
@@ -26,6 +27,7 @@ public interface ReviewAction extends AssessAction {
      * A sub property of result. The review that resulted in the performing of the action.
      *
      * @return {@link Review}
+     * @see <a href="https://schema.org/result">https://schema.org/result</a> <i>resultReview</i> is a sub property of <i>result</i>
      */
     Review getResultReview();
 
@@ -33,6 +35,7 @@ public interface ReviewAction extends AssessAction {
      * A sub property of result. The review that resulted in the performing of the action.
      *
      * @param resultReview Review value to set.
+     * @see <a href="https://schema.org/result">https://schema.org/result</a> <i>resultReview</i> is a sub property of <i>result</i>
      */
     void addResultReview(Review resultReview);
 }

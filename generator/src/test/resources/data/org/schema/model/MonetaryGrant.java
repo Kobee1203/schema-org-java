@@ -25,6 +25,7 @@ public interface MonetaryGrant extends Grant {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> List<T> getFunderList();
 
@@ -32,6 +33,7 @@ public interface MonetaryGrant extends Grant {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> T getFunder();
 
@@ -39,12 +41,14 @@ public interface MonetaryGrant extends Grant {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Person funder);
 

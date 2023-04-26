@@ -483,6 +483,7 @@ public interface Event extends Thing {
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPerformed</i> is a sub property of <i>workFeatured</i>
      */
     List<CreativeWork> getWorkPerformedList();
 
@@ -490,6 +491,7 @@ public interface Event extends Thing {
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPerformed</i> is a sub property of <i>workFeatured</i>
      */
     CreativeWork getWorkPerformed();
 
@@ -497,6 +499,7 @@ public interface Event extends Thing {
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
      * @param workPerformed CreativeWork value to set.
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPerformed</i> is a sub property of <i>workFeatured</i>
      */
     void addWorkPerformed(CreativeWork workPerformed);
 
@@ -586,6 +589,7 @@ public interface Event extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> List<T> getFunderList();
 
@@ -593,6 +597,7 @@ public interface Event extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> T getFunder();
 
@@ -600,12 +605,14 @@ public interface Event extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Person funder);
 

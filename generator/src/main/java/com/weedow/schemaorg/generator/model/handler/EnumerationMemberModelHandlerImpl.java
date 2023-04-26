@@ -7,12 +7,14 @@ import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import java.util.List;
 import java.util.Map;
 
+import static com.weedow.schemaorg.generator.SchemaModelGeneratorConstants.SCHEMA_PREFIX;
+
 public class EnumerationMemberModelHandlerImpl implements ModelHandler {
 
     @Override
     public boolean supports(GraphItem graphItem) {
         final List<String> types = graphItem.getTypes();
-        return types.stream().allMatch(s -> s.startsWith("schema:")) && !types.contains("schema:DataType");
+        return types.stream().allMatch(s -> s.startsWith(SCHEMA_PREFIX)) && !types.contains("schema:DataType");
     }
 
     @Override

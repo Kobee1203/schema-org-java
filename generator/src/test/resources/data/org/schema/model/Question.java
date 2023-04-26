@@ -23,6 +23,7 @@ public interface Question extends Comment {
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
      * @return {@link ItemList} or {@link Answer}
+     * @see <a href="https://schema.org/suggestedAnswer">https://schema.org/suggestedAnswer</a> <i>acceptedAnswer</i> is a sub property of <i>suggestedAnswer</i>
      */
     <T> List<T> getAcceptedAnswerList();
 
@@ -30,6 +31,7 @@ public interface Question extends Comment {
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
      * @return {@link ItemList} or {@link Answer}
+     * @see <a href="https://schema.org/suggestedAnswer">https://schema.org/suggestedAnswer</a> <i>acceptedAnswer</i> is a sub property of <i>suggestedAnswer</i>
      */
     <T> T getAcceptedAnswer();
 
@@ -37,12 +39,14 @@ public interface Question extends Comment {
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
      * @param acceptedAnswer ItemList value to set.
+     * @see <a href="https://schema.org/suggestedAnswer">https://schema.org/suggestedAnswer</a> <i>acceptedAnswer</i> is a sub property of <i>suggestedAnswer</i>
      */
     void addAcceptedAnswer(ItemList acceptedAnswer);
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
      * @param acceptedAnswer Answer value to set.
+     * @see <a href="https://schema.org/suggestedAnswer">https://schema.org/suggestedAnswer</a> <i>acceptedAnswer</i> is a sub property of <i>suggestedAnswer</i>
      */
     void addAcceptedAnswer(Answer acceptedAnswer);
 

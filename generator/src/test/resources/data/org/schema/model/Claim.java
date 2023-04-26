@@ -69,6 +69,7 @@ public interface Claim extends CreativeWork {
      * @return {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     * @see <a href="https://schema.org/workExample">https://schema.org/workExample</a> <i>appearance</i> is a sub property of <i>workExample</i>
      */
     List<CreativeWork> getAppearanceList();
 
@@ -78,6 +79,7 @@ public interface Claim extends CreativeWork {
      * @return {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     * @see <a href="https://schema.org/workExample">https://schema.org/workExample</a> <i>appearance</i> is a sub property of <i>workExample</i>
      */
     CreativeWork getAppearance();
 
@@ -87,6 +89,7 @@ public interface Claim extends CreativeWork {
      * @param appearance CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     * @see <a href="https://schema.org/workExample">https://schema.org/workExample</a> <i>appearance</i> is a sub property of <i>workExample</i>
      */
     void addAppearance(CreativeWork appearance);
 
@@ -96,6 +99,7 @@ public interface Claim extends CreativeWork {
      * @return {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     * @see <a href="https://schema.org/workExample">https://schema.org/workExample</a> <i>firstAppearance</i> is a sub property of <i>workExample</i>
      */
     List<CreativeWork> getFirstAppearanceList();
 
@@ -105,6 +109,7 @@ public interface Claim extends CreativeWork {
      * @return {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     * @see <a href="https://schema.org/workExample">https://schema.org/workExample</a> <i>firstAppearance</i> is a sub property of <i>workExample</i>
      */
     CreativeWork getFirstAppearance();
 
@@ -114,6 +119,7 @@ public interface Claim extends CreativeWork {
      * @param firstAppearance CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
+     * @see <a href="https://schema.org/workExample">https://schema.org/workExample</a> <i>firstAppearance</i> is a sub property of <i>workExample</i>
      */
     void addFirstAppearance(CreativeWork firstAppearance);
 }

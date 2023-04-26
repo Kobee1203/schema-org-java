@@ -93,6 +93,7 @@ public interface FloorPlan extends Intangible {
      * @return {@link URL} or {@link ImageObject}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>layoutImage</i> is a sub property of <i>image</i>
      */
     <T> List<T> getLayoutImageList();
 
@@ -102,6 +103,7 @@ public interface FloorPlan extends Intangible {
      * @return {@link URL} or {@link ImageObject}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>layoutImage</i> is a sub property of <i>image</i>
      */
     <T> T getLayoutImage();
 
@@ -111,6 +113,7 @@ public interface FloorPlan extends Intangible {
      * @param layoutImage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>layoutImage</i> is a sub property of <i>image</i>
      */
     void addLayoutImage(URL layoutImage);
     /**
@@ -119,6 +122,7 @@ public interface FloorPlan extends Intangible {
      * @param layoutImage ImageObject value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>layoutImage</i> is a sub property of <i>image</i>
      */
     void addLayoutImage(ImageObject layoutImage);
 

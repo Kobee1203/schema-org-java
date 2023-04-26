@@ -33,6 +33,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://schema.org/legislationApplies">https://schema.org/legislationApplies</a> <i>legislationTransposes</i> is a sub property of <i>legislationApplies</i>
      */
     List<Legislation> getLegislationTransposesList();
 
@@ -43,6 +44,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://schema.org/legislationApplies">https://schema.org/legislationApplies</a> <i>legislationTransposes</i> is a sub property of <i>legislationApplies</i>
      */
     Legislation getLegislationTransposes();
 
@@ -53,6 +55,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://schema.org/legislationApplies">https://schema.org/legislationApplies</a> <i>legislationTransposes</i> is a sub property of <i>legislationApplies</i>
      */
     void addLegislationTransposes(Legislation legislationTransposes);
 
@@ -63,6 +66,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/creator">https://schema.org/creator</a> <i>legislationPassedBy</i> is a sub property of <i>creator</i>
      */
     <T> List<T> getLegislationPassedByList();
 
@@ -73,6 +77,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/creator">https://schema.org/creator</a> <i>legislationPassedBy</i> is a sub property of <i>creator</i>
      */
     <T> T getLegislationPassedBy();
 
@@ -83,6 +88,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/creator">https://schema.org/creator</a> <i>legislationPassedBy</i> is a sub property of <i>creator</i>
      */
     void addLegislationPassedBy(Organization legislationPassedBy);
     /**
@@ -92,6 +98,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/creator">https://schema.org/creator</a> <i>legislationPassedBy</i> is a sub property of <i>creator</i>
      */
     void addLegislationPassedBy(Person legislationPassedBy);
 
@@ -102,6 +109,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/dateCreated">https://schema.org/dateCreated</a> <i>legislationDate</i> is a sub property of <i>dateCreated</i>
      */
     List<Date> getLegislationDateList();
 
@@ -112,6 +120,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/dateCreated">https://schema.org/dateCreated</a> <i>legislationDate</i> is a sub property of <i>dateCreated</i>
      */
     Date getLegislationDate();
 
@@ -122,6 +131,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/dateCreated">https://schema.org/dateCreated</a> <i>legislationDate</i> is a sub property of <i>dateCreated</i>
      */
     void addLegislationDate(Date legislationDate);
 
@@ -162,6 +172,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>legislationIdentifier</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getLegislationIdentifierList();
 
@@ -172,6 +183,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>legislationIdentifier</i> is a sub property of <i>identifier</i>
      */
     <T> T getLegislationIdentifier();
 
@@ -182,6 +194,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>legislationIdentifier</i> is a sub property of <i>identifier</i>
      */
     void addLegislationIdentifier(URL legislationIdentifier);
     /**
@@ -191,6 +204,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>legislationIdentifier</i> is a sub property of <i>identifier</i>
      */
     void addLegislationIdentifier(Text legislationIdentifier);
 
@@ -201,6 +215,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/genre">https://schema.org/genre</a> <i>legislationType</i> is a sub property of <i>genre</i>
      */
     <T> List<T> getLegislationTypeList();
 
@@ -211,6 +226,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/genre">https://schema.org/genre</a> <i>legislationType</i> is a sub property of <i>genre</i>
      */
     <T> T getLegislationType();
 
@@ -221,6 +237,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/genre">https://schema.org/genre</a> <i>legislationType</i> is a sub property of <i>genre</i>
      */
     void addLegislationType(CategoryCode legislationType);
     /**
@@ -230,6 +247,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/genre">https://schema.org/genre</a> <i>legislationType</i> is a sub property of <i>genre</i>
      */
     void addLegislationType(Text legislationType);
 
@@ -434,6 +452,8 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/jurisdiction">https://schema.org/jurisdiction</a> <i>legislationJurisdiction</i> is a sub property of <i>jurisdiction</i>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>legislationJurisdiction</i> is a sub property of <i>spatialCoverage</i>
      */
     <T> List<T> getLegislationJurisdictionList();
 
@@ -444,6 +464,8 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/jurisdiction">https://schema.org/jurisdiction</a> <i>legislationJurisdiction</i> is a sub property of <i>jurisdiction</i>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>legislationJurisdiction</i> is a sub property of <i>spatialCoverage</i>
      */
     <T> T getLegislationJurisdiction();
 
@@ -454,6 +476,8 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/jurisdiction">https://schema.org/jurisdiction</a> <i>legislationJurisdiction</i> is a sub property of <i>jurisdiction</i>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>legislationJurisdiction</i> is a sub property of <i>spatialCoverage</i>
      */
     void addLegislationJurisdiction(AdministrativeArea legislationJurisdiction);
     /**
@@ -463,6 +487,8 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/jurisdiction">https://schema.org/jurisdiction</a> <i>legislationJurisdiction</i> is a sub property of <i>jurisdiction</i>
+     * @see <a href="https://schema.org/spatialCoverage">https://schema.org/spatialCoverage</a> <i>legislationJurisdiction</i> is a sub property of <i>spatialCoverage</i>
      */
     void addLegislationJurisdiction(Text legislationJurisdiction);
 }

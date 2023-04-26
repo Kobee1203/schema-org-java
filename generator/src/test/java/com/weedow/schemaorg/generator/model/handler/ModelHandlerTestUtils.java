@@ -51,6 +51,12 @@ public final class ModelHandlerTestUtils {
         return source;
     }
 
+    public static SubPropertyOf subPropertyOf(String id) {
+        SubPropertyOf subPropertyOf = new SubPropertyOf();
+        subPropertyOf.setId(id);
+        return subPropertyOf;
+    }
+
     public static SupersededBy supersededBy(String id) {
         SupersededBy supersededBy = new SupersededBy();
         supersededBy.setId(id);

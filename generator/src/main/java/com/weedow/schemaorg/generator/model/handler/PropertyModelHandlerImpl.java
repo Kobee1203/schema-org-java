@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static com.weedow.schemaorg.generator.SchemaModelGeneratorConstants.SCHEMA_PREFIX;
+
 public class PropertyModelHandlerImpl implements ModelHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(PropertyModelHandlerImpl.class);
@@ -36,6 +38,18 @@ public class PropertyModelHandlerImpl implements ModelHandler {
         final String description = graphItem.getComment().getValue();
         final List<String> partOf = ModelUtils.getPartOf(graphItem);
         final List<String> source = ModelUtils.getSource(graphItem);
+        // TODO Improve the handling of "subPropertyOf".
+        // Use the property label present in the schema definition rather than the substring after 'schema:'
+        final List<String> subPropertyOf = ModelUtils.getSubPropertyOf(graphItem)
+                .stream()
+                .map(id -> {
+                    final int pos = id.indexOf(SCHEMA_PREFIX);
+                    if (pos == -1) {
+                        return id;
+                    }
+                    return id.substring(pos + SCHEMA_PREFIX.length());
+                })
+                .collect(Collectors.toList());
 
         final Field field = new Field(
                 name,
@@ -47,6 +61,7 @@ public class PropertyModelHandlerImpl implements ModelHandler {
                 description,
                 partOf,
                 source,
+                subPropertyOf,
                 propertyTypes
         );
 
@@ -58,6 +73,7 @@ public class PropertyModelHandlerImpl implements ModelHandler {
                                 description,
                                 partOf,
                                 source,
+                                subPropertyOf,
                                 type::getName,
                                 field::getFieldName
                         ))

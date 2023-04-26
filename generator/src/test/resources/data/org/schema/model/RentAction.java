@@ -21,6 +21,7 @@ public interface RentAction extends TradeAction {
      * A sub property of participant. The real estate agent involved in the action.
      *
      * @return {@link RealEstateAgent}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>realEstateAgent</i> is a sub property of <i>participant</i>
      */
     List<RealEstateAgent> getRealEstateAgentList();
 
@@ -28,6 +29,7 @@ public interface RentAction extends TradeAction {
      * A sub property of participant. The real estate agent involved in the action.
      *
      * @return {@link RealEstateAgent}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>realEstateAgent</i> is a sub property of <i>participant</i>
      */
     RealEstateAgent getRealEstateAgent();
 
@@ -35,6 +37,7 @@ public interface RentAction extends TradeAction {
      * A sub property of participant. The real estate agent involved in the action.
      *
      * @param realEstateAgent RealEstateAgent value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>realEstateAgent</i> is a sub property of <i>participant</i>
      */
     void addRealEstateAgent(RealEstateAgent realEstateAgent);
 
@@ -42,6 +45,7 @@ public interface RentAction extends TradeAction {
      * A sub property of participant. The owner of the real estate property.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>landlord</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getLandlordList();
 
@@ -49,6 +53,7 @@ public interface RentAction extends TradeAction {
      * A sub property of participant. The owner of the real estate property.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>landlord</i> is a sub property of <i>participant</i>
      */
     <T> T getLandlord();
 
@@ -56,12 +61,14 @@ public interface RentAction extends TradeAction {
      * A sub property of participant. The owner of the real estate property.
      *
      * @param landlord Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>landlord</i> is a sub property of <i>participant</i>
      */
     void addLandlord(Person landlord);
     /**
      * A sub property of participant. The owner of the real estate property.
      *
      * @param landlord Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>landlord</i> is a sub property of <i>participant</i>
      */
     void addLandlord(Organization landlord);
 }

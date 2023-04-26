@@ -25,6 +25,7 @@ public interface CategoryCode extends DefinedTerm {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/termCode">https://schema.org/termCode</a> <i>codeValue</i> is a sub property of <i>termCode</i>
      */
     List<Text> getCodeValueList();
 
@@ -34,6 +35,7 @@ public interface CategoryCode extends DefinedTerm {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/termCode">https://schema.org/termCode</a> <i>codeValue</i> is a sub property of <i>termCode</i>
      */
     Text getCodeValue();
 
@@ -43,6 +45,7 @@ public interface CategoryCode extends DefinedTerm {
      * @param codeValue Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/termCode">https://schema.org/termCode</a> <i>codeValue</i> is a sub property of <i>termCode</i>
      */
     void addCodeValue(Text codeValue);
 
@@ -52,6 +55,7 @@ public interface CategoryCode extends DefinedTerm {
      * @return {@link URL} or {@link CategoryCodeSet}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/inDefinedTermSet">https://schema.org/inDefinedTermSet</a> <i>inCodeSet</i> is a sub property of <i>inDefinedTermSet</i>
      */
     <T> List<T> getInCodeSetList();
 
@@ -61,6 +65,7 @@ public interface CategoryCode extends DefinedTerm {
      * @return {@link URL} or {@link CategoryCodeSet}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/inDefinedTermSet">https://schema.org/inDefinedTermSet</a> <i>inCodeSet</i> is a sub property of <i>inDefinedTermSet</i>
      */
     <T> T getInCodeSet();
 
@@ -70,6 +75,7 @@ public interface CategoryCode extends DefinedTerm {
      * @param inCodeSet URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/inDefinedTermSet">https://schema.org/inDefinedTermSet</a> <i>inCodeSet</i> is a sub property of <i>inDefinedTermSet</i>
      */
     void addInCodeSet(URL inCodeSet);
     /**
@@ -78,6 +84,7 @@ public interface CategoryCode extends DefinedTerm {
      * @param inCodeSet CategoryCodeSet value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/inDefinedTermSet">https://schema.org/inDefinedTermSet</a> <i>inCodeSet</i> is a sub property of <i>inDefinedTermSet</i>
      */
     void addInCodeSet(CategoryCodeSet inCodeSet);
 }

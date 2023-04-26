@@ -763,6 +763,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -773,6 +774,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -783,6 +785,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -893,6 +896,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -903,6 +907,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -913,6 +918,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -925,6 +931,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -935,6 +942,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -945,6 +953,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {
@@ -1060,6 +1069,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -1071,6 +1081,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -1082,6 +1093,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1333,6 +1345,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/memberOf">https://schema.org/memberOf</a> <i>affiliation</i> is a sub property of <i>memberOf</i>
      */
     @Override
     public List<Organization> getAffiliationList() {
@@ -1343,6 +1356,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/memberOf">https://schema.org/memberOf</a> <i>affiliation</i> is a sub property of <i>memberOf</i>
      */
     @Override
     public Organization getAffiliation() {
@@ -1353,6 +1367,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
      * @param affiliation Organization value to set.
+     * @see <a href="https://schema.org/memberOf">https://schema.org/memberOf</a> <i>affiliation</i> is a sub property of <i>memberOf</i>
      */
     @Override
     public void addAffiliation(Organization affiliation) {
@@ -1692,6 +1707,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's place of work.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public <T> List<T> getWorkLocationList() {
@@ -1702,6 +1718,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's place of work.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public <T> T getWorkLocation() {
@@ -1712,6 +1729,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's place of work.
      *
      * @param workLocation ContactPoint value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addWorkLocation(ContactPoint workLocation) {
@@ -1721,6 +1739,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's place of work.
      *
      * @param workLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addWorkLocation(Place workLocation) {
@@ -2104,6 +2123,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> List<T> getFunderList() {
@@ -2114,6 +2134,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> T getFunder() {
@@ -2124,6 +2145,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Organization funder) {
@@ -2133,6 +2155,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Person funder) {
@@ -2209,6 +2232,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional name for a Person, can be used for a middle name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/alternateName">https://schema.org/alternateName</a> <i>additionalName</i> is a sub property of <i>alternateName</i>
      */
     @Override
     public List<Text> getAdditionalNameList() {
@@ -2219,6 +2243,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional name for a Person, can be used for a middle name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/alternateName">https://schema.org/alternateName</a> <i>additionalName</i> is a sub property of <i>alternateName</i>
      */
     @Override
     public Text getAdditionalName() {
@@ -2229,6 +2254,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An additional name for a Person, can be used for a middle name.
      *
      * @param additionalName Text value to set.
+     * @see <a href="https://schema.org/alternateName">https://schema.org/alternateName</a> <i>additionalName</i> is a sub property of <i>alternateName</i>
      */
     @Override
     public void addAdditionalName(Text additionalName) {
@@ -2242,6 +2268,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getDunsList() {
@@ -2253,6 +2280,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getDuns() {
@@ -2264,6 +2292,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param duns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addDuns(Text duns) {
@@ -2757,6 +2786,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's residence.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public <T> List<T> getHomeLocationList() {
@@ -2767,6 +2797,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's residence.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public <T> T getHomeLocation() {
@@ -2777,6 +2808,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's residence.
      *
      * @param homeLocation ContactPoint value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addHomeLocation(ContactPoint homeLocation) {
@@ -2786,6 +2818,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A contact location for a person's residence.
      *
      * @param homeLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addHomeLocation(Place homeLocation) {
@@ -3009,6 +3042,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getTaxIDList() {
@@ -3020,6 +3054,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getTaxID() {
@@ -3031,6 +3066,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param taxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addTaxID(Text taxID) {
@@ -3045,6 +3081,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getCallSignList() {
@@ -3057,6 +3094,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getCallSign() {
@@ -3069,6 +3107,7 @@ public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param callSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addCallSign(Text callSign) {

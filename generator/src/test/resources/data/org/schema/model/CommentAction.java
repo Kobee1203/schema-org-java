@@ -19,6 +19,7 @@ public interface CommentAction extends CommunicateAction {
      * A sub property of result. The Comment created or sent as a result of this action.
      *
      * @return {@link Comment}
+     * @see <a href="https://schema.org/result">https://schema.org/result</a> <i>resultComment</i> is a sub property of <i>result</i>
      */
     List<Comment> getResultCommentList();
 
@@ -26,6 +27,7 @@ public interface CommentAction extends CommunicateAction {
      * A sub property of result. The Comment created or sent as a result of this action.
      *
      * @return {@link Comment}
+     * @see <a href="https://schema.org/result">https://schema.org/result</a> <i>resultComment</i> is a sub property of <i>result</i>
      */
     Comment getResultComment();
 
@@ -33,6 +35,7 @@ public interface CommentAction extends CommunicateAction {
      * A sub property of result. The Comment created or sent as a result of this action.
      *
      * @param resultComment Comment value to set.
+     * @see <a href="https://schema.org/result">https://schema.org/result</a> <i>resultComment</i> is a sub property of <i>result</i>
      */
     void addResultComment(Comment resultComment);
 }

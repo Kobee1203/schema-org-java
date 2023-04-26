@@ -8,6 +8,8 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static com.weedow.schemaorg.generator.SchemaModelGeneratorConstants.SCHEMA_PREFIX;
+
 public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaDefinitionFilterImpl.class);
@@ -19,7 +21,7 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
         if (modelIds != null && !modelIds.isEmpty()) {
             filteredSchemaDefinitions = modelIds.stream()
                     // Fix model id (format 'schema:xxx')
-                    .map(modelId -> modelId.contains(":") ? modelId : "schema:" + modelId)
+                    .map(modelId -> modelId.contains(":") ? modelId : SCHEMA_PREFIX + modelId)
                     // Filter existing models, skip models not found
                     .filter(schemaDefinitions::containsKey)
                     .flatMap(modelId -> {

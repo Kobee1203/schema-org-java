@@ -19,6 +19,7 @@ public interface SearchAction extends Action {
      * A sub property of instrument. The query used on this action.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>query</i> is a sub property of <i>instrument</i>
      */
     List<Text> getQueryList();
 
@@ -26,6 +27,7 @@ public interface SearchAction extends Action {
      * A sub property of instrument. The query used on this action.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>query</i> is a sub property of <i>instrument</i>
      */
     Text getQuery();
 
@@ -33,6 +35,7 @@ public interface SearchAction extends Action {
      * A sub property of instrument. The query used on this action.
      *
      * @param query Text value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>query</i> is a sub property of <i>instrument</i>
      */
     void addQuery(Text query);
 }

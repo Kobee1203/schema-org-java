@@ -66,6 +66,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * @return {@link Place} or {@link Text} or {@link GeoShape}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     <T> List<T> getEligibleRegionList();
 
@@ -76,6 +77,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * @return {@link Place} or {@link Text} or {@link GeoShape}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     <T> T getEligibleRegion();
 
@@ -86,6 +88,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * @param eligibleRegion Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     void addEligibleRegion(Place eligibleRegion);
     /**
@@ -95,6 +98,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * @param eligibleRegion Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     void addEligibleRegion(Text eligibleRegion);
     /**
@@ -104,6 +108,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * @param eligibleRegion GeoShape value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     void addEligibleRegion(GeoShape eligibleRegion);
 

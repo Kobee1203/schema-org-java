@@ -240,6 +240,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @return {@link HowToTool} or {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> List<T> getToolList() {
@@ -250,6 +251,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @return {@link HowToTool} or {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> T getTool() {
@@ -260,6 +262,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool HowToTool value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addTool(HowToTool tool) {
@@ -269,6 +272,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool Text value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addTool(Text tool) {
@@ -374,6 +378,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @return {@link Text} or {@link HowToSupply}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> List<T> getSupplyList() {
@@ -384,6 +389,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @return {@link Text} or {@link HowToSupply}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public <T> T getSupply() {
@@ -394,6 +400,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply Text value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addSupply(Text supply) {
@@ -403,6 +410,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply HowToSupply value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addSupply(HowToSupply supply) {
@@ -719,6 +727,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public <T> List<T> getAcquireLicensePageList() {
@@ -731,6 +740,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public <T> T getAcquireLicensePage() {
@@ -743,6 +753,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @param acquireLicensePage CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public void addAcquireLicensePage(CreativeWork acquireLicensePage) {
@@ -754,6 +765,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @param acquireLicensePage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     @Override
     public void addAcquireLicensePage(URL acquireLicensePage) {
@@ -2178,6 +2190,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Claim> getInterpretedAsClaimList() {
@@ -2190,6 +2203,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     @Override
     public Claim getInterpretedAsClaim() {
@@ -2202,6 +2216,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     @Override
     public void addInterpretedAsClaim(Claim interpretedAsClaim) {
@@ -2545,6 +2560,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> List<T> getFunderList() {
@@ -2555,6 +2571,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> T getFunder() {
@@ -2565,6 +2582,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Organization funder) {
@@ -2574,6 +2592,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Person funder) {
@@ -3723,6 +3742,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     @Override
     public List<Place> getSpatialCoverageList() {
@@ -3735,6 +3755,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     @Override
     public Place getSpatialCoverage() {
@@ -3747,6 +3768,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @param spatialCoverage Place value to set.
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     @Override
     public void addSpatialCoverage(Place spatialCoverage) {
@@ -3801,6 +3823,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> List<T> getEditEIDRList() {
@@ -3817,6 +3840,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public <T> T getEditEIDR() {
@@ -3833,6 +3857,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @param editEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addEditEIDR(URL editEIDR) {
@@ -3848,6 +3873,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @param editEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addEditEIDR(Text editEIDR) {
@@ -4050,6 +4076,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     @Override
     public List<Thing> getMainEntityList() {
@@ -4060,6 +4087,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     @Override
     public Thing getMainEntity() {
@@ -4070,6 +4098,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @param mainEntity Thing value to set.
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     @Override
     public void addMainEntity(Thing mainEntity) {
@@ -5246,6 +5275,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -5256,6 +5286,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -5266,6 +5297,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -5376,6 +5408,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -5386,6 +5419,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -5396,6 +5430,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -5408,6 +5443,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -5418,6 +5454,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -5428,6 +5465,7 @@ public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

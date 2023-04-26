@@ -19,6 +19,7 @@ public interface OrderAction extends TradeAction {
      * A sub property of instrument. The method of delivery.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>deliveryMethod</i> is a sub property of <i>instrument</i>
      */
     List<DeliveryMethod> getDeliveryMethodList();
 
@@ -26,6 +27,7 @@ public interface OrderAction extends TradeAction {
      * A sub property of instrument. The method of delivery.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>deliveryMethod</i> is a sub property of <i>instrument</i>
      */
     DeliveryMethod getDeliveryMethod();
 
@@ -33,6 +35,7 @@ public interface OrderAction extends TradeAction {
      * A sub property of instrument. The method of delivery.
      *
      * @param deliveryMethod DeliveryMethod value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>deliveryMethod</i> is a sub property of <i>instrument</i>
      */
     void addDeliveryMethod(DeliveryMethod deliveryMethod);
 }

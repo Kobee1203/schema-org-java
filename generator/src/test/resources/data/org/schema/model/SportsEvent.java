@@ -49,6 +49,7 @@ public interface SportsEvent extends Event {
      * The away team in a sports event.
      *
      * @return {@link SportsTeam} or {@link Person}
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>awayTeam</i> is a sub property of <i>competitor</i>
      */
     <T> List<T> getAwayTeamList();
 
@@ -56,6 +57,7 @@ public interface SportsEvent extends Event {
      * The away team in a sports event.
      *
      * @return {@link SportsTeam} or {@link Person}
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>awayTeam</i> is a sub property of <i>competitor</i>
      */
     <T> T getAwayTeam();
 
@@ -63,12 +65,14 @@ public interface SportsEvent extends Event {
      * The away team in a sports event.
      *
      * @param awayTeam SportsTeam value to set.
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>awayTeam</i> is a sub property of <i>competitor</i>
      */
     void addAwayTeam(SportsTeam awayTeam);
     /**
      * The away team in a sports event.
      *
      * @param awayTeam Person value to set.
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>awayTeam</i> is a sub property of <i>competitor</i>
      */
     void addAwayTeam(Person awayTeam);
 
@@ -111,6 +115,7 @@ public interface SportsEvent extends Event {
      * The home team in a sports event.
      *
      * @return {@link SportsTeam} or {@link Person}
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>homeTeam</i> is a sub property of <i>competitor</i>
      */
     <T> List<T> getHomeTeamList();
 
@@ -118,6 +123,7 @@ public interface SportsEvent extends Event {
      * The home team in a sports event.
      *
      * @return {@link SportsTeam} or {@link Person}
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>homeTeam</i> is a sub property of <i>competitor</i>
      */
     <T> T getHomeTeam();
 
@@ -125,12 +131,14 @@ public interface SportsEvent extends Event {
      * The home team in a sports event.
      *
      * @param homeTeam SportsTeam value to set.
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>homeTeam</i> is a sub property of <i>competitor</i>
      */
     void addHomeTeam(SportsTeam homeTeam);
     /**
      * The home team in a sports event.
      *
      * @param homeTeam Person value to set.
+     * @see <a href="https://schema.org/competitor">https://schema.org/competitor</a> <i>homeTeam</i> is a sub property of <i>competitor</i>
      */
     void addHomeTeam(Person homeTeam);
 }

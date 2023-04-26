@@ -23,6 +23,7 @@ public interface CategoryCodeSet extends DefinedTermSet {
      * @return {@link CategoryCode}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/hasDefinedTerm">https://schema.org/hasDefinedTerm</a> <i>hasCategoryCode</i> is a sub property of <i>hasDefinedTerm</i>
      */
     List<CategoryCode> getHasCategoryCodeList();
 
@@ -32,6 +33,7 @@ public interface CategoryCodeSet extends DefinedTermSet {
      * @return {@link CategoryCode}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/hasDefinedTerm">https://schema.org/hasDefinedTerm</a> <i>hasCategoryCode</i> is a sub property of <i>hasDefinedTerm</i>
      */
     CategoryCode getHasCategoryCode();
 
@@ -41,6 +43,7 @@ public interface CategoryCodeSet extends DefinedTermSet {
      * @param hasCategoryCode CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     * @see <a href="https://schema.org/hasDefinedTerm">https://schema.org/hasDefinedTerm</a> <i>hasCategoryCode</i> is a sub property of <i>hasDefinedTerm</i>
      */
     void addHasCategoryCode(CategoryCode hasCategoryCode);
 }

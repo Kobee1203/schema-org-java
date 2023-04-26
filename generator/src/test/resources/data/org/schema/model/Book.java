@@ -131,6 +131,7 @@ public interface Book extends CreativeWork {
      * The ISBN of the book.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>isbn</i> is a sub property of <i>identifier</i>
      */
     List<Text> getIsbnList();
 
@@ -138,6 +139,7 @@ public interface Book extends CreativeWork {
      * The ISBN of the book.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>isbn</i> is a sub property of <i>identifier</i>
      */
     Text getIsbn();
 
@@ -145,6 +147,7 @@ public interface Book extends CreativeWork {
      * The ISBN of the book.
      *
      * @param isbn Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>isbn</i> is a sub property of <i>identifier</i>
      */
     void addIsbn(Text isbn);
 }

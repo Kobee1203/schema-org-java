@@ -22,6 +22,7 @@ public interface CookAction extends CreateAction {
      * A sub property of location. The specific food event where the action occurred.
      *
      * @return {@link FoodEvent}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>foodEvent</i> is a sub property of <i>location</i>
      */
     List<FoodEvent> getFoodEventList();
 
@@ -29,6 +30,7 @@ public interface CookAction extends CreateAction {
      * A sub property of location. The specific food event where the action occurred.
      *
      * @return {@link FoodEvent}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>foodEvent</i> is a sub property of <i>location</i>
      */
     FoodEvent getFoodEvent();
 
@@ -36,6 +38,7 @@ public interface CookAction extends CreateAction {
      * A sub property of location. The specific food event where the action occurred.
      *
      * @param foodEvent FoodEvent value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>foodEvent</i> is a sub property of <i>location</i>
      */
     void addFoodEvent(FoodEvent foodEvent);
 
@@ -43,6 +46,7 @@ public interface CookAction extends CreateAction {
      * A sub property of instrument. The recipe/instructions used to perform the action.
      *
      * @return {@link Recipe}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>recipe</i> is a sub property of <i>instrument</i>
      */
     List<Recipe> getRecipeList();
 
@@ -50,6 +54,7 @@ public interface CookAction extends CreateAction {
      * A sub property of instrument. The recipe/instructions used to perform the action.
      *
      * @return {@link Recipe}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>recipe</i> is a sub property of <i>instrument</i>
      */
     Recipe getRecipe();
 
@@ -57,6 +62,7 @@ public interface CookAction extends CreateAction {
      * A sub property of instrument. The recipe/instructions used to perform the action.
      *
      * @param recipe Recipe value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>recipe</i> is a sub property of <i>instrument</i>
      */
     void addRecipe(Recipe recipe);
 
@@ -64,6 +70,7 @@ public interface CookAction extends CreateAction {
      * A sub property of location. The specific food establishment where the action occurred.
      *
      * @return {@link FoodEstablishment} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>foodEstablishment</i> is a sub property of <i>location</i>
      */
     <T> List<T> getFoodEstablishmentList();
 
@@ -71,6 +78,7 @@ public interface CookAction extends CreateAction {
      * A sub property of location. The specific food establishment where the action occurred.
      *
      * @return {@link FoodEstablishment} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>foodEstablishment</i> is a sub property of <i>location</i>
      */
     <T> T getFoodEstablishment();
 
@@ -78,12 +86,14 @@ public interface CookAction extends CreateAction {
      * A sub property of location. The specific food establishment where the action occurred.
      *
      * @param foodEstablishment FoodEstablishment value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>foodEstablishment</i> is a sub property of <i>location</i>
      */
     void addFoodEstablishment(FoodEstablishment foodEstablishment);
     /**
      * A sub property of location. The specific food establishment where the action occurred.
      *
      * @param foodEstablishment Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>foodEstablishment</i> is a sub property of <i>location</i>
      */
     void addFoodEstablishment(Place foodEstablishment);
 }

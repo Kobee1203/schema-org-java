@@ -23,6 +23,7 @@ public interface TVEpisode extends Episode {
      * The TV series to which this episode or season belongs.
      *
      * @return {@link TVSeries}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfTVSeries</i> is a sub property of <i>isPartOf</i>
      */
     List<TVSeries> getPartOfTVSeriesList();
 
@@ -30,6 +31,7 @@ public interface TVEpisode extends Episode {
      * The TV series to which this episode or season belongs.
      *
      * @return {@link TVSeries}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfTVSeries</i> is a sub property of <i>isPartOf</i>
      */
     TVSeries getPartOfTVSeries();
 
@@ -37,6 +39,7 @@ public interface TVEpisode extends Episode {
      * The TV series to which this episode or season belongs.
      *
      * @param partOfTVSeries TVSeries value to set.
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfTVSeries</i> is a sub property of <i>isPartOf</i>
      */
     void addPartOfTVSeries(TVSeries partOfTVSeries);
 
@@ -50,6 +53,7 @@ public interface TVEpisode extends Episode {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getTitleEIDRList();
 
@@ -63,6 +67,7 @@ public interface TVEpisode extends Episode {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     <T> T getTitleEIDR();
 
@@ -76,6 +81,7 @@ public interface TVEpisode extends Episode {
      * @param titleEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     void addTitleEIDR(URL titleEIDR);
     /**
@@ -88,6 +94,7 @@ public interface TVEpisode extends Episode {
      * @param titleEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>titleEIDR</i> is a sub property of <i>identifier</i>
      */
     void addTitleEIDR(Text titleEIDR);
 

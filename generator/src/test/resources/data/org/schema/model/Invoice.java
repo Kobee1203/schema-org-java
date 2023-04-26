@@ -33,6 +33,7 @@ public interface Invoice extends Intangible {
      * A number that confirms the given order or payment has been received.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>confirmationNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getConfirmationNumberList();
 
@@ -40,6 +41,7 @@ public interface Invoice extends Intangible {
      * A number that confirms the given order or payment has been received.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>confirmationNumber</i> is a sub property of <i>identifier</i>
      */
     Text getConfirmationNumber();
 
@@ -47,6 +49,7 @@ public interface Invoice extends Intangible {
      * A number that confirms the given order or payment has been received.
      *
      * @param confirmationNumber Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>confirmationNumber</i> is a sub property of <i>identifier</i>
      */
     void addConfirmationNumber(Text confirmationNumber);
 
@@ -174,6 +177,7 @@ public interface Invoice extends Intangible {
      * The identifier for the account the payment will be applied to.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>accountId</i> is a sub property of <i>identifier</i>
      */
     List<Text> getAccountIdList();
 
@@ -181,6 +185,7 @@ public interface Invoice extends Intangible {
      * The identifier for the account the payment will be applied to.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>accountId</i> is a sub property of <i>identifier</i>
      */
     Text getAccountId();
 
@@ -188,6 +193,7 @@ public interface Invoice extends Intangible {
      * The identifier for the account the payment will be applied to.
      *
      * @param accountId Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>accountId</i> is a sub property of <i>identifier</i>
      */
     void addAccountId(Text accountId);
 

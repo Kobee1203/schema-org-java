@@ -77,6 +77,7 @@ public interface ScreeningEvent extends Event {
      * The movie presented during this event.
      *
      * @return {@link Movie}
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPresented</i> is a sub property of <i>workFeatured</i>
      */
     List<Movie> getWorkPresentedList();
 
@@ -84,6 +85,7 @@ public interface ScreeningEvent extends Event {
      * The movie presented during this event.
      *
      * @return {@link Movie}
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPresented</i> is a sub property of <i>workFeatured</i>
      */
     Movie getWorkPresented();
 
@@ -91,6 +93,7 @@ public interface ScreeningEvent extends Event {
      * The movie presented during this event.
      *
      * @param workPresented Movie value to set.
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPresented</i> is a sub property of <i>workFeatured</i>
      */
     void addWorkPresented(Movie workPresented);
 }

@@ -831,6 +831,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPerformed</i> is a sub property of <i>workFeatured</i>
      */
     @Override
     public List<CreativeWork> getWorkPerformedList() {
@@ -841,6 +842,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPerformed</i> is a sub property of <i>workFeatured</i>
      */
     @Override
     public CreativeWork getWorkPerformed() {
@@ -851,6 +853,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
      * @param workPerformed CreativeWork value to set.
+     * @see <a href="https://schema.org/workFeatured">https://schema.org/workFeatured</a> <i>workPerformed</i> is a sub property of <i>workFeatured</i>
      */
     @Override
     public void addWorkPerformed(CreativeWork workPerformed) {
@@ -983,6 +986,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> List<T> getFunderList() {
@@ -993,6 +997,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public <T> T getFunder() {
@@ -1003,6 +1008,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Organization funder) {
@@ -1012,6 +1018,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     @Override
     public void addFunder(Person funder) {
@@ -2024,6 +2031,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -2034,6 +2042,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -2044,6 +2053,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -2154,6 +2164,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -2164,6 +2175,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -2174,6 +2186,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -2186,6 +2199,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -2196,6 +2210,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -2206,6 +2221,7 @@ public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

@@ -69,6 +69,7 @@ public interface Clip extends CreativeWork {
      * Position of the clip within an ordered group of clips.
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>clipNumber</i> is a sub property of <i>position</i>
      */
     <T> List<T> getClipNumberList();
 
@@ -76,6 +77,7 @@ public interface Clip extends CreativeWork {
      * Position of the clip within an ordered group of clips.
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>clipNumber</i> is a sub property of <i>position</i>
      */
     <T> T getClipNumber();
 
@@ -83,12 +85,14 @@ public interface Clip extends CreativeWork {
      * Position of the clip within an ordered group of clips.
      *
      * @param clipNumber Integer value to set.
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>clipNumber</i> is a sub property of <i>position</i>
      */
     void addClipNumber(Integer clipNumber);
     /**
      * Position of the clip within an ordered group of clips.
      *
      * @param clipNumber Text value to set.
+     * @see <a href="https://schema.org/position">https://schema.org/position</a> <i>clipNumber</i> is a sub property of <i>position</i>
      */
     void addClipNumber(Text clipNumber);
 
@@ -96,6 +100,7 @@ public interface Clip extends CreativeWork {
      * The episode to which this clip belongs.
      *
      * @return {@link Episode}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfEpisode</i> is a sub property of <i>isPartOf</i>
      */
     List<Episode> getPartOfEpisodeList();
 
@@ -103,6 +108,7 @@ public interface Clip extends CreativeWork {
      * The episode to which this clip belongs.
      *
      * @return {@link Episode}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfEpisode</i> is a sub property of <i>isPartOf</i>
      */
     Episode getPartOfEpisode();
 
@@ -110,6 +116,7 @@ public interface Clip extends CreativeWork {
      * The episode to which this clip belongs.
      *
      * @param partOfEpisode Episode value to set.
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfEpisode</i> is a sub property of <i>isPartOf</i>
      */
     void addPartOfEpisode(Episode partOfEpisode);
 
@@ -117,6 +124,7 @@ public interface Clip extends CreativeWork {
      * The season to which this episode belongs.
      *
      * @return {@link CreativeWorkSeason}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfSeason</i> is a sub property of <i>isPartOf</i>
      */
     List<CreativeWorkSeason> getPartOfSeasonList();
 
@@ -124,6 +132,7 @@ public interface Clip extends CreativeWork {
      * The season to which this episode belongs.
      *
      * @return {@link CreativeWorkSeason}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfSeason</i> is a sub property of <i>isPartOf</i>
      */
     CreativeWorkSeason getPartOfSeason();
 
@@ -131,6 +140,7 @@ public interface Clip extends CreativeWork {
      * The season to which this episode belongs.
      *
      * @param partOfSeason CreativeWorkSeason value to set.
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfSeason</i> is a sub property of <i>isPartOf</i>
      */
     void addPartOfSeason(CreativeWorkSeason partOfSeason);
 
@@ -173,6 +183,7 @@ public interface Clip extends CreativeWork {
      * The series to which this episode or season belongs.
      *
      * @return {@link CreativeWorkSeries}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfSeries</i> is a sub property of <i>isPartOf</i>
      */
     List<CreativeWorkSeries> getPartOfSeriesList();
 
@@ -180,6 +191,7 @@ public interface Clip extends CreativeWork {
      * The series to which this episode or season belongs.
      *
      * @return {@link CreativeWorkSeries}
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfSeries</i> is a sub property of <i>isPartOf</i>
      */
     CreativeWorkSeries getPartOfSeries();
 
@@ -187,6 +199,7 @@ public interface Clip extends CreativeWork {
      * The series to which this episode or season belongs.
      *
      * @param partOfSeries CreativeWorkSeries value to set.
+     * @see <a href="https://schema.org/isPartOf">https://schema.org/isPartOf</a> <i>partOfSeries</i> is a sub property of <i>isPartOf</i>
      */
     void addPartOfSeries(CreativeWorkSeries partOfSeries);
 

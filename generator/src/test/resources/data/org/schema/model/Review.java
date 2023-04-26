@@ -48,6 +48,7 @@ public interface Review extends CreativeWork {
      * @return {@link Review}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/associatedReview">https://schema.org/associatedReview</a> <i>associatedMediaReview</i> is a sub property of <i>associatedReview</i>
      */
     List<Review> getAssociatedMediaReviewList();
 
@@ -57,6 +58,7 @@ public interface Review extends CreativeWork {
      * @return {@link Review}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/associatedReview">https://schema.org/associatedReview</a> <i>associatedMediaReview</i> is a sub property of <i>associatedReview</i>
      */
     Review getAssociatedMediaReview();
 
@@ -66,6 +68,7 @@ public interface Review extends CreativeWork {
      * @param associatedMediaReview Review value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/associatedReview">https://schema.org/associatedReview</a> <i>associatedMediaReview</i> is a sub property of <i>associatedReview</i>
      */
     void addAssociatedMediaReview(Review associatedMediaReview);
 
@@ -324,6 +327,7 @@ public interface Review extends CreativeWork {
      * @return {@link Review}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/associatedReview">https://schema.org/associatedReview</a> <i>associatedClaimReview</i> is a sub property of <i>associatedReview</i>
      */
     List<Review> getAssociatedClaimReviewList();
 
@@ -333,6 +337,7 @@ public interface Review extends CreativeWork {
      * @return {@link Review}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/associatedReview">https://schema.org/associatedReview</a> <i>associatedClaimReview</i> is a sub property of <i>associatedReview</i>
      */
     Review getAssociatedClaimReview();
 
@@ -342,6 +347,7 @@ public interface Review extends CreativeWork {
      * @param associatedClaimReview Review value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/associatedReview">https://schema.org/associatedReview</a> <i>associatedClaimReview</i> is a sub property of <i>associatedReview</i>
      */
     void addAssociatedClaimReview(Review associatedClaimReview);
 }

@@ -19,6 +19,7 @@ public interface InsertAction extends AddAction {
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     List<Place> getToLocationList();
 
@@ -26,6 +27,7 @@ public interface InsertAction extends AddAction {
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     Place getToLocation();
 
@@ -33,6 +35,7 @@ public interface InsertAction extends AddAction {
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @param toLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     void addToLocation(Place toLocation);
 }

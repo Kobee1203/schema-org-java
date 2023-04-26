@@ -46,6 +46,7 @@ public interface Message extends CreativeWork {
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getRecipientList();
 
@@ -53,6 +54,7 @@ public interface Message extends CreativeWork {
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     <T> T getRecipient();
 
@@ -60,24 +62,28 @@ public interface Message extends CreativeWork {
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(Organization recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient ContactPoint value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(ContactPoint recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(Person recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Audience value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(Audience recipient);
 
@@ -106,6 +112,7 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient copied on a message.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person}
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>ccRecipient</i> is a sub property of <i>recipient</i>
      */
     <T> List<T> getCcRecipientList();
 
@@ -113,6 +120,7 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient copied on a message.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person}
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>ccRecipient</i> is a sub property of <i>recipient</i>
      */
     <T> T getCcRecipient();
 
@@ -120,18 +128,21 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient copied on a message.
      *
      * @param ccRecipient Organization value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>ccRecipient</i> is a sub property of <i>recipient</i>
      */
     void addCcRecipient(Organization ccRecipient);
     /**
      * A sub property of recipient. The recipient copied on a message.
      *
      * @param ccRecipient ContactPoint value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>ccRecipient</i> is a sub property of <i>recipient</i>
      */
     void addCcRecipient(ContactPoint ccRecipient);
     /**
      * A sub property of recipient. The recipient copied on a message.
      *
      * @param ccRecipient Person value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>ccRecipient</i> is a sub property of <i>recipient</i>
      */
     void addCcRecipient(Person ccRecipient);
 
@@ -139,6 +150,7 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient blind copied on a message.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person}
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>bccRecipient</i> is a sub property of <i>recipient</i>
      */
     <T> List<T> getBccRecipientList();
 
@@ -146,6 +158,7 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient blind copied on a message.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person}
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>bccRecipient</i> is a sub property of <i>recipient</i>
      */
     <T> T getBccRecipient();
 
@@ -153,18 +166,21 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient blind copied on a message.
      *
      * @param bccRecipient Organization value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>bccRecipient</i> is a sub property of <i>recipient</i>
      */
     void addBccRecipient(Organization bccRecipient);
     /**
      * A sub property of recipient. The recipient blind copied on a message.
      *
      * @param bccRecipient ContactPoint value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>bccRecipient</i> is a sub property of <i>recipient</i>
      */
     void addBccRecipient(ContactPoint bccRecipient);
     /**
      * A sub property of recipient. The recipient blind copied on a message.
      *
      * @param bccRecipient Person value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>bccRecipient</i> is a sub property of <i>recipient</i>
      */
     void addBccRecipient(Person bccRecipient);
 
@@ -220,6 +236,7 @@ public interface Message extends CreativeWork {
      * A sub property of participant. The participant who is at the sending end of the action.
      *
      * @return {@link Audience} or {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sender</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getSenderList();
 
@@ -227,6 +244,7 @@ public interface Message extends CreativeWork {
      * A sub property of participant. The participant who is at the sending end of the action.
      *
      * @return {@link Audience} or {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sender</i> is a sub property of <i>participant</i>
      */
     <T> T getSender();
 
@@ -234,18 +252,21 @@ public interface Message extends CreativeWork {
      * A sub property of participant. The participant who is at the sending end of the action.
      *
      * @param sender Audience value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sender</i> is a sub property of <i>participant</i>
      */
     void addSender(Audience sender);
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
      * @param sender Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sender</i> is a sub property of <i>participant</i>
      */
     void addSender(Organization sender);
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
      * @param sender Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sender</i> is a sub property of <i>participant</i>
      */
     void addSender(Person sender);
 
@@ -253,6 +274,7 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient who was directly sent the message.
      *
      * @return {@link Person} or {@link Organization} or {@link ContactPoint} or {@link Audience}
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>toRecipient</i> is a sub property of <i>recipient</i>
      */
     <T> List<T> getToRecipientList();
 
@@ -260,6 +282,7 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient who was directly sent the message.
      *
      * @return {@link Person} or {@link Organization} or {@link ContactPoint} or {@link Audience}
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>toRecipient</i> is a sub property of <i>recipient</i>
      */
     <T> T getToRecipient();
 
@@ -267,24 +290,28 @@ public interface Message extends CreativeWork {
      * A sub property of recipient. The recipient who was directly sent the message.
      *
      * @param toRecipient Person value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>toRecipient</i> is a sub property of <i>recipient</i>
      */
     void addToRecipient(Person toRecipient);
     /**
      * A sub property of recipient. The recipient who was directly sent the message.
      *
      * @param toRecipient Organization value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>toRecipient</i> is a sub property of <i>recipient</i>
      */
     void addToRecipient(Organization toRecipient);
     /**
      * A sub property of recipient. The recipient who was directly sent the message.
      *
      * @param toRecipient ContactPoint value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>toRecipient</i> is a sub property of <i>recipient</i>
      */
     void addToRecipient(ContactPoint toRecipient);
     /**
      * A sub property of recipient. The recipient who was directly sent the message.
      *
      * @param toRecipient Audience value to set.
+     * @see <a href="https://schema.org/recipient">https://schema.org/recipient</a> <i>toRecipient</i> is a sub property of <i>recipient</i>
      */
     void addToRecipient(Audience toRecipient);
 }

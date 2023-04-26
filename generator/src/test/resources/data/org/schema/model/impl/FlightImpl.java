@@ -48,6 +48,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     @Override
     public <T> List<T> getSellerList() {
@@ -58,6 +59,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     @Override
     public <T> T getSeller() {
@@ -68,6 +70,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     @Override
     public void addSeller(Organization seller) {
@@ -77,6 +80,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     @Override
     public void addSeller(Person seller) {
@@ -461,6 +465,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>flightNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public List<Text> getFlightNumberList() {
@@ -471,6 +476,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>flightNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public Text getFlightNumber() {
@@ -481,6 +487,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
      * @param flightNumber Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>flightNumber</i> is a sub property of <i>identifier</i>
      */
     @Override
     public void addFlightNumber(Text flightNumber) {
@@ -1139,6 +1146,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -1149,6 +1157,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -1159,6 +1168,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -1269,6 +1279,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -1279,6 +1290,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -1289,6 +1301,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -1301,6 +1314,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -1311,6 +1325,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -1321,6 +1336,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

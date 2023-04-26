@@ -45,6 +45,7 @@ public interface HyperToc extends CreativeWork {
      * @return {@link HyperTocEntry}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>tocEntry</i> is a sub property of <i>hasPart</i>
      */
     List<HyperTocEntry> getTocEntryList();
 
@@ -54,6 +55,7 @@ public interface HyperToc extends CreativeWork {
      * @return {@link HyperTocEntry}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>tocEntry</i> is a sub property of <i>hasPart</i>
      */
     HyperTocEntry getTocEntry();
 
@@ -63,6 +65,7 @@ public interface HyperToc extends CreativeWork {
      * @param tocEntry HyperTocEntry value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
+     * @see <a href="https://schema.org/hasPart">https://schema.org/hasPart</a> <i>tocEntry</i> is a sub property of <i>hasPart</i>
      */
     void addTocEntry(HyperTocEntry tocEntry);
 }

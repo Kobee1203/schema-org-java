@@ -155,6 +155,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGlobalLocationNumberList();
 
@@ -163,6 +164,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     Text getGlobalLocationNumber();
 
@@ -171,6 +173,7 @@ public interface Organization extends Thing {
      *
      * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     void addGlobalLocationNumber(Text globalLocationNumber);
 
@@ -280,6 +283,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getOwnershipFundingInfoList();
 
@@ -290,6 +294,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getOwnershipFundingInfo();
 
@@ -300,6 +305,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(AboutPage ownershipFundingInfo);
     /**
@@ -309,6 +315,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(Text ownershipFundingInfo);
     /**
@@ -318,6 +325,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo);
     /**
@@ -327,6 +335,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(URL ownershipFundingInfo);
 
@@ -382,6 +391,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getActionableFeedbackPolicyList();
 
@@ -392,6 +402,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getActionableFeedbackPolicy();
 
@@ -402,6 +413,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy);
     /**
@@ -411,6 +423,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addActionableFeedbackPolicy(URL actionableFeedbackPolicy);
 
@@ -723,6 +736,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getDiversityStaffingReportList();
 
@@ -733,6 +747,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getDiversityStaffingReport();
 
@@ -743,6 +758,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addDiversityStaffingReport(Article diversityStaffingReport);
     /**
@@ -752,6 +768,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addDiversityStaffingReport(URL diversityStaffingReport);
 
@@ -997,6 +1014,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getUnnamedSourcesPolicyList();
 
@@ -1007,6 +1025,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getUnnamedSourcesPolicy();
 
@@ -1017,6 +1036,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
     /**
@@ -1026,6 +1046,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 
@@ -1075,6 +1096,7 @@ public interface Organization extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> List<T> getFunderList();
 
@@ -1082,6 +1104,7 @@ public interface Organization extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> T getFunder();
 
@@ -1089,12 +1112,14 @@ public interface Organization extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Person funder);
 
@@ -1217,6 +1242,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     List<Text> getDunsList();
 
@@ -1225,6 +1251,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     Text getDuns();
 
@@ -1233,6 +1260,7 @@ public interface Organization extends Thing {
      *
      * @param duns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     void addDuns(Text duns);
 
@@ -1298,6 +1326,7 @@ public interface Organization extends Thing {
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>leiCode</i> is a sub property of <i>identifier</i>
      */
     List<Text> getLeiCodeList();
 
@@ -1307,6 +1336,7 @@ public interface Organization extends Thing {
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>leiCode</i> is a sub property of <i>identifier</i>
      */
     Text getLeiCode();
 
@@ -1316,6 +1346,7 @@ public interface Organization extends Thing {
      * @param leiCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>leiCode</i> is a sub property of <i>identifier</i>
      */
     void addLeiCode(Text leiCode);
 
@@ -1389,6 +1420,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getCorrectionsPolicyList();
 
@@ -1399,6 +1431,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getCorrectionsPolicy();
 
@@ -1409,6 +1442,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addCorrectionsPolicy(URL correctionsPolicy);
     /**
@@ -1418,6 +1452,7 @@ public interface Organization extends Thing {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addCorrectionsPolicy(CreativeWork correctionsPolicy);
 
@@ -1426,6 +1461,7 @@ public interface Organization extends Thing {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> List<T> getLogoList();
 
@@ -1434,6 +1470,7 @@ public interface Organization extends Thing {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> T getLogo();
 
@@ -1442,6 +1479,7 @@ public interface Organization extends Thing {
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(ImageObject logo);
     /**
@@ -1449,6 +1487,7 @@ public interface Organization extends Thing {
      *
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(URL logo);
 
@@ -1697,6 +1736,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     List<Text> getTaxIDList();
 
@@ -1705,6 +1745,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     Text getTaxID();
 
@@ -1713,6 +1754,7 @@ public interface Organization extends Thing {
      *
      * @param taxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     void addTaxID(Text taxID);
 

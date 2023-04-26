@@ -20,6 +20,7 @@ public interface EndorseAction extends ReactAction {
      * A sub property of participant. The person/organization being supported.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>endorsee</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getEndorseeList();
 
@@ -27,6 +28,7 @@ public interface EndorseAction extends ReactAction {
      * A sub property of participant. The person/organization being supported.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>endorsee</i> is a sub property of <i>participant</i>
      */
     <T> T getEndorsee();
 
@@ -34,12 +36,14 @@ public interface EndorseAction extends ReactAction {
      * A sub property of participant. The person/organization being supported.
      *
      * @param endorsee Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>endorsee</i> is a sub property of <i>participant</i>
      */
     void addEndorsee(Organization endorsee);
     /**
      * A sub property of participant. The person/organization being supported.
      *
      * @param endorsee Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>endorsee</i> is a sub property of <i>participant</i>
      */
     void addEndorsee(Person endorsee);
 }

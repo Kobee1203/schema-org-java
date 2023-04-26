@@ -49,6 +49,7 @@ public interface Audiobook extends AudioObject, Book {
      *
      * @return {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @see <a href="https://schema.org/actor">https://schema.org/actor</a> <i>readBy</i> is a sub property of <i>actor</i>
      */
     List<Person> getReadByList();
 
@@ -57,6 +58,7 @@ public interface Audiobook extends AudioObject, Book {
      *
      * @return {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @see <a href="https://schema.org/actor">https://schema.org/actor</a> <i>readBy</i> is a sub property of <i>actor</i>
      */
     Person getReadBy();
 
@@ -65,6 +67,7 @@ public interface Audiobook extends AudioObject, Book {
      *
      * @param readBy Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @see <a href="https://schema.org/actor">https://schema.org/actor</a> <i>readBy</i> is a sub property of <i>actor</i>
      */
     void addReadBy(Person readBy);
 }

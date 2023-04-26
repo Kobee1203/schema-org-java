@@ -138,6 +138,7 @@ public interface Demand extends Intangible {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getSellerList();
 
@@ -145,6 +146,7 @@ public interface Demand extends Intangible {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> T getSeller();
 
@@ -152,12 +154,14 @@ public interface Demand extends Intangible {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Person seller);
 
@@ -272,6 +276,8 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin14List();
 
@@ -280,6 +286,8 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     Text getGtin14();
 
@@ -288,6 +296,8 @@ public interface Demand extends Intangible {
      *
      * @param gtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     void addGtin14(Text gtin14);
 
@@ -415,6 +425,7 @@ public interface Demand extends Intangible {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getGtinList();
 
@@ -428,6 +439,7 @@ public interface Demand extends Intangible {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     <T> T getGtin();
 
@@ -441,6 +453,7 @@ public interface Demand extends Intangible {
      * @param gtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     void addGtin(Text gtin);
     /**
@@ -453,6 +466,7 @@ public interface Demand extends Intangible {
      * @param gtin URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     void addGtin(URL gtin);
 
@@ -541,6 +555,8 @@ public interface Demand extends Intangible {
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin12List();
 
@@ -548,6 +564,8 @@ public interface Demand extends Intangible {
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     Text getGtin12();
 
@@ -555,6 +573,8 @@ public interface Demand extends Intangible {
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin12 Text value to set.
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     void addGtin12(Text gtin12);
 
@@ -620,6 +640,7 @@ public interface Demand extends Intangible {
      * @return {@link Place} or {@link Text} or {@link GeoShape}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     <T> List<T> getEligibleRegionList();
 
@@ -630,6 +651,7 @@ public interface Demand extends Intangible {
      * @return {@link Place} or {@link Text} or {@link GeoShape}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     <T> T getEligibleRegion();
 
@@ -640,6 +662,7 @@ public interface Demand extends Intangible {
      * @param eligibleRegion Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     void addEligibleRegion(Place eligibleRegion);
     /**
@@ -649,6 +672,7 @@ public interface Demand extends Intangible {
      * @param eligibleRegion Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     void addEligibleRegion(Text eligibleRegion);
     /**
@@ -658,6 +682,7 @@ public interface Demand extends Intangible {
      * @param eligibleRegion GeoShape value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>eligibleRegion</i> is a sub property of <i>areaServed</i>
      */
     void addEligibleRegion(GeoShape eligibleRegion);
 
@@ -670,6 +695,7 @@ public interface Demand extends Intangible {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getAsinList();
 
@@ -682,6 +708,7 @@ public interface Demand extends Intangible {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     <T> T getAsin();
 
@@ -694,6 +721,7 @@ public interface Demand extends Intangible {
      * @param asin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     void addAsin(Text asin);
     /**
@@ -705,6 +733,7 @@ public interface Demand extends Intangible {
      * @param asin URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     void addAsin(URL asin);
 
@@ -713,6 +742,8 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin8List();
 
@@ -721,6 +752,8 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     Text getGtin8();
 
@@ -729,6 +762,8 @@ public interface Demand extends Intangible {
      *
      * @param gtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     void addGtin8(Text gtin8);
 
@@ -888,6 +923,7 @@ public interface Demand extends Intangible {
      *
      * @return {@link Place}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>availableAtOrFrom</i> is a sub property of <i>areaServed</i>
      */
     List<Place> getAvailableAtOrFromList();
 
@@ -896,6 +932,7 @@ public interface Demand extends Intangible {
      *
      * @return {@link Place}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>availableAtOrFrom</i> is a sub property of <i>areaServed</i>
      */
     Place getAvailableAtOrFrom();
 
@@ -904,6 +941,7 @@ public interface Demand extends Intangible {
      *
      * @param availableAtOrFrom Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/areaServed">https://schema.org/areaServed</a> <i>availableAtOrFrom</i> is a sub property of <i>areaServed</i>
      */
     void addAvailableAtOrFrom(Place availableAtOrFrom);
 
@@ -936,6 +974,8 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin13List();
 
@@ -944,6 +984,8 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     Text getGtin13();
 
@@ -952,6 +994,8 @@ public interface Demand extends Intangible {
      *
      * @param gtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     void addGtin13(Text gtin13);
 
@@ -960,6 +1004,7 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>serialNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getSerialNumberList();
 
@@ -968,6 +1013,7 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>serialNumber</i> is a sub property of <i>identifier</i>
      */
     Text getSerialNumber();
 
@@ -976,6 +1022,7 @@ public interface Demand extends Intangible {
      *
      * @param serialNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>serialNumber</i> is a sub property of <i>identifier</i>
      */
     void addSerialNumber(Text serialNumber);
 
@@ -984,6 +1031,7 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     List<Text> getSkuList();
 
@@ -992,6 +1040,7 @@ public interface Demand extends Intangible {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     Text getSku();
 
@@ -1000,6 +1049,7 @@ public interface Demand extends Intangible {
      *
      * @param sku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     void addSku(Text sku);
 

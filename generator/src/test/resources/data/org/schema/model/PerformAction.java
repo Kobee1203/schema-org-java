@@ -19,6 +19,7 @@ public interface PerformAction extends PlayAction {
      * A sub property of location. The entertainment business where the action occurred.
      *
      * @return {@link EntertainmentBusiness}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>entertainmentBusiness</i> is a sub property of <i>location</i>
      */
     List<EntertainmentBusiness> getEntertainmentBusinessList();
 
@@ -26,6 +27,7 @@ public interface PerformAction extends PlayAction {
      * A sub property of location. The entertainment business where the action occurred.
      *
      * @return {@link EntertainmentBusiness}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>entertainmentBusiness</i> is a sub property of <i>location</i>
      */
     EntertainmentBusiness getEntertainmentBusiness();
 
@@ -33,6 +35,7 @@ public interface PerformAction extends PlayAction {
      * A sub property of location. The entertainment business where the action occurred.
      *
      * @param entertainmentBusiness EntertainmentBusiness value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>entertainmentBusiness</i> is a sub property of <i>location</i>
      */
     void addEntertainmentBusiness(EntertainmentBusiness entertainmentBusiness);
 }

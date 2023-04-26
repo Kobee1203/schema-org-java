@@ -49,6 +49,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public List<Place> getToLocationList() {
@@ -59,6 +60,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public Place getToLocation() {
@@ -69,6 +71,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @param toLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addToLocation(Place toLocation) {
@@ -81,6 +84,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>course</i> is a sub property of <i>location</i>
      */
     @Override
     public List<Place> getCourseList() {
@@ -91,6 +95,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>course</i> is a sub property of <i>location</i>
      */
     @Override
     public Place getCourse() {
@@ -101,6 +106,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The course where this action was taken.
      *
      * @param course Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>course</i> is a sub property of <i>location</i>
      */
     @Override
     public void addCourse(Place course) {
@@ -113,6 +119,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public List<Place> getFromLocationList() {
@@ -123,6 +130,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public Place getFromLocation() {
@@ -133,6 +141,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @param fromLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addFromLocation(Place fromLocation) {
@@ -146,6 +155,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exerciseRelatedDiet</i> is a sub property of <i>instrument</i>
      */
     @Override
     public List<Diet> getExerciseRelatedDietList() {
@@ -157,6 +167,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exerciseRelatedDiet</i> is a sub property of <i>instrument</i>
      */
     @Override
     public Diet getExerciseRelatedDiet() {
@@ -168,6 +179,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @param exerciseRelatedDiet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exerciseRelatedDiet</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addExerciseRelatedDiet(Diet exerciseRelatedDiet) {
@@ -180,6 +192,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>exerciseCourse</i> is a sub property of <i>location</i>
      */
     @Override
     public List<Place> getExerciseCourseList() {
@@ -190,6 +203,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>exerciseCourse</i> is a sub property of <i>location</i>
      */
     @Override
     public Place getExerciseCourse() {
@@ -200,6 +214,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The course where this action was taken.
      *
      * @param exerciseCourse Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>exerciseCourse</i> is a sub property of <i>location</i>
      */
     @Override
     public void addExerciseCourse(Place exerciseCourse) {
@@ -212,6 +227,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of participant. The opponent on this action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>opponent</i> is a sub property of <i>participant</i>
      */
     @Override
     public List<Person> getOpponentList() {
@@ -222,6 +238,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of participant. The opponent on this action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>opponent</i> is a sub property of <i>participant</i>
      */
     @Override
     public Person getOpponent() {
@@ -232,6 +249,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of participant. The opponent on this action.
      *
      * @param opponent Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>opponent</i> is a sub property of <i>participant</i>
      */
     @Override
     public void addOpponent(Person opponent) {
@@ -244,6 +262,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of participant. The sports team that participated on this action.
      *
      * @return {@link SportsTeam}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sportsTeam</i> is a sub property of <i>participant</i>
      */
     @Override
     public List<SportsTeam> getSportsTeamList() {
@@ -254,6 +273,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of participant. The sports team that participated on this action.
      *
      * @return {@link SportsTeam}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sportsTeam</i> is a sub property of <i>participant</i>
      */
     @Override
     public SportsTeam getSportsTeam() {
@@ -264,6 +284,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of participant. The sports team that participated on this action.
      *
      * @param sportsTeam SportsTeam value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sportsTeam</i> is a sub property of <i>participant</i>
      */
     @Override
     public void addSportsTeam(SportsTeam sportsTeam) {
@@ -276,6 +297,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The sports event where this action occurred.
      *
      * @return {@link SportsEvent}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsEvent</i> is a sub property of <i>location</i>
      */
     @Override
     public List<SportsEvent> getSportsEventList() {
@@ -286,6 +308,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The sports event where this action occurred.
      *
      * @return {@link SportsEvent}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsEvent</i> is a sub property of <i>location</i>
      */
     @Override
     public SportsEvent getSportsEvent() {
@@ -296,6 +319,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The sports event where this action occurred.
      *
      * @param sportsEvent SportsEvent value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsEvent</i> is a sub property of <i>location</i>
      */
     @Override
     public void addSportsEvent(SportsEvent sportsEvent) {
@@ -309,6 +333,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>diet</i> is a sub property of <i>instrument</i>
      */
     @Override
     public List<Diet> getDietList() {
@@ -320,6 +345,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>diet</i> is a sub property of <i>instrument</i>
      */
     @Override
     public Diet getDiet() {
@@ -331,6 +357,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @param diet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>diet</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addDiet(Diet diet) {
@@ -344,6 +371,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link ExercisePlan}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exercisePlan</i> is a sub property of <i>instrument</i>
      */
     @Override
     public List<ExercisePlan> getExercisePlanList() {
@@ -355,6 +383,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link ExercisePlan}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exercisePlan</i> is a sub property of <i>instrument</i>
      */
     @Override
     public ExercisePlan getExercisePlan() {
@@ -366,6 +395,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @param exercisePlan ExercisePlan value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exercisePlan</i> is a sub property of <i>instrument</i>
      */
     @Override
     public void addExercisePlan(ExercisePlan exercisePlan) {
@@ -445,6 +475,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The sports activity location where this action occurred.
      *
      * @return {@link SportsActivityLocation}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsActivityLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public List<SportsActivityLocation> getSportsActivityLocationList() {
@@ -455,6 +486,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The sports activity location where this action occurred.
      *
      * @return {@link SportsActivityLocation}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsActivityLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public SportsActivityLocation getSportsActivityLocation() {
@@ -465,6 +497,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of location. The sports activity location where this action occurred.
      *
      * @param sportsActivityLocation SportsActivityLocation value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsActivityLocation</i> is a sub property of <i>location</i>
      */
     @Override
     public void addSportsActivityLocation(SportsActivityLocation sportsActivityLocation) {
@@ -1281,6 +1314,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
@@ -1291,6 +1325,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public Text getDisambiguatingDescription() {
@@ -1301,6 +1336,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @param disambiguatingDescription Text value to set.
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>disambiguatingDescription</i> is a sub property of <i>description</i>
      */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
@@ -1411,6 +1447,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public List<Text> getNameList() {
@@ -1421,6 +1458,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The name of the item.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public Text getName() {
@@ -1431,6 +1469,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The name of the item.
      *
      * @param name Text value to set.
+     * @see <a href="https://schema.org/rdfs:label">https://schema.org/rdfs:label</a> <i>name</i> is a sub property of <i>rdfs:label</i>
      */
     @Override
     public void addName(Text name) {
@@ -1443,6 +1482,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public List<URL> getAdditionalTypeList() {
@@ -1453,6 +1493,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @return {@link URL}
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public URL getAdditionalType() {
@@ -1463,6 +1504,7 @@ public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      * @param additionalType URL value to set.
+     * @see <a href="https://schema.org/rdf:type">https://schema.org/rdf:type</a> <i>additionalType</i> is a sub property of <i>rdf:type</i>
      */
     @Override
     public void addAdditionalType(URL additionalType) {

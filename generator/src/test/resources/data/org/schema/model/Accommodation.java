@@ -265,6 +265,7 @@ public interface Accommodation extends Place {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     * @see <a href="https://schema.org/category">https://schema.org/category</a> <i>accommodationCategory</i> is a sub property of <i>category</i>
      */
     List<Text> getAccommodationCategoryList();
 
@@ -274,6 +275,7 @@ public interface Accommodation extends Place {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     * @see <a href="https://schema.org/category">https://schema.org/category</a> <i>accommodationCategory</i> is a sub property of <i>category</i>
      */
     Text getAccommodationCategory();
 
@@ -283,6 +285,7 @@ public interface Accommodation extends Place {
      * @param accommodationCategory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     * @see <a href="https://schema.org/category">https://schema.org/category</a> <i>accommodationCategory</i> is a sub property of <i>category</i>
      */
     void addAccommodationCategory(Text accommodationCategory);
 

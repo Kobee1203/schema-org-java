@@ -21,6 +21,7 @@ public interface SellAction extends TradeAction {
      * A sub property of participant. The participant/person/organization that bought the object.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>buyer</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getBuyerList();
 
@@ -28,6 +29,7 @@ public interface SellAction extends TradeAction {
      * A sub property of participant. The participant/person/organization that bought the object.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>buyer</i> is a sub property of <i>participant</i>
      */
     <T> T getBuyer();
 
@@ -35,12 +37,14 @@ public interface SellAction extends TradeAction {
      * A sub property of participant. The participant/person/organization that bought the object.
      *
      * @param buyer Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>buyer</i> is a sub property of <i>participant</i>
      */
     void addBuyer(Organization buyer);
     /**
      * A sub property of participant. The participant/person/organization that bought the object.
      *
      * @param buyer Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>buyer</i> is a sub property of <i>participant</i>
      */
     void addBuyer(Person buyer);
 

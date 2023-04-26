@@ -77,6 +77,7 @@ public interface Order extends Intangible {
      * A number that confirms the given order or payment has been received.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>confirmationNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getConfirmationNumberList();
 
@@ -84,6 +85,7 @@ public interface Order extends Intangible {
      * A number that confirms the given order or payment has been received.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>confirmationNumber</i> is a sub property of <i>identifier</i>
      */
     Text getConfirmationNumber();
 
@@ -91,6 +93,7 @@ public interface Order extends Intangible {
      * A number that confirms the given order or payment has been received.
      *
      * @param confirmationNumber Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>confirmationNumber</i> is a sub property of <i>identifier</i>
      */
     void addConfirmationNumber(Text confirmationNumber);
 
@@ -152,6 +155,7 @@ public interface Order extends Intangible {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getSellerList();
 
@@ -159,6 +163,7 @@ public interface Order extends Intangible {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> T getSeller();
 
@@ -166,12 +171,14 @@ public interface Order extends Intangible {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Person seller);
 
@@ -365,6 +372,7 @@ public interface Order extends Intangible {
      * The identifier of the transaction.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>orderNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getOrderNumberList();
 
@@ -372,6 +380,7 @@ public interface Order extends Intangible {
      * The identifier of the transaction.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>orderNumber</i> is a sub property of <i>identifier</i>
      */
     Text getOrderNumber();
 
@@ -379,6 +388,7 @@ public interface Order extends Intangible {
      * The identifier of the transaction.
      *
      * @param orderNumber Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>orderNumber</i> is a sub property of <i>identifier</i>
      */
     void addOrderNumber(Text orderNumber);
 

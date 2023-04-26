@@ -307,6 +307,8 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin14List();
 
@@ -315,6 +317,8 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     Text getGtin14();
 
@@ -323,6 +327,8 @@ public interface Product extends Thing {
      *
      * @param gtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin14</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin14</i> is a sub property of <i>identifier</i>
      */
     void addGtin14(Text gtin14);
 
@@ -557,6 +563,7 @@ public interface Product extends Thing {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>nsn</i> is a sub property of <i>identifier</i>
      */
     List<Text> getNsnList();
 
@@ -566,6 +573,7 @@ public interface Product extends Thing {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>nsn</i> is a sub property of <i>identifier</i>
      */
     Text getNsn();
 
@@ -575,6 +583,7 @@ public interface Product extends Thing {
      * @param nsn Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>nsn</i> is a sub property of <i>identifier</i>
      */
     void addNsn(Text nsn);
 
@@ -630,6 +639,7 @@ public interface Product extends Thing {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getGtinList();
 
@@ -643,6 +653,7 @@ public interface Product extends Thing {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     <T> T getGtin();
 
@@ -656,6 +667,7 @@ public interface Product extends Thing {
      * @param gtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     void addGtin(Text gtin);
     /**
@@ -668,6 +680,7 @@ public interface Product extends Thing {
      * @param gtin URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin</i> is a sub property of <i>identifier</i>
      */
     void addGtin(URL gtin);
 
@@ -987,6 +1000,8 @@ public interface Product extends Thing {
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin12List();
 
@@ -994,6 +1009,8 @@ public interface Product extends Thing {
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     Text getGtin12();
 
@@ -1001,6 +1018,8 @@ public interface Product extends Thing {
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin12 Text value to set.
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin12</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin12</i> is a sub property of <i>identifier</i>
      */
     void addGtin12(Text gtin12);
 
@@ -1039,6 +1058,7 @@ public interface Product extends Thing {
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>productID</i> is a sub property of <i>identifier</i>
      */
     List<Text> getProductIDList();
 
@@ -1046,6 +1066,7 @@ public interface Product extends Thing {
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>productID</i> is a sub property of <i>identifier</i>
      */
     Text getProductID();
 
@@ -1053,6 +1074,7 @@ public interface Product extends Thing {
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
      * @param productID Text value to set.
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>productID</i> is a sub property of <i>identifier</i>
      */
     void addProductID(Text productID);
 
@@ -1166,6 +1188,7 @@ public interface Product extends Thing {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> List<T> getLogoList();
 
@@ -1174,6 +1197,7 @@ public interface Product extends Thing {
      *
      * @return {@link ImageObject} or {@link URL}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     <T> T getLogo();
 
@@ -1182,6 +1206,7 @@ public interface Product extends Thing {
      *
      * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(ImageObject logo);
     /**
@@ -1189,6 +1214,7 @@ public interface Product extends Thing {
      *
      * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/image">https://schema.org/image</a> <i>logo</i> is a sub property of <i>image</i>
      */
     void addLogo(URL logo);
 
@@ -1228,6 +1254,7 @@ public interface Product extends Thing {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getAsinList();
 
@@ -1240,6 +1267,7 @@ public interface Product extends Thing {
      * @return {@link Text} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     <T> T getAsin();
 
@@ -1252,6 +1280,7 @@ public interface Product extends Thing {
      * @param asin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     void addAsin(Text asin);
     /**
@@ -1263,6 +1292,7 @@ public interface Product extends Thing {
      * @param asin URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>asin</i> is a sub property of <i>identifier</i>
      */
     void addAsin(URL asin);
 
@@ -1271,6 +1301,8 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin8List();
 
@@ -1279,6 +1311,8 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     Text getGtin8();
 
@@ -1287,6 +1321,8 @@ public interface Product extends Thing {
      *
      * @param gtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin8</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin8</i> is a sub property of <i>identifier</i>
      */
     void addGtin8(Text gtin8);
 
@@ -1644,6 +1680,8 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGtin13List();
 
@@ -1652,6 +1690,8 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     Text getGtin13();
 
@@ -1660,6 +1700,8 @@ public interface Product extends Thing {
      *
      * @param gtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/gtin">https://schema.org/gtin</a> <i>gtin13</i> is a sub property of <i>gtin</i>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>gtin13</i> is a sub property of <i>identifier</i>
      */
     void addGtin13(Text gtin13);
 
@@ -1668,6 +1710,7 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     List<Text> getSkuList();
 
@@ -1676,6 +1719,7 @@ public interface Product extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     Text getSku();
 
@@ -1684,6 +1728,7 @@ public interface Product extends Thing {
      *
      * @param sku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>sku</i> is a sub property of <i>identifier</i>
      */
     void addSku(Text sku);
 }

@@ -260,6 +260,7 @@ public interface BroadcastService extends Service {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     List<Text> getCallSignList();
 
@@ -269,6 +270,7 @@ public interface BroadcastService extends Service {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     Text getCallSign();
 
@@ -278,6 +280,7 @@ public interface BroadcastService extends Service {
      * @param callSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     void addCallSign(Text callSign);
 }

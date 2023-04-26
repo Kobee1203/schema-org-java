@@ -55,6 +55,7 @@ class ModelVerifierTest {
                         "subTypes",
                         "types"
                 )
+                .withPrefabValue(Type.class, new Type("id"))
                 .verify();
     }
 
@@ -65,7 +66,12 @@ class ModelVerifierTest {
                 // Ignore 'types' field that is not present in toString() method, but just type names in order to prevent recursivity error
                 .withIgnoredFields("types")
                 .verify();
-        Property property = newProperty("id", "name", "fieldName", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")), List.of("partOf1", "partOf2"), List.of("source1", "source2"));
+
+        List<Type> propertyTypes = List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2"));
+        List<String> partOf = List.of("partOf1", "partOf2");
+        List<String> source = List.of("source1", "source2");
+        List<String> subPropertyOf = List.of("schema:prop1", "schema:prop2");
+        Property property = newProperty("id", "name", "fieldName", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", propertyTypes, partOf, source, subPropertyOf);
         Assertions.assertThat(property).hasToString(
                 // @formatter:off
                 "Property(" +
@@ -76,6 +82,7 @@ class ModelVerifierTest {
                             "description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., " +
                             "partOf=[partOf1, partOf2], " +
                             "source=[source1, source2], " +
+                            "subPropertyOf=[schema:prop1, schema:prop2], " +
                             "fieldTypeLinks={@link type name 1} or {@link type name 2}, " +
                             "returnFieldType=<T> T, " +
                             "returnFieldTypeAsList=<T> List<T>, " +
@@ -91,6 +98,7 @@ class ModelVerifierTest {
                             "description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., " +
                             "partOf=[partOf1, partOf2], " +
                             "source=[source1, source2], " +
+                            "subPropertyOf=[schema:prop1, schema:prop2], " +
                             "paramType=Object, " +
                             "paramValue=fieldName, " +
                             "fieldName=name, " +
@@ -102,7 +110,7 @@ class ModelVerifierTest {
                 // @formatter:on
         );
 
-        Property nullProperty = newProperty(null, null, null, null, null, null, null);
+        Property nullProperty = newProperty(null, null, null, null, null, null, null, null);
         Assertions.assertThat(nullProperty).hasToString(
                 // @formatter:off
                 "Property(" +
@@ -113,6 +121,7 @@ class ModelVerifierTest {
                                 "description=null, " +
                                 "partOf=null, " +
                                 "source=null, " +
+                                "subPropertyOf=null, " +
                                 "fieldTypeLinks=null, " +
                                 "returnFieldType=null, " +
                                 "returnFieldTypeAsList=null, " +
@@ -128,6 +137,7 @@ class ModelVerifierTest {
                             "description=null, " +
                             "partOf=null, " +
                             "source=null, " +
+                            "subPropertyOf=null, " +
                             "paramType=Object, " +
                             "paramValue=null, " +
                             "fieldName=null, " +
@@ -157,13 +167,15 @@ class ModelVerifierTest {
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                         List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")),
                         List.of("partOf1", "partOf2"),
-                        List.of("source1", "source2")
+                        List.of("source1", "source2"),
+                        List.of("schema:prop1", "schema:prop2")
                 ))
                 .addProperty(newProperty("id2",
                         "name2",
                         "fieldName2",
                         null,
                         List.of(new Type("id1").setName("type name 1")),
+                        null,
                         null,
                         null
                 ));
@@ -210,12 +222,12 @@ class ModelVerifierTest {
         );
     }
 
-    private static Property newProperty(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source) {
+    private static Property newProperty(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source, List<String> subPropertyOf) {
         return new Property(
                 id,
                 new Field(name, types),
-                new Accessor(name, description, partOf, source, types),
-                List.of(new Mutator(name, description, partOf, source, () -> "Object", () -> fieldName)),
+                new Accessor(name, description, partOf, source, subPropertyOf, types),
+                List.of(new Mutator(name, description, partOf, source, subPropertyOf, () -> "Object", () -> fieldName)),
                 types
         );
     }

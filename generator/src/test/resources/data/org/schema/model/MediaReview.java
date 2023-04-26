@@ -73,6 +73,7 @@ public interface MediaReview extends Review {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>originalMediaContextDescription</i> is a sub property of <i>description</i>
      */
     List<Text> getOriginalMediaContextDescriptionList();
 
@@ -82,6 +83,7 @@ public interface MediaReview extends Review {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>originalMediaContextDescription</i> is a sub property of <i>description</i>
      */
     Text getOriginalMediaContextDescription();
 
@@ -91,6 +93,7 @@ public interface MediaReview extends Review {
      * @param originalMediaContextDescription Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>originalMediaContextDescription</i> is a sub property of <i>description</i>
      */
     void addOriginalMediaContextDescription(Text originalMediaContextDescription);
 

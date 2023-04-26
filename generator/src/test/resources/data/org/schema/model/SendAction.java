@@ -23,6 +23,7 @@ public interface SendAction extends TransferAction {
      * A sub property of instrument. The method of delivery.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>deliveryMethod</i> is a sub property of <i>instrument</i>
      */
     List<DeliveryMethod> getDeliveryMethodList();
 
@@ -30,6 +31,7 @@ public interface SendAction extends TransferAction {
      * A sub property of instrument. The method of delivery.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>deliveryMethod</i> is a sub property of <i>instrument</i>
      */
     DeliveryMethod getDeliveryMethod();
 
@@ -37,6 +39,7 @@ public interface SendAction extends TransferAction {
      * A sub property of instrument. The method of delivery.
      *
      * @param deliveryMethod DeliveryMethod value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>deliveryMethod</i> is a sub property of <i>instrument</i>
      */
     void addDeliveryMethod(DeliveryMethod deliveryMethod);
 
@@ -44,6 +47,7 @@ public interface SendAction extends TransferAction {
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getRecipientList();
 
@@ -51,6 +55,7 @@ public interface SendAction extends TransferAction {
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     <T> T getRecipient();
 
@@ -58,24 +63,28 @@ public interface SendAction extends TransferAction {
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(Organization recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient ContactPoint value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(ContactPoint recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(Person recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Audience value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>recipient</i> is a sub property of <i>participant</i>
      */
     void addRecipient(Audience recipient);
 }

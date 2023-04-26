@@ -29,6 +29,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getOwnershipFundingInfoList();
 
@@ -39,6 +40,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getOwnershipFundingInfo();
 
@@ -49,6 +51,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(AboutPage ownershipFundingInfo);
     /**
@@ -58,6 +61,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(Text ownershipFundingInfo);
     /**
@@ -67,6 +71,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo);
     /**
@@ -76,6 +81,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>ownershipFundingInfo</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addOwnershipFundingInfo(URL ownershipFundingInfo);
 
@@ -86,6 +92,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>missionCoveragePrioritiesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getMissionCoveragePrioritiesPolicyList();
 
@@ -96,6 +103,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>missionCoveragePrioritiesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getMissionCoveragePrioritiesPolicy();
 
@@ -106,6 +114,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>missionCoveragePrioritiesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addMissionCoveragePrioritiesPolicy(CreativeWork missionCoveragePrioritiesPolicy);
     /**
@@ -115,6 +124,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>missionCoveragePrioritiesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addMissionCoveragePrioritiesPolicy(URL missionCoveragePrioritiesPolicy);
 
@@ -125,6 +135,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getActionableFeedbackPolicyList();
 
@@ -135,6 +146,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getActionableFeedbackPolicy();
 
@@ -145,6 +157,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy);
     /**
@@ -154,6 +167,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>actionableFeedbackPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addActionableFeedbackPolicy(URL actionableFeedbackPolicy);
 
@@ -164,6 +178,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>noBylinesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getNoBylinesPolicyList();
 
@@ -174,6 +189,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>noBylinesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getNoBylinesPolicy();
 
@@ -184,6 +200,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>noBylinesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addNoBylinesPolicy(CreativeWork noBylinesPolicy);
     /**
@@ -193,6 +210,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>noBylinesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addNoBylinesPolicy(URL noBylinesPolicy);
 
@@ -203,6 +221,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>masthead</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getMastheadList();
 
@@ -213,6 +232,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>masthead</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getMasthead();
 
@@ -223,6 +243,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>masthead</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addMasthead(URL masthead);
     /**
@@ -232,6 +253,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>masthead</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addMasthead(CreativeWork masthead);
 
@@ -242,6 +264,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getDiversityStaffingReportList();
 
@@ -252,6 +275,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getDiversityStaffingReport();
 
@@ -262,6 +286,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addDiversityStaffingReport(Article diversityStaffingReport);
     /**
@@ -271,6 +296,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>diversityStaffingReport</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addDiversityStaffingReport(URL diversityStaffingReport);
 
@@ -281,6 +307,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getUnnamedSourcesPolicyList();
 
@@ -291,6 +318,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getUnnamedSourcesPolicy();
 
@@ -301,6 +329,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
     /**
@@ -310,6 +339,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>unnamedSourcesPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 
@@ -359,6 +389,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>verificationFactCheckingPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getVerificationFactCheckingPolicyList();
 
@@ -369,6 +400,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>verificationFactCheckingPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getVerificationFactCheckingPolicy();
 
@@ -379,6 +411,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>verificationFactCheckingPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addVerificationFactCheckingPolicy(CreativeWork verificationFactCheckingPolicy);
     /**
@@ -388,6 +421,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>verificationFactCheckingPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addVerificationFactCheckingPolicy(URL verificationFactCheckingPolicy);
 
@@ -433,6 +467,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> List<T> getCorrectionsPolicyList();
 
@@ -443,6 +478,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     <T> T getCorrectionsPolicy();
 
@@ -453,6 +489,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addCorrectionsPolicy(URL correctionsPolicy);
     /**
@@ -462,6 +499,7 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/publishingPrinciples">https://schema.org/publishingPrinciples</a> <i>correctionsPolicy</i> is a sub property of <i>publishingPrinciples</i>
      */
     void addCorrectionsPolicy(CreativeWork correctionsPolicy);
 }

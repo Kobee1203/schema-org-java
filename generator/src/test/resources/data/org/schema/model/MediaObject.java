@@ -105,6 +105,7 @@ public interface MediaObject extends CreativeWork {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>sha256</i> is a sub property of <i>description</i>
      */
     List<Text> getSha256List();
 
@@ -114,6 +115,7 @@ public interface MediaObject extends CreativeWork {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>sha256</i> is a sub property of <i>description</i>
      */
     Text getSha256();
 
@@ -123,6 +125,7 @@ public interface MediaObject extends CreativeWork {
      * @param sha256 Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>sha256</i> is a sub property of <i>description</i>
      */
     void addSha256(Text sha256);
 
@@ -284,6 +287,7 @@ public interface MediaObject extends CreativeWork {
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     List<Claim> getInterpretedAsClaimList();
 
@@ -293,6 +297,7 @@ public interface MediaObject extends CreativeWork {
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     Claim getInterpretedAsClaim();
 
@@ -302,6 +307,7 @@ public interface MediaObject extends CreativeWork {
      * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     void addInterpretedAsClaim(Claim interpretedAsClaim);
 

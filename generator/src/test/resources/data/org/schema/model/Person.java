@@ -120,6 +120,7 @@ public interface Person extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     List<Text> getGlobalLocationNumberList();
 
@@ -128,6 +129,7 @@ public interface Person extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     Text getGlobalLocationNumber();
 
@@ -136,6 +138,7 @@ public interface Person extends Thing {
      *
      * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>globalLocationNumber</i> is a sub property of <i>identifier</i>
      */
     void addGlobalLocationNumber(Text globalLocationNumber);
 
@@ -305,6 +308,7 @@ public interface Person extends Thing {
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/memberOf">https://schema.org/memberOf</a> <i>affiliation</i> is a sub property of <i>memberOf</i>
      */
     List<Organization> getAffiliationList();
 
@@ -312,6 +316,7 @@ public interface Person extends Thing {
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/memberOf">https://schema.org/memberOf</a> <i>affiliation</i> is a sub property of <i>memberOf</i>
      */
     Organization getAffiliation();
 
@@ -319,6 +324,7 @@ public interface Person extends Thing {
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
      * @param affiliation Organization value to set.
+     * @see <a href="https://schema.org/memberOf">https://schema.org/memberOf</a> <i>affiliation</i> is a sub property of <i>memberOf</i>
      */
     void addAffiliation(Organization affiliation);
 
@@ -541,6 +547,7 @@ public interface Person extends Thing {
      * A contact location for a person's place of work.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     <T> List<T> getWorkLocationList();
 
@@ -548,6 +555,7 @@ public interface Person extends Thing {
      * A contact location for a person's place of work.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     <T> T getWorkLocation();
 
@@ -555,12 +563,14 @@ public interface Person extends Thing {
      * A contact location for a person's place of work.
      *
      * @param workLocation ContactPoint value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     void addWorkLocation(ContactPoint workLocation);
     /**
      * A contact location for a person's place of work.
      *
      * @param workLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>workLocation</i> is a sub property of <i>location</i>
      */
     void addWorkLocation(Place workLocation);
 
@@ -820,6 +830,7 @@ public interface Person extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> List<T> getFunderList();
 
@@ -827,6 +838,7 @@ public interface Person extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> T getFunder();
 
@@ -834,12 +846,14 @@ public interface Person extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Person funder);
 
@@ -889,6 +903,7 @@ public interface Person extends Thing {
      * An additional name for a Person, can be used for a middle name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/alternateName">https://schema.org/alternateName</a> <i>additionalName</i> is a sub property of <i>alternateName</i>
      */
     List<Text> getAdditionalNameList();
 
@@ -896,6 +911,7 @@ public interface Person extends Thing {
      * An additional name for a Person, can be used for a middle name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/alternateName">https://schema.org/alternateName</a> <i>additionalName</i> is a sub property of <i>alternateName</i>
      */
     Text getAdditionalName();
 
@@ -903,6 +919,7 @@ public interface Person extends Thing {
      * An additional name for a Person, can be used for a middle name.
      *
      * @param additionalName Text value to set.
+     * @see <a href="https://schema.org/alternateName">https://schema.org/alternateName</a> <i>additionalName</i> is a sub property of <i>alternateName</i>
      */
     void addAdditionalName(Text additionalName);
 
@@ -911,6 +928,7 @@ public interface Person extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     List<Text> getDunsList();
 
@@ -919,6 +937,7 @@ public interface Person extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     Text getDuns();
 
@@ -927,6 +946,7 @@ public interface Person extends Thing {
      *
      * @param duns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>duns</i> is a sub property of <i>identifier</i>
      */
     void addDuns(Text duns);
 
@@ -1255,6 +1275,7 @@ public interface Person extends Thing {
      * A contact location for a person's residence.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     <T> List<T> getHomeLocationList();
 
@@ -1262,6 +1283,7 @@ public interface Person extends Thing {
      * A contact location for a person's residence.
      *
      * @return {@link ContactPoint} or {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     <T> T getHomeLocation();
 
@@ -1269,12 +1291,14 @@ public interface Person extends Thing {
      * A contact location for a person's residence.
      *
      * @param homeLocation ContactPoint value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     void addHomeLocation(ContactPoint homeLocation);
     /**
      * A contact location for a person's residence.
      *
      * @param homeLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>homeLocation</i> is a sub property of <i>location</i>
      */
     void addHomeLocation(Place homeLocation);
 
@@ -1423,6 +1447,7 @@ public interface Person extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     List<Text> getTaxIDList();
 
@@ -1431,6 +1456,7 @@ public interface Person extends Thing {
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     Text getTaxID();
 
@@ -1439,6 +1465,7 @@ public interface Person extends Thing {
      *
      * @param taxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>taxID</i> is a sub property of <i>identifier</i>
      */
     void addTaxID(Text taxID);
 
@@ -1448,6 +1475,7 @@ public interface Person extends Thing {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     List<Text> getCallSignList();
 
@@ -1457,6 +1485,7 @@ public interface Person extends Thing {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     Text getCallSign();
 
@@ -1466,6 +1495,7 @@ public interface Person extends Thing {
      * @param callSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>callSign</i> is a sub property of <i>identifier</i>
      */
     void addCallSign(Text callSign);
 

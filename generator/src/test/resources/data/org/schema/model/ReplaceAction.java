@@ -19,6 +19,7 @@ public interface ReplaceAction extends UpdateAction {
      * A sub property of object. The object that is being replaced.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>replacee</i> is a sub property of <i>object</i>
      */
     List<Thing> getReplaceeList();
 
@@ -26,6 +27,7 @@ public interface ReplaceAction extends UpdateAction {
      * A sub property of object. The object that is being replaced.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>replacee</i> is a sub property of <i>object</i>
      */
     Thing getReplacee();
 
@@ -33,6 +35,7 @@ public interface ReplaceAction extends UpdateAction {
      * A sub property of object. The object that is being replaced.
      *
      * @param replacee Thing value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>replacee</i> is a sub property of <i>object</i>
      */
     void addReplacee(Thing replacee);
 
@@ -40,6 +43,7 @@ public interface ReplaceAction extends UpdateAction {
      * A sub property of object. The object that replaces.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>replacer</i> is a sub property of <i>object</i>
      */
     List<Thing> getReplacerList();
 
@@ -47,6 +51,7 @@ public interface ReplaceAction extends UpdateAction {
      * A sub property of object. The object that replaces.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>replacer</i> is a sub property of <i>object</i>
      */
     Thing getReplacer();
 
@@ -54,6 +59,7 @@ public interface ReplaceAction extends UpdateAction {
      * A sub property of object. The object that replaces.
      *
      * @param replacer Thing value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>replacer</i> is a sub property of <i>object</i>
      */
     void addReplacer(Thing replacer);
 }

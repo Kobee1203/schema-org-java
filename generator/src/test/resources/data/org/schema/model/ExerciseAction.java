@@ -27,6 +27,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     List<Place> getToLocationList();
 
@@ -34,6 +35,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     Place getToLocation();
 
@@ -41,6 +43,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The final location of the object or the agent after the action.
      *
      * @param toLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>toLocation</i> is a sub property of <i>location</i>
      */
     void addToLocation(Place toLocation);
 
@@ -48,6 +51,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>course</i> is a sub property of <i>location</i>
      */
     List<Place> getCourseList();
 
@@ -55,6 +59,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>course</i> is a sub property of <i>location</i>
      */
     Place getCourse();
 
@@ -62,6 +67,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The course where this action was taken.
      *
      * @param course Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>course</i> is a sub property of <i>location</i>
      */
     void addCourse(Place course);
 
@@ -69,6 +75,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     List<Place> getFromLocationList();
 
@@ -76,6 +83,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     Place getFromLocation();
 
@@ -83,6 +91,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @param fromLocation Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>fromLocation</i> is a sub property of <i>location</i>
      */
     void addFromLocation(Place fromLocation);
 
@@ -91,6 +100,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exerciseRelatedDiet</i> is a sub property of <i>instrument</i>
      */
     List<Diet> getExerciseRelatedDietList();
 
@@ -99,6 +109,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exerciseRelatedDiet</i> is a sub property of <i>instrument</i>
      */
     Diet getExerciseRelatedDiet();
 
@@ -107,6 +118,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @param exerciseRelatedDiet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exerciseRelatedDiet</i> is a sub property of <i>instrument</i>
      */
     void addExerciseRelatedDiet(Diet exerciseRelatedDiet);
 
@@ -114,6 +126,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>exerciseCourse</i> is a sub property of <i>location</i>
      */
     List<Place> getExerciseCourseList();
 
@@ -121,6 +134,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The course where this action was taken.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>exerciseCourse</i> is a sub property of <i>location</i>
      */
     Place getExerciseCourse();
 
@@ -128,6 +142,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The course where this action was taken.
      *
      * @param exerciseCourse Place value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>exerciseCourse</i> is a sub property of <i>location</i>
      */
     void addExerciseCourse(Place exerciseCourse);
 
@@ -135,6 +150,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of participant. The opponent on this action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>opponent</i> is a sub property of <i>participant</i>
      */
     List<Person> getOpponentList();
 
@@ -142,6 +158,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of participant. The opponent on this action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>opponent</i> is a sub property of <i>participant</i>
      */
     Person getOpponent();
 
@@ -149,6 +166,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of participant. The opponent on this action.
      *
      * @param opponent Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>opponent</i> is a sub property of <i>participant</i>
      */
     void addOpponent(Person opponent);
 
@@ -156,6 +174,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of participant. The sports team that participated on this action.
      *
      * @return {@link SportsTeam}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sportsTeam</i> is a sub property of <i>participant</i>
      */
     List<SportsTeam> getSportsTeamList();
 
@@ -163,6 +182,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of participant. The sports team that participated on this action.
      *
      * @return {@link SportsTeam}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sportsTeam</i> is a sub property of <i>participant</i>
      */
     SportsTeam getSportsTeam();
 
@@ -170,6 +190,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of participant. The sports team that participated on this action.
      *
      * @param sportsTeam SportsTeam value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>sportsTeam</i> is a sub property of <i>participant</i>
      */
     void addSportsTeam(SportsTeam sportsTeam);
 
@@ -177,6 +198,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The sports event where this action occurred.
      *
      * @return {@link SportsEvent}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsEvent</i> is a sub property of <i>location</i>
      */
     List<SportsEvent> getSportsEventList();
 
@@ -184,6 +206,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The sports event where this action occurred.
      *
      * @return {@link SportsEvent}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsEvent</i> is a sub property of <i>location</i>
      */
     SportsEvent getSportsEvent();
 
@@ -191,6 +214,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The sports event where this action occurred.
      *
      * @param sportsEvent SportsEvent value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsEvent</i> is a sub property of <i>location</i>
      */
     void addSportsEvent(SportsEvent sportsEvent);
 
@@ -199,6 +223,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>diet</i> is a sub property of <i>instrument</i>
      */
     List<Diet> getDietList();
 
@@ -207,6 +232,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @return {@link Diet}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>diet</i> is a sub property of <i>instrument</i>
      */
     Diet getDiet();
 
@@ -215,6 +241,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @param diet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>diet</i> is a sub property of <i>instrument</i>
      */
     void addDiet(Diet diet);
 
@@ -223,6 +250,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @return {@link ExercisePlan}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exercisePlan</i> is a sub property of <i>instrument</i>
      */
     List<ExercisePlan> getExercisePlanList();
 
@@ -231,6 +259,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @return {@link ExercisePlan}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exercisePlan</i> is a sub property of <i>instrument</i>
      */
     ExercisePlan getExercisePlan();
 
@@ -239,6 +268,7 @@ public interface ExerciseAction extends PlayAction {
      *
      * @param exercisePlan ExercisePlan value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>exercisePlan</i> is a sub property of <i>instrument</i>
      */
     void addExercisePlan(ExercisePlan exercisePlan);
 
@@ -291,6 +321,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The sports activity location where this action occurred.
      *
      * @return {@link SportsActivityLocation}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsActivityLocation</i> is a sub property of <i>location</i>
      */
     List<SportsActivityLocation> getSportsActivityLocationList();
 
@@ -298,6 +329,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The sports activity location where this action occurred.
      *
      * @return {@link SportsActivityLocation}
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsActivityLocation</i> is a sub property of <i>location</i>
      */
     SportsActivityLocation getSportsActivityLocation();
 
@@ -305,6 +337,7 @@ public interface ExerciseAction extends PlayAction {
      * A sub property of location. The sports activity location where this action occurred.
      *
      * @param sportsActivityLocation SportsActivityLocation value to set.
+     * @see <a href="https://schema.org/location">https://schema.org/location</a> <i>sportsActivityLocation</i> is a sub property of <i>location</i>
      */
     void addSportsActivityLocation(SportsActivityLocation sportsActivityLocation);
 }

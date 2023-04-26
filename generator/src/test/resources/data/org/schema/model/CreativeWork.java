@@ -242,6 +242,7 @@ public interface CreativeWork extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     <T> List<T> getAcquireLicensePageList();
 
@@ -251,6 +252,7 @@ public interface CreativeWork extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     <T> T getAcquireLicensePage();
 
@@ -260,6 +262,7 @@ public interface CreativeWork extends Thing {
      * @param acquireLicensePage CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     void addAcquireLicensePage(CreativeWork acquireLicensePage);
     /**
@@ -268,6 +271,7 @@ public interface CreativeWork extends Thing {
      * @param acquireLicensePage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://schema.org/usageInfo">https://schema.org/usageInfo</a> <i>acquireLicensePage</i> is a sub property of <i>usageInfo</i>
      */
     void addAcquireLicensePage(URL acquireLicensePage);
 
@@ -1225,6 +1229,7 @@ public interface CreativeWork extends Thing {
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     List<Claim> getInterpretedAsClaimList();
 
@@ -1234,6 +1239,7 @@ public interface CreativeWork extends Thing {
      * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     Claim getInterpretedAsClaim();
 
@@ -1243,6 +1249,7 @@ public interface CreativeWork extends Thing {
      * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     * @see <a href="https://schema.org/description">https://schema.org/description</a> <i>interpretedAsClaim</i> is a sub property of <i>description</i>
      */
     void addInterpretedAsClaim(Claim interpretedAsClaim);
 
@@ -1477,6 +1484,7 @@ public interface CreativeWork extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> List<T> getFunderList();
 
@@ -1484,6 +1492,7 @@ public interface CreativeWork extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     <T> T getFunder();
 
@@ -1491,12 +1500,14 @@ public interface CreativeWork extends Thing {
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Organization value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @param funder Person value to set.
+     * @see <a href="https://schema.org/sponsor">https://schema.org/sponsor</a> <i>funder</i> is a sub property of <i>sponsor</i>
      */
     void addFunder(Person funder);
 
@@ -2272,6 +2283,7 @@ public interface CreativeWork extends Thing {
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     List<Place> getSpatialCoverageList();
 
@@ -2281,6 +2293,7 @@ public interface CreativeWork extends Thing {
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     Place getSpatialCoverage();
 
@@ -2290,6 +2303,7 @@ public interface CreativeWork extends Thing {
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
      * @param spatialCoverage Place value to set.
+     * @see <a href="https://schema.org/contentLocation">https://schema.org/contentLocation</a> <i>spatialCoverage</i> is a sub property of <i>contentLocation</i>
      */
     void addSpatialCoverage(Place spatialCoverage);
 
@@ -2327,6 +2341,7 @@ public interface CreativeWork extends Thing {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     <T> List<T> getEditEIDRList();
 
@@ -2340,6 +2355,7 @@ public interface CreativeWork extends Thing {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     <T> T getEditEIDR();
 
@@ -2353,6 +2369,7 @@ public interface CreativeWork extends Thing {
      * @param editEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     void addEditEIDR(URL editEIDR);
     /**
@@ -2365,6 +2382,7 @@ public interface CreativeWork extends Thing {
      * @param editEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     * @see <a href="https://schema.org/identifier">https://schema.org/identifier</a> <i>editEIDR</i> is a sub property of <i>identifier</i>
      */
     void addEditEIDR(Text editEIDR);
 
@@ -2506,6 +2524,7 @@ public interface CreativeWork extends Thing {
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     List<Thing> getMainEntityList();
 
@@ -2513,6 +2532,7 @@ public interface CreativeWork extends Thing {
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @return {@link Thing}
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     Thing getMainEntity();
 
@@ -2520,6 +2540,7 @@ public interface CreativeWork extends Thing {
      * Indicates the primary entity described in some page or other CreativeWork.
      *
      * @param mainEntity Thing value to set.
+     * @see <a href="https://schema.org/about">https://schema.org/about</a> <i>mainEntity</i> is a sub property of <i>about</i>
      */
     void addMainEntity(Thing mainEntity);
 

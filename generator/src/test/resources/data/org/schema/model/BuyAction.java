@@ -21,6 +21,7 @@ public interface BuyAction extends TradeAction {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getSellerList();
 
@@ -28,6 +29,7 @@ public interface BuyAction extends TradeAction {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     <T> T getSeller();
 
@@ -35,12 +37,14 @@ public interface BuyAction extends TradeAction {
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>seller</i> is a sub property of <i>participant</i>
      */
     void addSeller(Person seller);
 
@@ -69,6 +73,7 @@ public interface BuyAction extends TradeAction {
      * 'vendor' is an earlier term for 'seller'.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>vendor</i> is a sub property of <i>participant</i>
      */
     <T> List<T> getVendorList();
 
@@ -76,6 +81,7 @@ public interface BuyAction extends TradeAction {
      * 'vendor' is an earlier term for 'seller'.
      *
      * @return {@link Organization} or {@link Person}
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>vendor</i> is a sub property of <i>participant</i>
      */
     <T> T getVendor();
 
@@ -83,12 +89,14 @@ public interface BuyAction extends TradeAction {
      * 'vendor' is an earlier term for 'seller'.
      *
      * @param vendor Organization value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>vendor</i> is a sub property of <i>participant</i>
      */
     void addVendor(Organization vendor);
     /**
      * 'vendor' is an earlier term for 'seller'.
      *
      * @param vendor Person value to set.
+     * @see <a href="https://schema.org/participant">https://schema.org/participant</a> <i>vendor</i> is a sub property of <i>participant</i>
      */
     void addVendor(Person vendor);
 }

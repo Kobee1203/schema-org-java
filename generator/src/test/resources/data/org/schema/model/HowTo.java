@@ -136,6 +136,7 @@ public interface HowTo extends CreativeWork {
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @return {@link HowToTool} or {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     <T> List<T> getToolList();
 
@@ -143,6 +144,7 @@ public interface HowTo extends CreativeWork {
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @return {@link HowToTool} or {@link Text}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     <T> T getTool();
 
@@ -150,12 +152,14 @@ public interface HowTo extends CreativeWork {
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool HowToTool value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     void addTool(HowToTool tool);
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool Text value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>tool</i> is a sub property of <i>instrument</i>
      */
     void addTool(Text tool);
 
@@ -223,6 +227,7 @@ public interface HowTo extends CreativeWork {
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @return {@link Text} or {@link HowToSupply}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     <T> List<T> getSupplyList();
 
@@ -230,6 +235,7 @@ public interface HowTo extends CreativeWork {
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @return {@link Text} or {@link HowToSupply}
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     <T> T getSupply();
 
@@ -237,12 +243,14 @@ public interface HowTo extends CreativeWork {
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply Text value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     void addSupply(Text supply);
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply HowToSupply value to set.
+     * @see <a href="https://schema.org/instrument">https://schema.org/instrument</a> <i>supply</i> is a sub property of <i>instrument</i>
      */
     void addSupply(HowToSupply supply);
 

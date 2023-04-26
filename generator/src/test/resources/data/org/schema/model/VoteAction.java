@@ -19,6 +19,7 @@ public interface VoteAction extends ChooseAction {
      * A sub property of object. The candidate subject of this action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>candidate</i> is a sub property of <i>object</i>
      */
     List<Person> getCandidateList();
 
@@ -26,6 +27,7 @@ public interface VoteAction extends ChooseAction {
      * A sub property of object. The candidate subject of this action.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>candidate</i> is a sub property of <i>object</i>
      */
     Person getCandidate();
 
@@ -33,6 +35,7 @@ public interface VoteAction extends ChooseAction {
      * A sub property of object. The candidate subject of this action.
      *
      * @param candidate Person value to set.
+     * @see <a href="https://schema.org/object">https://schema.org/object</a> <i>candidate</i> is a sub property of <i>object</i>
      */
     void addCandidate(Person candidate);
 }
