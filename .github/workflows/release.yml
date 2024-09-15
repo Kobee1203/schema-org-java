@@ -31,7 +31,7 @@ jobs:
           GIT_RELEASE_BOT_EMAIL: ${{ secrets.GIT_RELEASE_BOT_EMAIL }}
 
       - name: 'Checkout repository on branch: ${{ github.REF }}'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         env:
           GIT_TRACE: 1
           GIT_CURL_VERBOSE: 1
