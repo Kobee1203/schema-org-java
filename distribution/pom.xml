@@ -18,7 +18,7 @@
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
 
-        <github-release-plugin.version>1.4.0</github-release-plugin.version>
+        <github-release-plugin.version>1.6.0</github-release-plugin.version>
     </properties>
 
     <profiles>
