@@ -21,7 +21,6 @@ import org.schema.model.datatype.Number;
 import org.schema.model.datatype.*;
 import org.schema.model.impl.*;
 
-import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -201,13 +200,13 @@ class JsonLdDeserializerImplTest {
         Assertions.assertThatThrownBy(() -> jsonLdDeserializer.deserialize("{}"))
                 .isInstanceOf(JsonLdException.class)
                 .hasMessage("JSON-LD deserialization internal error: Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
-                        " at [Source: (String)\"{}\"; line: 1, column: 2].")
+                        " at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 2].")
                 .hasCauseInstanceOf(JsonMappingException.class)
                 .hasMessage("JSON-LD deserialization internal error: Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
-                        " at [Source: (String)\"{}\"; line: 1, column: 2].")
+                        " at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 2].")
                 .hasRootCauseInstanceOf(InvalidTypeIdException.class)
                 .hasRootCauseMessage("Could not resolve subtype of [simple type, class com.weedow.schemaorg.commons.model.JsonLdNode]: missing type id property '@type'\n" +
-                        " at [Source: (String)\"{}\"; line: 1, column: 2]");
+                        " at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 2]");
     }
 
     @Test

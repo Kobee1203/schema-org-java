@@ -168,10 +168,10 @@
                 <version>3.2.5</version>
                 <configuration>
                     <!-- ! currently needed to run integration tests. -->
-                    <systemProperties>
+                    <systemPropertyVariables>
                         <maven.version>${maven.version}</maven.version>
                         <maven.home>${maven.home}</maven.home>
-                    </systemProperties>
+                    </systemPropertyVariables>
                 </configuration>
                 <executions>
                     <execution>

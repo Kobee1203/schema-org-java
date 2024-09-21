@@ -1,8 +1,7 @@
 package com.weedow.schemaorg.serializer.deserialization;
 
-import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-import com.fasterxml.jackson.databind.util.LookupCache;
+import com.fasterxml.jackson.databind.util.LRUMap;
 import com.weedow.schemaorg.commons.generator.GeneratorConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +20,7 @@ public class JsonLdTypeFactory extends TypeFactory {
     private final Map<String, Class<?>> types = new HashMap<>();
 
     public JsonLdTypeFactory(Map<String, Class<?>> otherTypes) {
-        super((LookupCache<Object, JavaType>) null);
+        super(new LRUMap<>(16, DEFAULT_MAX_CACHE_SIZE));
 
         try (InputStream schemaOrgJavaProperties = Thread.currentThread().getContextClassLoader().getResourceAsStream(GeneratorConstants.SCHEMA_ORG_PROP_FILENAME)) {
             Properties properties = new Properties();
