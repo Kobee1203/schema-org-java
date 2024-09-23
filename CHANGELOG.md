@@ -8,7 +8,28 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+- ⚠️ **Breaking change: requires java 17 or newer**
+- Bump jackson-bom from 2.14.2 to 2.17.2
+- Bump net.javacrumbs.json-unit:json-unit-assertj from 2.37.0 to 3.4.1
+- Bump de.jutzig:github-release-plugin from 1.4.0 to 1.6.0
+- Bump maven-it-extension.version from 0.12.0 to 0.13.1
+- Bump org.jacoco:jacoco-maven-plugin from 0.8.9 to 0.8.12
+- Bump junit-jupiter-engine.version from 5.9.3 to 5.11.0
+- Bump ch.qos.logback:logback-classic from 1.4.7 to 1.5.6
+- Bump org.apache.maven:maven-core from 3.9.1 to 3.9.7
+- Bump org.apache.maven:maven-plugin-api from 3.9.1 to 3.9.9
+- Bump org.apache.maven.plugins:maven-dependency-plugin from 3.5.0 to 3.8.0
+- Bump org.apache.maven.plugins:maven-site-plugin from 3.12.1 to 3.20.0
+- Bump org.apache.maven.plugins:maven-plugin-plugin from 3.8.1 to 3.15.0
+- Bump org.apache.maven.plugin-tools:maven-plugin-annotations from 3.8.2 to 3.13.0
+- Bump org.apache.maven.plugins:maven-assembly-plugin from 3.5.0 to 3.7.1
+- Bump org.apache.maven.plugins:maven-surefire-plugin from 3.0.0 to 3.2.5
+- Bump org.apache.maven.plugins:maven-failsafe-plugin from 3.0.0 to 3.2.5
+- Bump junit-jupiter-engine.version from 5.9.2 to 5.9.3
+
 ### Fixed
+
+[serializer] Bump jackson version and fix JsonLdTypeFactory constructor [#145](https://github.com/Kobee1203/schema-org-java/issues/145)
 
 ## [0.6.0] - 2023-04-23
 

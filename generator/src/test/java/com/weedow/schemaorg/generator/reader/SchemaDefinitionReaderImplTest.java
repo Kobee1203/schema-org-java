@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import static com.weedow.schemaorg.generator.model.handler.ModelHandlerTestUtils.*;
 import static java.util.Map.entry;
@@ -63,11 +62,17 @@ class SchemaDefinitionReaderImplTest {
                                 "schema:OriginalMediaContent",
                                 List.of("schema:MediaManipulationRatingEnumeration"),
                                 comment("en",
-                                        "Content coded 'as original media content' in a [[MediaReview]], considered in the context of how it was published or shared.\n\n" +
-                                                "For a [[VideoObject]] to be 'original': No evidence the footage has been misleadingly altered or manipulated, though it may contain false or misleading claims.\n\n" +
-                                                "For an [[ImageObject]] to be 'original': No evidence the image has been misleadingly altered or manipulated, though it may still contain false or misleading claims.\n\n" +
-                                                "For an [[ImageObject]] with embedded text to be 'original': No evidence the image has been misleadingly altered or manipulated, though it may still contain false or misleading claims.\n\n" +
-                                                "For an [[AudioObject]] to be 'original': No evidence the audio has been misleadingly altered or manipulated, though it may contain false or misleading claims.\n"
+                                        """
+                                              Content coded 'as original media content' in a [[MediaReview]], considered in the context of how it was published or shared.
+                                              
+                                              For a [[VideoObject]] to be 'original': No evidence the footage has been misleadingly altered or manipulated, though it may contain false or misleading claims.
+                                              
+                                              For an [[ImageObject]] to be 'original': No evidence the image has been misleadingly altered or manipulated, though it may still contain false or misleading claims.
+                                              
+                                              For an [[ImageObject]] with embedded text to be 'original': No evidence the image has been misleadingly altered or manipulated, though it may still contain false or misleading claims.
+                                              
+                                              For an [[AudioObject]] to be 'original': No evidence the audio has been misleadingly altered or manipulated, though it may contain false or misleading claims.
+                                              """
                                 ),
                                 label("en", "OriginalMediaContent"),
                                 null, null, null, null, List.of(partOf("https://pending.schema.org")), List.of(source("https://github.com/schemaorg/schemaorg/issues/2450"))
@@ -229,10 +234,10 @@ class SchemaDefinitionReaderImplTest {
         Assertions.assertThatThrownBy(() -> schemaDefinitionReader.read(getClass().getResourceAsStream("/data/invalid-schemaorg.jsonld")))
                 .isInstanceOf(SchemaDefinitionReaderException.class)
                 .hasMessage("Could not read the JSON schema definition: Unrecognized token 'invalid': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')\n" +
-                        " at [Source: (String)\"invalid json\"; line: 1, column: 8]");
+                        " at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 8]");
     }
 
     private static List<GraphItem> filter(SchemaDefinition schemaDefinition, Predicate<GraphItem> predicate) {
-        return schemaDefinition.getGraph().stream().filter(predicate).collect(Collectors.toList());
+        return schemaDefinition.getGraph().stream().filter(predicate).toList();
     }
 }
