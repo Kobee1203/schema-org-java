@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Fixed
+
+## [0.7.0] - 2024-09-23
+
+### Changed
+
 - ⚠️ **Breaking change: requires java 17 or newer**
 - Bump jackson-bom from 2.14.2 to 2.17.2
 - Bump net.javacrumbs.json-unit:json-unit-assertj from 2.37.0 to 3.4.1
