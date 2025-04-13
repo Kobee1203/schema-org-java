@@ -24,21 +24,44 @@ class SchemaModelGeneratorBuilderTest {
     @Test
     @Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
     void generate_all() {
-        generateAndVerify(null);
+        Map<Path, List<String>> dataMap = generateAndVerify(null, null, false);
+
+        Assertions.assertThat(dataMap).hasSize(3);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(13);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(880);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(880);
     }
 
     @Test
     void generate_specific_models() {
         List<String> models = List.of("Thing");
 
-        generateAndVerify(models);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, null, false);
+
+        Assertions.assertThat(dataMap).hasSize(3);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(11);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(205);
     }
 
-    private void generateAndVerify(List<String> models) {
+    @Test
+    void generate_with_java_types() {
+        List<String> models = List.of("Example");
+
+        Map<Path, List<String>> dataMap = generateAndVerify(models, "classpath:data/example.jsonld", true);
+
+        Assertions.assertThat(dataMap).hasSize(2);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(1);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(1);
+    }
+
+    private Map<Path, List<String>> generateAndVerify(List<String> models, String schemaResource, boolean usedJavaTypes) {
         final Map<Path, List<String>> dataMap = new ConcurrentHashMap<>();
 
-        final ParserOptions parserOptions = new ParserOptions();
-        parserOptions.setSchemaVersion(null); // Use local resource
+        final ParserOptions parserOptions = new ParserOptions()
+                .setSchemaVersion(null)
+                .setSchemaResource(schemaResource)
+                .setUsedJavaTypes(usedJavaTypes);
 
         final GeneratorOptions generatorOptions = new GeneratorOptions();
         generatorOptions.setModels(models);
@@ -65,18 +88,8 @@ class SchemaModelGeneratorBuilderTest {
                 .generatorOptions(generatorOptions)
                 .build();
         schemaModelGenerator.generate();
-        Assertions.assertThat(dataMap).hasSize(3);
-        int dataTypeCount = 13;
-        int modelCount = 880;
-        int modelImplCount = 880;
-        if (models != null && !models.isEmpty()) {
-            dataTypeCount = 11;
-            modelCount = 205;
-            modelImplCount = 205;
-        }
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(dataTypeCount);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(modelCount);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(modelImplCount);
+
+        return dataMap;
     }
 
 }

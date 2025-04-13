@@ -52,7 +52,7 @@ class SchemaModelGeneratorImplTest {
     private SchemaModelGeneratorImpl schemaModelGenerator;
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         SchemaGeneratorUtils.clearCache();
     }
 
@@ -200,6 +200,20 @@ class SchemaModelGeneratorImplTest {
                 options.getModelImplFolder().resolve("ThingImpl.java"),
                 new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName(), List.class.getName()))
         );
+    }
+
+    @Test
+    void cannot_generate_type_when_java_types_are_used() {
+        final Type type = mock(Type.class);
+        when(type.isUsedJavaType()).thenReturn(true);
+
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
+
+        schemaModelGenerator.generate();
+
+        verifyNoInteractions(templateService);
     }
 
     @Test

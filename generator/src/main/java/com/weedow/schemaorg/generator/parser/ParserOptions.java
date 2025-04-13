@@ -10,4 +10,6 @@ public final class ParserOptions {
     private String schemaVersion;
 
     private String schemaResource;
+
+    private boolean usedJavaTypes = false;
 }

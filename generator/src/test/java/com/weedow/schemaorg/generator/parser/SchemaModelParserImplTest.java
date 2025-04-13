@@ -63,7 +63,7 @@ class SchemaModelParserImplTest {
         final Type type = mock(Type.class);
 
         final ModelHandler modelHandler = mock(ModelHandler.class);
-        when(modelHandler.supports(graphItem)).thenReturn(true);
+        when(modelHandler.supports(graphItem, options)).thenReturn(true);
         doAnswer(invocation -> {
             final Map<String, Type> sd = invocation.getArgument(0);
             final GraphItem gi = invocation.getArgument(1);
@@ -73,7 +73,7 @@ class SchemaModelParserImplTest {
 
             sd.put(graphItemId, type);
             return null;
-        }).when(modelHandler).handle(schemaDefinitions, graphItem);
+        }).when(modelHandler).handle(schemaDefinitions, graphItem, options);
 
         final Stream<ModelHandler> stream = Stream.of(modelHandler);
         when(this.modelHandlers.stream()).thenReturn(stream);

@@ -95,16 +95,18 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         Stream<Type> stream = streamService.stream(filteredSchemaDefinitions);
 
         stream.forEach(type -> {
-            if (type.getId().equals("schema:DataType")) {
-                generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
-            } else if (ModelUtils.isDataType(type.getId())) {
-                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelUtils.isSubDataType(type)) {
-                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelUtils.isEnumeration(type)) {
-                generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
-            } else {
-                generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
+            if(!type.isUsedJavaType()) {
+                if (type.getId().equals("schema:DataType")) {
+                    generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
+                } else if (ModelUtils.isDataType(type.getId())) {
+                    generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
+                } else if (ModelUtils.isSubDataType(type)) {
+                    generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
+                } else if (ModelUtils.isEnumeration(type)) {
+                    generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
+                } else {
+                    generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
+                }
             }
         });
         LOG.info("Model generation completed.");

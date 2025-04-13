@@ -3,8 +3,8 @@ package com.weedow.schemaorg.generator.model.handler.datatype;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
+import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -34,12 +34,17 @@ class SubDataTypeModelHandlerImplTest {
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getTypes()).thenReturn(types);
         when(graphItem.getSubClassOf()).thenReturn(subClasses);
-        boolean result = modelHandler.supports(graphItem);
+
+        ParserOptions options = mock(ParserOptions.class);
+
+        boolean result = modelHandler.supports(graphItem, options);
+
         Assertions.assertThat(result).isEqualTo(expected);
     }
 
-    @Test
-    void handle() {
+    @ParameterizedTest
+    @MethodSource
+    void handle(boolean usedJavaTypes, String expectedJavaType, String expectedName) {
         Map<String, Type> schemaDefinitions = new HashMap<>();
 
         GraphItem graphItem = mock(GraphItem.class);
@@ -50,19 +55,22 @@ class SubDataTypeModelHandlerImplTest {
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/1672")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("schema:Text")));
 
-        modelHandler.handle(schemaDefinitions, graphItem);
-        Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:Text", "schema:XPathType");
+        ParserOptions options = mock(ParserOptions.class);
+        when(options.isUsedJavaTypes()).thenReturn(usedJavaTypes);
 
+        modelHandler.handle(schemaDefinitions, graphItem, options);
+
+        Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:Text", "schema:XPathType");
         Assertions.assertThat(schemaDefinitions.get("schema:Text"))
                 .extracting(
-                        "id", "javaType", "name", "description",
+                        "id", "javaType", "usedJavaType", "name", "description",
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
-                        "schema:Text", null, null, null,
+                        "schema:Text", null, false, null, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(), null,
                         false, Collections.emptyList(),
@@ -71,14 +79,14 @@ class SubDataTypeModelHandlerImplTest {
 
         Assertions.assertThat(schemaDefinitions.get("schema:XPathType"))
                 .extracting(
-                        "id", "javaType", "name", "description",
+                        "id", "javaType", "usedJavaType", "name", "description",
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
-                        "schema:XPathType", "java.lang.String", "XPathType", "This is XPathType",
+                        "schema:XPathType", expectedJavaType, usedJavaTypes, expectedName, "This is XPathType",
                         Collections.emptySet(), Collections.emptySet(),
                         List.of(schemaDefinitions.get("schema:Text")), null,
                         false, Collections.emptyList(),
@@ -93,6 +101,13 @@ class SubDataTypeModelHandlerImplTest {
                 Arguments.of(List.of("rdfs:Class", "schema:DataType"), List.of(subClassOf("schema:Text")), false),
                 Arguments.of(List.of("rdfs:Class"), List.of(subClassOf("schema:OtherType")), false),
                 Arguments.of(List.of("schema:OtherType"), List.of(subClassOf("schema:Text")), false)
+        );
+    }
+
+    private static Stream<Arguments> handle() {
+        return Stream.of(
+                Arguments.of(true, null, "java.lang.String"),
+                Arguments.of(false, "java.lang.String", "XPathType")
         );
     }
 }

@@ -7,6 +7,7 @@ import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.apache.commons.cli.*;
 
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -15,11 +16,18 @@ public class SchemaModelGeneratorApp {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorApp.class);
 
-    private static final String VERBOSE_OPTION = "verbose";
+    private static final String HELP_OPTION = "help";
+    private static final String OUTPUT_OPTION = "output";
+    private static final String MODEL_PACKAGE_OPTION = "model-package";
+    private static final String MODEL_IMPL_PACKAGE_OPTION = "model-impl-package";
+    private static final String DATATYPE_PACKAGE_OPTION = "datatype-package";
     private static final String RESOURCE_OPTION = "resource";
     private static final String VERSION_OPTION = "version";
+    private static final String JAVATYPES_OPTION = "javatypes";
     private static final String MODELS_OPTION = "models";
-    private static final String HELP_OPTION = "help";
+    private static final String VERBOSE_OPTION = "verbose";
+
+    private static final String PACKAGE_ARG_VALUE = "package";
 
     public static void main(String[] args) throws ParseException {
         // Options
@@ -33,6 +41,7 @@ public class SchemaModelGeneratorApp {
         boolean helpMode = firstLine.hasOption(HELP_OPTION);
         if (helpMode) {
             final HelpFormatter formatter = new HelpFormatter();
+            formatter.setWidth(80);
             formatter.printHelp("java -jar schema-org-generator.jar SchemaModelGeneratorApp", options, true);
             System.exit(0);
         }
@@ -40,8 +49,23 @@ public class SchemaModelGeneratorApp {
         // Parsing options
         final CommandLine line = parser.parse(options, args);
 
+        // Location of the output directory - Default is "/target/generated-sources/schemaorg"
+        final String output = line.getOptionValue(OUTPUT_OPTION, GeneratorOptions.DEFAULT_OUTPUT_DIR.toAbsolutePath().toString());
+
+        // Package of the models - Default is "org.schema.model"
+        final String modelPackage = line.getOptionValue(MODEL_PACKAGE_OPTION, GeneratorOptions.DEFAULT_MODEL_PACKAGE);
+
+        // Package of the model implementations - Default is "org.schema.model.impl"
+        final String modelImplPackage = line.getOptionValue(MODEL_IMPL_PACKAGE_OPTION, GeneratorOptions.DEFAULT_MODEL_IMPL_PACKAGE);
+
+        // Package of the data types - Default is "org.schema.model.datatype"
+        final String dataTypePackage = line.getOptionValue(DATATYPE_PACKAGE_OPTION, GeneratorOptions.DEFAULT_DATE_TYPE_PACKAGE);
+
         // Models - if null all models will be generated
         List<String> models = line.hasOption(MODELS_OPTION) ? Arrays.asList(line.getOptionValues(MODELS_OPTION)) : null;
+
+        // Java Types - If true Java types are used instead of schema.org DataTypes
+        final boolean javaTypes = line.hasOption(JAVATYPES_OPTION);
 
         // Schema resource location - if null use the 'version' option
         final String schemaResource = line.getOptionValue(RESOURCE_OPTION, null);
@@ -52,17 +76,33 @@ public class SchemaModelGeneratorApp {
         // Verbose
         final boolean verboseMode = line.hasOption(VERBOSE_OPTION);
 
-        generate(schemaResource, schemaVersion, models, verboseMode);
+        generate(output, modelPackage, modelImplPackage, dataTypePackage, schemaResource, schemaVersion, javaTypes, models, verboseMode);
     }
 
-    private static void generate(String schemaResource, String schemaVersion, List<String> models, boolean verboseMode) {
+    @SuppressWarnings("java:S107")
+    private static void generate(
+            String output,
+            String modelPackage,
+            String modelImplPackage,
+            String dataTypePackage,
+            String schemaResource,
+            String schemaVersion,
+            boolean javaTypes,
+            List<String> models,
+            boolean verboseMode
+    ) {
         long start = System.currentTimeMillis();
 
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaResource(schemaResource);
         parserOptions.setSchemaVersion(schemaVersion);
+        parserOptions.setUsedJavaTypes(javaTypes);
 
         GeneratorOptions generatorOptions = new GeneratorOptions();
+        generatorOptions.setOutputFolder(Path.of(output));
+        generatorOptions.setModelPackage(modelPackage);
+        generatorOptions.setModelImplPackage(modelImplPackage);
+        generatorOptions.setDataTypePackage(dataTypePackage);
         generatorOptions.setModels(models);
 
         final SchemaModelGenerator generator = new SchemaModelGeneratorBuilder()
@@ -90,11 +130,35 @@ public class SchemaModelGeneratorApp {
     }
 
     private static Options configParameters(final Options firstOptions) {
-        final Option modelOption = Option.builder("m")
-                .longOpt(MODELS_OPTION)
-                .desc("list of models to be generated. If not specified, all models will be generated.")
-                .hasArgs()
-                .argName(MODELS_OPTION)
+        final Option outputOption = Option.builder("o")
+                .longOpt(OUTPUT_OPTION)
+                .desc("Location of the output directory - Default is \"/target/generated-sources/schemaorg\"")
+                .hasArg()
+                .argName(OUTPUT_OPTION)
+                .required(false)
+                .build();
+
+        final Option modelPackageOption = Option.builder("mp")
+                .longOpt(MODEL_PACKAGE_OPTION)
+                .desc("Package of the models - Default is \"org.schema.model\"")
+                .hasArg()
+                .argName(PACKAGE_ARG_VALUE)
+                .required(false)
+                .build();
+
+        final Option modelImplPackageOption = Option.builder("mip")
+                .longOpt(MODEL_IMPL_PACKAGE_OPTION)
+                .desc("Package of the model implementations - Default is \"org.schema.model.impl\"")
+                .hasArg()
+                .argName(PACKAGE_ARG_VALUE)
+                .required(false)
+                .build();
+
+        final Option dataTypePackageOption = Option.builder("dp")
+                .longOpt(DATATYPE_PACKAGE_OPTION)
+                .desc("Package of the data types - Default is \"org.schema.model.datatype\"")
+                .hasArg()
+                .argName(PACKAGE_ARG_VALUE)
                 .required(false)
                 .build();
 
@@ -114,6 +178,21 @@ public class SchemaModelGeneratorApp {
                 .required(false)
                 .build();
 
+        final Option javaTypesOption = Option.builder("j")
+                .longOpt(JAVATYPES_OPTION)
+                .desc("Use Java types instead of schema.org DataTypes. If not specified, schema.org DataTypes are used.")
+                .hasArg(false)
+                .required(false)
+                .build();
+
+        final Option modelOption = Option.builder("m")
+                .longOpt(MODELS_OPTION)
+                .desc("list of models to be generated. If not specified, all models will be generated.")
+                .hasArgs()
+                .argName(MODELS_OPTION)
+                .required(false)
+                .build();
+
         final Option verboseOption = Option.builder("v")
                 .longOpt(VERBOSE_OPTION)
                 .desc("Verbose")
@@ -129,9 +208,16 @@ public class SchemaModelGeneratorApp {
         }
 
         // All other options
-        options.addOption(modelOption);
+        options.addOption(outputOption);
+        options.addOption(modelPackageOption);
+        options.addOption(modelImplPackageOption);
+        options.addOption(dataTypePackageOption);
+        options.addOption(outputOption);
+        options.addOption(outputOption);
         options.addOption(resourceOption);
         options.addOption(versionOption);
+        options.addOption(javaTypesOption);
+        options.addOption(modelOption);
         options.addOption(verboseOption);
 
         return options;

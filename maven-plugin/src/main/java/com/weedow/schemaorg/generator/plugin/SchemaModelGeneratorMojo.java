@@ -74,7 +74,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "modelImplPackage", property = "weedow.schemaorg.generator.maven.plugin.modelImplPackage", defaultValue = "org.schema.model.impl")
     private String modelImplPackage;
 
-    /** Package of the data type */
+    /** Package of the data types */
     @SuppressWarnings("unused")
     @Parameter(name = "dataTypePackage", property = "weedow.schemaorg.generator.maven.plugin.dataTypePackage", defaultValue = "org.schema.model.datatype")
     private String dataTypePackage;
