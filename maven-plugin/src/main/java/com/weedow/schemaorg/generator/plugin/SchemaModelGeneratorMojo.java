@@ -54,6 +54,11 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "schemaVersion", property = "weedow.schemaorg.generator.maven.plugin.schemaVersion")
     private String schemaVersion;
 
+    /** Use Java types instead of schema.org DataTypes. If not specified, schema.org DataTypes are used. */
+    @SuppressWarnings("unused")
+    @Parameter(name = "javaTypes", property = "weedow.schemaorg.generator.maven.plugin.javaTypes", defaultValue = "false")
+    private boolean javaTypes;
+
     /** List of models to be generated. If not defined, all models are be generated. */
     @SuppressWarnings("unused")
     @Parameter(name = "models", property = "weedow.schemaorg.generator.maven.plugin.models")
@@ -118,6 +123,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaResource(schemaResource);
         parserOptions.setSchemaVersion(schemaVersion);
+        parserOptions.setUsedJavaTypes(javaTypes);
 
         GeneratorOptions generatorOptions = new GeneratorOptions()
                 .setOutputFolder(output.toPath())

@@ -31,6 +31,7 @@ class SchemaModelGeneratorMojoTest {
     private static final String MODEL_IMPL_PACKAGE = "org.schema.model.impl";
     private static final String DATA_TYPE_PACKAGE = "org.schema.model.datatype";
     private static final List<String> MODELS = List.of("Hotel", "Thing");
+    private static final boolean JAVA_TYPES = false;
     private static final boolean SKIP = false;
     private static final SourcesAndResourcesProcessing SOURCES_AND_RESOURCES_PROCESSING = SourcesAndResourcesProcessing.SOURCES_AND_RESOURCES;
 
@@ -55,6 +56,7 @@ class SchemaModelGeneratorMojoTest {
                 .param("modelImplPackage", MODEL_IMPL_PACKAGE)
                 .param("dataTypePackage", DATA_TYPE_PACKAGE)
                 .param("models", MODELS)
+                .param("javaTypes", JAVA_TYPES)
                 .param("skip", SKIP)
                 .param("sourcesAndResourcesProcessing", SOURCES_AND_RESOURCES_PROCESSING)
                 .param("project", project)
@@ -94,6 +96,7 @@ class SchemaModelGeneratorMojoTest {
                 .param("modelImplPackage", MODEL_IMPL_PACKAGE)
                 .param("dataTypePackage", DATA_TYPE_PACKAGE)
                 .param("models", MODELS)
+                .param("javaTypes", JAVA_TYPES)
                 .param("skip", SKIP)
                 .param("sourcesAndResourcesProcessing", SOURCES_AND_RESOURCES_PROCESSING)
                 .param("project", project)
@@ -127,6 +130,7 @@ class SchemaModelGeneratorMojoTest {
                 .param("modelImplPackage", MODEL_IMPL_PACKAGE)
                 .param("dataTypePackage", DATA_TYPE_PACKAGE)
                 .param("models", MODELS)
+                .param("javaTypes", JAVA_TYPES)
                 .param("skip", skip)
                 .param("sourcesAndResourcesProcessing", SOURCES_AND_RESOURCES_PROCESSING)
                 .param("project", project)
@@ -160,6 +164,7 @@ class SchemaModelGeneratorMojoTest {
                 .param("modelImplPackage", MODEL_IMPL_PACKAGE)
                 .param("dataTypePackage", DATA_TYPE_PACKAGE)
                 .param("models", MODELS)
+                .param("javaTypes", JAVA_TYPES)
                 .param("skip", skip)
                 .param("sourcesAndResourcesProcessing", sourcesAndResourcesProcessing)
                 .param("project", project)
@@ -193,6 +198,7 @@ class SchemaModelGeneratorMojoTest {
                 .param("modelImplPackage", MODEL_IMPL_PACKAGE)
                 .param("dataTypePackage", DATA_TYPE_PACKAGE)
                 .param("models", MODELS)
+                .param("javaTypes", JAVA_TYPES)
                 .param("skip", SKIP)
                 .param("sourcesAndResourcesProcessing", SourcesAndResourcesProcessing.TEST_SOURCES_AND_RESOURCES)
                 .param("project", project)

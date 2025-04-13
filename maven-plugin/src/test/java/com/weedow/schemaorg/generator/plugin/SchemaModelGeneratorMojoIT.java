@@ -92,6 +92,31 @@ class SchemaModelGeneratorMojoIT {
     }
 
     @MavenTest
+    void generate_with_java_types(MavenExecutionResult result) {
+        MavenITAssertions.assertThat(result).isSuccessful();
+
+        MavenITAssertions.assertThat(result)
+                .out()
+                .info()
+                .doesNotContain("VERBOSE MODE: ON.")
+                .contains("Java types are used instead of Schema.org Data Types")
+                .contains("Adding the generated java types and generated resources as compiled source root.");
+
+        MavenITAssertions.assertThat(result)
+                .project()
+                .hasTarget()
+                .has("target/generated-sources/example/org/schema/model")
+                .has("target/generated-sources/example/org/schema/model/datatype")
+                .has("target/generated-sources/example/org/schema/model/impl");
+
+        final List<String> lines = readResourceLines("/generated-classes-generate_with_java_types.txt");
+        MavenITAssertions.assertThat(result)
+                .project()
+                .withJarFile()
+                .containsOnly(lines.toArray(new String[]{}));
+    }
+
+    @MavenTest
     void generate_with_skip_option(MavenExecutionResult result) {
         MavenITAssertions.assertThat(result).isSuccessful();
 
@@ -136,7 +161,7 @@ class SchemaModelGeneratorMojoIT {
         List<String> lines = null;
         try (InputStream resource = getClass().getResourceAsStream(resourceLocation)) {
             if (resource != null) {
-                lines = new BufferedReader(new InputStreamReader(resource, StandardCharsets.UTF_8)).lines().collect(Collectors.toList());
+                lines = new BufferedReader(new InputStreamReader(resource, StandardCharsets.UTF_8)).lines().toList();
             } else {
                 Assertions.fail("Resource not found: " + resourceLocation);
             }
