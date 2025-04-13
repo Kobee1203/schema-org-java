@@ -35,4 +35,22 @@ public final class ExampleUtils {
         example.setXPathType(XPathType.of("/xpath/example/title"));
         return example;
     }
+
+    public static ExampleWithJavaTypes createExampleWithJavaTypes() {
+        ExampleWithJavaTypes example = new ExampleWithJavaTypes();
+        example.setBool(true);
+        example.setText("My Thing");
+        example.setDate(LocalDate.of(2022, Month.MARCH, 12));
+        example.setDateTime(LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30));
+        example.setAFloat(12345.67f);
+        example.setInteger(12345);
+        example.setNumber(12345.67d);
+        example.setTime(LocalTime.of(10, 36, 30));
+        try {
+            example.setUrl(new java.net.URL("https://github.com/Kobee1203/schema-org-java"));
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+        return example;
+    }
 }

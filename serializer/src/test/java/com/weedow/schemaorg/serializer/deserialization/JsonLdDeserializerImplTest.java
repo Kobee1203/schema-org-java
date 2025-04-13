@@ -8,6 +8,7 @@ import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.data.Example;
+import com.weedow.schemaorg.serializer.data.ExampleWithJavaTypes;
 import com.weedow.schemaorg.serializer.data.MyDataset;
 import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
 import org.assertj.core.api.Assertions;
@@ -21,6 +22,7 @@ import org.schema.model.datatype.Number;
 import org.schema.model.datatype.*;
 import org.schema.model.impl.*;
 
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -71,6 +73,27 @@ class JsonLdDeserializerImplTest {
                         12345.67d, 12345, 12345.67f,
                         "My Thing", "This is my thing.", "https://github.com/Kobee1203/schema-org-java", "/xpath/example/title", ".css-selector-type"
                 );
+    }
+
+    @Test
+    void deserialize_java_types(@GivenTextResource("/data/ExampleWithJavaTypes.json") String json) throws JsonLdException, MalformedURLException {
+        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl(Map.of("ExampleWithJavaTypes", ExampleWithJavaTypes.class));
+        ExampleWithJavaTypes result = jsonLdDeserializer.deserialize(json);
+
+        Assertions.assertThat(result)
+                .extracting(
+                        "context", "id", "bool",
+                        "date", "dateTime", "time",
+                        "number", "integer", "aFloat",
+                        "text"
+                )
+                .containsExactly(
+                        "https://schema.org", null, true,
+                        LocalDate.of(2022, Month.MARCH, 12), LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30), LocalTime.of(10, 36, 30),
+                        12345.67d, 12345, 12345.67f,
+                        "My Thing"
+                );
+        Assertions.assertThat(result.getUrl()).isEqualTo(new java.net.URL("https://github.com/Kobee1203/schema-org-java"));
     }
 
     @Test
