@@ -9,9 +9,11 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -69,11 +71,11 @@ class SchemaModelGeneratorBuilderTest {
                 .addSuccessHandler((templateName, outputFile, context) -> {
                     String expectedFilePath = "/data/" + generatorOptions.getOutputFolder().relativize(outputFile).toString().replace("\\", "/");
                     LOG.info("Comparing {} with {}", outputFile, expectedFilePath);
-                    try (InputStream resourceAsStream = getClass().getResourceAsStream(expectedFilePath)) {
-                        assert resourceAsStream != null;
-                        byte[] expected = resourceAsStream.readAllBytes();
-                        Assertions.assertThat(outputFile).hasBinaryContent(expected);
-                    } catch (IOException e) {
+                    try {
+                        URL resource = getClass().getResource(expectedFilePath);
+                        assert resource != null;
+                        Assertions.assertThat(outputFile).hasSameTextualContentAs(Paths.get(resource.toURI()), StandardCharsets.UTF_8);
+                    } catch (URISyntaxException e) {
                         throw new RuntimeException(e);
                     }
                 })
