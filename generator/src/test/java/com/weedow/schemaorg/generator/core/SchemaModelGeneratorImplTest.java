@@ -5,6 +5,7 @@ import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
+import com.weedow.schemaorg.generator.core.handler.CompleteHandler;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
 import com.weedow.schemaorg.generator.core.stream.StreamService;
@@ -20,6 +21,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -228,14 +233,14 @@ class SchemaModelGeneratorImplTest {
         when(type.getName()).thenReturn("Thing");
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
+
         final Path modelFolder = options.getModelFolder();
         final Path modelImplFolder = options.getModelImplFolder();
         final String modelPackage = options.getModelPackage();
         final String modelImplPackage = options.getModelImplPackage();
-
-        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
-        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
 
@@ -303,6 +308,38 @@ class SchemaModelGeneratorImplTest {
         );
 
         verifyNoInteractions(successHandler);
+    }
+
+    @Test
+    void generate_with_complete_handler() {
+        final CompleteHandler completeHandler = mock(CompleteHandler.class);
+        options.addCompleteHandler(completeHandler);
+
+        final Type type = mock(Type.class);
+        when(type.getId()).thenReturn("schema:Thing");
+        when(type.getName()).thenReturn("Thing");
+        when(type.getProperties()).thenReturn(Collections.emptySet());
+
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
+
+        Instant instantStart = Instant.now(Clock.fixed(Instant.parse("2025-03-12T10:36:00Z"), ZoneId.of("UTC")));
+        Instant instantEnd = Instant.now(Clock.fixed(Instant.parse("2025-03-12T10:37:00Z"), ZoneId.of("UTC")));
+        Duration expectedDuration = Duration.ofMillis(500);
+
+        try (
+                MockedStatic<Instant> mockedInstant = mockStatic(Instant.class);
+                MockedStatic<Duration> mockedDuration = mockStatic(Duration.class);
+        ) {
+            mockedInstant.when(Instant::now).thenReturn(instantStart, instantEnd);
+            mockedInstant.when(() -> Instant.ofEpochSecond(anyLong(), anyLong())).thenReturn(instantStart);
+            mockedDuration.when(() -> Duration.between(instantStart, instantEnd)).thenReturn(expectedDuration);
+
+            schemaModelGenerator.generate();
+
+            verify(completeHandler).onComplete(expectedDuration);
+        }
     }
 
     @Test

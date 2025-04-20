@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.generator.core.handler.CompleteHandler;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
 import lombok.AccessLevel;
@@ -33,6 +34,8 @@ public final class GeneratorOptions {
     private final List<SuccessHandler> successHandlers = new ArrayList<>();
     @Setter(AccessLevel.NONE)
     private final List<ErrorHandler> errorHandlers = new ArrayList<>();
+    @Setter(AccessLevel.NONE)
+    private final List<CompleteHandler> completeHandlers = new ArrayList<>();
 
     public Path getModelFolder() {
         return resolvePath(modelPackage);
@@ -69,6 +72,11 @@ public final class GeneratorOptions {
 
     public GeneratorOptions addErrorHandler(ErrorHandler errorHandler) {
         errorHandlers.add(errorHandler);
+        return this;
+    }
+
+    public GeneratorOptions addCompleteHandler(CompleteHandler completeHandler) {
+        completeHandlers.add(completeHandler);
         return this;
     }
 }

@@ -18,7 +18,6 @@ import org.apache.maven.project.MavenProject;
 import java.io.File;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Goal which generates Schema.org models.
@@ -118,8 +117,6 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         // Copy common models if the artifact 'schema-org-java-commons' is not present in the current project
         boolean copyCommonModels = !isCommonModelsPresent();
 
-        long start = System.currentTimeMillis();
-
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaResource(schemaResource);
         parserOptions.setSchemaVersion(schemaVersion);
@@ -131,7 +128,8 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
                 .setModelPackage(modelPackage)
                 .setModelImplPackage(modelImplPackage)
                 .setDataTypePackage(dataTypePackage)
-                .setCopyCommonModels(copyCommonModels);
+                .setCopyCommonModels(copyCommonModels)
+                .addCompleteHandler(elapsedTime -> getLog().info(String.format("Finished: %s s", elapsedTime.toSeconds())));
 
         final SchemaModelGenerator generator = schemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)
@@ -141,9 +139,6 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         generator.generate();
 
         processSourcesAndResources();
-
-        long end = System.currentTimeMillis();
-        getLog().info(String.format("Finished: %s s", TimeUnit.SECONDS.convert(end - start, TimeUnit.MILLISECONDS)));
     }
 
     @SuppressWarnings("unchecked")

@@ -14,7 +14,9 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -26,7 +28,7 @@ class SchemaModelGeneratorBuilderTest {
     @Test
     @Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
     void generate_all() {
-        Map<Path, List<String>> dataMap = generateAndVerify(null, null, false);
+        Map<Path, List<String>> dataMap = generateAndVerify(null, null, null, false);
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(13);
@@ -38,26 +40,26 @@ class SchemaModelGeneratorBuilderTest {
     void generate_specific_models() {
         List<String> models = List.of("Thing");
 
-        Map<Path, List<String>> dataMap = generateAndVerify(models, null, false);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, "spec", null, false);
 
         Assertions.assertThat(dataMap).hasSize(3);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(11);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(205);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of("spec", "model", "datatype"))).hasSize(11);
+        Assertions.assertThat(dataMap.get(Path.of("spec", "model"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of("spec", "model", "impl"))).hasSize(205);
     }
 
     @Test
     void generate_with_java_types() {
         List<String> models = List.of("Example");
 
-        Map<Path, List<String>> dataMap = generateAndVerify(models, "classpath:data/example.jsonld", true);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, "javatypes", "classpath:data/example.jsonld", true);
 
         Assertions.assertThat(dataMap).hasSize(2);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(1);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(1);
+        Assertions.assertThat(dataMap.get(Path.of("javatypes", "model"))).hasSize(1);
+        Assertions.assertThat(dataMap.get(Path.of("javatypes", "model", "impl"))).hasSize(1);
     }
 
-    private Map<Path, List<String>> generateAndVerify(List<String> models, String schemaResource, boolean usedJavaTypes) {
+    private Map<Path, List<String>> generateAndVerify(List<String> models, String packageName, String schemaResource, boolean usedJavaTypes) {
         final Map<Path, List<String>> dataMap = new ConcurrentHashMap<>();
 
         final ParserOptions parserOptions = new ParserOptions()
@@ -67,13 +69,18 @@ class SchemaModelGeneratorBuilderTest {
 
         final GeneratorOptions generatorOptions = new GeneratorOptions();
         generatorOptions.setModels(models);
+        if (packageName != null) {
+            generatorOptions.setModelPackage(packageName + ".model");
+            generatorOptions.setModelImplPackage(packageName + ".model.impl");
+            generatorOptions.setDataTypePackage(packageName + ".model.datatype");
+        }
         generatorOptions
                 .addSuccessHandler((templateName, outputFile, context) -> {
                     String expectedFilePath = "/data/" + generatorOptions.getOutputFolder().relativize(outputFile).toString().replace("\\", "/");
                     LOG.info("Comparing {} with {}", outputFile, expectedFilePath);
                     try {
                         URL resource = getClass().getResource(expectedFilePath);
-                        assert resource != null;
+                        Assertions.assertThat(resource).as(() -> "Check Resource presence: " + expectedFilePath).isNotNull();
                         Assertions.assertThat(outputFile).hasSameTextualContentAs(Paths.get(resource.toURI()), StandardCharsets.UTF_8);
                     } catch (URISyntaxException e) {
                         throw new RuntimeException(e);
@@ -81,9 +88,18 @@ class SchemaModelGeneratorBuilderTest {
                 })
                 .addSuccessHandler((templateName, outputFile, context) -> {
                     Path classPath = generatorOptions.getOutputFolder().relativize(outputFile);
-                    dataMap.computeIfAbsent(classPath.getParent(), path -> new ArrayList<>()).add(classPath.getFileName().toString());
+                    dataMap.computeIfAbsent(classPath.getParent(), path -> Collections.synchronizedList(new ArrayList<>())).add(classPath.getFileName().toString());
                 })
-                .addErrorHandler((templateName, outputFile, context, e) -> Assertions.fail("An error occurred while generating {}: {}", outputFile, e.getMessage()));
+                .addErrorHandler((templateName, outputFile, context, e) -> Assertions.fail("An error occurred while generating {}: {}", outputFile, e.getMessage()))
+                .addCompleteHandler((Duration elapsedTime) ->
+                        LOG.info("Completed ({} ms): {}",
+                                elapsedTime.toMillis(),
+                                dataMap.entrySet()
+                                        .stream()
+                                        .map(entry -> entry.getKey() + "=" + entry.getValue().size())
+                                        .toList()
+                        )
+                );
 
         final SchemaModelGenerator schemaModelGenerator = new SchemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)

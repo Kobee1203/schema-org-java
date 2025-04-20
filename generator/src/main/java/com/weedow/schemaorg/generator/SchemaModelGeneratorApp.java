@@ -10,7 +10,6 @@ import org.apache.commons.cli.*;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class SchemaModelGeneratorApp {
 
@@ -91,8 +90,6 @@ public class SchemaModelGeneratorApp {
             List<String> models,
             boolean verboseMode
     ) {
-        long start = System.currentTimeMillis();
-
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaResource(schemaResource);
         parserOptions.setSchemaVersion(schemaVersion);
@@ -104,6 +101,7 @@ public class SchemaModelGeneratorApp {
         generatorOptions.setModelImplPackage(modelImplPackage);
         generatorOptions.setDataTypePackage(dataTypePackage);
         generatorOptions.setModels(models);
+        generatorOptions.addCompleteHandler(elapsedTime -> LOG.info("Finished: {} s", elapsedTime.toSeconds()));
 
         final SchemaModelGenerator generator = new SchemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)
@@ -111,9 +109,6 @@ public class SchemaModelGeneratorApp {
                 .verbose(verboseMode)
                 .build();
         generator.generate();
-
-        long end = System.currentTimeMillis();
-        LOG.info("Finished: {} s", TimeUnit.SECONDS.convert(end - start, TimeUnit.MILLISECONDS));
     }
 
     private static Options configFirstParameters() {
