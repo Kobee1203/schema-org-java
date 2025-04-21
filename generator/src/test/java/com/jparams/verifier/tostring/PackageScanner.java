@@ -1,5 +1,7 @@
 package com.jparams.verifier.tostring;
 
+import nl.jqno.equalsverifier.internal.reflection.PackageScanOptions;
+
 import java.util.List;
 
 /**
@@ -18,6 +20,8 @@ final class PackageScanner {
      * @return classes
      */
     public static List<Class<?>> findClasses(final String packageName, final boolean recursively) {
-        return nl.jqno.equalsverifier.internal.reflection.PackageScanner.getClassesIn(packageName, null, recursively);
+        PackageScanOptions options = new PackageScanOptions();
+        options.scanRecursively = recursively;
+        return nl.jqno.equalsverifier.internal.reflection.PackageScanner.getClassesIn(packageName, options);
     }
 }
