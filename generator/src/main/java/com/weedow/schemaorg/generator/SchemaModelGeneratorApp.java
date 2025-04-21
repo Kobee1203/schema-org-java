@@ -42,7 +42,7 @@ public class SchemaModelGeneratorApp {
             final HelpFormatter formatter = new HelpFormatter();
             formatter.setWidth(80);
             formatter.printHelp("java -jar schema-org-generator.jar SchemaModelGeneratorApp", options, true);
-            System.exit(0);
+            return;
         }
 
         // Parsing options
@@ -67,10 +67,10 @@ public class SchemaModelGeneratorApp {
         final boolean javaTypes = line.hasOption(JAVATYPES_OPTION);
 
         // Schema resource location - if null use the 'version' option
-        final String schemaResource = line.getOptionValue(RESOURCE_OPTION, null);
+        final String schemaResource = line.getOptionValue(RESOURCE_OPTION);
 
         // Schema version - if null the schema model resource into the JAR is used
-        final String schemaVersion = line.getOptionValue(VERSION_OPTION, null);
+        final String schemaVersion = line.getOptionValue(VERSION_OPTION);
 
         // Verbose
         final boolean verboseMode = line.hasOption(VERBOSE_OPTION);

@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
 
-import static uk.org.webcompere.systemstubs.SystemStubs.catchSystemExit;
 import static uk.org.webcompere.systemstubs.SystemStubs.tapSystemOutNormalized;
 
 @ExtendWith(SystemStubsExtension.class)
@@ -17,10 +16,7 @@ class SchemaModelGeneratorAppTest {
     @ValueSource(strings = {"--help", "-h"})
     void help(String option) throws Exception {
         String[] args = new String[]{option};
-        String text = tapSystemOutNormalized(() -> {
-            int exitCode = catchSystemExit(() -> SchemaModelGeneratorApp.main(args));
-            Assertions.assertThat(exitCode).isZero();
-        });
+        String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
         Assertions.assertThat(text).isEqualTo(
                 """
                         usage: java -jar schema-org-generator.jar SchemaModelGeneratorApp [-dp
