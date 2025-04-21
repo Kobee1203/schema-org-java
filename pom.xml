@@ -90,7 +90,7 @@
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
-        <sign-maven-plugin.version>1.0.1</sign-maven-plugin.version>
+        <sign-maven-plugin.version>1.1.0</sign-maven-plugin.version>
     </properties>
 
     <modules>
