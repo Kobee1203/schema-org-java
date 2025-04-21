@@ -57,11 +57,11 @@
         <sonar.coverage.exclusions>**/generated-sources/**</sonar.coverage.exclusions>
 
         <!-- Dependencies -->
-        <lombok.version>1.18.26</lombok.version>
-        <logback-classic.version>1.5.6</logback-classic.version>
-        <jackson.version>2.17.2</jackson.version>
-        <handlebars-helpers.version>4.3.1</handlebars-helpers.version>
-        <commons-cli.version>1.5.0</commons-cli.version>
+        <lombok.version>1.18.38</lombok.version>
+        <logback-classic.version>1.5.18</logback-classic.version>
+        <jackson.version>2.18.3</jackson.version>
+        <handlebars-helpers.version>4.4.0</handlebars-helpers.version>
+        <commons-cli.version>1.9.0</commons-cli.version>
 
         <!-- Test Dependencies -->
         <junit-jupiter-engine.version>5.11.0</junit-jupiter-engine.version>
