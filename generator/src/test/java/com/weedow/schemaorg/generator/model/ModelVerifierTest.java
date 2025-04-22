@@ -5,6 +5,7 @@ import com.weedow.schemaorg.generator.model.field.Accessor;
 import com.weedow.schemaorg.generator.model.field.Field;
 import com.weedow.schemaorg.generator.model.field.Mutator;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.ScanOption;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,10 +18,11 @@ class ModelVerifierTest {
     @Test
     void equalsContract() {
         EqualsVerifier
-                .forPackage(getClass().getPackageName())
-                .except(Property.class, Type.class)
-                // Skip '*Builder' classes
-                .except(clazz -> clazz.getSimpleName().endsWith("Builder"))
+                .forPackage(
+                        getClass().getPackageName(),
+                        ScanOption.except(Property.class, Type.class),
+                        // Skip '*Builder' classes
+                        ScanOption.except(clazz -> clazz.getSimpleName().endsWith("Builder")))
                 .verify();
     }
 
@@ -62,7 +64,7 @@ class ModelVerifierTest {
     void toStringContractProperty() {
         ToStringVerifier
                 .forClass(Property.class)
-                // Ignore 'types' field that is not present in toString() method, but just type names in order to prevent recursivity error
+                // Ignore 'types' field that is not present in toString() method, but just type names to prevent recursivity error
                 .withIgnoredFields("types")
                 .verify();
         Property property = newProperty("id", "name", "fieldName", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")), List.of("partOf1", "partOf2"), List.of("source1", "source2"));
@@ -185,32 +187,32 @@ class ModelVerifierTest {
                 """);
 
         Assertions.assertThat(parent1.toFormattedString()).isEqualTo("""
-               ---------- parent1 ----------
-               name          = null
-               usedJavaType  = false
-               description   = null
-               parents       = []
-               subTypes      = [id]
-               partOf        =\s
-               source        =\s
-               properties    = []
-               enum members  =\s
-               """);
+                ---------- parent1 ----------
+                name          = null
+                usedJavaType  = false
+                description   = null
+                parents       = []
+                subTypes      = [id]
+                partOf        =\s
+                source        =\s
+                properties    = []
+                enum members  =\s
+                """);
 
         Type nullType = new Type(null);
 
         Assertions.assertThat(nullType.toFormattedString()).isEqualTo("""
-               ---------- null ----------
-               name          = null
-               usedJavaType  = false
-               description   = null
-               parents       = []
-               subTypes      = []
-               partOf        =\s
-               source        =\s
-               properties    = []
-               enum members  =\s
-               """);
+                ---------- null ----------
+                name          = null
+                usedJavaType  = false
+                description   = null
+                parents       = []
+                subTypes      = []
+                partOf        =\s
+                source        =\s
+                properties    = []
+                enum members  =\s
+                """);
     }
 
     private static Property newProperty(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source) {

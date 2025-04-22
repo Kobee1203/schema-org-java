@@ -330,7 +330,7 @@ class SchemaModelGeneratorImplTest {
 
         try (
                 MockedStatic<Instant> mockedInstant = mockStatic(Instant.class);
-                MockedStatic<Duration> mockedDuration = mockStatic(Duration.class);
+                MockedStatic<Duration> mockedDuration = mockStatic(Duration.class)
         ) {
             mockedInstant.when(Instant::now).thenReturn(instantStart, instantEnd);
             mockedInstant.when(() -> Instant.ofEpochSecond(anyLong(), anyLong())).thenReturn(instantStart);

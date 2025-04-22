@@ -35,17 +35,15 @@ class JsonLdDeserializerImplTest {
 
     @Test
     void deserialize(@GivenTextResource("/data/JsonLdNode.json") String json) throws JsonLdException {
-        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
-        JsonLdNode result = jsonLdDeserializer.deserialize(json);
-
-        JsonLdNode jsonLdNode = new JsonLdNodeImpl();
-        jsonLdNode.setContext("https://schema.org");
-
-        Assertions.assertThat(result).isEqualTo(jsonLdNode);
+        verifyDeserialize(json);
     }
 
     @Test
     void deserialize_with_pretty_print(@GivenTextResource("/data/JsonLdNode_pretty_print.json") String json) throws JsonLdException {
+        verifyDeserialize(json);
+    }
+
+    private static void verifyDeserialize(String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
         JsonLdNode result = jsonLdDeserializer.deserialize(json);
 
@@ -108,6 +106,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
+    @SuppressWarnings("java:S5961")
     void deserialize_thing_with_multiple_values_by_field(@GivenTextResource("/data/Thing_mutliple_values_by_field.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
         JsonLdNode result = jsonLdDeserializer.deserialize(json);
@@ -192,6 +191,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
+    @SuppressWarnings("java:S5961")
     void deserialize_complex_datatype_object(@GivenTextResource("/data/ObjectDataTypeExample.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl("com.weedow.schemaorg.serializer.data");
         JsonLdNode result = jsonLdDeserializer.deserialize(json);
