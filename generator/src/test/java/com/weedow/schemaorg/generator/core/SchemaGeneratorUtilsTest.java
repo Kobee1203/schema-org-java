@@ -14,7 +14,7 @@ import java.util.Set;
 class SchemaGeneratorUtilsTest {
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         SchemaGeneratorUtils.clearCache();
     }
 
@@ -33,6 +33,14 @@ class SchemaGeneratorUtilsTest {
         type.addParent(type("schema:Text", "Parent"));
         String result = SchemaGeneratorUtils.resolveClassName(null, dataTypePackage, type);
         Assertions.assertThat(result).isEqualTo("datatype.MyDataType");
+    }
+
+    @Test
+    void resolveClassName_with_javatype() {
+        String dataTypePackage = "datatype";
+        Type type = type("schema:URL", "MyType").setUsedJavaType(true);
+        String result = SchemaGeneratorUtils.resolveClassName(null, dataTypePackage, type);
+        Assertions.assertThat(result).isNull();
     }
 
     @Test
@@ -69,6 +77,17 @@ class SchemaGeneratorUtilsTest {
         type.addProperty(new Property("schema:Boolean", null, null, null, Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2"))));
         Set<String> result = SchemaGeneratorUtils.getImports(null, dataTypePackage, type, Collections.emptyList());
         Assertions.assertThat(result).containsExactly("datatype.Type1", "datatype.Type2");
+    }
+
+    @Test
+    void getImports_with_properties_that_use_java_types() {
+        String dataTypePackage = "datatype";
+        Type type = type("schema:Text", "MyType");
+        Type type1 = type("schema:Text", "Type1");
+        Type type2 = type("schema:URL", "Type2").setUsedJavaType(true);
+        type.addProperty(new Property("schema:Boolean", null, null, null, Arrays.asList(type1, type2)));
+        Set<String> result = SchemaGeneratorUtils.getImports(null, dataTypePackage, type, Collections.emptyList());
+        Assertions.assertThat(result).containsExactly("datatype.Type1");
     }
 
     @Test
@@ -129,6 +148,34 @@ class SchemaGeneratorUtilsTest {
         Assertions.assertThat(result2).containsExactly(
                 "model.Type1",
                 "model.Type2",
+                "model.NewType",
+                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
+                "com.weedow.schemaorg.commons.model.JsonLdFieldTypes",
+                "java.util.List"
+        );
+    }
+
+    @Test
+    void getAllImports_with_field_with_java_types() {
+        String modelPackage = "model";
+        String dataTypePackage = "datatype";
+        Type type = type("schema:NewType", "NewType");
+        Type type1 = type("schema:Type1", "Type1");
+        Type type2 = type("schema:Type2", "Type2").setUsedJavaType(true);
+        type.addProperty(new Property("schema:property", null, null, null, List.of(type1, type2)));
+        Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
+        Assertions.assertThat(result).containsExactly(
+                "model.Type1",
+                "model.NewType",
+                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
+                "com.weedow.schemaorg.commons.model.JsonLdFieldTypes",
+                "java.util.List"
+        );
+
+        // Test cache: pass null for parameters not required to read cache
+        Set<String> result2 = SchemaGeneratorUtils.getAllImports(null, null, type);
+        Assertions.assertThat(result2).containsExactly(
+                "model.Type1",
                 "model.NewType",
                 "com.weedow.schemaorg.commons.model.JsonLdTypeName",
                 "com.weedow.schemaorg.commons.model.JsonLdFieldTypes",

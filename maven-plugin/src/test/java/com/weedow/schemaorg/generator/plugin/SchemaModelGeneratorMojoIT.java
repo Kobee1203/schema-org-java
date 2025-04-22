@@ -13,7 +13,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @MavenJupiterExtension
 @MavenRepository
@@ -27,7 +26,8 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .contains("VERBOSE MODE: ON.")
-                .contains("Adding the generated java types and generated resources as compiled source root.");
+                .contains("Adding the generated java types and generated resources as compiled source root.")
+                .anyMatch(s -> s.matches("Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -51,7 +51,8 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .doesNotContain("VERBOSE MODE: ON.")
-                .contains("Adding the generated java types and generated resources as compiled source root.");
+                .contains("Adding the generated java types and generated resources as compiled source root.")
+                .anyMatch(s -> s.matches("Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -75,7 +76,8 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .doesNotContain("VERBOSE MODE: ON.")
-                .contains("Adding the generated java types and generated resources as compiled source root.");
+                .contains("Adding the generated java types and generated resources as compiled source root.")
+                .anyMatch(s -> s.matches("Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -92,6 +94,32 @@ class SchemaModelGeneratorMojoIT {
     }
 
     @MavenTest
+    void generate_with_java_types(MavenExecutionResult result) {
+        MavenITAssertions.assertThat(result).isSuccessful();
+
+        MavenITAssertions.assertThat(result)
+                .out()
+                .info()
+                .doesNotContain("VERBOSE MODE: ON.")
+                .contains("Java types are used instead of Schema.org Data Types")
+                .contains("Adding the generated java types and generated resources as compiled source root.")
+                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+
+        MavenITAssertions.assertThat(result)
+                .project()
+                .hasTarget()
+                .has("target/generated-sources/example/org/schema/model")
+                .has("target/generated-sources/example/org/schema/model/datatype")
+                .has("target/generated-sources/example/org/schema/model/impl");
+
+        final List<String> lines = readResourceLines("/generated-classes-generate_with_java_types.txt");
+        MavenITAssertions.assertThat(result)
+                .project()
+                .withJarFile()
+                .containsOnly(lines.toArray(new String[]{}));
+    }
+
+    @MavenTest
     void generate_with_skip_option(MavenExecutionResult result) {
         MavenITAssertions.assertThat(result).isSuccessful();
 
@@ -99,7 +127,8 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .contains("Code generation is skipped.")
-                .contains("Adding the generated java types and generated resources as compiled source root.");
+                .contains("Adding the generated java types and generated resources as compiled source root.")
+                .noneMatch(s -> s.matches("Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -119,7 +148,8 @@ class SchemaModelGeneratorMojoIT {
         MavenITAssertions.assertThat(result)
                 .out()
                 .info()
-                .doesNotContain("Adding the generated java types and generated resources as compiled source root.");
+                .doesNotContain("Adding the generated java types and generated resources as compiled source root.")
+                .anyMatch(s -> s.matches("Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -136,7 +166,7 @@ class SchemaModelGeneratorMojoIT {
         List<String> lines = null;
         try (InputStream resource = getClass().getResourceAsStream(resourceLocation)) {
             if (resource != null) {
-                lines = new BufferedReader(new InputStreamReader(resource, StandardCharsets.UTF_8)).lines().collect(Collectors.toList());
+                lines = new BufferedReader(new InputStreamReader(resource, StandardCharsets.UTF_8)).lines().toList();
             } else {
                 Assertions.fail("Resource not found: " + resourceLocation);
             }

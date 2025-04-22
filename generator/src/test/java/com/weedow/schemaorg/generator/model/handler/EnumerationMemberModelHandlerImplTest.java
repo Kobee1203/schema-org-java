@@ -2,6 +2,7 @@ package com.weedow.schemaorg.generator.model.handler;
 
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
+import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,7 +33,11 @@ class EnumerationMemberModelHandlerImplTest {
     void supports(List<String> types, boolean expected) {
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getTypes()).thenReturn(types);
-        boolean result = modelHandler.supports(graphItem);
+
+        ParserOptions options = mock(ParserOptions.class);
+
+        boolean result = modelHandler.supports(graphItem, options);
+
         Assertions.assertThat(result).isEqualTo(expected);
     }
 
@@ -44,7 +49,9 @@ class EnumerationMemberModelHandlerImplTest {
         when(graphItem.getTypes()).thenReturn(List.of("schema:MedicalImagingTechnique"));
         when(graphItem.getLabel()).thenReturn(label("en", "Radiography"));
 
-        modelHandler.handle(schemaDefinitions, graphItem);
+        ParserOptions options = mock(ParserOptions.class);
+
+        modelHandler.handle(schemaDefinitions, graphItem, options);
 
         Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:MedicalImagingTechnique");
         Assertions.assertThat(schemaDefinitions.get("schema:MedicalImagingTechnique"))
@@ -72,7 +79,9 @@ class EnumerationMemberModelHandlerImplTest {
         when(graphItem.getTypes()).thenReturn(List.of("schema:MedicalImagingTechnique", "schema:MedicalSpecialty"));
         when(graphItem.getLabel()).thenReturn(label("en", "Radiography"));
 
-        modelHandler.handle(schemaDefinitions, graphItem);
+        ParserOptions options = mock(ParserOptions.class);
+
+        modelHandler.handle(schemaDefinitions, graphItem, options);
 
         Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:MedicalImagingTechnique", "schema:MedicalSpecialty");
         Assertions.assertThat(schemaDefinitions.get("schema:MedicalImagingTechnique"))

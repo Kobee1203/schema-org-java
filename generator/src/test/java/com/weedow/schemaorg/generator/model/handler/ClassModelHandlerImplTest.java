@@ -5,6 +5,7 @@ import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
+import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -37,7 +38,11 @@ class ClassModelHandlerImplTest {
         when(graphItem.getId()).thenReturn(id);
         when(graphItem.getTypes()).thenReturn(types);
         when(graphItem.getSubClassOf()).thenReturn(subClassOfs);
-        boolean result = modelHandler.supports(graphItem);
+
+        ParserOptions options = mock(ParserOptions.class);
+
+        boolean result = modelHandler.supports(graphItem, options);
+
         Assertions.assertThat(result).isEqualTo(expected);
     }
 
@@ -53,7 +58,10 @@ class ClassModelHandlerImplTest {
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("rdfs:Class"), subClassOf("schema:Parent")));
 
-        modelHandler.handle(schemaDefinitions, graphItem);
+        ParserOptions options = mock(ParserOptions.class);
+
+        modelHandler.handle(schemaDefinitions, graphItem, options);
+
         Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:MyType", "schema:Parent");
         Assertions.assertThat(schemaDefinitions.get("schema:MyType"))
                 .extracting(

@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.generator.core.handler.CompleteHandler;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
 import lombok.AccessLevel;
@@ -15,10 +16,15 @@ import java.util.List;
 @Accessors(chain = true)
 public final class GeneratorOptions {
 
-    private Path outputFolder = Path.of("target", "generated-sources", "schemaorg");
-    private String modelPackage = "org.schema.model";
-    private String modelImplPackage = "org.schema.model.impl";
-    private String dataTypePackage = "org.schema.model.datatype";
+    public static final Path DEFAULT_OUTPUT_DIR = Path.of("target", "generated-sources", "schemaorg");
+    public static final String DEFAULT_MODEL_PACKAGE = "org.schema.model";
+    public static final String DEFAULT_MODEL_IMPL_PACKAGE = "org.schema.model.impl";
+    public static final String DEFAULT_DATE_TYPE_PACKAGE = "org.schema.model.datatype";
+
+    private Path outputFolder = DEFAULT_OUTPUT_DIR;
+    private String modelPackage = DEFAULT_MODEL_PACKAGE;
+    private String modelImplPackage = DEFAULT_MODEL_IMPL_PACKAGE;
+    private String dataTypePackage = DEFAULT_DATE_TYPE_PACKAGE;
 
     private boolean copyCommonModels = true;
 
@@ -28,6 +34,8 @@ public final class GeneratorOptions {
     private final List<SuccessHandler> successHandlers = new ArrayList<>();
     @Setter(AccessLevel.NONE)
     private final List<ErrorHandler> errorHandlers = new ArrayList<>();
+    @Setter(AccessLevel.NONE)
+    private final List<CompleteHandler> completeHandlers = new ArrayList<>();
 
     public Path getModelFolder() {
         return resolvePath(modelPackage);
@@ -64,6 +72,11 @@ public final class GeneratorOptions {
 
     public GeneratorOptions addErrorHandler(ErrorHandler errorHandler) {
         errorHandlers.add(errorHandler);
+        return this;
+    }
+
+    public GeneratorOptions addCompleteHandler(CompleteHandler completeHandler) {
+        completeHandlers.add(completeHandler);
         return this;
     }
 }

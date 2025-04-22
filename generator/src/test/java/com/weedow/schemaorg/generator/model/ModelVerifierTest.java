@@ -5,6 +5,7 @@ import com.weedow.schemaorg.generator.model.field.Accessor;
 import com.weedow.schemaorg.generator.model.field.Field;
 import com.weedow.schemaorg.generator.model.field.Mutator;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.ScanOption;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,10 +18,11 @@ class ModelVerifierTest {
     @Test
     void equalsContract() {
         EqualsVerifier
-                .forPackage(getClass().getPackageName())
-                .except(Property.class, Type.class)
-                // Skip '*Builder' classes
-                .except(clazz -> clazz.getSimpleName().endsWith("Builder"))
+                .forPackage(
+                        getClass().getPackageName(),
+                        ScanOption.except(Property.class, Type.class),
+                        // Skip '*Builder' classes
+                        ScanOption.except(clazz -> clazz.getSimpleName().endsWith("Builder")))
                 .verify();
     }
 
@@ -62,7 +64,7 @@ class ModelVerifierTest {
     void toStringContractProperty() {
         ToStringVerifier
                 .forClass(Property.class)
-                // Ignore 'types' field that is not present in toString() method, but just type names in order to prevent recursivity error
+                // Ignore 'types' field that is not present in toString() method, but just type names to prevent recursivity error
                 .withIgnoredFields("types")
                 .verify();
         Property property = newProperty("id", "name", "fieldName", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")), List.of("partOf1", "partOf2"), List.of("source1", "source2"));
@@ -168,46 +170,49 @@ class ModelVerifierTest {
                         null
                 ));
 
-        Assertions.assertThat(type.toFormattedString()).isEqualTo(
-                "---------- id ----------\n" +
-                        "name          = name\n" +
-                        "description   = Lorem Ipsum is simply dummy text of the printing a\n" +
-                        "parents       = [parent1, parent2]\n" +
-                        "subTypes      = []\n" +
-                        "partOf        = partOf1, partOf2\n" +
-                        "source        = source1, source2\n" +
-                        "properties    = [\n" +
-                        "    Property(id='id1', name='name1', description='Lorem Ipsum is simply dummy text of the printing a', types=[type name 1, type name 2], partOf=[partOf1, partOf2], source=[source1, source2])\n" +
-                        "    Property(id='id2', name='name2', description='null', types=[type name 1], partOf=null, source=null)\n" +
-                        "]\n" +
-                        "enum members  = enumMember1, enumMember2\n"
-        );
+        Assertions.assertThat(type.toFormattedString()).isEqualTo("""
+                ---------- id ----------
+                name          = name
+                usedJavaType  = false
+                description   = Lorem Ipsum is simply dummy text of the printing a
+                parents       = [parent1, parent2]
+                subTypes      = []
+                partOf        = partOf1, partOf2
+                source        = source1, source2
+                properties    = [
+                    Property(id='id1', name='name1', description='Lorem Ipsum is simply dummy text of the printing a', types=[type name 1, type name 2], partOf=[partOf1, partOf2], source=[source1, source2])
+                    Property(id='id2', name='name2', description='null', types=[type name 1], partOf=null, source=null)
+                ]
+                enum members  = enumMember1, enumMember2
+                """);
 
-        Assertions.assertThat(parent1.toFormattedString()).isEqualTo(
-                "---------- parent1 ----------\n" +
-                        "name          = null\n" +
-                        "description   = null\n" +
-                        "parents       = []\n" +
-                        "subTypes      = [id]\n" +
-                        "partOf        = \n" +
-                        "source        = \n" +
-                        "properties    = []\n" +
-                        "enum members  = \n"
-        );
+        Assertions.assertThat(parent1.toFormattedString()).isEqualTo("""
+                ---------- parent1 ----------
+                name          = null
+                usedJavaType  = false
+                description   = null
+                parents       = []
+                subTypes      = [id]
+                partOf        =\s
+                source        =\s
+                properties    = []
+                enum members  =\s
+                """);
 
         Type nullType = new Type(null);
 
-        Assertions.assertThat(nullType.toFormattedString()).isEqualTo(
-                "---------- null ----------\n" +
-                        "name          = null\n" +
-                        "description   = null\n" +
-                        "parents       = []\n" +
-                        "subTypes      = []\n" +
-                        "partOf        = \n" +
-                        "source        = \n" +
-                        "properties    = []\n" +
-                        "enum members  = \n"
-        );
+        Assertions.assertThat(nullType.toFormattedString()).isEqualTo("""
+                ---------- null ----------
+                name          = null
+                usedJavaType  = false
+                description   = null
+                parents       = []
+                subTypes      = []
+                partOf        =\s
+                source        =\s
+                properties    = []
+                enum members  =\s
+                """);
     }
 
     private static Property newProperty(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source) {

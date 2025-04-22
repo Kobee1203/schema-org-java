@@ -14,6 +14,10 @@ public final class SchemaGeneratorUtils {
     }
 
     public static String resolveClassName(String modelPackage, String dataTypePackage, Type type) {
+        if(type.isUsedJavaType()) {
+            return null;
+        }
+
         final String resolvedPackage = ModelUtils.isDataType(type.getId()) || ModelUtils.isSubDataType(type) ? dataTypePackage : modelPackage;
         return resolvedPackage + "." + type.getName();
     }
@@ -23,7 +27,9 @@ public final class SchemaGeneratorUtils {
         type.getProperties()
                 .stream()
                 .flatMap(property -> property.getTypes().stream())
-                .forEach(propertyType -> imports.add(resolveClassName(modelPackage, dataTypePackage, propertyType)));
+                .map(propertyType -> resolveClassName(modelPackage, dataTypePackage, propertyType))
+                .filter(Objects::nonNull)
+                .forEach(imports::add);
         return imports;
     }
 

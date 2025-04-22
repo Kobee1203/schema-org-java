@@ -16,6 +16,8 @@ public final class Type {
 
     private String javaType;
 
+    private boolean usedJavaType = false;
+
     private String name;
 
     private String description;
@@ -102,10 +104,6 @@ public final class Type {
         return false;
     }
 
-    public List<String> getEnumerationMembers() {
-        return enumerationMembers;
-    }
-
     public Type addEnumerationMember(String value) {
         this.enumerationMembers.add(value);
         return this;
@@ -129,6 +127,7 @@ public final class Type {
     public String toFormattedString() {
         return "---------- " + id + " ----------\n" +
                 "name          = " + name + "\n" +
+                "usedJavaType  = " + usedJavaType + "\n" +
                 "description   = " + description() + "\n" +
                 "parents       = " + parents() + "\n" +
                 "subTypes      = " + subTypes() + "\n" +
