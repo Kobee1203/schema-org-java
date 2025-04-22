@@ -1,6 +1,8 @@
 package com.weedow.schemaorg.generator;
 
+import com.weedow.schemaorg.generator.core.SchemaGeneratorUtils;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,6 +13,11 @@ import static uk.org.webcompere.systemstubs.SystemStubs.tapSystemOutNormalized;
 
 @ExtendWith(SystemStubsExtension.class)
 class SchemaModelGeneratorAppTest {
+
+    @AfterEach
+    void tearDown() {
+        SchemaGeneratorUtils.clearCache();
+    }
 
     @ParameterizedTest
     @ValueSource(strings = {"--help", "-h"})
@@ -69,9 +76,9 @@ class SchemaModelGeneratorAppTest {
     void generate_custom_resource() throws Exception {
         String[] args = new String[]{
                 "--resource", "classpath:example.jsonld",
-                "-mp", "org.example.model",
-                "-mip", "org.example.model.impl",
-                "-dp", "org.example.model.datatype"
+                "-mp", "org.custom.model",
+                "-mip", "org.custom.model.impl",
+                "-dp", "org.custom.model.datatype"
         };
         String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
         Assertions.assertThat(text)
@@ -88,9 +95,9 @@ class SchemaModelGeneratorAppTest {
     void generate_with_java_types() throws Exception {
         String[] args = new String[]{
                 "--resource", "classpath:example.jsonld",
-                "-mp", "org.example.models",
-                "-mip", "org.example.models.impl",
-                "-dp", "org.example.models.datatype",
+                "-mp", "org.javatypes.models",
+                "-mip", "org.javatypes.models.impl",
+                "-dp", "org.javatypes.models.datatype",
                 "--javatypes"
         };
         String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));

@@ -1,9 +1,11 @@
 package com.weedow.schemaorg.generator;
 
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
+import com.weedow.schemaorg.generator.core.SchemaGeneratorUtils;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -24,6 +26,11 @@ import java.util.concurrent.ConcurrentHashMap;
 class SchemaModelGeneratorBuilderTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorBuilderTest.class);
+
+    @AfterEach
+    void tearDown() {
+        SchemaGeneratorUtils.clearCache();
+    }
 
     @Test
     @Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
