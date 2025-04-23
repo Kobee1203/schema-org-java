@@ -18,7 +18,6 @@ import org.apache.maven.project.MavenProject;
 import java.io.File;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Goal which generates Schema.org models.
@@ -54,6 +53,11 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "schemaVersion", property = "weedow.schemaorg.generator.maven.plugin.schemaVersion")
     private String schemaVersion;
 
+    /** Use Java types instead of schema.org DataTypes. If not specified, schema.org DataTypes are used. */
+    @SuppressWarnings("unused")
+    @Parameter(name = "javaTypes", property = "weedow.schemaorg.generator.maven.plugin.javaTypes", defaultValue = "false")
+    private boolean javaTypes;
+
     /** List of models to be generated. If not defined, all models are be generated. */
     @SuppressWarnings("unused")
     @Parameter(name = "models", property = "weedow.schemaorg.generator.maven.plugin.models")
@@ -74,7 +78,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "modelImplPackage", property = "weedow.schemaorg.generator.maven.plugin.modelImplPackage", defaultValue = "org.schema.model.impl")
     private String modelImplPackage;
 
-    /** Package of the data type */
+    /** Package of the data types */
     @SuppressWarnings("unused")
     @Parameter(name = "dataTypePackage", property = "weedow.schemaorg.generator.maven.plugin.dataTypePackage", defaultValue = "org.schema.model.datatype")
     private String dataTypePackage;
@@ -87,10 +91,11 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     /**
      * Specify the behavior of the plugin with the generated java types and generated resources.
      * <ul>
-     * <li>Add the output directory to the project as a source root: SOURCES_AND_RESOURCES</li>
-     * <li>Add the output directory to the project as a test source root: TEST_SOURCES_AND_RESOURCES</li>
-     * <li>Do nothing: NOTHING</li>
+     * <li><code>SOURCES_AND_RESOURCES</code>: Add the output directory to the project as a source root</li>
+     * <li><code>TEST_SOURCES_AND_RESOURCES</code>: Add the output directory to the project as a test source root</li>
+     * <li><code>NOTHING</code>: Do nothing</li>
      * </ul>
+     * Default is <code>SOURCES_AND_RESOURCES</code>.
      */
     @SuppressWarnings("unused")
     @Parameter(name = "sourcesAndResourcesProcessing", defaultValue = "SOURCES_AND_RESOURCES")
@@ -113,11 +118,10 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         // Copy common models if the artifact 'schema-org-java-commons' is not present in the current project
         boolean copyCommonModels = !isCommonModelsPresent();
 
-        long start = System.currentTimeMillis();
-
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaResource(schemaResource);
         parserOptions.setSchemaVersion(schemaVersion);
+        parserOptions.setUsedJavaTypes(javaTypes);
 
         GeneratorOptions generatorOptions = new GeneratorOptions()
                 .setOutputFolder(output.toPath())
@@ -125,7 +129,8 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
                 .setModelPackage(modelPackage)
                 .setModelImplPackage(modelImplPackage)
                 .setDataTypePackage(dataTypePackage)
-                .setCopyCommonModels(copyCommonModels);
+                .setCopyCommonModels(copyCommonModels)
+                .addCompleteHandler(elapsedTime -> getLog().info(String.format("Finished: %s s", elapsedTime.toSeconds())));
 
         final SchemaModelGenerator generator = schemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)
@@ -135,9 +140,6 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         generator.generate();
 
         processSourcesAndResources();
-
-        long end = System.currentTimeMillis();
-        getLog().info(String.format("Finished: %s s", TimeUnit.SECONDS.convert(end - start, TimeUnit.MILLISECONDS)));
     }
 
     @SuppressWarnings("unchecked")

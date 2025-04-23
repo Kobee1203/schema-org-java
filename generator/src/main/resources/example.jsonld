@@ -299,6 +299,26 @@
       ]
     },
     {
+      "@id": "schema:path",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "path",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PronounceableText"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "schema:time",
       "@type": "rdf:Property",
       "rdfs:comment": "",

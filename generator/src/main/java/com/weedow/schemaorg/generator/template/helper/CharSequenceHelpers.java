@@ -5,7 +5,7 @@ import com.github.jknack.handlebars.Options;
 
 import java.io.IOException;
 
-@SuppressWarnings("java:S115")
+@SuppressWarnings({"java:S115", "java:S6548"})
 // Constant names should comply with a naming convention: we don't because The member's name become the name of the helper
 public enum CharSequenceHelpers implements Helper<Object> {
 

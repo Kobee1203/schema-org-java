@@ -34,6 +34,10 @@ public class SchemaModelParserImpl implements SchemaModelParser {
     public Map<String, Type> parse(ParserOptions options) {
         Map<String, Type> schemaDefinitions = new HashMap<>();
 
+        if(options.isUsedJavaTypes()) {
+            LOG.info("Java types are used instead of Schema.org Data Types");
+        }
+
         final String schemaResource = options.getSchemaResource();
         final String schemaVersion = options.getSchemaVersion();
         try (InputStream in = getInputStream(schemaResource, schemaVersion)) {
@@ -45,8 +49,8 @@ public class SchemaModelParserImpl implements SchemaModelParser {
 
                 this.modelHandlers
                         .stream()
-                        .filter(modelHandler -> modelHandler.supports(graphItem))
-                        .forEach(modelHandler -> modelHandler.handle(schemaDefinitions, graphItem));
+                        .filter(modelHandler -> modelHandler.supports(graphItem, options))
+                        .forEach(modelHandler -> modelHandler.handle(schemaDefinitions, graphItem, options));
             });
             LOG.info("Parsing completed.");
         } catch (Exception e) {

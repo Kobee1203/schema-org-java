@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class DeserializerPostProcessorImpl implements PostProcessor {
 
@@ -28,8 +27,7 @@ public class DeserializerPostProcessorImpl implements PostProcessor {
 
     @Override
     public <T> T process(T obj) {
-        if(obj instanceof Collection) {
-            Collection<?> coll = (Collection<?>) obj;
+        if(obj instanceof Collection<?> coll) {
             for(Object o : coll) {
                 process(o);
             }
@@ -84,7 +82,7 @@ public class DeserializerPostProcessorImpl implements PostProcessor {
 
         JsonLdFieldTypes jsonLdFieldTypes = field.getDeclaredAnnotation(JsonLdFieldTypes.class);
         if (jsonLdFieldTypes != null) {
-            List<Class<? extends JsonLdDataType<?>>> fieldTypes = filterAndSort(jsonLdFieldTypes.value(), fieldValue);
+            List<Class<JsonLdDataType<?>>> fieldTypes = filterAndSort(jsonLdFieldTypes.value(), fieldValue);
             if (!fieldTypes.isEmpty()) {
                 for (Class<? extends JsonLdDataType<?>> fieldType : fieldTypes) {
                     JsonLdDataType<?> value = conversionService.convert(fieldValue, fieldType);
@@ -101,13 +99,13 @@ public class DeserializerPostProcessorImpl implements PostProcessor {
     }
 
     @SuppressWarnings("unchecked")
-    private static List<Class<? extends JsonLdDataType<?>>> filterAndSort(Class<?>[] fieldTypes, Object fieldValue) {
+    private static List<Class<JsonLdDataType<?>>> filterAndSort(Class<?>[] fieldTypes, Object fieldValue) {
         if (isScalarValue(fieldValue)) {
             return Arrays.stream(fieldTypes)
                     .filter(JsonLdDataType.class::isAssignableFrom)
                     .map(clazz -> (Class<JsonLdDataType<?>>) clazz)
                     .sorted(DataTypeSpecificationService.getInstance().getDataTypeComparator())
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return Collections.emptyList();
     }

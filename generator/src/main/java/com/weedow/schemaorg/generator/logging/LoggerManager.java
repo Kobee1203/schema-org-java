@@ -3,6 +3,7 @@ package com.weedow.schemaorg.generator.logging;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@SuppressWarnings("java:S6548")
 public class LoggerManager {
 
     private static final LoggerManager INSTANCE = new LoggerManager();

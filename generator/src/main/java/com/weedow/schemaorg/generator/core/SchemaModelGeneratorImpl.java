@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -67,6 +69,8 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             return;
         }
 
+        Instant start = Instant.now();
+
         final String modelPackage = options.getModelPackage();
         final String modelImplPackage = options.getModelImplPackage();
         final String dataTypePackage = options.getDataTypePackage();
@@ -92,21 +96,29 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
         LOG.info("Generating models...");
 
-        Stream<Type> stream = streamService.stream(filteredSchemaDefinitions);
-
-        stream.forEach(type -> {
-            if (type.getId().equals("schema:DataType")) {
-                generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
-            } else if (ModelUtils.isDataType(type.getId())) {
-                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelUtils.isSubDataType(type)) {
-                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelUtils.isEnumeration(type)) {
-                generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
-            } else {
-                generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
-            }
-        });
+        try (Stream<Type> stream = streamService.stream(filteredSchemaDefinitions)) {
+            stream
+                    .onClose(() -> {
+                        Instant end = Instant.now();
+                        Duration elapsedTime = Duration.between(start, end);
+                        options.getCompleteHandlers().forEach(completeHandler -> completeHandler.onComplete(elapsedTime));
+                    })
+                    .forEach(type -> {
+                        if (!type.isUsedJavaType()) {
+                            if (type.getId().equals("schema:DataType")) {
+                                generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
+                            } else if (ModelUtils.isDataType(type.getId())) {
+                                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
+                            } else if (ModelUtils.isSubDataType(type)) {
+                                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
+                            } else if (ModelUtils.isEnumeration(type)) {
+                                generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
+                            } else {
+                                generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
+                            }
+                        }
+                    });
+        }
         LOG.info("Model generation completed.");
     }
 

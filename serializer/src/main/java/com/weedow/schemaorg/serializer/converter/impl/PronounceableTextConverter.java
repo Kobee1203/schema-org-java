@@ -2,6 +2,7 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+@SuppressWarnings("java:S6548")
 public class PronounceableTextConverter extends AbstractConverter {
 
     public static final PronounceableTextConverter INSTANCE = new PronounceableTextConverter();

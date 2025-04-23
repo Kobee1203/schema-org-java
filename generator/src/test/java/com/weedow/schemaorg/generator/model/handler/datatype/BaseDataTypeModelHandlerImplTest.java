@@ -3,6 +3,7 @@ package com.weedow.schemaorg.generator.model.handler.datatype;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
+import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,11 +31,12 @@ class BaseDataTypeModelHandlerImplTest {
 
     @ParameterizedTest
     @MethodSource
-    void supports(String id, boolean expected) {
+    void supports(String id, ParserOptions options, boolean expected) {
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getId()).thenReturn(id);
 
-        boolean result = modelHandler.supports(graphItem);
+        boolean result = modelHandler.supports(graphItem, options);
+
         Assertions.assertThat(result).isEqualTo(expected);
     }
 
@@ -50,7 +52,10 @@ class BaseDataTypeModelHandlerImplTest {
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("rdfs:Class"), subClassOf("schema:Parent")));
 
-        modelHandler.handle(schemaDefinitions, graphItem);
+        ParserOptions options = mockParserOptions(null);
+
+        modelHandler.handle(schemaDefinitions, graphItem, options);
+
         Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:MyType", "schema:Parent");
         Assertions.assertThat(schemaDefinitions.get("schema:MyType"))
                 .extracting(
@@ -88,9 +93,18 @@ class BaseDataTypeModelHandlerImplTest {
 
     private static Stream<Arguments> supports() {
         return Stream.of(
-                Arguments.of("schema:DataType", true),
-                Arguments.of(null, false),
-                Arguments.of("rdfs:OtherClass", false)
+                Arguments.of("schema:DataType", mockParserOptions(false), true),
+                Arguments.of("schema:DataType", mockParserOptions(true), false),
+                Arguments.of(null, mockParserOptions(null), false),
+                Arguments.of("rdfs:OtherClass", mockParserOptions(null), false)
         );
+    }
+
+    private static ParserOptions mockParserOptions(Boolean usedJavaTypes) {
+        ParserOptions options = mock(ParserOptions.class);
+        if (usedJavaTypes != null) {
+            when(options.isUsedJavaTypes()).thenReturn(usedJavaTypes);
+        }
+        return options;
     }
 }

@@ -65,6 +65,17 @@ class JsonLdSerializerImplTest {
     }
 
     @Test
+    void serialize_java_types(@GivenTextResource("/data/ExampleWithJavaTypes.json") String expected) throws JsonLdException {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
+
+        ExampleWithJavaTypes example = ExampleUtils.createExampleWithJavaTypes();
+
+        String result = jsonLdSerializer.serialize(example);
+
+        assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
     void serialize_thing(@GivenTextResource("/data/Thing.json") String expected) throws JsonLdException, MalformedURLException {
         final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
 

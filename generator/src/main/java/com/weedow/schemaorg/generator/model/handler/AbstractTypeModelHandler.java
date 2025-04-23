@@ -4,6 +4,7 @@ import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
+import com.weedow.schemaorg.generator.parser.ParserOptions;
 
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Map;
 public abstract class AbstractTypeModelHandler implements ModelHandler {
 
     @Override
-    public void handle(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
+    public void handle(Map<String, Type> schemaDefinitions, GraphItem graphItem, ParserOptions options) {
         final String typeId = ModelUtils.getTypeId(graphItem.getId());
         final Type type = ModelUtils.getType(schemaDefinitions, typeId);
         final String typeName = graphItem.getLabel().getValue();
