@@ -5,6 +5,7 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+@SuppressWarnings("java:S6548")
 public class TimeConverter extends AbstractConverter {
 
     public static final TimeConverter INSTANCE = new TimeConverter();
@@ -20,6 +21,6 @@ public class TimeConverter extends AbstractConverter {
 
     @Override
     public LocalTime getValue(Object source) {
-        return source instanceof LocalTime ? (LocalTime) source : LocalTime.parse(source.toString(), DateTimeFormatter.ISO_TIME);
+        return source instanceof LocalTime localTime ? localTime : LocalTime.parse(source.toString(), DateTimeFormatter.ISO_TIME);
     }
 }

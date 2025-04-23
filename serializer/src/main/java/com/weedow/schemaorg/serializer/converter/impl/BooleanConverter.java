@@ -2,6 +2,7 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+@SuppressWarnings("java:S6548")
 public class BooleanConverter extends AbstractConverter {
 
     public static final String FALSE = "false";
@@ -21,8 +22,8 @@ public class BooleanConverter extends AbstractConverter {
 
     @Override
     public Boolean getValue(Object source) {
-        if (source instanceof Boolean) {
-            return (Boolean) source;
+        if (source instanceof Boolean bool) {
+            return bool;
         } else {
             return toBooleanObject(source.toString());
         }

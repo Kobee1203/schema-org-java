@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@SuppressWarnings("java:S6548")
 public class URLConverter extends AbstractConverter {
 
     private static final Logger LOG = LoggerFactory.getLogger(URLConverter.class);
@@ -25,7 +26,7 @@ public class URLConverter extends AbstractConverter {
     @Override
     public URL getValue(Object source) {
         try {
-            return source instanceof URL ? (URL) source : new URL(source.toString());
+            return source instanceof URL url ? url : new URL(source.toString());
         } catch (MalformedURLException e) {
             LOG.warn("Could not create URL from {}", source);
             return null;

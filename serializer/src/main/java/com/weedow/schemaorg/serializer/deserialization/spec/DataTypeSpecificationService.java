@@ -8,6 +8,7 @@ import com.weedow.schemaorg.serializer.deserialization.datatype.*;
 
 import java.util.*;
 
+@SuppressWarnings("java:S6548")
 public class DataTypeSpecificationService {
 
     private static final List<DataTypeSpecification> DATA_TYPES = Arrays.asList(
@@ -33,9 +34,9 @@ public class DataTypeSpecificationService {
 
     private DataTypeSpecificationService() {
         DATA_TYPES.forEach(dataTypeSpecification -> {
-            this.dataTypeNames.add(dataTypeSpecification.getDataTypeName());
-            this.deserializers.put(dataTypeSpecification.getDataTypeName(), dataTypeSpecification.getDeserializerFunction());
-            this.converters.add(dataTypeSpecification.getConverter());
+            this.dataTypeNames.add(dataTypeSpecification.dataTypeName());
+            this.deserializers.put(dataTypeSpecification.dataTypeName(), dataTypeSpecification.deserializerFunction());
+            this.converters.add(dataTypeSpecification.converter());
         });
     }
 

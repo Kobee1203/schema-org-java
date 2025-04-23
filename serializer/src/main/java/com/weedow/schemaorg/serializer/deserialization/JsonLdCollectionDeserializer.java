@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.serializer.deserialization;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.*;
@@ -39,7 +40,15 @@ public class JsonLdCollectionDeserializer extends StdDeserializer<List<?>> {
             return deserializeWithType(p);
         } else if (singleValueDeserializer != null) {
             ClassNameIdResolver typeIdResolver = ClassNameIdResolver.construct(contentType, config, config.getPolymorphicTypeValidator());
-            TypeDeserializer asPropertyTypeDeserializer = new AsPropertyTypeDeserializer(contentType, typeIdResolver, typeDeserializer.getPropertyName(), false, ctxt.constructType(typeDeserializer.getDefaultImpl()));
+            TypeDeserializer asPropertyTypeDeserializer = new AsPropertyTypeDeserializer(
+                    contentType,
+                    typeIdResolver,
+                    typeDeserializer.getPropertyName(),
+                    false,
+                    ctxt.constructType(typeDeserializer.getDefaultImpl()),
+                    JsonTypeInfo.As.PROPERTY,
+                    true
+            );
             // Use Arrays.asList because we may need to replace the value in the list, and Arrays.asList(...) allows calling the List.set(index, Object) method. See DeserializerPostProcessorImpl
             // noinspection ArraysAsListWithZeroOrOneArgument
             return Arrays.asList(singleValueDeserializer.deserializeWithType(p, ctxt, asPropertyTypeDeserializer));
