@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ConversionServiceImpl implements ConversionService {
@@ -45,33 +44,10 @@ public class ConversionServiceImpl implements ConversionService {
     /**
      * Key for use with the converter cache.
      */
-    private static final class ConverterCacheKey implements Comparable<ConverterCacheKey> {
-
-        private final Class<?> sourceType;
-        private final Class<?> targetType;
-
-        public ConverterCacheKey(Class<?> sourceType, Class<?> targetType) {
-            this.sourceType = sourceType;
-            this.targetType = targetType;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            ConverterCacheKey that = (ConverterCacheKey) o;
-            return Objects.equals(sourceType, that.sourceType) && Objects.equals(targetType, that.targetType);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(sourceType, targetType);
-        }
-
-        @Override
-        public String toString() {
-            return ("ConverterCacheKey [sourceType = " + this.sourceType + ", targetType = " + this.targetType + "]");
-        }
+    private record ConverterCacheKey(
+            Class<?> sourceType,
+            Class<?> targetType
+    ) implements Comparable<ConverterCacheKey> {
 
         @Override
         public int compareTo(ConverterCacheKey other) {

@@ -2,6 +2,7 @@ package com.weedow.schemaorg.generator.model.field;
 
 import com.jparams.verifier.tostring.ToStringVerifier;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.ScanOption;
 import org.junit.jupiter.api.Test;
 
 class FieldVerifierTest {
@@ -9,8 +10,7 @@ class FieldVerifierTest {
     @Test
     void equalsContract() {
         EqualsVerifier
-                .forPackage(getClass().getPackageName())
-                .except(FieldUtils.class)
+                .forPackage(getClass().getPackageName(), ScanOption.except(FieldUtils.class))
                 .verify();
     }
 

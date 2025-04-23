@@ -52,7 +52,7 @@ class SchemaDefinitionReaderImplTest {
                 );
         Assertions.assertThat(schemaDefinition.getGraph()).hasSize(2805);
 
-        Assertions.assertThat(filter(schemaDefinition, graphItem -> graphItem instanceof DefaultItem)).hasSize(466);
+        Assertions.assertThat(filter(schemaDefinition, DefaultItem.class::isInstance)).hasSize(466);
         // Example with one DefaultItem
         Assertions.assertThat(filter(schemaDefinition, graphItem -> "schema:OriginalMediaContent".equals(graphItem.getId())))
                 .extracting("class", "id", "types", "comment", "label", "domainIncludes", "rangeIncludes", "supersededBy", "subClassOf", "partOf", "source")
@@ -79,7 +79,7 @@ class SchemaDefinitionReaderImplTest {
                         )
                 );
 
-        Assertions.assertThat(filter(schemaDefinition, graphItem -> graphItem instanceof ClassItem)).hasSize(887);
+        Assertions.assertThat(filter(schemaDefinition, ClassItem.class::isInstance)).hasSize(887);
         // Example with ClassItems
         Assertions.assertThat(filter(schemaDefinition, graphItem -> "schema:StatusEnumeration".equals(graphItem.getId())))
                 .extracting("class", "id", "types", "comment", "label", "domainIncludes", "rangeIncludes", "supersededBy", "subClassOf", "partOf", "source")
@@ -179,7 +179,7 @@ class SchemaDefinitionReaderImplTest {
                         )
                 );
 
-        Assertions.assertThat(filter(schemaDefinition, graphItem -> graphItem instanceof PropertyItem)).hasSize(1452);
+        Assertions.assertThat(filter(schemaDefinition, PropertyItem.class::isInstance)).hasSize(1452);
         // Example with PropertyItems
         Assertions.assertThat(filter(schemaDefinition, graphItem -> "schema:season".equals(graphItem.getId())))
                 .extracting("class", "id", "types", "comment", "label", "domainIncludes", "rangeIncludes", "supersededBy", "subClassOf", "partOf", "source")

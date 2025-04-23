@@ -35,14 +35,14 @@ public class ContainsHelper implements Helper<Object> {
 
         boolean result = false;
         if (!options.isFalsy(context)) {
-            if (context instanceof Collection) {
-                result = ((Collection<?>) context).contains(value);
-            } else if (context instanceof Iterable) {
-                result = contains((Iterable<?>) context, value);
+            if (context instanceof Collection<?> coll) {
+                result = coll.contains(value);
+            } else if (context instanceof Iterable<?> it) {
+                result = contains(it, value);
             } else if (context.getClass().isArray()) {
                 result = contains((Object[]) context, value);
-            } else if (context instanceof String) {
-                result = ((String) context).contains(value.toString());
+            } else if (context instanceof String contextAsString) {
+                result = contextAsString.contains(value.toString());
             }
         }
 

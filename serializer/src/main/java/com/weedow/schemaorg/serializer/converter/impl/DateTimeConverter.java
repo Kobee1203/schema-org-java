@@ -5,6 +5,7 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+@SuppressWarnings("java:S6548")
 public class DateTimeConverter extends AbstractConverter {
 
     public static final DateTimeConverter INSTANCE = new DateTimeConverter();
