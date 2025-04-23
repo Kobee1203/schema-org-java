@@ -18,6 +18,6 @@ public class FloatConverter extends AbstractConverter {
 
     @Override
     public Float getValue(Object source) {
-        return source instanceof Float ? (Float) source : Float.valueOf(source.toString());
+        return source instanceof Float value ? value : Float.valueOf(source.toString());
     }
 }

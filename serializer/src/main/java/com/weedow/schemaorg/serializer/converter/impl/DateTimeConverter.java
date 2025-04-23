@@ -21,6 +21,6 @@ public class DateTimeConverter extends AbstractConverter {
 
     @Override
     public LocalDateTime getValue(Object source) {
-        return source instanceof LocalDateTime ? (LocalDateTime) source : LocalDateTime.parse(source.toString(), DateTimeFormatter.ISO_DATE_TIME);
+        return source instanceof LocalDateTime localDateTime ? localDateTime : LocalDateTime.parse(source.toString(), DateTimeFormatter.ISO_DATE_TIME);
     }
 }

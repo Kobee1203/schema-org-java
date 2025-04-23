@@ -18,6 +18,6 @@ public class NumberConverter extends AbstractConverter {
 
     @Override
     public Number getValue(Object source) {
-        return source instanceof Number ? (Number) source : Double.valueOf(source.toString());
+        return source instanceof Number value ? value : Double.valueOf(source.toString());
     }
 }

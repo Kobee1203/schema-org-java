@@ -18,6 +18,6 @@ public class IntegerConverter extends AbstractConverter {
 
     @Override
     public Integer getValue(Object source) {
-        return source instanceof Integer ? (Integer) source : Integer.valueOf(source.toString());
+        return source instanceof Integer value ? value : Integer.valueOf(source.toString());
     }
 }
