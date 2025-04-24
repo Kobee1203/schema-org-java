@@ -73,7 +73,7 @@
         <json-unit-assertj.version>4.1.0</json-unit-assertj.version>
         <system-stubs-jupiter.version>2.1.8</system-stubs-jupiter.version>
         <logcaptor.version>2.11.0</logcaptor.version>
-        <inject-resources-junit-jupiter.version>0.3.3</inject-resources-junit-jupiter.version>
+        <inject-resources-junit-jupiter.version>1.0.0</inject-resources-junit-jupiter.version>
 
         <!-- Plugins -->
         <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
