@@ -10,6 +10,54 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+## [0.8.0]
+
+### Added
+
+- [generator, maven-plugin] Add option to use direct Java data-types [#181](https://github.com/Kobee1203/schema-org-java/issues/181)
+- [generator] Add CompleteHandler to process a code when type generation is complete
+
+### Changed
+
+- Bump lombok from 1.18.26 to 1.18.38 
+- Bump logback-classic from 1.5.6 to 1.5.18 
+- Bump jackson from 2.17.2 tp 2.18.3 
+- Bump handlebars-helpers from 4.3.1 to 4.4.0 
+- Bump commons-cli from 1.5.0 to 1.9.0
+- Bump junit-jupiter-engine from 5.11.0 to 5.12.2
+- Bump assertj-core from 3.24.2 to 3.27.3
+- Bump mockito-junit-jupiter from 5.3.1 to 5.17.0
+- Bump to-string-verifier from 1.4.8 to 3.19.3
+- Bump json-unit-assertj from 3.4.1 to 4.1.0
+- Bump system-stubs-jupiter from 2.0.2 to 2.1.8
+- Bump logcaptor from 2.9.0 to 2.11.0
+- Bump inject-resources-junit-jupiter from 0.3.2 to 1.0.0
+- Bump org.apache.maven:maven-core from 3.9.7 to 3.9.9
+- Bump org.apache.maven.plugins:maven-failsafe-plugin from 3.2.5 to 3.5.3
+- Bump maven-dependency-plugin from 3.8.0 to 3.8.1
+- Bump maven-javadoc-plugin from 3.5.0 to 3.11.2
+- Bump maven-compiler-plugin from 3.11.0 to 3.14.0
+- Bump maven-source-plugin from 3.2.1 to 3.3.1
+- Bump maven-surefire-plugin from 3.2.5 to 3.5.3
+- Bump maven-release-plugin from 3.0.0 to 3.1.1
+- Bump maven-jxr-plugin from 3.3.0 to 3.6.0
+- Bump org.apache.maven.plugins:maven-plugin-plugin from 3.15.0 to 3.15.1
+- Bump org.apache.maven.plugins:maven-site-plugin from 3.20.0 to 3.21.0
+- Bump maven-project-info-reports-plugin from 3.4.3 to 3.9.0
+- Bump org.sonarsource.scanner.maven:sonar-maven-plugin from 3.9.1.2184 to 5.1.0.4751
+- Bump jacoco-maven-plugin from 0.8.12 to 0.8.13
+- Bump nexus-staging-maven-plugin from 1.6.13 to 1.7.0
+- Bump org.simplify4u.plugins:sign-maven-plugin from 1.0.1 to 1.1.0
+
+
+- Updated documentation
+- [generator] Replace System.exit(0) by a simple return and prevent SecurityManager issue in unit tests with Java 17 or greater
+- Use the 'sonar.token' property instead of 'sonar.login' property that is deprecated
+
+### Fixed
+
+- Fix Sonar issues
+
 ## [0.7.0] - 2024-09-23
 
 ### Changed
