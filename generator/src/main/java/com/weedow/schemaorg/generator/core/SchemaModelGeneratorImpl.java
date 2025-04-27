@@ -2,6 +2,7 @@ package com.weedow.schemaorg.generator.core;
 
 import com.weedow.schemaorg.commons.generator.GeneratorConstants;
 import com.weedow.schemaorg.commons.model.*;
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.stream.StreamService;
@@ -105,7 +106,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
                     })
                     .forEach(type -> {
                         if (!type.isUsedJavaType()) {
-                            if (type.getId().equals("schema:DataType")) {
+                            if (type.getId().equals(SchemaConstants.SCHEMA_DATA_TYPE)) {
                                 generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
                             } else if (ModelUtils.isDataType(type.getId())) {
                                 generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);

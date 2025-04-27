@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core.filter;
 
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
@@ -19,7 +20,7 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
         if (modelIds != null && !modelIds.isEmpty()) {
             filteredSchemaDefinitions = modelIds.stream()
                     // Fix model id (format 'schema:xxx')
-                    .map(modelId -> modelId.contains(":") ? modelId : "schema:" + modelId)
+                    .map(modelId -> modelId.contains(":") ? modelId : SchemaConstants.SCHEMA_PREFIX + modelId)
                     // Filter existing models, skip models not found
                     .filter(schemaDefinitions::containsKey)
                     .flatMap(modelId -> {

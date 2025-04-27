@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model.handler;
 
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
@@ -27,7 +28,7 @@ public abstract class AbstractTypeModelHandler implements ModelHandler {
             subClassOf
                     .stream()
                     .map(SubClassOf::getId)
-                    .filter(id -> !"rdfs:Class".equals(id))
+                    .filter(id -> !SchemaConstants.RDFS_CLASS.equals(id))
                     .forEach(id -> type.addParent(ModelUtils.getType(schemaDefinitions, ModelUtils.getTypeId(id))));
         }
     }

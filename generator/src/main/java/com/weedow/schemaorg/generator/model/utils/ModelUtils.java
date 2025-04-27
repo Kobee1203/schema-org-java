@@ -1,5 +1,7 @@
 package com.weedow.schemaorg.generator.model.utils;
 
+import com.weedow.schemaorg.commons.model.SchemaDataType;
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.PartOf;
@@ -14,26 +16,24 @@ import java.util.stream.Collectors;
 
 public final class ModelUtils {
 
-    private static final String SCHEMA_DATA_TYPE = "schema:DataType";
-
     private static final Map<String, String> DATA_TYPE_MAPPING = Map.of(
-            SCHEMA_DATA_TYPE, "-",
-            "schema:Boolean", "java.lang.Boolean",
-            "schema:Text", "java.lang.String",
-            "schema:URL", "java.net.URL",
-            "schema:Number", "java.lang.Number",
-            "schema:Integer", "java.lang.Integer",
-            "schema:Float", "java.lang.Float",
-            "schema:Date", "java.time.LocalDate",
-            "schema:Time", "java.time.LocalTime",
-            "schema:DateTime", "java.time.LocalDateTime"
+            SchemaConstants.SCHEMA_DATA_TYPE, "-",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.BOOLEAN.getName(), "java.lang.Boolean",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TEXT.getName(), "java.lang.String",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.URL.getName(), "java.net.URL",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.NUMBER.getName(), "java.lang.Number",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.INTEGER.getName(), "java.lang.Integer",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.FLOAT.getName(), "java.lang.Float",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE.getName(), "java.time.LocalDate",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TIME.getName(), "java.time.LocalTime",
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE_TIME.getName(), "java.time.LocalDateTime"
     );
 
     private ModelUtils() {
     }
 
     public static String getJavaType(String typeId, String defaultValue) {
-        return !SCHEMA_DATA_TYPE.equals(typeId) ? DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue) : defaultValue;
+        return !SchemaConstants.SCHEMA_DATA_TYPE.equals(typeId) ? DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue) : defaultValue;
     }
 
     public static boolean isDataType(String typeId) {
@@ -59,7 +59,7 @@ public final class ModelUtils {
     }
 
     public static String getTypeId(String typeId) {
-        return typeId.equals("rdfs:Class") ? "schema:Class" : typeId;
+        return typeId.equals(SchemaConstants.RDFS_CLASS) ? "schema:Class" : typeId;
     }
 
     public static List<String> getSource(GraphItem graphItem) {

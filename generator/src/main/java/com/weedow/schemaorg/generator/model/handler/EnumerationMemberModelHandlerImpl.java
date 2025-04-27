@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model.handler;
 
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
@@ -13,7 +14,7 @@ public class EnumerationMemberModelHandlerImpl implements ModelHandler {
     @Override
     public boolean supports(GraphItem graphItem, ParserOptions options) {
         final List<String> types = graphItem.getTypes();
-        return types.stream().allMatch(s -> s.startsWith("schema:")) && !types.contains("schema:DataType");
+        return types.stream().allMatch(s -> s.startsWith(SchemaConstants.SCHEMA_PREFIX)) && !types.contains(SchemaConstants.SCHEMA_DATA_TYPE);
     }
 
     @Override

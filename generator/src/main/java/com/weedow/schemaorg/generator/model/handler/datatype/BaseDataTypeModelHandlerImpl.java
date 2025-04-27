@@ -1,6 +1,7 @@
 package com.weedow.schemaorg.generator.model.handler.datatype;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.BaseType;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.AbstractTypeModelHandler;
@@ -15,7 +16,7 @@ public class BaseDataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
     @Override
     public boolean supports(GraphItem graphItem, ParserOptions options) {
-        return "schema:DataType".equals(graphItem.getId()) && !options.isUsedJavaTypes();
+        return SchemaConstants.SCHEMA_DATA_TYPE.equals(graphItem.getId()) && !options.isUsedJavaTypes();
     }
 
     @Override

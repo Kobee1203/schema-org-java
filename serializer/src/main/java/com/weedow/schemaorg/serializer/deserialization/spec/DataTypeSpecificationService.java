@@ -1,6 +1,7 @@
 package com.weedow.schemaorg.serializer.deserialization.spec;
 
 import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.weedow.schemaorg.commons.model.SchemaDataType;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.converter.Converter;
 import com.weedow.schemaorg.serializer.converter.impl.*;
@@ -12,18 +13,18 @@ import java.util.*;
 public class DataTypeSpecificationService {
 
     private static final List<DataTypeSpecification> DATA_TYPES = Arrays.asList(
-            new DataTypeSpecification("Boolean", BooleanDeserializer::new, BooleanConverter.INSTANCE),
-            new DataTypeSpecification("Integer", IntegerDeserializer::new, IntegerConverter.INSTANCE),
-            new DataTypeSpecification("Float", FloatDeserializer::new, FloatConverter.INSTANCE),
-            new DataTypeSpecification("Number", NumberDeserializer::new, NumberConverter.INSTANCE),
-            new DataTypeSpecification("Time", TimeDeserializer::new, TimeConverter.INSTANCE),
-            new DataTypeSpecification("Date", DateDeserializer::new, DateConverter.INSTANCE),
-            new DataTypeSpecification("DateTime", DateTimeDeserializer::new, DateTimeConverter.INSTANCE),
-            new DataTypeSpecification("URL", URLDeserializer::new, URLConverter.INSTANCE),
-            new DataTypeSpecification("CssSelectorType", CssSelectorTypeDeserializer::new, CssSelectorTypeConverter.INSTANCE),
-            new DataTypeSpecification("XPathType", XPathTypeDeserializer::new, XPathTypeConverter.INSTANCE),
-            new DataTypeSpecification("PronounceableText", PronounceableTextDeserializer::new, PronounceableTextConverter.INSTANCE),
-            new DataTypeSpecification("Text", TextDeserializer::new, TextConverter.INSTANCE)
+            new DataTypeSpecification(SchemaDataType.BOOLEAN, BooleanDeserializer::new, BooleanConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.INTEGER, IntegerDeserializer::new, IntegerConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.FLOAT, FloatDeserializer::new, FloatConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.NUMBER, NumberDeserializer::new, NumberConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.TIME, TimeDeserializer::new, TimeConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.DATE, DateDeserializer::new, DateConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.DATE_TIME, DateTimeDeserializer::new, DateTimeConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.URL, URLDeserializer::new, URLConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.CSS_SELECTOR_TYPE, CssSelectorTypeDeserializer::new, CssSelectorTypeConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.XPATH_TYPE, XPathTypeDeserializer::new, XPathTypeConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.PRONOUNCEABLE_TEXT, PronounceableTextDeserializer::new, PronounceableTextConverter.INSTANCE),
+            new DataTypeSpecification(SchemaDataType.TEXT, TextDeserializer::new, TextConverter.INSTANCE)
     );
 
     private static final DataTypeSpecificationService INSTANCE = new DataTypeSpecificationService();
@@ -34,8 +35,10 @@ public class DataTypeSpecificationService {
 
     private DataTypeSpecificationService() {
         DATA_TYPES.forEach(dataTypeSpecification -> {
-            this.dataTypeNames.add(dataTypeSpecification.dataTypeName());
-            this.deserializers.put(dataTypeSpecification.dataTypeName(), dataTypeSpecification.deserializerFunction());
+            final String dataTypeName = dataTypeSpecification.dataType().getName();
+
+            this.dataTypeNames.add(dataTypeName);
+            this.deserializers.put(dataTypeName, dataTypeSpecification.deserializerFunction());
             this.converters.add(dataTypeSpecification.converter());
         });
     }
