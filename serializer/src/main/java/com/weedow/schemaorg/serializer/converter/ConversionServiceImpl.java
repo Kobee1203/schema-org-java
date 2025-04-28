@@ -1,7 +1,7 @@
 package com.weedow.schemaorg.serializer.converter;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
-import com.weedow.schemaorg.serializer.deserialization.spec.DataTypeSpecificationService;
+import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.deserialization.datatype.EnumDeserializer;
-import com.weedow.schemaorg.serializer.deserialization.spec.DataTypeSpecificationService;
+import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
 import com.weedow.schemaorg.serializer.utils.SerializerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +43,9 @@ public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier
         final Class<?> rawClass = type.getRawClass();
         if (JsonLdDataType.class.isAssignableFrom(rawClass)) {
             return cache.computeIfAbsent(rawClass, clazz -> {
-                JsonDeserializer<?> des = DataTypeSpecificationService.getInstance().getDeserializer(rawClass);
+                @SuppressWarnings("unchecked")
+                Class<? extends JsonLdDataType<?>> dataTypeClass = (Class<? extends JsonLdDataType<?>>) rawClass;
+                JsonDeserializer<?> des = DataTypeSpecificationService.getInstance().getDeserializer(dataTypeClass);
                 if (des == null) {
                     LOG.warn("Could not find the Json-LD DataType Deserializer for class {}", rawClass);
                     des = deserializer;

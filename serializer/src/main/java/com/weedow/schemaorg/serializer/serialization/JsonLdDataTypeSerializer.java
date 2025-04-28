@@ -1,48 +1,32 @@
 package com.weedow.schemaorg.serializer.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.weedow.schemaorg.commons.model.JsonLdDataType;
-import com.weedow.schemaorg.serializer.utils.SerializerUtils;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAccessor;
+/**
+ * Annotation to indicate that a custom serializer implements specific JSON-LD DataType serialization.
+ * <p>
+ * This annotation is used to mark serializers that are designed to handle the serialization of
+ * specific JSON-LD DataType implementations within the Schema.org serialization process.
+ * <p>
+ * Serializers annotated with {@code JsonLdDataTypeSerializer} are intended to support the Schema.org
+ * JSON-LD serialization framework and may be registered with mechanisms such as
+ * {@link JsonLdDataTypeSerializerModifier} or similar customization approaches to enhance
+ * the serialization behavior.
+ * <p>
+ * Applicable to custom serializers used with {@code JsonLdDataType} objects.
+ */
+@Target({ElementType.ANNOTATION_TYPE, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface JsonLdDataTypeSerializer {
 
-public class JsonLdDataTypeSerializer extends StdSerializer<JsonLdDataType<?>> {
-
-    public JsonLdDataTypeSerializer() {
-        super(JsonLdDataType.class, false);
-    }
-
-    @Override
-    public void serialize(JsonLdDataType<?> jsonLdDataType, JsonGenerator gen, SerializerProvider provider) throws IOException {
-        final Object dataTypeValue = jsonLdDataType.getValue();
-        final Type dataType = SerializerUtils.getJavaType(jsonLdDataType);
-        if (Boolean.class.equals(dataType)) {
-            gen.writeBoolean((Boolean) dataTypeValue);
-        } else if (Number.class.isAssignableFrom((Class<?>) dataType)) {
-            gen.writeNumber(dataTypeValue.toString());
-        } else if (LocalDateTime.class.isAssignableFrom((Class<?>) dataType)) {
-            gen.writeString(DateTimeFormatter.ISO_DATE_TIME.format((TemporalAccessor) dataTypeValue));
-        } else if (LocalDate.class.isAssignableFrom((Class<?>) dataType)) {
-            gen.writeString(DateTimeFormatter.ISO_DATE.format((TemporalAccessor) dataTypeValue));
-        } else if (LocalTime.class.isAssignableFrom((Class<?>) dataType)) {
-            gen.writeString(DateTimeFormatter.ISO_TIME.format((TemporalAccessor) dataTypeValue));
-        } else { // Handle String type and unknown types as String value
-            gen.writeString(dataTypeValue.toString());
-        }
-    }
-
-    @Override
-    public void serializeWithType(JsonLdDataType<?> value, JsonGenerator gen, SerializerProvider provider, TypeSerializer typeSer) throws IOException {
-        serialize(value, gen, provider);
-    }
-
+    /**
+     * Indicates whether the custom serializer strictly handles the exact match of the data type
+     * associated with this serializer.
+     *
+     * @return true if the serializer strictly handles exact type matching; false otherwise.
+     */
+    boolean exactType() default false;
 }

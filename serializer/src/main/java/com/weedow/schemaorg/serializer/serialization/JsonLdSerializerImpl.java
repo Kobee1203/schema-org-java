@@ -9,13 +9,12 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
+import com.weedow.schemaorg.serializer.JsonLdDataTypeModule;
 import com.weedow.schemaorg.serializer.JsonLdConstants;
 import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.JsonLdNodeMixIn;
-import com.weedow.schemaorg.serializer.JsonLdSerializerOptions;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,9 +45,11 @@ public class JsonLdSerializerImpl implements JsonLdSerializer {
                 .enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
-        SimpleModule dataTypeModule = new SimpleModule("JsonLdDataType Module")
-                .addSerializer(new JsonLdDataTypeSerializer());
-        builder.addModule(dataTypeModule);
+        builder.addModule(new JsonLdDataTypeModule());
+
+        if (!options.getModules().isEmpty()) {
+            builder.addModules(options.getModules());
+        }
 
         if (options.isPrettyPrint()) {
             builder.enable(SerializationFeature.INDENT_OUTPUT);

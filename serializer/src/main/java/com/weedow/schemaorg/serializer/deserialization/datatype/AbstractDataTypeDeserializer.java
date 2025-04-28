@@ -16,7 +16,7 @@ public abstract class AbstractDataTypeDeserializer extends AbstractTypeDeseriali
 
     private final transient ConversionService conversionService = new ConversionServiceImpl();
 
-    protected AbstractDataTypeDeserializer(Class<?> clazz) {
+    protected AbstractDataTypeDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);
     }
 
@@ -26,7 +26,7 @@ public abstract class AbstractDataTypeDeserializer extends AbstractTypeDeseriali
     public JsonLdDataType<?> deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         JsonLdDataType<?> jsonLdDataType = null;
         try {
-            jsonLdDataType = conversionService.convert(getValue(p, ctxt), getClazz());
+            jsonLdDataType = conversionService.convert(getValue(p, ctxt), handledType());
         } catch (Exception e) {
             LOG.warn("Could not convert value: {}", e.getMessage());
         }

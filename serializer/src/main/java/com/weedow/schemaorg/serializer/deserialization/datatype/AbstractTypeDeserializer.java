@@ -13,9 +13,10 @@ public abstract class AbstractTypeDeserializer<T> extends StdDeserializer<T> {
         super(clazz);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
-    protected Class<T> getClazz() {
-        return (Class<T>) handledType();
+    public Class<T> handledType() {
+        return (Class<T>) super.handledType();
     }
 
     @Override

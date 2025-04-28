@@ -1,14 +1,15 @@
 package com.weedow.schemaorg.serializer.data;
 
-import org.schema.model.datatype.Boolean;
-import org.schema.model.datatype.Number;
 import org.schema.model.datatype.*;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Float;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
 
+import java.math.BigDecimal;
 import java.net.MalformedURLException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
+import java.nio.file.Paths;
+import java.time.*;
 
 public final class ExampleUtils {
 
@@ -21,8 +22,8 @@ public final class ExampleUtils {
         example.setCssSelectorType(CssSelectorType.of(".css-selector-type"));
         example.setDate(Date.of(LocalDate.of(2022, Month.MARCH, 12)));
         example.setDateTime(DateTime.of(LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30)));
-        example.setAFloat(org.schema.model.datatype.Float.of(12345.67f));
-        example.setInteger(org.schema.model.datatype.Integer.of(12345));
+        example.setAFloat(Float.of(12345.67f));
+        example.setInteger(Integer.of(12345));
         example.setNumber(Number.of(12345.67d));
         example.setPronounceableText(PronounceableText.of("This is my thing."));
         example.setText(Text.of("My Thing"));
@@ -51,6 +52,9 @@ public final class ExampleUtils {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        example.setBigDecimal(new BigDecimal("10.17"));
+        example.setZonedDateTime(ZonedDateTime.of(2025, Month.MARCH.getValue(), 12, 10, 30, 0, 0, ZoneId.of("Z")));
+        example.setPath(Paths.get("/my/path"));
         return example;
     }
 }

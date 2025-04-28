@@ -1,9 +1,10 @@
 package com.weedow.schemaorg.serializer.deserialization;
 
-import io.hosuaby.inject.resources.junit.jupiter.GivenTextResource;
-import io.hosuaby.inject.resources.junit.jupiter.TestWithResources;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
+import com.fasterxml.jackson.databind.ext.NioPathDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdException;
@@ -11,22 +12,24 @@ import com.weedow.schemaorg.serializer.data.Example;
 import com.weedow.schemaorg.serializer.data.ExampleWithJavaTypes;
 import com.weedow.schemaorg.serializer.data.MyDataset;
 import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
+import io.hosuaby.inject.resources.junit.jupiter.GivenTextResource;
+import io.hosuaby.inject.resources.junit.jupiter.TestWithResources;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.Test;
 import org.schema.model.Thing;
+import org.schema.model.datatype.*;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Float;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
-import org.schema.model.datatype.*;
 import org.schema.model.impl.*;
 
+import java.math.BigDecimal;
 import java.net.MalformedURLException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.*;
 import java.util.List;
 import java.util.Map;
 
@@ -75,7 +78,18 @@ class JsonLdDeserializerImplTest {
 
     @Test
     void deserialize_java_types(@GivenTextResource("/data/ExampleWithJavaTypes.json") String json) throws JsonLdException, MalformedURLException {
-        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl(Map.of("ExampleWithJavaTypes", ExampleWithJavaTypes.class));
+        @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+        interface PathMixin {
+        }
+
+        SimpleModule pathModule = new SimpleModule("java.nio.file.Path Module")
+                .addDeserializer(Path.class, new NioPathDeserializer())
+                .setMixInAnnotation(Path.class, PathMixin.class);
+
+        JsonLdDeserializerOptions options = JsonLdDeserializerOptions.builder().module(pathModule).build();
+
+        JsonLdDeserializerImpl jsonLdDeserializer = new JsonLdDeserializerImpl(Map.of("ExampleWithJavaTypes", ExampleWithJavaTypes.class), options);
+
         ExampleWithJavaTypes result = jsonLdDeserializer.deserialize(json);
 
         Assertions.assertThat(result)
@@ -83,13 +97,19 @@ class JsonLdDeserializerImplTest {
                         "context", "id", "bool",
                         "date", "dateTime", "time",
                         "number", "integer", "aFloat",
-                        "text"
+                        "text",
+                        "bigDecimal",
+                        "zonedDateTime",
+                        "path"
                 )
                 .containsExactly(
                         "https://schema.org", null, true,
                         LocalDate.of(2022, Month.MARCH, 12), LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30), LocalTime.of(10, 36, 30),
                         12345.67d, 12345, 12345.67f,
-                        "My Thing"
+                        "My Thing",
+                        new BigDecimal("10.17"),
+                        ZonedDateTime.of(2025, Month.MARCH.getValue(), 12, 10, 30, 0, 0, ZoneId.of("Z")),
+                        Paths.get("/my/path")
                 );
         Assertions.assertThat(result.getUrl()).isEqualTo(new java.net.URL("https://github.com/Kobee1203/schema-org-java"));
     }

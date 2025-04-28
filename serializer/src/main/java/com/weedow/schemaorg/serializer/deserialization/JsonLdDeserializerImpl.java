@@ -10,16 +10,15 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.JsonLdNodeMixIn;
+import com.weedow.schemaorg.serializer.JsonLdDataTypeModule;
 import com.weedow.schemaorg.serializer.deserialization.processor.DeserializerPostProcessorImpl;
 import com.weedow.schemaorg.serializer.deserialization.processor.PostProcessor;
-import com.weedow.schemaorg.serializer.serialization.JsonLdDataTypeSerializer;
 
 import java.util.Collections;
 import java.util.List;
@@ -34,10 +33,18 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
     private final ObjectMapper objectMapper;
 
     public JsonLdDeserializerImpl() {
-        this(Collections.emptyMap());
+        this(JsonLdDeserializerOptions.builder().build());
+    }
+
+    public JsonLdDeserializerImpl(JsonLdDeserializerOptions options) {
+        this(Collections.emptyMap(), options);
     }
 
     public JsonLdDeserializerImpl(String packageName) {
+        this(packageName, JsonLdDeserializerOptions.builder().build());
+    }
+
+    public JsonLdDeserializerImpl(String packageName, JsonLdDeserializerOptions options) {
         this(
                 PackageScanner.getClassesIn(packageName)
                         .stream()
@@ -48,15 +55,20 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
                                     return jsonLdTypeName != null && !jsonLdTypeName.value().isEmpty() ? jsonLdTypeName.value() : clazz.getSimpleName();
                                 },
                                 Function.identity()
-                        ))
+                        )),
+                options
         );
     }
 
     public JsonLdDeserializerImpl(Map<String, Class<?>> otherTypes) {
-        this.objectMapper = objectMapper(otherTypes);
+        this(otherTypes, JsonLdDeserializerOptions.builder().build());
     }
 
-    private static ObjectMapper objectMapper(Map<String, Class<?>> otherTypes) {
+    public JsonLdDeserializerImpl(Map<String, Class<?>> otherTypes, JsonLdDeserializerOptions options) {
+        this.objectMapper = objectMapper(otherTypes, options);
+    }
+
+    private static ObjectMapper objectMapper(Map<String, Class<?>> otherTypes, JsonLdDeserializerOptions options) {
         TypeFactory typeFactory = new JsonLdTypeFactory(otherTypes);
 
         JsonMapper.Builder builder = JsonMapper.builder()
@@ -82,10 +94,11 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
                 .typeFactory(typeFactory)
                 .addMixIn(JsonLdNodeImpl.class, JsonLdNodeMixIn.class);
 
-        SimpleModule dataTypeModule = new SimpleModule("JsonLdDataType Module")
-                .addSerializer(new JsonLdDataTypeSerializer())
-                .setDeserializerModifier(new JsonLdDataTypeDeserializerModifier());
-        builder.addModule(dataTypeModule);
+        builder.addModule(new JsonLdDataTypeModule());
+
+        if (!options.getModules().isEmpty()) {
+            builder.addModules(options.getModules());
+        }
 
         return builder.build();
     }

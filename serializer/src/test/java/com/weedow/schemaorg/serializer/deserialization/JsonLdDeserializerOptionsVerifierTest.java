@@ -1,21 +1,21 @@
-package com.weedow.schemaorg.serializer;
+package com.weedow.schemaorg.serializer.deserialization;
 
 import com.jparams.verifier.tostring.ToStringVerifier;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 
-class JsonLdSerializerOptionsVerifierTest {
+class JsonLdDeserializerOptionsVerifierTest {
 
     @Test
     void equalsContract() {
         EqualsVerifier
                 .simple()
-                .forClass(JsonLdSerializerOptions.class)
+                .forClass(JsonLdDeserializerOptions.class)
                 .verify();
     }
 
     @Test
     void toStringContract() {
-        ToStringVerifier.forClass(JsonLdSerializerOptions.class).verify();
+        ToStringVerifier.forClass(JsonLdDeserializerOptions.class).verify();
     }
 }

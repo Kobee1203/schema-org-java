@@ -1,19 +1,11 @@
 package com.weedow.schemaorg.serializer.deserialization.datatype;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-
-import java.io.IOException;
+import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
 @SuppressWarnings("java:S110")
-public class CssSelectorTypeDeserializer extends AbstractDataTypeDeserializer {
+public class CssSelectorTypeDeserializer extends TextDeserializer {
 
-    public CssSelectorTypeDeserializer(Class<?> clazz) {
+    public CssSelectorTypeDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);
-    }
-
-    @Override
-    protected Object getValue(JsonParser p, DeserializationContext ctxt) throws IOException {
-        return p.getValueAsString();
     }
 }
