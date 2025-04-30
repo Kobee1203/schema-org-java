@@ -7,7 +7,7 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import java.io.IOException;
 
 @SuppressWarnings("java:S110")
-public class URLDeserializer extends AbstractDataTypeDeserializer {
+public class URLDeserializer extends AbstractDataTypeDeserializer<JsonLdDataType<String>> {
 
     public URLDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);

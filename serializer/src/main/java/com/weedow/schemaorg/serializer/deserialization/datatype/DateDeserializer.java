@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @SuppressWarnings("java:S110")
-public class DateDeserializer extends AbstractDataTypeDeserializer {
+public class DateDeserializer extends AbstractDataTypeDeserializer<JsonLdDataType<LocalDate>> {
 
     public DateDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);

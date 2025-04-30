@@ -12,6 +12,7 @@ import com.weedow.schemaorg.serializer.data.Example;
 import com.weedow.schemaorg.serializer.data.ExampleWithJavaTypes;
 import com.weedow.schemaorg.serializer.data.MyDataset;
 import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
+import com.weedow.schemaorg.serializer.data.deserializers.*;
 import io.hosuaby.inject.resources.junit.jupiter.GivenTextResource;
 import io.hosuaby.inject.resources.junit.jupiter.TestWithResources;
 import org.assertj.core.api.Assertions;
@@ -77,6 +78,41 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
+    void deserialize_all_data_types_with_custom_deserializers(@GivenTextResource("/data/Example_custom_serializers.json") String json) throws JsonLdException {
+        final SimpleModule module = new SimpleModule()
+                .addDeserializer(Boolean.class, new CustomBooleanDeserializer())
+                .addDeserializer(CssSelectorType.class, new CustomCssSelectorTypeDeserializer())
+                .addDeserializer(Date.class, new CustomDateDeserializer())
+                .addDeserializer(DateTime.class, new CustomDateTimeDeserializer())
+                .addDeserializer(Time.class, new CustomTimeDeserializer())
+                .addDeserializer(Number.class, new CustomNumberDeserializer())
+                .addDeserializer(Integer.class, new CustomIntegerDeserializer())
+                .addDeserializer(Float.class, new CustomFloatDeserializer())
+                .addDeserializer(PronounceableText.class, new CustomPronounceableTextDeserializer())
+                .addDeserializer(Text.class, new CustomTextDeserializer());
+        final JsonLdDeserializerOptions options = JsonLdDeserializerOptions.builder()
+                .module(module)
+                .build();
+
+        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl(Map.of("Example", Example.class), options);
+        Example result = jsonLdDeserializer.deserialize(json);
+
+        Assertions.assertThat(result)
+                .extracting(
+                        "context", "id", "bool.value",
+                        "date.value", "dateTime.value", "time.value",
+                        "number.value", "integer.value", "aFloat.value",
+                        "text.value", "pronounceableText.value", "url.value", "xPathType.value", "cssSelectorType.value"
+                )
+                .containsExactly(
+                        "https://schema.org", null, true,
+                        LocalDate.of(2022, Month.MARCH, 12), LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30), LocalTime.of(10, 36, 30),
+                        12345.67d, 12345, 12345.67f,
+                        "My Thing", "This is my thing.", "https://github.com/Kobee1203/schema-org-java", "/xpath/example/title", ".css-selector-type"
+                );
+    }
+
+    @Test
     void deserialize_java_types(@GivenTextResource("/data/ExampleWithJavaTypes.json") String json) throws JsonLdException, MalformedURLException {
         @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
         interface PathMixin {
@@ -87,6 +123,58 @@ class JsonLdDeserializerImplTest {
                 .setMixInAnnotation(Path.class, PathMixin.class);
 
         JsonLdDeserializerOptions options = JsonLdDeserializerOptions.builder().module(pathModule).build();
+
+        JsonLdDeserializerImpl jsonLdDeserializer = new JsonLdDeserializerImpl(Map.of("ExampleWithJavaTypes", ExampleWithJavaTypes.class), options);
+
+        ExampleWithJavaTypes result = jsonLdDeserializer.deserialize(json);
+
+        Assertions.assertThat(result)
+                .extracting(
+                        "context", "id", "bool",
+                        "date", "dateTime", "time",
+                        "number", "integer", "aFloat",
+                        "text",
+                        "bigDecimal",
+                        "zonedDateTime",
+                        "path"
+                )
+                .containsExactly(
+                        "https://schema.org", null, true,
+                        LocalDate.of(2022, Month.MARCH, 12), LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30), LocalTime.of(10, 36, 30),
+                        12345.67d, 12345, 12345.67f,
+                        "My Thing",
+                        new BigDecimal("10.17"),
+                        ZonedDateTime.of(2025, Month.MARCH.getValue(), 12, 10, 30, 0, 0, ZoneId.of("Z")),
+                        Paths.get("/my/path")
+                );
+        Assertions.assertThat(result.getUrl()).isEqualTo(new java.net.URL("https://github.com/Kobee1203/schema-org-java"));
+    }
+
+
+    @Test
+    void serialize_java_types_with_custom_deserializers(@GivenTextResource("/data/ExampleWithJavaTypes_custom_serializers.json") String json) throws JsonLdException, MalformedURLException {
+        @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+        interface PathMixin {
+        }
+
+        SimpleModule pathModule = new SimpleModule("java.nio.file.Path Module")
+                .addDeserializer(Path.class, new NioPathDeserializer())
+                .setMixInAnnotation(Path.class, PathMixin.class);
+
+        final SimpleModule module = new SimpleModule()
+                .addDeserializer(java.lang.Boolean.class, new JavaBooleanDeserializer())
+                .addDeserializer(LocalDate.class, new JavaDateDeserializer())
+                .addDeserializer(LocalDateTime.class, new JavaDateTimeDeserializer())
+                .addDeserializer(LocalTime.class, new JavaTimeDeserializer())
+                .addDeserializer(java.lang.Number.class, new JavaNumberDeserializer())
+                .addDeserializer(java.lang.Integer.class, new JavaIntegerDeserializer())
+                .addDeserializer(java.lang.Float.class, new JavaFloatDeserializer())
+                .addDeserializer(java.lang.String.class, new JavaTextDeserializer());
+
+        JsonLdDeserializerOptions options = JsonLdDeserializerOptions.builder()
+                .module(pathModule)
+                .module(module)
+                .build();
 
         JsonLdDeserializerImpl jsonLdDeserializer = new JsonLdDeserializerImpl(Map.of("ExampleWithJavaTypes", ExampleWithJavaTypes.class), options);
 

@@ -15,8 +15,8 @@ public abstract class AbstractTypeDeserializer<T> extends StdDeserializer<T> {
 
     @Override
     @SuppressWarnings("unchecked")
-    public Class<T> handledType() {
-        return (Class<T>) super.handledType();
+    public Class<? extends T> handledType() {
+        return (Class<? extends T>) super.handledType();
     }
 
     @Override

@@ -43,6 +43,11 @@ public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier
         final Class<?> rawClass = type.getRawClass();
         if (JsonLdDataType.class.isAssignableFrom(rawClass)) {
             return cache.computeIfAbsent(rawClass, clazz -> {
+                JsonLdDataTypeDeserializer jsonLdDataTypeDeserializer = deserializer.getClass().getAnnotation(JsonLdDataTypeDeserializer.class);
+                if (jsonLdDataTypeDeserializer != null) {
+                    return deserializer;
+                }
+
                 @SuppressWarnings("unchecked")
                 Class<? extends JsonLdDataType<?>> dataTypeClass = (Class<? extends JsonLdDataType<?>>) rawClass;
                 JsonDeserializer<?> des = DataTypeSpecificationService.getInstance().getDeserializer(dataTypeClass);

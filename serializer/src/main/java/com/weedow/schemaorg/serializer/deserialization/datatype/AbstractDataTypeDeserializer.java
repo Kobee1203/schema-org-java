@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-public abstract class AbstractDataTypeDeserializer extends AbstractTypeDeserializer<JsonLdDataType<?>> {
+public abstract class AbstractDataTypeDeserializer<T extends JsonLdDataType<?>> extends AbstractTypeDeserializer<T> {
 
     private static final Logger LOG = LoggerFactory.getLogger(AbstractDataTypeDeserializer.class);
 
@@ -23,8 +23,8 @@ public abstract class AbstractDataTypeDeserializer extends AbstractTypeDeseriali
     protected abstract Object getValue(JsonParser p, DeserializationContext ctxt) throws IOException;
 
     @Override
-    public JsonLdDataType<?> deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
-        JsonLdDataType<?> jsonLdDataType = null;
+    public T deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
+        T jsonLdDataType = null;
         try {
             jsonLdDataType = conversionService.convert(getValue(p, ctxt), handledType());
         } catch (Exception e) {

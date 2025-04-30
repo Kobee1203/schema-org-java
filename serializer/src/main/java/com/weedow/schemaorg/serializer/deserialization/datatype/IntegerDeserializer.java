@@ -7,7 +7,7 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import java.io.IOException;
 
 @SuppressWarnings("java:S110")
-public class IntegerDeserializer extends AbstractDataTypeDeserializer {
+public class IntegerDeserializer extends AbstractDataTypeDeserializer<JsonLdDataType<Integer>> {
 
     public IntegerDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);

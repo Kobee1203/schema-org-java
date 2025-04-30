@@ -7,7 +7,7 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import java.io.IOException;
 
 @SuppressWarnings("java:S110")
-public class FloatDeserializer extends AbstractDataTypeDeserializer {
+public class FloatDeserializer extends AbstractDataTypeDeserializer<JsonLdDataType<Float>> {
 
     public FloatDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);
