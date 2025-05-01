@@ -24,8 +24,9 @@ public class DataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
         final Type type = getType(schemaDefinitions, graphItem);
 
-        String javaType = ModelUtils.getJavaType(type.getId(), null);
-        if(options.isUsedJavaTypes()) {
+        final String javaType = ModelUtils.getJavaType(type.getId(), options.getCustomDataTypes(), null);
+
+        if (options.isUsedJavaTypes()) {
             type.setName(javaType);
             type.setUsedJavaType(true);
         } else {

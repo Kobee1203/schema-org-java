@@ -18,22 +18,30 @@ public final class ModelUtils {
 
     private static final Map<String, String> DATA_TYPE_MAPPING = Map.of(
             SchemaConstants.SCHEMA_DATA_TYPE, "-",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.BOOLEAN.getName(), "java.lang.Boolean",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TEXT.getName(), "java.lang.String",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.URL.getName(), "java.net.URL",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.NUMBER.getName(), "java.lang.Number",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.INTEGER.getName(), "java.lang.Integer",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.FLOAT.getName(), "java.lang.Float",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE.getName(), "java.time.LocalDate",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TIME.getName(), "java.time.LocalTime",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE_TIME.getName(), "java.time.LocalDateTime"
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.BOOLEAN.getName(), java.lang.Boolean.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TEXT.getName(), java.lang.String.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.URL.getName(), java.net.URL.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.NUMBER.getName(), java.lang.Number.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.INTEGER.getName(), java.lang.Integer.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.FLOAT.getName(), java.lang.Float.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE.getName(), java.time.LocalDate.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TIME.getName(), java.time.LocalTime.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE_TIME.getName(), java.time.LocalDateTime.class.getName()
     );
 
     private ModelUtils() {
     }
 
-    public static String getJavaType(String typeId, String defaultValue) {
-        return !SchemaConstants.SCHEMA_DATA_TYPE.equals(typeId) ? DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue) : defaultValue;
+    public static String getJavaType(String typeId, Map<String, String> customDataTypes, String defaultValue) {
+        if (SchemaConstants.SCHEMA_DATA_TYPE.equals(typeId)) {
+            return defaultValue;
+        }
+
+        if (customDataTypes != null && customDataTypes.containsKey(typeId)) {
+            return customDataTypes.get(typeId);
+        }
+
+        return DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue);
     }
 
     public static boolean isDataType(String typeId) {

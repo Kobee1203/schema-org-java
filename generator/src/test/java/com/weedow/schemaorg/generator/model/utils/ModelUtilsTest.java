@@ -11,6 +11,10 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.time.ZonedDateTime;
+import java.time.temporal.Temporal;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +43,37 @@ class ModelUtilsTest {
             "unknown, null"
     }, nullValues = "null")
     void getJavaType(String typeId, String expected) {
-        Assertions.assertThat(ModelUtils.getJavaType(typeId, null)).isEqualTo(expected);
+        Assertions.assertThat(ModelUtils.getJavaType(typeId, null, null)).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "schema:DataType, null",
+            "schema:Boolean, boolean",
+            "schema:Text, java.lang.CharSequence",
+            "schema:URL, java.lang.String",
+            "schema:Number, java.math.BigDecimal",
+            "schema:Integer, java.math.BigInteger",
+            "schema:Float, java.lang.Double",
+            "schema:Date, java.time.temporal.Temporal",
+            "schema:Time, java.time.temporal.Temporal",
+            "schema:DateTime, java.time.ZonedDateTime",
+            "unknown, null"
+    }, nullValues = "null")
+    void getJavaType_when_customDataTypes_is_defined(String typeId, String expected) {
+        Map<String, String> customDataTypes = Map.of(
+                "schema:DataType", String.class.getName(),
+                "schema:Boolean", "boolean",
+                "schema:Text", CharSequence.class.getName(),
+                "schema:URL", String.class.getName(),
+                "schema:Number", BigDecimal.class.getName(),
+                "schema:Integer", BigInteger.class.getName(),
+                "schema:Float", Double.class.getName(),
+                "schema:Date", Temporal.class.getName(),
+                "schema:Time", Temporal.class.getName(),
+                "schema:DateTime", ZonedDateTime.class.getName()
+        );
+        Assertions.assertThat(ModelUtils.getJavaType(typeId, customDataTypes, null)).isEqualTo(expected);
     }
 
     @ParameterizedTest

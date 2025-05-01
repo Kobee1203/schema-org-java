@@ -12,7 +12,7 @@ import {{this}};
 public class {{this.name}}{{#if this.parents}} extends {{#each this.parents}}{{this.name}}{{#eq this.name "DataType"}}<{{../this.javaType}}>{{/eq}}{{#not @last}}, {{/not}}{{/each}}{{/if}} {
 
     {{this.name}}({{this.javaType}} value) {
-        super(value{{#eq this.name "URL"}}.toString(){{/eq}});
+        super(value{{#if this.stringifiable}}.toString(){{/if}});
     }
 
     public static {{this.name}} of({{this.javaType}} value) {

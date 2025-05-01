@@ -1,6 +1,7 @@
 package com.weedow.schemaorg.generator.parser;
 
 import com.weedow.schemaorg.commons.utils.ResourceUtils;
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
@@ -13,6 +14,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SchemaModelParserImpl implements SchemaModelParser {
 
@@ -34,7 +36,27 @@ public class SchemaModelParserImpl implements SchemaModelParser {
     public Map<String, Type> parse(ParserOptions options) {
         Map<String, Type> schemaDefinitions = new HashMap<>();
 
-        if(options.isUsedJavaTypes()) {
+        if (options.getCustomDataTypes() != null) {
+            String v = options.getCustomDataTypes().entrySet().stream()
+                    .map(entry -> entry.getKey() + "=" + entry.getValue())
+                    .collect(Collectors.joining(", "));
+            LOG.info("Custom data Types configured: {}", v);
+
+            options.setCustomDataTypes(
+                    options.getCustomDataTypes()
+                            .entrySet()
+                            .stream()
+                            .collect(Collectors.toMap(
+                                    entry -> {
+                                        final String key = entry.getKey();
+                                        return key.contains(":") ? key : SchemaConstants.SCHEMA_PREFIX + key;
+                                    },
+                                    Map.Entry::getValue
+                            ))
+            );
+        }
+
+        if (options.isUsedJavaTypes()) {
             LOG.info("Java types are used instead of Schema.org Data Types");
         }
 

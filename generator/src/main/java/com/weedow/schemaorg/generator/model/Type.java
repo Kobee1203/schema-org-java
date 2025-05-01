@@ -17,7 +17,9 @@ public final class Type {
 
     private String javaType;
 
-    private boolean usedJavaType = false;
+    private boolean usedJavaType;
+
+    private boolean stringifiable;
 
     private String name;
 

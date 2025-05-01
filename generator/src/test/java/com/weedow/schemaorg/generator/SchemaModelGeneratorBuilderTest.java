@@ -17,10 +17,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.time.ZonedDateTime;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 class SchemaModelGeneratorBuilderTest {
@@ -35,7 +33,7 @@ class SchemaModelGeneratorBuilderTest {
     @Test
     @Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
     void generate_all() {
-        Map<Path, List<String>> dataMap = generateAndVerify(null, null, null, false);
+        Map<Path, List<String>> dataMap = generateAndVerify(null, null, null, false, null);
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(13);
@@ -45,34 +43,54 @@ class SchemaModelGeneratorBuilderTest {
 
     @Test
     void generate_specific_models() {
+        final String packageName = "spec";
         List<String> models = List.of("Thing");
 
-        Map<Path, List<String>> dataMap = generateAndVerify(models, "spec", null, false);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, null, false, null);
 
         Assertions.assertThat(dataMap).hasSize(3);
-        Assertions.assertThat(dataMap.get(Path.of("spec", "model", "datatype"))).hasSize(11);
-        Assertions.assertThat(dataMap.get(Path.of("spec", "model"))).hasSize(205);
-        Assertions.assertThat(dataMap.get(Path.of("spec", "model", "impl"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "datatype"))).hasSize(11);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(205);
+    }
+
+    @Test
+    void generate_specific_models_with_custom_data_types() {
+        final String packageName = "spec_custom";
+        List<String> models = List.of("Thing");
+        Map<String, String> customDataTypes = Map.of(
+                "schema:DateTime", ZonedDateTime.class.getName(),
+                "XPathType", javax.xml.xpath.XPath.class.getName()
+        );
+
+        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, null, false, customDataTypes);
+
+        Assertions.assertThat(dataMap).hasSize(3);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "datatype"))).hasSize(11);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(205);
     }
 
     @Test
     void generate_with_java_types() {
+        final String packageName = "javatypes";
         List<String> models = List.of("Example");
 
-        Map<Path, List<String>> dataMap = generateAndVerify(models, "javatypes", "classpath:data/example.jsonld", true);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, "classpath:data/example.jsonld", true, null);
 
         Assertions.assertThat(dataMap).hasSize(2);
-        Assertions.assertThat(dataMap.get(Path.of("javatypes", "model"))).hasSize(1);
-        Assertions.assertThat(dataMap.get(Path.of("javatypes", "model", "impl"))).hasSize(1);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(1);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(1);
     }
 
-    private Map<Path, List<String>> generateAndVerify(List<String> models, String packageName, String schemaResource, boolean usedJavaTypes) {
+    private Map<Path, List<String>> generateAndVerify(List<String> models, String packageName, String schemaResource, boolean usedJavaTypes, Map<String, String> customDataTypes) {
         final Map<Path, List<String>> dataMap = new ConcurrentHashMap<>();
 
         final ParserOptions parserOptions = new ParserOptions()
                 .setSchemaVersion(null)
                 .setSchemaResource(schemaResource)
-                .setUsedJavaTypes(usedJavaTypes);
+                .setUsedJavaTypes(usedJavaTypes)
+                .setCustomDataTypes(customDataTypes);
 
         final GeneratorOptions generatorOptions = new GeneratorOptions();
         generatorOptions.setModels(models);

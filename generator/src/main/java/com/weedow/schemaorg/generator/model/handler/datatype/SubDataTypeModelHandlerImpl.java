@@ -27,14 +27,18 @@ public class SubDataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
         final Type type = getType(schemaDefinitions, graphItem);
 
-        final String parentJavaType = ModelUtils.getJavaType(type.getParents().get(0).getId(), null);
-        final String javaType = ModelUtils.getJavaType(type.getId(), parentJavaType);
+        final String parentJavaType = !type.getParents().isEmpty() ? ModelUtils.getJavaType(type.getParents().get(0).getId(), options.getCustomDataTypes(), null) : null;
+        final String javaType = ModelUtils.getJavaType(type.getId(), options.getCustomDataTypes(), parentJavaType);
+
+        type.setJavaType(javaType);
 
         if (options.isUsedJavaTypes()) {
             type.setName(javaType);
             type.setUsedJavaType(true);
-        } else {
-            type.setJavaType(javaType);
+        }
+
+        if(String.class.getName().equals(parentJavaType) && !parentJavaType.equals(javaType)) {
+            type.setStringifiable(true);
         }
     }
 }

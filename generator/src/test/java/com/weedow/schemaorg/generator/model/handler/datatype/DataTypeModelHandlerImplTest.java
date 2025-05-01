@@ -54,6 +54,7 @@ class DataTypeModelHandlerImplTest {
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("rdfs:Class"), subClassOf("schema:Parent")));
 
         ParserOptions options = mock(ParserOptions.class);
+        when(options.getCustomDataTypes()).thenReturn(Map.of("schema:DateTime", "java.time.ZonedDateTime"));
 
         modelHandler.handle(schemaDefinitions, graphItem, options);
 
@@ -120,6 +121,7 @@ class DataTypeModelHandlerImplTest {
 
         ParserOptions options = mock(ParserOptions.class);
         when(options.isUsedJavaTypes()).thenReturn(true);
+        when(options.getCustomDataTypes()).thenReturn(Map.of("schema:DateTime", "java.time.ZonedDateTime"));
 
         modelHandler.handle(schemaDefinitions, graphItem, options);
 
@@ -167,14 +169,16 @@ class DataTypeModelHandlerImplTest {
     private static Stream<Arguments> handle() {
         return Stream.of(
                 Arguments.of("schema:MyType", "MyType", null),
-                Arguments.of("schema:Text", "Text", "java.lang.String")
+                Arguments.of("schema:Text", "Text", "java.lang.String"),
+                Arguments.of("schema:DateTime", "DateTime", "java.time.ZonedDateTime")
         );
     }
 
     private static Stream<Arguments> handle_with_java_types() {
         return Stream.of(
                 Arguments.of("schema:MyType", "MyType", null),
-                Arguments.of("schema:Text", "Text", "java.lang.String")
+                Arguments.of("schema:Text", "Text", "java.lang.String"),
+                Arguments.of("schema:DateTime", "DateTime", "java.time.ZonedDateTime")
         );
     }
 }
