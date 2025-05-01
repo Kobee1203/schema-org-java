@@ -60,7 +60,7 @@
         <!-- Dependencies -->
         <lombok.version>1.18.38</lombok.version>
         <logback-classic.version>1.5.18</logback-classic.version>
-        <jackson.version>2.18.3</jackson.version>
+        <jackson.version>2.19.0</jackson.version>
         <handlebars-helpers.version>4.4.0</handlebars-helpers.version>
         <commons-cli.version>1.9.0</commons-cli.version>
 
