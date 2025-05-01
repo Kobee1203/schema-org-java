@@ -12,7 +12,6 @@ import javax.lang.model.SourceVersion;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public final class ModelUtils {
 
@@ -59,7 +58,7 @@ public final class ModelUtils {
 
     public static List<Type> getPropertyTypes(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
         final List<RangeIncludes> rangeIncludes = graphItem.getRangeIncludes();
-        return rangeIncludes != null ? rangeIncludes.stream().map(rangIncludes -> getType(schemaDefinitions, rangIncludes.getId())).collect(Collectors.toList()) : Collections.emptyList();
+        return rangeIncludes != null ? rangeIncludes.stream().map(rangIncludes -> getType(schemaDefinitions, rangIncludes.getId())).toList() : Collections.emptyList();
     }
 
     public static Type getType(Map<String, Type> schemaDefinitions, String typeId) {
@@ -72,12 +71,12 @@ public final class ModelUtils {
 
     public static List<String> getSource(GraphItem graphItem) {
         final List<Source> source = graphItem.getSource();
-        return source != null ? source.stream().map(Source::getId).collect(Collectors.toList()) : Collections.emptyList();
+        return source != null ? source.stream().map(Source::getId).toList() : Collections.emptyList();
     }
 
     public static List<String> getPartOf(GraphItem graphItem) {
         final List<PartOf> partOf = graphItem.getPartOf();
-        return partOf != null ? partOf.stream().map(PartOf::getId).collect(Collectors.toList()) : Collections.emptyList();
+        return partOf != null ? partOf.stream().map(PartOf::getId).toList() : Collections.emptyList();
     }
 
     public static String getFieldName(String name) {
