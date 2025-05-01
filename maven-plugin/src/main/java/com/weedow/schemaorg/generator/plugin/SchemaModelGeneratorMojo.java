@@ -17,6 +17,7 @@ import org.apache.maven.project.MavenProject;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -58,7 +59,23 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "javaTypes", property = "weedow.schemaorg.generator.maven.plugin.javaTypes", defaultValue = "false")
     private boolean javaTypes;
 
-    /** List of models to be generated. If not defined, all models are be generated. */
+    /**
+     * Configures Java types to be used for Schema.org data types during code generation.
+     *
+     * <p>Maven plugin configuration example:
+     * <pre>
+     * &lt;configuration&gt;
+     *     &lt;customDataTypes&gt;
+     *         &lt;DateTime&gt;java.time.ZonedDateTime&lt;/DateTime&gt;
+     *     &lt;/customDataTypes&gt;
+     * &lt;/configuration&gt;
+     * </pre>
+     */
+    @SuppressWarnings("unused")
+    @Parameter(name = "customDataTypes", property = "weedow.schemaorg.generator.maven.plugin.customDataTypes")
+    private Map<String, String> customDataTypes;
+
+    /** List of models to be generated. If not defined, all models will be generated. */
     @SuppressWarnings("unused")
     @Parameter(name = "models", property = "weedow.schemaorg.generator.maven.plugin.models")
     private List<String> models;
@@ -121,7 +138,8 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         ParserOptions parserOptions = new ParserOptions()
                 .setSchemaResource(schemaResource)
                 .setSchemaVersion(schemaVersion)
-                .setUsedJavaTypes(javaTypes);
+                .setUsedJavaTypes(javaTypes)
+                .setCustomDataTypes(customDataTypes);
 
         GeneratorOptions generatorOptions = new GeneratorOptions()
                 .setOutputFolder(output.toPath())

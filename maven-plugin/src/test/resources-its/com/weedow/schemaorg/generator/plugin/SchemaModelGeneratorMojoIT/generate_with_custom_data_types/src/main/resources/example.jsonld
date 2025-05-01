@@ -1,0 +1,350 @@
+{
+  "@context": {
+    "brick": "https://brickschema.org/schema/Brick#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcam": "http://purl.org/dc/dcam/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "org": "http://www.w3.org/ns/org#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "prof": "http://www.w3.org/ns/dx/prof/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "time": "http://www.w3.org/2006/time#",
+    "vann": "http://purl.org/vocab/vann/",
+    "void": "http://rdfs.org/ns/void#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:DataType",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The basic data types such as Integers, Strings, etc.",
+      "rdfs:label": "DataType",
+      "rdfs:subClassOf": {
+        "@id": "rdfs:Class"
+      }
+    },
+    {
+      "@id": "schema:Boolean",
+      "@type": [
+        "rdfs:Class",
+        "schema:DataType"
+      ],
+      "rdfs:comment": "Boolean: True or False.",
+      "rdfs:label": "Boolean"
+    },
+    {
+      "@id": "schema:Number",
+      "@type": [
+        "rdfs:Class",
+        "schema:DataType"
+      ],
+      "rdfs:comment": "Data type: Number.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+      "rdfs:label": "Number"
+    },
+    {
+      "@id": "schema:Integer",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Data type: Integer.",
+      "rdfs:label": "Integer",
+      "rdfs:subClassOf": {
+        "@id": "schema:Number"
+      }
+    },
+    {
+      "@id": "schema:Float",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Data type: Floating number.",
+      "rdfs:label": "Float",
+      "rdfs:subClassOf": {
+        "@id": "schema:Number"
+      }
+    },
+    {
+      "@id": "schema:Time",
+      "@type": [
+        "schema:DataType",
+        "rdfs:Class"
+      ],
+      "rdfs:comment": "A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see [XML schema for details](http://www.w3.org/TR/xmlschema-2/#time)).",
+      "rdfs:label": "Time"
+    },
+    {
+      "@id": "schema:Date",
+      "@type": [
+        "schema:DataType",
+        "rdfs:Class"
+      ],
+      "rdfs:comment": "A date value in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+      "rdfs:label": "Date"
+    },
+    {
+      "@id": "schema:DateTime",
+      "@type": [
+        "schema:DataType",
+        "rdfs:Class"
+      ],
+      "rdfs:comment": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601).",
+      "rdfs:label": "DateTime"
+    },
+    {
+      "@id": "schema:Text",
+      "@type": [
+        "schema:DataType",
+        "rdfs:Class"
+      ],
+      "rdfs:comment": "Data type: Text.",
+      "rdfs:label": "Text"
+    },
+    {
+      "@id": "schema:URL",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Data type: URL.",
+      "rdfs:label": "URL",
+      "rdfs:subClassOf": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:CssSelectorType",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Text representing a CSS selector.",
+      "rdfs:label": "CssSelectorType",
+      "rdfs:subClassOf": {
+        "@id": "schema:Text"
+      },
+      "schema:isPartOf": {
+        "@id": "https://pending.schema.org"
+      },
+      "schema:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1672"
+      }
+    },
+    {
+      "@id": "schema:XPathType",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Text representing an XPath (typically but not necessarily version 1.0).",
+      "rdfs:label": "XPathType",
+      "rdfs:subClassOf": {
+        "@id": "schema:Text"
+      },
+      "schema:isPartOf": {
+        "@id": "https://pending.schema.org"
+      },
+      "schema:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1672"
+      }
+    },
+    {
+      "@id": "schema:PronounceableText",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Data type: PronounceableText.",
+      "rdfs:label": "PronounceableText",
+      "rdfs:subClassOf": {
+        "@id": "schema:Text"
+      },
+      "schema:isPartOf": {
+        "@id": "https://pending.schema.org"
+      },
+      "schema:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/2108"
+      }
+    },
+    {
+      "@id": "schema:Example",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Example class.",
+      "rdfs:label": "Example"
+    },
+    {
+      "@id": "schema:bool",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "bool",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Boolean"
+        }
+      ]
+    },
+    {
+      "@id": "schema:cssSelectorType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "cssSelectorType",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CssSelectorType"
+        }
+      ]
+    },
+    {
+      "@id": "schema:date",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "date",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    },
+    {
+      "@id": "schema:dateTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "dateTime",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "schema:float",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "float",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Float"
+        }
+      ]
+    },
+    {
+      "@id": "schema:integer",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "integer",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Integer"
+        }
+      ]
+    },
+    {
+      "@id": "schema:number",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "number",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "schema:pronounceableText",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "pronounceableText",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PronounceableText"
+        }
+      ]
+    },
+    {
+      "@id": "schema:text",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "text",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PronounceableText"
+        }
+      ]
+    },
+    {
+      "@id": "schema:time",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "time",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Time"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:xPathType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "",
+      "rdfs:label": "xPathType",
+      "schema:domainIncludes": {
+        "@id": "schema:Example"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:XPathType"
+        }
+      ]
+    }
+  ]
+}
