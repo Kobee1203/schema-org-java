@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ExampleWithJavaTypes",
+  "aFloat": "12345.67",
+  "bigDecimal": 10.17,
+  "bool": "1",
+  "date": "20220312",
+  "dateTime": "Sat, 12 Mar 2022 10:36:30 GMT",
+  "integer": 12345.0,
+  "number": 12345.67,
+  "path": "file:///my/path",
+  "text": "[My Thing]",
+  "time": "103630",
+  "url": "https://github.com/Kobee1203/schema-org-java",
+  "zonedDateTime": "2025-03-12T10:30:00Z"
+}

@@ -118,10 +118,10 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         // Copy common models if the artifact 'schema-org-java-commons' is not present in the current project
         boolean copyCommonModels = !isCommonModelsPresent();
 
-        ParserOptions parserOptions = new ParserOptions();
-        parserOptions.setSchemaResource(schemaResource);
-        parserOptions.setSchemaVersion(schemaVersion);
-        parserOptions.setUsedJavaTypes(javaTypes);
+        ParserOptions parserOptions = new ParserOptions()
+                .setSchemaResource(schemaResource)
+                .setSchemaVersion(schemaVersion)
+                .setUsedJavaTypes(javaTypes);
 
         GeneratorOptions generatorOptions = new GeneratorOptions()
                 .setOutputFolder(output.toPath())

@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model.handler.datatype;
 
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.AbstractTypeModelHandler;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
@@ -16,7 +17,7 @@ public class SubDataTypeModelHandlerImpl extends AbstractTypeModelHandler {
     public boolean supports(GraphItem graphItem, ParserOptions options) {
         final List<String> types = graphItem.getTypes();
         final List<SubClassOf> subClassOf = graphItem.getSubClassOf();
-        return types.contains("rdfs:Class") && !types.contains("schema:DataType")
+        return types.contains(SchemaConstants.RDFS_CLASS) && !types.contains(SchemaConstants.SCHEMA_DATA_TYPE)
                 && subClassOf != null && subClassOf.stream().anyMatch(subClass -> ModelUtils.isDataType(subClass.getId()));
     }
 

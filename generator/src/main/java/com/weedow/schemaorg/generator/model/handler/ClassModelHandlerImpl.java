@@ -2,6 +2,7 @@ package com.weedow.schemaorg.generator.model.handler;
 
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.BaseType;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.model.Type;
@@ -21,8 +22,8 @@ public class ClassModelHandlerImpl extends AbstractTypeModelHandler {
         final String id = graphItem.getId();
         final List<String> types = graphItem.getTypes();
         final List<SubClassOf> subClassOf = graphItem.getSubClassOf();
-        return !"schema:DataType".equals(id)
-                && types.contains("rdfs:Class") && !types.contains("schema:DataType")
+        return !SchemaConstants.SCHEMA_DATA_TYPE.equals(id)
+                && types.contains(SchemaConstants.RDFS_CLASS) && !types.contains(SchemaConstants.SCHEMA_DATA_TYPE)
                 && (subClassOf == null || subClassOf.stream().noneMatch(subClass -> ModelUtils.isDataType(subClass.getId())));
     }
 

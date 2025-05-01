@@ -5,7 +5,7 @@ import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.serializer.converter.ConversionService;
 import com.weedow.schemaorg.serializer.converter.ConversionServiceImpl;
-import com.weedow.schemaorg.serializer.deserialization.spec.DataTypeSpecificationService;
+import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
 import com.weedow.schemaorg.serializer.utils.SerializerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

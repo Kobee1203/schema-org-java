@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model;
 
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -97,7 +98,7 @@ public final class Type {
 
     private static boolean isEnumerationType(List<Type> parents) {
         for (Type parent : parents) {
-            if ("schema:Enumeration".equals(parent.getId()) || isEnumerationType(parent.getParents())) {
+            if (SchemaConstants.SCHEMA_ENUMERATION.equals(parent.getId()) || isEnumerationType(parent.getParents())) {
                 return true;
             }
         }

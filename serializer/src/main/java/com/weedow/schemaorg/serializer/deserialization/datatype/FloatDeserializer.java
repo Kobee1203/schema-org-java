@@ -2,13 +2,14 @@ package com.weedow.schemaorg.serializer.deserialization.datatype;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
+import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
 import java.io.IOException;
 
 @SuppressWarnings("java:S110")
-public class FloatDeserializer extends AbstractDataTypeDeserializer {
+public class FloatDeserializer extends AbstractDataTypeDeserializer<JsonLdDataType<Float>> {
 
-    public FloatDeserializer(Class<?> clazz) {
+    public FloatDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);
     }
 

@@ -1,22 +1,24 @@
 package com.weedow.schemaorg.serializer.serialization;
 
-import io.hosuaby.inject.resources.junit.jupiter.GivenTextResource;
-import io.hosuaby.inject.resources.junit.jupiter.TestWithResources;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdException;
-import com.weedow.schemaorg.serializer.JsonLdSerializerOptions;
 import com.weedow.schemaorg.serializer.data.*;
+import com.weedow.schemaorg.serializer.data.serializers.*;
+import io.hosuaby.inject.resources.junit.jupiter.GivenTextResource;
+import io.hosuaby.inject.resources.junit.jupiter.TestWithResources;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.schema.model.*;
+import org.schema.model.datatype.*;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Float;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
-import org.schema.model.datatype.*;
 import org.schema.model.impl.*;
 
 import java.net.MalformedURLException;
@@ -65,8 +67,64 @@ class JsonLdSerializerImplTest {
     }
 
     @Test
+    void serialize_all_data_types_with_custom_serializers(@GivenTextResource("/data/Example_custom_serializers.json") String expected) throws JsonLdException {
+        final SimpleModule module = new SimpleModule()
+                .addSerializer(Boolean.class, new CustomBooleanSerializer())
+                .addSerializer(CssSelectorType.class, new CustomCssSelectorTypeSerializer())
+                .addSerializer(Date.class, new CustomDateSerializer())
+                .addSerializer(DateTime.class, new CustomDateTimeSerializer())
+                .addSerializer(Time.class, new CustomTimeSerializer())
+                .addSerializer(Number.class, new CustomNumberSerializer())
+                .addSerializer(Integer.class, new CustomIntegerSerializer())
+                .addSerializer(Float.class, new CustomFloatSerializer())
+                .addSerializer(PronounceableText.class, new CustomPronounceableTextSerializer())
+                .addSerializer(Text.class, new CustomTextSerializer());
+        final JsonLdSerializerOptions options = JsonLdSerializerOptions.builder()
+                .module(module)
+                .build();
+
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(options);
+
+        Example example = ExampleUtils.createExample();
+
+        String result = jsonLdSerializer.serialize(example);
+
+        assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
     void serialize_java_types(@GivenTextResource("/data/ExampleWithJavaTypes.json") String expected) throws JsonLdException {
         final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
+
+        ExampleWithJavaTypes example = ExampleUtils.createExampleWithJavaTypes();
+
+        String result = jsonLdSerializer.serialize(example);
+
+        assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
+    void serialize_java_types_with_custom_serializers(@GivenTextResource("/data/ExampleWithJavaTypes_custom_serializers.json") String expected) throws JsonLdException {
+        interface ExampleWithJavaTypesMixin {
+
+            @JsonSerialize(using = JavaTextSerializer.class)
+            String getText();
+        }
+
+        final SimpleModule module = new SimpleModule()
+                .addSerializer(java.lang.Boolean.class, new JavaBooleanSerializer())
+                .addSerializer(LocalDate.class, new JavaDateSerializer())
+                .addSerializer(LocalDateTime.class, new JavaDateTimeSerializer())
+                .addSerializer(LocalTime.class, new JavaTimeSerializer())
+                .addSerializer(java.lang.Number.class, new JavaNumberSerializer())
+                .addSerializer(java.lang.Integer.class, new JavaIntegerSerializer())
+                .addSerializer(java.lang.Float.class, new JavaFloatSerializer())
+                .setMixInAnnotation(ExampleWithJavaTypes.class, ExampleWithJavaTypesMixin.class);
+        final JsonLdSerializerOptions options = JsonLdSerializerOptions.builder()
+                .module(module)
+                .build();
+
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(options);
 
         ExampleWithJavaTypes example = ExampleUtils.createExampleWithJavaTypes();
 
@@ -187,8 +245,8 @@ class JsonLdSerializerImplTest {
         example.setCssSelectorType(CssSelectorType.of(".css-selector-type"));
         example.setDate(Date.of(LocalDate.of(2022, Month.MARCH, 12)));
         example.setDateTime(DateTime.of(LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30)));
-        example.setAFloat(org.schema.model.datatype.Float.of(12345.67f));
-        example.setInteger(org.schema.model.datatype.Integer.of(12345));
+        example.setAFloat(Float.of(12345.67f));
+        example.setInteger(Integer.of(12345));
         example.setNumber(Number.of(12345.67d));
         example.setPronounceableText(PronounceableText.of("This is my thing."));
         example.setText(Text.of("My Thing"));

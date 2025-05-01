@@ -90,18 +90,18 @@ public class SchemaModelGeneratorApp {
             List<String> models,
             boolean verboseMode
     ) {
-        ParserOptions parserOptions = new ParserOptions();
-        parserOptions.setSchemaResource(schemaResource);
-        parserOptions.setSchemaVersion(schemaVersion);
-        parserOptions.setUsedJavaTypes(javaTypes);
+        ParserOptions parserOptions = new ParserOptions()
+                .setSchemaResource(schemaResource)
+                .setSchemaVersion(schemaVersion)
+                .setUsedJavaTypes(javaTypes);
 
-        GeneratorOptions generatorOptions = new GeneratorOptions();
-        generatorOptions.setOutputFolder(Path.of(output));
-        generatorOptions.setModelPackage(modelPackage);
-        generatorOptions.setModelImplPackage(modelImplPackage);
-        generatorOptions.setDataTypePackage(dataTypePackage);
-        generatorOptions.setModels(models);
-        generatorOptions.addCompleteHandler(elapsedTime -> LOG.info("Finished: {} s", elapsedTime.toSeconds()));
+        GeneratorOptions generatorOptions = new GeneratorOptions()
+                .setOutputFolder(Path.of(output))
+                .setModelPackage(modelPackage)
+                .setModelImplPackage(modelImplPackage)
+                .setDataTypePackage(dataTypePackage)
+                .setModels(models)
+                .addCompleteHandler(elapsedTime -> LOG.info("Finished: {} s", elapsedTime.toSeconds()));
 
         final SchemaModelGenerator generator = new SchemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)

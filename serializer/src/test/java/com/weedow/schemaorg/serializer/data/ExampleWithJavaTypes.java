@@ -4,6 +4,10 @@ import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import lombok.Data;
 
+import java.math.BigDecimal;
+import java.nio.file.Path;
+import java.time.ZonedDateTime;
+
 @Data
 @JsonLdTypeName("ExampleWithJavaTypes")
 public class ExampleWithJavaTypes extends JsonLdNodeImpl {
@@ -17,4 +21,7 @@ public class ExampleWithJavaTypes extends JsonLdNodeImpl {
     private java.lang.Number number;
     private java.time.LocalTime time;
     private java.net.URL url;
+    private BigDecimal bigDecimal;
+    private ZonedDateTime zonedDateTime;
+    private Path path;
 }
