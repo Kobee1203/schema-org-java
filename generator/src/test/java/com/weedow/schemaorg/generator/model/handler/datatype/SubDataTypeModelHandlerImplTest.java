@@ -4,6 +4,8 @@ import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
+import lombok.Builder;
+import lombok.Value;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -45,22 +47,89 @@ class SubDataTypeModelHandlerImplTest {
     @ParameterizedTest
     @MethodSource
     void handle(boolean usedJavaTypes, String expectedJavaType, String expectedName) {
-        Map<String, Type> schemaDefinitions = new HashMap<>();
-
-        GraphItem graphItem = mock(GraphItem.class);
-        when(graphItem.getId()).thenReturn("schema:XPathType");
-        when(graphItem.getLabel()).thenReturn(label("en", "XPathType"));
-        when(graphItem.getComment()).thenReturn(comment("en", "This is XPathType"));
-        when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
-        when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/1672")));
-        when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("schema:Text")));
-
         ParserOptions options = mock(ParserOptions.class);
         when(options.isUsedJavaTypes()).thenReturn(usedJavaTypes);
 
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+
+        String itemName = "XPathType";
+        GraphItem graphItem = mockGraphItem(itemName);
+
         modelHandler.handle(schemaDefinitions, graphItem, options);
 
-        Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:Text", "schema:XPathType");
+        ExpectedData expectedData = ExpectedData.builder()
+                .itemName(itemName)
+                .usedJavaTypes(usedJavaTypes)
+                .expectedJavaType(expectedJavaType)
+                .expectedName(expectedName)
+                .build();
+        verify(schemaDefinitions, expectedData);
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void handle_parent_item(
+            boolean usedJavaTypes,
+            boolean stringifiable,
+            String itemName,
+            String expectedJavaType,
+            String expectedName,
+            String expectedParentJavaType,
+            String expectedParentName
+    ) {
+        ParserOptions options = mock(ParserOptions.class);
+        when(options.isUsedJavaTypes()).thenReturn(usedJavaTypes);
+
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+
+        GraphItem textGraphItem = mockTextGraphItem();
+        GraphItem xPathTypeGraphItem = mockGraphItem(itemName);
+
+        modelHandler.handle(schemaDefinitions, textGraphItem, options);
+        modelHandler.handle(schemaDefinitions, xPathTypeGraphItem, options);
+
+        ExpectedData expectedData = ExpectedData.builder()
+                .itemName(itemName)
+                .usedJavaTypes(usedJavaTypes)
+                .stringifiable(stringifiable)
+                .expectedJavaType(expectedJavaType)
+                .expectedName(expectedName)
+                .parentUsedJavaTypes(usedJavaTypes)
+                .expectedParentJavaType(expectedParentJavaType)
+                .expectedParentName(expectedParentName)
+                .expectParentComment("This is Text")
+                .build();
+        verify(schemaDefinitions, expectedData);
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void handle_with_customDataTypes(boolean usedJavaTypes, String expectedJavaType, String expectedName) {
+        ParserOptions options = mock(ParserOptions.class);
+        when(options.isUsedJavaTypes()).thenReturn(usedJavaTypes);
+        when(options.getCustomDataTypes()).thenReturn(Map.of(
+                "schema:XPathType", "javax.xml.xpath.XPath",
+                "schema:Text", "java.lang.CharSequence"
+        ));
+
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+
+        String itemName = "XPathType";
+        GraphItem graphItem = mockGraphItem(itemName);
+
+        modelHandler.handle(schemaDefinitions, graphItem, options);
+
+        ExpectedData expectedData = ExpectedData.builder()
+                .itemName(itemName)
+                .usedJavaTypes(usedJavaTypes)
+                .expectedJavaType(expectedJavaType)
+                .expectedName(expectedName)
+                .build();
+        verify(schemaDefinitions, expectedData);
+    }
+
+    private void verify(Map<String, Type> schemaDefinitions, ExpectedData expectedData) {
+        Assertions.assertThat(schemaDefinitions).isNotEmpty().containsOnlyKeys("schema:Text", "schema:" + expectedData.itemName);
         Assertions.assertThat(schemaDefinitions.get("schema:Text"))
                 .extracting(
                         "id", "javaType", "usedJavaType", "name", "description",
@@ -70,28 +139,47 @@ class SubDataTypeModelHandlerImplTest {
                         "partOf", "source"
                 )
                 .containsExactly(
-                        "schema:Text", null, false, null, null,
+                        "schema:Text", expectedData.expectedParentJavaType, expectedData.parentUsedJavaTypes, expectedData.expectedParentName, expectedData.expectParentComment,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(), null,
                         false, Collections.emptyList(),
                         Collections.emptyList(), Collections.emptyList()
                 );
 
-        Assertions.assertThat(schemaDefinitions.get("schema:XPathType"))
+        Assertions.assertThat(schemaDefinitions.get("schema:" + expectedData.itemName))
                 .extracting(
-                        "id", "javaType", "usedJavaType", "name", "description",
+                        "id", "javaType", "usedJavaType", "stringifiable", "name", "description",
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
-                        "schema:XPathType", expectedJavaType, usedJavaTypes, expectedName, "This is XPathType",
+                        "schema:" + expectedData.itemName, expectedData.expectedJavaType, expectedData.usedJavaTypes, expectedData.stringifiable, expectedData.expectedName, "This is " + expectedData.itemName,
                         Collections.emptySet(), Collections.emptySet(),
                         List.of(schemaDefinitions.get("schema:Text")), null,
                         false, Collections.emptyList(),
                         List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/1672")
                 );
+    }
+
+    private static GraphItem mockGraphItem(String itemName) {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getId()).thenReturn("schema:" + itemName);
+        when(graphItem.getLabel()).thenReturn(label("en", itemName));
+        when(graphItem.getComment()).thenReturn(comment("en", "This is " + itemName));
+        when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
+        when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/1672")));
+        when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("schema:Text")));
+        return graphItem;
+    }
+
+    private static GraphItem mockTextGraphItem() {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getId()).thenReturn("schema:Text");
+        when(graphItem.getLabel()).thenReturn(label("en", "Text"));
+        when(graphItem.getComment()).thenReturn(comment("en", "This is Text"));
+        return graphItem;
     }
 
     private static Stream<Arguments> supports() {
@@ -106,8 +194,40 @@ class SubDataTypeModelHandlerImplTest {
 
     private static Stream<Arguments> handle() {
         return Stream.of(
-                Arguments.of(true, null, "java.lang.String"),
+                Arguments.of(true, "java.lang.String", "java.lang.String"),
                 Arguments.of(false, "java.lang.String", "XPathType")
         );
+    }
+
+    private static Stream<Arguments> handle_parent_item() {
+        return Stream.of(
+                Arguments.of(true, false, "XPathType", "java.lang.String", "java.lang.String", "java.lang.String", "java.lang.String"),
+                Arguments.of(true, true, "URL", "java.net.URL", "java.net.URL", "java.lang.String", "java.lang.String"),
+                Arguments.of(false, false, "XPathType", "java.lang.String", "XPathType", "java.lang.String", "Text"),
+                Arguments.of(false, true, "URL", "java.net.URL", "URL", "java.lang.String", "Text")
+        );
+    }
+
+    private static Stream<Arguments> handle_with_customDataTypes() {
+        return Stream.of(
+                Arguments.of(true, "javax.xml.xpath.XPath", "javax.xml.xpath.XPath"),
+                Arguments.of(false, "javax.xml.xpath.XPath", "XPathType")
+        );
+    }
+
+    @Value
+    @Builder
+    private static class ExpectedData {
+        String itemName;
+        boolean usedJavaTypes;
+        boolean stringifiable;
+
+        String expectedJavaType;
+        String expectedName;
+
+        boolean parentUsedJavaTypes;
+        String expectedParentJavaType;
+        String expectedParentName;
+        String expectParentComment;
     }
 }

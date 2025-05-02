@@ -8,8 +8,7 @@ import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.apache.commons.cli.*;
 
 import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class SchemaModelGeneratorApp {
 
@@ -23,6 +22,7 @@ public class SchemaModelGeneratorApp {
     private static final String RESOURCE_OPTION = "resource";
     private static final String VERSION_OPTION = "version";
     private static final String JAVATYPES_OPTION = "javatypes";
+    private static final String CUSTOM_DATATYPES_OPTION = "custom-datatypes";
     private static final String MODELS_OPTION = "models";
     private static final String VERBOSE_OPTION = "verbose";
 
@@ -66,6 +66,21 @@ public class SchemaModelGeneratorApp {
         // Java Types - If true Java types are used instead of schema.org DataTypes
         final boolean javaTypes = line.hasOption(JAVATYPES_OPTION);
 
+        // Custom Data Types - Configures Java types to be used for Schema.org data types during code generation.
+        Map<String, String> customDataTypes = new LinkedHashMap<>();
+        if (line.hasOption(CUSTOM_DATATYPES_OPTION)) {
+            String[] values = line.getOptionValues(CUSTOM_DATATYPES_OPTION);
+            for (String mapping : values) {
+                int separatorIndex = mapping.indexOf('=');
+                if (separatorIndex > 0 && separatorIndex < mapping.length() - 1) {
+                    String type = mapping.substring(0, separatorIndex);
+                    String javaType = mapping.substring(separatorIndex + 1);
+                    customDataTypes.put(type.trim(), javaType.trim());
+                }
+            }
+        }
+
+
         // Schema resource location - if null use the 'version' option
         final String schemaResource = line.getOptionValue(RESOURCE_OPTION);
 
@@ -75,7 +90,18 @@ public class SchemaModelGeneratorApp {
         // Verbose
         final boolean verboseMode = line.hasOption(VERBOSE_OPTION);
 
-        generate(output, modelPackage, modelImplPackage, dataTypePackage, schemaResource, schemaVersion, javaTypes, models, verboseMode);
+        generate(
+                output,
+                modelPackage,
+                modelImplPackage,
+                dataTypePackage,
+                schemaResource,
+                schemaVersion,
+                javaTypes,
+                customDataTypes,
+                models,
+                verboseMode
+        );
     }
 
     @SuppressWarnings("java:S107")
@@ -87,13 +113,15 @@ public class SchemaModelGeneratorApp {
             String schemaResource,
             String schemaVersion,
             boolean javaTypes,
+            Map<String, String> customDataTypes,
             List<String> models,
             boolean verboseMode
     ) {
         ParserOptions parserOptions = new ParserOptions()
                 .setSchemaResource(schemaResource)
                 .setSchemaVersion(schemaVersion)
-                .setUsedJavaTypes(javaTypes);
+                .setUsedJavaTypes(javaTypes)
+                .setCustomDataTypes(customDataTypes);
 
         GeneratorOptions generatorOptions = new GeneratorOptions()
                 .setOutputFolder(Path.of(output))
@@ -180,6 +208,15 @@ public class SchemaModelGeneratorApp {
                 .required(false)
                 .build();
 
+        final Option customDataTypesOption = Option.builder("cd")
+                .longOpt(CUSTOM_DATATYPES_OPTION)
+                .desc("Configures Java types to be used for Schema.org data types during code generation (eg. DateTime=java.time.ZonedDateTime)")
+                .hasArgs()
+                .valueSeparator(' ')
+                .argName("TYPE=JAVA_TYPE")
+                .required(false)
+                .build();
+
         final Option modelOption = Option.builder("m")
                 .longOpt(MODELS_OPTION)
                 .desc("list of models to be generated. If not specified, all models will be generated.")
@@ -203,17 +240,19 @@ public class SchemaModelGeneratorApp {
         }
 
         // All other options
-        options.addOption(outputOption);
-        options.addOption(modelPackageOption);
-        options.addOption(modelImplPackageOption);
-        options.addOption(dataTypePackageOption);
-        options.addOption(outputOption);
-        options.addOption(outputOption);
-        options.addOption(resourceOption);
-        options.addOption(versionOption);
-        options.addOption(javaTypesOption);
-        options.addOption(modelOption);
-        options.addOption(verboseOption);
+        options
+                .addOption(outputOption)
+                .addOption(modelPackageOption)
+                .addOption(modelImplPackageOption)
+                .addOption(dataTypePackageOption)
+                .addOption(outputOption)
+                .addOption(outputOption)
+                .addOption(resourceOption)
+                .addOption(versionOption)
+                .addOption(javaTypesOption)
+                .addOption(customDataTypesOption)
+                .addOption(modelOption)
+                .addOption(verboseOption);
 
         return options;
     }

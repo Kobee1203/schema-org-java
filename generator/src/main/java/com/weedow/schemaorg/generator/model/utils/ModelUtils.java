@@ -12,28 +12,35 @@ import javax.lang.model.SourceVersion;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public final class ModelUtils {
 
     private static final Map<String, String> DATA_TYPE_MAPPING = Map.of(
             SchemaConstants.SCHEMA_DATA_TYPE, "-",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.BOOLEAN.getName(), "java.lang.Boolean",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TEXT.getName(), "java.lang.String",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.URL.getName(), "java.net.URL",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.NUMBER.getName(), "java.lang.Number",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.INTEGER.getName(), "java.lang.Integer",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.FLOAT.getName(), "java.lang.Float",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE.getName(), "java.time.LocalDate",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TIME.getName(), "java.time.LocalTime",
-            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE_TIME.getName(), "java.time.LocalDateTime"
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.BOOLEAN.getName(), java.lang.Boolean.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TEXT.getName(), java.lang.String.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.URL.getName(), java.net.URL.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.NUMBER.getName(), java.lang.Number.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.INTEGER.getName(), java.lang.Integer.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.FLOAT.getName(), java.lang.Float.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE.getName(), java.time.LocalDate.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.TIME.getName(), java.time.LocalTime.class.getName(),
+            SchemaConstants.SCHEMA_PREFIX + SchemaDataType.DATE_TIME.getName(), java.time.LocalDateTime.class.getName()
     );
 
     private ModelUtils() {
     }
 
-    public static String getJavaType(String typeId, String defaultValue) {
-        return !SchemaConstants.SCHEMA_DATA_TYPE.equals(typeId) ? DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue) : defaultValue;
+    public static String getJavaType(String typeId, Map<String, String> customDataTypes, String defaultValue) {
+        if (SchemaConstants.SCHEMA_DATA_TYPE.equals(typeId)) {
+            return defaultValue;
+        }
+
+        if (customDataTypes != null && customDataTypes.containsKey(typeId)) {
+            return customDataTypes.get(typeId);
+        }
+
+        return DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue);
     }
 
     public static boolean isDataType(String typeId) {
@@ -51,7 +58,7 @@ public final class ModelUtils {
 
     public static List<Type> getPropertyTypes(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
         final List<RangeIncludes> rangeIncludes = graphItem.getRangeIncludes();
-        return rangeIncludes != null ? rangeIncludes.stream().map(rangIncludes -> getType(schemaDefinitions, rangIncludes.getId())).collect(Collectors.toList()) : Collections.emptyList();
+        return rangeIncludes != null ? rangeIncludes.stream().map(rangIncludes -> getType(schemaDefinitions, rangIncludes.getId())).toList() : Collections.emptyList();
     }
 
     public static Type getType(Map<String, Type> schemaDefinitions, String typeId) {
@@ -64,12 +71,12 @@ public final class ModelUtils {
 
     public static List<String> getSource(GraphItem graphItem) {
         final List<Source> source = graphItem.getSource();
-        return source != null ? source.stream().map(Source::getId).collect(Collectors.toList()) : Collections.emptyList();
+        return source != null ? source.stream().map(Source::getId).toList() : Collections.emptyList();
     }
 
     public static List<String> getPartOf(GraphItem graphItem) {
         final List<PartOf> partOf = graphItem.getPartOf();
-        return partOf != null ? partOf.stream().map(PartOf::getId).collect(Collectors.toList()) : Collections.emptyList();
+        return partOf != null ? partOf.stream().map(PartOf::getId).toList() : Collections.emptyList();
     }
 
     public static String getFieldName(String name) {
