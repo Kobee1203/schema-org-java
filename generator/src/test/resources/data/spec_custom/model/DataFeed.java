@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.Thing;
 import spec_custom.model.DataFeedItem;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
 
 /**
  * A single feed providing structured information about one or more entities or topics.
@@ -20,23 +20,23 @@ public interface DataFeed extends Dataset {
     /**
      * An item within a data feed. Data feeds may have many elements.
      *
-     * @return {@link Text} or {@link Thing} or {@link DataFeedItem}
+     * @return {@link DataFeedItem} or {@link Thing} or {@link Text}
      */
     <T> List<T> getDataFeedElementList();
 
     /**
      * An item within a data feed. Data feeds may have many elements.
      *
-     * @return {@link Text} or {@link Thing} or {@link DataFeedItem}
+     * @return {@link DataFeedItem} or {@link Thing} or {@link Text}
      */
     <T> T getDataFeedElement();
 
     /**
      * An item within a data feed. Data feeds may have many elements.
      *
-     * @param dataFeedElement Text value to set.
+     * @param dataFeedElement DataFeedItem value to set.
      */
-    void addDataFeedElement(Text dataFeedElement);
+    void addDataFeedElement(DataFeedItem dataFeedElement);
     /**
      * An item within a data feed. Data feeds may have many elements.
      *
@@ -46,7 +46,7 @@ public interface DataFeed extends Dataset {
     /**
      * An item within a data feed. Data feeds may have many elements.
      *
-     * @param dataFeedElement DataFeedItem value to set.
+     * @param dataFeedElement Text value to set.
      */
-    void addDataFeedElement(DataFeedItem dataFeedElement);
+    void addDataFeedElement(Text dataFeedElement);
 }

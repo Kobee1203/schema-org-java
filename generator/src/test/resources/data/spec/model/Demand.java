@@ -7,343 +7,45 @@ package spec.model;
 
 import java.util.List;
 import spec.model.QuantitativeValue;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Time;
-import spec.model.datatype.Date;
-import spec.model.Organization;
-import spec.model.Person;
-import spec.model.datatype.Text;
-import spec.model.Place;
-import spec.model.GeoShape;
-import spec.model.AdministrativeArea;
 import spec.model.WarrantyPromise;
-import spec.model.ItemAvailability;
-import spec.model.OfferItemCondition;
+import spec.model.datatype.Text;
 import spec.model.datatype.URL;
+import spec.model.Place;
+import spec.model.AdministrativeArea;
+import spec.model.GeoShape;
+import spec.model.DeliveryMethod;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Date;
+import spec.model.BusinessEntityType;
+import spec.model.Person;
+import spec.model.Organization;
+import spec.model.LoanOrCredit;
+import spec.model.PaymentMethod;
 import spec.model.Product;
-import spec.model.Service;
-import spec.model.MenuItem;
-import spec.model.CreativeWork;
 import spec.model.Event;
 import spec.model.AggregateOffer;
 import spec.model.Trip;
-import spec.model.BusinessFunction;
+import spec.model.CreativeWork;
+import spec.model.Service;
+import spec.model.MenuItem;
+import spec.model.ItemAvailability;
 import spec.model.TypeAndQuantityNode;
+import spec.model.OfferItemCondition;
+import spec.model.BusinessFunction;
+import spec.model.datatype.Time;
 import spec.model.PriceSpecification;
-import spec.model.BusinessEntityType;
-import spec.model.PaymentMethod;
-import spec.model.LoanOrCredit;
-import spec.model.DeliveryMethod;
 
 /**
  * A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/Demand">https://schema.org/Demand</a>
  */
 public interface Demand extends Intangible {
 
     /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<QuantitativeValue> getEligibleQuantityList();
-
-    /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    QuantitativeValue getEligibleQuantity();
-
-    /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     *
-     * @param eligibleQuantity QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addEligibleQuantity(QuantitativeValue eligibleQuantity);
-
-    /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<QuantitativeValue> getDeliveryLeadTimeList();
-
-    /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    QuantitativeValue getDeliveryLeadTime();
-
-    /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-     *
-     * @param deliveryLeadTime QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addDeliveryLeadTime(QuantitativeValue deliveryLeadTime);
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Time} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> List<T> getAvailabilityEndsList();
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Time} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> T getAvailabilityEnds();
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addAvailabilityEnds(DateTime availabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds Time value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addAvailabilityEnds(Time availabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addAvailabilityEnds(Date availabilityEnds);
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getSellerList();
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getSeller();
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Organization value to set.
-     */
-    void addSeller(Organization seller);
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Person value to set.
-     */
-    void addSeller(Person seller);
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @return {@link Date} or {@link Time} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getAvailabilityStartsList();
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @return {@link Date} or {@link Time} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getAvailabilityStarts();
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param availabilityStarts Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addAvailabilityStarts(Date availabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param availabilityStarts Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addAvailabilityStarts(Time availabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param availabilityStarts DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addAvailabilityStarts(DateTime availabilityStarts);
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
-     */
-    <T> List<T> getAreaServedList();
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
-     */
-    <T> T getAreaServed();
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
-    void addAreaServed(Text areaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Place value to set.
-     */
-    void addAreaServed(Place areaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed GeoShape value to set.
-     */
-    void addAreaServed(GeoShape areaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed AdministrativeArea value to set.
-     */
-    void addAreaServed(AdministrativeArea areaServed);
-
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<QuantitativeValue> getAdvanceBookingRequirementList();
-
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    QuantitativeValue getAdvanceBookingRequirement();
-
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     *
-     * @param advanceBookingRequirement QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement);
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<Text> getGtin14List();
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    Text getGtin14();
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param gtin14 Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addGtin14(Text gtin14);
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @return {@link WarrantyPromise}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<WarrantyPromise> getWarrantyList();
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @return {@link WarrantyPromise}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    WarrantyPromise getWarranty();
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @param warranty WarrantyPromise value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addWarranty(WarrantyPromise warranty);
-
-    /**
-     * The current approximate inventory level for the item or items.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<QuantitativeValue> getInventoryLevelList();
-
-    /**
-     * The current approximate inventory level for the item or items.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    QuantitativeValue getInventoryLevel();
-
-    /**
-     * The current approximate inventory level for the item or items.
-     *
-     * @param inventoryLevel QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addInventoryLevel(QuantitativeValue inventoryLevel);
-
-    /**
      * The duration for which the given offer is valid.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getEligibleDurationList();
 
@@ -351,7 +53,6 @@ public interface Demand extends Intangible {
      * The duration for which the given offer is valid.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     QuantitativeValue getEligibleDuration();
 
@@ -359,56 +60,37 @@ public interface Demand extends Intangible {
      * The duration for which the given offer is valid.
      *
      * @param eligibleDuration QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addEligibleDuration(QuantitativeValue eligibleDuration);
 
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * The warranty promise(s) included in the offer.
      *
-     * @return {@link ItemAvailability}
+     * @return {@link WarrantyPromise}
      */
-    List<ItemAvailability> getAvailabilityList();
+    List<WarrantyPromise> getWarrantyList();
 
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * The warranty promise(s) included in the offer.
      *
-     * @return {@link ItemAvailability}
+     * @return {@link WarrantyPromise}
      */
-    ItemAvailability getAvailability();
+    WarrantyPromise getWarranty();
 
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * The warranty promise(s) included in the offer.
      *
-     * @param availability ItemAvailability value to set.
+     * @param warranty WarrantyPromise value to set.
      */
-    void addAvailability(ItemAvailability availability);
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    List<OfferItemCondition> getItemConditionList();
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    OfferItemCondition getItemCondition();
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @param itemCondition OfferItemCondition value to set.
-     */
-    void addItemCondition(OfferItemCondition itemCondition);
+    void addWarranty(WarrantyPromise warranty);
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
      * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs (URIs, IRIs, etc.). Details including regular expression examples can be found in, Section 6 of the GS1 URI Syntax specification; see also [schema.org tracking issue](https://github.com/schemaorg/schemaorg/issues/3156#issuecomment-1209522809) for schema.org-specific discussion. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * 
+     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
+     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
      * 
      * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
      *
@@ -421,7 +103,10 @@ public interface Demand extends Intangible {
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
      * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs (URIs, IRIs, etc.). Details including regular expression examples can be found in, Section 6 of the GS1 URI Syntax specification; see also [schema.org tracking issue](https://github.com/schemaorg/schemaorg/issues/3156#issuecomment-1209522809) for schema.org-specific discussion. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * 
+     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
+     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
      * 
      * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
      *
@@ -434,7 +119,10 @@ public interface Demand extends Intangible {
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
      * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs (URIs, IRIs, etc.). Details including regular expression examples can be found in, Section 6 of the GS1 URI Syntax specification; see also [schema.org tracking issue](https://github.com/schemaorg/schemaorg/issues/3156#issuecomment-1209522809) for schema.org-specific discussion. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * 
+     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
+     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
      * 
      * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
      *
@@ -446,7 +134,10 @@ public interface Demand extends Intangible {
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
      * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs (URIs, IRIs, etc.). Details including regular expression examples can be found in, Section 6 of the GS1 URI Syntax specification; see also [schema.org tracking issue](https://github.com/schemaorg/schemaorg/issues/3156#issuecomment-1209522809) for schema.org-specific discussion. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     * 
+     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
+     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
      * 
      * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
      *
@@ -455,87 +146,6 @@ public interface Demand extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     void addGtin(URL gtin);
-
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @return {@link Product} or {@link Service} or {@link MenuItem} or {@link CreativeWork} or {@link Event} or {@link AggregateOffer} or {@link Trip}
-     */
-    <T> List<T> getItemOfferedList();
-
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @return {@link Product} or {@link Service} or {@link MenuItem} or {@link CreativeWork} or {@link Event} or {@link AggregateOffer} or {@link Trip}
-     */
-    <T> T getItemOffered();
-
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @param itemOffered Product value to set.
-     */
-    void addItemOffered(Product itemOffered);
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @param itemOffered Service value to set.
-     */
-    void addItemOffered(Service itemOffered);
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @param itemOffered MenuItem value to set.
-     */
-    void addItemOffered(MenuItem itemOffered);
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @param itemOffered CreativeWork value to set.
-     */
-    void addItemOffered(CreativeWork itemOffered);
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @param itemOffered Event value to set.
-     */
-    void addItemOffered(Event itemOffered);
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @param itemOffered AggregateOffer value to set.
-     */
-    void addItemOffered(AggregateOffer itemOffered);
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @param itemOffered Trip value to set.
-     */
-    void addItemOffered(Trip itemOffered);
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @return {@link BusinessFunction}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<BusinessFunction> getBusinessFunctionList();
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @return {@link BusinessFunction}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    BusinessFunction getBusinessFunction();
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @param businessFunction BusinessFunction value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addBusinessFunction(BusinessFunction businessFunction);
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -559,160 +169,132 @@ public interface Demand extends Intangible {
     void addGtin12(Text gtin12);
 
     /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link QuantitativeValue}
      */
-    <T> List<T> getValidThroughList();
+    List<QuantitativeValue> getDeliveryLeadTimeList();
 
     /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link QuantitativeValue}
      */
-    <T> T getValidThrough();
+    QuantitativeValue getDeliveryLeadTime();
 
     /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
-     * @param validThrough Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param deliveryLeadTime QuantitativeValue value to set.
      */
-    void addValidThrough(Date validThrough);
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addValidThrough(DateTime validThrough);
+    void addDeliveryLeadTime(QuantitativeValue deliveryLeadTime);
 
     /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @return {@link TypeAndQuantityNode}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Text}
      */
-    List<TypeAndQuantityNode> getIncludesObjectList();
+    List<Text> getGtin14List();
 
     /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @return {@link TypeAndQuantityNode}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Text}
      */
-    TypeAndQuantityNode getIncludesObject();
+    Text getGtin14();
 
     /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param includesObject TypeAndQuantityNode value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param gtin14 Text value to set.
      */
-    void addIncludesObject(TypeAndQuantityNode includesObject);
+    void addGtin14(Text gtin14);
 
     /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
+     * The geographic area where a service or offered item is provided.
      *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
      */
-    <T> List<T> getEligibleRegionList();
+    <T> List<T> getAreaServedList();
 
     /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
+     * The geographic area where a service or offered item is provided.
      *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
      */
-    <T> T getEligibleRegion();
+    <T> T getAreaServed();
 
     /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
+     * The geographic area where a service or offered item is provided.
      *
-     * @param eligibleRegion Place value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @param areaServed Place value to set.
      */
-    void addEligibleRegion(Place eligibleRegion);
+    void addAreaServed(Place areaServed);
     /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
+     * The geographic area where a service or offered item is provided.
      *
-     * @param eligibleRegion Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @param areaServed AdministrativeArea value to set.
      */
-    void addEligibleRegion(Text eligibleRegion);
+    void addAreaServed(AdministrativeArea areaServed);
     /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
+     * The geographic area where a service or offered item is provided.
      *
-     * @param eligibleRegion GeoShape value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @param areaServed GeoShape value to set.
      */
-    void addEligibleRegion(GeoShape eligibleRegion);
+    void addAreaServed(GeoShape areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    void addAreaServed(Text areaServed);
 
     /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     * The delivery method(s) available for this offer.
      *
-     * @return {@link Text} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @return {@link DeliveryMethod}
      */
-    <T> List<T> getAsinList();
+    List<DeliveryMethod> getAvailableDeliveryMethodList();
 
     /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     * The delivery method(s) available for this offer.
      *
-     * @return {@link Text} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @return {@link DeliveryMethod}
      */
-    <T> T getAsin();
+    DeliveryMethod getAvailableDeliveryMethod();
 
     /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     * The delivery method(s) available for this offer.
      *
-     * @param asin Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @param availableDeliveryMethod DeliveryMethod value to set.
      */
-    void addAsin(Text asin);
+    void addAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod);
+
     /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     * The current approximate inventory level for the item or items.
      *
-     * @param asin URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @return {@link QuantitativeValue}
      */
-    void addAsin(URL asin);
+    List<QuantitativeValue> getInventoryLevelList();
+
+    /**
+     * The current approximate inventory level for the item or items.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    QuantitativeValue getInventoryLevel();
+
+    /**
+     * The current approximate inventory level for the item or items.
+     *
+     * @param inventoryLevel QuantitativeValue value to set.
+     */
+    void addInventoryLevel(QuantitativeValue inventoryLevel);
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<Text> getGtin8List();
 
@@ -720,7 +302,6 @@ public interface Demand extends Intangible {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     Text getGtin8();
 
@@ -728,15 +309,56 @@ public interface Demand extends Intangible {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin8 Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addGtin8(Text gtin8);
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSkuList();
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     */
+    Text getSku();
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @param sku Text value to set.
+     */
+    void addSku(Text sku);
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getGtin13List();
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     */
+    Text getGtin13();
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param gtin13 Text value to set.
+     */
+    void addGtin13(Text gtin13);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @return {@link Place} or {@link GeoShape} or {@link Text}
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
@@ -746,21 +368,12 @@ public interface Demand extends Intangible {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @return {@link Place} or {@link GeoShape} or {@link Text}
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     <T> T getIneligibleRegion();
 
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param ineligibleRegion Place value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void addIneligibleRegion(Place ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
@@ -779,139 +392,47 @@ public interface Demand extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     void addIneligibleRegion(Text ineligibleRegion);
-
     /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
      *
-     * @return {@link PriceSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param ineligibleRegion Place value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    List<PriceSpecification> getPriceSpecificationList();
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    PriceSpecification getPriceSpecification();
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @param priceSpecification PriceSpecification value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addPriceSpecification(PriceSpecification priceSpecification);
+    void addIneligibleRegion(Place ineligibleRegion);
 
     /**
      * The date when the item becomes valid.
      *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link DateTime} or {@link Date}
      */
     <T> List<T> getValidFromList();
 
     /**
      * The date when the item becomes valid.
      *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link DateTime} or {@link Date}
      */
     <T> T getValidFrom();
 
     /**
      * The date when the item becomes valid.
      *
-     * @param validFrom Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param validFrom DateTime value to set.
      */
-    void addValidFrom(Date validFrom);
+    void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
-     * @param validFrom DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param validFrom Date value to set.
      */
-    void addValidFrom(DateTime validFrom);
-
-    /**
-     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<PriceSpecification> getEligibleTransactionVolumeList();
-
-    /**
-     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    PriceSpecification getEligibleTransactionVolume();
-
-    /**
-     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-     *
-     * @param eligibleTransactionVolume PriceSpecification value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume);
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<Text> getMpnList();
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    Text getMpn();
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @param mpn Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addMpn(Text mpn);
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @return {@link Place}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<Place> getAvailableAtOrFromList();
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @return {@link Place}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    Place getAvailableAtOrFrom();
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @param availableAtOrFrom Place value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addAvailableAtOrFrom(Place availableAtOrFrom);
+    void addValidFrom(Date validFrom);
 
     /**
      * The type(s) of customers for which the given offer is valid.
      *
      * @return {@link BusinessEntityType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<BusinessEntityType> getEligibleCustomerTypeList();
 
@@ -919,7 +440,6 @@ public interface Demand extends Intangible {
      * The type(s) of customers for which the given offer is valid.
      *
      * @return {@link BusinessEntityType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     BusinessEntityType getEligibleCustomerType();
 
@@ -927,39 +447,410 @@ public interface Demand extends Intangible {
      * The type(s) of customers for which the given offer is valid.
      *
      * @param eligibleCustomerType BusinessEntityType value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addEligibleCustomerType(BusinessEntityType eligibleCustomerType);
 
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Person} or {@link Organization}
      */
-    List<Text> getGtin13List();
+    <T> List<T> getSellerList();
 
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Person} or {@link Organization}
      */
-    Text getGtin13();
+    <T> T getSeller();
 
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param gtin13 Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param seller Person value to set.
      */
-    void addGtin13(Text gtin13);
+    void addSeller(Person seller);
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Organization value to set.
+     */
+    void addSeller(Organization seller);
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    <T> List<T> getAcceptedPaymentMethodList();
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    <T> T getAcceptedPaymentMethod();
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    void addAcceptedPaymentMethod(Text acceptedPaymentMethod);
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod LoanOrCredit value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod);
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod PaymentMethod value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod);
+
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @return {@link Product} or {@link Event} or {@link AggregateOffer} or {@link Trip} or {@link CreativeWork} or {@link Service} or {@link MenuItem}
+     */
+    <T> List<T> getItemOfferedList();
+
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @return {@link Product} or {@link Event} or {@link AggregateOffer} or {@link Trip} or {@link CreativeWork} or {@link Service} or {@link MenuItem}
+     */
+    <T> T getItemOffered();
+
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param itemOffered Product value to set.
+     */
+    void addItemOffered(Product itemOffered);
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param itemOffered Event value to set.
+     */
+    void addItemOffered(Event itemOffered);
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param itemOffered AggregateOffer value to set.
+     */
+    void addItemOffered(AggregateOffer itemOffered);
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param itemOffered Trip value to set.
+     */
+    void addItemOffered(Trip itemOffered);
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param itemOffered CreativeWork value to set.
+     */
+    void addItemOffered(CreativeWork itemOffered);
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param itemOffered Service value to set.
+     */
+    void addItemOffered(Service itemOffered);
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param itemOffered MenuItem value to set.
+     */
+    void addItemOffered(MenuItem itemOffered);
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @return {@link ItemAvailability}
+     */
+    List<ItemAvailability> getAvailabilityList();
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @return {@link ItemAvailability}
+     */
+    ItemAvailability getAvailability();
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @param availability ItemAvailability value to set.
+     */
+    void addAvailability(ItemAvailability availability);
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @return {@link TypeAndQuantityNode}
+     */
+    List<TypeAndQuantityNode> getIncludesObjectList();
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @return {@link TypeAndQuantityNode}
+     */
+    TypeAndQuantityNode getIncludesObject();
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @param includesObject TypeAndQuantityNode value to set.
+     */
+    void addIncludesObject(TypeAndQuantityNode includesObject);
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    List<OfferItemCondition> getItemConditionList();
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    OfferItemCondition getItemCondition();
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @param itemCondition OfferItemCondition value to set.
+     */
+    void addItemCondition(OfferItemCondition itemCondition);
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @return {@link BusinessFunction}
+     */
+    List<BusinessFunction> getBusinessFunctionList();
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @return {@link BusinessFunction}
+     */
+    BusinessFunction getBusinessFunction();
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @param businessFunction BusinessFunction value to set.
+     */
+    void addBusinessFunction(BusinessFunction businessFunction);
+
+    /**
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getAdvanceBookingRequirementList();
+
+    /**
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    QuantitativeValue getAdvanceBookingRequirement();
+
+    /**
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     *
+     * @param advanceBookingRequirement QuantitativeValue value to set.
+     */
+    void addAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement);
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getMpnList();
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     */
+    Text getMpn();
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @param mpn Text value to set.
+     */
+    void addMpn(Text mpn);
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getEligibleRegionList();
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> T getEligibleRegion();
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion GeoShape value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addEligibleRegion(GeoShape eligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addEligibleRegion(Text eligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Place value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addEligibleRegion(Place eligibleRegion);
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getAvailabilityStartsList();
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> T getAvailabilityStarts();
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityStarts(DateTime availabilityStarts);
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityStarts(Date availabilityStarts);
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityStarts(Time availabilityStarts);
+
+    /**
+     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     *
+     * @return {@link PriceSpecification}
+     */
+    List<PriceSpecification> getEligibleTransactionVolumeList();
+
+    /**
+     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     *
+     * @return {@link PriceSpecification}
+     */
+    PriceSpecification getEligibleTransactionVolume();
+
+    /**
+     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     *
+     * @param eligibleTransactionVolume PriceSpecification value to set.
+     */
+    void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume);
+
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    <T> List<T> getAsinList();
+
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    <T> T getAsin();
+
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @param asin URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void addAsin(URL asin);
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @param asin Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void addAsin(Text asin);
 
     /**
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<Text> getSerialNumberList();
 
@@ -967,7 +858,6 @@ public interface Demand extends Intangible {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     Text getSerialNumber();
 
@@ -975,86 +865,134 @@ public interface Demand extends Intangible {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @param serialNumber Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addSerialNumber(Text serialNumber);
 
     /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link QuantitativeValue}
      */
-    List<Text> getSkuList();
+    List<QuantitativeValue> getEligibleQuantityList();
 
     /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link QuantitativeValue}
      */
-    Text getSku();
+    QuantitativeValue getEligibleQuantity();
 
     /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @param sku Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param eligibleQuantity QuantitativeValue value to set.
      */
-    void addSku(Text sku);
+    void addEligibleQuantity(QuantitativeValue eligibleQuantity);
 
     /**
-     * The payment method(s) accepted by seller for this offer.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @return {@link PaymentMethod} or {@link LoanOrCredit}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link DateTime} or {@link Date}
      */
-    <T> List<T> getAcceptedPaymentMethodList();
+    <T> List<T> getValidThroughList();
 
     /**
-     * The payment method(s) accepted by seller for this offer.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @return {@link PaymentMethod} or {@link LoanOrCredit}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link DateTime} or {@link Date}
      */
-    <T> T getAcceptedPaymentMethod();
+    <T> T getValidThrough();
 
     /**
-     * The payment method(s) accepted by seller for this offer.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param acceptedPaymentMethod PaymentMethod value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param validThrough DateTime value to set.
      */
-    void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod);
+    void addValidThrough(DateTime validThrough);
     /**
-     * The payment method(s) accepted by seller for this offer.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param acceptedPaymentMethod LoanOrCredit value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param validThrough Date value to set.
      */
-    void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod);
+    void addValidThrough(Date validThrough);
 
     /**
-     * The delivery method(s) available for this offer.
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
-     * @return {@link DeliveryMethod}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link PriceSpecification}
      */
-    List<DeliveryMethod> getAvailableDeliveryMethodList();
+    List<PriceSpecification> getPriceSpecificationList();
 
     /**
-     * The delivery method(s) available for this offer.
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
-     * @return {@link DeliveryMethod}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link PriceSpecification}
      */
-    DeliveryMethod getAvailableDeliveryMethod();
+    PriceSpecification getPriceSpecification();
 
     /**
-     * The delivery method(s) available for this offer.
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
-     * @param availableDeliveryMethod DeliveryMethod value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param priceSpecification PriceSpecification value to set.
      */
-    void addAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod);
+    void addPriceSpecification(PriceSpecification priceSpecification);
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getAvailabilityEndsList();
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> T getAvailabilityEnds();
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityEnds(DateTime availabilityEnds);
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityEnds(Date availabilityEnds);
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityEnds(Time availabilityEnds);
+
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     *
+     * @return {@link Place}
+     */
+    List<Place> getAvailableAtOrFromList();
+
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     *
+     * @return {@link Place}
+     */
+    Place getAvailableAtOrFrom();
+
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     *
+     * @param availableAtOrFrom Place value to set.
+     */
+    void addAvailableAtOrFrom(Place availableAtOrFrom);
 }

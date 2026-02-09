@@ -5,20 +5,23 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.datatype.Text;
 import spec_custom.model.Country;
+import spec_custom.model.datatype.Text;
 import spec_custom.model.AdministrativeArea;
+import spec_custom.model.OpeningHoursSpecification;
+import spec_custom.model.Product;
 import spec_custom.model.Place;
 import spec_custom.model.GeoShape;
 import spec_custom.model.Language;
-import spec_custom.model.Product;
 import spec_custom.model.ContactPointOption;
-import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.Action;
 import spec_custom.model.datatype.URL;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Event;
 import spec_custom.model.PropertyValue;
+import spec_custom.model.Person;
+import spec_custom.model.Organization;
+import spec_custom.model.Event;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Action;
+import spec_custom.model.TextObject;
 import spec_custom.model.ImageObject;
 import spec_custom.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -36,6 +39,162 @@ import spec_custom.model.PostalAddress;
  */
 @JsonLdTypeName("PostalAddress")
 public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PostalAddress {
+
+    @JsonLdFieldTypes({ Country.class, Text.class })
+    private List<Object> addressCountry;
+
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public <T> List<T> getAddressCountryList() {
+        return (List<T>) addressCountry;
+    }
+
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public <T> T getAddressCountry() {
+        return (T) getFirst(addressCountry);
+    }
+
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @param addressCountry Country value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void addAddressCountry(Country addressCountry) {
+        this.addressCountry = add(this.addressCountry, addressCountry);
+    }
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @param addressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void addAddressCountry(Text addressCountry) {
+        this.addressCountry = add(this.addressCountry, addressCountry);
+    }
+
+    private List<Text> extendedAddress;
+
+    /**
+     * An address extension such as an apartment number, C/O or alternative name.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getExtendedAddressList() {
+        return extendedAddress;
+    }
+
+    /**
+     * An address extension such as an apartment number, C/O or alternative name.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getExtendedAddress() {
+        return getFirst(extendedAddress);
+    }
+
+    /**
+     * An address extension such as an apartment number, C/O or alternative name.
+     *
+     * @param extendedAddress Text value to set.
+     */
+    @Override
+    public void addExtendedAddress(Text extendedAddress) {
+        this.extendedAddress = add(this.extendedAddress, extendedAddress);
+    }
+
+    private List<Text> streetAddress;
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getStreetAddressList() {
+        return streetAddress;
+    }
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getStreetAddress() {
+        return getFirst(streetAddress);
+    }
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @param streetAddress Text value to set.
+     */
+    @Override
+    public void addStreetAddress(Text streetAddress) {
+        this.streetAddress = add(this.streetAddress, streetAddress);
+    }
+
+    @JsonLdFieldTypes({ AdministrativeArea.class, Text.class })
+    private List<Object> addressRegion;
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public <T> List<T> getAddressRegionList() {
+        return (List<T>) addressRegion;
+    }
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public <T> T getAddressRegion() {
+        return (T) getFirst(addressRegion);
+    }
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @param addressRegion AdministrativeArea value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void addAddressRegion(AdministrativeArea addressRegion) {
+        this.addressRegion = add(this.addressRegion, addressRegion);
+    }
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @param addressRegion Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void addAddressRegion(Text addressRegion) {
+        this.addressRegion = add(this.addressRegion, addressRegion);
+    }
 
     private List<Text> addressLocality;
 
@@ -101,84 +260,6 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.postOfficeBoxNumber = add(this.postOfficeBoxNumber, postOfficeBoxNumber);
     }
 
-    private List<Text> streetAddress;
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getStreetAddressList() {
-        return streetAddress;
-    }
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getStreetAddress() {
-        return getFirst(streetAddress);
-    }
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @param streetAddress Text value to set.
-     */
-    @Override
-    public void addStreetAddress(Text streetAddress) {
-        this.streetAddress = add(this.streetAddress, streetAddress);
-    }
-
-    @JsonLdFieldTypes({ Country.class, Text.class })
-    private List<Object> addressCountry;
-
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public <T> List<T> getAddressCountryList() {
-        return (List<T>) addressCountry;
-    }
-
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public <T> T getAddressCountry() {
-        return (T) getFirst(addressCountry);
-    }
-
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @param addressCountry Country value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void addAddressCountry(Country addressCountry) {
-        this.addressCountry = add(this.addressCountry, addressCountry);
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @param addressCountry Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void addAddressCountry(Text addressCountry) {
-        this.addressCountry = add(this.addressCountry, addressCountry);
-    }
-
     private List<Text> postalCode;
 
     /**
@@ -214,132 +295,36 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.postalCode = add(this.postalCode, postalCode);
     }
 
-    private List<Text> addressRegion;
+    private List<OpeningHoursSpecification> hoursAvailable;
 
     /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     * The hours during which this service or contact is available.
      *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @return {@link OpeningHoursSpecification}
      */
     @Override
-    public List<Text> getAddressRegionList() {
-        return addressRegion;
+    public List<OpeningHoursSpecification> getHoursAvailableList() {
+        return hoursAvailable;
     }
 
     /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     * The hours during which this service or contact is available.
      *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @return {@link OpeningHoursSpecification}
      */
     @Override
-    public Text getAddressRegion() {
-        return getFirst(addressRegion);
+    public OpeningHoursSpecification getHoursAvailable() {
+        return getFirst(hoursAvailable);
     }
 
     /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     * The hours during which this service or contact is available.
      *
-     * @param addressRegion Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @param hoursAvailable OpeningHoursSpecification value to set.
      */
     @Override
-    public void addAddressRegion(Text addressRegion) {
-        this.addressRegion = add(this.addressRegion, addressRegion);
-    }
-
-    @JsonLdFieldTypes({ AdministrativeArea.class, Place.class, GeoShape.class })
-    private List<Object> serviceArea;
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
-     */
-    @Override
-    public <T> List<T> getServiceAreaList() {
-        return (List<T>) serviceArea;
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
-     */
-    @Override
-    public <T> T getServiceArea() {
-        return (T) getFirst(serviceArea);
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea AdministrativeArea value to set.
-     */
-    @Override
-    public void addServiceArea(AdministrativeArea serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea Place value to set.
-     */
-    @Override
-    public void addServiceArea(Place serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea GeoShape value to set.
-     */
-    @Override
-    public void addServiceArea(GeoShape serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-
-    @JsonLdFieldTypes({ Text.class, Language.class })
-    private List<Object> availableLanguage;
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     */
-    @Override
-    public <T> List<T> getAvailableLanguageList() {
-        return (List<T>) availableLanguage;
-    }
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     */
-    @Override
-    public <T> T getAvailableLanguage() {
-        return (T) getFirst(availableLanguage);
-    }
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Text value to set.
-     */
-    @Override
-    public void addAvailableLanguage(Text availableLanguage) {
-        this.availableLanguage = add(this.availableLanguage, availableLanguage);
-    }
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Language value to set.
-     */
-    @Override
-    public void addAvailableLanguage(Language availableLanguage) {
-        this.availableLanguage = add(this.availableLanguage, availableLanguage);
+    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
+        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
     }
 
     @JsonLdFieldTypes({ Text.class, Product.class })
@@ -384,13 +369,13 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.productSupported = add(this.productSupported, productSupported);
     }
 
-    @JsonLdFieldTypes({ Text.class, Place.class, GeoShape.class, AdministrativeArea.class })
+    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
     private List<Object> areaServed;
 
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
      */
     @Override
     public <T> List<T> getAreaServedList() {
@@ -400,7 +385,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
      */
     @Override
     public <T> T getAreaServed() {
@@ -410,19 +395,19 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param areaServed Text value to set.
+     * @param areaServed Place value to set.
      */
     @Override
-    public void addAreaServed(Text areaServed) {
+    public void addAreaServed(Place areaServed) {
         this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param areaServed Place value to set.
+     * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void addAreaServed(Place areaServed) {
+    public void addAreaServed(AdministrativeArea areaServed) {
         this.areaServed = add(this.areaServed, areaServed);
     }
     /**
@@ -437,11 +422,104 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param areaServed AdministrativeArea value to set.
+     * @param areaServed Text value to set.
      */
     @Override
-    public void addAreaServed(AdministrativeArea areaServed) {
+    public void addAreaServed(Text areaServed) {
         this.areaServed = add(this.areaServed, areaServed);
+    }
+
+    @JsonLdFieldTypes({ Language.class, Text.class })
+    private List<Object> availableLanguage;
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAvailableLanguageList() {
+        return (List<T>) availableLanguage;
+    }
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    @Override
+    public <T> T getAvailableLanguage() {
+        return (T) getFirst(availableLanguage);
+    }
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Language value to set.
+     */
+    @Override
+    public void addAvailableLanguage(Language availableLanguage) {
+        this.availableLanguage = add(this.availableLanguage, availableLanguage);
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Text value to set.
+     */
+    @Override
+    public void addAvailableLanguage(Text availableLanguage) {
+        this.availableLanguage = add(this.availableLanguage, availableLanguage);
+    }
+
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Place.class })
+    private List<Object> serviceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getServiceAreaList() {
+        return (List<T>) serviceArea;
+    }
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    @Override
+    public <T> T getServiceArea() {
+        return (T) getFirst(serviceArea);
+    }
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea GeoShape value to set.
+     */
+    @Override
+    public void addServiceArea(GeoShape serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    @Override
+    public void addServiceArea(Place serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
 
     private List<ContactPointOption> contactOption;
@@ -476,36 +554,36 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contactOption = add(this.contactOption, contactOption);
     }
 
-    private List<Text> email;
+    private List<Text> telephone;
 
     /**
-     * Email address.
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getEmailList() {
-        return email;
+    public List<Text> getTelephoneList() {
+        return telephone;
     }
 
     /**
-     * Email address.
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getEmail() {
-        return getFirst(email);
+    public Text getTelephone() {
+        return getFirst(telephone);
     }
 
     /**
-     * Email address.
+     * The telephone number.
      *
-     * @param email Text value to set.
+     * @param telephone Text value to set.
      */
     @Override
-    public void addEmail(Text email) {
-        this.email = add(this.email, email);
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
     private List<Text> contactType;
@@ -540,38 +618,6 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contactType = add(this.contactType, contactType);
     }
 
-    private List<OpeningHoursSpecification> hoursAvailable;
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public List<OpeningHoursSpecification> getHoursAvailableList() {
-        return hoursAvailable;
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public OpeningHoursSpecification getHoursAvailable() {
-        return getFirst(hoursAvailable);
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @param hoursAvailable OpeningHoursSpecification value to set.
-     */
-    @Override
-    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
-        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
-    }
-
     private List<Text> faxNumber;
 
     /**
@@ -604,110 +650,248 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.faxNumber = add(this.faxNumber, faxNumber);
     }
 
-    private List<Text> telephone;
+    private List<Text> email;
 
     /**
-     * The telephone number.
+     * Email address.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getTelephoneList() {
-        return telephone;
+    public List<Text> getEmailList() {
+        return email;
     }
 
     /**
-     * The telephone number.
+     * Email address.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getTelephone() {
-        return getFirst(telephone);
+    public Text getEmail() {
+        return getFirst(email);
     }
 
     /**
-     * The telephone number.
+     * Email address.
      *
-     * @param telephone Text value to set.
+     * @param email Text value to set.
      */
     @Override
-    public void addTelephone(Text telephone) {
-        this.telephone = add(this.telephone, telephone);
+    public void addEmail(Text email) {
+        this.email = add(this.email, email);
     }
 
-    private List<Action> potentialAction;
+    private List<URL> sameAs;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link Action}
+     * @return {@link URL}
      */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public List<URL> getSameAsList() {
+        return sameAs;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param potentialAction Action value to set.
+     * @return {@link URL}
      */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public URL getSameAs() {
+        return getFirst(sameAs);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @param sameAs URL value to set.
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The name of the item.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param additionalType Text value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -756,36 +940,120 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param url URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> alternateName;
@@ -820,68 +1088,78 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> sameAs;
+    private List<URL> url;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
-     * @param sameAs URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> description;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param description Text value to set.
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<Text> disambiguatingDescription;
@@ -914,167 +1192,5 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
-    }
-
-    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    private List<URL> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
     }
 }

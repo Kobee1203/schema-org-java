@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Organization;
-import spec_custom.model.Person;
-import spec_custom.model.datatype.Boolean;
 import spec_custom.model.BroadcastService;
+import spec_custom.model.Person;
+import spec_custom.model.Organization;
+import spec_custom.model.datatype.Boolean;
 
 /**
  * A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
@@ -17,58 +17,6 @@ import spec_custom.model.BroadcastService;
  * @see <a href="https://schema.org/PublicationEvent">https://schema.org/PublicationEvent</a>
  */
 public interface PublicationEvent extends Event {
-
-    /**
-     * An agent associated with the publication event.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    <T> List<T> getPublishedByList();
-
-    /**
-     * An agent associated with the publication event.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    <T> T getPublishedBy();
-
-    /**
-     * An agent associated with the publication event.
-     *
-     * @param publishedBy Organization value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addPublishedBy(Organization publishedBy);
-    /**
-     * An agent associated with the publication event.
-     *
-     * @param publishedBy Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addPublishedBy(Person publishedBy);
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    List<Boolean> getFreeList();
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getFree();
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param free Boolean value to set.
-     */
-    void addFree(Boolean free);
 
     /**
      * A broadcast service associated with the publication event.
@@ -90,4 +38,56 @@ public interface PublicationEvent extends Event {
      * @param publishedOn BroadcastService value to set.
      */
     void addPublishedOn(BroadcastService publishedOn);
+
+    /**
+     * An agent associated with the publication event.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    <T> List<T> getPublishedByList();
+
+    /**
+     * An agent associated with the publication event.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    <T> T getPublishedBy();
+
+    /**
+     * An agent associated with the publication event.
+     *
+     * @param publishedBy Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addPublishedBy(Person publishedBy);
+    /**
+     * An agent associated with the publication event.
+     *
+     * @param publishedBy Organization value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addPublishedBy(Organization publishedBy);
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getFreeList();
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getFree();
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param free Boolean value to set.
+     */
+    void addFree(Boolean free);
 }

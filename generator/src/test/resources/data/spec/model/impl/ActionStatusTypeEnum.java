@@ -5,15 +5,18 @@
  */
 package spec.model.impl;
 
-import spec.model.Class;
 import spec.model.Property;
+import spec.model.Class;
 import spec.model.Enumeration;
-import spec.model.Action;
 import spec.model.datatype.URL;
-import spec.model.CreativeWork;
-import spec.model.Event;
 import spec.model.datatype.Text;
 import spec.model.PropertyValue;
+import spec.model.Person;
+import spec.model.Organization;
+import spec.model.Event;
+import spec.model.CreativeWork;
+import spec.model.Action;
+import spec.model.TextObject;
 import spec.model.ImageObject;
 import spec.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -30,9 +33,9 @@ import spec.model.ActionStatusType;
  */
 @JsonLdTypeName("ActionStatusType")
 public enum ActionStatusTypeEnum implements ActionStatusType {
+    ACTIVE_ACTION_STATUS("ActiveActionStatus"),
     COMPLETED_ACTION_STATUS("CompletedActionStatus"),
     FAILED_ACTION_STATUS("FailedActionStatus"),
-    ACTIVE_ACTION_STATUS("ActiveActionStatus"),
     POTENTIAL_ACTION_STATUS("PotentialActionStatus")
     ;
 
@@ -97,12 +100,12 @@ public enum ActionStatusTypeEnum implements ActionStatusType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Class supersededBy) {
+    public void addSupersededBy(Property supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Property supersededBy) {
+    public void addSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -112,34 +115,88 @@ public enum ActionStatusTypeEnum implements ActionStatusType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Action> getPotentialActionList() { return null; }
+    public List<URL> getSameAsList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Action getPotentialAction() { return null; }
+    public URL getSameAs() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum ActionStatusTypeEnum");
+    public void addSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getMainEntityOfPageList() { return null; }
+    public List<Text> getNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getMainEntityOfPage() { return null; }
+    public Text getName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum ActionStatusTypeEnum");
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum ActionStatusTypeEnum");
+    public <T> List<T> getAdditionalTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getAdditionalType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getIdentifierList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getIdentifier() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getOwnerList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getOwner() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Person owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Organization owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -161,16 +218,52 @@ public enum ActionStatusTypeEnum implements ActionStatusType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getUrlList() { return null; }
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getUrl() { return null; }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum ActionStatusTypeEnum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Action> getPotentialActionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Action getPotentialAction() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(TextObject description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -187,29 +280,34 @@ public enum ActionStatusTypeEnum implements ActionStatusType {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getSameAsList() { return null; }
+    public List<URL> getUrlList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getSameAs() { return null; }
+    public URL getUrl() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSameAs(URL sameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum ActionStatusTypeEnum");
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Text> getDescriptionList() { return null; }
+    public <T> List<T> getImageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDescription() { return null; }
+    public <T> T getImage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum ActionStatusTypeEnum");
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum ActionStatusTypeEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum ActionStatusTypeEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -223,72 +321,5 @@ public enum ActionStatusTypeEnum implements ActionStatusType {
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum ActionStatusTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getIdentifierList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getIdentifier() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum ActionStatusTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(URL identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum ActionStatusTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(Text identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum ActionStatusTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getImageList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getImage() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum ActionStatusTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum ActionStatusTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum ActionStatusTypeEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<URL> getAdditionalTypeList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getAdditionalType() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum ActionStatusTypeEnum");
     }
 }

@@ -50,8 +50,8 @@ class SchemaModelGeneratorBuilderTest {
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "datatype"))).hasSize(11);
-        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(205);
-        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(238);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(238);
     }
 
     @Test
@@ -67,8 +67,8 @@ class SchemaModelGeneratorBuilderTest {
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "datatype"))).hasSize(11);
-        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(205);
-        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(205);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(238);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(238);
     }
 
     @Test
