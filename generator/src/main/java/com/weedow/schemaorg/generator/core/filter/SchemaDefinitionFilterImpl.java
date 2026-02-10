@@ -17,6 +17,18 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
     public Map<String, Type> filter(Map<String, Type> schemaDefinitions, List<String> modelIds) {
         Map<String, Type> filteredSchemaDefinitions = new HashMap<>(schemaDefinitions);
 
+        // Filters types without a “name.” These types have been retired from the vocabulary, but their IDs are still referenced by some properties (e.g. schema:DeliveryTimeSettings).
+        filteredSchemaDefinitions = filteredSchemaDefinitions.entrySet().stream()
+                .filter(entry -> {
+                    Type type = entry.getValue();
+                    if (type.getName() == null || type.getName().isEmpty()) {
+                        LOG.info("** ARCHIVED ** {} has been retired from the vocabulary (see https://schema.org/docs/attic.home.html)", type.getId());
+                        return false;
+                    }
+                    return true;
+                })
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
         if (modelIds != null && !modelIds.isEmpty()) {
             filteredSchemaDefinitions = modelIds.stream()
                     // Fix model id (format 'schema:xxx')

@@ -37,8 +37,8 @@ class SchemaModelGeneratorBuilderTest {
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(13);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(880);
-        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(880);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(917);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(917);
     }
 
     @Test

@@ -6,20 +6,63 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.OrderStatus;
-import org.schema.model.datatype.Number;
-import org.schema.model.ParcelDelivery;
-import org.schema.model.Product;
-import org.schema.model.Service;
-import org.schema.model.OrderItem;
 import org.schema.model.datatype.Text;
+import org.schema.model.ParcelDelivery;
+import org.schema.model.OrderStatus;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Number;
+import org.schema.model.Service;
+import org.schema.model.Product;
+import org.schema.model.OrderItem;
 
 /**
  * An order item is a line of an order. It includes the quantity and shipping details of a bought offer.
  *
  * @see <a href="https://schema.org/OrderItem">https://schema.org/OrderItem</a>
  */
-public interface OrderItem extends Intangible {
+public interface OrderItem extends StructuredValue {
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOrderItemNumberList();
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    Text getOrderItemNumber();
+
+    /**
+     * The identifier of the order item.
+     *
+     * @param orderItemNumber Text value to set.
+     */
+    void addOrderItemNumber(Text orderItemNumber);
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    List<ParcelDelivery> getOrderDeliveryList();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    ParcelDelivery getOrderDelivery();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @param orderDelivery ParcelDelivery value to set.
+     */
+    void addOrderDelivery(ParcelDelivery orderDelivery);
 
     /**
      * The current status of the order item.
@@ -45,17 +88,23 @@ public interface OrderItem extends Intangible {
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
      *
-     * @return {@link Number}
+     * @return {@link QuantitativeValue} or {@link Number}
      */
-    List<Number> getOrderQuantityList();
+    <T> List<T> getOrderQuantityList();
 
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
      *
-     * @return {@link Number}
+     * @return {@link QuantitativeValue} or {@link Number}
      */
-    Number getOrderQuantity();
+    <T> T getOrderQuantity();
 
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     *
+     * @param orderQuantity QuantitativeValue value to set.
+     */
+    void addOrderQuantity(QuantitativeValue orderQuantity);
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
      *
@@ -64,46 +113,19 @@ public interface OrderItem extends Intangible {
     void addOrderQuantity(Number orderQuantity);
 
     /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    List<ParcelDelivery> getOrderDeliveryList();
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    ParcelDelivery getOrderDelivery();
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @param orderDelivery ParcelDelivery value to set.
-     */
-    void addOrderDelivery(ParcelDelivery orderDelivery);
-
-    /**
      * The item ordered.
      *
-     * @return {@link Product} or {@link Service} or {@link OrderItem}
+     * @return {@link Service} or {@link Product} or {@link OrderItem}
      */
     <T> List<T> getOrderedItemList();
 
     /**
      * The item ordered.
      *
-     * @return {@link Product} or {@link Service} or {@link OrderItem}
+     * @return {@link Service} or {@link Product} or {@link OrderItem}
      */
     <T> T getOrderedItem();
 
-    /**
-     * The item ordered.
-     *
-     * @param orderedItem Product value to set.
-     */
-    void addOrderedItem(Product orderedItem);
     /**
      * The item ordered.
      *
@@ -113,28 +135,13 @@ public interface OrderItem extends Intangible {
     /**
      * The item ordered.
      *
+     * @param orderedItem Product value to set.
+     */
+    void addOrderedItem(Product orderedItem);
+    /**
+     * The item ordered.
+     *
      * @param orderedItem OrderItem value to set.
      */
     void addOrderedItem(OrderItem orderedItem);
-
-    /**
-     * The identifier of the order item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getOrderItemNumberList();
-
-    /**
-     * The identifier of the order item.
-     *
-     * @return {@link Text}
-     */
-    Text getOrderItemNumber();
-
-    /**
-     * The identifier of the order item.
-     *
-     * @param orderItemNumber Text value to set.
-     */
-    void addOrderItemNumber(Text orderItemNumber);
 }

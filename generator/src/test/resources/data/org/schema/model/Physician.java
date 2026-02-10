@@ -6,42 +6,20 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Hospital;
 import org.schema.model.MedicalSpecialty;
-import org.schema.model.MedicalTherapy;
-import org.schema.model.MedicalTest;
+import org.schema.model.datatype.Text;
+import org.schema.model.Hospital;
+import org.schema.model.CategoryCode;
 import org.schema.model.MedicalProcedure;
+import org.schema.model.MedicalTest;
+import org.schema.model.MedicalTherapy;
 
 /**
- * A doctor's office.
+ * An individual physician or a physician's office considered as a [[MedicalOrganization]].
  *
  * @see <a href="https://schema.org/Physician">https://schema.org/Physician</a>
  */
 public interface Physician extends MedicalOrganization, MedicalBusiness {
-
-    /**
-     * A hospital with which the physician or office is affiliated.
-     *
-     * @return {@link Hospital}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Hospital> getHospitalAffiliationList();
-
-    /**
-     * A hospital with which the physician or office is affiliated.
-     *
-     * @return {@link Hospital}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Hospital getHospitalAffiliation();
-
-    /**
-     * A hospital with which the physician or office is affiliated.
-     *
-     * @param hospitalAffiliation Hospital value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addHospitalAffiliation(Hospital hospitalAffiliation);
 
     /**
      * A medical specialty of the provider.
@@ -68,9 +46,118 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 
     /**
+     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
+     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     */
+    List<Text> getUsNPIList();
+
+    /**
+     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
+     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     */
+    Text getUsNPI();
+
+    /**
+     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
+     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
+     *
+     * @param usNPI Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     */
+    void addUsNPI(Text usNPI);
+
+    /**
+     * A hospital with which the physician or office is affiliated.
+     *
+     * @return {@link Hospital}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Hospital> getHospitalAffiliationList();
+
+    /**
+     * A hospital with which the physician or office is affiliated.
+     *
+     * @return {@link Hospital}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Hospital getHospitalAffiliation();
+
+    /**
+     * A hospital with which the physician or office is affiliated.
+     *
+     * @param hospitalAffiliation Hospital value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addHospitalAffiliation(Hospital hospitalAffiliation);
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link Text} or {@link CategoryCode}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     */
+    <T> List<T> getOccupationalCategoryList();
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link Text} or {@link CategoryCode}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     */
+    <T> T getOccupationalCategory();
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     */
+    void addOccupationalCategory(Text occupationalCategory);
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory CategoryCode value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     */
+    void addOccupationalCategory(CategoryCode occupationalCategory);
+
+    /**
      * A medical service available from this provider.
      *
-     * @return {@link MedicalTherapy} or {@link MedicalTest} or {@link MedicalProcedure}
+     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> List<T> getAvailableServiceList();
@@ -78,7 +165,7 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     /**
      * A medical service available from this provider.
      *
-     * @return {@link MedicalTherapy} or {@link MedicalTest} or {@link MedicalProcedure}
+     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> T getAvailableService();
@@ -86,10 +173,10 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     /**
      * A medical service available from this provider.
      *
-     * @param availableService MedicalTherapy value to set.
+     * @param availableService MedicalProcedure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addAvailableService(MedicalTherapy availableService);
+    void addAvailableService(MedicalProcedure availableService);
     /**
      * A medical service available from this provider.
      *
@@ -100,8 +187,8 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     /**
      * A medical service available from this provider.
      *
-     * @param availableService MedicalProcedure value to set.
+     * @param availableService MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addAvailableService(MedicalProcedure availableService);
+    void addAvailableService(MedicalTherapy availableService);
 }

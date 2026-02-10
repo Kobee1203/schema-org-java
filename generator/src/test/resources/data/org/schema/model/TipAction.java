@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Organization;
 import org.schema.model.ContactPoint;
 import org.schema.model.Person;
+import org.schema.model.Organization;
 import org.schema.model.Audience;
 
 /**
@@ -21,23 +21,17 @@ public interface TipAction extends TradeAction {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
      */
     <T> List<T> getRecipientList();
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
      */
     <T> T getRecipient();
 
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @param recipient Organization value to set.
-     */
-    void addRecipient(Organization recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
@@ -50,6 +44,12 @@ public interface TipAction extends TradeAction {
      * @param recipient Person value to set.
      */
     void addRecipient(Person recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient Organization value to set.
+     */
+    void addRecipient(Organization recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
