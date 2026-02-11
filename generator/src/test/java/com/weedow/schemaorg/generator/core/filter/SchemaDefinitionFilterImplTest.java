@@ -122,6 +122,47 @@ class SchemaDefinitionFilterImplTest {
                 .hasSize(2);
     }
 
+    @Test
+    void filter_should_include_subtypes_when_type_is_enumeration() {
+        Type enumerationSubType1 = mock(Type.class);
+        when(enumerationSubType1.getId()).thenReturn("schema:EnumValue1");
+        when(enumerationSubType1.getName()).thenReturn("EnumValue1");
+        when(enumerationSubType1.getParents()).thenReturn(Collections.emptyList());
+        when(enumerationSubType1.getAllProperties()).thenReturn(Collections.emptySet());
+        when(enumerationSubType1.isEnumerationType()).thenReturn(false);
+
+        Type enumerationSubType2 = mock(Type.class);
+        when(enumerationSubType2.getId()).thenReturn("schema:EnumValue2");
+        when(enumerationSubType2.getName()).thenReturn("EnumValue2");
+        when(enumerationSubType2.getParents()).thenReturn(Collections.emptyList());
+        when(enumerationSubType2.getAllProperties()).thenReturn(Collections.emptySet());
+        when(enumerationSubType2.isEnumerationType()).thenReturn(false);
+
+        // Create enumeration type that includes the subtypes
+        Type enumerationType = mock(Type.class);
+        when(enumerationType.getId()).thenReturn("schema:TestEnumeration");
+        when(enumerationType.getName()).thenReturn("TestEnumeration");
+        when(enumerationType.getParents()).thenReturn(Collections.emptyList());
+        when(enumerationType.getAllProperties()).thenReturn(Collections.emptySet());
+        when(enumerationType.isEnumerationType()).thenReturn(true);
+        when(enumerationType.getSubTypes()).thenReturn(List.of(enumerationSubType1, enumerationSubType2));
+
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+        schemaDefinitions.put("schema:TestEnumeration", enumerationType);
+        schemaDefinitions.put("schema:EnumValue1", enumerationSubType1);
+        schemaDefinitions.put("schema:EnumValue2", enumerationSubType2);
+
+        List<String> modelIds = List.of("schema:TestEnumeration");
+
+        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, modelIds);
+
+        Assertions.assertThat(result).containsOnly(
+                entry("schema:TestEnumeration", enumerationType),
+                entry("schema:EnumValue1", enumerationSubType1),
+                entry("schema:EnumValue2", enumerationSubType2)
+        );
+    }
+
     private static Type type(String typeId, Set<Property> properties, List<Type> parents) {
         Type type = mock(Type.class);
         when(type.getId()).thenReturn(typeId);

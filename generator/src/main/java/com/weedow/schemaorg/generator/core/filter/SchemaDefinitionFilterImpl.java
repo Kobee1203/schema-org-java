@@ -54,6 +54,9 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
             types.add(type);
             type.getParents().forEach(parent -> addType(types, parent));
             type.getAllProperties().forEach(property -> property.getTypes().forEach(propertyType -> addType(types, propertyType)));
+            if(type.isEnumerationType()) {
+                types.addAll(type.getSubTypes());
+            }
         }
     }
 }
