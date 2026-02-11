@@ -39,6 +39,9 @@ public abstract class GraphItem {
     @JsonProperty("schema:source")
     private List<Source> source;
 
+    @JsonProperty("schema:contributor")
+    private List<Contributor> contributor;
+
     //*** [START] Specific Fields for Property items ***//
 
     @JsonProperty("schema:domainIncludes")

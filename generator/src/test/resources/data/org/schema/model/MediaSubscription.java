@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Offer;
 import org.schema.model.Organization;
+import org.schema.model.Offer;
 
 /**
  * A subscription which allows a user to access media including audio, video, books, etc.
@@ -16,30 +16,6 @@ import org.schema.model.Organization;
  * @see <a href="https://schema.org/MediaSubscription">https://schema.org/MediaSubscription</a>
  */
 public interface MediaSubscription extends Intangible {
-
-    /**
-     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    List<Offer> getExpectsAcceptanceOfList();
-
-    /**
-     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    Offer getExpectsAcceptanceOf();
-
-    /**
-     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
-     *
-     * @param expectsAcceptanceOf Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addExpectsAcceptanceOf(Offer expectsAcceptanceOf);
 
     /**
      * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
@@ -64,4 +40,28 @@ public interface MediaSubscription extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     void addAuthenticator(Organization authenticator);
+
+    /**
+     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    List<Offer> getExpectsAcceptanceOfList();
+
+    /**
+     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    Offer getExpectsAcceptanceOf();
+
+    /**
+     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
+     *
+     * @param expectsAcceptanceOf Offer value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addExpectsAcceptanceOf(Offer expectsAcceptanceOf);
 }

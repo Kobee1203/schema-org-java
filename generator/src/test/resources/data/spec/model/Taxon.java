@@ -6,79 +6,53 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.URL;
 import spec.model.datatype.Text;
-import spec.model.Taxon;
+import spec.model.datatype.URL;
 import spec.model.PropertyValue;
 import spec.model.DefinedTerm;
+import spec.model.Taxon;
 
 /**
  * A set of organisms asserted to represent a natural cohesive biological unit.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+ * @see <a href="http://bioschemas.org">http://bioschemas.org</a>
  * @see <a href="https://schema.org/Taxon">https://schema.org/Taxon</a>
  */
 public interface Taxon extends Thing {
 
     /**
-     * Closest parent taxon of the taxon in question.
-     *
-     * @return {@link URL} or {@link Text} or {@link Taxon}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    <T> List<T> getParentTaxonList();
-
-    /**
-     * Closest parent taxon of the taxon in question.
-     *
-     * @return {@link URL} or {@link Text} or {@link Taxon}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    <T> T getParentTaxon();
-
-    /**
-     * Closest parent taxon of the taxon in question.
-     *
-     * @param parentTaxon URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addParentTaxon(URL parentTaxon);
-    /**
-     * Closest parent taxon of the taxon in question.
-     *
-     * @param parentTaxon Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addParentTaxon(Text parentTaxon);
-    /**
-     * Closest parent taxon of the taxon in question.
-     *
-     * @param parentTaxon Taxon value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addParentTaxon(Taxon parentTaxon);
-
-    /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
      *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     * @return {@link Text} or {@link URL} or {@link PropertyValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
      */
     <T> List<T> getTaxonRankList();
 
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
      *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     * @return {@link Text} or {@link URL} or {@link PropertyValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
      */
     <T> T getTaxonRank();
 
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
      *
+     * @param taxonRank Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    void addTaxonRank(Text taxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
+     *
      * @param taxonRank URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
      */
     void addTaxonRank(URL taxonRank);
     /**
@@ -86,53 +60,9 @@ public interface Taxon extends Thing {
      *
      * @param taxonRank PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
      */
     void addTaxonRank(PropertyValue taxonRank);
-    /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
-     *
-     * @param taxonRank Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addTaxonRank(Text taxonRank);
-
-    /**
-     * Closest child taxa of the taxon in question.
-     *
-     * @return {@link Text} or {@link Taxon} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    <T> List<T> getChildTaxonList();
-
-    /**
-     * Closest child taxa of the taxon in question.
-     *
-     * @return {@link Text} or {@link Taxon} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    <T> T getChildTaxon();
-
-    /**
-     * Closest child taxa of the taxon in question.
-     *
-     * @param childTaxon Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addChildTaxon(Text childTaxon);
-    /**
-     * Closest child taxa of the taxon in question.
-     *
-     * @param childTaxon Taxon value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addChildTaxon(Taxon childTaxon);
-    /**
-     * Closest child taxa of the taxon in question.
-     *
-     * @param childTaxon URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addChildTaxon(URL childTaxon);
 
     /**
      * A Defined Term contained in this term set.
@@ -160,4 +90,90 @@ public interface Taxon extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     void addHasDefinedTerm(DefinedTerm hasDefinedTerm);
+
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @return {@link Taxon} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    <T> List<T> getParentTaxonList();
+
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @return {@link Taxon} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    <T> T getParentTaxon();
+
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param parentTaxon Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    void addParentTaxon(Taxon parentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param parentTaxon URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    void addParentTaxon(URL parentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param parentTaxon Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    void addParentTaxon(Text parentTaxon);
+
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @return {@link Taxon} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    <T> List<T> getChildTaxonList();
+
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @return {@link Taxon} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    <T> T getChildTaxon();
+
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param childTaxon Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    void addChildTaxon(Taxon childTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param childTaxon URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    void addChildTaxon(URL childTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param childTaxon Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Taxon">http://www.bioschemas.org/Taxon</a>
+     */
+    void addChildTaxon(Text childTaxon);
 }

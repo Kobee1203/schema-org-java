@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Text;
 import org.schema.model.BookFormatType;
 import org.schema.model.Person;
-import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Integer;
 
 /**
@@ -20,28 +20,25 @@ import org.schema.model.datatype.Integer;
 public interface Book extends CreativeWork {
 
     /**
-     * Indicates whether the book is an abridged edition.
+     * The edition of the book.
      *
-     * @return {@link Boolean}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @return {@link Text}
      */
-    List<Boolean> getAbridgedList();
+    List<Text> getBookEditionList();
 
     /**
-     * Indicates whether the book is an abridged edition.
+     * The edition of the book.
      *
-     * @return {@link Boolean}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @return {@link Text}
      */
-    Boolean getAbridged();
+    Text getBookEdition();
 
     /**
-     * Indicates whether the book is an abridged edition.
+     * The edition of the book.
      *
-     * @param abridged Boolean value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @param bookEdition Text value to set.
      */
-    void addAbridged(Boolean abridged);
+    void addBookEdition(Text bookEdition);
 
     /**
      * The format of the book.
@@ -86,25 +83,49 @@ public interface Book extends CreativeWork {
     void addIllustrator(Person illustrator);
 
     /**
-     * The edition of the book.
+     * The ISBN of the book.
      *
      * @return {@link Text}
      */
-    List<Text> getBookEditionList();
+    List<Text> getIsbnList();
 
     /**
-     * The edition of the book.
+     * The ISBN of the book.
      *
      * @return {@link Text}
      */
-    Text getBookEdition();
+    Text getIsbn();
 
     /**
-     * The edition of the book.
+     * The ISBN of the book.
      *
-     * @param bookEdition Text value to set.
+     * @param isbn Text value to set.
      */
-    void addBookEdition(Text bookEdition);
+    void addIsbn(Text isbn);
+
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Boolean> getAbridgedList();
+
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Boolean getAbridged();
+
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @param abridged Boolean value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addAbridged(Boolean abridged);
 
     /**
      * The number of pages in the book.
@@ -126,25 +147,4 @@ public interface Book extends CreativeWork {
      * @param numberOfPages Integer value to set.
      */
     void addNumberOfPages(Integer numberOfPages);
-
-    /**
-     * The ISBN of the book.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getIsbnList();
-
-    /**
-     * The ISBN of the book.
-     *
-     * @return {@link Text}
-     */
-    Text getIsbn();
-
-    /**
-     * The ISBN of the book.
-     *
-     * @param isbn Text value to set.
-     */
-    void addIsbn(Text isbn);
 }

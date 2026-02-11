@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model.handler;
 
+import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Property;
@@ -23,14 +24,16 @@ public class PropertyModelHandlerImpl implements ModelHandler {
 
     @Override
     public boolean supports(GraphItem graphItem, ParserOptions options) {
-        return graphItem.getTypes().contains("rdf:Property");
+        final String id = graphItem.getId();
+        final List<String> types = graphItem.getTypes();
+        return id.startsWith(SchemaConstants.SCHEMA_PREFIX) && types.contains("rdf:Property");
     }
 
     @Override
     public void handle(Map<String, Type> schemaDefinitions, GraphItem graphItem, ParserOptions options) {
         List<Type> propertyTypes = deduplicateJavaTypes(ModelUtils.getPropertyTypes(schemaDefinitions, graphItem), options);
         if (propertyTypes.isEmpty()) {
-            LOG.info("** DEPRECATED ** superseded by {}", graphItem.getSupersededBy().getId());
+            LOG.info("** DEPRECATED ** {} is superseded by {}", graphItem.getId(), graphItem.getSupersededBy().getId());
             return;
         }
 

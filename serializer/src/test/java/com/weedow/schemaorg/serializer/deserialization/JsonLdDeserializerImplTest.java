@@ -227,7 +227,8 @@ class JsonLdDeserializerImplTest {
         Assertions.assertThat(thing.getId()).isEqualTo("my_id");
         Assertions.assertThat(thing.getName()).extracting("value").isEqualTo("My Thing");
         Assertions.assertThat(thing.getNameList()).extracting("value").containsExactly("My Thing");
-        Assertions.assertThat(thing.getDescription()).extracting("value").isEqualTo("This is my thing.");
+        Object description = thing.getDescription();
+        Assertions.assertThat(description).isInstanceOf(Text.class).extracting("value").isEqualTo("This is my thing.");
         Assertions.assertThat(thing.getDescriptionList()).extracting("value").containsExactly("This is my thing.");
         Assertions.assertThat(thing.getUrlList()).extracting("value").containsExactly(
                 "https://github.com/Kobee1203/schema-org-java",

@@ -6,6 +6,7 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.OnlineMarketplace;
 
 /**
  * An eCommerce site.
@@ -15,4 +16,31 @@ import java.util.List;
  * @see <a href="https://schema.org/OnlineStore">https://schema.org/OnlineStore</a>
  */
 public interface OnlineStore extends OnlineBusiness {
+
+    /**
+     * The eCommerce marketplace this online store is on.
+     *
+     * @return {@link OnlineMarketplace}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4470">https://github.com/schemaorg/schemaorg/issues/4470</a>
+     */
+    List<OnlineMarketplace> getIsStoreOnList();
+
+    /**
+     * The eCommerce marketplace this online store is on.
+     *
+     * @return {@link OnlineMarketplace}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4470">https://github.com/schemaorg/schemaorg/issues/4470</a>
+     */
+    OnlineMarketplace getIsStoreOn();
+
+    /**
+     * The eCommerce marketplace this online store is on.
+     *
+     * @param isStoreOn OnlineMarketplace value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4470">https://github.com/schemaorg/schemaorg/issues/4470</a>
+     */
+    void addIsStoreOn(OnlineMarketplace isStoreOn);
 }

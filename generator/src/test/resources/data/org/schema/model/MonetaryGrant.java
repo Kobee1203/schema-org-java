@@ -6,20 +6,55 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.datatype.Number;
+import org.schema.model.MonetaryAmount;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Number;
 
 /**
  * A monetary grant.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+ * @see <a href="https://schema.org/docs/collab/FundInfoCollab">https://schema.org/docs/collab/FundInfoCollab</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
- * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
  * @see <a href="https://schema.org/MonetaryGrant">https://schema.org/MonetaryGrant</a>
  */
 public interface MonetaryGrant extends Grant {
+
+    /**
+     * The amount of money.
+     *
+     * @return {@link Number} or {@link MonetaryAmount}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getAmountList();
+
+    /**
+     * The amount of money.
+     *
+     * @return {@link Number} or {@link MonetaryAmount}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> T getAmount();
+
+    /**
+     * The amount of money.
+     *
+     * @param amount Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addAmount(Number amount);
+    /**
+     * The amount of money.
+     *
+     * @param amount MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addAmount(MonetaryAmount amount);
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -47,39 +82,4 @@ public interface MonetaryGrant extends Grant {
      * @param funder Person value to set.
      */
     void addFunder(Person funder);
-
-    /**
-     * The amount of money.
-     *
-     * @return {@link MonetaryAmount} or {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    <T> List<T> getAmountList();
-
-    /**
-     * The amount of money.
-     *
-     * @return {@link MonetaryAmount} or {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    <T> T getAmount();
-
-    /**
-     * The amount of money.
-     *
-     * @param amount MonetaryAmount value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void addAmount(MonetaryAmount amount);
-    /**
-     * The amount of money.
-     *
-     * @param amount Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void addAmount(Number amount);
 }

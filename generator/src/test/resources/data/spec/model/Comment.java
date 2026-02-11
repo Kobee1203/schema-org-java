@@ -6,8 +6,9 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Comment;
 import spec.model.datatype.Integer;
+import spec.model.CreativeWork;
+import spec.model.Comment;
 
 /**
  * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.
@@ -17,25 +18,25 @@ import spec.model.datatype.Integer;
 public interface Comment extends CreativeWork {
 
     /**
-     * The parent of a question, answer or item in general.
+     * The number of upvotes this question, answer or comment has received from the community.
      *
-     * @return {@link Comment}
+     * @return {@link Integer}
      */
-    List<Comment> getParentItemList();
+    List<Integer> getUpvoteCountList();
 
     /**
-     * The parent of a question, answer or item in general.
+     * The number of upvotes this question, answer or comment has received from the community.
      *
-     * @return {@link Comment}
+     * @return {@link Integer}
      */
-    Comment getParentItem();
+    Integer getUpvoteCount();
 
     /**
-     * The parent of a question, answer or item in general.
+     * The number of upvotes this question, answer or comment has received from the community.
      *
-     * @param parentItem Comment value to set.
+     * @param upvoteCount Integer value to set.
      */
-    void addParentItem(Comment parentItem);
+    void addUpvoteCount(Integer upvoteCount);
 
     /**
      * The number of downvotes this question, answer or comment has received from the community.
@@ -59,23 +60,50 @@ public interface Comment extends CreativeWork {
     void addDownvoteCount(Integer downvoteCount);
 
     /**
-     * The number of upvotes this question, answer or comment has received from the community.
+     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
      *
-     * @return {@link Integer}
+     * @return {@link CreativeWork}
      */
-    List<Integer> getUpvoteCountList();
+    List<CreativeWork> getSharedContentList();
 
     /**
-     * The number of upvotes this question, answer or comment has received from the community.
+     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
      *
-     * @return {@link Integer}
+     * @return {@link CreativeWork}
      */
-    Integer getUpvoteCount();
+    CreativeWork getSharedContent();
 
     /**
-     * The number of upvotes this question, answer or comment has received from the community.
+     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
      *
-     * @param upvoteCount Integer value to set.
+     * @param sharedContent CreativeWork value to set.
      */
-    void addUpvoteCount(Integer upvoteCount);
+    void addSharedContent(CreativeWork sharedContent);
+
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @return {@link CreativeWork} or {@link Comment}
+     */
+    <T> List<T> getParentItemList();
+
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @return {@link CreativeWork} or {@link Comment}
+     */
+    <T> T getParentItem();
+
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @param parentItem CreativeWork value to set.
+     */
+    void addParentItem(CreativeWork parentItem);
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @param parentItem Comment value to set.
+     */
+    void addParentItem(Comment parentItem);
 }

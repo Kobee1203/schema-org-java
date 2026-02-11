@@ -5,6 +5,8 @@
  */
 package spec.model;
 
+import java.util.List;
+
 /**
  * Used to indicate whether a product is EnergyStar certified.
  *

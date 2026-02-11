@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 import org.schema.model.QuantitativeValue;
 
 /**
@@ -20,29 +20,29 @@ public interface HowToItem extends ListItem {
     /**
      * The required quantity of the item(s).
      *
-     * @return {@link Text} or {@link Number} or {@link QuantitativeValue}
+     * @return {@link Number} or {@link Text} or {@link QuantitativeValue}
      */
     <T> List<T> getRequiredQuantityList();
 
     /**
      * The required quantity of the item(s).
      *
-     * @return {@link Text} or {@link Number} or {@link QuantitativeValue}
+     * @return {@link Number} or {@link Text} or {@link QuantitativeValue}
      */
     <T> T getRequiredQuantity();
 
     /**
      * The required quantity of the item(s).
      *
-     * @param requiredQuantity Text value to set.
-     */
-    void addRequiredQuantity(Text requiredQuantity);
-    /**
-     * The required quantity of the item(s).
-     *
      * @param requiredQuantity Number value to set.
      */
     void addRequiredQuantity(Number requiredQuantity);
+    /**
+     * The required quantity of the item(s).
+     *
+     * @param requiredQuantity Text value to set.
+     */
+    void addRequiredQuantity(Text requiredQuantity);
     /**
      * The required quantity of the item(s).
      *

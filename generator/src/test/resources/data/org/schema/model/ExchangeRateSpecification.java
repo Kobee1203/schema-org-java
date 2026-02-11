@@ -7,16 +7,15 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Text;
-import org.schema.model.UnitPriceSpecification;
-import org.schema.model.MonetaryAmount;
 import org.schema.model.datatype.Number;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.UnitPriceSpecification;
 
 /**
  * A structured value representing exchange rate.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/ExchangeRateSpecification">https://schema.org/ExchangeRateSpecification</a>
  */
 public interface ExchangeRateSpecification extends StructuredValue {
@@ -46,12 +45,46 @@ public interface ExchangeRateSpecification extends StructuredValue {
     void addCurrency(Text currency);
 
     /**
+     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
+     *
+     * @return {@link Number} or {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    <T> List<T> getExchangeRateSpreadList();
+
+    /**
+     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
+     *
+     * @return {@link Number} or {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    <T> T getExchangeRateSpread();
+
+    /**
+     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
+     *
+     * @param exchangeRateSpread Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void addExchangeRateSpread(Number exchangeRateSpread);
+    /**
+     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
+     *
+     * @param exchangeRateSpread MonetaryAmount value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void addExchangeRateSpread(MonetaryAmount exchangeRateSpread);
+
+    /**
      * The current price of a currency.
      *
      * @return {@link UnitPriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     List<UnitPriceSpecification> getCurrentExchangeRateList();
 
@@ -61,7 +94,6 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @return {@link UnitPriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     UnitPriceSpecification getCurrentExchangeRate();
 
@@ -71,46 +103,6 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @param currentExchangeRate UnitPriceSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     void addCurrentExchangeRate(UnitPriceSpecification currentExchangeRate);
-
-    /**
-     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
-     *
-     * @return {@link MonetaryAmount} or {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    <T> List<T> getExchangeRateSpreadList();
-
-    /**
-     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
-     *
-     * @return {@link MonetaryAmount} or {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    <T> T getExchangeRateSpread();
-
-    /**
-     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
-     *
-     * @param exchangeRateSpread MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void addExchangeRateSpread(MonetaryAmount exchangeRateSpread);
-    /**
-     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
-     *
-     * @param exchangeRateSpread Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void addExchangeRateSpread(Number exchangeRateSpread);
 }

@@ -6,19 +6,19 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
-import org.schema.model.datatype.Date;
 import org.schema.model.Offer;
-import org.schema.model.MediaSubscription;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.Place;
 import org.schema.model.datatype.Text;
-import org.schema.model.GeoShape;
-import org.schema.model.datatype.URL;
+import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
 import org.schema.model.Thing;
-import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.datatype.URL;
+import org.schema.model.GeoShape;
+import org.schema.model.Place;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.MediaSubscription;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.Time;
 
 /**
  * A set of requirements that must be fulfilled in order to perform an Action.
@@ -27,49 +27,6 @@ import org.schema.model.PhysicalActivityCategory;
  * @see <a href="https://schema.org/ActionAccessSpecification">https://schema.org/ActionAccessSpecification</a>
  */
 public interface ActionAccessSpecification extends Intangible {
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Time} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> List<T> getAvailabilityEndsList();
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Time} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> T getAvailabilityEnds();
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addAvailabilityEnds(DateTime availabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds Time value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addAvailabilityEnds(Time availabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addAvailabilityEnds(Date availabilityEnds);
 
     /**
      * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
@@ -96,132 +53,69 @@ public interface ActionAccessSpecification extends Intangible {
     void addExpectsAcceptanceOf(Offer expectsAcceptanceOf);
 
     /**
-     * The beginning of the availability of the product or service included in the offer.
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @return {@link Date} or {@link Time} or {@link DateTime}
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> List<T> getAvailabilityStartsList();
+    <T> List<T> getCategoryList();
 
     /**
-     * The beginning of the availability of the product or service included in the offer.
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @return {@link Date} or {@link Time} or {@link DateTime}
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> T getAvailabilityStarts();
+    <T> T getCategory();
 
     /**
-     * The beginning of the availability of the product or service included in the offer.
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param availabilityStarts Date value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addAvailabilityStarts(Date availabilityStarts);
+    void addCategory(Text category);
     /**
-     * The beginning of the availability of the product or service included in the offer.
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param availabilityStarts Time value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addAvailabilityStarts(Time availabilityStarts);
+    void addCategory(PhysicalActivityCategory category);
     /**
-     * The beginning of the availability of the product or service included in the offer.
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param availabilityStarts DateTime value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addAvailabilityStarts(DateTime availabilityStarts);
-
+    void addCategory(CategoryCode category);
     /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @return {@link MediaSubscription} or {@link Boolean}
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> List<T> getRequiresSubscriptionList();
-
+    void addCategory(Thing category);
     /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @return {@link MediaSubscription} or {@link Boolean}
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> T getRequiresSubscription();
-
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @param requiresSubscription MediaSubscription value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addRequiresSubscription(MediaSubscription requiresSubscription);
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @param requiresSubscription Boolean value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addRequiresSubscription(Boolean requiresSubscription);
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> List<T> getEligibleRegionList();
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    <T> T getEligibleRegion();
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param eligibleRegion Place value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addEligibleRegion(Place eligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param eligibleRegion Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addEligibleRegion(Text eligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param eligibleRegion GeoShape value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void addEligibleRegion(GeoShape eligibleRegion);
+    void addCategory(URL category);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @return {@link Place} or {@link GeoShape} or {@link Text}
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
@@ -231,21 +125,12 @@ public interface ActionAccessSpecification extends Intangible {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @return {@link Place} or {@link GeoShape} or {@link Text}
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     <T> T getIneligibleRegion();
 
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param ineligibleRegion Place value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void addIneligibleRegion(Place ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
@@ -264,63 +149,163 @@ public interface ActionAccessSpecification extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     void addIneligibleRegion(Text ineligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion Place value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    void addIneligibleRegion(Place ineligibleRegion);
 
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
+     * @return {@link Boolean} or {@link MediaSubscription}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> List<T> getCategoryList();
+    <T> List<T> getRequiresSubscriptionList();
 
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
+     * @return {@link Boolean} or {@link MediaSubscription}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> T getCategory();
+    <T> T getRequiresSubscription();
 
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @param category URL value to set.
+     * @param requiresSubscription Boolean value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addCategory(URL category);
+    void addRequiresSubscription(Boolean requiresSubscription);
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @param category CategoryCode value to set.
+     * @param requiresSubscription MediaSubscription value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addCategory(CategoryCode category);
+    void addRequiresSubscription(MediaSubscription requiresSubscription);
+
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
      *
-     * @param category Text value to set.
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addCategory(Text category);
+    <T> List<T> getEligibleRegionList();
+
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
      *
-     * @param category Thing value to set.
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addCategory(Thing category);
+    <T> T getEligibleRegion();
+
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
      *
-     * @param category PhysicalActivityCategory value to set.
+     * @param eligibleRegion GeoShape value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addCategory(PhysicalActivityCategory category);
+    void addEligibleRegion(GeoShape eligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addEligibleRegion(Text eligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Place value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addEligibleRegion(Place eligibleRegion);
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getAvailabilityStartsList();
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> T getAvailabilityStarts();
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityStarts(DateTime availabilityStarts);
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityStarts(Date availabilityStarts);
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityStarts(Time availabilityStarts);
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getAvailabilityEndsList();
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> T getAvailabilityEnds();
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityEnds(DateTime availabilityEnds);
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityEnds(Date availabilityEnds);
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void addAvailabilityEnds(Time availabilityEnds);
 }

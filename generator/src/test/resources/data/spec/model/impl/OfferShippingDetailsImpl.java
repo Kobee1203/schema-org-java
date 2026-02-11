@@ -5,18 +5,25 @@
  */
 package spec.model.impl;
 
-import spec.model.Distance;
+import spec.model.Mass;
 import spec.model.QuantitativeValue;
-import spec.model.datatype.URL;
+import spec.model.Distance;
 import spec.model.DefinedRegion;
-import spec.model.datatype.Text;
+import spec.model.MemberProgramTier;
 import spec.model.datatype.Boolean;
 import spec.model.ShippingDeliveryTime;
+import spec.model.ShippingService;
 import spec.model.MonetaryAmount;
-import spec.model.Action;
-import spec.model.CreativeWork;
-import spec.model.Event;
+import spec.model.ShippingRateSettings;
+import spec.model.datatype.URL;
+import spec.model.datatype.Text;
 import spec.model.PropertyValue;
+import spec.model.Person;
+import spec.model.Organization;
+import spec.model.Event;
+import spec.model.CreativeWork;
+import spec.model.Action;
+import spec.model.TextObject;
 import spec.model.ImageObject;
 import spec.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -40,213 +47,56 @@ import spec.model.OfferShippingDetails;
  * E.g. Cheaper and slower: $5 in 5-7 days
  * or Fast and expensive: $15 in 1-2 days.
  *
- * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/OfferShippingDetails">https://schema.org/OfferShippingDetails</a>
  */
 @JsonLdTypeName("OfferShippingDetails")
 public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferShippingDetails {
 
-    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
-    private List<Object> width;
+    @JsonLdFieldTypes({ Mass.class, QuantitativeValue.class })
+    private List<Object> weight;
 
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @return {@link Distance} or {@link QuantitativeValue}
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
-    public <T> List<T> getWidthList() {
-        return (List<T>) width;
+    public <T> List<T> getWeightList() {
+        return (List<T>) weight;
     }
 
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @return {@link Distance} or {@link QuantitativeValue}
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
-    public <T> T getWidth() {
-        return (T) getFirst(width);
+    public <T> T getWeight() {
+        return (T) getFirst(weight);
     }
 
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @param width Distance value to set.
+     * @param weight Mass value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
-    public void addWidth(Distance width) {
-        this.width = add(this.width, width);
+    public void addWeight(Mass weight) {
+        this.weight = add(this.weight, weight);
     }
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @param width QuantitativeValue value to set.
+     * @param weight QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
-    public void addWidth(QuantitativeValue width) {
-        this.width = add(this.width, width);
-    }
-
-    private List<URL> shippingSettingsLink;
-
-    /**
-     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public List<URL> getShippingSettingsLinkList() {
-        return shippingSettingsLink;
-    }
-
-    /**
-     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public URL getShippingSettingsLink() {
-        return getFirst(shippingSettingsLink);
-    }
-
-    /**
-     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-     *
-     * @param shippingSettingsLink URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void addShippingSettingsLink(URL shippingSettingsLink) {
-        this.shippingSettingsLink = add(this.shippingSettingsLink, shippingSettingsLink);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
-    private List<Object> depth;
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getDepthList() {
-        return (List<T>) depth;
-    }
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getDepth() {
-        return (T) getFirst(depth);
-    }
-
-    /**
-     * The depth of the item.
-     *
-     * @param depth QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addDepth(QuantitativeValue depth) {
-        this.depth = add(this.depth, depth);
-    }
-    /**
-     * The depth of the item.
-     *
-     * @param depth Distance value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addDepth(Distance depth) {
-        this.depth = add(this.depth, depth);
-    }
-
-    private List<DefinedRegion> shippingDestination;
-
-    /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
-     *
-     * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public List<DefinedRegion> getShippingDestinationList() {
-        return shippingDestination;
-    }
-
-    /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
-     *
-     * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public DefinedRegion getShippingDestination() {
-        return getFirst(shippingDestination);
-    }
-
-    /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
-     *
-     * @param shippingDestination DefinedRegion value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void addShippingDestination(DefinedRegion shippingDestination) {
-        this.shippingDestination = add(this.shippingDestination, shippingDestination);
-    }
-
-    private List<Text> shippingLabel;
-
-    /**
-     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public List<Text> getShippingLabelList() {
-        return shippingLabel;
-    }
-
-    /**
-     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public Text getShippingLabel() {
-        return getFirst(shippingLabel);
-    }
-
-    /**
-     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-     *
-     * @param shippingLabel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void addShippingLabel(Text shippingLabel) {
-        this.shippingLabel = add(this.shippingLabel, shippingLabel);
+    public void addWeight(QuantitativeValue weight) {
+        this.weight = add(this.weight, weight);
     }
 
     @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
@@ -256,6 +106,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * The height of the item.
      *
      * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public <T> List<T> getHeightList() {
@@ -266,6 +117,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * The height of the item.
      *
      * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public <T> T getHeight() {
@@ -276,6 +128,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * The height of the item.
      *
      * @param height QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public void addHeight(QuantitativeValue height) {
@@ -285,10 +138,136 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * The height of the item.
      *
      * @param height Distance value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public void addHeight(Distance height) {
         this.height = add(this.height, height);
+    }
+
+    private List<DefinedRegion> shippingDestination;
+
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+     *
+     * @return {@link DefinedRegion}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public List<DefinedRegion> getShippingDestinationList() {
+        return shippingDestination;
+    }
+
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+     *
+     * @return {@link DefinedRegion}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public DefinedRegion getShippingDestination() {
+        return getFirst(shippingDestination);
+    }
+
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+     *
+     * @param shippingDestination DefinedRegion value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public void addShippingDestination(DefinedRegion shippingDestination) {
+        this.shippingDestination = add(this.shippingDestination, shippingDestination);
+    }
+
+    private List<MemberProgramTier> validForMemberTier;
+
+    /**
+     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+     *
+     * @return {@link MemberProgramTier}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    @Override
+    public List<MemberProgramTier> getValidForMemberTierList() {
+        return validForMemberTier;
+    }
+
+    /**
+     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+     *
+     * @return {@link MemberProgramTier}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    @Override
+    public MemberProgramTier getValidForMemberTier() {
+        return getFirst(validForMemberTier);
+    }
+
+    /**
+     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+     *
+     * @param validForMemberTier MemberProgramTier value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    @Override
+    public void addValidForMemberTier(MemberProgramTier validForMemberTier) {
+        this.validForMemberTier = add(this.validForMemberTier, validForMemberTier);
+    }
+
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
+    private List<Object> depth;
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public <T> List<T> getDepthList() {
+        return (List<T>) depth;
+    }
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public <T> T getDepth() {
+        return (T) getFirst(depth);
+    }
+
+    /**
+     * The depth of the item.
+     *
+     * @param depth Distance value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public void addDepth(Distance depth) {
+        this.depth = add(this.depth, depth);
+    }
+    /**
+     * The depth of the item.
+     *
+     * @param depth QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public void addDepth(QuantitativeValue depth) {
+        this.depth = add(this.depth, depth);
     }
 
     private List<Boolean> doesNotShip;
@@ -297,8 +276,8 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
      * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public List<Boolean> getDoesNotShipList() {
@@ -309,8 +288,8 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
      * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public Boolean getDoesNotShip() {
@@ -321,85 +300,12 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
      * @param doesNotShip Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public void addDoesNotShip(Boolean doesNotShip) {
         this.doesNotShip = add(this.doesNotShip, doesNotShip);
-    }
-
-    private List<QuantitativeValue> weight;
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<QuantitativeValue> getWeightList() {
-        return weight;
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public QuantitativeValue getWeight() {
-        return getFirst(weight);
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addWeight(QuantitativeValue weight) {
-        this.weight = add(this.weight, weight);
-    }
-
-    private List<ShippingDeliveryTime> deliveryTime;
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @return {@link ShippingDeliveryTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public List<ShippingDeliveryTime> getDeliveryTimeList() {
-        return deliveryTime;
-    }
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @return {@link ShippingDeliveryTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public ShippingDeliveryTime getDeliveryTime() {
-        return getFirst(deliveryTime);
-    }
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @param deliveryTime ShippingDeliveryTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void addDeliveryTime(ShippingDeliveryTime deliveryTime) {
-        this.deliveryTime = add(this.deliveryTime, deliveryTime);
     }
 
     private List<DefinedRegion> shippingOrigin;
@@ -408,7 +314,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * Indicates the origin of a shipment, i.e. where it should be coming from.
      *
      * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3122">https://github.com/schemaorg/schemaorg/issues/3122</a>
      */
     @Override
@@ -420,7 +326,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * Indicates the origin of a shipment, i.e. where it should be coming from.
      *
      * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3122">https://github.com/schemaorg/schemaorg/issues/3122</a>
      */
     @Override
@@ -432,7 +338,7 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
      * Indicates the origin of a shipment, i.e. where it should be coming from.
      *
      * @param shippingOrigin DefinedRegion value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3122">https://github.com/schemaorg/schemaorg/issues/3122</a>
      */
     @Override
@@ -440,154 +346,385 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
         this.shippingOrigin = add(this.shippingOrigin, shippingOrigin);
     }
 
-    private List<Text> transitTimeLabel;
+    private List<ShippingDeliveryTime> deliveryTime;
 
     /**
-     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     * The total delay between the receipt of the order and the goods reaching the final customer.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link ShippingDeliveryTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public List<Text> getTransitTimeLabelList() {
-        return transitTimeLabel;
+    public List<ShippingDeliveryTime> getDeliveryTimeList() {
+        return deliveryTime;
     }
 
     /**
-     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     * The total delay between the receipt of the order and the goods reaching the final customer.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link ShippingDeliveryTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public Text getTransitTimeLabel() {
-        return getFirst(transitTimeLabel);
+    public ShippingDeliveryTime getDeliveryTime() {
+        return getFirst(deliveryTime);
     }
 
     /**
-     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     * The total delay between the receipt of the order and the goods reaching the final customer.
      *
-     * @param transitTimeLabel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @param deliveryTime ShippingDeliveryTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void addTransitTimeLabel(Text transitTimeLabel) {
-        this.transitTimeLabel = add(this.transitTimeLabel, transitTimeLabel);
+    public void addDeliveryTime(ShippingDeliveryTime deliveryTime) {
+        this.deliveryTime = add(this.deliveryTime, deliveryTime);
     }
 
-    private List<MonetaryAmount> shippingRate;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
+    private List<Object> width;
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public <T> List<T> getWidthList() {
+        return (List<T>) width;
+    }
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public <T> T getWidth() {
+        return (T) getFirst(width);
+    }
+
+    /**
+     * The width of the item.
+     *
+     * @param width QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public void addWidth(QuantitativeValue width) {
+        this.width = add(this.width, width);
+    }
+    /**
+     * The width of the item.
+     *
+     * @param width Distance value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public void addWidth(Distance width) {
+        this.width = add(this.width, width);
+    }
+
+    private List<ShippingService> hasShippingService;
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public List<ShippingService> getHasShippingServiceList() {
+        return hasShippingService;
+    }
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public ShippingService getHasShippingService() {
+        return getFirst(hasShippingService);
+    }
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @param hasShippingService ShippingService value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public void addHasShippingService(ShippingService hasShippingService) {
+        this.hasShippingService = add(this.hasShippingService, hasShippingService);
+    }
+
+    @JsonLdFieldTypes({ MonetaryAmount.class, ShippingRateSettings.class })
+    private List<Object> shippingRate;
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link MonetaryAmount} or {@link ShippingRateSettings}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
-    public List<MonetaryAmount> getShippingRateList() {
-        return shippingRate;
+    public <T> List<T> getShippingRateList() {
+        return (List<T>) shippingRate;
     }
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link MonetaryAmount} or {@link ShippingRateSettings}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
-    public MonetaryAmount getShippingRate() {
-        return getFirst(shippingRate);
+    public <T> T getShippingRate() {
+        return (T) getFirst(shippingRate);
     }
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
      * @param shippingRate MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
     public void addShippingRate(MonetaryAmount shippingRate) {
         this.shippingRate = add(this.shippingRate, shippingRate);
     }
-
-    private List<Action> potentialAction;
-
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
-     * @return {@link Action}
+     * @param shippingRate ShippingRateSettings value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
+    public void addShippingRate(ShippingRateSettings shippingRate) {
+        this.shippingRate = add(this.shippingRate, shippingRate);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link Action}
+     * @return {@link URL}
      */
     @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public URL getSameAs() {
+        return getFirst(sameAs);
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param potentialAction Action value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> mainEntityOfPage;
+    private List<Text> name;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The name of the item.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link Text}
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public List<Text> getNameList() {
+        return name;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The name of the item.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param additionalType Text value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -636,36 +773,120 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param url URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> alternateName;
@@ -700,68 +921,78 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> sameAs;
+    private List<URL> url;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
-     * @param sameAs URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> description;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param description Text value to set.
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<Text> disambiguatingDescription;
@@ -794,167 +1025,5 @@ public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
-    }
-
-    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    private List<URL> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
     }
 }

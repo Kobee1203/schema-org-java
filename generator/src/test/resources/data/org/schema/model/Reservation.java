@@ -9,13 +9,13 @@ import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Organization;
 import org.schema.model.datatype.DateTime;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
 import org.schema.model.ProgramMembership;
+import org.schema.model.ReservationStatusType;
+import org.schema.model.Ticket;
 import org.schema.model.datatype.Number;
 import org.schema.model.PriceSpecification;
-import org.schema.model.datatype.Text;
-import org.schema.model.Ticket;
-import org.schema.model.Thing;
-import org.schema.model.ReservationStatusType;
 
 /**
  * Describes a reservation for travel, dining or an event. Some reservations require tickets. <br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
@@ -23,6 +23,87 @@ import org.schema.model.ReservationStatusType;
  * @see <a href="https://schema.org/Reservation">https://schema.org/Reservation</a>
  */
 public interface Reservation extends Intangible {
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getProviderList();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> T getProvider();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Person provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Organization provider);
+
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getModifiedTimeList();
+
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getModifiedTime();
+
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @param modifiedTime DateTime value to set.
+     */
+    void addModifiedTime(DateTime modifiedTime);
+
+    /**
+     * The thing -- flight, event, restaurant, etc. being reserved.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getReservationForList();
+
+    /**
+     * The thing -- flight, event, restaurant, etc. being reserved.
+     *
+     * @return {@link Thing}
+     */
+    Thing getReservationFor();
+
+    /**
+     * The thing -- flight, event, restaurant, etc. being reserved.
+     *
+     * @param reservationFor Thing value to set.
+     */
+    void addReservationFor(Thing reservationFor);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -52,64 +133,46 @@ public interface Reservation extends Intangible {
     void addBroker(Organization broker);
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Text}
      */
-    <T> List<T> getProviderList();
+    List<Text> getPriceCurrencyList();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Text}
      */
-    <T> T getProvider();
+    Text getPriceCurrency();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param priceCurrency Text value to set.
      */
-    void addProvider(Organization provider);
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addProvider(Person provider);
+    void addPriceCurrency(Text priceCurrency);
 
     /**
-     * The date and time the reservation was modified.
+     * The date and time the reservation was booked.
      *
      * @return {@link DateTime}
      */
-    List<DateTime> getModifiedTimeList();
+    List<DateTime> getBookingTimeList();
 
     /**
-     * The date and time the reservation was modified.
+     * The date and time the reservation was booked.
      *
      * @return {@link DateTime}
      */
-    DateTime getModifiedTime();
+    DateTime getBookingTime();
 
     /**
-     * The date and time the reservation was modified.
+     * The date and time the reservation was booked.
      *
-     * @param modifiedTime DateTime value to set.
+     * @param bookingTime DateTime value to set.
      */
-    void addModifiedTime(DateTime modifiedTime);
+    void addBookingTime(DateTime bookingTime);
 
     /**
      * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
@@ -131,6 +194,75 @@ public interface Reservation extends Intangible {
      * @param programMembershipUsed ProgramMembership value to set.
      */
     void addProgramMembershipUsed(ProgramMembership programMembershipUsed);
+
+    /**
+     * A unique identifier for the reservation.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getReservationIdList();
+
+    /**
+     * A unique identifier for the reservation.
+     *
+     * @return {@link Text}
+     */
+    Text getReservationId();
+
+    /**
+     * A unique identifier for the reservation.
+     *
+     * @param reservationId Text value to set.
+     */
+    void addReservationId(Text reservationId);
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getUnderNameList();
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getUnderName();
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Person value to set.
+     */
+    void addUnderName(Person underName);
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Organization value to set.
+     */
+    void addUnderName(Organization underName);
+
+    /**
+     * The current status of the reservation.
+     *
+     * @return {@link ReservationStatusType}
+     */
+    List<ReservationStatusType> getReservationStatusList();
+
+    /**
+     * The current status of the reservation.
+     *
+     * @return {@link ReservationStatusType}
+     */
+    ReservationStatusType getReservationStatus();
+
+    /**
+     * The current status of the reservation.
+     *
+     * @param reservationStatus ReservationStatusType value to set.
+     */
+    void addReservationStatus(ReservationStatusType reservationStatus);
 
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
@@ -160,39 +292,6 @@ public interface Reservation extends Intangible {
     void addBookingAgent(Person bookingAgent);
 
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link Number} or {@link PriceSpecification} or {@link Text}
-     */
-    <T> List<T> getTotalPriceList();
-
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link Number} or {@link PriceSpecification} or {@link Text}
-     */
-    <T> T getTotalPrice();
-
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice Number value to set.
-     */
-    void addTotalPrice(Number totalPrice);
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice PriceSpecification value to set.
-     */
-    void addTotalPrice(PriceSpecification totalPrice);
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice Text value to set.
-     */
-    void addTotalPrice(Text totalPrice);
-
-    /**
      * A ticket associated with the reservation.
      *
      * @return {@link Ticket}
@@ -214,134 +313,35 @@ public interface Reservation extends Intangible {
     void addReservedTicket(Ticket reservedTicket);
 
     /**
-     * A unique identifier for the reservation.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link Text}
+     * @return {@link Number} or {@link Text} or {@link PriceSpecification}
      */
-    List<Text> getReservationIdList();
+    <T> List<T> getTotalPriceList();
 
     /**
-     * A unique identifier for the reservation.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link Text}
+     * @return {@link Number} or {@link Text} or {@link PriceSpecification}
      */
-    Text getReservationId();
+    <T> T getTotalPrice();
 
     /**
-     * A unique identifier for the reservation.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param reservationId Text value to set.
+     * @param totalPrice Number value to set.
      */
-    void addReservationId(Text reservationId);
-
+    void addTotalPrice(Number totalPrice);
     /**
-     * The thing -- flight, event, restaurant, etc. being reserved.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link Thing}
+     * @param totalPrice Text value to set.
      */
-    List<Thing> getReservationForList();
-
+    void addTotalPrice(Text totalPrice);
     /**
-     * The thing -- flight, event, restaurant, etc. being reserved.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link Thing}
+     * @param totalPrice PriceSpecification value to set.
      */
-    Thing getReservationFor();
-
-    /**
-     * The thing -- flight, event, restaurant, etc. being reserved.
-     *
-     * @param reservationFor Thing value to set.
-     */
-    void addReservationFor(Thing reservationFor);
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getUnderNameList();
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getUnderName();
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @param underName Organization value to set.
-     */
-    void addUnderName(Organization underName);
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @param underName Person value to set.
-     */
-    void addUnderName(Person underName);
-
-    /**
-     * The date and time the reservation was booked.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getBookingTimeList();
-
-    /**
-     * The date and time the reservation was booked.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getBookingTime();
-
-    /**
-     * The date and time the reservation was booked.
-     *
-     * @param bookingTime DateTime value to set.
-     */
-    void addBookingTime(DateTime bookingTime);
-
-    /**
-     * The current status of the reservation.
-     *
-     * @return {@link ReservationStatusType}
-     */
-    List<ReservationStatusType> getReservationStatusList();
-
-    /**
-     * The current status of the reservation.
-     *
-     * @return {@link ReservationStatusType}
-     */
-    ReservationStatusType getReservationStatus();
-
-    /**
-     * The current status of the reservation.
-     *
-     * @param reservationStatus ReservationStatusType value to set.
-     */
-    void addReservationStatus(ReservationStatusType reservationStatus);
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPriceCurrencyList();
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    Text getPriceCurrency();
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @param priceCurrency Text value to set.
-     */
-    void addPriceCurrency(Text priceCurrency);
+    void addTotalPrice(PriceSpecification totalPrice);
 }
