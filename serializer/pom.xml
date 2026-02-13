@@ -110,6 +110,7 @@
                         <configuration>
                             <sourcesAndResourcesProcessing>TEST_SOURCES_AND_RESOURCES</sourcesAndResourcesProcessing>
                             <output>${project.build.directory}/generated-test-sources/schemaorg</output>
+                            <models>Hotel,Float,PronounceableText</models>
                         </configuration>
                     </execution>
                 </executions>

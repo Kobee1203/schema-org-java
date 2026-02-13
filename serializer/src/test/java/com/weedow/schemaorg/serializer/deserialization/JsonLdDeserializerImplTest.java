@@ -150,7 +150,6 @@ class JsonLdDeserializerImplTest {
         Assertions.assertThat(result.getUrl()).isEqualTo(new java.net.URL("https://github.com/Kobee1203/schema-org-java"));
     }
 
-
     @Test
     void serialize_java_types_with_custom_deserializers(@GivenTextResource("/data/ExampleWithJavaTypes_custom_serializers.json") String json) throws JsonLdException, MalformedURLException {
         @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
