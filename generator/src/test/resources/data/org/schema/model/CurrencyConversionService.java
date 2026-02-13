@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * A service to convert funds from one currency to another currency.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/CurrencyConversionService">https://schema.org/CurrencyConversionService</a>
  */
 public interface CurrencyConversionService extends FinancialProduct {

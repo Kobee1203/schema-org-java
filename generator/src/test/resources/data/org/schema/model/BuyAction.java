@@ -18,54 +18,6 @@ import org.schema.model.WarrantyPromise;
 public interface BuyAction extends TradeAction {
 
     /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getSellerList();
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getSeller();
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Organization value to set.
-     */
-    void addSeller(Organization seller);
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Person value to set.
-     */
-    void addSeller(Person seller);
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @return {@link WarrantyPromise}
-     */
-    List<WarrantyPromise> getWarrantyPromiseList();
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @return {@link WarrantyPromise}
-     */
-    WarrantyPromise getWarrantyPromise();
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @param warrantyPromise WarrantyPromise value to set.
-     */
-    void addWarrantyPromise(WarrantyPromise warrantyPromise);
-
-    /**
      * 'vendor' is an earlier term for 'seller'.
      *
      * @return {@link Organization} or {@link Person}
@@ -91,4 +43,52 @@ public interface BuyAction extends TradeAction {
      * @param vendor Person value to set.
      */
     void addVendor(Person vendor);
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getSellerList();
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getSeller();
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Person value to set.
+     */
+    void addSeller(Person seller);
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Organization value to set.
+     */
+    void addSeller(Organization seller);
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     */
+    List<WarrantyPromise> getWarrantyPromiseList();
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     */
+    WarrantyPromise getWarrantyPromise();
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @param warrantyPromise WarrantyPromise value to set.
+     */
+    void addWarrantyPromise(WarrantyPromise warrantyPromise);
 }

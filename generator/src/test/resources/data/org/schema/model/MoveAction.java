@@ -16,27 +16,6 @@ import org.schema.model.Place;
 public interface MoveAction extends Action {
 
     /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getToLocationList();
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @return {@link Place}
-     */
-    Place getToLocation();
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @param toLocation Place value to set.
-     */
-    void addToLocation(Place toLocation);
-
-    /**
      * A sub property of location. The original location of the object or the agent before the action.
      *
      * @return {@link Place}
@@ -56,4 +35,25 @@ public interface MoveAction extends Action {
      * @param fromLocation Place value to set.
      */
     void addFromLocation(Place fromLocation);
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getToLocationList();
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     * @return {@link Place}
+     */
+    Place getToLocation();
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     * @param toLocation Place value to set.
+     */
+    void addToLocation(Place toLocation);
 }

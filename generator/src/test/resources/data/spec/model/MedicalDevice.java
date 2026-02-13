@@ -6,9 +6,9 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.MedicalContraindication;
 import spec.model.datatype.Text;
 import spec.model.MedicalEntity;
-import spec.model.MedicalContraindication;
 
 /**
  * Any object used in a medical capacity, such as to diagnose or treat a patient.
@@ -17,6 +17,37 @@ import spec.model.MedicalContraindication;
  * @see <a href="https://schema.org/MedicalDevice">https://schema.org/MedicalDevice</a>
  */
 public interface MedicalDevice extends MedicalEntity {
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @return {@link MedicalContraindication} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getContraindicationList();
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @return {@link MedicalContraindication} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getContraindication();
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @param contraindication MedicalContraindication value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addContraindication(MedicalContraindication contraindication);
+    /**
+     * A contraindication for this therapy.
+     *
+     * @param contraindication Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addContraindication(Text contraindication);
 
     /**
      * A description of the postoperative procedures, care, and/or followups for this device.
@@ -137,35 +168,4 @@ public interface MedicalDevice extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addProcedure(Text procedure);
-
-    /**
-     * A contraindication for this therapy.
-     *
-     * @return {@link Text} or {@link MedicalContraindication}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getContraindicationList();
-
-    /**
-     * A contraindication for this therapy.
-     *
-     * @return {@link Text} or {@link MedicalContraindication}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getContraindication();
-
-    /**
-     * A contraindication for this therapy.
-     *
-     * @param contraindication Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addContraindication(Text contraindication);
-    /**
-     * A contraindication for this therapy.
-     *
-     * @param contraindication MedicalContraindication value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addContraindication(MedicalContraindication contraindication);
 }

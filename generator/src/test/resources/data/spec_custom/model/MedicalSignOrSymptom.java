@@ -6,7 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.Drug;
+import spec_custom.model.DrugClass;
 import spec_custom.model.MedicalTherapy;
+import spec_custom.model.LifestyleModification;
 
 /**
  * Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.
@@ -19,19 +22,33 @@ public interface MedicalSignOrSymptom extends MedicalCondition {
     /**
      * A possible treatment to address this condition, sign or symptom.
      *
-     * @return {@link MedicalTherapy}
+     * @return {@link Drug} or {@link DrugClass} or {@link MedicalTherapy} or {@link LifestyleModification}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalTherapy> getPossibleTreatmentList();
+    <T> List<T> getPossibleTreatmentList();
 
     /**
      * A possible treatment to address this condition, sign or symptom.
      *
-     * @return {@link MedicalTherapy}
+     * @return {@link Drug} or {@link DrugClass} or {@link MedicalTherapy} or {@link LifestyleModification}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalTherapy getPossibleTreatment();
+    <T> T getPossibleTreatment();
 
+    /**
+     * A possible treatment to address this condition, sign or symptom.
+     *
+     * @param possibleTreatment Drug value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addPossibleTreatment(Drug possibleTreatment);
+    /**
+     * A possible treatment to address this condition, sign or symptom.
+     *
+     * @param possibleTreatment DrugClass value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addPossibleTreatment(DrugClass possibleTreatment);
     /**
      * A possible treatment to address this condition, sign or symptom.
      *
@@ -39,4 +56,11 @@ public interface MedicalSignOrSymptom extends MedicalCondition {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addPossibleTreatment(MedicalTherapy possibleTreatment);
+    /**
+     * A possible treatment to address this condition, sign or symptom.
+     *
+     * @param possibleTreatment LifestyleModification value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addPossibleTreatment(LifestyleModification possibleTreatment);
 }

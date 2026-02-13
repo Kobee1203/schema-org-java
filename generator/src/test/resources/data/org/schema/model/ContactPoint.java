@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.AdministrativeArea;
-import org.schema.model.Place;
-import org.schema.model.GeoShape;
-import org.schema.model.datatype.Text;
-import org.schema.model.Language;
-import org.schema.model.Product;
-import org.schema.model.ContactPointOption;
 import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.datatype.Text;
+import org.schema.model.Product;
+import org.schema.model.Place;
+import org.schema.model.AdministrativeArea;
+import org.schema.model.GeoShape;
+import org.schema.model.Language;
+import org.schema.model.ContactPointOption;
 
 /**
  * A contact point&#x2014;for example, a Customer Complaints department.
@@ -23,64 +23,25 @@ import org.schema.model.OpeningHoursSpecification;
 public interface ContactPoint extends StructuredValue {
 
     /**
-     * The geographic area where the service is provided.
+     * The hours during which this service or contact is available.
      *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
+     * @return {@link OpeningHoursSpecification}
      */
-    <T> List<T> getServiceAreaList();
+    List<OpeningHoursSpecification> getHoursAvailableList();
 
     /**
-     * The geographic area where the service is provided.
+     * The hours during which this service or contact is available.
      *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
+     * @return {@link OpeningHoursSpecification}
      */
-    <T> T getServiceArea();
+    OpeningHoursSpecification getHoursAvailable();
 
     /**
-     * The geographic area where the service is provided.
+     * The hours during which this service or contact is available.
      *
-     * @param serviceArea AdministrativeArea value to set.
+     * @param hoursAvailable OpeningHoursSpecification value to set.
      */
-    void addServiceArea(AdministrativeArea serviceArea);
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea Place value to set.
-     */
-    void addServiceArea(Place serviceArea);
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea GeoShape value to set.
-     */
-    void addServiceArea(GeoShape serviceArea);
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     */
-    <T> List<T> getAvailableLanguageList();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     */
-    <T> T getAvailableLanguage();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Text value to set.
-     */
-    void addAvailableLanguage(Text availableLanguage);
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Language value to set.
-     */
-    void addAvailableLanguage(Language availableLanguage);
+    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
 
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
@@ -112,23 +73,17 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
      */
     <T> List<T> getAreaServedList();
 
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
      */
     <T> T getAreaServed();
 
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
-    void addAreaServed(Text areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
@@ -138,15 +93,81 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param areaServed AdministrativeArea value to set.
+     */
+    void addAreaServed(AdministrativeArea areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
      * @param areaServed GeoShape value to set.
      */
     void addAreaServed(GeoShape areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param areaServed AdministrativeArea value to set.
+     * @param areaServed Text value to set.
      */
-    void addAreaServed(AdministrativeArea areaServed);
+    void addAreaServed(Text areaServed);
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    <T> List<T> getAvailableLanguageList();
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    <T> T getAvailableLanguage();
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Language value to set.
+     */
+    void addAvailableLanguage(Language availableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Text value to set.
+     */
+    void addAvailableLanguage(Text availableLanguage);
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    <T> List<T> getServiceAreaList();
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    <T> T getServiceArea();
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    void addServiceArea(AdministrativeArea serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea GeoShape value to set.
+     */
+    void addServiceArea(GeoShape serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    void addServiceArea(Place serviceArea);
 
     /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
@@ -170,25 +191,25 @@ public interface ContactPoint extends StructuredValue {
     void addContactOption(ContactPointOption contactOption);
 
     /**
-     * Email address.
+     * The telephone number.
      *
      * @return {@link Text}
      */
-    List<Text> getEmailList();
+    List<Text> getTelephoneList();
 
     /**
-     * Email address.
+     * The telephone number.
      *
      * @return {@link Text}
      */
-    Text getEmail();
+    Text getTelephone();
 
     /**
-     * Email address.
+     * The telephone number.
      *
-     * @param email Text value to set.
+     * @param telephone Text value to set.
      */
-    void addEmail(Text email);
+    void addTelephone(Text telephone);
 
     /**
      * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
@@ -212,27 +233,6 @@ public interface ContactPoint extends StructuredValue {
     void addContactType(Text contactType);
 
     /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    List<OpeningHoursSpecification> getHoursAvailableList();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    OpeningHoursSpecification getHoursAvailable();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @param hoursAvailable OpeningHoursSpecification value to set.
-     */
-    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
-
-    /**
      * The fax number.
      *
      * @return {@link Text}
@@ -254,23 +254,23 @@ public interface ContactPoint extends StructuredValue {
     void addFaxNumber(Text faxNumber);
 
     /**
-     * The telephone number.
+     * Email address.
      *
      * @return {@link Text}
      */
-    List<Text> getTelephoneList();
+    List<Text> getEmailList();
 
     /**
-     * The telephone number.
+     * Email address.
      *
      * @return {@link Text}
      */
-    Text getTelephone();
+    Text getEmail();
 
     /**
-     * The telephone number.
+     * Email address.
      *
-     * @param telephone Text value to set.
+     * @param email Text value to set.
      */
-    void addTelephone(Text telephone);
+    void addEmail(Text email);
 }

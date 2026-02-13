@@ -5,10 +5,11 @@
  */
 package spec_custom.model;
 
+import java.util.List;
+
 /**
  * A value indicating which roadwheels will receive torque.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/DriveWheelConfigurationValue">https://schema.org/DriveWheelConfigurationValue</a>
  */
 public interface DriveWheelConfigurationValue extends QualitativeValue {

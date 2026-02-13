@@ -5,6 +5,8 @@
  */
 package spec_custom.model;
 
+import java.util.List;
+
 /**
  * NLNonprofitType: Non-profit organization type originating from the Netherlands.
  *

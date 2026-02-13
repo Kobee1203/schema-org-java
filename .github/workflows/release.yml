@@ -39,7 +39,7 @@ jobs:
           ref: ${{ github.REF }}
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: 17
@@ -49,9 +49,9 @@ jobs:
         with:
           servers: '[
             {
-              "id": "ossrh",
-              "username": "${{ secrets.OSSRH_USERNAME }}",
-              "password": "${{ secrets.OSSRH_PASSWORD }}"
+              "id": "central",
+              "username": "${{ secrets.CENTRAL_USERNAME }}",
+              "password": "${{ secrets.CENTRAL_TOKEN }}"
             },
             {
               "id": "github",
@@ -64,14 +64,14 @@ jobs:
         run: mvn --version
 
       - name: Prepare Release (Dry Run)
-        run: mvn -e -B -DdryRun=true release:clean release:prepare -P release,ossrh
+        run: mvn -e -B -DdryRun=true release:clean release:prepare -P release,central
         env:
           SIGN_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           SIGN_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           SIGN_KEY_PASS: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Prepare and Perform Release
-        run: mvn -e -B release:clean release:prepare release:perform -P release,ossrh
+        run: mvn -e -B release:clean release:prepare release:perform -P release,central
         env:
           SIGN_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           SIGN_KEY_ID: ${{ secrets.GPG_KEY_ID }}

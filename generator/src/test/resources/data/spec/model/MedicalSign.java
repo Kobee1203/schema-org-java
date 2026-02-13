@@ -6,8 +6,8 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.PhysicalExam;
 import spec.model.MedicalTest;
+import spec.model.PhysicalExam;
 
 /**
  * Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.
@@ -16,30 +16,6 @@ import spec.model.MedicalTest;
  * @see <a href="https://schema.org/MedicalSign">https://schema.org/MedicalSign</a>
  */
 public interface MedicalSign extends MedicalSignOrSymptom {
-
-    /**
-     * A physical examination that can identify this sign.
-     *
-     * @return {@link PhysicalExam}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<PhysicalExam> getIdentifyingExamList();
-
-    /**
-     * A physical examination that can identify this sign.
-     *
-     * @return {@link PhysicalExam}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    PhysicalExam getIdentifyingExam();
-
-    /**
-     * A physical examination that can identify this sign.
-     *
-     * @param identifyingExam PhysicalExam value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addIdentifyingExam(PhysicalExam identifyingExam);
 
     /**
      * A diagnostic test that can identify this sign.
@@ -64,4 +40,28 @@ public interface MedicalSign extends MedicalSignOrSymptom {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addIdentifyingTest(MedicalTest identifyingTest);
+
+    /**
+     * A physical examination that can identify this sign.
+     *
+     * @return {@link PhysicalExam}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<PhysicalExam> getIdentifyingExamList();
+
+    /**
+     * A physical examination that can identify this sign.
+     *
+     * @return {@link PhysicalExam}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    PhysicalExam getIdentifyingExam();
+
+    /**
+     * A physical examination that can identify this sign.
+     *
+     * @param identifyingExam PhysicalExam value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addIdentifyingExam(PhysicalExam identifyingExam);
 }

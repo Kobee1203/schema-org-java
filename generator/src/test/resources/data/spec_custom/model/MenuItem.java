@@ -7,11 +7,11 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.NutritionInformation;
-import spec_custom.model.RestrictedDiet;
-import spec_custom.model.MenuItem;
-import spec_custom.model.MenuSection;
-import spec_custom.model.Demand;
 import spec_custom.model.Offer;
+import spec_custom.model.Demand;
+import spec_custom.model.RestrictedDiet;
+import spec_custom.model.MenuSection;
+import spec_custom.model.MenuItem;
 
 /**
  * A food or drink item listed in a menu or menu section.
@@ -42,6 +42,41 @@ public interface MenuItem extends Intangible {
     void addNutrition(NutritionInformation nutrition);
 
     /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getOffersList();
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> T getOffers();
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Offer value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addOffers(Offer offers);
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addOffers(Demand offers);
+
+    /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
      *
      * @return {@link RestrictedDiet}
@@ -65,7 +100,7 @@ public interface MenuItem extends Intangible {
     /**
      * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
      *
-     * @return {@link MenuItem} or {@link MenuSection}
+     * @return {@link MenuSection} or {@link MenuItem}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
     <T> List<T> getMenuAddOnList();
@@ -73,7 +108,7 @@ public interface MenuItem extends Intangible {
     /**
      * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
      *
-     * @return {@link MenuItem} or {@link MenuSection}
+     * @return {@link MenuSection} or {@link MenuItem}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
     <T> T getMenuAddOn();
@@ -81,50 +116,15 @@ public interface MenuItem extends Intangible {
     /**
      * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
      *
-     * @param menuAddOn MenuItem value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
-     */
-    void addMenuAddOn(MenuItem menuAddOn);
-    /**
-     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
-     *
      * @param menuAddOn MenuSection value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
     void addMenuAddOn(MenuSection menuAddOn);
-
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
      *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param menuAddOn MenuItem value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
-    <T> List<T> getOffersList();
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    <T> T getOffers();
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addOffers(Demand offers);
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addOffers(Offer offers);
+    void addMenuAddOn(MenuItem menuAddOn);
 }

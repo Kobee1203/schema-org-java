@@ -6,8 +6,9 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
 import spec.model.Country;
+import spec.model.datatype.Text;
+import spec.model.AdministrativeArea;
 
 /**
  * The mailing address.
@@ -15,6 +16,110 @@ import spec.model.Country;
  * @see <a href="https://schema.org/PostalAddress">https://schema.org/PostalAddress</a>
  */
 public interface PostalAddress extends ContactPoint {
+
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    <T> List<T> getAddressCountryList();
+
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @return {@link Country} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    <T> T getAddressCountry();
+
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @param addressCountry Country value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addAddressCountry(Country addressCountry);
+    /**
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
+     *
+     * @param addressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addAddressCountry(Text addressCountry);
+
+    /**
+     * An address extension such as an apartment number, C/O or alternative name.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getExtendedAddressList();
+
+    /**
+     * An address extension such as an apartment number, C/O or alternative name.
+     *
+     * @return {@link Text}
+     */
+    Text getExtendedAddress();
+
+    /**
+     * An address extension such as an apartment number, C/O or alternative name.
+     *
+     * @param extendedAddress Text value to set.
+     */
+    void addExtendedAddress(Text extendedAddress);
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getStreetAddressList();
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    Text getStreetAddress();
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @param streetAddress Text value to set.
+     */
+    void addStreetAddress(Text streetAddress);
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    <T> List<T> getAddressRegionList();
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    <T> T getAddressRegion();
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @param addressRegion AdministrativeArea value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addAddressRegion(AdministrativeArea addressRegion);
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @param addressRegion Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addAddressRegion(Text addressRegion);
 
     /**
      * The locality in which the street address is, and which is in the region. For example, Mountain View.
@@ -59,58 +164,6 @@ public interface PostalAddress extends ContactPoint {
     void addPostOfficeBoxNumber(Text postOfficeBoxNumber);
 
     /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getStreetAddressList();
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    Text getStreetAddress();
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @param streetAddress Text value to set.
-     */
-    void addStreetAddress(Text streetAddress);
-
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    <T> List<T> getAddressCountryList();
-
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    <T> T getAddressCountry();
-
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @param addressCountry Country value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addAddressCountry(Country addressCountry);
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @param addressCountry Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addAddressCountry(Text addressCountry);
-
-    /**
      * The postal code. For example, 94043.
      *
      * @return {@link Text}
@@ -133,28 +186,4 @@ public interface PostalAddress extends ContactPoint {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addPostalCode(Text postalCode);
-
-    /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<Text> getAddressRegionList();
-
-    /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    Text getAddressRegion();
-
-    /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
-     *
-     * @param addressRegion Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addAddressRegion(Text addressRegion);
 }

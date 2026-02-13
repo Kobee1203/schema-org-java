@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * The kind of release which this album is: single, EP or album.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicAlbumReleaseType">https://schema.org/MusicAlbumReleaseType</a>
  */
 public interface MusicAlbumReleaseType extends Enumeration {

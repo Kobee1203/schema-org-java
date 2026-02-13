@@ -6,19 +6,45 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.Review;
-import spec.model.ImageObject;
 import spec.model.datatype.URL;
+import spec.model.ImageObject;
+import spec.model.datatype.Text;
 import spec.model.AggregateRating;
+import spec.model.Review;
 
 /**
  * A brand is a name used by an organization or business person for labeling a product, product group, or similar.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/Brand">https://schema.org/Brand</a>
  */
 public interface Brand extends Intangible {
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    <T> List<T> getLogoList();
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    <T> T getLogo();
+
+    /**
+     * An associated logo.
+     *
+     * @param logo URL value to set.
+     */
+    void addLogo(URL logo);
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     */
+    void addLogo(ImageObject logo);
 
     /**
      * A slogan or motto associated with the item.
@@ -42,58 +68,6 @@ public interface Brand extends Intangible {
     void addSlogan(Text slogan);
 
     /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    List<Review> getReviewList();
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    Review getReview();
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    void addReview(Review review);
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getLogoList();
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getLogo();
-
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addLogo(ImageObject logo);
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addLogo(URL logo);
-
-    /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
      * @return {@link AggregateRating}
@@ -113,4 +87,25 @@ public interface Brand extends Intangible {
      * @param aggregateRating AggregateRating value to set.
      */
     void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewList();
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    Review getReview();
+
+    /**
+     * A review of the item.
+     *
+     * @param review Review value to set.
+     */
+    void addReview(Review review);
 }

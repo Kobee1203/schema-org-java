@@ -22,7 +22,8 @@ public class ClassModelHandlerImpl extends AbstractTypeModelHandler {
         final String id = graphItem.getId();
         final List<String> types = graphItem.getTypes();
         final List<SubClassOf> subClassOf = graphItem.getSubClassOf();
-        return !SchemaConstants.SCHEMA_DATA_TYPE.equals(id)
+        return id.startsWith(SchemaConstants.SCHEMA_PREFIX)
+                && !SchemaConstants.SCHEMA_DATA_TYPE.equals(id)
                 && types.contains(SchemaConstants.RDFS_CLASS) && !types.contains(SchemaConstants.SCHEMA_DATA_TYPE)
                 && (subClassOf == null || subClassOf.stream().noneMatch(subClass -> ModelUtils.isDataType(subClass.getId())));
     }
