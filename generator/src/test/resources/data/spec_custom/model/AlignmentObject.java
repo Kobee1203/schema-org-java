@@ -6,39 +6,16 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
+import spec_custom.model.datatype.Text;
 
 /**
  * An intangible item that describes an alignment between a learning resource and a node in an educational framework.
- * 
  * Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass</a>
  * @see <a href="https://schema.org/AlignmentObject">https://schema.org/AlignmentObject</a>
  */
 public interface AlignmentObject extends Intangible {
-
-    /**
-     * The name of a node in an established educational framework.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTargetNameList();
-
-    /**
-     * The name of a node in an established educational framework.
-     *
-     * @return {@link Text}
-     */
-    Text getTargetName();
-
-    /**
-     * The name of a node in an established educational framework.
-     *
-     * @param targetName Text value to set.
-     */
-    void addTargetName(Text targetName);
 
     /**
      * The URL of a node in an established educational framework.
@@ -83,6 +60,27 @@ public interface AlignmentObject extends Intangible {
     void addAlignmentType(Text alignmentType);
 
     /**
+     * The framework to which the resource being described is aligned.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEducationalFrameworkList();
+
+    /**
+     * The framework to which the resource being described is aligned.
+     *
+     * @return {@link Text}
+     */
+    Text getEducationalFramework();
+
+    /**
+     * The framework to which the resource being described is aligned.
+     *
+     * @param educationalFramework Text value to set.
+     */
+    void addEducationalFramework(Text educationalFramework);
+
+    /**
      * The description of a node in an established educational framework.
      *
      * @return {@link Text}
@@ -104,23 +102,23 @@ public interface AlignmentObject extends Intangible {
     void addTargetDescription(Text targetDescription);
 
     /**
-     * The framework to which the resource being described is aligned.
+     * The name of a node in an established educational framework.
      *
      * @return {@link Text}
      */
-    List<Text> getEducationalFrameworkList();
+    List<Text> getTargetNameList();
 
     /**
-     * The framework to which the resource being described is aligned.
+     * The name of a node in an established educational framework.
      *
      * @return {@link Text}
      */
-    Text getEducationalFramework();
+    Text getTargetName();
 
     /**
-     * The framework to which the resource being described is aligned.
+     * The name of a node in an established educational framework.
      *
-     * @param educationalFramework Text value to set.
+     * @param targetName Text value to set.
      */
-    void addEducationalFramework(Text educationalFramework);
+    void addTargetName(Text targetName);
 }

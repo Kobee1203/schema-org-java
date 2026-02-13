@@ -6,10 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.MusicGroup;
 import org.schema.model.Person;
+import org.schema.model.PerformingGroup;
 import org.schema.model.VideoObject;
 import org.schema.model.Organization;
-import org.schema.model.MusicGroup;
 
 /**
  * A series of movies. Included movies can be indicated with the hasPart property.
@@ -19,42 +20,54 @@ import org.schema.model.MusicGroup;
 public interface MovieSeries extends CreativeWorkSeries {
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * The composer of the soundtrack.
      *
-     * @return {@link Person}
+     * @return {@link MusicGroup} or {@link Person}
      */
-    List<Person> getActorsList();
+    <T> List<T> getMusicByList();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * The composer of the soundtrack.
      *
-     * @return {@link Person}
+     * @return {@link MusicGroup} or {@link Person}
      */
-    Person getActors();
+    <T> T getMusicBy();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * The composer of the soundtrack.
      *
-     * @param actors Person value to set.
+     * @param musicBy MusicGroup value to set.
      */
-    void addActors(Person actors);
+    void addMusicBy(MusicGroup musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy Person value to set.
+     */
+    void addMusicBy(Person musicBy);
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Person}
+     * @return {@link PerformingGroup} or {@link Person}
      */
-    List<Person> getActorList();
+    <T> List<T> getActorList();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Person}
+     * @return {@link PerformingGroup} or {@link Person}
      */
-    Person getActor();
+    <T> T getActor();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @param actor Person value to set.
      */
@@ -103,27 +116,6 @@ public interface MovieSeries extends CreativeWorkSeries {
     void addProductionCompany(Organization productionCompany);
 
     /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirector();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    void addDirector(Person director);
-
-    /**
      * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
      * @return {@link Person}
@@ -145,29 +137,44 @@ public interface MovieSeries extends CreativeWorkSeries {
     void addDirectors(Person directors);
 
     /**
-     * The composer of the soundtrack.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link MusicGroup} or {@link Person}
+     * @return {@link Person}
      */
-    <T> List<T> getMusicByList();
+    List<Person> getActorsList();
 
     /**
-     * The composer of the soundtrack.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link MusicGroup} or {@link Person}
+     * @return {@link Person}
      */
-    <T> T getMusicBy();
+    Person getActors();
 
     /**
-     * The composer of the soundtrack.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param musicBy MusicGroup value to set.
+     * @param actors Person value to set.
      */
-    void addMusicBy(MusicGroup musicBy);
+    void addActors(Person actors);
+
     /**
-     * The composer of the soundtrack.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param musicBy Person value to set.
+     * @return {@link Person}
      */
-    void addMusicBy(Person musicBy);
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirector();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    void addDirector(Person director);
 }

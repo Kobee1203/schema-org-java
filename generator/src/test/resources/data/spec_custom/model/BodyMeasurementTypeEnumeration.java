@@ -5,6 +5,8 @@
  */
 package spec_custom.model;
 
+import java.util.List;
+
 /**
  * Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes.
  *

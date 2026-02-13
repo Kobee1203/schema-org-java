@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
- * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
+ * @see <a href="https://schema.org/docs/collab/FundInfoCollab">https://schema.org/docs/collab/FundInfoCollab</a>
  * @see <a href="https://schema.org/FundingAgency">https://schema.org/FundingAgency</a>
  */
 public interface FundingAgency extends Project {

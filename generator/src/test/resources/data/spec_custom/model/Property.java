@@ -19,9 +19,57 @@ import spec_custom.model.Enumeration;
 public interface Property extends Intangible {
 
     /**
+     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @return {@link Class}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    List<Class> getRangeIncludesList();
+
+    /**
+     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @return {@link Class}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    Class getRangeIncludes();
+
+    /**
+     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @param rangeIncludes Class value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void addRangeIncludes(Class rangeIncludes);
+
+    /**
+     * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
+     *
+     * @return {@link Property}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    List<Property> getInverseOfList();
+
+    /**
+     * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
+     *
+     * @return {@link Property}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    Property getInverseOf();
+
+    /**
+     * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
+     *
+     * @param inverseOf Property value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void addInverseOf(Property inverseOf);
+
+    /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @return {@link Class} or {@link Property} or {@link Enumeration}
+     * @return {@link Property} or {@link Class} or {@link Enumeration}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     <T> List<T> getSupersededByList();
@@ -29,7 +77,7 @@ public interface Property extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @return {@link Class} or {@link Property} or {@link Enumeration}
+     * @return {@link Property} or {@link Class} or {@link Enumeration}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     <T> T getSupersededBy();
@@ -37,17 +85,17 @@ public interface Property extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param supersededBy Class value to set.
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    void addSupersededBy(Class supersededBy);
-    /**
-     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-     *
      * @param supersededBy Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void addSupersededBy(Property supersededBy);
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param supersededBy Class value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void addSupersededBy(Class supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
@@ -79,52 +127,4 @@ public interface Property extends Intangible {
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void addDomainIncludes(Class domainIncludes);
-
-    /**
-     * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
-     *
-     * @return {@link Property}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    List<Property> getInverseOfList();
-
-    /**
-     * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
-     *
-     * @return {@link Property}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    Property getInverseOf();
-
-    /**
-     * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
-     *
-     * @param inverseOf Property value to set.
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    void addInverseOf(Property inverseOf);
-
-    /**
-     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
-     *
-     * @return {@link Class}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    List<Class> getRangeIncludesList();
-
-    /**
-     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
-     *
-     * @return {@link Class}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    Class getRangeIncludes();
-
-    /**
-     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
-     *
-     * @param rangeIncludes Class value to set.
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    void addRangeIncludes(Class rangeIncludes);
 }

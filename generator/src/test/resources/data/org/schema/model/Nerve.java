@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Muscle;
-import org.schema.model.AnatomicalStructure;
 import org.schema.model.BrainStructure;
+import org.schema.model.AnatomicalStructure;
+import org.schema.model.Muscle;
 import org.schema.model.SuperficialAnatomy;
 
 /**
@@ -18,54 +18,6 @@ import org.schema.model.SuperficialAnatomy;
  * @see <a href="https://schema.org/Nerve">https://schema.org/Nerve</a>
  */
 public interface Nerve extends AnatomicalStructure {
-
-    /**
-     * The neurological pathway extension that involves muscle control.
-     *
-     * @return {@link Muscle}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Muscle> getNerveMotorList();
-
-    /**
-     * The neurological pathway extension that involves muscle control.
-     *
-     * @return {@link Muscle}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Muscle getNerveMotor();
-
-    /**
-     * The neurological pathway extension that involves muscle control.
-     *
-     * @param nerveMotor Muscle value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addNerveMotor(Muscle nerveMotor);
-
-    /**
-     * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AnatomicalStructure> getBranchList();
-
-    /**
-     * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AnatomicalStructure getBranch();
-
-    /**
-     * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
-     *
-     * @param branch AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addBranch(AnatomicalStructure branch);
 
     /**
      * The neurological pathway that originates the neurons.
@@ -92,9 +44,57 @@ public interface Nerve extends AnatomicalStructure {
     void addSourcedFrom(BrainStructure sourcedFrom);
 
     /**
+     * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getBranchList();
+
+    /**
+     * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AnatomicalStructure getBranch();
+
+    /**
+     * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
+     *
+     * @param branch AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addBranch(AnatomicalStructure branch);
+
+    /**
+     * The neurological pathway extension that involves muscle control.
+     *
+     * @return {@link Muscle}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Muscle> getNerveMotorList();
+
+    /**
+     * The neurological pathway extension that involves muscle control.
+     *
+     * @return {@link Muscle}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Muscle getNerveMotor();
+
+    /**
+     * The neurological pathway extension that involves muscle control.
+     *
+     * @param nerveMotor Muscle value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addNerveMotor(Muscle nerveMotor);
+
+    /**
      * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
-     * @return {@link AnatomicalStructure} or {@link SuperficialAnatomy}
+     * @return {@link SuperficialAnatomy} or {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> List<T> getSensoryUnitList();
@@ -102,7 +102,7 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
-     * @return {@link AnatomicalStructure} or {@link SuperficialAnatomy}
+     * @return {@link SuperficialAnatomy} or {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> T getSensoryUnit();
@@ -110,15 +110,15 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
-     * @param sensoryUnit AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSensoryUnit(AnatomicalStructure sensoryUnit);
-    /**
-     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
-     *
      * @param sensoryUnit SuperficialAnatomy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addSensoryUnit(SuperficialAnatomy sensoryUnit);
+    /**
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     *
+     * @param sensoryUnit AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addSensoryUnit(AnatomicalStructure sensoryUnit);
 }

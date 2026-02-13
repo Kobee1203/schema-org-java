@@ -6,15 +6,17 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Person;
-import spec_custom.model.VideoObject;
 import spec_custom.model.Duration;
-import spec_custom.model.Organization;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.MusicGroup;
+import spec_custom.model.Person;
 import spec_custom.model.CreativeWorkSeason;
-import spec_custom.model.CreativeWorkSeries;
+import spec_custom.model.PerformingGroup;
+import spec_custom.model.VideoObject;
 import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.Integer;
-import spec_custom.model.MusicGroup;
+import spec_custom.model.CreativeWorkSeries;
+import spec_custom.model.Organization;
 
 /**
  * A media episode (e.g. TV, radio, video game) which can be part of a series or season.
@@ -24,42 +26,114 @@ import spec_custom.model.MusicGroup;
 public interface Episode extends CreativeWork {
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @return {@link Person}
+     * @return {@link Duration} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    List<Person> getActorsList();
+    <T> List<T> getDurationList();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @return {@link Person}
+     * @return {@link Duration} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    Person getActors();
+    <T> T getDuration();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param actors Person value to set.
+     * @param duration Duration value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    void addActors(Person actors);
+    void addDuration(Duration duration);
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param duration QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addDuration(QuantitativeValue duration);
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The composer of the soundtrack.
      *
-     * @return {@link Person}
+     * @return {@link MusicGroup} or {@link Person}
      */
-    List<Person> getActorList();
+    <T> List<T> getMusicByList();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The composer of the soundtrack.
      *
-     * @return {@link Person}
+     * @return {@link MusicGroup} or {@link Person}
      */
-    Person getActor();
+    <T> T getMusicBy();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void addMusicBy(MusicGroup musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy Person value to set.
+     */
+    void addMusicBy(Person musicBy);
+
+    /**
+     * The season to which this episode belongs.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getPartOfSeasonList();
+
+    /**
+     * The season to which this episode belongs.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    CreativeWorkSeason getPartOfSeason();
+
+    /**
+     * The season to which this episode belongs.
+     *
+     * @param partOfSeason CreativeWorkSeason value to set.
+     */
+    void addPartOfSeason(CreativeWorkSeason partOfSeason);
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> List<T> getActorList();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> T getActor();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @param actor Person value to set.
      */
@@ -85,138 +159,6 @@ public interface Episode extends CreativeWork {
      * @param trailer VideoObject value to set.
      */
     void addTrailer(VideoObject trailer);
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    List<Duration> getDurationList();
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    Duration getDuration();
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @param duration Duration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addDuration(Duration duration);
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getProductionCompanyList();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    Organization getProductionCompany();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @param productionCompany Organization value to set.
-     */
-    void addProductionCompany(Organization productionCompany);
-
-    /**
-     * The season to which this episode belongs.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    List<CreativeWorkSeason> getPartOfSeasonList();
-
-    /**
-     * The season to which this episode belongs.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    CreativeWorkSeason getPartOfSeason();
-
-    /**
-     * The season to which this episode belongs.
-     *
-     * @param partOfSeason CreativeWorkSeason value to set.
-     */
-    void addPartOfSeason(CreativeWorkSeason partOfSeason);
-
-    /**
-     * The series to which this episode or season belongs.
-     *
-     * @return {@link CreativeWorkSeries}
-     */
-    List<CreativeWorkSeries> getPartOfSeriesList();
-
-    /**
-     * The series to which this episode or season belongs.
-     *
-     * @return {@link CreativeWorkSeries}
-     */
-    CreativeWorkSeries getPartOfSeries();
-
-    /**
-     * The series to which this episode or season belongs.
-     *
-     * @param partOfSeries CreativeWorkSeries value to set.
-     */
-    void addPartOfSeries(CreativeWorkSeries partOfSeries);
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirector();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    void addDirector(Person director);
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorsList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirectors();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param directors Person value to set.
-     */
-    void addDirectors(Person directors);
 
     /**
      * Position of the episode within an ordered group of episodes.
@@ -246,29 +188,107 @@ public interface Episode extends CreativeWork {
     void addEpisodeNumber(Integer episodeNumber);
 
     /**
-     * The composer of the soundtrack.
+     * The series to which this episode or season belongs.
      *
-     * @return {@link MusicGroup} or {@link Person}
+     * @return {@link CreativeWorkSeries}
      */
-    <T> List<T> getMusicByList();
+    List<CreativeWorkSeries> getPartOfSeriesList();
 
     /**
-     * The composer of the soundtrack.
+     * The series to which this episode or season belongs.
      *
-     * @return {@link MusicGroup} or {@link Person}
+     * @return {@link CreativeWorkSeries}
      */
-    <T> T getMusicBy();
+    CreativeWorkSeries getPartOfSeries();
 
     /**
-     * The composer of the soundtrack.
+     * The series to which this episode or season belongs.
      *
-     * @param musicBy MusicGroup value to set.
+     * @param partOfSeries CreativeWorkSeries value to set.
      */
-    void addMusicBy(MusicGroup musicBy);
+    void addPartOfSeries(CreativeWorkSeries partOfSeries);
+
     /**
-     * The composer of the soundtrack.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @param musicBy Person value to set.
+     * @return {@link Organization}
      */
-    void addMusicBy(Person musicBy);
+    List<Organization> getProductionCompanyList();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    Organization getProductionCompany();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @param productionCompany Organization value to set.
+     */
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirectors();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param directors Person value to set.
+     */
+    void addDirectors(Person directors);
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getActors();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actors Person value to set.
+     */
+    void addActors(Person actors);
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirector();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    void addDirector(Person director);
 }

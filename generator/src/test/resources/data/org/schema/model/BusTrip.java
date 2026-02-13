@@ -18,27 +18,6 @@ import org.schema.model.BusStation;
 public interface BusTrip extends Trip {
 
     /**
-     * The name of the bus (e.g. Bolt Express).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBusNameList();
-
-    /**
-     * The name of the bus (e.g. Bolt Express).
-     *
-     * @return {@link Text}
-     */
-    Text getBusName();
-
-    /**
-     * The name of the bus (e.g. Bolt Express).
-     *
-     * @param busName Text value to set.
-     */
-    void addBusName(Text busName);
-
-    /**
      * The unique identifier for the bus.
      *
      * @return {@link Text}
@@ -58,33 +37,6 @@ public interface BusTrip extends Trip {
      * @param busNumber Text value to set.
      */
     void addBusNumber(Text busNumber);
-
-    /**
-     * The stop or station from which the bus departs.
-     *
-     * @return {@link BusStop} or {@link BusStation}
-     */
-    <T> List<T> getDepartureBusStopList();
-
-    /**
-     * The stop or station from which the bus departs.
-     *
-     * @return {@link BusStop} or {@link BusStation}
-     */
-    <T> T getDepartureBusStop();
-
-    /**
-     * The stop or station from which the bus departs.
-     *
-     * @param departureBusStop BusStop value to set.
-     */
-    void addDepartureBusStop(BusStop departureBusStop);
-    /**
-     * The stop or station from which the bus departs.
-     *
-     * @param departureBusStop BusStation value to set.
-     */
-    void addDepartureBusStop(BusStation departureBusStop);
 
     /**
      * The stop or station from which the bus arrives.
@@ -112,4 +64,52 @@ public interface BusTrip extends Trip {
      * @param arrivalBusStop BusStation value to set.
      */
     void addArrivalBusStop(BusStation arrivalBusStop);
+
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBusNameList();
+
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @return {@link Text}
+     */
+    Text getBusName();
+
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @param busName Text value to set.
+     */
+    void addBusName(Text busName);
+
+    /**
+     * The stop or station from which the bus departs.
+     *
+     * @return {@link BusStop} or {@link BusStation}
+     */
+    <T> List<T> getDepartureBusStopList();
+
+    /**
+     * The stop or station from which the bus departs.
+     *
+     * @return {@link BusStop} or {@link BusStation}
+     */
+    <T> T getDepartureBusStop();
+
+    /**
+     * The stop or station from which the bus departs.
+     *
+     * @param departureBusStop BusStop value to set.
+     */
+    void addDepartureBusStop(BusStop departureBusStop);
+    /**
+     * The stop or station from which the bus departs.
+     *
+     * @param departureBusStop BusStation value to set.
+     */
+    void addDepartureBusStop(BusStation departureBusStop);
 }

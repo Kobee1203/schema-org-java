@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.MusicAlbumReleaseType;
-import spec_custom.model.MusicRelease;
-import spec_custom.model.MusicGroup;
 import spec_custom.model.Person;
+import spec_custom.model.MusicGroup;
+import spec_custom.model.MusicRelease;
+import spec_custom.model.MusicAlbumReleaseType;
 import spec_custom.model.MusicAlbumProductionType;
 
 /**
@@ -20,28 +20,31 @@ import spec_custom.model.MusicAlbumProductionType;
 public interface MusicAlbum extends MusicPlaylist {
 
     /**
-     * The kind of release which this album is: single, EP or album.
+     * The artist that performed this album or recording.
      *
-     * @return {@link MusicAlbumReleaseType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     * @return {@link Person} or {@link MusicGroup}
      */
-    List<MusicAlbumReleaseType> getAlbumReleaseTypeList();
+    <T> List<T> getByArtistList();
 
     /**
-     * The kind of release which this album is: single, EP or album.
+     * The artist that performed this album or recording.
      *
-     * @return {@link MusicAlbumReleaseType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     * @return {@link Person} or {@link MusicGroup}
      */
-    MusicAlbumReleaseType getAlbumReleaseType();
+    <T> T getByArtist();
 
     /**
-     * The kind of release which this album is: single, EP or album.
+     * The artist that performed this album or recording.
      *
-     * @param albumReleaseType MusicAlbumReleaseType value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     * @param byArtist Person value to set.
      */
-    void addAlbumReleaseType(MusicAlbumReleaseType albumReleaseType);
+    void addByArtist(Person byArtist);
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param byArtist MusicGroup value to set.
+     */
+    void addByArtist(MusicGroup byArtist);
 
     /**
      * A release of this album.
@@ -65,37 +68,30 @@ public interface MusicAlbum extends MusicPlaylist {
     void addAlbumRelease(MusicRelease albumRelease);
 
     /**
-     * The artist that performed this album or recording.
+     * The kind of release which this album is: single, EP or album.
      *
-     * @return {@link MusicGroup} or {@link Person}
+     * @return {@link MusicAlbumReleaseType}
      */
-    <T> List<T> getByArtistList();
+    List<MusicAlbumReleaseType> getAlbumReleaseTypeList();
 
     /**
-     * The artist that performed this album or recording.
+     * The kind of release which this album is: single, EP or album.
      *
-     * @return {@link MusicGroup} or {@link Person}
+     * @return {@link MusicAlbumReleaseType}
      */
-    <T> T getByArtist();
+    MusicAlbumReleaseType getAlbumReleaseType();
 
     /**
-     * The artist that performed this album or recording.
+     * The kind of release which this album is: single, EP or album.
      *
-     * @param byArtist MusicGroup value to set.
+     * @param albumReleaseType MusicAlbumReleaseType value to set.
      */
-    void addByArtist(MusicGroup byArtist);
-    /**
-     * The artist that performed this album or recording.
-     *
-     * @param byArtist Person value to set.
-     */
-    void addByArtist(Person byArtist);
+    void addAlbumReleaseType(MusicAlbumReleaseType albumReleaseType);
 
     /**
      * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
      * @return {@link MusicAlbumProductionType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     List<MusicAlbumProductionType> getAlbumProductionTypeList();
 
@@ -103,7 +99,6 @@ public interface MusicAlbum extends MusicPlaylist {
      * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
      * @return {@link MusicAlbumProductionType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     MusicAlbumProductionType getAlbumProductionType();
 
@@ -111,7 +106,6 @@ public interface MusicAlbum extends MusicPlaylist {
      * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
      * @param albumProductionType MusicAlbumProductionType value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addAlbumProductionType(MusicAlbumProductionType albumProductionType);
 }

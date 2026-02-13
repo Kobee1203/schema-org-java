@@ -6,14 +6,16 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Distance;
+import spec_custom.model.Mass;
 import spec_custom.model.QuantitativeValue;
-import spec_custom.model.datatype.URL;
+import spec_custom.model.Distance;
 import spec_custom.model.DefinedRegion;
-import spec_custom.model.datatype.Text;
+import spec_custom.model.MemberProgramTier;
 import spec_custom.model.datatype.Boolean;
 import spec_custom.model.ShippingDeliveryTime;
+import spec_custom.model.ShippingService;
 import spec_custom.model.MonetaryAmount;
+import spec_custom.model.ShippingRateSettings;
 
 /**
  * OfferShippingDetails represents information about shipping destinations.
@@ -29,155 +31,47 @@ import spec_custom.model.MonetaryAmount;
  * E.g. Cheaper and slower: $5 in 5-7 days
  * or Fast and expensive: $15 in 1-2 days.
  *
- * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/OfferShippingDetails">https://schema.org/OfferShippingDetails</a>
  */
 public interface OfferShippingDetails extends StructuredValue {
 
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @return {@link Distance} or {@link QuantitativeValue}
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    <T> List<T> getWidthList();
+    <T> List<T> getWeightList();
 
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @return {@link Distance} or {@link QuantitativeValue}
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    <T> T getWidth();
+    <T> T getWeight();
 
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @param width Distance value to set.
+     * @param weight Mass value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    void addWidth(Distance width);
+    void addWeight(Mass weight);
     /**
-     * The width of the item.
+     * The weight of the product or person.
      *
-     * @param width QuantitativeValue value to set.
+     * @param weight QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    void addWidth(QuantitativeValue width);
-
-    /**
-     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<URL> getShippingSettingsLinkList();
-
-    /**
-     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    URL getShippingSettingsLink();
-
-    /**
-     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-     *
-     * @param shippingSettingsLink URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addShippingSettingsLink(URL shippingSettingsLink);
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getDepthList();
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getDepth();
-
-    /**
-     * The depth of the item.
-     *
-     * @param depth QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addDepth(QuantitativeValue depth);
-    /**
-     * The depth of the item.
-     *
-     * @param depth Distance value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addDepth(Distance depth);
-
-    /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
-     *
-     * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<DefinedRegion> getShippingDestinationList();
-
-    /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
-     *
-     * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    DefinedRegion getShippingDestination();
-
-    /**
-     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
-     *
-     * @param shippingDestination DefinedRegion value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addShippingDestination(DefinedRegion shippingDestination);
-
-    /**
-     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<Text> getShippingLabelList();
-
-    /**
-     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    Text getShippingLabel();
-
-    /**
-     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-     *
-     * @param shippingLabel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addShippingLabel(Text shippingLabel);
+    void addWeight(QuantitativeValue weight);
 
     /**
      * The height of the item.
      *
      * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     <T> List<T> getHeightList();
 
@@ -185,6 +79,7 @@ public interface OfferShippingDetails extends StructuredValue {
      * The height of the item.
      *
      * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     <T> T getHeight();
 
@@ -192,21 +87,111 @@ public interface OfferShippingDetails extends StructuredValue {
      * The height of the item.
      *
      * @param height QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addHeight(QuantitativeValue height);
     /**
      * The height of the item.
      *
      * @param height Distance value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addHeight(Distance height);
+
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+     *
+     * @return {@link DefinedRegion}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    List<DefinedRegion> getShippingDestinationList();
+
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+     *
+     * @return {@link DefinedRegion}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    DefinedRegion getShippingDestination();
+
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+     *
+     * @param shippingDestination DefinedRegion value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addShippingDestination(DefinedRegion shippingDestination);
+
+    /**
+     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+     *
+     * @return {@link MemberProgramTier}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    List<MemberProgramTier> getValidForMemberTierList();
+
+    /**
+     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+     *
+     * @return {@link MemberProgramTier}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    MemberProgramTier getValidForMemberTier();
+
+    /**
+     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+     *
+     * @param validForMemberTier MemberProgramTier value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    void addValidForMemberTier(MemberProgramTier validForMemberTier);
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    <T> List<T> getDepthList();
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    <T> T getDepth();
+
+    /**
+     * The depth of the item.
+     *
+     * @param depth Distance value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addDepth(Distance depth);
+    /**
+     * The depth of the item.
+     *
+     * @param depth QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addDepth(QuantitativeValue depth);
 
     /**
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
      * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     List<Boolean> getDoesNotShipList();
 
@@ -214,8 +199,8 @@ public interface OfferShippingDetails extends StructuredValue {
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
      * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     Boolean getDoesNotShip();
 
@@ -223,67 +208,16 @@ public interface OfferShippingDetails extends StructuredValue {
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
      * @param doesNotShip Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addDoesNotShip(Boolean doesNotShip);
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<QuantitativeValue> getWeightList();
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    QuantitativeValue getWeight();
-
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addWeight(QuantitativeValue weight);
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @return {@link ShippingDeliveryTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<ShippingDeliveryTime> getDeliveryTimeList();
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @return {@link ShippingDeliveryTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    ShippingDeliveryTime getDeliveryTime();
-
-    /**
-     * The total delay between the receipt of the order and the goods reaching the final customer.
-     *
-     * @param deliveryTime ShippingDeliveryTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addDeliveryTime(ShippingDeliveryTime deliveryTime);
 
     /**
      * Indicates the origin of a shipment, i.e. where it should be coming from.
      *
      * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3122">https://github.com/schemaorg/schemaorg/issues/3122</a>
      */
     List<DefinedRegion> getShippingOriginList();
@@ -292,7 +226,7 @@ public interface OfferShippingDetails extends StructuredValue {
      * Indicates the origin of a shipment, i.e. where it should be coming from.
      *
      * @return {@link DefinedRegion}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3122">https://github.com/schemaorg/schemaorg/issues/3122</a>
      */
     DefinedRegion getShippingOrigin();
@@ -301,62 +235,125 @@ public interface OfferShippingDetails extends StructuredValue {
      * Indicates the origin of a shipment, i.e. where it should be coming from.
      *
      * @param shippingOrigin DefinedRegion value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3122">https://github.com/schemaorg/schemaorg/issues/3122</a>
      */
     void addShippingOrigin(DefinedRegion shippingOrigin);
 
     /**
-     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     * The total delay between the receipt of the order and the goods reaching the final customer.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link ShippingDeliveryTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    List<Text> getTransitTimeLabelList();
+    List<ShippingDeliveryTime> getDeliveryTimeList();
 
     /**
-     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     * The total delay between the receipt of the order and the goods reaching the final customer.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link ShippingDeliveryTime}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    Text getTransitTimeLabel();
+    ShippingDeliveryTime getDeliveryTime();
 
     /**
-     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     * The total delay between the receipt of the order and the goods reaching the final customer.
      *
-     * @param transitTimeLabel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @param deliveryTime ShippingDeliveryTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void addTransitTimeLabel(Text transitTimeLabel);
+    void addDeliveryTime(ShippingDeliveryTime deliveryTime);
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    <T> List<T> getWidthList();
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    <T> T getWidth();
+
+    /**
+     * The width of the item.
+     *
+     * @param width QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addWidth(QuantitativeValue width);
+    /**
+     * The width of the item.
+     *
+     * @param width Distance value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addWidth(Distance width);
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    List<ShippingService> getHasShippingServiceList();
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    ShippingService getHasShippingService();
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @param hasShippingService ShippingService value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addHasShippingService(ShippingService hasShippingService);
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link MonetaryAmount} or {@link ShippingRateSettings}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    List<MonetaryAmount> getShippingRateList();
+    <T> List<T> getShippingRateList();
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link MonetaryAmount} or {@link ShippingRateSettings}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    MonetaryAmount getShippingRate();
+    <T> T getShippingRate();
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
      * @param shippingRate MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addShippingRate(MonetaryAmount shippingRate);
+    /**
+     * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
+     *
+     * @param shippingRate ShippingRateSettings value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addShippingRate(ShippingRateSettings shippingRate);
 }

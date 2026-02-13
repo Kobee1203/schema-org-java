@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalAudience;
 import org.schema.model.MedicalAudienceType;
+import org.schema.model.MedicalAudience;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,7 +21,7 @@ public interface MedicalWebPage extends WebPage {
     /**
      * Medical audience for page.
      *
-     * @return {@link MedicalAudience} or {@link MedicalAudienceType}
+     * @return {@link MedicalAudienceType} or {@link MedicalAudience}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> List<T> getMedicalAudienceList();
@@ -29,7 +29,7 @@ public interface MedicalWebPage extends WebPage {
     /**
      * Medical audience for page.
      *
-     * @return {@link MedicalAudience} or {@link MedicalAudienceType}
+     * @return {@link MedicalAudienceType} or {@link MedicalAudience}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> T getMedicalAudience();
@@ -37,17 +37,17 @@ public interface MedicalWebPage extends WebPage {
     /**
      * Medical audience for page.
      *
-     * @param medicalAudience MedicalAudience value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMedicalAudience(MedicalAudience medicalAudience);
-    /**
-     * Medical audience for page.
-     *
      * @param medicalAudience MedicalAudienceType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addMedicalAudience(MedicalAudienceType medicalAudience);
+    /**
+     * Medical audience for page.
+     *
+     * @param medicalAudience MedicalAudience value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMedicalAudience(MedicalAudience medicalAudience);
 
     /**
      * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.

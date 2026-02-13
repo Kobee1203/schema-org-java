@@ -6,54 +6,21 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.BedType;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.BedType;
 
 /**
  * An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).
  *
- * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/BedDetails">https://schema.org/BedDetails</a>
  */
 public interface BedDetails extends Intangible {
 
     /**
-     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-     *
-     * @return {@link BedType} or {@link Text}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    <T> List<T> getTypeOfBedList();
-
-    /**
-     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-     *
-     * @return {@link BedType} or {@link Text}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    <T> T getTypeOfBed();
-
-    /**
-     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-     *
-     * @param typeOfBed BedType value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addTypeOfBed(BedType typeOfBed);
-    /**
-     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-     *
-     * @param typeOfBed Text value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addTypeOfBed(Text typeOfBed);
-
-    /**
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
      *
      * @return {@link Number}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     List<Number> getNumberOfBedsList();
 
@@ -61,7 +28,6 @@ public interface BedDetails extends Intangible {
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
      *
      * @return {@link Number}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     Number getNumberOfBeds();
 
@@ -69,7 +35,33 @@ public interface BedDetails extends Intangible {
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
      *
      * @param numberOfBeds Number value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     void addNumberOfBeds(Number numberOfBeds);
+
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     *
+     * @return {@link Text} or {@link BedType}
+     */
+    <T> List<T> getTypeOfBedList();
+
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     *
+     * @return {@link Text} or {@link BedType}
+     */
+    <T> T getTypeOfBed();
+
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     *
+     * @param typeOfBed Text value to set.
+     */
+    void addTypeOfBed(Text typeOfBed);
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     *
+     * @param typeOfBed BedType value to set.
+     */
+    void addTypeOfBed(BedType typeOfBed);
 }

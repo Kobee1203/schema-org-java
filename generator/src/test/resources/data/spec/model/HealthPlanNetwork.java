@@ -7,43 +7,17 @@ package spec.model;
 
 import java.util.List;
 import spec.model.datatype.Text;
+import spec.model.HealthPlanCostSharingSpecification;
 import spec.model.datatype.Boolean;
 
 /**
- * A US-style health insurance plan network. 
+ * A US-style health insurance plan network.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
  * @see <a href="https://schema.org/HealthPlanNetwork">https://schema.org/HealthPlanNetwork</a>
  */
 public interface HealthPlanNetwork extends Intangible {
-
-    /**
-     * The tier(s) for this network.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<Text> getHealthPlanNetworkTierList();
-
-    /**
-     * The tier(s) for this network.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    Text getHealthPlanNetworkTier();
-
-    /**
-     * The tier(s) for this network.
-     *
-     * @param healthPlanNetworkTier Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addHealthPlanNetworkTier(Text healthPlanNetworkTier);
 
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans.)
@@ -75,21 +49,29 @@ public interface HealthPlanNetwork extends Intangible {
     /**
      * The costs to the patient for services under this network or formulary.
      *
-     * @return {@link Boolean}
+     * @return {@link HealthPlanCostSharingSpecification} or {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    List<Boolean> getHealthPlanCostSharingList();
+    <T> List<T> getHealthPlanCostSharingList();
 
     /**
      * The costs to the patient for services under this network or formulary.
      *
-     * @return {@link Boolean}
+     * @return {@link HealthPlanCostSharingSpecification} or {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    Boolean getHealthPlanCostSharing();
+    <T> T getHealthPlanCostSharing();
 
+    /**
+     * The costs to the patient for services under this network or formulary.
+     *
+     * @param healthPlanCostSharing HealthPlanCostSharingSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanCostSharing(HealthPlanCostSharingSpecification healthPlanCostSharing);
     /**
      * The costs to the patient for services under this network or formulary.
      *
@@ -98,4 +80,31 @@ public interface HealthPlanNetwork extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanCostSharing(Boolean healthPlanCostSharing);
+
+    /**
+     * The tier(s) for this network.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Text> getHealthPlanNetworkTierList();
+
+    /**
+     * The tier(s) for this network.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    Text getHealthPlanNetworkTier();
+
+    /**
+     * The tier(s) for this network.
+     *
+     * @param healthPlanNetworkTier Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanNetworkTier(Text healthPlanNetworkTier);
 }

@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.MedicalContraindication;
+import org.schema.model.datatype.Text;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalTherapy;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalContraindication;
 
 /**
  * Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition.
@@ -18,6 +18,37 @@ import org.schema.model.MedicalContraindication;
  * @see <a href="https://schema.org/MedicalTherapy">https://schema.org/MedicalTherapy</a>
  */
 public interface MedicalTherapy extends TherapeuticProcedure {
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @return {@link MedicalContraindication} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getContraindicationList();
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @return {@link MedicalContraindication} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getContraindication();
+
+    /**
+     * A contraindication for this therapy.
+     *
+     * @param contraindication MedicalContraindication value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addContraindication(MedicalContraindication contraindication);
+    /**
+     * A contraindication for this therapy.
+     *
+     * @param contraindication Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addContraindication(Text contraindication);
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
@@ -66,35 +97,4 @@ public interface MedicalTherapy extends TherapeuticProcedure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addDuplicateTherapy(MedicalTherapy duplicateTherapy);
-
-    /**
-     * A contraindication for this therapy.
-     *
-     * @return {@link Text} or {@link MedicalContraindication}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getContraindicationList();
-
-    /**
-     * A contraindication for this therapy.
-     *
-     * @return {@link Text} or {@link MedicalContraindication}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getContraindication();
-
-    /**
-     * A contraindication for this therapy.
-     *
-     * @param contraindication Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addContraindication(Text contraindication);
-    /**
-     * A contraindication for this therapy.
-     *
-     * @param contraindication MedicalContraindication value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addContraindication(MedicalContraindication contraindication);
 }

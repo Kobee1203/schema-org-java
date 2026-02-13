@@ -8,8 +8,8 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.ArchiveOrganization;
 import org.schema.model.Place;
-import org.schema.model.datatype.Text;
 import org.schema.model.PostalAddress;
+import org.schema.model.datatype.Text;
 
 /**
  * An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.
@@ -50,7 +50,7 @@ public interface ArchiveComponent extends CreativeWork {
     /**
      * Current location of the item.
      *
-     * @return {@link Place} or {@link Text} or {@link PostalAddress}
+     * @return {@link Place} or {@link PostalAddress} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
@@ -59,7 +59,7 @@ public interface ArchiveComponent extends CreativeWork {
     /**
      * Current location of the item.
      *
-     * @return {@link Place} or {@link Text} or {@link PostalAddress}
+     * @return {@link Place} or {@link PostalAddress} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
@@ -76,17 +76,17 @@ public interface ArchiveComponent extends CreativeWork {
     /**
      * Current location of the item.
      *
-     * @param itemLocation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
-     */
-    void addItemLocation(Text itemLocation);
-    /**
-     * Current location of the item.
-     *
      * @param itemLocation PostalAddress value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
     void addItemLocation(PostalAddress itemLocation);
+    /**
+     * Current location of the item.
+     *
+     * @param itemLocation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     */
+    void addItemLocation(Text itemLocation);
 }

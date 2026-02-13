@@ -5,15 +5,18 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Class;
 import org.schema.model.Property;
+import org.schema.model.Class;
 import org.schema.model.Enumeration;
-import org.schema.model.Action;
 import org.schema.model.datatype.URL;
-import org.schema.model.CreativeWork;
-import org.schema.model.Event;
 import org.schema.model.datatype.Text;
 import org.schema.model.PropertyValue;
+import org.schema.model.Person;
+import org.schema.model.Organization;
+import org.schema.model.Event;
+import org.schema.model.CreativeWork;
+import org.schema.model.Action;
+import org.schema.model.TextObject;
 import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -32,16 +35,16 @@ import org.schema.model.EUEnergyEfficiencyEnumeration;
  */
 @JsonLdTypeName("EUEnergyEfficiencyEnumeration")
 public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnumeration {
-    EU_ENERGY_EFFICIENCY_CATEGORY_A3_PLUS("EUEnergyEfficiencyCategoryA3Plus"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_G("EUEnergyEfficiencyCategoryG"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_A("EUEnergyEfficiencyCategoryA"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_C("EUEnergyEfficiencyCategoryC"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_B("EUEnergyEfficiencyCategoryB"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_E("EUEnergyEfficiencyCategoryE"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_F("EUEnergyEfficiencyCategoryF"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_D("EUEnergyEfficiencyCategoryD"),
     EU_ENERGY_EFFICIENCY_CATEGORY_A2_PLUS("EUEnergyEfficiencyCategoryA2Plus"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_A1_PLUS("EUEnergyEfficiencyCategoryA1Plus")
+    EU_ENERGY_EFFICIENCY_CATEGORY_E("EUEnergyEfficiencyCategoryE"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_D("EUEnergyEfficiencyCategoryD"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_A3_PLUS("EUEnergyEfficiencyCategoryA3Plus"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_A("EUEnergyEfficiencyCategoryA"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_B("EUEnergyEfficiencyCategoryB"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_C("EUEnergyEfficiencyCategoryC"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_A1_PLUS("EUEnergyEfficiencyCategoryA1Plus"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_G("EUEnergyEfficiencyCategoryG"),
+    EU_ENERGY_EFFICIENCY_CATEGORY_F("EUEnergyEfficiencyCategoryF")
     ;
 
     private final String enumValue;
@@ -105,12 +108,12 @@ public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Class supersededBy) {
+    public void addSupersededBy(Property supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Property supersededBy) {
+    public void addSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -120,34 +123,88 @@ public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnume
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Action> getPotentialActionList() { return null; }
+    public List<URL> getSameAsList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Action getPotentialAction() { return null; }
+    public URL getSameAs() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    public void addSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getMainEntityOfPageList() { return null; }
+    public List<Text> getNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getMainEntityOfPage() { return null; }
+    public Text getName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    public <T> List<T> getAdditionalTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getAdditionalType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getIdentifierList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getIdentifier() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getOwnerList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getOwner() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Person owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Organization owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -169,16 +226,52 @@ public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnume
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getUrlList() { return null; }
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getUrl() { return null; }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Action> getPotentialActionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Action getPotentialAction() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(TextObject description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -195,29 +288,34 @@ public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnume
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getSameAsList() { return null; }
+    public List<URL> getUrlList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getSameAs() { return null; }
+    public URL getUrl() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSameAs(URL sameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Text> getDescriptionList() { return null; }
+    public <T> List<T> getImageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDescription() { return null; }
+    public <T> T getImage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -231,72 +329,5 @@ public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnume
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getIdentifierList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getIdentifier() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(URL identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(Text identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getImageList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getImage() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<URL> getAdditionalTypeList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getAdditionalType() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum EUEnergyEfficiencyEnumerationEnum");
     }
 }

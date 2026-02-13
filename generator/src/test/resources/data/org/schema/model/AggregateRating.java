@@ -38,27 +38,6 @@ public interface AggregateRating extends Rating {
     void addItemReviewed(Thing itemReviewed);
 
     /**
-     * The count of total number of ratings.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getRatingCountList();
-
-    /**
-     * The count of total number of ratings.
-     *
-     * @return {@link Integer}
-     */
-    Integer getRatingCount();
-
-    /**
-     * The count of total number of ratings.
-     *
-     * @param ratingCount Integer value to set.
-     */
-    void addRatingCount(Integer ratingCount);
-
-    /**
      * The count of total number of reviews.
      *
      * @return {@link Integer}
@@ -78,4 +57,25 @@ public interface AggregateRating extends Rating {
      * @param reviewCount Integer value to set.
      */
     void addReviewCount(Integer reviewCount);
+
+    /**
+     * The count of total number of ratings.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getRatingCountList();
+
+    /**
+     * The count of total number of ratings.
+     *
+     * @return {@link Integer}
+     */
+    Integer getRatingCount();
+
+    /**
+     * The count of total number of ratings.
+     *
+     * @param ratingCount Integer value to set.
+     */
+    void addRatingCount(Integer ratingCount);
 }
