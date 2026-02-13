@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
-import org.schema.model.Specialty;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.datatype.Date;
 import org.schema.model.BreadcrumbList;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 import org.schema.model.WebPageElement;
+import org.schema.model.Person;
+import org.schema.model.Organization;
 import org.schema.model.SpeakableSpecification;
+import org.schema.model.datatype.Date;
+import org.schema.model.Specialty;
 import org.schema.model.ImageObject;
 
 /**
@@ -23,117 +23,6 @@ import org.schema.model.ImageObject;
  * @see <a href="https://schema.org/WebPage">https://schema.org/WebPage</a>
  */
 public interface WebPage extends CreativeWork {
-
-    /**
-     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getSignificantLinkList();
-
-    /**
-     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @return {@link URL}
-     */
-    URL getSignificantLink();
-
-    /**
-     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @param significantLink URL value to set.
-     */
-    void addSignificantLink(URL significantLink);
-
-    /**
-     * One of the domain specialities to which this web page's content applies.
-     *
-     * @return {@link Specialty}
-     */
-    List<Specialty> getSpecialtyList();
-
-    /**
-     * One of the domain specialities to which this web page's content applies.
-     *
-     * @return {@link Specialty}
-     */
-    Specialty getSpecialty();
-
-    /**
-     * One of the domain specialities to which this web page's content applies.
-     *
-     * @param specialty Specialty value to set.
-     */
-    void addSpecialty(Specialty specialty);
-
-    /**
-     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getReviewedByList();
-
-    /**
-     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getReviewedBy();
-
-    /**
-     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
-     *
-     * @param reviewedBy Organization value to set.
-     */
-    void addReviewedBy(Organization reviewedBy);
-    /**
-     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
-     *
-     * @param reviewedBy Person value to set.
-     */
-    void addReviewedBy(Person reviewedBy);
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getLastReviewedList();
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @return {@link Date}
-     */
-    Date getLastReviewed();
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @param lastReviewed Date value to set.
-     */
-    void addLastReviewed(Date lastReviewed);
-
-    /**
-     * A link related to this web page, for example to other related web pages.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getRelatedLinkList();
-
-    /**
-     * A link related to this web page, for example to other related web pages.
-     *
-     * @return {@link URL}
-     */
-    URL getRelatedLink();
-
-    /**
-     * A link related to this web page, for example to other related web pages.
-     *
-     * @param relatedLink URL value to set.
-     */
-    void addRelatedLink(URL relatedLink);
 
     /**
      * A set of links that can help a user understand and navigate a website hierarchy.
@@ -163,25 +52,25 @@ public interface WebPage extends CreativeWork {
     void addBreadcrumb(Text breadcrumb);
 
     /**
-     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
      *
      * @return {@link URL}
      */
-    List<URL> getSignificantLinksList();
+    List<URL> getSignificantLinkList();
 
     /**
-     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
      *
      * @return {@link URL}
      */
-    URL getSignificantLinks();
+    URL getSignificantLink();
 
     /**
-     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
      *
-     * @param significantLinks URL value to set.
+     * @param significantLink URL value to set.
      */
-    void addSignificantLinks(URL significantLinks);
+    void addSignificantLink(URL significantLink);
 
     /**
      * Indicates if this web page element is the main subject of the page.
@@ -205,6 +94,33 @@ public interface WebPage extends CreativeWork {
     void addMainContentOfPage(WebPageElement mainContentOfPage);
 
     /**
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getReviewedByList();
+
+    /**
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getReviewedBy();
+
+    /**
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+     *
+     * @param reviewedBy Person value to set.
+     */
+    void addReviewedBy(Person reviewedBy);
+    /**
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+     *
+     * @param reviewedBy Organization value to set.
+     */
+    void addReviewedBy(Organization reviewedBy);
+
+    /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
      * 
      * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
@@ -220,7 +136,7 @@ public interface WebPage extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @return {@link SpeakableSpecification} or {@link URL}
+     * @return {@link URL} or {@link SpeakableSpecification}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
     <T> List<T> getSpeakableList();
@@ -241,7 +157,7 @@ public interface WebPage extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @return {@link SpeakableSpecification} or {@link URL}
+     * @return {@link URL} or {@link SpeakableSpecification}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
     <T> T getSpeakable();
@@ -262,10 +178,10 @@ public interface WebPage extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @param speakable SpeakableSpecification value to set.
+     * @param speakable URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void addSpeakable(SpeakableSpecification speakable);
+    void addSpeakable(URL speakable);
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
      * 
@@ -282,10 +198,94 @@ public interface WebPage extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @param speakable URL value to set.
+     * @param speakable SpeakableSpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void addSpeakable(URL speakable);
+    void addSpeakable(SpeakableSpecification speakable);
+
+    /**
+     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getSignificantLinksList();
+
+    /**
+     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    URL getSignificantLinks();
+
+    /**
+     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @param significantLinks URL value to set.
+     */
+    void addSignificantLinks(URL significantLinks);
+
+    /**
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getLastReviewedList();
+
+    /**
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
+     *
+     * @return {@link Date}
+     */
+    Date getLastReviewed();
+
+    /**
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
+     *
+     * @param lastReviewed Date value to set.
+     */
+    void addLastReviewed(Date lastReviewed);
+
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     *
+     * @return {@link Specialty}
+     */
+    List<Specialty> getSpecialtyList();
+
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     *
+     * @return {@link Specialty}
+     */
+    Specialty getSpecialty();
+
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     *
+     * @param specialty Specialty value to set.
+     */
+    void addSpecialty(Specialty specialty);
+
+    /**
+     * A link related to this web page, for example to other related web pages.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getRelatedLinkList();
+
+    /**
+     * A link related to this web page, for example to other related web pages.
+     *
+     * @return {@link URL}
+     */
+    URL getRelatedLink();
+
+    /**
+     * A link related to this web page, for example to other related web pages.
+     *
+     * @param relatedLink URL value to set.
+     */
+    void addRelatedLink(URL relatedLink);
 
     /**
      * Indicates the main image on the page.

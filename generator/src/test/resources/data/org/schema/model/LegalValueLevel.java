@@ -11,7 +11,7 @@ import java.util.List;
  * A list of possible levels for the legal validity of a legislation.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+ * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://schema.org/LegalValueLevel">https://schema.org/LegalValueLevel</a>
  */

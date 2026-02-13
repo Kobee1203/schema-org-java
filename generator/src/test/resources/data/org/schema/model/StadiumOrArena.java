@@ -12,5 +12,5 @@ import java.util.List;
  *
  * @see <a href="https://schema.org/StadiumOrArena">https://schema.org/StadiumOrArena</a>
  */
-public interface StadiumOrArena extends SportsActivityLocation, CivicStructure {
+public interface StadiumOrArena extends CivicStructure, SportsActivityLocation {
 }

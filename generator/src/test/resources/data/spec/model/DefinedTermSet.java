@@ -7,9 +7,10 @@ package spec.model;
 
 import java.util.List;
 import spec.model.DefinedTerm;
+import spec.model.Thing;
 
 /**
- * A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.
+ * A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. Use the about property to specify what the term set is about.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
@@ -43,4 +44,31 @@ public interface DefinedTermSet extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     void addHasDefinedTerm(DefinedTerm hasDefinedTerm);
+
+    /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    List<Thing> getAboutList();
+
+    /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    Thing getAbout();
+
+    /**
+     * The subject matter of an object.
+     *
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    void addAbout(Thing about);
 }

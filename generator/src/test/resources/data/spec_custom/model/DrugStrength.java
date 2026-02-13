@@ -7,8 +7,8 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.AdministrativeArea;
 import spec_custom.model.datatype.Number;
+import spec_custom.model.AdministrativeArea;
 import spec_custom.model.MaximumDoseSchedule;
 
 /**
@@ -20,52 +20,28 @@ import spec_custom.model.MaximumDoseSchedule;
 public interface DrugStrength extends MedicalIntangible {
 
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * The units of an active ingredient's strength, e.g. mg.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getActiveIngredientList();
+    List<Text> getStrengthUnitList();
 
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * The units of an active ingredient's strength, e.g. mg.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getActiveIngredient();
+    Text getStrengthUnit();
 
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * The units of an active ingredient's strength, e.g. mg.
      *
-     * @param activeIngredient Text value to set.
+     * @param strengthUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addActiveIngredient(Text activeIngredient);
-
-    /**
-     * The location in which the strength is available.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AdministrativeArea> getAvailableInList();
-
-    /**
-     * The location in which the strength is available.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AdministrativeArea getAvailableIn();
-
-    /**
-     * The location in which the strength is available.
-     *
-     * @param availableIn AdministrativeArea value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAvailableIn(AdministrativeArea availableIn);
+    void addStrengthUnit(Text strengthUnit);
 
     /**
      * The value of an active ingredient's strength, e.g. 325.
@@ -92,28 +68,52 @@ public interface DrugStrength extends MedicalIntangible {
     void addStrengthValue(Number strengthValue);
 
     /**
-     * The units of an active ingredient's strength, e.g. mg.
+     * The location in which the strength is available.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AdministrativeArea> getAvailableInList();
+
+    /**
+     * The location in which the strength is available.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AdministrativeArea getAvailableIn();
+
+    /**
+     * The location in which the strength is available.
+     *
+     * @param availableIn AdministrativeArea value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAvailableIn(AdministrativeArea availableIn);
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getStrengthUnitList();
+    List<Text> getActiveIngredientList();
 
     /**
-     * The units of an active ingredient's strength, e.g. mg.
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getStrengthUnit();
+    Text getActiveIngredient();
 
     /**
-     * The units of an active ingredient's strength, e.g. mg.
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
-     * @param strengthUnit Text value to set.
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addStrengthUnit(Text strengthUnit);
+    void addActiveIngredient(Text activeIngredient);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.

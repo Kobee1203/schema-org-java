@@ -5,29 +5,44 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.StatisticalPopulation;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.DataType;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Property;
-import org.schema.model.Action;
+import org.schema.model.MeasurementMethodEnum;
+import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.URL;
-import org.schema.model.CreativeWork;
-import org.schema.model.Event;
 import org.schema.model.datatype.Text;
-import org.schema.model.PropertyValue;
-import org.schema.model.ImageObject;
+import org.schema.model.StatisticalVariable;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.Place;
 import org.schema.model.Thing;
+import org.schema.model.Enumeration;
+import org.schema.model.Property;
+import org.schema.model.PropertyValue;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.Person;
+import org.schema.model.Organization;
+import org.schema.model.Event;
+import org.schema.model.CreativeWork;
+import org.schema.model.Action;
+import org.schema.model.TextObject;
+import org.schema.model.ImageObject;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
 import org.schema.model.Intangible;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Number;
+import org.schema.model.StructuredValue;
+import org.schema.model.MeasurementTypeEnumeration;
+import org.schema.model.QualitativeValue;
 import org.schema.model.Observation;
 
 /**
- * Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube "measure properties", as in the [lifeExpectancy example](https://www.w3.org/TR/vocab-data-cube/#dsd-example)).
- * See also [[StatisticalPopulation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.
- *   
+ * Instances of the class [[Observation]] are used to specify observations about an entity at a particular time. The principal properties of an [[Observation]] are [[observationAbout]], [[measuredProperty]], [[statType]], [[value] and [[observationDate]]  and [[measuredProperty]]. Some but not all Observations represent a [[QuantitativeValue]]. Quantitative observations can be about a [[StatisticalVariable]], which is an abstract specification about which we can make observations that are grounded at a particular location and time.
+ * 
+ * Observations can also encode a subset of simple RDF-like statements (its observationAbout, a StatisticalVariable, defining the measuredPoperty; its observationAbout property indicating the entity the statement is about, and [[value]] )
+ * 
+ * In the context of a quantitative knowledge graph, typical properties could include [[measuredProperty]], [[observationAbout]], [[observationDate]], [[value]], [[unitCode]], [[unitText]], [[measurementMethod]].
+ *     
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
@@ -36,48 +51,228 @@ import org.schema.model.Observation;
 @JsonLdTypeName("Observation")
 public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Observation {
 
-    private List<StatisticalPopulation> observedNode;
+    @JsonLdFieldTypes({ MeasurementMethodEnum.class, DefinedTerm.class, URL.class, Text.class })
+    private List<Object> measurementTechnique;
 
     /**
-     * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
+     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+     *     
+     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+     * 
+     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+     * 
+     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
      *
-     * @return {@link StatisticalPopulation}
+     * @return {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
     @Override
-    public List<StatisticalPopulation> getObservedNodeList() {
-        return observedNode;
+    public <T> List<T> getMeasurementTechniqueList() {
+        return (List<T>) measurementTechnique;
     }
 
     /**
-     * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
+     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+     *     
+     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+     * 
+     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+     * 
+     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
      *
-     * @return {@link StatisticalPopulation}
+     * @return {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
     @Override
-    public StatisticalPopulation getObservedNode() {
-        return getFirst(observedNode);
+    public <T> T getMeasurementTechnique() {
+        return (T) getFirst(measurementTechnique);
     }
 
     /**
-     * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
+     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+     *     
+     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+     * 
+     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+     * 
+     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
      *
-     * @param observedNode StatisticalPopulation value to set.
+     * @param measurementTechnique MeasurementMethodEnum value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
     @Override
-    public void addObservedNode(StatisticalPopulation observedNode) {
-        this.observedNode = add(this.observedNode, observedNode);
+    public void addMeasurementTechnique(MeasurementMethodEnum measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+    /**
+     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+     *     
+     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+     * 
+     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+     * 
+     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
+     *
+     * @param measurementTechnique DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public void addMeasurementTechnique(DefinedTerm measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+    /**
+     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+     *     
+     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+     * 
+     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+     * 
+     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
+     *
+     * @param measurementTechnique URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public void addMeasurementTechnique(URL measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+    /**
+     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+     *     
+     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+     * 
+     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+     * 
+     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
+     *
+     * @param measurementTechnique Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public void addMeasurementTechnique(Text measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+
+    @JsonLdFieldTypes({ Text.class, MeasurementMethodEnum.class, DefinedTerm.class, URL.class })
+    private List<Object> measurementMethod;
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public <T> List<T> getMeasurementMethodList() {
+        return (List<T>) measurementMethod;
+    }
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public <T> T getMeasurementMethod() {
+        return (T) getFirst(measurementMethod);
+    }
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public void addMeasurementMethod(Text measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod MeasurementMethodEnum value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public void addMeasurementMethod(MeasurementMethodEnum measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public void addMeasurementMethod(DefinedTerm measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    @Override
+    public void addMeasurementMethod(URL measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+
+    private List<StatisticalVariable> measurementDenominator;
+
+    /**
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     *
+     * @return {@link StatisticalVariable}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public List<StatisticalVariable> getMeasurementDenominatorList() {
+        return measurementDenominator;
+    }
+
+    /**
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     *
+     * @return {@link StatisticalVariable}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public StatisticalVariable getMeasurementDenominator() {
+        return getFirst(measurementDenominator);
+    }
+
+    /**
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     *
+     * @param measurementDenominator StatisticalVariable value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public void addMeasurementDenominator(StatisticalVariable measurementDenominator) {
+        this.measurementDenominator = add(this.measurementDenominator, measurementDenominator);
     }
 
     private List<QuantitativeValue> marginOfError;
 
     /**
-     * A marginOfError for an [[Observation]].
+     * A [[marginOfError]] for an [[Observation]].
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -89,7 +284,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     }
 
     /**
-     * A marginOfError for an [[Observation]].
+     * A [[marginOfError]] for an [[Observation]].
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -101,7 +296,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     }
 
     /**
-     * A marginOfError for an [[Observation]].
+     * A [[marginOfError]] for an [[Observation]].
      *
      * @param marginOfError QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -112,70 +307,280 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.marginOfError = add(this.marginOfError, marginOfError);
     }
 
-    private List<DataType> measuredValue;
+    @JsonLdFieldTypes({ Place.class, Thing.class })
+    private List<Object> observationAbout;
 
     /**
-     * The measuredValue of an [[Observation]].
+     * The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].
      *
-     * @return {@link DataType}
+     * @return {@link Place} or {@link Thing}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
     @Override
-    public List<DataType> getMeasuredValueList() {
-        return measuredValue;
+    public <T> List<T> getObservationAboutList() {
+        return (List<T>) observationAbout;
     }
 
     /**
-     * The measuredValue of an [[Observation]].
+     * The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].
      *
-     * @return {@link DataType}
+     * @return {@link Place} or {@link Thing}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
     @Override
-    public DataType getMeasuredValue() {
-        return getFirst(measuredValue);
+    public <T> T getObservationAbout() {
+        return (T) getFirst(observationAbout);
     }
 
     /**
-     * The measuredValue of an [[Observation]].
+     * The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].
      *
-     * @param measuredValue DataType value to set.
+     * @param observationAbout Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
     @Override
-    public void addMeasuredValue(DataType measuredValue) {
-        this.measuredValue = add(this.measuredValue, measuredValue);
+    public void addObservationAbout(Place observationAbout) {
+        this.observationAbout = add(this.observationAbout, observationAbout);
+    }
+    /**
+     * The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].
+     *
+     * @param observationAbout Thing value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    @Override
+    public void addObservationAbout(Thing observationAbout) {
+        this.observationAbout = add(this.observationAbout, observationAbout);
     }
 
-    private List<DateTime> observationDate;
+    private List<Enumeration> measurementQualifier;
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @return {@link Enumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public List<Enumeration> getMeasurementQualifierList() {
+        return measurementQualifier;
+    }
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @return {@link Enumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public Enumeration getMeasurementQualifier() {
+        return getFirst(measurementQualifier);
+    }
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @param measurementQualifier Enumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public void addMeasurementQualifier(Enumeration measurementQualifier) {
+        this.measurementQualifier = add(this.measurementQualifier, measurementQualifier);
+    }
+
+    private List<Property> measuredProperty;
+
+    /**
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     *
+     * @return {@link Property}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    @Override
+    public List<Property> getMeasuredPropertyList() {
+        return measuredProperty;
+    }
+
+    /**
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     *
+     * @return {@link Property}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    @Override
+    public Property getMeasuredProperty() {
+        return getFirst(measuredProperty);
+    }
+
+    /**
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     *
+     * @param measuredProperty Property value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    @Override
+    public void addMeasuredProperty(Property measuredProperty) {
+        this.measuredProperty = add(this.measuredProperty, measuredProperty);
+    }
+
+    @JsonLdFieldTypes({ Property.class, PropertyValue.class, Text.class, StatisticalVariable.class })
+    private List<Object> variableMeasured;
+
+    /**
+     * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
+     *
+     * @return {@link Property} or {@link PropertyValue} or {@link Text} or {@link StatisticalVariable}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
+     */
+    @Override
+    public <T> List<T> getVariableMeasuredList() {
+        return (List<T>) variableMeasured;
+    }
+
+    /**
+     * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
+     *
+     * @return {@link Property} or {@link PropertyValue} or {@link Text} or {@link StatisticalVariable}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
+     */
+    @Override
+    public <T> T getVariableMeasured() {
+        return (T) getFirst(variableMeasured);
+    }
+
+    /**
+     * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
+     *
+     * @param variableMeasured Property value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
+     */
+    @Override
+    public void addVariableMeasured(Property variableMeasured) {
+        this.variableMeasured = add(this.variableMeasured, variableMeasured);
+    }
+    /**
+     * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
+     *
+     * @param variableMeasured PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
+     */
+    @Override
+    public void addVariableMeasured(PropertyValue variableMeasured) {
+        this.variableMeasured = add(this.variableMeasured, variableMeasured);
+    }
+    /**
+     * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
+     *
+     * @param variableMeasured Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
+     */
+    @Override
+    public void addVariableMeasured(Text variableMeasured) {
+        this.variableMeasured = add(this.variableMeasured, variableMeasured);
+    }
+    /**
+     * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
+     *
+     * @param variableMeasured StatisticalVariable value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
+     */
+    @Override
+    public void addVariableMeasured(StatisticalVariable variableMeasured) {
+        this.variableMeasured = add(this.variableMeasured, variableMeasured);
+    }
+
+    private List<Text> observationPeriod;
+
+    /**
+     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public List<Text> getObservationPeriodList() {
+        return observationPeriod;
+    }
+
+    /**
+     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public Text getObservationPeriod() {
+        return getFirst(observationPeriod);
+    }
+
+    /**
+     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
+     *
+     * @param observationPeriod Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    @Override
+    public void addObservationPeriod(Text observationPeriod) {
+        this.observationPeriod = add(this.observationPeriod, observationPeriod);
+    }
+
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> observationDate;
 
     /**
      * The observationDate of an [[Observation]].
      *
-     * @return {@link DateTime}
+     * @return {@link Date} or {@link DateTime}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
     @Override
-    public List<DateTime> getObservationDateList() {
-        return observationDate;
+    public <T> List<T> getObservationDateList() {
+        return (List<T>) observationDate;
     }
 
     /**
      * The observationDate of an [[Observation]].
      *
-     * @return {@link DateTime}
+     * @return {@link Date} or {@link DateTime}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
     @Override
-    public DateTime getObservationDate() {
-        return getFirst(observationDate);
+    public <T> T getObservationDate() {
+        return (T) getFirst(observationDate);
     }
 
+    /**
+     * The observationDate of an [[Observation]].
+     *
+     * @param observationDate Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    @Override
+    public void addObservationDate(Date observationDate) {
+        this.observationDate = add(this.observationDate, observationDate);
+    }
     /**
      * The observationDate of an [[Observation]].
      *
@@ -188,116 +593,216 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.observationDate = add(this.observationDate, observationDate);
     }
 
-    private List<Property> measuredProperty;
+    private List<URL> sameAs;
 
     /**
-     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     * @return {@link URL}
      */
     @Override
-    public List<Property> getMeasuredPropertyList() {
-        return measuredProperty;
+    public List<URL> getSameAsList() {
+        return sameAs;
     }
 
     /**
-     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     * @return {@link URL}
      */
     @Override
-    public Property getMeasuredProperty() {
-        return getFirst(measuredProperty);
+    public URL getSameAs() {
+        return getFirst(sameAs);
     }
 
     /**
-     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param measuredProperty Property value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     * @param sameAs URL value to set.
      */
     @Override
-    public void addMeasuredProperty(Property measuredProperty) {
-        this.measuredProperty = add(this.measuredProperty, measuredProperty);
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private List<Action> potentialAction;
+    private List<Text> name;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The name of the item.
      *
-     * @return {@link Action}
+     * @return {@link Text}
      */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public List<Text> getNameList() {
+        return name;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The name of the item.
      *
-     * @param potentialAction Action value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public Text getName() {
+        return getFirst(name);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The name of the item.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @param name Text value to set.
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @return {@link URL} or {@link Text}
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param additionalType Text value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -346,36 +851,120 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param url URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> alternateName;
@@ -410,68 +999,78 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> sameAs;
+    private List<URL> url;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
-     * @param sameAs URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> description;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param description Text value to set.
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<Text> disambiguatingDescription;
@@ -506,165 +1105,332 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
-    private List<Object> identifier;
+    @JsonLdFieldTypes({ Boolean.class, Number.class, Text.class, StructuredValue.class })
+    private List<Object> value;
 
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
+     * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
      */
     @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
+    public <T> List<T> getValueList() {
+        return (List<T>) value;
     }
 
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
+     * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
      */
     @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
+    public <T> T getValue() {
+        return (T) getFirst(value);
     }
 
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param identifier PropertyValue value to set.
+     * @param value Boolean value to set.
      */
     @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public void addValue(Boolean value) {
+        this.value = add(this.value, value);
     }
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param identifier URL value to set.
+     * @param value Number value to set.
      */
     @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public void addValue(Number value) {
+        this.value = add(this.value, value);
     }
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param identifier Text value to set.
+     * @param value Text value to set.
      */
     @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public void addValue(Text value) {
+        this.value = add(this.value, value);
     }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
-
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @param value StructuredValue value to set.
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public void addValue(StructuredValue value) {
+        this.value = add(this.value, value);
     }
 
+    private List<Number> maxValue;
+
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The upper value of some characteristic or property.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link Number}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public List<Number> getMaxValueList() {
+        return maxValue;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The upper value of some characteristic or property.
      *
-     * @param image URL value to set.
+     * @return {@link Number}
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public Number getMaxValue() {
+        return getFirst(maxValue);
     }
+
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The upper value of some characteristic or property.
      *
-     * @param image ImageObject value to set.
+     * @param maxValue Number value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
+    public void addMaxValue(Number maxValue) {
+        this.maxValue = add(this.maxValue, maxValue);
     }
 
-    private List<Text> name;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> unitCode;
 
     /**
-     * The name of the item.
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getUnitCodeList() {
+        return (List<T>) unitCode;
+    }
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getUnitCode() {
+        return (T) getFirst(unitCode);
+    }
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode URL value to set.
+     */
+    @Override
+    public void addUnitCode(URL unitCode) {
+        this.unitCode = add(this.unitCode, unitCode);
+    }
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode Text value to set.
+     */
+    @Override
+    public void addUnitCode(Text unitCode) {
+        this.unitCode = add(this.unitCode, unitCode);
+    }
+
+    @JsonLdFieldTypes({ StructuredValue.class, DefinedTerm.class, PropertyValue.class, QuantitativeValue.class, Enumeration.class, MeasurementTypeEnumeration.class, Text.class, QualitativeValue.class })
+    private List<Object> valueReference;
+
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @return {@link StructuredValue} or {@link DefinedTerm} or {@link PropertyValue} or {@link QuantitativeValue} or {@link Enumeration} or {@link MeasurementTypeEnumeration} or {@link Text} or {@link QualitativeValue}
+     */
+    @Override
+    public <T> List<T> getValueReferenceList() {
+        return (List<T>) valueReference;
+    }
+
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @return {@link StructuredValue} or {@link DefinedTerm} or {@link PropertyValue} or {@link QuantitativeValue} or {@link Enumeration} or {@link MeasurementTypeEnumeration} or {@link Text} or {@link QualitativeValue}
+     */
+    @Override
+    public <T> T getValueReference() {
+        return (T) getFirst(valueReference);
+    }
+
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference StructuredValue value to set.
+     */
+    @Override
+    public void addValueReference(StructuredValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference DefinedTerm value to set.
+     */
+    @Override
+    public void addValueReference(DefinedTerm valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference PropertyValue value to set.
+     */
+    @Override
+    public void addValueReference(PropertyValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference QuantitativeValue value to set.
+     */
+    @Override
+    public void addValueReference(QuantitativeValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference Enumeration value to set.
+     */
+    @Override
+    public void addValueReference(Enumeration valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference MeasurementTypeEnumeration value to set.
+     */
+    @Override
+    public void addValueReference(MeasurementTypeEnumeration valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference Text value to set.
+     */
+    @Override
+    public void addValueReference(Text valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference QualitativeValue value to set.
+     */
+    @Override
+    public void addValueReference(QualitativeValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
+    }
+
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public PropertyValue getAdditionalProperty() {
+        return getFirst(additionalProperty);
+    }
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @param additionalProperty PropertyValue value to set.
+     */
+    @Override
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
+    }
+
+    private List<Number> minValue;
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getMinValueList() {
+        return minValue;
+    }
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getMinValue() {
+        return getFirst(minValue);
+    }
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @param minValue Number value to set.
+     */
+    @Override
+    public void addMinValue(Number minValue) {
+        this.minValue = add(this.minValue, minValue);
+    }
+
+    private List<Text> unitText;
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getNameList() {
-        return name;
+    public List<Text> getUnitTextList() {
+        return unitText;
     }
 
     /**
-     * The name of the item.
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getName() {
-        return getFirst(name);
+    public Text getUnitText() {
+        return getFirst(unitText);
     }
 
     /**
-     * The name of the item.
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
      *
-     * @param name Text value to set.
+     * @param unitText Text value to set.
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    private List<URL> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addUnitText(Text unitText) {
+        this.unitText = add(this.unitText, unitText);
     }
 }

@@ -6,86 +6,22 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Number;
 
 /**
  * A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/FinancialProduct">https://schema.org/FinancialProduct</a>
  */
 public interface FinancialProduct extends Service {
 
     /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    <T> List<T> getAnnualPercentageRateList();
-
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    <T> T getAnnualPercentageRate();
-
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @param annualPercentageRate Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void addAnnualPercentageRate(Number annualPercentageRate);
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @param annualPercentageRate QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void addAnnualPercentageRate(QuantitativeValue annualPercentageRate);
-
-    /**
-     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    <T> List<T> getInterestRateList();
-
-    /**
-     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    <T> T getInterestRate();
-
-    /**
-     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-     *
-     * @param interestRate Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void addInterestRate(Number interestRate);
-    /**
-     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-     *
-     * @param interestRate QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void addInterestRate(QuantitativeValue interestRate);
-
-    /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     <T> List<T> getFeesAndCommissionsSpecificationList();
 
@@ -93,7 +29,6 @@ public interface FinancialProduct extends Service {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     <T> T getFeesAndCommissionsSpecification();
 
@@ -101,14 +36,66 @@ public interface FinancialProduct extends Service {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
+
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     */
+    <T> List<T> getInterestRateList();
+
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     */
+    <T> T getInterestRate();
+
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @param interestRate QuantitativeValue value to set.
+     */
+    void addInterestRate(QuantitativeValue interestRate);
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @param interestRate Number value to set.
+     */
+    void addInterestRate(Number interestRate);
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     */
+    <T> List<T> getAnnualPercentageRateList();
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     */
+    <T> T getAnnualPercentageRate();
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @param annualPercentageRate QuantitativeValue value to set.
+     */
+    void addAnnualPercentageRate(QuantitativeValue annualPercentageRate);
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @param annualPercentageRate Number value to set.
+     */
+    void addAnnualPercentageRate(Number annualPercentageRate);
 }

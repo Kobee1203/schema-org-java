@@ -12,18 +12,18 @@ import org.schema.model.LegalValueLevel;
  * A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+ * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
  * @see <a href="https://schema.org/LegislationObject">https://schema.org/LegislationObject</a>
  */
-public interface LegislationObject extends Legislation, MediaObject {
+public interface LegislationObject extends MediaObject, Legislation {
 
     /**
      * The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a "stronger" legal value than the HTML file of the same act.
      *
      * @return {@link LegalValueLevel}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
     List<LegalValueLevel> getLegislationLegalValueList();
@@ -33,7 +33,7 @@ public interface LegislationObject extends Legislation, MediaObject {
      *
      * @return {@link LegalValueLevel}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
     LegalValueLevel getLegislationLegalValue();
@@ -43,7 +43,7 @@ public interface LegislationObject extends Legislation, MediaObject {
      *
      * @param legislationLegalValue LegalValueLevel value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
     void addLegislationLegalValue(LegalValueLevel legislationLegalValue);

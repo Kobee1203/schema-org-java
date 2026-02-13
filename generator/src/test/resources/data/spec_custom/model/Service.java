@@ -6,29 +6,30 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.AdministrativeArea;
-import spec_custom.model.Place;
-import spec_custom.model.GeoShape;
 import spec_custom.model.Person;
 import spec_custom.model.Organization;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.Review;
-import spec_custom.model.ServiceChannel;
-import spec_custom.model.Product;
-import spec_custom.model.Service;
-import spec_custom.model.Audience;
-import spec_custom.model.ImageObject;
 import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.Brand;
-import spec_custom.model.Thing;
-import spec_custom.model.OfferCatalog;
-import spec_custom.model.CategoryCode;
-import spec_custom.model.PhysicalActivityCategory;
+import spec_custom.model.Audience;
+import spec_custom.model.datatype.URL;
+import spec_custom.model.ImageObject;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.Service;
+import spec_custom.model.Product;
 import spec_custom.model.AggregateRating;
-import spec_custom.model.GovernmentBenefitsType;
-import spec_custom.model.Demand;
+import spec_custom.model.Thing;
+import spec_custom.model.Brand;
+import spec_custom.model.Place;
+import spec_custom.model.AdministrativeArea;
+import spec_custom.model.GeoShape;
+import spec_custom.model.Review;
+import spec_custom.model.PhysicalActivityCategory;
+import spec_custom.model.CategoryCode;
 import spec_custom.model.Offer;
+import spec_custom.model.Demand;
+import spec_custom.model.Certification;
+import spec_custom.model.GovernmentBenefitsType;
+import spec_custom.model.ServiceChannel;
+import spec_custom.model.OfferCatalog;
 
 /**
  * A service provided by an organization, e.g. delivery service, print services, etc.
@@ -38,37 +39,85 @@ import spec_custom.model.Offer;
 public interface Service extends Intangible {
 
     /**
-     * The geographic area where the service is provided.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    <T> List<T> getServiceAreaList();
+    <T> List<T> getProviderList();
 
     /**
-     * The geographic area where the service is provided.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    <T> T getServiceArea();
+    <T> T getProvider();
 
     /**
-     * The geographic area where the service is provided.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param serviceArea AdministrativeArea value to set.
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void addServiceArea(AdministrativeArea serviceArea);
+    void addProvider(Person provider);
     /**
-     * The geographic area where the service is provided.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param serviceArea Place value to set.
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void addServiceArea(Place serviceArea);
+    void addProvider(Organization provider);
+
     /**
-     * The geographic area where the service is provided.
+     * The hours during which this service or contact is available.
      *
-     * @param serviceArea GeoShape value to set.
+     * @return {@link OpeningHoursSpecification}
      */
-    void addServiceArea(GeoShape serviceArea);
+    List<OpeningHoursSpecification> getHoursAvailableList();
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    OpeningHoursSpecification getHoursAvailable();
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @param hoursAvailable OpeningHoursSpecification value to set.
+     */
+    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
+
+    /**
+     * The audience eligible for this service.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getServiceAudienceList();
+
+    /**
+     * The audience eligible for this service.
+     *
+     * @return {@link Audience}
+     */
+    Audience getServiceAudience();
+
+    /**
+     * The audience eligible for this service.
+     *
+     * @param serviceAudience Audience value to set.
+     */
+    void addServiceAudience(Audience serviceAudience);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -98,82 +147,79 @@ public interface Service extends Intangible {
     void addBroker(Organization broker);
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * An associated logo.
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link URL} or {@link ImageObject}
      */
-    <T> List<T> getProviderList();
+    <T> List<T> getLogoList();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * An associated logo.
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link URL} or {@link ImageObject}
      */
-    <T> T getProvider();
+    <T> T getLogo();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * An associated logo.
      *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param logo URL value to set.
      */
-    void addProvider(Organization provider);
+    void addLogo(URL logo);
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * An associated logo.
      *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param logo ImageObject value to set.
      */
-    void addProvider(Person provider);
+    void addLogo(ImageObject logo);
 
     /**
-     * The geographic area where a service or offered item is provided.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
+     * @return {@link Text}
      */
-    <T> List<T> getAreaServedList();
+    List<Text> getProviderMobilityList();
 
     /**
-     * The geographic area where a service or offered item is provided.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
+     * @return {@link Text}
      */
-    <T> T getAreaServed();
+    Text getProviderMobility();
 
     /**
-     * The geographic area where a service or offered item is provided.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @param areaServed Text value to set.
+     * @param providerMobility Text value to set.
      */
-    void addAreaServed(Text areaServed);
+    void addProviderMobility(Text providerMobility);
+
     /**
-     * The geographic area where a service or offered item is provided.
+     * A pointer to another, somehow related product (or multiple products).
      *
-     * @param areaServed Place value to set.
+     * @return {@link Service} or {@link Product}
      */
-    void addAreaServed(Place areaServed);
+    <T> List<T> getIsRelatedToList();
+
     /**
-     * The geographic area where a service or offered item is provided.
+     * A pointer to another, somehow related product (or multiple products).
      *
-     * @param areaServed GeoShape value to set.
+     * @return {@link Service} or {@link Product}
      */
-    void addAreaServed(GeoShape areaServed);
+    <T> T getIsRelatedTo();
+
     /**
-     * The geographic area where a service or offered item is provided.
+     * A pointer to another, somehow related product (or multiple products).
      *
-     * @param areaServed AdministrativeArea value to set.
+     * @param isRelatedTo Service value to set.
      */
-    void addAreaServed(AdministrativeArea areaServed);
+    void addIsRelatedTo(Service isRelatedTo);
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param isRelatedTo Product value to set.
+     */
+    void addIsRelatedTo(Product isRelatedTo);
 
     /**
      * A slogan or motto associated with the item.
@@ -197,25 +243,227 @@ public interface Service extends Intangible {
     void addSlogan(Text slogan);
 
     /**
-     * An award won by or for this item.
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @return {@link Text}
+     * @return {@link AggregateRating}
      */
-    List<Text> getAwardList();
+    List<AggregateRating> getAggregateRatingList();
 
     /**
-     * An award won by or for this item.
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @return {@link Text}
+     * @return {@link AggregateRating}
      */
-    Text getAward();
+    AggregateRating getAggregateRating();
 
     /**
-     * An award won by or for this item.
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param award Text value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
-    void addAward(Text award);
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getServiceOutputList();
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @return {@link Thing}
+     */
+    Thing getServiceOutput();
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @param serviceOutput Thing value to set.
+     */
+    void addServiceOutput(Thing serviceOutput);
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> List<T> getBrandList();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> T getBrand();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    void addBrand(Brand brand);
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Organization value to set.
+     */
+    void addBrand(Organization brand);
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    <T> List<T> getAreaServedList();
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    <T> T getAreaServed();
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Place value to set.
+     */
+    void addAreaServed(Place areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed AdministrativeArea value to set.
+     */
+    void addAreaServed(AdministrativeArea areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed GeoShape value to set.
+     */
+    void addAreaServed(GeoShape areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    void addAreaServed(Text areaServed);
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewList();
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    Review getReview();
+
+    /**
+     * A review of the item.
+     *
+     * @param review Review value to set.
+     */
+    void addReview(Review review);
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> List<T> getCategoryList();
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> T getCategory();
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(Text category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(PhysicalActivityCategory category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(CategoryCode category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(Thing category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(URL category);
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getOffersList();
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> T getOffers();
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Offer value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addOffers(Offer offers);
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addOffers(Demand offers);
 
     /**
      * Human-readable terms of service documentation.
@@ -253,273 +501,6 @@ public interface Service extends Intangible {
     void addTermsOfService(Text termsOfService);
 
     /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    List<Review> getReviewList();
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    Review getReview();
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    void addReview(Review review);
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     * @return {@link ServiceChannel}
-     */
-    List<ServiceChannel> getAvailableChannelList();
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     * @return {@link ServiceChannel}
-     */
-    ServiceChannel getAvailableChannel();
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     * @param availableChannel ServiceChannel value to set.
-     */
-    void addAvailableChannel(ServiceChannel availableChannel);
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Product} or {@link Service}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getIsRelatedToList();
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Product} or {@link Service}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getIsRelatedTo();
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Product value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addIsRelatedTo(Product isRelatedTo);
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Service value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addIsRelatedTo(Service isRelatedTo);
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @return {@link Audience}
-     */
-    List<Audience> getServiceAudienceList();
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @return {@link Audience}
-     */
-    Audience getServiceAudience();
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @param serviceAudience Audience value to set.
-     */
-    void addServiceAudience(Audience serviceAudience);
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Product} or {@link Service}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getIsSimilarToList();
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Product} or {@link Service}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getIsSimilarTo();
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @param isSimilarTo Product value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addIsSimilarTo(Product isSimilarTo);
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @param isSimilarTo Service value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addIsSimilarTo(Service isSimilarTo);
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    List<Audience> getAudienceList();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    Audience getAudience();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    void addAudience(Audience audience);
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getLogoList();
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getLogo();
-
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addLogo(ImageObject logo);
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addLogo(URL logo);
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @return {@link Text}
-     */
-    List<Text> getProviderMobilityList();
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @return {@link Text}
-     */
-    Text getProviderMobility();
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @param providerMobility Text value to set.
-     */
-    void addProviderMobility(Text providerMobility);
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    List<OpeningHoursSpecification> getHoursAvailableList();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    OpeningHoursSpecification getHoursAvailable();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @param hoursAvailable OpeningHoursSpecification value to set.
-     */
-    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    <T> List<T> getBrandList();
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    <T> T getBrand();
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Brand value to set.
-     */
-    void addBrand(Brand brand);
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
-    void addBrand(Organization brand);
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getServiceOutputList();
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    Thing getServiceOutput();
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @param serviceOutput Thing value to set.
-     */
-    void addServiceOutput(Thing serviceOutput);
-
-    /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
      * @return {@link Thing}
@@ -541,105 +522,28 @@ public interface Service extends Intangible {
     void addProduces(Thing produces);
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * Certification information about a product, organization, service, place, or person.
      *
-     * @return {@link OfferCatalog}
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
      */
-    List<OfferCatalog> getHasOfferCatalogList();
+    List<Certification> getHasCertificationList();
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * Certification information about a product, organization, service, place, or person.
      *
-     * @return {@link OfferCatalog}
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
      */
-    OfferCatalog getHasOfferCatalog();
+    Certification getHasCertification();
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * Certification information about a product, organization, service, place, or person.
      *
-     * @param hasOfferCatalog OfferCatalog value to set.
+     * @param hasCertification Certification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
      */
-    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> List<T> getCategoryList();
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> T getCategory();
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category URL value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addCategory(URL category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addCategory(CategoryCode category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addCategory(Text category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addCategory(Thing category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category PhysicalActivityCategory value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addCategory(PhysicalActivityCategory category);
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    List<AggregateRating> getAggregateRatingList();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    AggregateRating getAggregateRating();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    void addAggregateRating(AggregateRating aggregateRating);
+    void addHasCertification(Certification hasCertification);
 
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
@@ -669,37 +573,146 @@ public interface Service extends Intangible {
     void addServiceType(GovernmentBenefitsType serviceType);
 
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Audience}
      */
-    <T> List<T> getOffersList();
+    List<Audience> getAudienceList();
 
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Audience}
      */
-    <T> T getOffers();
+    Audience getAudience();
 
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param audience Audience value to set.
      */
-    void addOffers(Demand offers);
+    void addAudience(Audience audience);
+
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * The geographic area where the service is provided.
      *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
      */
-    void addOffers(Offer offers);
+    <T> List<T> getServiceAreaList();
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    <T> T getServiceArea();
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    void addServiceArea(AdministrativeArea serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea GeoShape value to set.
+     */
+    void addServiceArea(GeoShape serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    void addServiceArea(Place serviceArea);
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @return {@link ServiceChannel}
+     */
+    List<ServiceChannel> getAvailableChannelList();
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @return {@link ServiceChannel}
+     */
+    ServiceChannel getAvailableChannel();
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @param availableChannel ServiceChannel value to set.
+     */
+    void addAvailableChannel(ServiceChannel availableChannel);
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     */
+    <T> List<T> getIsSimilarToList();
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     */
+    <T> T getIsSimilarTo();
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param isSimilarTo Service value to set.
+     */
+    void addIsSimilarTo(Service isSimilarTo);
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param isSimilarTo Product value to set.
+     */
+    void addIsSimilarTo(Product isSimilarTo);
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardList();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAward();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    void addAward(Text award);
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    List<OfferCatalog> getHasOfferCatalogList();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    OfferCatalog getHasOfferCatalog();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @param hasOfferCatalog OfferCatalog value to set.
+     */
+    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
 }

@@ -10,10 +10,9 @@ import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Text;
 
 /**
- * A bus (also omnibus or autobus) is a road vehicle designed to carry passengers. Coaches are luxury busses, usually in service for long distance travel.
+ * A bus (also omnibus or autobus) is a road vehicle designed to carry passengers. Coaches are luxury buses, usually in service for long distance travel.
  *
  * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/BusOrCoach">https://schema.org/BusOrCoach</a>
  */
 public interface BusOrCoach extends Vehicle {
@@ -23,7 +22,6 @@ public interface BusOrCoach extends Vehicle {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getRoofLoadList();
 
@@ -32,7 +30,6 @@ public interface BusOrCoach extends Vehicle {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getRoofLoad();
 
@@ -41,7 +38,6 @@ public interface BusOrCoach extends Vehicle {
      *
      * @param roofLoad QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     void addRoofLoad(QuantitativeValue roofLoad);
 
@@ -50,7 +46,6 @@ public interface BusOrCoach extends Vehicle {
      *
      * @return {@link Text}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     List<Text> getAcrissCodeList();
 
@@ -59,7 +54,6 @@ public interface BusOrCoach extends Vehicle {
      *
      * @return {@link Text}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     Text getAcrissCode();
 
@@ -68,7 +62,6 @@ public interface BusOrCoach extends Vehicle {
      *
      * @param acrissCode Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     void addAcrissCode(Text acrissCode);
 }

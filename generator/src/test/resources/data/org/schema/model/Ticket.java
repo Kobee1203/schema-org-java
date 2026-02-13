@@ -7,14 +7,14 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Text;
-import org.schema.model.Organization;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Date;
 import org.schema.model.datatype.URL;
+import org.schema.model.Person;
+import org.schema.model.Organization;
+import org.schema.model.Seat;
 import org.schema.model.datatype.Number;
 import org.schema.model.PriceSpecification;
-import org.schema.model.Person;
-import org.schema.model.Seat;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.DateTime;
 
 /**
  * Used to describe a ticket to an event, a flight, a bus ride, etc.
@@ -24,46 +24,52 @@ import org.schema.model.datatype.DateTime;
 public interface Ticket extends Intangible {
 
     /**
-     * The unique identifier for the ticket.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
      * @return {@link Text}
      */
-    List<Text> getTicketNumberList();
+    List<Text> getPriceCurrencyList();
 
     /**
-     * The unique identifier for the ticket.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
      * @return {@link Text}
      */
-    Text getTicketNumber();
+    Text getPriceCurrency();
 
     /**
-     * The unique identifier for the ticket.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
      *
-     * @param ticketNumber Text value to set.
+     * @param priceCurrency Text value to set.
      */
-    void addTicketNumber(Text ticketNumber);
+    void addPriceCurrency(Text priceCurrency);
 
     /**
-     * The organization issuing the ticket or permit.
+     * The date the ticket was issued.
      *
-     * @return {@link Organization}
+     * @return {@link DateTime} or {@link Date}
      */
-    List<Organization> getIssuedByList();
+    <T> List<T> getDateIssuedList();
 
     /**
-     * The organization issuing the ticket or permit.
+     * The date the ticket was issued.
      *
-     * @return {@link Organization}
+     * @return {@link DateTime} or {@link Date}
      */
-    Organization getIssuedBy();
+    <T> T getDateIssued();
 
     /**
-     * The organization issuing the ticket or permit.
+     * The date the ticket was issued.
      *
-     * @param issuedBy Organization value to set.
+     * @param dateIssued DateTime value to set.
      */
-    void addIssuedBy(Organization issuedBy);
+    void addDateIssued(DateTime dateIssued);
+    /**
+     * The date the ticket was issued.
+     *
+     * @param dateIssued Date value to set.
+     */
+    void addDateIssued(Date dateIssued);
 
     /**
      * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
@@ -93,64 +99,52 @@ public interface Ticket extends Intangible {
     void addTicketToken(Text ticketToken);
 
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The unique identifier for the ticket.
      *
-     * @return {@link Number} or {@link PriceSpecification} or {@link Text}
+     * @return {@link Text}
      */
-    <T> List<T> getTotalPriceList();
+    List<Text> getTicketNumberList();
 
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The unique identifier for the ticket.
      *
-     * @return {@link Number} or {@link PriceSpecification} or {@link Text}
+     * @return {@link Text}
      */
-    <T> T getTotalPrice();
+    Text getTicketNumber();
 
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The unique identifier for the ticket.
      *
-     * @param totalPrice Number value to set.
+     * @param ticketNumber Text value to set.
      */
-    void addTotalPrice(Number totalPrice);
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice PriceSpecification value to set.
-     */
-    void addTotalPrice(PriceSpecification totalPrice);
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param totalPrice Text value to set.
-     */
-    void addTotalPrice(Text totalPrice);
+    void addTicketNumber(Text ticketNumber);
 
     /**
      * The person or organization the reservation or ticket is for.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     <T> List<T> getUnderNameList();
 
     /**
      * The person or organization the reservation or ticket is for.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     <T> T getUnderName();
 
     /**
      * The person or organization the reservation or ticket is for.
      *
-     * @param underName Organization value to set.
-     */
-    void addUnderName(Organization underName);
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
      * @param underName Person value to set.
      */
     void addUnderName(Person underName);
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Organization value to set.
+     */
+    void addUnderName(Organization underName);
 
     /**
      * The seat associated with the ticket.
@@ -174,50 +168,56 @@ public interface Ticket extends Intangible {
     void addTicketedSeat(Seat ticketedSeat);
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @return {@link Text}
+     * @return {@link Organization}
      */
-    List<Text> getPriceCurrencyList();
+    List<Organization> getIssuedByList();
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @return {@link Text}
+     * @return {@link Organization}
      */
-    Text getPriceCurrency();
+    Organization getIssuedBy();
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @param priceCurrency Text value to set.
+     * @param issuedBy Organization value to set.
      */
-    void addPriceCurrency(Text priceCurrency);
+    void addIssuedBy(Organization issuedBy);
 
     /**
-     * The date the ticket was issued.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link Number} or {@link Text} or {@link PriceSpecification}
      */
-    <T> List<T> getDateIssuedList();
+    <T> List<T> getTotalPriceList();
 
     /**
-     * The date the ticket was issued.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link Number} or {@link Text} or {@link PriceSpecification}
      */
-    <T> T getDateIssued();
+    <T> T getTotalPrice();
 
     /**
-     * The date the ticket was issued.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param dateIssued Date value to set.
+     * @param totalPrice Number value to set.
      */
-    void addDateIssued(Date dateIssued);
+    void addTotalPrice(Number totalPrice);
     /**
-     * The date the ticket was issued.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param dateIssued DateTime value to set.
+     * @param totalPrice Text value to set.
      */
-    void addDateIssued(DateTime dateIssued);
+    void addTotalPrice(Text totalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param totalPrice PriceSpecification value to set.
+     */
+    void addTotalPrice(PriceSpecification totalPrice);
 }

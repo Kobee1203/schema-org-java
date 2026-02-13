@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Language;
-import org.schema.model.datatype.Text;
 import org.schema.model.Event;
 import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Text;
+import org.schema.model.Language;
 
 /**
  * An over the air or online broadcast event.
@@ -17,41 +17,6 @@ import org.schema.model.datatype.Boolean;
  * @see <a href="https://schema.org/BroadcastEvent">https://schema.org/BroadcastEvent</a>
  */
 public interface BroadcastEvent extends PublicationEvent {
-
-    /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
-     */
-    <T> List<T> getSubtitleLanguageList();
-
-    /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
-     */
-    <T> T getSubtitleLanguage();
-
-    /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-     *
-     * @param subtitleLanguage Language value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
-     */
-    void addSubtitleLanguage(Language subtitleLanguage);
-    /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-     *
-     * @param subtitleLanguage Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
-     */
-    void addSubtitleLanguage(Text subtitleLanguage);
 
     /**
      * The event being broadcast such as a sporting event or awards ceremony.
@@ -75,6 +40,27 @@ public interface BroadcastEvent extends PublicationEvent {
     void addBroadcastOfEvent(Event broadcastOfEvent);
 
     /**
+     * True if the broadcast is of a live event.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsLiveBroadcastList();
+
+    /**
+     * True if the broadcast is of a live event.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getIsLiveBroadcast();
+
+    /**
+     * True if the broadcast is of a live event.
+     *
+     * @param isLiveBroadcast Boolean value to set.
+     */
+    void addIsLiveBroadcast(Boolean isLiveBroadcast);
+
+    /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      *
      * @return {@link Text}
@@ -96,23 +82,37 @@ public interface BroadcastEvent extends PublicationEvent {
     void addVideoFormat(Text videoFormat);
 
     /**
-     * True if the broadcast is of a live event.
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link Boolean}
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    List<Boolean> getIsLiveBroadcastList();
+    <T> List<T> getSubtitleLanguageList();
 
     /**
-     * True if the broadcast is of a live event.
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link Boolean}
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    Boolean getIsLiveBroadcast();
+    <T> T getSubtitleLanguage();
 
     /**
-     * True if the broadcast is of a live event.
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @param isLiveBroadcast Boolean value to set.
+     * @param subtitleLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void addIsLiveBroadcast(Boolean isLiveBroadcast);
+    void addSubtitleLanguage(Text subtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param subtitleLanguage Language value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void addSubtitleLanguage(Language subtitleLanguage);
 }

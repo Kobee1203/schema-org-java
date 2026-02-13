@@ -5,19 +5,22 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
-import org.schema.model.datatype.URL;
-import org.schema.model.ImageObject;
-import org.schema.model.LocationFeatureSpecification;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Boolean;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.Accommodation;
-import org.schema.model.Action;
-import org.schema.model.CreativeWork;
-import org.schema.model.Event;
+import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Integer;
+import org.schema.model.LocationFeatureSpecification;
 import org.schema.model.PropertyValue;
+import org.schema.model.Person;
+import org.schema.model.Organization;
+import org.schema.model.Event;
+import org.schema.model.CreativeWork;
+import org.schema.model.Action;
+import org.schema.model.TextObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
@@ -34,144 +37,6 @@ import org.schema.model.FloorPlan;
  */
 @JsonLdTypeName("FloorPlan")
 public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FloorPlan {
-
-    private List<QuantitativeValue> floorSize;
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public List<QuantitativeValue> getFloorSizeList() {
-        return floorSize;
-    }
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public QuantitativeValue getFloorSize() {
-        return getFirst(floorSize);
-    }
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @param floorSize QuantitativeValue value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void addFloorSize(QuantitativeValue floorSize) {
-        this.floorSize = add(this.floorSize, floorSize);
-    }
-
-    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
-    private List<Object> numberOfRooms;
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public <T> List<T> getNumberOfRoomsList() {
-        return (List<T>) numberOfRooms;
-    }
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public <T> T getNumberOfRooms() {
-        return (T) getFirst(numberOfRooms);
-    }
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param numberOfRooms Number value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void addNumberOfRooms(Number numberOfRooms) {
-        this.numberOfRooms = add(this.numberOfRooms, numberOfRooms);
-    }
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param numberOfRooms QuantitativeValue value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void addNumberOfRooms(QuantitativeValue numberOfRooms) {
-        this.numberOfRooms = add(this.numberOfRooms, numberOfRooms);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> layoutImage;
-
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    @Override
-    public <T> List<T> getLayoutImageList() {
-        return (List<T>) layoutImage;
-    }
-
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    @Override
-    public <T> T getLayoutImage() {
-        return (T) getFirst(layoutImage);
-    }
-
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @param layoutImage URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    @Override
-    public void addLayoutImage(URL layoutImage) {
-        this.layoutImage = add(this.layoutImage, layoutImage);
-    }
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @param layoutImage ImageObject value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    @Override
-    public void addLayoutImage(ImageObject layoutImage) {
-        this.layoutImage = add(this.layoutImage, layoutImage);
-    }
 
     private List<Number> numberOfFullBathrooms;
 
@@ -209,167 +74,6 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     @Override
     public void addNumberOfFullBathrooms(Number numberOfFullBathrooms) {
         this.numberOfFullBathrooms = add(this.numberOfFullBathrooms, numberOfFullBathrooms);
-    }
-
-    private List<LocationFeatureSpecification> amenityFeature;
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public List<LocationFeatureSpecification> getAmenityFeatureList() {
-        return amenityFeature;
-    }
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public LocationFeatureSpecification getAmenityFeature() {
-        return getFirst(amenityFeature);
-    }
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @param amenityFeature LocationFeatureSpecification value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
-        this.amenityFeature = add(this.amenityFeature, amenityFeature);
-    }
-
-    private List<Integer> numberOfBathroomsTotal;
-
-    /**
-     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public List<Integer> getNumberOfBathroomsTotalList() {
-        return numberOfBathroomsTotal;
-    }
-
-    /**
-     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Integer getNumberOfBathroomsTotal() {
-        return getFirst(numberOfBathroomsTotal);
-    }
-
-    /**
-     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @param numberOfBathroomsTotal Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void addNumberOfBathroomsTotal(Integer numberOfBathroomsTotal) {
-        this.numberOfBathroomsTotal = add(this.numberOfBathroomsTotal, numberOfBathroomsTotal);
-    }
-
-    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
-    private List<Object> numberOfBedrooms;
-
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public <T> List<T> getNumberOfBedroomsList() {
-        return (List<T>) numberOfBedrooms;
-    }
-
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public <T> T getNumberOfBedrooms() {
-        return (T) getFirst(numberOfBedrooms);
-    }
-
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @param numberOfBedrooms Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void addNumberOfBedrooms(Number numberOfBedrooms) {
-        this.numberOfBedrooms = add(this.numberOfBedrooms, numberOfBedrooms);
-    }
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @param numberOfBedrooms QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void addNumberOfBedrooms(QuantitativeValue numberOfBedrooms) {
-        this.numberOfBedrooms = add(this.numberOfBedrooms, numberOfBedrooms);
-    }
-
-    private List<QuantitativeValue> numberOfAvailableAccommodationUnits;
-
-    /**
-     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public List<QuantitativeValue> getNumberOfAvailableAccommodationUnitsList() {
-        return numberOfAvailableAccommodationUnits;
-    }
-
-    /**
-     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public QuantitativeValue getNumberOfAvailableAccommodationUnits() {
-        return getFirst(numberOfAvailableAccommodationUnits);
-    }
-
-    /**
-     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
-     *
-     * @param numberOfAvailableAccommodationUnits QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void addNumberOfAvailableAccommodationUnits(QuantitativeValue numberOfAvailableAccommodationUnits) {
-        this.numberOfAvailableAccommodationUnits = add(this.numberOfAvailableAccommodationUnits, numberOfAvailableAccommodationUnits);
     }
 
     private List<QuantitativeValue> numberOfAccommodationUnits;
@@ -410,88 +114,50 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
         this.numberOfAccommodationUnits = add(this.numberOfAccommodationUnits, numberOfAccommodationUnits);
     }
 
-    @JsonLdFieldTypes({ Text.class, Boolean.class })
-    private List<Object> petsAllowed;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfRooms;
 
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @return {@link Text} or {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @return {@link QuantitativeValue} or {@link Number}
      */
     @Override
-    public <T> List<T> getPetsAllowedList() {
-        return (List<T>) petsAllowed;
+    public <T> List<T> getNumberOfRoomsList() {
+        return (List<T>) numberOfRooms;
     }
 
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @return {@link Text} or {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @return {@link QuantitativeValue} or {@link Number}
      */
     @Override
-    public <T> T getPetsAllowed() {
-        return (T) getFirst(petsAllowed);
+    public <T> T getNumberOfRooms() {
+        return (T) getFirst(numberOfRooms);
     }
 
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param petsAllowed Text value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @param numberOfRooms QuantitativeValue value to set.
      */
     @Override
-    public void addPetsAllowed(Text petsAllowed) {
-        this.petsAllowed = add(this.petsAllowed, petsAllowed);
+    public void addNumberOfRooms(QuantitativeValue numberOfRooms) {
+        this.numberOfRooms = add(this.numberOfRooms, numberOfRooms);
     }
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param petsAllowed Boolean value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @param numberOfRooms Number value to set.
      */
     @Override
-    public void addPetsAllowed(Boolean petsAllowed) {
-        this.petsAllowed = add(this.petsAllowed, petsAllowed);
-    }
-
-    private List<Accommodation> isPlanForApartment;
-
-    /**
-     * Indicates some accommodation that this floor plan describes.
-     *
-     * @return {@link Accommodation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public List<Accommodation> getIsPlanForApartmentList() {
-        return isPlanForApartment;
-    }
-
-    /**
-     * Indicates some accommodation that this floor plan describes.
-     *
-     * @return {@link Accommodation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Accommodation getIsPlanForApartment() {
-        return getFirst(isPlanForApartment);
-    }
-
-    /**
-     * Indicates some accommodation that this floor plan describes.
-     *
-     * @param isPlanForApartment Accommodation value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void addIsPlanForApartment(Accommodation isPlanForApartment) {
-        this.isPlanForApartment = add(this.isPlanForApartment, isPlanForApartment);
+    public void addNumberOfRooms(Number numberOfRooms) {
+        this.numberOfRooms = add(this.numberOfRooms, numberOfRooms);
     }
 
     private List<Number> numberOfPartialBathrooms;
@@ -532,78 +198,539 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
         this.numberOfPartialBathrooms = add(this.numberOfPartialBathrooms, numberOfPartialBathrooms);
     }
 
-    private List<Action> potentialAction;
+    private List<QuantitativeValue> floorSize;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
-     * @return {@link Action}
+     * @return {@link QuantitativeValue}
      */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
+    public List<QuantitativeValue> getFloorSizeList() {
+        return floorSize;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
-     * @return {@link Action}
+     * @return {@link QuantitativeValue}
      */
     @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public QuantitativeValue getFloorSize() {
+        return getFirst(floorSize);
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
-     * @param potentialAction Action value to set.
+     * @param floorSize QuantitativeValue value to set.
      */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
+    public void addFloorSize(QuantitativeValue floorSize) {
+        this.floorSize = add(this.floorSize, floorSize);
     }
 
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> mainEntityOfPage;
+    private List<Accommodation> isPlanForApartment;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates some accommodation that this floor plan describes.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link Accommodation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public List<Accommodation> getIsPlanForApartmentList() {
+        return isPlanForApartment;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Indicates some accommodation that this floor plan describes.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @return {@link Accommodation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public Accommodation getIsPlanForApartment() {
+        return getFirst(isPlanForApartment);
+    }
+
+    /**
+     * Indicates some accommodation that this floor plan describes.
+     *
+     * @param isPlanForApartment Accommodation value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void addIsPlanForApartment(Accommodation isPlanForApartment) {
+        this.isPlanForApartment = add(this.isPlanForApartment, isPlanForApartment);
+    }
+
+    private List<QuantitativeValue> numberOfAvailableAccommodationUnits;
+
+    /**
+     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<QuantitativeValue> getNumberOfAvailableAccommodationUnitsList() {
+        return numberOfAvailableAccommodationUnits;
+    }
+
+    /**
+     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public QuantitativeValue getNumberOfAvailableAccommodationUnits() {
+        return getFirst(numberOfAvailableAccommodationUnits);
+    }
+
+    /**
+     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
+     *
+     * @param numberOfAvailableAccommodationUnits QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void addNumberOfAvailableAccommodationUnits(QuantitativeValue numberOfAvailableAccommodationUnits) {
+        this.numberOfAvailableAccommodationUnits = add(this.numberOfAvailableAccommodationUnits, numberOfAvailableAccommodationUnits);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> layoutImage;
+
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @return {@link ImageObject} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    @Override
+    public <T> List<T> getLayoutImageList() {
+        return (List<T>) layoutImage;
+    }
+
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @return {@link ImageObject} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    @Override
+    public <T> T getLayoutImage() {
+        return (T) getFirst(layoutImage);
+    }
+
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @param layoutImage ImageObject value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    @Override
+    public void addLayoutImage(ImageObject layoutImage) {
+        this.layoutImage = add(this.layoutImage, layoutImage);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A schematic image showing the floorplan layout.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param layoutImage URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addLayoutImage(URL layoutImage) {
+        this.layoutImage = add(this.layoutImage, layoutImage);
+    }
+
+    @JsonLdFieldTypes({ Boolean.class, Text.class })
+    private List<Object> petsAllowed;
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @return {@link Boolean} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getPetsAllowedList() {
+        return (List<T>) petsAllowed;
+    }
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @return {@link Boolean} or {@link Text}
+     */
+    @Override
+    public <T> T getPetsAllowed() {
+        return (T) getFirst(petsAllowed);
+    }
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Boolean value to set.
+     */
+    @Override
+    public void addPetsAllowed(Boolean petsAllowed) {
+        this.petsAllowed = add(this.petsAllowed, petsAllowed);
+    }
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Text value to set.
+     */
+    @Override
+    public void addPetsAllowed(Text petsAllowed) {
+        this.petsAllowed = add(this.petsAllowed, petsAllowed);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfBedrooms;
+
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfBedroomsList() {
+        return (List<T>) numberOfBedrooms;
+    }
+
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public <T> T getNumberOfBedrooms() {
+        return (T) getFirst(numberOfBedrooms);
+    }
+
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @param numberOfBedrooms QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void addNumberOfBedrooms(QuantitativeValue numberOfBedrooms) {
+        this.numberOfBedrooms = add(this.numberOfBedrooms, numberOfBedrooms);
+    }
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @param numberOfBedrooms Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void addNumberOfBedrooms(Number numberOfBedrooms) {
+        this.numberOfBedrooms = add(this.numberOfBedrooms, numberOfBedrooms);
+    }
+
+    private List<Integer> numberOfBathroomsTotal;
+
+    /**
+     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<Integer> getNumberOfBathroomsTotalList() {
+        return numberOfBathroomsTotal;
+    }
+
+    /**
+     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public Integer getNumberOfBathroomsTotal() {
+        return getFirst(numberOfBathroomsTotal);
+    }
+
+    /**
+     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+     *
+     * @param numberOfBathroomsTotal Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void addNumberOfBathroomsTotal(Integer numberOfBathroomsTotal) {
+        this.numberOfBathroomsTotal = add(this.numberOfBathroomsTotal, numberOfBathroomsTotal);
+    }
+
+    private List<LocationFeatureSpecification> amenityFeature;
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     */
+    @Override
+    public List<LocationFeatureSpecification> getAmenityFeatureList() {
+        return amenityFeature;
+    }
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     */
+    @Override
+    public LocationFeatureSpecification getAmenityFeature() {
+        return getFirst(amenityFeature);
+    }
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @param amenityFeature LocationFeatureSpecification value to set.
+     */
+    @Override
+    public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
+        this.amenityFeature = add(this.amenityFeature, amenityFeature);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -652,36 +779,120 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param url URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> alternateName;
@@ -716,68 +927,78 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> sameAs;
+    private List<URL> url;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
-     * @param sameAs URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> description;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param description Text value to set.
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<Text> disambiguatingDescription;
@@ -810,167 +1031,5 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
-    }
-
-    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    private List<URL> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
     }
 }

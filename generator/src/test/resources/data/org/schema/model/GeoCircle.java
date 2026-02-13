@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.GeoCoordinates;
 import org.schema.model.datatype.Number;
-import org.schema.model.datatype.Text;
 import org.schema.model.Distance;
+import org.schema.model.datatype.Text;
+import org.schema.model.GeoCoordinates;
 
 /**
  * A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape
@@ -20,6 +20,39 @@ import org.schema.model.Distance;
  * @see <a href="https://schema.org/GeoCircle">https://schema.org/GeoCircle</a>
  */
 public interface GeoCircle extends GeoShape {
+
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @return {@link Number} or {@link Distance} or {@link Text}
+     */
+    <T> List<T> getGeoRadiusList();
+
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @return {@link Number} or {@link Distance} or {@link Text}
+     */
+    <T> T getGeoRadius();
+
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param geoRadius Number value to set.
+     */
+    void addGeoRadius(Number geoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param geoRadius Distance value to set.
+     */
+    void addGeoRadius(Distance geoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param geoRadius Text value to set.
+     */
+    void addGeoRadius(Text geoRadius);
 
     /**
      * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
@@ -41,37 +74,4 @@ public interface GeoCircle extends GeoShape {
      * @param geoMidpoint GeoCoordinates value to set.
      */
     void addGeoMidpoint(GeoCoordinates geoMidpoint);
-
-    /**
-     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
-     *
-     * @return {@link Number} or {@link Text} or {@link Distance}
-     */
-    <T> List<T> getGeoRadiusList();
-
-    /**
-     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
-     *
-     * @return {@link Number} or {@link Text} or {@link Distance}
-     */
-    <T> T getGeoRadius();
-
-    /**
-     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
-     *
-     * @param geoRadius Number value to set.
-     */
-    void addGeoRadius(Number geoRadius);
-    /**
-     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
-     *
-     * @param geoRadius Text value to set.
-     */
-    void addGeoRadius(Text geoRadius);
-    /**
-     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
-     *
-     * @param geoRadius Distance value to set.
-     */
-    void addGeoRadius(Distance geoRadius);
 }

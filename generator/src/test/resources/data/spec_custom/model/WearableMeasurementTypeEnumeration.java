@@ -5,6 +5,8 @@
  */
 package spec_custom.model;
 
+import java.util.List;
+
 /**
  * Enumerates common types of measurement for wearables products.
  *

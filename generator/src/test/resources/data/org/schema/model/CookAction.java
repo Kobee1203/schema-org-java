@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Place;
+import org.schema.model.FoodEstablishment;
 import org.schema.model.FoodEvent;
 import org.schema.model.Recipe;
-import org.schema.model.FoodEstablishment;
-import org.schema.model.Place;
 
 /**
  * The act of producing/preparing food.
@@ -17,6 +17,33 @@ import org.schema.model.Place;
  * @see <a href="https://schema.org/CookAction">https://schema.org/CookAction</a>
  */
 public interface CookAction extends CreateAction {
+
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     *
+     * @return {@link Place} or {@link FoodEstablishment}
+     */
+    <T> List<T> getFoodEstablishmentList();
+
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     *
+     * @return {@link Place} or {@link FoodEstablishment}
+     */
+    <T> T getFoodEstablishment();
+
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     *
+     * @param foodEstablishment Place value to set.
+     */
+    void addFoodEstablishment(Place foodEstablishment);
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     *
+     * @param foodEstablishment FoodEstablishment value to set.
+     */
+    void addFoodEstablishment(FoodEstablishment foodEstablishment);
 
     /**
      * A sub property of location. The specific food event where the action occurred.
@@ -59,31 +86,4 @@ public interface CookAction extends CreateAction {
      * @param recipe Recipe value to set.
      */
     void addRecipe(Recipe recipe);
-
-    /**
-     * A sub property of location. The specific food establishment where the action occurred.
-     *
-     * @return {@link FoodEstablishment} or {@link Place}
-     */
-    <T> List<T> getFoodEstablishmentList();
-
-    /**
-     * A sub property of location. The specific food establishment where the action occurred.
-     *
-     * @return {@link FoodEstablishment} or {@link Place}
-     */
-    <T> T getFoodEstablishment();
-
-    /**
-     * A sub property of location. The specific food establishment where the action occurred.
-     *
-     * @param foodEstablishment FoodEstablishment value to set.
-     */
-    void addFoodEstablishment(FoodEstablishment foodEstablishment);
-    /**
-     * A sub property of location. The specific food establishment where the action occurred.
-     *
-     * @param foodEstablishment Place value to set.
-     */
-    void addFoodEstablishment(Place foodEstablishment);
 }

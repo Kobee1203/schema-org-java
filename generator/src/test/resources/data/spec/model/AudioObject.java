@@ -6,43 +6,63 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.MediaObject;
 import spec.model.datatype.Text;
+import spec.model.MediaObject;
 
 /**
  * An audio file.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/AudioObject">https://schema.org/AudioObject</a>
  */
 public interface AudioObject extends MediaObject {
 
     /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTranscriptList();
+
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @return {@link Text}
+     */
+    Text getTranscript();
+
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @param transcript Text value to set.
+     */
+    void addTranscript(Text transcript);
+
+    /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @return {@link MediaObject} or {@link Text}
+     * @return {@link Text} or {@link MediaObject}
      */
     <T> List<T> getCaptionList();
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @return {@link MediaObject} or {@link Text}
+     * @return {@link Text} or {@link MediaObject}
      */
     <T> T getCaption();
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @param caption MediaObject value to set.
-     */
-    void addCaption(MediaObject caption);
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
      * @param caption Text value to set.
      */
     void addCaption(Text caption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param caption MediaObject value to set.
+     */
+    void addCaption(MediaObject caption);
 
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
@@ -70,25 +90,4 @@ public interface AudioObject extends MediaObject {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void addEmbeddedTextCaption(Text embeddedTextCaption);
-
-    /**
-     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTranscriptList();
-
-    /**
-     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-     *
-     * @return {@link Text}
-     */
-    Text getTranscript();
-
-    /**
-     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-     *
-     * @param transcript Text value to set.
-     */
-    void addTranscript(Text transcript);
 }

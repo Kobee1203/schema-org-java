@@ -9,50 +9,55 @@ import org.schema.model.datatype.Text;
 import org.schema.model.Organization;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.Place;
-import org.schema.model.datatype.Number;
+import org.schema.model.OpeningHoursSpecification;
 import org.schema.model.datatype.Boolean;
-import org.schema.model.LocationFeatureSpecification;
-import org.schema.model.PropertyValue;
-import org.schema.model.ImageObject;
-import org.schema.model.Photograph;
-import org.schema.model.datatype.URL;
-import org.schema.model.DefinedTerm;
+import org.schema.model.datatype.Number;
 import org.schema.model.Review;
+import org.schema.model.datatype.URL;
+import org.schema.model.ImageObject;
+import org.schema.model.DefinedTerm;
+import org.schema.model.GeoShape;
+import org.schema.model.GeoCoordinates;
+import org.schema.model.AggregateRating;
 import org.schema.model.Map;
 import org.schema.model.Event;
 import org.schema.model.PostalAddress;
-import org.schema.model.GeoCoordinates;
-import org.schema.model.GeoShape;
-import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.Certification;
+import org.schema.model.PropertyValue;
+import org.schema.model.Photograph;
 import org.schema.model.datatype.Integer;
-import org.schema.model.AggregateRating;
-import org.schema.model.Action;
+import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.Person;
 import org.schema.model.CreativeWork;
+import org.schema.model.Action;
+import org.schema.model.TextObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
-import org.schema.model.AdministrativeArea;
-import org.schema.model.Person;
-import org.schema.model.Offer;
-import org.schema.model.AboutPage;
-import org.schema.model.ProgramMembership;
-import org.schema.model.ContactPoint;
-import org.schema.model.Article;
-import org.schema.model.datatype.Date;
-import org.schema.model.Product;
-import org.schema.model.OwnershipInfo;
 import org.schema.model.Grant;
-import org.schema.model.InteractionCounter;
-import org.schema.model.Demand;
-import org.schema.model.MerchantReturnPolicy;
+import org.schema.model.datatype.Date;
+import org.schema.model.Article;
 import org.schema.model.Language;
-import org.schema.model.EducationalOccupationalCredential;
 import org.schema.model.Brand;
-import org.schema.model.NonprofitType;
-import org.schema.model.OfferCatalog;
-import org.schema.model.VirtualLocation;
+import org.schema.model.MerchantReturnPolicy;
+import org.schema.model.AdministrativeArea;
+import org.schema.model.InteractionCounter;
+import org.schema.model.ProgramMembership;
+import org.schema.model.MemberProgramTier;
+import org.schema.model.ContactPoint;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.LoanOrCredit;
+import org.schema.model.PaymentMethod;
+import org.schema.model.MemberProgram;
+import org.schema.model.AboutPage;
+import org.schema.model.EducationalOccupationalCredential;
+import org.schema.model.VirtualLocation;
+import org.schema.model.Demand;
+import org.schema.model.Offer;
+import org.schema.model.ShippingService;
+import org.schema.model.OfferCatalog;
+import org.schema.model.NonprofitType;
 import org.schema.model.LocalBusiness;
 import org.schema.model.SportsActivityLocation;
 import org.schema.model.SportsClub;
@@ -64,38 +69,6 @@ import org.schema.model.SportsClub;
  */
 @JsonLdTypeName("SportsClub")
 public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportsClub {
-
-    private List<Text> priceRange;
-
-    /**
-     * The price range of the business, for example ```$$$```.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getPriceRangeList() {
-        return priceRange;
-    }
-
-    /**
-     * The price range of the business, for example ```$$$```.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getPriceRange() {
-        return getFirst(priceRange);
-    }
-
-    /**
-     * The price range of the business, for example ```$$$```.
-     *
-     * @param priceRange Text value to set.
-     */
-    @Override
-    public void addPriceRange(Text priceRange) {
-        this.priceRange = add(this.priceRange, priceRange);
-    }
 
     private List<Text> currenciesAccepted;
 
@@ -161,38 +134,6 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.branchOf = add(this.branchOf, branchOf);
     }
 
-    private List<Text> paymentAccepted;
-
-    /**
-     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getPaymentAcceptedList() {
-        return paymentAccepted;
-    }
-
-    /**
-     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getPaymentAccepted() {
-        return getFirst(paymentAccepted);
-    }
-
-    /**
-     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
-     *
-     * @param paymentAccepted Text value to set.
-     */
-    @Override
-    public void addPaymentAccepted(Text paymentAccepted) {
-        this.paymentAccepted = add(this.paymentAccepted, paymentAccepted);
-    }
-
     private List<Text> openingHours;
 
     /**
@@ -223,6 +164,70 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     @Override
     public void addOpeningHours(Text openingHours) {
         this.openingHours = add(this.openingHours, openingHours);
+    }
+
+    private List<Text> priceRange;
+
+    /**
+     * The price range of the business, for example ```$$$```.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPriceRangeList() {
+        return priceRange;
+    }
+
+    /**
+     * The price range of the business, for example ```$$$```.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getPriceRange() {
+        return getFirst(priceRange);
+    }
+
+    /**
+     * The price range of the business, for example ```$$$```.
+     *
+     * @param priceRange Text value to set.
+     */
+    @Override
+    public void addPriceRange(Text priceRange) {
+        this.priceRange = add(this.priceRange, priceRange);
+    }
+
+    private List<Text> paymentAccepted;
+
+    /**
+     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPaymentAcceptedList() {
+        return paymentAccepted;
+    }
+
+    /**
+     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getPaymentAccepted() {
+        return getFirst(paymentAccepted);
+    }
+
+    /**
+     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
+     *
+     * @param paymentAccepted Text value to set.
+     */
+    @Override
+    public void addPaymentAccepted(Text paymentAccepted) {
+        this.paymentAccepted = add(this.paymentAccepted, paymentAccepted);
     }
 
     @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
@@ -267,46 +272,71 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.geoCovers = add(this.geoCovers, geoCovers);
     }
 
-    @JsonLdFieldTypes({ Text.class, Number.class })
-    private List<Object> longitude;
+    private List<OpeningHoursSpecification> specialOpeningHoursSpecification;
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
      *
-     * @return {@link Text} or {@link Number}
+     * @return {@link OpeningHoursSpecification}
      */
     @Override
-    public <T> List<T> getLongitudeList() {
-        return (List<T>) longitude;
+    public List<OpeningHoursSpecification> getSpecialOpeningHoursSpecificationList() {
+        return specialOpeningHoursSpecification;
     }
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
      *
-     * @return {@link Text} or {@link Number}
+     * @return {@link OpeningHoursSpecification}
      */
     @Override
-    public <T> T getLongitude() {
-        return (T) getFirst(longitude);
+    public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
+        return getFirst(specialOpeningHoursSpecification);
     }
 
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
      *
-     * @param longitude Text value to set.
+     * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
-    public void addLongitude(Text longitude) {
-        this.longitude = add(this.longitude, longitude);
+    public void addSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
+        this.specialOpeningHoursSpecification = add(this.specialOpeningHoursSpecification, specialOpeningHoursSpecification);
     }
+
+    private List<Boolean> publicAccess;
+
     /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value.
      *
-     * @param longitude Number value to set.
+     * @return {@link Boolean}
      */
     @Override
-    public void addLongitude(Number longitude) {
-        this.longitude = add(this.longitude, longitude);
+    public List<Boolean> getPublicAccessList() {
+        return publicAccess;
+    }
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getPublicAccess() {
+        return getFirst(publicAccess);
+    }
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value.
+     *
+     * @param publicAccess Boolean value to set.
+     */
+    @Override
+    public void addPublicAccess(Boolean publicAccess) {
+        this.publicAccess = add(this.publicAccess, publicAccess);
     }
 
     private List<Boolean> smokingAllowed;
@@ -315,7 +345,6 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Boolean> getSmokingAllowedList() {
@@ -326,7 +355,6 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
     public Boolean getSmokingAllowed() {
@@ -337,273 +365,126 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @param smokingAllowed Boolean value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
     public void addSmokingAllowed(Boolean smokingAllowed) {
         this.smokingAllowed = add(this.smokingAllowed, smokingAllowed);
     }
 
-    private List<Text> isicV4;
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
+    private List<Object> geoOverlaps;
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public List<Text> getIsicV4List() {
-        return isicV4;
+    public <T> List<T> getGeoOverlapsList() {
+        return (List<T>) geoOverlaps;
     }
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public Text getIsicV4() {
-        return getFirst(isicV4);
+    public <T> T getGeoOverlaps() {
+        return (T) getFirst(geoOverlaps);
     }
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param isicV4 Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param geoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void addIsicV4(Text isicV4) {
-        this.isicV4 = add(this.isicV4, isicV4);
+    public void addGeoOverlaps(GeospatialGeometry geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoOverlaps Place value to set.
+     */
+    @Override
+    public void addGeoOverlaps(Place geoOverlaps) {
+        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
     }
 
-    private List<Text> globalLocationNumber;
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> latitude;
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Number} or {@link Text}
      */
     @Override
-    public List<Text> getGlobalLocationNumberList() {
-        return globalLocationNumber;
-    }
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGlobalLocationNumber() {
-        return getFirst(globalLocationNumber);
+    public <T> List<T> getLatitudeList() {
+        return (List<T>) latitude;
     }
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @param globalLocationNumber Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Number} or {@link Text}
      */
     @Override
-    public void addGlobalLocationNumber(Text globalLocationNumber) {
-        this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
-    }
-
-    private List<LocationFeatureSpecification> amenityFeature;
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public List<LocationFeatureSpecification> getAmenityFeatureList() {
-        return amenityFeature;
+    public <T> T getLatitude() {
+        return (T) getFirst(latitude);
     }
 
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @param latitude Number value to set.
      */
     @Override
-    public LocationFeatureSpecification getAmenityFeature() {
-        return getFirst(amenityFeature);
+    public void addLatitude(Number latitude) {
+        this.latitude = add(this.latitude, latitude);
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param latitude Text value to set.
+     */
+    @Override
+    public void addLatitude(Text latitude) {
+        this.latitude = add(this.latitude, latitude);
+    }
+
+    private List<OpeningHoursSpecification> openingHoursSpecification;
+
+    /**
+     * The opening hours of a certain place.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
+        return openingHoursSpecification;
     }
 
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     * The opening hours of a certain place.
      *
-     * @param amenityFeature LocationFeatureSpecification value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @return {@link OpeningHoursSpecification}
      */
     @Override
-    public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
-        this.amenityFeature = add(this.amenityFeature, amenityFeature);
-    }
-
-    private List<PropertyValue> additionalProperty;
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    @Override
-    public List<PropertyValue> getAdditionalPropertyList() {
-        return additionalProperty;
+    public OpeningHoursSpecification getOpeningHoursSpecification() {
+        return getFirst(openingHoursSpecification);
     }
 
     /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * The opening hours of a certain place.
      *
-     * @return {@link PropertyValue}
+     * @param openingHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
-    public PropertyValue getAdditionalProperty() {
-        return getFirst(additionalProperty);
-    }
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @param additionalProperty PropertyValue value to set.
-     */
-    @Override
-    public void addAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = add(this.additionalProperty, additionalProperty);
-    }
-
-    private List<Text> slogan;
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getSloganList() {
-        return slogan;
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getSlogan() {
-        return getFirst(slogan);
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param slogan Text value to set.
-     */
-    @Override
-    public void addSlogan(Text slogan) {
-        this.slogan = add(this.slogan, slogan);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, Photograph.class })
-    private List<Object> photos;
-
-    /**
-     * Photographs of this place.
-     *
-     * @return {@link ImageObject} or {@link Photograph}
-     */
-    @Override
-    public <T> List<T> getPhotosList() {
-        return (List<T>) photos;
-    }
-
-    /**
-     * Photographs of this place.
-     *
-     * @return {@link ImageObject} or {@link Photograph}
-     */
-    @Override
-    public <T> T getPhotos() {
-        return (T) getFirst(photos);
-    }
-
-    /**
-     * Photographs of this place.
-     *
-     * @param photos ImageObject value to set.
-     */
-    @Override
-    public void addPhotos(ImageObject photos) {
-        this.photos = add(this.photos, photos);
-    }
-    /**
-     * Photographs of this place.
-     *
-     * @param photos Photograph value to set.
-     */
-    @Override
-    public void addPhotos(Photograph photos) {
-        this.photos = add(this.photos, photos);
-    }
-
-    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
-    private List<Object> keywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getKeywordsList() {
-        return (List<T>) keywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) getFirst(keywords);
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    @Override
-    public void addKeywords(URL keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    @Override
-    public void addKeywords(DefinedTerm keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    @Override
-    public void addKeywords(Text keywords) {
-        this.keywords = add(this.keywords, keywords);
+    public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
+        this.openingHoursSpecification = add(this.openingHoursSpecification, openingHoursSpecification);
     }
 
     private List<Review> reviews;
@@ -638,148 +519,245 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.reviews = add(this.reviews, reviews);
     }
 
-    private List<URL> tourBookingPage;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> logo;
 
     /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     * An associated logo.
      *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public List<URL> getTourBookingPageList() {
-        return tourBookingPage;
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
     }
 
     /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     * An associated logo.
      *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public URL getTourBookingPage() {
-        return getFirst(tourBookingPage);
+    public <T> T getLogo() {
+        return (T) getFirst(logo);
     }
 
     /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     * An associated logo.
      *
-     * @param tourBookingPage URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     * @param logo URL value to set.
      */
     @Override
-    public void addTourBookingPage(URL tourBookingPage) {
-        this.tourBookingPage = add(this.tourBookingPage, tourBookingPage);
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
+    }
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     */
+    @Override
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
     }
 
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoWithin;
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoContains;
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link GeospatialGeometry} or {@link Place}
+     * @return {@link Place} or {@link GeospatialGeometry}
      */
     @Override
-    public <T> List<T> getGeoWithinList() {
-        return (List<T>) geoWithin;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoWithin() {
-        return (T) getFirst(geoWithin);
+    public <T> List<T> getGeoContainsList() {
+        return (List<T>) geoContains;
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param geoWithin GeospatialGeometry value to set.
+     * @return {@link Place} or {@link GeospatialGeometry}
      */
     @Override
-    public void addGeoWithin(GeospatialGeometry geoWithin) {
-        this.geoWithin = add(this.geoWithin, geoWithin);
-    }
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoWithin Place value to set.
-     */
-    @Override
-    public void addGeoWithin(Place geoWithin) {
-        this.geoWithin = add(this.geoWithin, geoWithin);
-    }
-
-    private List<Place> containsPlace;
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getContainsPlaceList() {
-        return containsPlace;
+    public <T> T getGeoContains() {
+        return (T) getFirst(geoContains);
     }
 
     /**
-     * The basic containment relation between a place and another that it contains.
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Place}
+     * @param geoContains Place value to set.
      */
     @Override
-    public Place getContainsPlace() {
-        return getFirst(containsPlace);
+    public void addGeoContains(Place geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoContains GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoContains(GeospatialGeometry geoContains) {
+        this.geoContains = add(this.geoContains, geoContains);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class, URL.class })
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
     }
 
     /**
-     * The basic containment relation between a place and another that it contains.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param containsPlace Place value to set.
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
      */
     @Override
-    public void addContainsPlace(Place containsPlace) {
-        this.containsPlace = add(this.containsPlace, containsPlace);
-    }
-
-    private List<Review> review;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public List<Review> getReviewList() {
-        return review;
+    public <T> T getKeywords() {
+        return (T) getFirst(keywords);
     }
 
     /**
-     * A review of the item.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link Review}
+     * @param keywords Text value to set.
      */
     @Override
-    public Review getReview() {
-        return getFirst(review);
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords DefinedTerm value to set.
+     */
+    @Override
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    @Override
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+
+    private List<Text> slogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
     }
 
     /**
-     * A review of the item.
+     * A slogan or motto associated with the item.
      *
-     * @param review Review value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addReview(Review review) {
-        this.review = add(this.review, review);
+    public Text getSlogan() {
+        return getFirst(slogan);
+    }
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param slogan Text value to set.
+     */
+    @Override
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
+    }
+
+    @JsonLdFieldTypes({ GeoShape.class, GeoCoordinates.class })
+    private List<Object> geo;
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @return {@link GeoShape} or {@link GeoCoordinates}
+     */
+    @Override
+    public <T> List<T> getGeoList() {
+        return (List<T>) geo;
+    }
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @return {@link GeoShape} or {@link GeoCoordinates}
+     */
+    @Override
+    public <T> T getGeo() {
+        return (T) getFirst(geo);
+    }
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @param geo GeoShape value to set.
+     */
+    @Override
+    public void addGeo(GeoShape geo) {
+        this.geo = add(this.geo, geo);
+    }
+    /**
+     * The geo coordinates of the place.
+     *
+     * @param geo GeoCoordinates value to set.
+     */
+    @Override
+    public void addGeo(GeoCoordinates geo) {
+        this.geo = add(this.geo, geo);
+    }
+
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return getFirst(aggregateRating);
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    @Override
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
     @JsonLdFieldTypes({ URL.class, Map.class })
@@ -856,6 +834,214 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.containedIn = add(this.containedIn, containedIn);
     }
 
+    private List<Text> globalLocationNumber;
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getGlobalLocationNumberList() {
+        return globalLocationNumber;
+    }
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getGlobalLocationNumber() {
+        return getFirst(globalLocationNumber);
+    }
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @param globalLocationNumber Text value to set.
+     */
+    @Override
+    public void addGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
+    }
+
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return getFirst(review);
+    }
+
+    /**
+     * A review of the item.
+     *
+     * @param review Review value to set.
+     */
+    @Override
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
+    }
+
+    private List<Event> event;
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getEventList() {
+        return event;
+    }
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getEvent() {
+        return getFirst(event);
+    }
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @param event Event value to set.
+     */
+    @Override
+    public void addEvent(Event event) {
+        this.event = add(this.event, event);
+    }
+
+    private List<URL> tourBookingPage;
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public List<URL> getTourBookingPageList() {
+        return tourBookingPage;
+    }
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public URL getTourBookingPage() {
+        return getFirst(tourBookingPage);
+    }
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @param tourBookingPage URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void addTourBookingPage(URL tourBookingPage) {
+        this.tourBookingPage = add(this.tourBookingPage, tourBookingPage);
+    }
+
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class })
+    private List<Object> address;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link PostalAddress} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAddressList() {
+        return (List<T>) address;
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link PostalAddress} or {@link Text}
+     */
+    @Override
+    public <T> T getAddress() {
+        return (T) getFirst(address);
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     * @param address PostalAddress value to set.
+     */
+    @Override
+    public void addAddress(PostalAddress address) {
+        this.address = add(this.address, address);
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param address Text value to set.
+     */
+    @Override
+    public void addAddress(Text address) {
+        this.address = add(this.address, address);
+    }
+
+    private List<Place> containsPlace;
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContainsPlaceList() {
+        return containsPlace;
+    }
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainsPlace() {
+        return getFirst(containsPlace);
+    }
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @param containsPlace Place value to set.
+     */
+    @Override
+    public void addContainsPlace(Place containsPlace) {
+        this.containsPlace = add(this.containsPlace, containsPlace);
+    }
+
     private List<Event> events;
 
     /**
@@ -888,46 +1074,36 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.events = add(this.events, events);
     }
 
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoOverlaps;
+    private List<Place> containedInPlace;
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * The basic containment relation between a place and one that contains it.
      *
-     * @return {@link GeospatialGeometry} or {@link Place}
+     * @return {@link Place}
      */
     @Override
-    public <T> List<T> getGeoOverlapsList() {
-        return (List<T>) geoOverlaps;
+    public List<Place> getContainedInPlaceList() {
+        return containedInPlace;
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * The basic containment relation between a place and one that contains it.
      *
-     * @return {@link GeospatialGeometry} or {@link Place}
+     * @return {@link Place}
      */
     @Override
-    public <T> T getGeoOverlaps() {
-        return (T) getFirst(geoOverlaps);
+    public Place getContainedInPlace() {
+        return getFirst(containedInPlace);
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * The basic containment relation between a place and one that contains it.
      *
-     * @param geoOverlaps GeospatialGeometry value to set.
+     * @param containedInPlace Place value to set.
      */
     @Override
-    public void addGeoOverlaps(GeospatialGeometry geoOverlaps) {
-        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
-    }
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoOverlaps Place value to set.
-     */
-    @Override
-    public void addGeoOverlaps(Place geoOverlaps) {
-        this.geoOverlaps = add(this.geoOverlaps, geoOverlaps);
+    public void addContainedInPlace(Place containedInPlace) {
+        this.containedInPlace = add(this.containedInPlace, containedInPlace);
     }
 
     @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
@@ -970,6 +1146,301 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     @Override
     public void addGeoEquals(Place geoEquals) {
         this.geoEquals = add(this.geoEquals, geoEquals);
+    }
+
+    private List<Certification> hasCertification;
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    @Override
+    public List<Certification> getHasCertificationList() {
+        return hasCertification;
+    }
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    @Override
+    public Certification getHasCertification() {
+        return getFirst(hasCertification);
+    }
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @param hasCertification Certification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    @Override
+    public void addHasCertification(Certification hasCertification) {
+        this.hasCertification = add(this.hasCertification, hasCertification);
+    }
+
+    private List<Boolean> hasDriveThroughService;
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public List<Boolean> getHasDriveThroughServiceList() {
+        return hasDriveThroughService;
+    }
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public Boolean getHasDriveThroughService() {
+        return getFirst(hasDriveThroughService);
+    }
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @param hasDriveThroughService Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public void addHasDriveThroughService(Boolean hasDriveThroughService) {
+        this.hasDriveThroughService = add(this.hasDriveThroughService, hasDriveThroughService);
+    }
+
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public PropertyValue getAdditionalProperty() {
+        return getFirst(additionalProperty);
+    }
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @param additionalProperty PropertyValue value to set.
+     */
+    @Override
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
+    }
+
+    private List<Text> isicV4;
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getIsicV4List() {
+        return isicV4;
+    }
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getIsicV4() {
+        return getFirst(isicV4);
+    }
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param isicV4 Text value to set.
+     */
+    @Override
+    public void addIsicV4(Text isicV4) {
+        this.isicV4 = add(this.isicV4, isicV4);
+    }
+
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoDisjoint;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoDisjointList() {
+        return (List<T>) geoDisjoint;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoDisjoint() {
+        return (T) getFirst(geoDisjoint);
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoDisjoint Place value to set.
+     */
+    @Override
+    public void addGeoDisjoint(Place geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoDisjoint GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoDisjoint(GeospatialGeometry geoDisjoint) {
+        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
+    }
+
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> longitude;
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getLongitudeList() {
+        return (List<T>) longitude;
+    }
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> T getLongitude() {
+        return (T) getFirst(longitude);
+    }
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param longitude Number value to set.
+     */
+    @Override
+    public void addLongitude(Number longitude) {
+        this.longitude = add(this.longitude, longitude);
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param longitude Text value to set.
+     */
+    @Override
+    public void addLongitude(Text longitude) {
+        this.longitude = add(this.longitude, longitude);
+    }
+
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoIntersects;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoIntersectsList() {
+        return (List<T>) geoIntersects;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoIntersects() {
+        return (T) getFirst(geoIntersects);
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects Place value to set.
+     */
+    @Override
+    public void addGeoIntersects(Place geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects GeospatialGeometry value to set.
+     */
+    @Override
+    public void addGeoIntersects(GeospatialGeometry geoIntersects) {
+        this.geoIntersects = add(this.geoIntersects, geoIntersects);
+    }
+
+    private List<Text> telephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTelephoneList() {
+        return telephone;
+    }
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTelephone() {
+        return getFirst(telephone);
+    }
+
+    /**
+     * The telephone number.
+     *
+     * @param telephone Text value to set.
+     */
+    @Override
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
     private List<URL> maps;
@@ -1036,539 +1507,88 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
     }
 
-    private List<Event> event;
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public List<Event> getEventList() {
-        return event;
-    }
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getEvent() {
-        return getFirst(event);
-    }
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @param event Event value to set.
-     */
-    @Override
-    public void addEvent(Event event) {
-        this.event = add(this.event, event);
-    }
-
     @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
-    private List<Object> photo;
+    private List<Object> photos;
 
     /**
-     * A photograph of this place.
+     * Photographs of this place.
      *
      * @return {@link Photograph} or {@link ImageObject}
      */
     @Override
-    public <T> List<T> getPhotoList() {
-        return (List<T>) photo;
+    public <T> List<T> getPhotosList() {
+        return (List<T>) photos;
     }
 
     /**
-     * A photograph of this place.
+     * Photographs of this place.
      *
      * @return {@link Photograph} or {@link ImageObject}
      */
     @Override
-    public <T> T getPhoto() {
-        return (T) getFirst(photo);
+    public <T> T getPhotos() {
+        return (T) getFirst(photos);
     }
 
     /**
-     * A photograph of this place.
+     * Photographs of this place.
      *
-     * @param photo Photograph value to set.
+     * @param photos Photograph value to set.
      */
     @Override
-    public void addPhoto(Photograph photo) {
-        this.photo = add(this.photo, photo);
+    public void addPhotos(Photograph photos) {
+        this.photos = add(this.photos, photos);
     }
     /**
-     * A photograph of this place.
+     * Photographs of this place.
      *
-     * @param photo ImageObject value to set.
+     * @param photos ImageObject value to set.
      */
     @Override
-    public void addPhoto(ImageObject photo) {
-        this.photo = add(this.photo, photo);
-    }
-
-    private List<Place> containedInPlace;
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getContainedInPlaceList() {
-        return containedInPlace;
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainedInPlace() {
-        return getFirst(containedInPlace);
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @param containedInPlace Place value to set.
-     */
-    @Override
-    public void addContainedInPlace(Place containedInPlace) {
-        this.containedInPlace = add(this.containedInPlace, containedInPlace);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> logo;
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getLogoList() {
-        return (List<T>) logo;
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getLogo() {
-        return (T) getFirst(logo);
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(ImageObject logo) {
-        this.logo = add(this.logo, logo);
-    }
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(URL logo) {
-        this.logo = add(this.logo, logo);
+    public void addPhotos(ImageObject photos) {
+        this.photos = add(this.photos, photos);
     }
 
     @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoCrosses;
+    private List<Object> geoWithin;
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public <T> List<T> getGeoCrossesList() {
-        return (List<T>) geoCrosses;
+    public <T> List<T> getGeoWithinList() {
+        return (List<T>) geoWithin;
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public <T> T getGeoCrosses() {
-        return (T) getFirst(geoCrosses);
+    public <T> T getGeoWithin() {
+        return (T) getFirst(geoWithin);
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param geoCrosses GeospatialGeometry value to set.
+     * @param geoWithin GeospatialGeometry value to set.
      */
     @Override
-    public void addGeoCrosses(GeospatialGeometry geoCrosses) {
-        this.geoCrosses = add(this.geoCrosses, geoCrosses);
+    public void addGeoWithin(GeospatialGeometry geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param geoCrosses Place value to set.
+     * @param geoWithin Place value to set.
      */
     @Override
-    public void addGeoCrosses(Place geoCrosses) {
-        this.geoCrosses = add(this.geoCrosses, geoCrosses);
-    }
-
-    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
-    private List<Object> address;
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link Text} or {@link PostalAddress}
-     */
-    @Override
-    public <T> List<T> getAddressList() {
-        return (List<T>) address;
-    }
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link Text} or {@link PostalAddress}
-     */
-    @Override
-    public <T> T getAddress() {
-        return (T) getFirst(address);
-    }
-
-    /**
-     * Physical address of the item.
-     *
-     * @param address Text value to set.
-     */
-    @Override
-    public void addAddress(Text address) {
-        this.address = add(this.address, address);
-    }
-    /**
-     * Physical address of the item.
-     *
-     * @param address PostalAddress value to set.
-     */
-    @Override
-    public void addAddress(PostalAddress address) {
-        this.address = add(this.address, address);
-    }
-
-    @JsonLdFieldTypes({ GeoCoordinates.class, GeoShape.class })
-    private List<Object> geo;
-
-    /**
-     * The geo coordinates of the place.
-     *
-     * @return {@link GeoCoordinates} or {@link GeoShape}
-     */
-    @Override
-    public <T> List<T> getGeoList() {
-        return (List<T>) geo;
-    }
-
-    /**
-     * The geo coordinates of the place.
-     *
-     * @return {@link GeoCoordinates} or {@link GeoShape}
-     */
-    @Override
-    public <T> T getGeo() {
-        return (T) getFirst(geo);
-    }
-
-    /**
-     * The geo coordinates of the place.
-     *
-     * @param geo GeoCoordinates value to set.
-     */
-    @Override
-    public void addGeo(GeoCoordinates geo) {
-        this.geo = add(this.geo, geo);
-    }
-    /**
-     * The geo coordinates of the place.
-     *
-     * @param geo GeoShape value to set.
-     */
-    @Override
-    public void addGeo(GeoShape geo) {
-        this.geo = add(this.geo, geo);
-    }
-
-    private List<OpeningHoursSpecification> openingHoursSpecification;
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @return {@link OpeningHoursSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
-        return openingHoursSpecification;
-    }
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @return {@link OpeningHoursSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public OpeningHoursSpecification getOpeningHoursSpecification() {
-        return getFirst(openingHoursSpecification);
-    }
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @param openingHoursSpecification OpeningHoursSpecification value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
-        this.openingHoursSpecification = add(this.openingHoursSpecification, openingHoursSpecification);
-    }
-
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoDisjoint;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getGeoDisjointList() {
-        return (List<T>) geoDisjoint;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoDisjoint() {
-        return (T) getFirst(geoDisjoint);
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @param geoDisjoint GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoDisjoint(GeospatialGeometry geoDisjoint) {
-        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
-    }
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @param geoDisjoint Place value to set.
-     */
-    @Override
-    public void addGeoDisjoint(Place geoDisjoint) {
-        this.geoDisjoint = add(this.geoDisjoint, geoDisjoint);
-    }
-
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoIntersects;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getGeoIntersectsList() {
-        return (List<T>) geoIntersects;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoIntersects() {
-        return (T) getFirst(geoIntersects);
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoIntersects GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoIntersects(GeospatialGeometry geoIntersects) {
-        this.geoIntersects = add(this.geoIntersects, geoIntersects);
-    }
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoIntersects Place value to set.
-     */
-    @Override
-    public void addGeoIntersects(Place geoIntersects) {
-        this.geoIntersects = add(this.geoIntersects, geoIntersects);
-    }
-
-    @JsonLdFieldTypes({ Number.class, Text.class })
-    private List<Object> latitude;
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getLatitudeList() {
-        return (List<T>) latitude;
-    }
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> T getLatitude() {
-        return (T) getFirst(latitude);
-    }
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @param latitude Number value to set.
-     */
-    @Override
-    public void addLatitude(Number latitude) {
-        this.latitude = add(this.latitude, latitude);
-    }
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @param latitude Text value to set.
-     */
-    @Override
-    public void addLatitude(Text latitude) {
-        this.latitude = add(this.latitude, latitude);
-    }
-
-    private List<Integer> maximumAttendeeCapacity;
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public List<Integer> getMaximumAttendeeCapacityList() {
-        return maximumAttendeeCapacity;
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getMaximumAttendeeCapacity() {
-        return getFirst(maximumAttendeeCapacity);
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @param maximumAttendeeCapacity Integer value to set.
-     */
-    @Override
-    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
-        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
-    }
-
-    private List<AggregateRating> aggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public List<AggregateRating> getAggregateRatingList() {
-        return aggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return getFirst(aggregateRating);
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    @Override
-    public void addAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = add(this.aggregateRating, aggregateRating);
-    }
-
-    private List<URL> map;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getMapList() {
-        return map;
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getMap() {
-        return getFirst(map);
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @param map URL value to set.
-     */
-    @Override
-    public void addMap(URL map) {
-        this.map = add(this.map, map);
+    public void addGeoWithin(Place geoWithin) {
+        this.geoWithin = add(this.geoWithin, geoWithin);
     }
 
     private List<Text> branchCode;
@@ -1604,112 +1624,6 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     @Override
     public void addBranchCode(Text branchCode) {
         this.branchCode = add(this.branchCode, branchCode);
-    }
-
-    private List<Text> faxNumber;
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getFaxNumberList() {
-        return faxNumber;
-    }
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getFaxNumber() {
-        return getFirst(faxNumber);
-    }
-
-    /**
-     * The fax number.
-     *
-     * @param faxNumber Text value to set.
-     */
-    @Override
-    public void addFaxNumber(Text faxNumber) {
-        this.faxNumber = add(this.faxNumber, faxNumber);
-    }
-
-    private List<Boolean> publicAccess;
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public List<Boolean> getPublicAccessList() {
-        return publicAccess;
-    }
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getPublicAccess() {
-        return getFirst(publicAccess);
-    }
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     * @param publicAccess Boolean value to set.
-     */
-    @Override
-    public void addPublicAccess(Boolean publicAccess) {
-        this.publicAccess = add(this.publicAccess, publicAccess);
-    }
-
-    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
-    private List<Object> geoTouches;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getGeoTouchesList() {
-        return (List<T>) geoTouches;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoTouches() {
-        return (T) getFirst(geoTouches);
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @param geoTouches GeospatialGeometry value to set.
-     */
-    @Override
-    public void addGeoTouches(GeospatialGeometry geoTouches) {
-        this.geoTouches = add(this.geoTouches, geoTouches);
-    }
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @param geoTouches Place value to set.
-     */
-    @Override
-    public void addGeoTouches(Place geoTouches) {
-        this.geoTouches = add(this.geoTouches, geoTouches);
     }
 
     @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
@@ -1754,225 +1668,508 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.geoCoveredBy = add(this.geoCoveredBy, geoCoveredBy);
     }
 
-    private List<Text> telephone;
+    private List<Integer> maximumAttendeeCapacity;
 
     /**
-     * The telephone number.
+     * The total number of individuals that may attend an event or venue.
      *
-     * @return {@link Text}
+     * @return {@link Integer}
      */
     @Override
-    public List<Text> getTelephoneList() {
-        return telephone;
+    public List<Integer> getMaximumAttendeeCapacityList() {
+        return maximumAttendeeCapacity;
     }
 
     /**
-     * The telephone number.
+     * The total number of individuals that may attend an event or venue.
      *
-     * @return {@link Text}
+     * @return {@link Integer}
      */
     @Override
-    public Text getTelephone() {
-        return getFirst(telephone);
+    public Integer getMaximumAttendeeCapacity() {
+        return getFirst(maximumAttendeeCapacity);
     }
 
     /**
-     * The telephone number.
+     * The total number of individuals that may attend an event or venue.
      *
-     * @param telephone Text value to set.
+     * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void addTelephone(Text telephone) {
-        this.telephone = add(this.telephone, telephone);
+    public void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = add(this.maximumAttendeeCapacity, maximumAttendeeCapacity);
     }
 
-    private List<Boolean> hasDriveThroughService;
+    private List<URL> map;
 
     /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     * A URL to a map of the place.
      *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @return {@link URL}
      */
     @Override
-    public List<Boolean> getHasDriveThroughServiceList() {
-        return hasDriveThroughService;
-    }
-
-    /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public Boolean getHasDriveThroughService() {
-        return getFirst(hasDriveThroughService);
+    public List<URL> getMapList() {
+        return map;
     }
 
     /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     * A URL to a map of the place.
      *
-     * @param hasDriveThroughService Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @return {@link URL}
      */
     @Override
-    public void addHasDriveThroughService(Boolean hasDriveThroughService) {
-        this.hasDriveThroughService = add(this.hasDriveThroughService, hasDriveThroughService);
-    }
-
-    private List<OpeningHoursSpecification> specialOpeningHoursSpecification;
-
-    /**
-     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public List<OpeningHoursSpecification> getSpecialOpeningHoursSpecificationList() {
-        return specialOpeningHoursSpecification;
+    public URL getMap() {
+        return getFirst(map);
     }
 
     /**
-     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
+     * A URL to a map of the place.
      *
-     * @return {@link OpeningHoursSpecification}
+     * @param map URL value to set.
      */
     @Override
-    public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
-        return getFirst(specialOpeningHoursSpecification);
-    }
-
-    /**
-     * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
-     *
-     * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
-     */
-    @Override
-    public void addSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
-        this.specialOpeningHoursSpecification = add(this.specialOpeningHoursSpecification, specialOpeningHoursSpecification);
+    public void addMap(URL map) {
+        this.map = add(this.map, map);
     }
 
     @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
-    private List<Object> geoContains;
+    private List<Object> geoTouches;
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
      *
      * @return {@link Place} or {@link GeospatialGeometry}
      */
     @Override
-    public <T> List<T> getGeoContainsList() {
-        return (List<T>) geoContains;
+    public <T> List<T> getGeoTouchesList() {
+        return (List<T>) geoTouches;
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
      *
      * @return {@link Place} or {@link GeospatialGeometry}
      */
     @Override
-    public <T> T getGeoContains() {
-        return (T) getFirst(geoContains);
+    public <T> T getGeoTouches() {
+        return (T) getFirst(geoTouches);
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
      *
-     * @param geoContains Place value to set.
+     * @param geoTouches Place value to set.
      */
     @Override
-    public void addGeoContains(Place geoContains) {
-        this.geoContains = add(this.geoContains, geoContains);
+    public void addGeoTouches(Place geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
     }
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
      *
-     * @param geoContains GeospatialGeometry value to set.
+     * @param geoTouches GeospatialGeometry value to set.
      */
     @Override
-    public void addGeoContains(GeospatialGeometry geoContains) {
-        this.geoContains = add(this.geoContains, geoContains);
+    public void addGeoTouches(GeospatialGeometry geoTouches) {
+        this.geoTouches = add(this.geoTouches, geoTouches);
     }
 
-    private List<Action> potentialAction;
+    private List<Text> faxNumber;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The fax number.
      *
-     * @return {@link Action}
+     * @return {@link Text}
      */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public List<Text> getFaxNumberList() {
+        return faxNumber;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The fax number.
      *
-     * @param potentialAction Action value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public Text getFaxNumber() {
+        return getFirst(faxNumber);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The fax number.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @param faxNumber Text value to set.
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public void addFaxNumber(Text faxNumber) {
+        this.faxNumber = add(this.faxNumber, faxNumber);
+    }
+
+    private List<URL> hasGS1DigitalLink;
+
+    /**
+     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
+     */
+    @Override
+    public List<URL> getHasGS1DigitalLinkList() {
+        return hasGS1DigitalLink;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public URL getHasGS1DigitalLink() {
+        return getFirst(hasGS1DigitalLink);
+    }
+
+    /**
+     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
+     *
+     * @param hasGS1DigitalLink URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
+     */
+    @Override
+    public void addHasGS1DigitalLink(URL hasGS1DigitalLink) {
+        this.hasGS1DigitalLink = add(this.hasGS1DigitalLink, hasGS1DigitalLink);
+    }
+
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
+    private List<Object> geoCrosses;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> List<T> getGeoCrossesList() {
+        return (List<T>) geoCrosses;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoCrosses() {
+        return (T) getFirst(geoCrosses);
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCrosses Place value to set.
+     */
+    @Override
+    public void addGeoCrosses(Place geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param geoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addGeoCrosses(GeospatialGeometry geoCrosses) {
+        this.geoCrosses = add(this.geoCrosses, geoCrosses);
+    }
+
+    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
+    private List<Object> photo;
+
+    /**
+     * A photograph of this place.
+     *
+     * @return {@link Photograph} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getPhotoList() {
+        return (List<T>) photo;
+    }
+
+    /**
+     * A photograph of this place.
+     *
+     * @return {@link Photograph} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getPhoto() {
+        return (T) getFirst(photo);
+    }
+
+    /**
+     * A photograph of this place.
+     *
+     * @param photo Photograph value to set.
+     */
+    @Override
+    public void addPhoto(Photograph photo) {
+        this.photo = add(this.photo, photo);
+    }
+    /**
+     * A photograph of this place.
+     *
+     * @param photo ImageObject value to set.
+     */
+    @Override
+    public void addPhoto(ImageObject photo) {
+        this.photo = add(this.photo, photo);
+    }
+
+    private List<LocationFeatureSpecification> amenityFeature;
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     */
+    @Override
+    public List<LocationFeatureSpecification> getAmenityFeatureList() {
+        return amenityFeature;
+    }
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     */
+    @Override
+    public LocationFeatureSpecification getAmenityFeature() {
+        return getFirst(amenityFeature);
+    }
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @param amenityFeature LocationFeatureSpecification value to set.
+     */
+    @Override
+    public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
+        this.amenityFeature = add(this.amenityFeature, amenityFeature);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -2021,36 +2218,120 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param url URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> alternateName;
@@ -2085,68 +2366,78 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> sameAs;
+    private List<URL> url;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
-     * @param sameAs URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> description;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param description Text value to set.
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<Text> disambiguatingDescription;
@@ -2181,1102 +2472,42 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
-    private List<Object> identifier;
+    private List<Grant> funding;
 
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    private List<URL> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
-    @JsonLdFieldTypes({ AdministrativeArea.class, Place.class, GeoShape.class })
-    private List<Object> serviceArea;
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
-     */
-    @Override
-    public <T> List<T> getServiceAreaList() {
-        return (List<T>) serviceArea;
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link Place} or {@link GeoShape}
-     */
-    @Override
-    public <T> T getServiceArea() {
-        return (T) getFirst(serviceArea);
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea AdministrativeArea value to set.
-     */
-    @Override
-    public void addServiceArea(AdministrativeArea serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea Place value to set.
-     */
-    @Override
-    public void addServiceArea(Place serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea GeoShape value to set.
-     */
-    @Override
-    public void addServiceArea(GeoShape serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-
-    private List<Person> founder;
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getFounderList() {
-        return founder;
-    }
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getFounder() {
-        return getFirst(founder);
-    }
-
-    /**
-     * A person who founded this organization.
-     *
-     * @param founder Person value to set.
-     */
-    @Override
-    public void addFounder(Person founder) {
-        this.founder = add(this.founder, founder);
-    }
-
-    private List<Place> hasPOS;
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Place> getHasPOSList() {
-        return hasPOS;
-    }
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Place getHasPOS() {
-        return getFirst(hasPOS);
-    }
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @param hasPOS Place value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addHasPOS(Place hasPOS) {
-        this.hasPOS = add(this.hasPOS, hasPOS);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> member;
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getMemberList() {
-        return (List<T>) member;
-    }
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getMember() {
-        return (T) getFirst(member);
-    }
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @param member Organization value to set.
-     */
-    @Override
-    public void addMember(Organization member) {
-        this.member = add(this.member, member);
-    }
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @param member Person value to set.
-     */
-    @Override
-    public void addMember(Person member) {
-        this.member = add(this.member, member);
-    }
-
-    @JsonLdFieldTypes({ Thing.class, Text.class, URL.class })
-    private List<Object> knowsAbout;
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @return {@link Thing} or {@link Text} or {@link URL}
+     * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public <T> List<T> getKnowsAboutList() {
-        return (List<T>) knowsAbout;
+    public List<Grant> getFundingList() {
+        return funding;
     }
 
     /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Thing} or {@link Text} or {@link URL}
+     * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public <T> T getKnowsAbout() {
-        return (T) getFirst(knowsAbout);
+    public Grant getFunding() {
+        return getFirst(funding);
     }
 
     /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param knowsAbout Thing value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public void addKnowsAbout(Thing knowsAbout) {
-        this.knowsAbout = add(this.knowsAbout, knowsAbout);
-    }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     */
-    @Override
-    public void addKnowsAbout(Text knowsAbout) {
-        this.knowsAbout = add(this.knowsAbout, knowsAbout);
-    }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     */
-    @Override
-    public void addKnowsAbout(URL knowsAbout) {
-        this.knowsAbout = add(this.knowsAbout, knowsAbout);
-    }
-
-    private List<Offer> makesOffer;
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Offer> getMakesOfferList() {
-        return makesOffer;
-    }
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Offer getMakesOffer() {
-        return getFirst(makesOffer);
-    }
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @param makesOffer Offer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addMakesOffer(Offer makesOffer) {
-        this.makesOffer = add(this.makesOffer, makesOffer);
-    }
-
-    @JsonLdFieldTypes({ AboutPage.class, Text.class, CreativeWork.class, URL.class })
-    private List<Object> ownershipFundingInfo;
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @return {@link AboutPage} or {@link Text} or {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> List<T> getOwnershipFundingInfoList() {
-        return (List<T>) ownershipFundingInfo;
-    }
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @return {@link AboutPage} or {@link Text} or {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> T getOwnershipFundingInfo() {
-        return (T) getFirst(ownershipFundingInfo);
-    }
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo AboutPage value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
-        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
-    }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addOwnershipFundingInfo(Text ownershipFundingInfo) {
-        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
-    }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
-        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
-    }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addOwnershipFundingInfo(URL ownershipFundingInfo) {
-        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
-    }
-
-    private List<Person> founders;
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getFoundersList() {
-        return founders;
-    }
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getFounders() {
-        return getFirst(founders);
-    }
-
-    /**
-     * A person who founded this organization.
-     *
-     * @param founders Person value to set.
-     */
-    @Override
-    public void addFounders(Person founders) {
-        this.founders = add(this.founders, founders);
-    }
-
-    private List<Text> legalName;
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getLegalNameList() {
-        return legalName;
-    }
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getLegalName() {
-        return getFirst(legalName);
-    }
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @param legalName Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLegalName(Text legalName) {
-        this.legalName = add(this.legalName, legalName);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> actionableFeedbackPolicy;
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> List<T> getActionableFeedbackPolicyList() {
-        return (List<T>) actionableFeedbackPolicy;
-    }
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> T getActionableFeedbackPolicy() {
-        return (T) getFirst(actionableFeedbackPolicy);
-    }
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @param actionableFeedbackPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
-        this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
-    }
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @param actionableFeedbackPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
-        this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
-    }
-
-    @JsonLdFieldTypes({ Text.class, Place.class, GeoShape.class, AdministrativeArea.class })
-    private List<Object> areaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
-     */
-    @Override
-    public <T> List<T> getAreaServedList() {
-        return (List<T>) areaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Text} or {@link Place} or {@link GeoShape} or {@link AdministrativeArea}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) getFirst(areaServed);
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
-    @Override
-    public void addAreaServed(Text areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Place value to set.
-     */
-    @Override
-    public void addAreaServed(Place areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed GeoShape value to set.
-     */
-    @Override
-    public void addAreaServed(GeoShape areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed AdministrativeArea value to set.
-     */
-    @Override
-    public void addAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-
-    private List<Organization> parentOrganization;
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getParentOrganizationList() {
-        return parentOrganization;
-    }
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getParentOrganization() {
-        return getFirst(parentOrganization);
-    }
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @param parentOrganization Organization value to set.
-     */
-    @Override
-    public void addParentOrganization(Organization parentOrganization) {
-        this.parentOrganization = add(this.parentOrganization, parentOrganization);
-    }
-
-    private List<Organization> department;
-
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getDepartmentList() {
-        return department;
-    }
-
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getDepartment() {
-        return getFirst(department);
-    }
-
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @param department Organization value to set.
-     */
-    @Override
-    public void addDepartment(Organization department) {
-        this.department = add(this.department, department);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, ProgramMembership.class })
-    private List<Object> memberOf;
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link Organization} or {@link ProgramMembership}
-     */
-    @Override
-    public <T> List<T> getMemberOfList() {
-        return (List<T>) memberOf;
-    }
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link Organization} or {@link ProgramMembership}
-     */
-    @Override
-    public <T> T getMemberOf() {
-        return (T) getFirst(memberOf);
-    }
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf Organization value to set.
-     */
-    @Override
-    public void addMemberOf(Organization memberOf) {
-        this.memberOf = add(this.memberOf, memberOf);
-    }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf ProgramMembership value to set.
-     */
-    @Override
-    public void addMemberOf(ProgramMembership memberOf) {
-        this.memberOf = add(this.memberOf, memberOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> publishingPrinciples;
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getPublishingPrinciplesList() {
-        return (List<T>) publishingPrinciples;
-    }
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getPublishingPrinciples() {
-        return (T) getFirst(publishingPrinciples);
-    }
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples CreativeWork value to set.
-     */
-    @Override
-    public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
-        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
-    }
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples URL value to set.
-     */
-    @Override
-    public void addPublishingPrinciples(URL publishingPrinciples) {
-        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
-    }
-
-    private List<Person> employee;
-
-    /**
-     * Someone working for this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getEmployeeList() {
-        return employee;
-    }
-
-    /**
-     * Someone working for this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getEmployee() {
-        return getFirst(employee);
-    }
-
-    /**
-     * Someone working for this organization.
-     *
-     * @param employee Person value to set.
-     */
-    @Override
-    public void addEmployee(Person employee) {
-        this.employee = add(this.employee, employee);
-    }
-
-    private List<Text> award;
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAwardList() {
-        return award;
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAward() {
-        return getFirst(award);
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    @Override
-    public void addAward(Text award) {
-        this.award = add(this.award, award);
-    }
-
-    private List<Text> email;
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getEmailList() {
-        return email;
-    }
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getEmail() {
-        return getFirst(email);
-    }
-
-    /**
-     * Email address.
-     *
-     * @param email Text value to set.
-     */
-    @Override
-    public void addEmail(Text email) {
-        this.email = add(this.email, email);
-    }
-
-    private List<ContactPoint> contactPoints;
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public List<ContactPoint> getContactPointsList() {
-        return contactPoints;
-    }
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public ContactPoint getContactPoints() {
-        return getFirst(contactPoints);
-    }
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoints ContactPoint value to set.
-     */
-    @Override
-    public void addContactPoints(ContactPoint contactPoints) {
-        this.contactPoints = add(this.contactPoints, contactPoints);
-    }
-
-    @JsonLdFieldTypes({ Article.class, URL.class })
-    private List<Object> diversityStaffingReport;
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link Article} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> List<T> getDiversityStaffingReportList() {
-        return (List<T>) diversityStaffingReport;
-    }
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link Article} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> T getDiversityStaffingReport() {
-        return (T) getFirst(diversityStaffingReport);
-    }
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport Article value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addDiversityStaffingReport(Article diversityStaffingReport) {
-        this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
-    }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void addDiversityStaffingReport(URL diversityStaffingReport) {
-        this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
-    }
-
-    private List<Date> foundingDate;
-
-    /**
-     * The date that this organization was founded.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public List<Date> getFoundingDateList() {
-        return foundingDate;
-    }
-
-    /**
-     * The date that this organization was founded.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getFoundingDate() {
-        return getFirst(foundingDate);
-    }
-
-    /**
-     * The date that this organization was founded.
-     *
-     * @param foundingDate Date value to set.
-     */
-    @Override
-    public void addFoundingDate(Date foundingDate) {
-        this.foundingDate = add(this.foundingDate, foundingDate);
-    }
-
-    @JsonLdFieldTypes({ Product.class, OwnershipInfo.class })
-    private List<Object> owns;
-
-    /**
-     * Products owned by the organization or person.
-     *
-     * @return {@link Product} or {@link OwnershipInfo}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getOwnsList() {
-        return (List<T>) owns;
-    }
-
-    /**
-     * Products owned by the organization or person.
-     *
-     * @return {@link Product} or {@link OwnershipInfo}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getOwns() {
-        return (T) getFirst(owns);
-    }
-
-    /**
-     * Products owned by the organization or person.
-     *
-     * @param owns Product value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addOwns(Product owns) {
-        this.owns = add(this.owns, owns);
-    }
-    /**
-     * Products owned by the organization or person.
-     *
-     * @param owns OwnershipInfo value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addOwns(OwnershipInfo owns) {
-        this.owns = add(this.owns, owns);
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
     private List<Text> awards;
@@ -3311,297 +2542,179 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.awards = add(this.awards, awards);
     }
 
-    private List<Date> dissolutionDate;
+    @JsonLdFieldTypes({ Text.class, Thing.class, URL.class })
+    private List<Object> knowsAbout;
 
     /**
-     * The date that this organization was dissolved.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @return {@link Date}
-     */
-    @Override
-    public List<Date> getDissolutionDateList() {
-        return dissolutionDate;
-    }
-
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getDissolutionDate() {
-        return getFirst(dissolutionDate);
-    }
-
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @param dissolutionDate Date value to set.
-     */
-    @Override
-    public void addDissolutionDate(Date dissolutionDate) {
-        this.dissolutionDate = add(this.dissolutionDate, dissolutionDate);
-    }
-
-    private List<Grant> funding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
+     * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public List<Grant> getFundingList() {
-        return funding;
+    public <T> List<T> getKnowsAboutList() {
+        return (List<T>) knowsAbout;
     }
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @return {@link Grant}
+     * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public Grant getFunding() {
-        return getFirst(funding);
+    public <T> T getKnowsAbout() {
+        return (T) getFirst(knowsAbout);
     }
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @param funding Grant value to set.
+     * @param knowsAbout Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void addFunding(Grant funding) {
-        this.funding = add(this.funding, funding);
+    public void addKnowsAbout(Text knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
-
-    private List<InteractionCounter> interactionStatistic;
-
     /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     * @param knowsAbout Thing value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public List<InteractionCounter> getInteractionStatisticList() {
-        return interactionStatistic;
+    public void addKnowsAbout(Thing knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
-
     /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     * @param knowsAbout URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public InteractionCounter getInteractionStatistic() {
-        return getFirst(interactionStatistic);
+    public void addKnowsAbout(URL knowsAbout) {
+        this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
 
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @param interactionStatistic InteractionCounter value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
-        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
-    }
-
-    private List<Demand> seeks;
+    private List<Person> employee;
 
     /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Demand> getSeeksList() {
-        return seeks;
-    }
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Demand getSeeks() {
-        return getFirst(seeks);
-    }
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @param seeks Demand value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addSeeks(Demand seeks) {
-        this.seeks = add(this.seeks, seeks);
-    }
-
-    private List<Person> employees;
-
-    /**
-     * People working for this organization.
+     * Someone working for this organization.
      *
      * @return {@link Person}
      */
     @Override
-    public List<Person> getEmployeesList() {
-        return employees;
+    public List<Person> getEmployeeList() {
+        return employee;
     }
 
     /**
-     * People working for this organization.
+     * Someone working for this organization.
      *
      * @return {@link Person}
      */
     @Override
-    public Person getEmployees() {
-        return getFirst(employees);
+    public Person getEmployee() {
+        return getFirst(employee);
     }
 
     /**
-     * People working for this organization.
+     * Someone working for this organization.
      *
-     * @param employees Person value to set.
+     * @param employee Person value to set.
      */
     @Override
-    public void addEmployees(Person employees) {
-        this.employees = add(this.employees, employees);
+    public void addEmployee(Person employee) {
+        this.employee = add(this.employee, employee);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> unnamedSourcesPolicy;
+    private List<Date> foundingDate;
 
     /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     * The date that this organization was founded.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getFoundingDateList() {
+        return foundingDate;
+    }
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getFoundingDate() {
+        return getFirst(foundingDate);
+    }
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @param foundingDate Date value to set.
+     */
+    @Override
+    public void addFoundingDate(Date foundingDate) {
+        this.foundingDate = add(this.foundingDate, foundingDate);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Article.class })
+    private List<Object> diversityStaffingReport;
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public <T> List<T> getUnnamedSourcesPolicyList() {
-        return (List<T>) unnamedSourcesPolicy;
+    public <T> List<T> getDiversityStaffingReportList() {
+        return (List<T>) diversityStaffingReport;
     }
 
     /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public <T> T getUnnamedSourcesPolicy() {
-        return (T) getFirst(unnamedSourcesPolicy);
+    public <T> T getDiversityStaffingReport() {
+        return (T) getFirst(diversityStaffingReport);
     }
 
     /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
-     * @param unnamedSourcesPolicy CreativeWork value to set.
+     * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
-        this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
+    public void addDiversityStaffingReport(URL diversityStaffingReport) {
+        this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
     }
     /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
-     * @param unnamedSourcesPolicy URL value to set.
+     * @param diversityStaffingReport Article value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
-        this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
-    }
-
-    private List<Organization> subOrganization;
-
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getSubOrganizationList() {
-        return subOrganization;
-    }
-
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getSubOrganization() {
-        return getFirst(subOrganization);
-    }
-
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     * @param subOrganization Organization value to set.
-     */
-    @Override
-    public void addSubOrganization(Organization subOrganization) {
-        this.subOrganization = add(this.subOrganization, subOrganization);
-    }
-
-    private List<Place> foundingLocation;
-
-    /**
-     * The place where the Organization was founded.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getFoundingLocationList() {
-        return foundingLocation;
-    }
-
-    /**
-     * The place where the Organization was founded.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getFoundingLocation() {
-        return getFirst(foundingLocation);
-    }
-
-    /**
-     * The place where the Organization was founded.
-     *
-     * @param foundingLocation Place value to set.
-     */
-    @Override
-    public void addFoundingLocation(Place foundingLocation) {
-        this.foundingLocation = add(this.foundingLocation, foundingLocation);
+    public void addDiversityStaffingReport(Article diversityStaffingReport) {
+        this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
@@ -3646,96 +2759,252 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.funder = add(this.funder, funder);
     }
 
-    private List<Text> iso6523Code;
+    private List<Text> leiCode;
 
     /**
-     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public List<Text> getIso6523CodeList() {
-        return iso6523Code;
+    public List<Text> getLeiCodeList() {
+        return leiCode;
     }
 
     /**
-     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public Text getIso6523Code() {
-        return getFirst(iso6523Code);
+    public Text getLeiCode() {
+        return getFirst(leiCode);
     }
 
     /**
-     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
-     * @param iso6523Code Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
+     * @param leiCode Text value to set.
      */
     @Override
-    public void addIso6523Code(Text iso6523Code) {
-        this.iso6523Code = add(this.iso6523Code, iso6523Code);
+    public void addLeiCode(Text leiCode) {
+        this.leiCode = add(this.leiCode, leiCode);
     }
 
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> diversityPolicy;
+    @JsonLdFieldTypes({ Language.class, Text.class })
+    private List<Object> knowsLanguage;
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public <T> List<T> getDiversityPolicyList() {
-        return (List<T>) diversityPolicy;
+    public <T> List<T> getKnowsLanguageList() {
+        return (List<T>) knowsLanguage;
     }
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public <T> T getDiversityPolicy() {
-        return (T) getFirst(diversityPolicy);
+    public <T> T getKnowsLanguage() {
+        return (T) getFirst(knowsLanguage);
     }
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @param diversityPolicy URL value to set.
+     * @param knowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void addDiversityPolicy(URL diversityPolicy) {
-        this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
+    public void addKnowsLanguage(Language knowsLanguage) {
+        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
     }
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @param diversityPolicy CreativeWork value to set.
+     * @param knowsLanguage Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void addDiversityPolicy(CreativeWork diversityPolicy) {
-        this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
+    public void addKnowsLanguage(Text knowsLanguage) {
+        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
+    }
+
+    @JsonLdFieldTypes({ Brand.class, Organization.class })
+    private List<Object> brand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    @Override
+    public <T> T getBrand() {
+        return (T) getFirst(brand);
+    }
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    @Override
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Organization value to set.
+     */
+    @Override
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> skills;
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> List<T> getSkillsList() {
+        return (List<T>) skills;
+    }
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> T getSkills() {
+        return (T) getFirst(skills);
+    }
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @param skills Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addSkills(Text skills) {
+        this.skills = add(this.skills, skills);
+    }
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @param skills DefinedTerm value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addSkills(DefinedTerm skills) {
+        this.skills = add(this.skills, skills);
+    }
+
+    private List<Text> naics;
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNaicsList() {
+        return naics;
+    }
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getNaics() {
+        return getFirst(naics);
+    }
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @param naics Text value to set.
+     */
+    @Override
+    public void addNaics(Text naics) {
+        this.naics = add(this.naics, naics);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> founder;
+
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getFounderList() {
+        return (List<T>) founder;
+    }
+
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getFounder() {
+        return (T) getFirst(founder);
+    }
+
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @param founder Organization value to set.
+     */
+    @Override
+    public void addFounder(Organization founder) {
+        this.founder = add(this.founder, founder);
+    }
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @param founder Person value to set.
+     */
+    @Override
+    public void addFounder(Person founder) {
+        this.founder = add(this.founder, founder);
     }
 
     private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
@@ -3776,71 +3045,328 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
     }
 
-    private List<Text> duns;
+    private List<Organization> parentOrganization;
 
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getParentOrganizationList() {
+        return parentOrganization;
+    }
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getParentOrganization() {
+        return getFirst(parentOrganization);
+    }
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @param parentOrganization Organization value to set.
+     */
+    @Override
+    public void addParentOrganization(Organization parentOrganization) {
+        this.parentOrganization = add(this.parentOrganization, parentOrganization);
+    }
+
+    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
+    private List<Object> areaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
+    }
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    @Override
+    public <T> T getAreaServed() {
+        return (T) getFirst(areaServed);
+    }
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Place value to set.
+     */
+    @Override
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed AdministrativeArea value to set.
+     */
+    @Override
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed GeoShape value to set.
+     */
+    @Override
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    @Override
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+
+    private List<InteractionCounter> interactionStatistic;
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public List<InteractionCounter> getInteractionStatisticList() {
+        return interactionStatistic;
+    }
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public InteractionCounter getInteractionStatistic() {
+        return getFirst(interactionStatistic);
+    }
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @param interactionStatistic InteractionCounter value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
+    }
+
+    private List<Text> legalName;
+
+    /**
+     * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public List<Text> getDunsList() {
-        return duns;
+    public List<Text> getLegalNameList() {
+        return legalName;
     }
 
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getDuns() {
-        return getFirst(duns);
+    public Text getLegalName() {
+        return getFirst(legalName);
     }
 
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The official name of the organization, e.g. the registered company name.
      *
-     * @param duns Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param legalName Text value to set.
      */
     @Override
-    public void addDuns(Text duns) {
-        this.duns = add(this.duns, duns);
+    public void addLegalName(Text legalName) {
+        this.legalName = add(this.legalName, legalName);
     }
 
-    private List<Person> alumni;
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class, MemberProgramTier.class })
+    private List<Object> memberOf;
 
     /**
-     * Alumni of an organization.
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
+     */
+    @Override
+    public <T> List<T> getMemberOfList() {
+        return (List<T>) memberOf;
+    }
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
+     */
+    @Override
+    public <T> T getMemberOf() {
+        return (T) getFirst(memberOf);
+    }
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf ProgramMembership value to set.
+     */
+    @Override
+    public void addMemberOf(ProgramMembership memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf Organization value to set.
+     */
+    @Override
+    public void addMemberOf(Organization memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf MemberProgramTier value to set.
+     */
+    @Override
+    public void addMemberOf(MemberProgramTier memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> actionableFeedbackPolicy;
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> List<T> getActionableFeedbackPolicyList() {
+        return (List<T>) actionableFeedbackPolicy;
+    }
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> T getActionableFeedbackPolicy() {
+        return (T) getFirst(actionableFeedbackPolicy);
+    }
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @param actionableFeedbackPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
+    }
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @param actionableFeedbackPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
+    }
+
+    private List<ContactPoint> contactPoint;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointList() {
+        return contactPoint;
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public ContactPoint getContactPoint() {
+        return getFirst(contactPoint);
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @param contactPoint ContactPoint value to set.
+     */
+    @Override
+    public void addContactPoint(ContactPoint contactPoint) {
+        this.contactPoint = add(this.contactPoint, contactPoint);
+    }
+
+    private List<Person> employees;
+
+    /**
+     * People working for this organization.
      *
      * @return {@link Person}
      */
     @Override
-    public List<Person> getAlumniList() {
-        return alumni;
+    public List<Person> getEmployeesList() {
+        return employees;
     }
 
     /**
-     * Alumni of an organization.
+     * People working for this organization.
      *
      * @return {@link Person}
      */
     @Override
-    public Person getAlumni() {
-        return getFirst(alumni);
+    public Person getEmployees() {
+        return getFirst(employees);
     }
 
     /**
-     * Alumni of an organization.
+     * People working for this organization.
      *
-     * @param alumni Person value to set.
+     * @param employees Person value to set.
      */
     @Override
-    public void addAlumni(Person alumni) {
-        this.alumni = add(this.alumni, alumni);
+    public void addEmployees(Person employees) {
+        this.employees = add(this.employees, employees);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
@@ -3893,131 +3419,125 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.ethicsPolicy = add(this.ethicsPolicy, ethicsPolicy);
     }
 
-    private List<Text> leiCode;
+    private List<QuantitativeValue> numberOfEmployees;
 
     /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     * The number of employees in an organization, e.g. business.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    @Override
+    public List<QuantitativeValue> getNumberOfEmployeesList() {
+        return numberOfEmployees;
+    }
+
+    /**
+     * The number of employees in an organization, e.g. business.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    @Override
+    public QuantitativeValue getNumberOfEmployees() {
+        return getFirst(numberOfEmployees);
+    }
+
+    /**
+     * The number of employees in an organization, e.g. business.
+     *
+     * @param numberOfEmployees QuantitativeValue value to set.
+     */
+    @Override
+    public void addNumberOfEmployees(QuantitativeValue numberOfEmployees) {
+        this.numberOfEmployees = add(this.numberOfEmployees, numberOfEmployees);
+    }
+
+    private List<Text> iso6523Code;
+
+    /**
+     * An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public List<Text> getLeiCodeList() {
-        return leiCode;
+    public List<Text> getIso6523CodeList() {
+        return iso6523Code;
     }
 
     /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     * An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public Text getLeiCode() {
-        return getFirst(leiCode);
-    }
-
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @param leiCode Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void addLeiCode(Text leiCode) {
-        this.leiCode = add(this.leiCode, leiCode);
-    }
-
-    private List<Text> vatID;
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getVatIDList() {
-        return vatID;
-    }
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getVatID() {
-        return getFirst(vatID);
-    }
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @param vatID Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addVatID(Text vatID) {
-        this.vatID = add(this.vatID, vatID);
-    }
-
-    @JsonLdFieldTypes({ Text.class, Language.class })
-    private List<Object> knowsLanguage;
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Text} or {@link Language}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public <T> List<T> getKnowsLanguageList() {
-        return (List<T>) knowsLanguage;
+    public Text getIso6523Code() {
+        return getFirst(iso6523Code);
     }
 
     /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     * An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.
      *
-     * @return {@link Text} or {@link Language}
+     * @param iso6523Code Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public <T> T getKnowsLanguage() {
-        return (T) getFirst(knowsLanguage);
+    public void addIso6523Code(Text iso6523Code) {
+        this.iso6523Code = add(this.iso6523Code, iso6523Code);
+    }
+
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Place.class })
+    private List<Object> serviceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getServiceAreaList() {
+        return (List<T>) serviceArea;
     }
 
     /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     * The geographic area where the service is provided.
      *
-     * @param knowsLanguage Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
      */
     @Override
-    public void addKnowsLanguage(Text knowsLanguage) {
-        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
+    public <T> T getServiceArea() {
+        return (T) getFirst(serviceArea);
+    }
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
     /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     * The geographic area where the service is provided.
      *
-     * @param knowsLanguage Language value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @param serviceArea GeoShape value to set.
      */
     @Override
-    public void addKnowsLanguage(Language knowsLanguage) {
-        this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
+    public void addServiceArea(GeoShape serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    @Override
+    public void addServiceArea(Place serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
     }
 
     @JsonLdFieldTypes({ URL.class, CreativeWork.class })
@@ -4028,7 +3548,6 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
@@ -4041,7 +3560,6 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
@@ -4054,7 +3572,6 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
@@ -4066,12 +3583,636 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @param correctionsPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
     public void addCorrectionsPolicy(CreativeWork correctionsPolicy) {
         this.correctionsPolicy = add(this.correctionsPolicy, correctionsPolicy);
+    }
+
+    @JsonLdFieldTypes({ Text.class, LoanOrCredit.class, PaymentMethod.class })
+    private List<Object> acceptedPaymentMethod;
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public <T> List<T> getAcceptedPaymentMethodList() {
+        return (List<T>) acceptedPaymentMethod;
+    }
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public <T> T getAcceptedPaymentMethod() {
+        return (T) getFirst(acceptedPaymentMethod);
+    }
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public void addAcceptedPaymentMethod(Text acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
+    }
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod LoanOrCredit value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
+    }
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod PaymentMethod value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
+    }
+
+    private List<Organization> department;
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getDepartmentList() {
+        return department;
+    }
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getDepartment() {
+        return getFirst(department);
+    }
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @param department Organization value to set.
+     */
+    @Override
+    public void addDepartment(Organization department) {
+        this.department = add(this.department, department);
+    }
+
+    private List<Person> legalRepresentative;
+
+    /**
+     * One or multiple persons who represent this organization legally such as CEO or sole administrator.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getLegalRepresentativeList() {
+        return legalRepresentative;
+    }
+
+    /**
+     * One or multiple persons who represent this organization legally such as CEO or sole administrator.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getLegalRepresentative() {
+        return getFirst(legalRepresentative);
+    }
+
+    /**
+     * One or multiple persons who represent this organization legally such as CEO or sole administrator.
+     *
+     * @param legalRepresentative Person value to set.
+     */
+    @Override
+    public void addLegalRepresentative(Person legalRepresentative) {
+        this.legalRepresentative = add(this.legalRepresentative, legalRepresentative);
+    }
+
+    private List<Place> foundingLocation;
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getFoundingLocationList() {
+        return foundingLocation;
+    }
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getFoundingLocation() {
+        return getFirst(foundingLocation);
+    }
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @param foundingLocation Place value to set.
+     */
+    @Override
+    public void addFoundingLocation(Place foundingLocation) {
+        this.foundingLocation = add(this.foundingLocation, foundingLocation);
+    }
+
+    private List<Certification> companyRegistration;
+
+    /**
+     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     *
+     * @return {@link Certification}
+     */
+    @Override
+    public List<Certification> getCompanyRegistrationList() {
+        return companyRegistration;
+    }
+
+    /**
+     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     *
+     * @return {@link Certification}
+     */
+    @Override
+    public Certification getCompanyRegistration() {
+        return getFirst(companyRegistration);
+    }
+
+    /**
+     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     *
+     * @param companyRegistration Certification value to set.
+     */
+    @Override
+    public void addCompanyRegistration(Certification companyRegistration) {
+        this.companyRegistration = add(this.companyRegistration, companyRegistration);
+    }
+
+    private List<MemberProgram> hasMemberProgram;
+
+    /**
+     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     *
+     * @return {@link MemberProgram}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    @Override
+    public List<MemberProgram> getHasMemberProgramList() {
+        return hasMemberProgram;
+    }
+
+    /**
+     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     *
+     * @return {@link MemberProgram}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    @Override
+    public MemberProgram getHasMemberProgram() {
+        return getFirst(hasMemberProgram);
+    }
+
+    /**
+     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     *
+     * @param hasMemberProgram MemberProgram value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    @Override
+    public void addHasMemberProgram(MemberProgram hasMemberProgram) {
+        this.hasMemberProgram = add(this.hasMemberProgram, hasMemberProgram);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> member;
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getMemberList() {
+        return (List<T>) member;
+    }
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getMember() {
+        return (T) getFirst(member);
+    }
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param member Organization value to set.
+     */
+    @Override
+    public void addMember(Organization member) {
+        this.member = add(this.member, member);
+    }
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param member Person value to set.
+     */
+    @Override
+    public void addMember(Person member) {
+        this.member = add(this.member, member);
+    }
+
+    private List<Person> alumni;
+
+    /**
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getAlumniList() {
+        return alumni;
+    }
+
+    /**
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getAlumni() {
+        return getFirst(alumni);
+    }
+
+    /**
+     * Alumni of an organization.
+     *
+     * @param alumni Person value to set.
+     */
+    @Override
+    public void addAlumni(Person alumni) {
+        this.alumni = add(this.alumni, alumni);
+    }
+
+    private List<Organization> subOrganization;
+
+    /**
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getSubOrganizationList() {
+        return subOrganization;
+    }
+
+    /**
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getSubOrganization() {
+        return getFirst(subOrganization);
+    }
+
+    /**
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     *
+     * @param subOrganization Organization value to set.
+     */
+    @Override
+    public void addSubOrganization(Organization subOrganization) {
+        this.subOrganization = add(this.subOrganization, subOrganization);
+    }
+
+    private List<PostalAddress> legalAddress;
+
+    /**
+     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
+     *
+     * @return {@link PostalAddress}
+     */
+    @Override
+    public List<PostalAddress> getLegalAddressList() {
+        return legalAddress;
+    }
+
+    /**
+     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
+     *
+     * @return {@link PostalAddress}
+     */
+    @Override
+    public PostalAddress getLegalAddress() {
+        return getFirst(legalAddress);
+    }
+
+    /**
+     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
+     *
+     * @param legalAddress PostalAddress value to set.
+     */
+    @Override
+    public void addLegalAddress(PostalAddress legalAddress) {
+        this.legalAddress = add(this.legalAddress, legalAddress);
+    }
+
+    private List<ContactPoint> contactPoints;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointsList() {
+        return contactPoints;
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public ContactPoint getContactPoints() {
+        return getFirst(contactPoints);
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @param contactPoints ContactPoint value to set.
+     */
+    @Override
+    public void addContactPoints(ContactPoint contactPoints) {
+        this.contactPoints = add(this.contactPoints, contactPoints);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> publishingPrinciples;
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getPublishingPrinciplesList() {
+        return (List<T>) publishingPrinciples;
+    }
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getPublishingPrinciples() {
+        return (T) getFirst(publishingPrinciples);
+    }
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param publishingPrinciples CreativeWork value to set.
+     */
+    @Override
+    public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param publishingPrinciples URL value to set.
+     */
+    @Override
+    public void addPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
+    }
+
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAward() {
+        return getFirst(award);
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    @Override
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, AboutPage.class, Text.class })
+    private List<Object> ownershipFundingInfo;
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> List<T> getOwnershipFundingInfoList() {
+        return (List<T>) ownershipFundingInfo;
+    }
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> T getOwnershipFundingInfo() {
+        return (T) getFirst(ownershipFundingInfo);
+    }
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addOwnershipFundingInfo(URL ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo AboutPage value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addOwnershipFundingInfo(Text ownershipFundingInfo) {
+        this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
+    }
+
+    private List<Text> taxID;
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTaxIDList() {
+        return taxID;
+    }
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTaxID() {
+        return getFirst(taxID);
+    }
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @param taxID Text value to set.
+     */
+    @Override
+    public void addTaxID(Text taxID) {
+        this.taxID = add(this.taxID, taxID);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> diversityPolicy;
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> List<T> getDiversityPolicyList() {
+        return (List<T>) diversityPolicy;
+    }
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> T getDiversityPolicy() {
+        return (T) getFirst(diversityPolicy);
+    }
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addDiversityPolicy(CreativeWork diversityPolicy) {
+        this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
+    }
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addDiversityPolicy(URL diversityPolicy) {
+        this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
     }
 
     private List<EducationalOccupationalCredential> hasCredential;
@@ -4112,46 +4253,448 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.hasCredential = add(this.hasCredential, hasCredential);
     }
 
-    @JsonLdFieldTypes({ Brand.class, Organization.class })
-    private List<Object> brand;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> sponsor;
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @return {@link Brand} or {@link Organization}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public <T> List<T> getBrandList() {
-        return (List<T>) brand;
+    public <T> List<T> getSponsorList() {
+        return (List<T>) sponsor;
     }
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @return {@link Brand} or {@link Organization}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public <T> T getBrand() {
-        return (T) getFirst(brand);
+    public <T> T getSponsor() {
+        return (T) getFirst(sponsor);
     }
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param brand Brand value to set.
+     * @param sponsor Person value to set.
      */
     @Override
-    public void addBrand(Brand brand) {
-        this.brand = add(this.brand, brand);
+    public void addSponsor(Person sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param brand Organization value to set.
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void addBrand(Organization brand) {
-        this.brand = add(this.brand, brand);
+    public void addSponsor(Organization sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
+    }
+
+    private List<InteractionCounter> agentInteractionStatistic;
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    @Override
+    public List<InteractionCounter> getAgentInteractionStatisticList() {
+        return agentInteractionStatistic;
+    }
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    @Override
+    public InteractionCounter getAgentInteractionStatistic() {
+        return getFirst(agentInteractionStatistic);
+    }
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @param agentInteractionStatistic InteractionCounter value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    @Override
+    public void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic) {
+        this.agentInteractionStatistic = add(this.agentInteractionStatistic, agentInteractionStatistic);
+    }
+
+    @JsonLdFieldTypes({ Text.class, VirtualLocation.class, Place.class, PostalAddress.class })
+    private List<Object> location;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
+     */
+    @Override
+    public <T> List<T> getLocationList() {
+        return (List<T>) location;
+    }
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
+     */
+    @Override
+    public <T> T getLocation() {
+        return (T) getFirst(location);
+    }
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    @Override
+    public void addLocation(Text location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    @Override
+    public void addLocation(VirtualLocation location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    @Override
+    public void addLocation(Place location) {
+        this.location = add(this.location, location);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location PostalAddress value to set.
+     */
+    @Override
+    public void addLocation(PostalAddress location) {
+        this.location = add(this.location, location);
+    }
+
+    private List<Demand> seeks;
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     */
+    @Override
+    public List<Demand> getSeeksList() {
+        return seeks;
+    }
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     */
+    @Override
+    public Demand getSeeks() {
+        return getFirst(seeks);
+    }
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @param seeks Demand value to set.
+     */
+    @Override
+    public void addSeeks(Demand seeks) {
+        this.seeks = add(this.seeks, seeks);
+    }
+
+    private List<Offer> makesOffer;
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     */
+    @Override
+    public List<Offer> getMakesOfferList() {
+        return makesOffer;
+    }
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     */
+    @Override
+    public Offer getMakesOffer() {
+        return getFirst(makesOffer);
+    }
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @param makesOffer Offer value to set.
+     */
+    @Override
+    public void addMakesOffer(Offer makesOffer) {
+        this.makesOffer = add(this.makesOffer, makesOffer);
+    }
+
+    private List<Text> vatID;
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getVatIDList() {
+        return vatID;
+    }
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getVatID() {
+        return getFirst(vatID);
+    }
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @param vatID Text value to set.
+     */
+    @Override
+    public void addVatID(Text vatID) {
+        this.vatID = add(this.vatID, vatID);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> members;
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getMembersList() {
+        return (List<T>) members;
+    }
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getMembers() {
+        return (T) getFirst(members);
+    }
+
+    /**
+     * A member of this organization.
+     *
+     * @param members Person value to set.
+     */
+    @Override
+    public void addMembers(Person members) {
+        this.members = add(this.members, members);
+    }
+    /**
+     * A member of this organization.
+     *
+     * @param members Organization value to set.
+     */
+    @Override
+    public void addMembers(Organization members) {
+        this.members = add(this.members, members);
+    }
+
+    private List<Text> duns;
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDunsList() {
+        return duns;
+    }
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDuns() {
+        return getFirst(duns);
+    }
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @param duns Text value to set.
+     */
+    @Override
+    public void addDuns(Text duns) {
+        this.duns = add(this.duns, duns);
+    }
+
+    private List<ShippingService> hasShippingService;
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public List<ShippingService> getHasShippingServiceList() {
+        return hasShippingService;
+    }
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public ShippingService getHasShippingService() {
+        return getFirst(hasShippingService);
+    }
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @param hasShippingService ShippingService value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    @Override
+    public void addHasShippingService(ShippingService hasShippingService) {
+        this.hasShippingService = add(this.hasShippingService, hasShippingService);
+    }
+
+    private List<Place> hasPOS;
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getHasPOSList() {
+        return hasPOS;
+    }
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getHasPOS() {
+        return getFirst(hasPOS);
+    }
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @param hasPOS Place value to set.
+     */
+    @Override
+    public void addHasPOS(Place hasPOS) {
+        this.hasPOS = add(this.hasPOS, hasPOS);
+    }
+
+    private List<Text> email;
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getEmailList() {
+        return email;
+    }
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getEmail() {
+        return getFirst(email);
+    }
+
+    /**
+     * Email address.
+     *
+     * @param email Text value to set.
+     */
+    @Override
+    public void addEmail(Text email) {
+        this.email = add(this.email, email);
+    }
+
+    private List<OfferCatalog> hasOfferCatalog;
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public List<OfferCatalog> getHasOfferCatalogList() {
+        return hasOfferCatalog;
+    }
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public OfferCatalog getHasOfferCatalog() {
+        return getFirst(hasOfferCatalog);
+    }
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @param hasOfferCatalog OfferCatalog value to set.
+     */
+    @Override
+    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
     }
 
     private List<NonprofitType> nonprofitStatus;
@@ -4192,313 +4735,152 @@ public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.nonprofitStatus = add(this.nonprofitStatus, nonprofitStatus);
     }
 
-    private List<ContactPoint> contactPoint;
+    private List<Person> founders;
 
     /**
-     * A contact point for a person or organization.
+     * A person who founded this organization.
      *
-     * @return {@link ContactPoint}
+     * @return {@link Person}
      */
     @Override
-    public List<ContactPoint> getContactPointList() {
-        return contactPoint;
+    public List<Person> getFoundersList() {
+        return founders;
     }
 
     /**
-     * A contact point for a person or organization.
+     * A person who founded this organization.
      *
-     * @return {@link ContactPoint}
+     * @return {@link Person}
      */
     @Override
-    public ContactPoint getContactPoint() {
-        return getFirst(contactPoint);
+    public Person getFounders() {
+        return getFirst(founders);
     }
 
     /**
-     * A contact point for a person or organization.
+     * A person who founded this organization.
      *
-     * @param contactPoint ContactPoint value to set.
+     * @param founders Person value to set.
      */
     @Override
-    public void addContactPoint(ContactPoint contactPoint) {
-        this.contactPoint = add(this.contactPoint, contactPoint);
+    public void addFounders(Person founders) {
+        this.founders = add(this.founders, founders);
     }
 
-    private List<OfferCatalog> hasOfferCatalog;
+    private List<Date> dissolutionDate;
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * The date that this organization was dissolved.
      *
-     * @return {@link OfferCatalog}
+     * @return {@link Date}
      */
     @Override
-    public List<OfferCatalog> getHasOfferCatalogList() {
-        return hasOfferCatalog;
-    }
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    @Override
-    public OfferCatalog getHasOfferCatalog() {
-        return getFirst(hasOfferCatalog);
+    public List<Date> getDissolutionDateList() {
+        return dissolutionDate;
     }
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * The date that this organization was dissolved.
      *
-     * @param hasOfferCatalog OfferCatalog value to set.
+     * @return {@link Date}
      */
     @Override
-    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
-        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> members;
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getMembersList() {
-        return (List<T>) members;
+    public Date getDissolutionDate() {
+        return getFirst(dissolutionDate);
     }
 
     /**
-     * A member of this organization.
+     * The date that this organization was dissolved.
      *
-     * @return {@link Organization} or {@link Person}
+     * @param dissolutionDate Date value to set.
      */
     @Override
-    public <T> T getMembers() {
-        return (T) getFirst(members);
+    public void addDissolutionDate(Date dissolutionDate) {
+        this.dissolutionDate = add(this.dissolutionDate, dissolutionDate);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> unnamedSourcesPolicy;
+
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> List<T> getUnnamedSourcesPolicyList() {
+        return (List<T>) unnamedSourcesPolicy;
     }
 
     /**
-     * A member of this organization.
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
-     * @param members Organization value to set.
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void addMembers(Organization members) {
-        this.members = add(this.members, members);
-    }
-    /**
-     * A member of this organization.
-     *
-     * @param members Person value to set.
-     */
-    @Override
-    public void addMembers(Person members) {
-        this.members = add(this.members, members);
-    }
-
-    private List<Text> taxID;
-
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getTaxIDList() {
-        return taxID;
+    public <T> T getUnnamedSourcesPolicy() {
+        return (T) getFirst(unnamedSourcesPolicy);
     }
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param unnamedSourcesPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public Text getTaxID() {
-        return getFirst(taxID);
+    public void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
+    }
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @param unnamedSourcesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
+    }
+
+    private List<Thing> owns;
+
+    /**
+     * Things owned by the organization or person.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public List<Thing> getOwnsList() {
+        return owns;
     }
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * Things owned by the organization or person.
      *
-     * @param taxID Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      */
     @Override
-    public void addTaxID(Text taxID) {
-        this.taxID = add(this.taxID, taxID);
-    }
-
-    private List<Text> naics;
-
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getNaicsList() {
-        return naics;
+    public Thing getOwns() {
+        return getFirst(owns);
     }
 
     /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     * Things owned by the organization or person.
      *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @param owns Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      */
     @Override
-    public Text getNaics() {
-        return getFirst(naics);
-    }
-
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @param naics Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void addNaics(Text naics) {
-        this.naics = add(this.naics, naics);
-    }
-
-    @JsonLdFieldTypes({ Place.class, Text.class, VirtualLocation.class, PostalAddress.class })
-    private List<Object> location;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
-     */
-    @Override
-    public <T> List<T> getLocationList() {
-        return (List<T>) location;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Place} or {@link Text} or {@link VirtualLocation} or {@link PostalAddress}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) getFirst(location);
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
-    @Override
-    public void addLocation(Place location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
-    @Override
-    public void addLocation(Text location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
-    @Override
-    public void addLocation(VirtualLocation location) {
-        this.location = add(this.location, location);
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
-    @Override
-    public void addLocation(PostalAddress location) {
-        this.location = add(this.location, location);
-    }
-
-    private List<QuantitativeValue> numberOfEmployees;
-
-    /**
-     * The number of employees in an organization, e.g. business.
-     *
-     * @return {@link QuantitativeValue}
-     */
-    @Override
-    public List<QuantitativeValue> getNumberOfEmployeesList() {
-        return numberOfEmployees;
-    }
-
-    /**
-     * The number of employees in an organization, e.g. business.
-     *
-     * @return {@link QuantitativeValue}
-     */
-    @Override
-    public QuantitativeValue getNumberOfEmployees() {
-        return getFirst(numberOfEmployees);
-    }
-
-    /**
-     * The number of employees in an organization, e.g. business.
-     *
-     * @param numberOfEmployees QuantitativeValue value to set.
-     */
-    @Override
-    public void addNumberOfEmployees(QuantitativeValue numberOfEmployees) {
-        this.numberOfEmployees = add(this.numberOfEmployees, numberOfEmployees);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> sponsor;
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getSponsorList() {
-        return (List<T>) sponsor;
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSponsor() {
-        return (T) getFirst(sponsor);
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Organization value to set.
-     */
-    @Override
-    public void addSponsor(Organization sponsor) {
-        this.sponsor = add(this.sponsor, sponsor);
-    }
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Person value to set.
-     */
-    @Override
-    public void addSponsor(Person sponsor) {
-        this.sponsor = add(this.sponsor, sponsor);
+    public void addOwns(Thing owns) {
+        this.owns = add(this.owns, owns);
     }
 }

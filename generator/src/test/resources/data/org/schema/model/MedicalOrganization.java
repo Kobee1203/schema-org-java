@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.MedicalSpecialty;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Boolean;
 
 /**
@@ -16,6 +16,30 @@ import org.schema.model.datatype.Boolean;
  * @see <a href="https://schema.org/MedicalOrganization">https://schema.org/MedicalOrganization</a>
  */
 public interface MedicalOrganization extends Organization {
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSpecialty> getMedicalSpecialtyList();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalSpecialty getMedicalSpecialty();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @param medicalSpecialty MedicalSpecialty value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans.)
@@ -43,30 +67,6 @@ public interface MedicalOrganization extends Organization {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanNetworkId(Text healthPlanNetworkId);
-
-    /**
-     * A medical specialty of the provider.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalSpecialty> getMedicalSpecialtyList();
-
-    /**
-     * A medical specialty of the provider.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalSpecialty getMedicalSpecialty();
-
-    /**
-     * A medical specialty of the provider.
-     *
-     * @param medicalSpecialty MedicalSpecialty value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 
     /**
      * Whether the provider is accepting new patients.

@@ -7,9 +7,9 @@ package spec.model;
 
 import java.util.List;
 import spec.model.AnatomicalStructure;
-import spec.model.AnatomicalSystem;
-import spec.model.datatype.Text;
 import spec.model.MedicalTherapy;
+import spec.model.datatype.Text;
+import spec.model.AnatomicalSystem;
 import spec.model.MedicalCondition;
 import spec.model.ImageObject;
 
@@ -44,78 +44,6 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addConnectedTo(AnatomicalStructure connectedTo);
-
-    /**
-     * The anatomical or organ system that this structure is part of.
-     *
-     * @return {@link AnatomicalSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AnatomicalSystem> getPartOfSystemList();
-
-    /**
-     * The anatomical or organ system that this structure is part of.
-     *
-     * @return {@link AnatomicalSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AnatomicalSystem getPartOfSystem();
-
-    /**
-     * The anatomical or organ system that this structure is part of.
-     *
-     * @param partOfSystem AnatomicalSystem value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addPartOfSystem(AnatomicalSystem partOfSystem);
-
-    /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getAssociatedPathophysiologyList();
-
-    /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getAssociatedPathophysiology();
-
-    /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
-     *
-     * @param associatedPathophysiology Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAssociatedPathophysiology(Text associatedPathophysiology);
-
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getBodyLocationList();
-
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getBodyLocation();
-
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @param bodyLocation Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addBodyLocation(Text bodyLocation);
 
     /**
      * A medical therapy related to this anatomy.
@@ -166,6 +94,54 @@ public interface AnatomicalStructure extends MedicalEntity {
     void addSubStructure(AnatomicalStructure subStructure);
 
     /**
+     * Location in the body of the anatomical structure.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getBodyLocationList();
+
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getBodyLocation();
+
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @param bodyLocation Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addBodyLocation(Text bodyLocation);
+
+    /**
+     * The anatomical or organ system that this structure is part of.
+     *
+     * @return {@link AnatomicalSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalSystem> getPartOfSystemList();
+
+    /**
+     * The anatomical or organ system that this structure is part of.
+     *
+     * @return {@link AnatomicalSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AnatomicalSystem getPartOfSystem();
+
+    /**
+     * The anatomical or organ system that this structure is part of.
+     *
+     * @param partOfSystem AnatomicalSystem value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addPartOfSystem(AnatomicalSystem partOfSystem);
+
+    /**
      * A medical condition associated with this anatomy.
      *
      * @return {@link MedicalCondition}
@@ -188,6 +164,30 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addRelatedCondition(MedicalCondition relatedCondition);
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAssociatedPathophysiologyList();
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getAssociatedPathophysiology();
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @param associatedPathophysiology Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAssociatedPathophysiology(Text associatedPathophysiology);
 
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
