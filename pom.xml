@@ -58,14 +58,14 @@
         <sonar.coverage.exclusions>**/generated-sources/**</sonar.coverage.exclusions>
 
         <!-- Dependencies -->
-        <lombok.version>1.18.38</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <logback-classic.version>1.5.18</logback-classic.version>
         <jackson.version>2.20.0</jackson.version>
         <handlebars-helpers.version>4.5.0</handlebars-helpers.version>
         <commons-cli.version>1.11.0</commons-cli.version>
 
         <!-- Test Dependencies -->
-        <junit-jupiter-engine.version>5.13.4</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>6.0.2</junit-jupiter-engine.version>
         <assertj-core.version>3.27.7</assertj-core.version>
         <mockito-junit-jupiter.version>5.20.0</mockito-junit-jupiter.version>
         <equalsverifier.version>4.3.1</equalsverifier.version>
