@@ -11,7 +11,6 @@ import java.util.List;
  * A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.
  *
  * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/Motorcycle">https://schema.org/Motorcycle</a>
  */
 public interface Motorcycle extends Vehicle {

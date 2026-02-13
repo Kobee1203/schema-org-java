@@ -6,9 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.Country;
+import spec_custom.model.datatype.Text;
 import spec_custom.model.PostalCodeRangeSpecification;
+import spec_custom.model.AdministrativeArea;
 
 /**
  * A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.
@@ -25,41 +26,13 @@ import spec_custom.model.PostalCodeRangeSpecification;
  * { [12345, 12345], [78945, 78945], }
  * Region = state, canton, prefecture, autonomous community...
  *
- * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/DefinedRegion">https://schema.org/DefinedRegion</a>
  */
-public interface DefinedRegion extends StructuredValue {
+public interface DefinedRegion extends Place, StructuredValue {
 
     /**
-     * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<Text> getPostalCodePrefixList();
-
-    /**
-     * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    Text getPostalCodePrefix();
-
-    /**
-     * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
-     *
-     * @param postalCodePrefix Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addPostalCodePrefix(Text postalCodePrefix);
-
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
      *
      * @return {@link Country} or {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
@@ -67,7 +40,7 @@ public interface DefinedRegion extends StructuredValue {
     <T> List<T> getAddressCountryList();
 
     /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
      *
      * @return {@link Country} or {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
@@ -75,14 +48,14 @@ public interface DefinedRegion extends StructuredValue {
     <T> T getAddressCountry();
 
     /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
      *
      * @param addressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addAddressCountry(Country addressCountry);
     /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
      *
      * @param addressCountry Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
@@ -93,7 +66,6 @@ public interface DefinedRegion extends StructuredValue {
      * A defined range of postal codes.
      *
      * @return {@link PostalCodeRangeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     List<PostalCodeRangeSpecification> getPostalCodeRangeList();
@@ -102,7 +74,6 @@ public interface DefinedRegion extends StructuredValue {
      * A defined range of postal codes.
      *
      * @return {@link PostalCodeRangeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     PostalCodeRangeSpecification getPostalCodeRange();
@@ -111,10 +82,40 @@ public interface DefinedRegion extends StructuredValue {
      * A defined range of postal codes.
      *
      * @param postalCodeRange PostalCodeRangeSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addPostalCodeRange(PostalCodeRangeSpecification postalCodeRange);
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    <T> List<T> getAddressRegionList();
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @return {@link AdministrativeArea} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    <T> T getAddressRegion();
+
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @param addressRegion AdministrativeArea value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addAddressRegion(AdministrativeArea addressRegion);
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     *
+     * @param addressRegion Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addAddressRegion(Text addressRegion);
 
     /**
      * The postal code. For example, 94043.
@@ -141,26 +142,26 @@ public interface DefinedRegion extends StructuredValue {
     void addPostalCode(Text postalCode);
 
     /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
      *
      * @return {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    List<Text> getAddressRegionList();
+    List<Text> getPostalCodePrefixList();
 
     /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
      *
      * @return {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    Text getAddressRegion();
+    Text getPostalCodePrefix();
 
     /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
+     * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
      *
-     * @param addressRegion Text value to set.
+     * @param postalCodePrefix Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void addAddressRegion(Text addressRegion);
+    void addPostalCodePrefix(Text postalCodePrefix);
 }

@@ -99,12 +99,12 @@ class ClassModelHandlerImplTest {
 
     private static Stream<Arguments> supports() {
         return Stream.of(
-                Arguments.of(null, List.of("rdfs:Class", "rdfs:OtherType"), null, true),
                 Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), null, true),
                 Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:SubClass")), true),
-                Arguments.of("schema:DataType", List.of("rdfs:Class", "schema:DataType"), null, false),
+                Arguments.of("schema:DataType", List.of("rdfs:Class", "schema:OtherType"), null, false),
                 Arguments.of("schema:MyType", List.of("rdfs:Class", "schema:DataType"), null, false),
-                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:Text")), false)
+                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:Text")), false),
+                Arguments.of("bibo:MyType", List.of("rdfs:Class", "rdfs:OtherType"), null, false)
         );
     }
 

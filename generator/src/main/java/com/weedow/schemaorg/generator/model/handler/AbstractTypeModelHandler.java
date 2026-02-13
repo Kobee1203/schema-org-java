@@ -28,7 +28,7 @@ public abstract class AbstractTypeModelHandler implements ModelHandler {
             subClassOf
                     .stream()
                     .map(SubClassOf::getId)
-                    .filter(id -> !SchemaConstants.RDFS_CLASS.equals(id))
+                    .filter(id -> id.startsWith(SchemaConstants.SCHEMA_PREFIX))
                     .forEach(id -> type.addParent(ModelUtils.getType(schemaDefinitions, ModelUtils.getTypeId(id))));
         }
     }

@@ -7,21 +7,24 @@ package org.schema.model.impl;
 
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Text;
-import org.schema.model.SizeSystemEnumeration;
-import org.schema.model.SizeGroupEnumeration;
 import org.schema.model.GenderType;
+import org.schema.model.SizeGroupEnumeration;
+import org.schema.model.SizeSystemEnumeration;
 import org.schema.model.QualitativeValue;
+import org.schema.model.StructuredValue;
+import org.schema.model.DefinedTerm;
 import org.schema.model.PropertyValue;
 import org.schema.model.Enumeration;
-import org.schema.model.DefinedTerm;
-import org.schema.model.StructuredValue;
 import org.schema.model.MeasurementTypeEnumeration;
-import org.schema.model.Class;
 import org.schema.model.Property;
-import org.schema.model.Action;
+import org.schema.model.Class;
 import org.schema.model.datatype.URL;
-import org.schema.model.CreativeWork;
+import org.schema.model.Person;
+import org.schema.model.Organization;
 import org.schema.model.Event;
+import org.schema.model.CreativeWork;
+import org.schema.model.Action;
+import org.schema.model.TextObject;
 import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -107,6 +110,55 @@ public enum SizeSpecificationEnum implements SizeSpecification {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
+    public <T> List<T> getSuggestedGenderList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getSuggestedGender() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSuggestedGender(Text suggestedGender) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'suggestedGender': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSuggestedGender(GenderType suggestedGender) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'suggestedGender': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<QuantitativeValue> getSuggestedAgeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public QuantitativeValue getSuggestedAge() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSuggestedAge(QuantitativeValue suggestedAge) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'suggestedAge': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getSizeGroupList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getSizeGroup() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSizeGroup(Text sizeGroup) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sizeGroup': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSizeGroup(SizeGroupEnumeration sizeGroup) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sizeGroup': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
     public List<QuantitativeValue> getSuggestedMeasurementList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -128,188 +180,13 @@ public enum SizeSpecificationEnum implements SizeSpecification {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSizeSystem(Text sizeSystem) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sizeSystem': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
     public void addSizeSystem(SizeSystemEnumeration sizeSystem) {
         throw new java.lang.IllegalAccessError("Unable to set property 'sizeSystem': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getSizeGroupList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getSizeGroup() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSizeGroup(SizeGroupEnumeration sizeGroup) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sizeGroup': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSizeGroup(Text sizeGroup) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sizeGroup': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getSuggestedGenderList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getSuggestedGender() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSuggestedGender(GenderType suggestedGender) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'suggestedGender': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSuggestedGender(Text suggestedGender) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'suggestedGender': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<QuantitativeValue> getSuggestedAgeList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QuantitativeValue getSuggestedAge() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSuggestedAge(QuantitativeValue suggestedAge) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'suggestedAge': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<QualitativeValue> getGreaterList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getGreater() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addGreater(QualitativeValue greater) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'greater': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<PropertyValue> getAdditionalPropertyList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public PropertyValue getAdditionalProperty() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addAdditionalProperty(PropertyValue additionalProperty) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalProperty': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getValueReferenceList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getValueReference() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(Enumeration valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(QualitativeValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(DefinedTerm valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(StructuredValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(PropertyValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(Text valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(MeasurementTypeEnumeration valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addValueReference(QuantitativeValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<QualitativeValue> getEqualList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getEqual() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addEqual(QualitativeValue equal) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'equal': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<QualitativeValue> getLesserList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getLesser() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addLesser(QualitativeValue lesser) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'lesser': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<QualitativeValue> getGreaterOrEqualList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getGreaterOrEqual() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addGreaterOrEqual(QualitativeValue greaterOrEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'greaterOrEqual': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<QualitativeValue> getLesserOrEqualList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getLesserOrEqual() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addLesserOrEqual(QualitativeValue lesserOrEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'lesserOrEqual': method not allowed for enum SizeSpecificationEnum");
+    public void addSizeSystem(Text sizeSystem) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sizeSystem': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -326,6 +203,132 @@ public enum SizeSpecificationEnum implements SizeSpecification {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
+    public List<QualitativeValue> getLesserOrEqualList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public QualitativeValue getLesserOrEqual() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addLesserOrEqual(QualitativeValue lesserOrEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'lesserOrEqual': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getValueReferenceList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getValueReference() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(StructuredValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(DefinedTerm valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(PropertyValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(QuantitativeValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(Enumeration valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(MeasurementTypeEnumeration valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(Text valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(QualitativeValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public PropertyValue getAdditionalProperty() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalProperty': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<QualitativeValue> getEqualList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public QualitativeValue getEqual() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addEqual(QualitativeValue equal) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'equal': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<QualitativeValue> getGreaterOrEqualList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public QualitativeValue getGreaterOrEqual() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addGreaterOrEqual(QualitativeValue greaterOrEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'greaterOrEqual': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<QualitativeValue> getGreaterList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public QualitativeValue getGreater() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addGreater(QualitativeValue greater) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'greater': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<QualitativeValue> getLesserList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public QualitativeValue getLesser() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addLesser(QualitativeValue lesser) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'lesser': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
     public <T> List<T> getSupersededByList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -334,12 +337,12 @@ public enum SizeSpecificationEnum implements SizeSpecification {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Class supersededBy) {
+    public void addSupersededBy(Property supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Property supersededBy) {
+    public void addSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -349,34 +352,88 @@ public enum SizeSpecificationEnum implements SizeSpecification {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Action> getPotentialActionList() { return null; }
+    public List<URL> getSameAsList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Action getPotentialAction() { return null; }
+    public URL getSameAs() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum SizeSpecificationEnum");
+    public void addSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getMainEntityOfPageList() { return null; }
+    public List<Text> getNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getMainEntityOfPage() { return null; }
+    public Text getName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum SizeSpecificationEnum");
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum SizeSpecificationEnum");
+    public <T> List<T> getAdditionalTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getAdditionalType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getIdentifierList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getIdentifier() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getOwnerList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getOwner() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Person owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Organization owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -398,16 +455,52 @@ public enum SizeSpecificationEnum implements SizeSpecification {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getUrlList() { return null; }
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getUrl() { return null; }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum SizeSpecificationEnum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Action> getPotentialActionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Action getPotentialAction() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(TextObject description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -424,29 +517,34 @@ public enum SizeSpecificationEnum implements SizeSpecification {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getSameAsList() { return null; }
+    public List<URL> getUrlList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getSameAs() { return null; }
+    public URL getUrl() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSameAs(URL sameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum SizeSpecificationEnum");
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Text> getDescriptionList() { return null; }
+    public <T> List<T> getImageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDescription() { return null; }
+    public <T> T getImage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum SizeSpecificationEnum");
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum SizeSpecificationEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum SizeSpecificationEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -460,72 +558,5 @@ public enum SizeSpecificationEnum implements SizeSpecification {
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getIdentifierList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getIdentifier() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(URL identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(Text identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getImageList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getImage() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum SizeSpecificationEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<URL> getAdditionalTypeList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getAdditionalType() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum SizeSpecificationEnum");
     }
 }

@@ -6,20 +6,20 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.WebContent;
-import org.schema.model.Observation;
-import org.schema.model.Dataset;
 import org.schema.model.datatype.URL;
+import org.schema.model.WebContent;
 import org.schema.model.GovernmentService;
 import org.schema.model.DataFeed;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.CategoryCode;
 import org.schema.model.datatype.Text;
-import org.schema.model.Thing;
 import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.CategoryCode;
+import org.schema.model.Thing;
+import org.schema.model.Dataset;
+import org.schema.model.Observation;
 import org.schema.model.CivicStructure;
 import org.schema.model.LocalBusiness;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Date;
 
 /**
  * A SpecialAnnouncement combines a simple date-stamped textual information update
@@ -65,102 +65,39 @@ import org.schema.model.LocalBusiness;
 public interface SpecialAnnouncement extends CreativeWork {
 
     /**
-     * Statistical information about the spread of a disease, either as [[WebContent]], or
-     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
-     *   provided, the page indicated might also contain more such markup.
+     * Information about school closures.
      *
-     * @return {@link WebContent} or {@link Observation} or {@link Dataset} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> List<T> getDiseaseSpreadStatisticsList();
+    <T> List<T> getSchoolClosuresInfoList();
 
     /**
-     * Statistical information about the spread of a disease, either as [[WebContent]], or
-     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
-     *   provided, the page indicated might also contain more such markup.
+     * Information about school closures.
      *
-     * @return {@link WebContent} or {@link Observation} or {@link Dataset} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> T getDiseaseSpreadStatistics();
+    <T> T getSchoolClosuresInfo();
 
     /**
-     * Statistical information about the spread of a disease, either as [[WebContent]], or
-     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
-     *   provided, the page indicated might also contain more such markup.
+     * Information about school closures.
      *
-     * @param diseaseSpreadStatistics WebContent value to set.
+     * @param schoolClosuresInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addDiseaseSpreadStatistics(WebContent diseaseSpreadStatistics);
+    void addSchoolClosuresInfo(URL schoolClosuresInfo);
     /**
-     * Statistical information about the spread of a disease, either as [[WebContent]], or
-     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
-     *   provided, the page indicated might also contain more such markup.
+     * Information about school closures.
      *
-     * @param diseaseSpreadStatistics Observation value to set.
+     * @param schoolClosuresInfo WebContent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addDiseaseSpreadStatistics(Observation diseaseSpreadStatistics);
-    /**
-     * Statistical information about the spread of a disease, either as [[WebContent]], or
-     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
-     *   provided, the page indicated might also contain more such markup.
-     *
-     * @param diseaseSpreadStatistics Dataset value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addDiseaseSpreadStatistics(Dataset diseaseSpreadStatistics);
-    /**
-     * Statistical information about the spread of a disease, either as [[WebContent]], or
-     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
-     *   provided, the page indicated might also contain more such markup.
-     *
-     * @param diseaseSpreadStatistics URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addDiseaseSpreadStatistics(URL diseaseSpreadStatistics);
-
-    /**
-     * Information about public transport closures.
-     *
-     * @return {@link WebContent} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> List<T> getPublicTransportClosuresInfoList();
-
-    /**
-     * Information about public transport closures.
-     *
-     * @return {@link WebContent} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> T getPublicTransportClosuresInfo();
-
-    /**
-     * Information about public transport closures.
-     *
-     * @param publicTransportClosuresInfo WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addPublicTransportClosuresInfo(WebContent publicTransportClosuresInfo);
-    /**
-     * Information about public transport closures.
-     *
-     * @param publicTransportClosuresInfo URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addPublicTransportClosuresInfo(URL publicTransportClosuresInfo);
+    void addSchoolClosuresInfo(WebContent schoolClosuresInfo);
 
     /**
      * governmentBenefitsInfo provides information about government benefits associated with a SpecialAnnouncement.
@@ -188,76 +125,6 @@ public interface SpecialAnnouncement extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
     void addGovernmentBenefitsInfo(GovernmentService governmentBenefitsInfo);
-
-    /**
-     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
-     *
-     * @return {@link URL} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> List<T> getQuarantineGuidelinesList();
-
-    /**
-     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
-     *
-     * @return {@link URL} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> T getQuarantineGuidelines();
-
-    /**
-     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
-     *
-     * @param quarantineGuidelines URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addQuarantineGuidelines(URL quarantineGuidelines);
-    /**
-     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
-     *
-     * @param quarantineGuidelines WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addQuarantineGuidelines(WebContent quarantineGuidelines);
-
-    /**
-     * Information about travel bans, e.g. in the context of a pandemic.
-     *
-     * @return {@link URL} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> List<T> getTravelBansList();
-
-    /**
-     * Information about travel bans, e.g. in the context of a pandemic.
-     *
-     * @return {@link URL} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    <T> T getTravelBans();
-
-    /**
-     * Information about travel bans, e.g. in the context of a pandemic.
-     *
-     * @param travelBans URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addTravelBans(URL travelBans);
-    /**
-     * Information about travel bans, e.g. in the context of a pandemic.
-     *
-     * @param travelBans WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addTravelBans(WebContent travelBans);
 
     /**
      * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
@@ -295,79 +162,44 @@ public interface SpecialAnnouncement extends CreativeWork {
     void addWebFeed(URL webFeed);
 
     /**
-     * Information about disease prevention.
+     * Information about public transport closures.
      *
-     * @return {@link WebContent} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> List<T> getDiseasePreventionInfoList();
+    <T> List<T> getPublicTransportClosuresInfoList();
 
     /**
-     * Information about disease prevention.
+     * Information about public transport closures.
      *
-     * @return {@link WebContent} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> T getDiseasePreventionInfo();
+    <T> T getPublicTransportClosuresInfo();
 
     /**
-     * Information about disease prevention.
+     * Information about public transport closures.
      *
-     * @param diseasePreventionInfo WebContent value to set.
+     * @param publicTransportClosuresInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addDiseasePreventionInfo(WebContent diseasePreventionInfo);
+    void addPublicTransportClosuresInfo(URL publicTransportClosuresInfo);
     /**
-     * Information about disease prevention.
+     * Information about public transport closures.
      *
-     * @param diseasePreventionInfo URL value to set.
+     * @param publicTransportClosuresInfo WebContent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addDiseasePreventionInfo(URL diseasePreventionInfo);
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    <T> List<T> getDatePostedList();
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    <T> T getDatePosted();
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void addDatePosted(DateTime datePosted);
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void addDatePosted(Date datePosted);
+    void addPublicTransportClosuresInfo(WebContent publicTransportClosuresInfo);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
@@ -376,28 +208,12 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @return {@link URL} or {@link CategoryCode} or {@link Text} or {@link Thing} or {@link PhysicalActivityCategory}
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     <T> T getCategory();
 
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category URL value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addCategory(URL category);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addCategory(CategoryCode category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -409,6 +225,22 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(PhysicalActivityCategory category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(CategoryCode category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
      * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
@@ -417,11 +249,179 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param category PhysicalActivityCategory value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addCategory(PhysicalActivityCategory category);
+    void addCategory(URL category);
+
+    /**
+     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
+     *
+     * @return {@link URL} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> List<T> getQuarantineGuidelinesList();
+
+    /**
+     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
+     *
+     * @return {@link URL} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> T getQuarantineGuidelines();
+
+    /**
+     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
+     *
+     * @param quarantineGuidelines URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addQuarantineGuidelines(URL quarantineGuidelines);
+    /**
+     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
+     *
+     * @param quarantineGuidelines WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addQuarantineGuidelines(WebContent quarantineGuidelines);
+
+    /**
+     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     *
+     * @return {@link URL} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> List<T> getGettingTestedInfoList();
+
+    /**
+     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     *
+     * @return {@link URL} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> T getGettingTestedInfo();
+
+    /**
+     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     *
+     * @param gettingTestedInfo URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addGettingTestedInfo(URL gettingTestedInfo);
+    /**
+     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     *
+     * @param gettingTestedInfo WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addGettingTestedInfo(WebContent gettingTestedInfo);
+
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @return {@link Dataset} or {@link URL} or {@link WebContent} or {@link Observation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> List<T> getDiseaseSpreadStatisticsList();
+
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @return {@link Dataset} or {@link URL} or {@link WebContent} or {@link Observation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> T getDiseaseSpreadStatistics();
+
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @param diseaseSpreadStatistics Dataset value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addDiseaseSpreadStatistics(Dataset diseaseSpreadStatistics);
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @param diseaseSpreadStatistics URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addDiseaseSpreadStatistics(URL diseaseSpreadStatistics);
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @param diseaseSpreadStatistics WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addDiseaseSpreadStatistics(WebContent diseaseSpreadStatistics);
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @param diseaseSpreadStatistics Observation value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addDiseaseSpreadStatistics(Observation diseaseSpreadStatistics);
+
+    /**
+     * Information about travel bans, e.g. in the context of a pandemic.
+     *
+     * @return {@link URL} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> List<T> getTravelBansList();
+
+    /**
+     * Information about travel bans, e.g. in the context of a pandemic.
+     *
+     * @return {@link URL} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> T getTravelBans();
+
+    /**
+     * Information about travel bans, e.g. in the context of a pandemic.
+     *
+     * @param travelBans URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addTravelBans(URL travelBans);
+    /**
+     * Information about travel bans, e.g. in the context of a pandemic.
+     *
+     * @param travelBans WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addTravelBans(WebContent travelBans);
 
     /**
      * Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
@@ -459,44 +459,44 @@ public interface SpecialAnnouncement extends CreativeWork {
     void addAnnouncementLocation(LocalBusiness announcementLocation);
 
     /**
-     * Information about school closures.
+     * Information about disease prevention.
      *
-     * @return {@link WebContent} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> List<T> getSchoolClosuresInfoList();
+    <T> List<T> getDiseasePreventionInfoList();
 
     /**
-     * Information about school closures.
+     * Information about disease prevention.
      *
-     * @return {@link WebContent} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    <T> T getSchoolClosuresInfo();
+    <T> T getDiseasePreventionInfo();
 
     /**
-     * Information about school closures.
+     * Information about disease prevention.
      *
-     * @param schoolClosuresInfo WebContent value to set.
+     * @param diseasePreventionInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addSchoolClosuresInfo(WebContent schoolClosuresInfo);
+    void addDiseasePreventionInfo(URL diseasePreventionInfo);
     /**
-     * Information about school closures.
+     * Information about disease prevention.
      *
-     * @param schoolClosuresInfo URL value to set.
+     * @param diseasePreventionInfo WebContent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void addSchoolClosuresInfo(URL schoolClosuresInfo);
+    void addDiseasePreventionInfo(WebContent diseasePreventionInfo);
 
     /**
      * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
      *
-     * @return {@link WebContent} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
@@ -505,7 +505,7 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
      *
-     * @return {@link WebContent} or {@link URL}
+     * @return {@link URL} or {@link WebContent}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
@@ -514,52 +514,52 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
      *
-     * @param newsUpdatesAndGuidelines WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    void addNewsUpdatesAndGuidelines(WebContent newsUpdatesAndGuidelines);
-    /**
-     * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
-     *
      * @param newsUpdatesAndGuidelines URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     void addNewsUpdatesAndGuidelines(URL newsUpdatesAndGuidelines);
+    /**
+     * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
+     *
+     * @param newsUpdatesAndGuidelines WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addNewsUpdatesAndGuidelines(WebContent newsUpdatesAndGuidelines);
 
     /**
-     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     * Publication date of an online listing.
      *
-     * @return {@link WebContent} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link DateTime} or {@link Date}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    <T> List<T> getGettingTestedInfoList();
+    <T> List<T> getDatePostedList();
 
     /**
-     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     * Publication date of an online listing.
      *
-     * @return {@link WebContent} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @return {@link DateTime} or {@link Date}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    <T> T getGettingTestedInfo();
+    <T> T getDatePosted();
 
     /**
-     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     * Publication date of an online listing.
      *
-     * @param gettingTestedInfo WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @param datePosted DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void addGettingTestedInfo(WebContent gettingTestedInfo);
+    void addDatePosted(DateTime datePosted);
     /**
-     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     * Publication date of an online listing.
      *
-     * @param gettingTestedInfo URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @param datePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void addGettingTestedInfo(URL gettingTestedInfo);
+    void addDatePosted(Date datePosted);
 }

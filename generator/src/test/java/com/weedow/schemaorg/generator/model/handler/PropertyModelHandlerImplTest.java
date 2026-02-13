@@ -29,8 +29,9 @@ class PropertyModelHandlerImplTest {
 
     @ParameterizedTest
     @MethodSource
-    void supports(List<String> types, boolean expected) {
+    void supports(String id, List<String> types, boolean expected) {
         GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getId()).thenReturn(id);
         when(graphItem.getTypes()).thenReturn(types);
 
         ParserOptions options = mock(ParserOptions.class);
@@ -280,9 +281,10 @@ class PropertyModelHandlerImplTest {
 
     private static Stream<Arguments> supports() {
         return Stream.of(
-                Arguments.of(List.of("rdf:Property"), true),
-                Arguments.of(List.of("rdf:Property", "rdfs:Class"), true),
-                Arguments.of(List.of("rdfs:Class"), false)
+                Arguments.of("schema:myProp", List.of("rdf:Property"), true),
+                Arguments.of("schema:myProp", List.of("rdf:Property", "rdfs:Class"), true),
+                Arguments.of("schema:myProp", List.of("rdfs:Class"), false),
+                Arguments.of("bibo:myProp", List.of("rdf:Property"), false)
         );
     }
 

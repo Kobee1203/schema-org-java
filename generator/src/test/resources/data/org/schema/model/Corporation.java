@@ -11,7 +11,6 @@ import org.schema.model.datatype.Text;
 /**
  * Organization: A business corporation.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/Corporation">https://schema.org/Corporation</a>
  */
 public interface Corporation extends Organization {

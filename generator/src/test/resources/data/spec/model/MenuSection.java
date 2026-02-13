@@ -6,8 +6,8 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.MenuSection;
 import spec.model.MenuItem;
+import spec.model.MenuSection;
 
 /**
  * A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.
@@ -15,27 +15,6 @@ import spec.model.MenuItem;
  * @see <a href="https://schema.org/MenuSection">https://schema.org/MenuSection</a>
  */
 public interface MenuSection extends CreativeWork {
-
-    /**
-     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-     *
-     * @return {@link MenuSection}
-     */
-    List<MenuSection> getHasMenuSectionList();
-
-    /**
-     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-     *
-     * @return {@link MenuSection}
-     */
-    MenuSection getHasMenuSection();
-
-    /**
-     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-     *
-     * @param hasMenuSection MenuSection value to set.
-     */
-    void addHasMenuSection(MenuSection hasMenuSection);
 
     /**
      * A food or drink item contained in a menu or menu section.
@@ -57,4 +36,25 @@ public interface MenuSection extends CreativeWork {
      * @param hasMenuItem MenuItem value to set.
      */
     void addHasMenuItem(MenuItem hasMenuItem);
+
+    /**
+     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
+     *
+     * @return {@link MenuSection}
+     */
+    List<MenuSection> getHasMenuSectionList();
+
+    /**
+     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
+     *
+     * @return {@link MenuSection}
+     */
+    MenuSection getHasMenuSection();
+
+    /**
+     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
+     *
+     * @param hasMenuSection MenuSection value to set.
+     */
+    void addHasMenuSection(MenuSection hasMenuSection);
 }

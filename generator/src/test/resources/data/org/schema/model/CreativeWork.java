@@ -6,235 +6,199 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.URL;
-import org.schema.model.DefinedTerm;
-import org.schema.model.MediaObject;
-import org.schema.model.PublicationEvent;
-import org.schema.model.datatype.Number;
-import org.schema.model.Place;
-import org.schema.model.Organization;
+import org.schema.model.Grant;
 import org.schema.model.Person;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.AlignmentObject;
-import org.schema.model.Review;
-import org.schema.model.Product;
-import org.schema.model.Thing;
+import org.schema.model.Organization;
+import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Text;
+import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.Integer;
 import org.schema.model.ItemList;
-import org.schema.model.Claim;
+import org.schema.model.CreativeWork;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.ImageObject;
+import org.schema.model.Place;
 import org.schema.model.WebPage;
-import org.schema.model.Grant;
-import org.schema.model.InteractionCounter;
-import org.schema.model.VideoObject;
-import org.schema.model.Clip;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.CorrectionComment;
-import org.schema.model.Comment;
-import org.schema.model.Country;
+import org.schema.model.IPTCDigitalSourceEnumeration;
+import org.schema.model.Review;
+import org.schema.model.AggregateRating;
+import org.schema.model.Product;
+import org.schema.model.Event;
 import org.schema.model.Duration;
-import org.schema.model.Audience;
-import org.schema.model.MusicRecording;
-import org.schema.model.AudioObject;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.SizeSpecification;
-import org.schema.model.AggregateRating;
-import org.schema.model.Rating;
-import org.schema.model.Event;
-import org.schema.model.Language;
-import org.schema.model.Demand;
+import org.schema.model.InteractionCounter;
 import org.schema.model.Offer;
+import org.schema.model.Demand;
+import org.schema.model.Thing;
+import org.schema.model.MediaObject;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Number;
+import org.schema.model.VideoObject;
+import org.schema.model.Clip;
+import org.schema.model.Comment;
+import org.schema.model.Rating;
+import org.schema.model.datatype.Date;
+import org.schema.model.Language;
+import org.schema.model.MusicRecording;
+import org.schema.model.AudioObject;
+import org.schema.model.Audience;
+import org.schema.model.PublicationEvent;
+import org.schema.model.CorrectionComment;
+import org.schema.model.Country;
+import org.schema.model.AlignmentObject;
+import org.schema.model.Claim;
 
 /**
  * The most generic kind of creative work, including books, movies, photographs, software programs, etc.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a>
  */
 public interface CreativeWork extends Thing {
 
     /**
-     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<CreativeWork> getWorkTranslationList();
-
-    /**
-     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    CreativeWork getWorkTranslation();
-
-    /**
-     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-     *
-     * @param workTranslation CreativeWork value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addWorkTranslation(CreativeWork workTranslation);
-
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @return {@link Text} or {@link URL} or {@link DefinedTerm}
+     * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    <T> List<T> getEducationalLevelList();
+    List<Grant> getFundingList();
 
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Text} or {@link URL} or {@link DefinedTerm}
+     * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    <T> T getEducationalLevel();
+    Grant getFunding();
 
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param educationalLevel Text value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void addEducationalLevel(Text educationalLevel);
+    void addFunding(Grant funding);
+
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param educationalLevel URL value to set.
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void addEducationalLevel(URL educationalLevel);
+    <T> List<T> getProviderList();
+
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param educationalLevel DefinedTerm value to set.
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void addEducationalLevel(DefinedTerm educationalLevel);
+    <T> T getProvider();
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link MediaObject}
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    List<MediaObject> getAssociatedMediaList();
+    void addProvider(Person provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Organization provider);
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     * Genre of the creative work, broadcast channel or group.
      *
-     * @return {@link MediaObject}
+     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
      */
-    MediaObject getAssociatedMedia();
+    <T> List<T> getGenreList();
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     * Genre of the creative work, broadcast channel or group.
      *
-     * @param associatedMedia MediaObject value to set.
+     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
      */
-    void addAssociatedMedia(MediaObject associatedMedia);
+    <T> T getGenre();
 
     /**
-     * A creative work that this work is an example/instance/realization/derivation of.
+     * Genre of the creative work, broadcast channel or group.
      *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @param genre URL value to set.
      */
-    List<CreativeWork> getExampleOfWorkList();
+    void addGenre(URL genre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre Text value to set.
+     */
+    void addGenre(Text genre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre DefinedTerm value to set.
+     */
+    void addGenre(DefinedTerm genre);
 
     /**
-     * A creative work that this work is an example/instance/realization/derivation of.
+     * The number of words in the text of the CreativeWork such as an Article, Book, etc.
      *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @return {@link Integer}
      */
-    CreativeWork getExampleOfWork();
+    List<Integer> getWordCountList();
 
     /**
-     * A creative work that this work is an example/instance/realization/derivation of.
+     * The number of words in the text of the CreativeWork such as an Article, Book, etc.
      *
-     * @param exampleOfWork CreativeWork value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @return {@link Integer}
      */
-    void addExampleOfWork(CreativeWork exampleOfWork);
+    Integer getWordCount();
 
     /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
+     * The number of words in the text of the CreativeWork such as an Article, Book, etc.
      *
-     * @return {@link PublicationEvent}
+     * @param wordCount Integer value to set.
      */
-    List<PublicationEvent> getReleasedEventList();
+    void addWordCount(Integer wordCount);
 
     /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
-     * @return {@link PublicationEvent}
+     * @return {@link ItemList}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    PublicationEvent getReleasedEvent();
+    List<ItemList> getAccessModeSufficientList();
 
     /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
-     * @param releasedEvent PublicationEvent value to set.
+     * @return {@link ItemList}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    void addReleasedEvent(PublicationEvent releasedEvent);
+    ItemList getAccessModeSufficient();
 
     /**
-     * The version of the CreativeWork embodied by a specified resource.
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
-     * @return {@link Number} or {@link Text}
+     * @param accessModeSufficient ItemList value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    <T> List<T> getVersionList();
-
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    <T> T getVersion();
-
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param version Number value to set.
-     */
-    void addVersion(Number version);
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param version Text value to set.
-     */
-    void addVersion(Text version);
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getLocationCreatedList();
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     * @return {@link Place}
-     */
-    Place getLocationCreated();
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     * @param locationCreated Place value to set.
-     */
-    void addLocationCreated(Place locationCreated);
+    void addAccessModeSufficient(ItemList accessModeSufficient);
 
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
@@ -272,6 +236,128 @@ public interface CreativeWork extends Thing {
     void addAcquireLicensePage(URL acquireLicensePage);
 
     /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @return {@link DateTime} or {@link URL} or {@link Text}
+     */
+    <T> List<T> getTemporalCoverageList();
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @return {@link DateTime} or {@link URL} or {@link Text}
+     */
+    <T> T getTemporalCoverage();
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage DateTime value to set.
+     */
+    void addTemporalCoverage(DateTime temporalCoverage);
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage URL value to set.
+     */
+    void addTemporalCoverage(URL temporalCoverage);
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage Text value to set.
+     */
+    void addTemporalCoverage(Text temporalCoverage);
+
+    /**
+     * The publisher of the article in question.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getPublisherList();
+
+    /**
+     * The publisher of the article in question.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getPublisher();
+
+    /**
+     * The publisher of the article in question.
+     *
+     * @param publisher Person value to set.
+     */
+    void addPublisher(Person publisher);
+    /**
+     * The publisher of the article in question.
+     *
+     * @param publisher Organization value to set.
+     */
+    void addPublisher(Organization publisher);
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardsList();
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAwards();
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @param awards Text value to set.
+     */
+    void addAwards(Text awards);
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    List<ImageObject> getThumbnailList();
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    ImageObject getThumbnail();
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @param thumbnail ImageObject value to set.
+     */
+    void addThumbnail(ImageObject thumbnail);
+
+    /**
      * A thumbnail image relevant to the Thing.
      *
      * @return {@link URL}
@@ -293,145 +379,356 @@ public interface CreativeWork extends Thing {
     void addThumbnailUrl(URL thumbnailUrl);
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Integer}
      */
-    <T> List<T> getProviderList();
+    List<Integer> getCommentCountList();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Integer}
      */
-    <T> T getProvider();
+    Integer getCommentCount();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param commentCount Integer value to set.
      */
-    void addProvider(Organization provider);
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addProvider(Person provider);
+    void addCommentCount(Integer commentCount);
 
     /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> List<T> getExpiresList();
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> T getExpires();
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @param expires Date value to set.
-     */
-    void addExpires(Date expires);
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @param expires DateTime value to set.
-     */
-    void addExpires(DateTime expires);
-
-    /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     * The location at which an item can be viewed or experienced in-person.
      *
      * @return {@link Place}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
      */
-    List<Place> getContentLocationList();
+    List<Place> getDisplayLocationList();
 
     /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     * The location at which an item can be viewed or experienced in-person.
      *
      * @return {@link Place}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
      */
-    Place getContentLocation();
+    Place getDisplayLocation();
 
     /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     * The location at which an item can be viewed or experienced in-person.
      *
-     * @param contentLocation Place value to set.
+     * @param displayLocation Place value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
      */
-    void addContentLocation(Place contentLocation);
+    void addDisplayLocation(Place displayLocation);
 
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @return {@link WebPage} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    <T> List<T> getArchivedAtList();
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @return {@link WebPage} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    <T> T getArchivedAt();
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @param archivedAt WebPage value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void addArchivedAt(WebPage archivedAt);
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @param archivedAt URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void addArchivedAt(URL archivedAt);
+
+    /**
+     * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some [[CreativeWork]].
+     *
+     * @return {@link IPTCDigitalSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3392">https://github.com/schemaorg/schemaorg/issues/3392</a>
+     */
+    List<IPTCDigitalSourceEnumeration> getDigitalSourceTypeList();
+
+    /**
+     * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some [[CreativeWork]].
+     *
+     * @return {@link IPTCDigitalSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3392">https://github.com/schemaorg/schemaorg/issues/3392</a>
+     */
+    IPTCDigitalSourceEnumeration getDigitalSourceType();
+
+    /**
+     * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some [[CreativeWork]].
+     *
+     * @param digitalSourceType IPTCDigitalSourceEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3392">https://github.com/schemaorg/schemaorg/issues/3392</a>
+     */
+    void addDigitalSourceType(IPTCDigitalSourceEnumeration digitalSourceType);
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewsList();
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    Review getReviews();
+
+    /**
+     * Review of the item.
+     *
+     * @param reviews Review value to set.
+     */
+    void addReviews(Review reviews);
+
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
      * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    <T> List<T> getEducationalUseList();
+    <T> List<T> getAssessesList();
 
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
      * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    <T> T getEducationalUse();
+    <T> T getAssesses();
 
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param educationalUse DefinedTerm value to set.
+     * @param assesses DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void addEducationalUse(DefinedTerm educationalUse);
+    void addAssesses(DefinedTerm assesses);
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param educationalUse Text value to set.
+     * @param assesses Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void addEducationalUse(Text educationalUse);
+    void addAssesses(Text assesses);
 
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    <T> List<T> getLicenseList();
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    <T> T getLicense();
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @param license CreativeWork value to set.
+     */
+    void addLicense(CreativeWork license);
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @param license URL value to set.
+     */
+    void addLicense(URL license);
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     */
+    <T> List<T> getKeywordsList();
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     */
+    <T> T getKeywords();
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    void addKeywords(Text keywords);
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords DefinedTerm value to set.
+     */
+    void addKeywords(DefinedTerm keywords);
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    void addKeywords(URL keywords);
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getHasPartList();
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getHasPart();
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @param hasPart CreativeWork value to set.
+     */
+    void addHasPart(CreativeWork hasPart);
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
      */
-    <T> List<T> getCopyrightHolderList();
+    <T> List<T> getFunderList();
 
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
      */
-    <T> T getCopyrightHolder();
+    <T> T getFunder();
 
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param copyrightHolder Organization value to set.
+     * @param funder Organization value to set.
      */
-    void addCopyrightHolder(Organization copyrightHolder);
+    void addFunder(Organization funder);
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param copyrightHolder Person value to set.
+     * @param funder Person value to set.
      */
-    void addCopyrightHolder(Person copyrightHolder);
+    void addFunder(Person funder);
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    List<Text> getAccessModeList();
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    Text getAccessMode();
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @param accessMode Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    void addAccessMode(Text accessMode);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    AggregateRating getAggregateRating();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Product} or {@link URL} or {@link Text}
+     */
+    <T> List<T> getMaterialList();
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Product} or {@link URL} or {@link Text}
+     */
+    <T> T getMaterial();
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material Product value to set.
+     */
+    void addMaterial(Product material);
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material URL value to set.
+     */
+    void addMaterial(URL material);
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material Text value to set.
+     */
+    void addMaterial(Text material);
 
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
@@ -453,6 +750,27 @@ public interface CreativeWork extends Thing {
      * @param accessibilityControl Text value to set.
      */
     void addAccessibilityControl(Text accessibilityControl);
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getRecordedAtList();
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @return {@link Event}
+     */
+    Event getRecordedAt();
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @param recordedAt Event value to set.
+     */
+    void addRecordedAt(Event recordedAt);
 
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
@@ -494,1828 +812,58 @@ public interface CreativeWork extends Thing {
     void addMaintainer(Organization maintainer);
 
     /**
-     * An alignment to an established educational framework.
-     * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-     *
-     * @return {@link AlignmentObject}
-     */
-    List<AlignmentObject> getEducationalAlignmentList();
-
-    /**
-     * An alignment to an established educational framework.
-     * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-     *
-     * @return {@link AlignmentObject}
-     */
-    AlignmentObject getEducationalAlignment();
-
-    /**
-     * An alignment to an established educational framework.
-     * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-     *
-     * @param educationalAlignment AlignmentObject value to set.
-     */
-    void addEducationalAlignment(AlignmentObject educationalAlignment);
-
-    /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getSpatialList();
-
-    /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-     *
-     * @return {@link Place}
-     */
-    Place getSpatial();
-
-    /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-     *
-     * @param spatial Place value to set.
-     */
-    void addSpatial(Place spatial);
-
-    /**
-     * The publisher of the creative work.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getPublisherList();
-
-    /**
-     * The publisher of the creative work.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getPublisher();
-
-    /**
-     * The publisher of the creative work.
-     *
-     * @param publisher Organization value to set.
-     */
-    void addPublisher(Organization publisher);
-    /**
-     * The publisher of the creative work.
-     *
-     * @param publisher Person value to set.
-     */
-    void addPublisher(Person publisher);
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
-     */
-    <T> List<T> getKeywordsList();
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
-     */
-    <T> T getKeywords();
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    void addKeywords(URL keywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    void addKeywords(DefinedTerm keywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    void addKeywords(Text keywords);
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    <T> List<T> getAssessesList();
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    <T> T getAssesses();
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @param assesses DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    void addAssesses(DefinedTerm assesses);
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @param assesses Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    void addAssesses(Text assesses);
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    List<Review> getReviewsList();
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    Review getReviews();
-
-    /**
-     * Review of the item.
-     *
-     * @param reviews Review value to set.
-     */
-    void addReviews(Review reviews);
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    <T> List<T> getIsBasedOnList();
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    <T> T getIsBasedOn();
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param isBasedOn URL value to set.
-     */
-    void addIsBasedOn(URL isBasedOn);
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param isBasedOn Product value to set.
-     */
-    void addIsBasedOn(Product isBasedOn);
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param isBasedOn CreativeWork value to set.
-     */
-    void addIsBasedOn(CreativeWork isBasedOn);
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getMentionsList();
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     * @return {@link Thing}
-     */
-    Thing getMentions();
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     * @param mentions Thing value to set.
-     */
-    void addMentions(Thing mentions);
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    <T> List<T> getPublishingPrinciplesList();
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    <T> T getPublishingPrinciples();
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples CreativeWork value to set.
-     */
-    void addPublishingPrinciples(CreativeWork publishingPrinciples);
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples URL value to set.
-     */
-    void addPublishingPrinciples(URL publishingPrinciples);
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getContributorList();
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getContributor();
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Organization value to set.
-     */
-    void addContributor(Organization contributor);
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Person value to set.
-     */
-    void addContributor(Person contributor);
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    <T> List<T> getLicenseList();
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    <T> T getLicense();
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @param license URL value to set.
-     */
-    void addLicense(URL license);
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @param license CreativeWork value to set.
-     */
-    void addLicense(CreativeWork license);
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @return {@link CreativeWork} or {@link Text}
-     */
-    <T> List<T> getCitationList();
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @return {@link CreativeWork} or {@link Text}
-     */
-    <T> T getCitation();
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @param citation CreativeWork value to set.
-     */
-    void addCitation(CreativeWork citation);
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @param citation Text value to set.
-     */
-    void addCitation(Text citation);
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    List<Text> getAccessibilitySummaryList();
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    Text getAccessibilitySummary();
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @param accessibilitySummary Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    void addAccessibilitySummary(Text accessibilitySummary);
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAwardList();
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    Text getAward();
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    void addAward(Text award);
-
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getCommentCountList();
-
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @return {@link Integer}
-     */
-    Integer getCommentCount();
-
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @param commentCount Integer value to set.
-     */
-    void addCommentCount(Integer commentCount);
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @return {@link URL} or {@link Text} or {@link DateTime}
-     */
-    <T> List<T> getTemporalCoverageList();
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @return {@link URL} or {@link Text} or {@link DateTime}
-     */
-    <T> T getTemporalCoverage();
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param temporalCoverage URL value to set.
-     */
-    void addTemporalCoverage(URL temporalCoverage);
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param temporalCoverage Text value to set.
-     */
-    void addTemporalCoverage(Text temporalCoverage);
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param temporalCoverage DateTime value to set.
-     */
-    void addTemporalCoverage(DateTime temporalCoverage);
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getDateCreatedList();
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getDateCreated();
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param dateCreated DateTime value to set.
-     */
-    void addDateCreated(DateTime dateCreated);
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param dateCreated Date value to set.
-     */
-    void addDateCreated(Date dateCreated);
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getDiscussionUrlList();
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @return {@link URL}
-     */
-    URL getDiscussionUrl();
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @param discussionUrl URL value to set.
-     */
-    void addDiscussionUrl(URL discussionUrl);
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    List<Text> getCopyrightNoticeList();
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    Text getCopyrightNotice();
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @param copyrightNotice Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    void addCopyrightNotice(Text copyrightNotice);
-
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     */
-    <T> List<T> getLearningResourceTypeList();
-
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     */
-    <T> T getLearningResourceType();
-
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @param learningResourceType DefinedTerm value to set.
-     */
-    void addLearningResourceType(DefinedTerm learningResourceType);
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @param learningResourceType Text value to set.
-     */
-    void addLearningResourceType(Text learningResourceType);
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAwardsList();
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    Text getAwards();
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @param awards Text value to set.
-     */
-    void addAwards(Text awards);
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @return {@link ItemList}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    List<ItemList> getAccessModeSufficientList();
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @return {@link ItemList}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    ItemList getAccessModeSufficient();
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @param accessModeSufficient ItemList value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    void addAccessModeSufficient(ItemList accessModeSufficient);
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    List<Review> getReviewList();
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    Review getReview();
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    void addReview(Review review);
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    List<Text> getConditionsOfAccessList();
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    Text getConditionsOfAccess();
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @param conditionsOfAccess Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    void addConditionsOfAccess(Text conditionsOfAccess);
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getInteractivityTypeList();
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @return {@link Text}
-     */
-    Text getInteractivityType();
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @param interactivityType Text value to set.
-     */
-    void addInteractivityType(Text interactivityType);
-
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    List<Text> getAbstractList();
-
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    Text getAbstract();
-
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @param abstract_ Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    void addAbstract(Text abstract_);
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> List<T> getFileFormatList();
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> T getFileFormat();
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fileFormat Text value to set.
-     */
-    void addFileFormat(Text fileFormat);
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fileFormat URL value to set.
-     */
-    void addFileFormat(URL fileFormat);
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @return {@link Claim}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    List<Claim> getInterpretedAsClaimList();
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @return {@link Claim}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    Claim getInterpretedAsClaim();
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @param interpretedAsClaim Claim value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addInterpretedAsClaim(Claim interpretedAsClaim);
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTextList();
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    Text getText();
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @param text Text value to set.
-     */
-    void addText(Text text);
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @return {@link WebPage} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    <T> List<T> getArchivedAtList();
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @return {@link WebPage} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    <T> T getArchivedAt();
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @param archivedAt WebPage value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addArchivedAt(WebPage archivedAt);
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @param archivedAt URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addArchivedAt(URL archivedAt);
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAlternativeHeadlineList();
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    Text getAlternativeHeadline();
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @param alternativeHeadline Text value to set.
-     */
-    void addAlternativeHeadline(Text alternativeHeadline);
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    List<Text> getCreditTextList();
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    Text getCreditText();
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @param creditText Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    void addCreditText(Text creditText);
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     */
-    List<Grant> getFundingList();
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     */
-    Grant getFunding();
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     */
-    void addFunding(Grant funding);
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    List<InteractionCounter> getInteractionStatisticList();
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    InteractionCounter getInteractionStatistic();
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @param interactionStatistic InteractionCounter value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    void addInteractionStatistic(InteractionCounter interactionStatistic);
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    List<CreativeWork> getWorkExampleList();
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    CreativeWork getWorkExample();
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
-     *
-     * @param workExample CreativeWork value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addWorkExample(CreativeWork workExample);
-
-    /**
-     * The subject matter of the content.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    List<Thing> getAboutList();
-
-    /**
-     * The subject matter of the content.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    Thing getAbout();
-
-    /**
-     * The subject matter of the content.
-     *
-     * @param about Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    void addAbout(Thing about);
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     * @return {@link MediaObject}
-     */
-    List<MediaObject> getEncodingsList();
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     * @return {@link MediaObject}
-     */
-    MediaObject getEncodings();
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     * @param encodings MediaObject value to set.
-     */
-    void addEncodings(MediaObject encodings);
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getFunderList();
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getFunder();
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Organization value to set.
-     */
-    void addFunder(Organization funder);
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Person value to set.
-     */
-    void addFunder(Person funder);
-
-    /**
-     * An embedded video object.
-     *
-     * @return {@link VideoObject} or {@link Clip}
-     */
-    <T> List<T> getVideoList();
-
-    /**
-     * An embedded video object.
-     *
-     * @return {@link VideoObject} or {@link Clip}
-     */
-    <T> T getVideo();
-
-    /**
-     * An embedded video object.
-     *
-     * @param video VideoObject value to set.
-     */
-    void addVideo(VideoObject video);
-    /**
-     * An embedded video object.
-     *
-     * @param video Clip value to set.
-     */
-    void addVideo(Clip video);
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    <T> List<T> getIsPartOfList();
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    <T> T getIsPartOf();
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @param isPartOf URL value to set.
-     */
-    void addIsPartOf(URL isPartOf);
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @param isPartOf CreativeWork value to set.
-     */
-    void addIsPartOf(CreativeWork isPartOf);
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    <T> List<T> getPatternList();
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    <T> T getPattern();
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param pattern DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    void addPattern(DefinedTerm pattern);
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param pattern Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    void addPattern(Text pattern);
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getEditorList();
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     * @return {@link Person}
-     */
-    Person getEditor();
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     * @param editor Person value to set.
-     */
-    void addEditor(Person editor);
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getDateModifiedList();
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getDateModified();
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param dateModified DateTime value to set.
-     */
-    void addDateModified(DateTime dateModified);
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param dateModified Date value to set.
-     */
-    void addDateModified(Date dateModified);
-
-    /**
-     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<CreativeWork> getTranslationOfWorkList();
-
-    /**
-     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    CreativeWork getTranslationOfWork();
-
-    /**
-     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
-     *
-     * @param translationOfWork CreativeWork value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addTranslationOfWork(CreativeWork translationOfWork);
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    <T> List<T> getCreativeWorkStatusList();
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    <T> T getCreativeWorkStatus();
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @param creativeWorkStatus DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    void addCreativeWorkStatus(DefinedTerm creativeWorkStatus);
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @param creativeWorkStatus Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    void addCreativeWorkStatus(Text creativeWorkStatus);
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    <T> List<T> getIsBasedOnUrlList();
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    <T> T getIsBasedOnUrl();
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param isBasedOnUrl URL value to set.
-     */
-    void addIsBasedOnUrl(URL isBasedOnUrl);
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param isBasedOnUrl Product value to set.
-     */
-    void addIsBasedOnUrl(Product isBasedOnUrl);
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param isBasedOnUrl CreativeWork value to set.
-     */
-    void addIsBasedOnUrl(CreativeWork isBasedOnUrl);
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    List<Boolean> getIsFamilyFriendlyList();
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getIsFamilyFriendly();
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @param isFamilyFriendly Boolean value to set.
-     */
-    void addIsFamilyFriendly(Boolean isFamilyFriendly);
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    List<Boolean> getIsAccessibleForFreeList();
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getIsAccessibleForFree();
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param isAccessibleForFree Boolean value to set.
-     */
-    void addIsAccessibleForFree(Boolean isAccessibleForFree);
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getAuthorList();
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getAuthor();
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @param author Organization value to set.
-     */
-    void addAuthor(Organization author);
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @param author Person value to set.
-     */
-    void addAuthor(Person author);
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @return {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    List<DateTime> getContentReferenceTimeList();
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @return {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    DateTime getContentReferenceTime();
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @param contentReferenceTime DateTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    void addContentReferenceTime(DateTime contentReferenceTime);
-
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @return {@link URL} or {@link Text} or {@link CorrectionComment}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    <T> List<T> getCorrectionList();
-
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @return {@link URL} or {@link Text} or {@link CorrectionComment}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    <T> T getCorrection();
-
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param correction URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    void addCorrection(URL correction);
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param correction Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    void addCorrection(Text correction);
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param correction CorrectionComment value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    void addCorrection(CorrectionComment correction);
-
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    List<Date> getSdDatePublishedList();
-
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    Date getSdDatePublished();
-
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @param sdDatePublished Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    void addSdDatePublished(Date sdDatePublished);
-
-    /**
-     * Comments, typically from users.
-     *
-     * @return {@link Comment}
-     */
-    List<Comment> getCommentList();
-
-    /**
-     * Comments, typically from users.
-     *
-     * @return {@link Comment}
-     */
-    Comment getComment();
-
-    /**
-     * Comments, typically from users.
-     *
-     * @param comment Comment value to set.
-     */
-    void addComment(Comment comment);
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    List<Country> getCountryOfOriginList();
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    Country getCountryOfOrigin();
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @param countryOfOrigin Country value to set.
-     */
-    void addCountryOfOrigin(Country countryOfOrigin);
-
-    /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     * Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
      *
      * @return {@link Duration}
      */
     List<Duration> getTimeRequiredList();
 
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     * Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
      *
      * @return {@link Duration}
      */
     Duration getTimeRequired();
 
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     * Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
      *
      * @param timeRequired Duration value to set.
      */
     void addTimeRequired(Duration timeRequired);
 
     /**
-     * The typical expected age range, e.g. '7-9', '11-'.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
      */
-    List<Text> getTypicalAgeRangeList();
+    <T> List<T> getIsBasedOnList();
 
     /**
-     * The typical expected age range, e.g. '7-9', '11-'.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
      */
-    Text getTypicalAgeRange();
+    <T> T getIsBasedOn();
 
     /**
-     * The typical expected age range, e.g. '7-9', '11-'.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @param typicalAgeRange Text value to set.
+     * @param isBasedOn CreativeWork value to set.
      */
-    void addTypicalAgeRange(Text typicalAgeRange);
-
+    void addIsBasedOn(CreativeWork isBasedOn);
     /**
-     * Genre of the creative work, broadcast channel or group.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @return {@link Text} or {@link URL}
+     * @param isBasedOn URL value to set.
      */
-    <T> List<T> getGenreList();
-
+    void addIsBasedOn(URL isBasedOn);
     /**
-     * Genre of the creative work, broadcast channel or group.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @return {@link Text} or {@link URL}
+     * @param isBasedOn Product value to set.
      */
-    <T> T getGenre();
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param genre Text value to set.
-     */
-    void addGenre(Text genre);
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param genre URL value to set.
-     */
-    void addGenre(URL genre);
-
-    /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getProducerList();
-
-    /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getProducer();
-
-    /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-     *
-     * @param producer Organization value to set.
-     */
-    void addProducer(Organization producer);
-    /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-     *
-     * @param producer Person value to set.
-     */
-    void addProducer(Person producer);
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getSchemaVersionList();
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getSchemaVersion();
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param schemaVersion URL value to set.
-     */
-    void addSchemaVersion(URL schemaVersion);
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param schemaVersion Text value to set.
-     */
-    void addSchemaVersion(Text schemaVersion);
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    List<Audience> getAudienceList();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    Audience getAudience();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    void addAudience(Audience audience);
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-     *
-     * @return {@link MediaObject}
-     */
-    List<MediaObject> getEncodingList();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-     *
-     * @return {@link MediaObject}
-     */
-    MediaObject getEncoding();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-     *
-     * @param encoding MediaObject value to set.
-     */
-    void addEncoding(MediaObject encoding);
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Organization> getPublisherImprintList();
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Organization getPublisherImprint();
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @param publisherImprint Organization value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addPublisherImprint(Organization publisherImprint);
-
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAccessibilityAPIList();
-
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    Text getAccessibilityAPI();
-
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @param accessibilityAPI Text value to set.
-     */
-    void addAccessibilityAPI(Text accessibilityAPI);
-
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    <T> List<T> getSdPublisherList();
-
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    <T> T getSdPublisher();
-
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @param sdPublisher Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    void addSdPublisher(Organization sdPublisher);
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @param sdPublisher Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    void addSdPublisher(Person sdPublisher);
-
-    /**
-     * An embedded audio object.
-     *
-     * @return {@link MusicRecording} or {@link AudioObject} or {@link Clip}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    <T> List<T> getAudioList();
-
-    /**
-     * An embedded audio object.
-     *
-     * @return {@link MusicRecording} or {@link AudioObject} or {@link Clip}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    <T> T getAudio();
-
-    /**
-     * An embedded audio object.
-     *
-     * @param audio MusicRecording value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    void addAudio(MusicRecording audio);
-    /**
-     * An embedded audio object.
-     *
-     * @param audio AudioObject value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    void addAudio(AudioObject audio);
-    /**
-     * An embedded audio object.
-     *
-     * @param audio Clip value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    void addAudio(Clip audio);
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAccessibilityFeatureList();
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    Text getAccessibilityFeature();
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @param accessibilityFeature Text value to set.
-     */
-    void addAccessibilityFeature(Text accessibilityFeature);
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getSpatialCoverageList();
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     * @return {@link Place}
-     */
-    Place getSpatialCoverage();
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     * @param spatialCoverage Place value to set.
-     */
-    void addSpatialCoverage(Place spatialCoverage);
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    List<Text> getAccessModeList();
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    Text getAccessMode();
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @param accessMode Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    void addAccessMode(Text accessMode);
+    void addIsBasedOn(Product isBasedOn);
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -2369,74 +917,724 @@ public interface CreativeWork extends Thing {
     void addEditEIDR(Text editEIDR);
 
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link QuantitativeValue} or {@link Text} or {@link DefinedTerm} or {@link SizeSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    <T> List<T> getUsageInfoList();
+    <T> List<T> getSizeList();
 
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link QuantitativeValue} or {@link Text} or {@link DefinedTerm} or {@link SizeSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    <T> T getUsageInfo();
+    <T> T getSize();
 
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param usageInfo URL value to set.
+     * @param size QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void addUsageInfo(URL usageInfo);
+    void addSize(QuantitativeValue size);
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param usageInfo CreativeWork value to set.
+     * @param size Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void addUsageInfo(CreativeWork usageInfo);
+    void addSize(Text size);
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void addSize(DefinedTerm size);
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size SizeSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void addSize(SizeSpecification size);
 
     /**
-     * The position of an item in a series or sequence of items.
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link Text} or {@link CreativeWork}
      */
-    <T> List<T> getPositionList();
+    <T> List<T> getCitationList();
 
     /**
-     * The position of an item in a series or sequence of items.
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link Text} or {@link CreativeWork}
      */
-    <T> T getPosition();
+    <T> T getCitation();
 
     /**
-     * The position of an item in a series or sequence of items.
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @param position Text value to set.
+     * @param citation Text value to set.
      */
-    void addPosition(Text position);
+    void addCitation(Text citation);
     /**
-     * The position of an item in a series or sequence of items.
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @param position Integer value to set.
+     * @param citation CreativeWork value to set.
      */
-    void addPosition(Integer position);
+    void addCitation(CreativeWork citation);
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewList();
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    Review getReview();
+
+    /**
+     * A review of the item.
+     *
+     * @param review Review value to set.
+     */
+    void addReview(Review review);
+
+    /**
+     * Headline of the article.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getHeadlineList();
+
+    /**
+     * Headline of the article.
+     *
+     * @return {@link Text}
+     */
+    Text getHeadline();
+
+    /**
+     * Headline of the article.
+     *
+     * @param headline Text value to set.
+     */
+    void addHeadline(Text headline);
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    List<InteractionCounter> getInteractionStatisticList();
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    InteractionCounter getInteractionStatistic();
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @param interactionStatistic InteractionCounter value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    void addInteractionStatistic(InteractionCounter interactionStatistic);
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getWorkExampleList();
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getWorkExample();
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
+     *
+     * @param workExample CreativeWork value to set.
+     */
+    void addWorkExample(CreativeWork workExample);
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    <T> List<T> getMaterialExtentList();
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    <T> T getMaterialExtent();
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @param materialExtent QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    void addMaterialExtent(QuantitativeValue materialExtent);
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @param materialExtent Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    void addMaterialExtent(Text materialExtent);
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getSpatialList();
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @return {@link Place}
+     */
+    Place getSpatial();
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @param spatial Place value to set.
+     */
+    void addSpatial(Place spatial);
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getProducerList();
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getProducer();
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @param producer Person value to set.
+     */
+    void addProducer(Person producer);
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @param producer Organization value to set.
+     */
+    void addProducer(Organization producer);
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getOffersList();
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> T getOffers();
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Offer value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addOffers(Offer offers);
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addOffers(Demand offers);
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getMentionsList();
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @return {@link Thing}
+     */
+    Thing getMentions();
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @param mentions Thing value to set.
+     */
+    void addMentions(Thing mentions);
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getEncodingsList();
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @return {@link MediaObject}
+     */
+    MediaObject getEncodings();
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @param encodings MediaObject value to set.
+     */
+    void addEncodings(MediaObject encodings);
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsFamilyFriendlyList();
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getIsFamilyFriendly();
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @param isFamilyFriendly Boolean value to set.
+     */
+    void addIsFamilyFriendly(Boolean isFamilyFriendly);
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAccessibilityFeatureList();
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    Text getAccessibilityFeature();
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @param accessibilityFeature Text value to set.
+     */
+    void addAccessibilityFeature(Text accessibilityFeature);
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> List<T> getVersionList();
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> T getVersion();
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param version Number value to set.
+     */
+    void addVersion(Number version);
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param version Text value to set.
+     */
+    void addVersion(Text version);
+
+    /**
+     * An embedded video object.
+     *
+     * @return {@link VideoObject} or {@link Clip}
+     */
+    <T> List<T> getVideoList();
+
+    /**
+     * An embedded video object.
+     *
+     * @return {@link VideoObject} or {@link Clip}
+     */
+    <T> T getVideo();
+
+    /**
+     * An embedded video object.
+     *
+     * @param video VideoObject value to set.
+     */
+    void addVideo(VideoObject video);
+    /**
+     * An embedded video object.
+     *
+     * @param video Clip value to set.
+     */
+    void addVideo(Clip video);
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getAuthorList();
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getAuthor();
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param author Organization value to set.
+     */
+    void addAuthor(Organization author);
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param author Person value to set.
+     */
+    void addAuthor(Person author);
+
+    /**
+     * Comments, typically from users.
+     *
+     * @return {@link Comment}
+     */
+    List<Comment> getCommentList();
+
+    /**
+     * Comments, typically from users.
+     *
+     * @return {@link Comment}
+     */
+    Comment getComment();
+
+    /**
+     * Comments, typically from users.
+     *
+     * @param comment Comment value to set.
+     */
+    void addComment(Comment comment);
+
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @return {@link Text} or {@link Rating}
+     */
+    <T> List<T> getContentRatingList();
+
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @return {@link Text} or {@link Rating}
+     */
+    <T> T getContentRating();
+
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @param contentRating Text value to set.
+     */
+    void addContentRating(Text contentRating);
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @param contentRating Rating value to set.
+     */
+    void addContentRating(Rating contentRating);
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    <T> List<T> getSdLicenseList();
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    <T> T getSdLicense();
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @param sdLicense CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    void addSdLicense(CreativeWork sdLicense);
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @param sdLicense URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    void addSdLicense(URL sdLicense);
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @return {@link DateTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    List<DateTime> getContentReferenceTimeList();
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @return {@link DateTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    DateTime getContentReferenceTime();
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @param contentReferenceTime DateTime value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    void addContentReferenceTime(DateTime contentReferenceTime);
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getContentLocationList();
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @return {@link Place}
+     */
+    Place getContentLocation();
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @param contentLocation Place value to set.
+     */
+    void addContentLocation(Place contentLocation);
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getDatePublishedList();
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> T getDatePublished();
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @param datePublished Date value to set.
+     */
+    void addDatePublished(Date datePublished);
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @param datePublished DateTime value to set.
+     */
+    void addDatePublished(DateTime datePublished);
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    <T> List<T> getSdPublisherList();
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    <T> T getSdPublisher();
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @param sdPublisher Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    void addSdPublisher(Person sdPublisher);
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @param sdPublisher Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    void addSdPublisher(Organization sdPublisher);
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAlternativeHeadlineList();
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    Text getAlternativeHeadline();
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @param alternativeHeadline Text value to set.
+     */
+    void addAlternativeHeadline(Text alternativeHeadline);
+
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    List<Text> getAbstractList();
+
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    Text getAbstract();
+
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @param abstract_ Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    void addAbstract(Text abstract_);
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Organization> getPublisherImprintList();
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Organization getPublisherImprint();
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @param publisherImprint Organization value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addPublisherImprint(Organization publisherImprint);
 
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
@@ -2482,46 +1680,270 @@ public interface CreativeWork extends Thing {
     void addEncodingFormat(Text encodingFormat);
 
     /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @return {@link Number}
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    List<Number> getCopyrightYearList();
+    <T> List<T> getInLanguageList();
 
     /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @return {@link Number}
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    Number getCopyrightYear();
+    <T> T getInLanguage();
 
     /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param copyrightYear Number value to set.
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void addCopyrightYear(Number copyrightYear);
+    void addInLanguage(Language inLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void addInLanguage(Text inLanguage);
 
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @return {@link Thing}
+     * @return {@link DateTime} or {@link Date}
      */
-    List<Thing> getMainEntityList();
+    <T> List<T> getDateCreatedList();
 
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @return {@link Thing}
+     * @return {@link DateTime} or {@link Date}
      */
-    Thing getMainEntity();
+    <T> T getDateCreated();
 
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param mainEntity Thing value to set.
+     * @param dateCreated DateTime value to set.
      */
-    void addMainEntity(Thing mainEntity);
+    void addDateCreated(DateTime dateCreated);
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param dateCreated Date value to set.
+     */
+    void addDateCreated(Date dateCreated);
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getSourceOrganizationList();
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @return {@link Organization}
+     */
+    Organization getSourceOrganization();
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @param sourceOrganization Organization value to set.
+     */
+    void addSourceOrganization(Organization sourceOrganization);
+
+    /**
+     * An embedded audio object.
+     *
+     * @return {@link MusicRecording} or {@link Clip} or {@link AudioObject}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    <T> List<T> getAudioList();
+
+    /**
+     * An embedded audio object.
+     *
+     * @return {@link MusicRecording} or {@link Clip} or {@link AudioObject}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    <T> T getAudio();
+
+    /**
+     * An embedded audio object.
+     *
+     * @param audio MusicRecording value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    void addAudio(MusicRecording audio);
+    /**
+     * An embedded audio object.
+     *
+     * @param audio Clip value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    void addAudio(Clip audio);
+    /**
+     * An embedded audio object.
+     *
+     * @param audio AudioObject value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    void addAudio(AudioObject audio);
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    <T> List<T> getLearningResourceTypeList();
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    <T> T getLearningResourceType();
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param learningResourceType Text value to set.
+     */
+    void addLearningResourceType(Text learningResourceType);
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param learningResourceType DefinedTerm value to set.
+     */
+    void addLearningResourceType(DefinedTerm learningResourceType);
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    <T> List<T> getCreativeWorkStatusList();
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    <T> T getCreativeWorkStatus();
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @param creativeWorkStatus DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    void addCreativeWorkStatus(DefinedTerm creativeWorkStatus);
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @param creativeWorkStatus Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    void addCreativeWorkStatus(Text creativeWorkStatus);
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getAudienceList();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    Audience getAudience();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @param audience Audience value to set.
+     */
+    void addAudience(Audience audience);
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getLocationCreatedList();
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @return {@link Place}
+     */
+    Place getLocationCreated();
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @param locationCreated Place value to set.
+     */
+    void addLocationCreated(Place locationCreated);
+
+    /**
+     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<CreativeWork> getWorkTranslationList();
+
+    /**
+     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    CreativeWork getWorkTranslation();
+
+    /**
+     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @param workTranslation CreativeWork value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addWorkTranslation(CreativeWork workTranslation);
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTypicalAgeRangeList();
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    Text getTypicalAgeRange();
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @param typicalAgeRange Text value to set.
+     */
+    void addTypicalAgeRange(Text typicalAgeRange);
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -2549,6 +1971,363 @@ public interface CreativeWork extends Thing {
      * @param creator Organization value to set.
      */
     void addCreator(Organization creator);
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
+     */
+    <T> List<T> getIsBasedOnUrlList();
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
+     */
+    <T> T getIsBasedOnUrl();
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl CreativeWork value to set.
+     */
+    void addIsBasedOnUrl(CreativeWork isBasedOnUrl);
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl URL value to set.
+     */
+    void addIsBasedOnUrl(URL isBasedOnUrl);
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl Product value to set.
+     */
+    void addIsBasedOnUrl(Product isBasedOnUrl);
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getFileFormatList();
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getFileFormat();
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fileFormat URL value to set.
+     */
+    void addFileFormat(URL fileFormat);
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fileFormat Text value to set.
+     */
+    void addFileFormat(Text fileFormat);
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getEncodingList();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @return {@link MediaObject}
+     */
+    MediaObject getEncoding();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @param encoding MediaObject value to set.
+     */
+    void addEncoding(MediaObject encoding);
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @return {@link PublicationEvent}
+     */
+    List<PublicationEvent> getReleasedEventList();
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @return {@link PublicationEvent}
+     */
+    PublicationEvent getReleasedEvent();
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @param releasedEvent PublicationEvent value to set.
+     */
+    void addReleasedEvent(PublicationEvent releasedEvent);
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getAccountablePersonList();
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    Person getAccountablePerson();
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @param accountablePerson Person value to set.
+     */
+    void addAccountablePerson(Person accountablePerson);
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    <T> List<T> getEducationalUseList();
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    <T> T getEducationalUse();
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param educationalUse Text value to set.
+     */
+    void addEducationalUse(Text educationalUse);
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param educationalUse DefinedTerm value to set.
+     */
+    void addEducationalUse(DefinedTerm educationalUse);
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getSchemaVersionList();
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> T getSchemaVersion();
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param schemaVersion Text value to set.
+     */
+    void addSchemaVersion(Text schemaVersion);
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param schemaVersion URL value to set.
+     */
+    void addSchemaVersion(URL schemaVersion);
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAccessibilityHazardList();
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    Text getAccessibilityHazard();
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @param accessibilityHazard Text value to set.
+     */
+    void addAccessibilityHazard(Text accessibilityHazard);
+
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @return {@link CorrectionComment} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    <T> List<T> getCorrectionList();
+
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @return {@link CorrectionComment} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    <T> T getCorrection();
+
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction CorrectionComment value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    void addCorrection(CorrectionComment correction);
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    void addCorrection(URL correction);
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    void addCorrection(Text correction);
+
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @return {@link Text} or {@link DateTime}
+     */
+    <T> List<T> getTemporalList();
+
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @return {@link Text} or {@link DateTime}
+     */
+    <T> T getTemporal();
+
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param temporal Text value to set.
+     */
+    void addTemporal(Text temporal);
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param temporal DateTime value to set.
+     */
+    void addTemporal(DateTime temporal);
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getExpiresList();
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> T getExpires();
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @param expires DateTime value to set.
+     */
+    void addExpires(DateTime expires);
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @param expires Date value to set.
+     */
+    void addExpires(Date expires);
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    List<Text> getCopyrightNoticeList();
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    Text getCopyrightNotice();
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @param copyrightNotice Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    void addCopyrightNotice(Text copyrightNotice);
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]].
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    List<Date> getSdDatePublishedList();
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]].
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    Date getSdDatePublished();
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]].
+     *
+     * @param sdDatePublished Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    void addSdDatePublished(Date sdDatePublished);
 
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
@@ -2586,86 +2365,301 @@ public interface CreativeWork extends Thing {
     void addTeaches(Text teaches);
 
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @return {@link DateTime} or {@link Text}
+     * @return {@link CreativeWork} or {@link URL}
      */
-    <T> List<T> getTemporalList();
+    <T> List<T> getPublishingPrinciplesList();
 
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @return {@link DateTime} or {@link Text}
+     * @return {@link CreativeWork} or {@link URL}
      */
-    <T> T getTemporal();
+    <T> T getPublishingPrinciples();
 
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param temporal DateTime value to set.
+     * @param publishingPrinciples CreativeWork value to set.
      */
-    void addTemporal(DateTime temporal);
+    void addPublishingPrinciples(CreativeWork publishingPrinciples);
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param temporal Text value to set.
+     * @param publishingPrinciples URL value to set.
      */
-    void addTemporal(Text temporal);
+    void addPublishingPrinciples(URL publishingPrinciples);
 
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * Specifies the Person who edited the CreativeWork.
      *
-     * @return {@link DefinedTerm} or {@link QuantitativeValue} or {@link Text} or {@link SizeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @return {@link Person}
      */
-    <T> List<T> getSizeList();
+    List<Person> getEditorList();
 
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * Specifies the Person who edited the CreativeWork.
      *
-     * @return {@link DefinedTerm} or {@link QuantitativeValue} or {@link Text} or {@link SizeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @return {@link Person}
      */
-    <T> T getSize();
+    Person getEditor();
 
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * Specifies the Person who edited the CreativeWork.
      *
-     * @param size DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @param editor Person value to set.
      */
-    void addSize(DefinedTerm size);
+    void addEditor(Person editor);
+
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
-     * @param size QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @return {@link Place}
      */
-    void addSize(QuantitativeValue size);
+    List<Place> getSpatialCoverageList();
+
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
-     * @param size Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @return {@link Place}
      */
-    void addSize(Text size);
+    Place getSpatialCoverage();
+
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
-     * @param size SizeSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @param spatialCoverage Place value to set.
      */
-    void addSize(SizeSpecification size);
+    void addSpatialCoverage(Place spatialCoverage);
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardList();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAward();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    void addAward(Text award);
+
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    <T> List<T> getUsageInfoList();
+
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    <T> T getUsageInfo();
+
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @param usageInfo CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    void addUsageInfo(CreativeWork usageInfo);
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @param usageInfo URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    void addUsageInfo(URL usageInfo);
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsAccessibleForFreeList();
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getIsAccessibleForFree();
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param isAccessibleForFree Boolean value to set.
+     */
+    void addIsAccessibleForFree(Boolean isAccessibleForFree);
+
+    /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    List<Thing> getAboutList();
+
+    /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    Thing getAbout();
+
+    /**
+     * The subject matter of an object.
+     *
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    void addAbout(Thing about);
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getDiscussionUrlList();
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @return {@link URL}
+     */
+    URL getDiscussionUrl();
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @param discussionUrl URL value to set.
+     */
+    void addDiscussionUrl(URL discussionUrl);
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    List<Country> getCountryOfOriginList();
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    Country getCountryOfOrigin();
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @param countryOfOrigin Country value to set.
+     */
+    void addCountryOfOrigin(Country countryOfOrigin);
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getSponsorList();
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getSponsor();
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Person value to set.
+     */
+    void addSponsor(Person sponsor);
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Organization value to set.
+     */
+    void addSponsor(Organization sponsor);
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getInteractivityTypeList();
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @return {@link Text}
+     */
+    Text getInteractivityType();
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @param interactivityType Text value to set.
+     */
+    void addInteractivityType(Text interactivityType);
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -2695,115 +2689,231 @@ public interface CreativeWork extends Thing {
     void addTranslator(Person translator);
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @return {@link AggregateRating}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
-    List<AggregateRating> getAggregateRatingList();
+    List<Text> getCreditTextList();
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @return {@link AggregateRating}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
-    AggregateRating getAggregateRating();
+    Text getCreditText();
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @param aggregateRating AggregateRating value to set.
+     * @param creditText Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
-    void addAggregateRating(AggregateRating aggregateRating);
+    void addCreditText(Text creditText);
 
     /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @return {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
-    List<Person> getAccountablePersonList();
+    <T> List<T> getContributorList();
 
     /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @return {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
-    Person getAccountablePerson();
+    <T> T getContributor();
 
     /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @param accountablePerson Person value to set.
+     * @param contributor Person value to set.
      */
-    void addAccountablePerson(Person accountablePerson);
+    void addContributor(Person contributor);
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Organization value to set.
+     */
+    void addContributor(Organization contributor);
 
     /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<CreativeWork> getTranslationOfWorkList();
+
+    /**
+     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    CreativeWork getTranslationOfWork();
+
+    /**
+     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
+     *
+     * @param translationOfWork CreativeWork value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addTranslationOfWork(CreativeWork translationOfWork);
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getAssociatedMediaList();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    MediaObject getAssociatedMedia();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @param associatedMedia MediaObject value to set.
+     */
+    void addAssociatedMedia(MediaObject associatedMedia);
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    <T> List<T> getPatternList();
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    <T> T getPattern();
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param pattern DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void addPattern(DefinedTerm pattern);
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param pattern Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void addPattern(Text pattern);
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @return {@link AlignmentObject}
+     */
+    List<AlignmentObject> getEducationalAlignmentList();
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @return {@link AlignmentObject}
+     */
+    AlignmentObject getEducationalAlignment();
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @param educationalAlignment AlignmentObject value to set.
+     */
+    void addEducationalAlignment(AlignmentObject educationalAlignment);
+
+    /**
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
      * @return {@link Text}
      */
-    List<Text> getAccessibilityHazardList();
+    List<Text> getAccessibilityAPIList();
 
     /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
      * @return {@link Text}
      */
-    Text getAccessibilityHazard();
+    Text getAccessibilityAPI();
 
     /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
-     * @param accessibilityHazard Text value to set.
+     * @param accessibilityAPI Text value to set.
      */
-    void addAccessibilityHazard(Text accessibilityHazard);
+    void addAccessibilityAPI(Text accessibilityAPI);
 
     /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
      *
-     * @return {@link Text} or {@link Rating}
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    <T> List<T> getContentRatingList();
+    List<Text> getAccessibilitySummaryList();
 
     /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
      *
-     * @return {@link Text} or {@link Rating}
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    <T> T getContentRating();
+    Text getAccessibilitySummary();
 
     /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
      *
-     * @param contentRating Text value to set.
+     * @param accessibilitySummary Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    void addContentRating(Text contentRating);
-    /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
-     *
-     * @param contentRating Rating value to set.
-     */
-    void addContentRating(Rating contentRating);
+    void addAccessibilitySummary(Text accessibilitySummary);
 
     /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     * A creative work that this work is an example/instance/realization/derivation of.
      *
-     * @return {@link Event}
+     * @return {@link CreativeWork}
      */
-    List<Event> getRecordedAtList();
+    List<CreativeWork> getExampleOfWorkList();
 
     /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     * A creative work that this work is an example/instance/realization/derivation of.
      *
-     * @return {@link Event}
+     * @return {@link CreativeWork}
      */
-    Event getRecordedAt();
+    CreativeWork getExampleOfWork();
 
     /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     * A creative work that this work is an example/instance/realization/derivation of.
      *
-     * @param recordedAt Event value to set.
+     * @param exampleOfWork CreativeWork value to set.
      */
-    void addRecordedAt(Event recordedAt);
+    void addExampleOfWork(CreativeWork exampleOfWork);
 
     /**
      * A publication event associated with the item.
@@ -2827,293 +2937,218 @@ public interface CreativeWork extends Thing {
     void addPublication(PublicationEvent publication);
 
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @return {@link Text} or {@link Integer}
      */
-    <T> List<T> getSdLicenseList();
+    <T> List<T> getPositionList();
 
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @return {@link Text} or {@link Integer}
      */
-    <T> T getSdLicense();
+    <T> T getPosition();
 
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @param sdLicense CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @param position Text value to set.
      */
-    void addSdLicense(CreativeWork sdLicense);
+    void addPosition(Text position);
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @param sdLicense URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @param position Integer value to set.
      */
-    void addSdLicense(URL sdLicense);
+    void addPosition(Integer position);
 
     /**
-     * Headline of the article.
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    List<Text> getConditionsOfAccessList();
+
+    /**
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    Text getConditionsOfAccess();
+
+    /**
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @param conditionsOfAccess Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    void addConditionsOfAccess(Text conditionsOfAccess);
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getMainEntityList();
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @return {@link Thing}
+     */
+    Thing getMainEntity();
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @param mainEntity Thing value to set.
+     */
+    void addMainEntity(Thing mainEntity);
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getCopyrightYearList();
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @return {@link Number}
+     */
+    Number getCopyrightYear();
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @param copyrightYear Number value to set.
+     */
+    void addCopyrightYear(Number copyrightYear);
+
+    /**
+     * The textual content of this CreativeWork.
      *
      * @return {@link Text}
      */
-    List<Text> getHeadlineList();
+    List<Text> getTextList();
 
     /**
-     * Headline of the article.
+     * The textual content of this CreativeWork.
      *
      * @return {@link Text}
      */
-    Text getHeadline();
+    Text getText();
 
     /**
-     * Headline of the article.
+     * The textual content of this CreativeWork.
      *
-     * @param headline Text value to set.
+     * @param text Text value to set.
      */
-    void addHeadline(Text headline);
+    void addText(Text text);
 
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @return {@link QuantitativeValue} or {@link Text}
+     * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    <T> List<T> getMaterialExtentList();
+    List<Claim> getInterpretedAsClaimList();
 
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @return {@link QuantitativeValue} or {@link Text}
+     * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    <T> T getMaterialExtent();
+    Claim getInterpretedAsClaim();
 
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @param materialExtent QuantitativeValue value to set.
+     * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void addMaterialExtent(QuantitativeValue materialExtent);
+    void addInterpretedAsClaim(Claim interpretedAsClaim);
+
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
-     * @param materialExtent Text value to set.
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    <T> List<T> getIsPartOfList();
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    <T> T getIsPartOf();
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @param isPartOf URL value to set.
+     */
+    void addIsPartOf(URL isPartOf);
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @param isPartOf CreativeWork value to set.
+     */
+    void addIsPartOf(CreativeWork isPartOf);
+
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void addMaterialExtent(Text materialExtent);
+    <T> List<T> getEducationalLevelList();
 
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    <T> List<T> getInLanguageList();
+    <T> T getEducationalLevel();
 
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @param educationalLevel DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    <T> T getInLanguage();
-
+    void addEducationalLevel(DefinedTerm educationalLevel);
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param inLanguage Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @param educationalLevel URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void addInLanguage(Text inLanguage);
+    void addEducationalLevel(URL educationalLevel);
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param inLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @param educationalLevel Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void addInLanguage(Language inLanguage);
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Product} or {@link URL} or {@link Text}
-     */
-    <T> List<T> getMaterialList();
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Product} or {@link URL} or {@link Text}
-     */
-    <T> T getMaterial();
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material Product value to set.
-     */
-    void addMaterial(Product material);
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material URL value to set.
-     */
-    void addMaterial(URL material);
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material Text value to set.
-     */
-    void addMaterial(Text material);
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getDatePublishedList();
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getDatePublished();
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param datePublished DateTime value to set.
-     */
-    void addDatePublished(DateTime datePublished);
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param datePublished Date value to set.
-     */
-    void addDatePublished(Date datePublished);
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    <T> List<T> getOffersList();
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    <T> T getOffers();
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addOffers(Demand offers);
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addOffers(Offer offers);
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    List<CreativeWork> getHasPartList();
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    CreativeWork getHasPart();
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @param hasPart CreativeWork value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void addHasPart(CreativeWork hasPart);
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getSourceOrganizationList();
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     * @return {@link Organization}
-     */
-    Organization getSourceOrganization();
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     * @param sourceOrganization Organization value to set.
-     */
-    void addSourceOrganization(Organization sourceOrganization);
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getSponsorList();
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getSponsor();
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Organization value to set.
-     */
-    void addSponsor(Organization sponsor);
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Person value to set.
-     */
-    void addSponsor(Person sponsor);
+    void addEducationalLevel(Text educationalLevel);
 
     /**
      * Fictional person connected with a creative work.
@@ -3135,4 +3170,58 @@ public interface CreativeWork extends Thing {
      * @param character Person value to set.
      */
     void addCharacter(Person character);
+
+    /**
+     * The party holding the legal copyright to the CreativeWork.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getCopyrightHolderList();
+
+    /**
+     * The party holding the legal copyright to the CreativeWork.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getCopyrightHolder();
+
+    /**
+     * The party holding the legal copyright to the CreativeWork.
+     *
+     * @param copyrightHolder Person value to set.
+     */
+    void addCopyrightHolder(Person copyrightHolder);
+    /**
+     * The party holding the legal copyright to the CreativeWork.
+     *
+     * @param copyrightHolder Organization value to set.
+     */
+    void addCopyrightHolder(Organization copyrightHolder);
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getDateModifiedList();
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> T getDateModified();
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param dateModified Date value to set.
+     */
+    void addDateModified(Date dateModified);
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param dateModified DateTime value to set.
+     */
+    void addDateModified(DateTime dateModified);
 }

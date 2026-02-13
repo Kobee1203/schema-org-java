@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Class;
 import org.schema.model.Property;
+import org.schema.model.Class;
 import org.schema.model.Enumeration;
 
 /**
@@ -21,7 +21,7 @@ public interface Class extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @return {@link Class} or {@link Property} or {@link Enumeration}
+     * @return {@link Property} or {@link Class} or {@link Enumeration}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     <T> List<T> getSupersededByList();
@@ -29,7 +29,7 @@ public interface Class extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @return {@link Class} or {@link Property} or {@link Enumeration}
+     * @return {@link Property} or {@link Class} or {@link Enumeration}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     <T> T getSupersededBy();
@@ -37,17 +37,17 @@ public interface Class extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param supersededBy Class value to set.
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    void addSupersededBy(Class supersededBy);
-    /**
-     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-     *
      * @param supersededBy Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void addSupersededBy(Property supersededBy);
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param supersededBy Class value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void addSupersededBy(Class supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *

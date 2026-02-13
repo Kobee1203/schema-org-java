@@ -5,27 +5,28 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.OrderStatus;
 import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
 import org.schema.model.Person;
 import org.schema.model.Organization;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Number;
-import org.schema.model.Offer;
-import org.schema.model.Invoice;
-import org.schema.model.PaymentMethod;
 import org.schema.model.ParcelDelivery;
-import org.schema.model.Product;
+import org.schema.model.Invoice;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.Offer;
+import org.schema.model.datatype.Date;
+import org.schema.model.OrderStatus;
+import org.schema.model.datatype.Number;
+import org.schema.model.PaymentMethod;
 import org.schema.model.Service;
+import org.schema.model.Product;
 import org.schema.model.OrderItem;
 import org.schema.model.PostalAddress;
-import org.schema.model.datatype.URL;
-import org.schema.model.Action;
-import org.schema.model.CreativeWork;
-import org.schema.model.Event;
 import org.schema.model.PropertyValue;
+import org.schema.model.Event;
+import org.schema.model.CreativeWork;
+import org.schema.model.Action;
+import org.schema.model.TextObject;
 import org.schema.model.ImageObject;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -41,38 +42,6 @@ import org.schema.model.Order;
  */
 @JsonLdTypeName("Order")
 public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Order {
-
-    private List<OrderStatus> orderStatus;
-
-    /**
-     * The current status of the order.
-     *
-     * @return {@link OrderStatus}
-     */
-    @Override
-    public List<OrderStatus> getOrderStatusList() {
-        return orderStatus;
-    }
-
-    /**
-     * The current status of the order.
-     *
-     * @return {@link OrderStatus}
-     */
-    @Override
-    public OrderStatus getOrderStatus() {
-        return getFirst(orderStatus);
-    }
-
-    /**
-     * The current status of the order.
-     *
-     * @param orderStatus OrderStatus value to set.
-     */
-    @Override
-    public void addOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = add(this.orderStatus, orderStatus);
-    }
 
     private List<Boolean> isGift;
 
@@ -106,36 +75,142 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.isGift = add(this.isGift, isGift);
     }
 
-    private List<Text> confirmationNumber;
+    private List<URL> paymentUrl;
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The URL for sending a payment.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getPaymentUrlList() {
+        return paymentUrl;
+    }
+
+    /**
+     * The URL for sending a payment.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getPaymentUrl() {
+        return getFirst(paymentUrl);
+    }
+
+    /**
+     * The URL for sending a payment.
+     *
+     * @param paymentUrl URL value to set.
+     */
+    @Override
+    public void addPaymentUrl(URL paymentUrl) {
+        this.paymentUrl = add(this.paymentUrl, paymentUrl);
+    }
+
+    private List<Text> orderNumber;
+
+    /**
+     * The identifier of the transaction.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getConfirmationNumberList() {
-        return confirmationNumber;
+    public List<Text> getOrderNumberList() {
+        return orderNumber;
     }
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The identifier of the transaction.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getConfirmationNumber() {
-        return getFirst(confirmationNumber);
+    public Text getOrderNumber() {
+        return getFirst(orderNumber);
     }
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The identifier of the transaction.
      *
-     * @param confirmationNumber Text value to set.
+     * @param orderNumber Text value to set.
      */
     @Override
-    public void addConfirmationNumber(Text confirmationNumber) {
-        this.confirmationNumber = add(this.confirmationNumber, confirmationNumber);
+    public void addOrderNumber(Text orderNumber) {
+        this.orderNumber = add(this.orderNumber, orderNumber);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> customer;
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getCustomerList() {
+        return (List<T>) customer;
+    }
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getCustomer() {
+        return (T) getFirst(customer);
+    }
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @param customer Person value to set.
+     */
+    @Override
+    public void addCustomer(Person customer) {
+        this.customer = add(this.customer, customer);
+    }
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @param customer Organization value to set.
+     */
+    @Override
+    public void addCustomer(Organization customer) {
+        this.customer = add(this.customer, customer);
+    }
+
+    private List<ParcelDelivery> orderDelivery;
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    @Override
+    public List<ParcelDelivery> getOrderDeliveryList() {
+        return orderDelivery;
+    }
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    @Override
+    public ParcelDelivery getOrderDelivery() {
+        return getFirst(orderDelivery);
+    }
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @param orderDelivery ParcelDelivery value to set.
+     */
+    @Override
+    public void addOrderDelivery(ParcelDelivery orderDelivery) {
+        this.orderDelivery = add(this.orderDelivery, orderDelivery);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
@@ -180,204 +255,36 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.broker = add(this.broker, broker);
     }
 
-    @JsonLdFieldTypes({ Date.class, DateTime.class })
-    private List<Object> paymentDueDate;
+    private List<Invoice> partOfInvoice;
 
     /**
-     * The date that payment is due.
+     * The order is being paid as part of the referenced Invoice.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link Invoice}
      */
     @Override
-    public <T> List<T> getPaymentDueDateList() {
-        return (List<T>) paymentDueDate;
+    public List<Invoice> getPartOfInvoiceList() {
+        return partOfInvoice;
     }
 
     /**
-     * The date that payment is due.
+     * The order is being paid as part of the referenced Invoice.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link Invoice}
      */
     @Override
-    public <T> T getPaymentDueDate() {
-        return (T) getFirst(paymentDueDate);
+    public Invoice getPartOfInvoice() {
+        return getFirst(partOfInvoice);
     }
 
     /**
-     * The date that payment is due.
+     * The order is being paid as part of the referenced Invoice.
      *
-     * @param paymentDueDate Date value to set.
+     * @param partOfInvoice Invoice value to set.
      */
     @Override
-    public void addPaymentDueDate(Date paymentDueDate) {
-        this.paymentDueDate = add(this.paymentDueDate, paymentDueDate);
-    }
-    /**
-     * The date that payment is due.
-     *
-     * @param paymentDueDate DateTime value to set.
-     */
-    @Override
-    public void addPaymentDueDate(DateTime paymentDueDate) {
-        this.paymentDueDate = add(this.paymentDueDate, paymentDueDate);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> seller;
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getSellerList() {
-        return (List<T>) seller;
-    }
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSeller() {
-        return (T) getFirst(seller);
-    }
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Organization value to set.
-     */
-    @Override
-    public void addSeller(Organization seller) {
-        this.seller = add(this.seller, seller);
-    }
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Person value to set.
-     */
-    @Override
-    public void addSeller(Person seller) {
-        this.seller = add(this.seller, seller);
-    }
-
-    @JsonLdFieldTypes({ Number.class, Text.class })
-    private List<Object> discount;
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDiscountList() {
-        return (List<T>) discount;
-    }
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> T getDiscount() {
-        return (T) getFirst(discount);
-    }
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param discount Number value to set.
-     */
-    @Override
-    public void addDiscount(Number discount) {
-        this.discount = add(this.discount, discount);
-    }
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param discount Text value to set.
-     */
-    @Override
-    public void addDiscount(Text discount) {
-        this.discount = add(this.discount, discount);
-    }
-
-    private List<Text> discountCurrency;
-
-    /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDiscountCurrencyList() {
-        return discountCurrency;
-    }
-
-    /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDiscountCurrency() {
-        return getFirst(discountCurrency);
-    }
-
-    /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @param discountCurrency Text value to set.
-     */
-    @Override
-    public void addDiscountCurrency(Text discountCurrency) {
-        this.discountCurrency = add(this.discountCurrency, discountCurrency);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> customer;
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getCustomerList() {
-        return (List<T>) customer;
-    }
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getCustomer() {
-        return (T) getFirst(customer);
-    }
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Organization value to set.
-     */
-    @Override
-    public void addCustomer(Organization customer) {
-        this.customer = add(this.customer, customer);
-    }
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Person value to set.
-     */
-    @Override
-    public void addCustomer(Person customer) {
-        this.customer = add(this.customer, customer);
+    public void addPartOfInvoice(Invoice partOfInvoice) {
+        this.partOfInvoice = add(this.partOfInvoice, partOfInvoice);
     }
 
     private List<DateTime> paymentDue;
@@ -444,45 +351,13 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.acceptedOffer = add(this.acceptedOffer, acceptedOffer);
     }
 
-    private List<Text> paymentMethodId;
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getPaymentMethodIdList() {
-        return paymentMethodId;
-    }
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getPaymentMethodId() {
-        return getFirst(paymentMethodId);
-    }
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @param paymentMethodId Text value to set.
-     */
-    @Override
-    public void addPaymentMethodId(Text paymentMethodId) {
-        this.paymentMethodId = add(this.paymentMethodId, paymentMethodId);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> merchant;
 
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
     public <T> List<T> getMerchantList() {
@@ -492,7 +367,7 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
     public <T> T getMerchant() {
@@ -502,295 +377,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
-     * @param merchant Organization value to set.
-     */
-    @Override
-    public void addMerchant(Organization merchant) {
-        this.merchant = add(this.merchant, merchant);
-    }
-    /**
-     * 'merchant' is an out-dated term for 'seller'.
-     *
      * @param merchant Person value to set.
      */
     @Override
     public void addMerchant(Person merchant) {
         this.merchant = add(this.merchant, merchant);
     }
-
-    private List<Invoice> partOfInvoice;
-
     /**
-     * The order is being paid as part of the referenced Invoice.
+     * 'merchant' is an out-dated term for 'seller'.
      *
-     * @return {@link Invoice}
+     * @param merchant Organization value to set.
      */
     @Override
-    public List<Invoice> getPartOfInvoiceList() {
-        return partOfInvoice;
-    }
-
-    /**
-     * The order is being paid as part of the referenced Invoice.
-     *
-     * @return {@link Invoice}
-     */
-    @Override
-    public Invoice getPartOfInvoice() {
-        return getFirst(partOfInvoice);
-    }
-
-    /**
-     * The order is being paid as part of the referenced Invoice.
-     *
-     * @param partOfInvoice Invoice value to set.
-     */
-    @Override
-    public void addPartOfInvoice(Invoice partOfInvoice) {
-        this.partOfInvoice = add(this.partOfInvoice, partOfInvoice);
-    }
-
-    private List<Text> orderNumber;
-
-    /**
-     * The identifier of the transaction.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getOrderNumberList() {
-        return orderNumber;
-    }
-
-    /**
-     * The identifier of the transaction.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getOrderNumber() {
-        return getFirst(orderNumber);
-    }
-
-    /**
-     * The identifier of the transaction.
-     *
-     * @param orderNumber Text value to set.
-     */
-    @Override
-    public void addOrderNumber(Text orderNumber) {
-        this.orderNumber = add(this.orderNumber, orderNumber);
-    }
-
-    private List<PaymentMethod> paymentMethod;
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @return {@link PaymentMethod}
-     */
-    @Override
-    public List<PaymentMethod> getPaymentMethodList() {
-        return paymentMethod;
-    }
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @return {@link PaymentMethod}
-     */
-    @Override
-    public PaymentMethod getPaymentMethod() {
-        return getFirst(paymentMethod);
-    }
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @param paymentMethod PaymentMethod value to set.
-     */
-    @Override
-    public void addPaymentMethod(PaymentMethod paymentMethod) {
-        this.paymentMethod = add(this.paymentMethod, paymentMethod);
-    }
-
-    private List<Text> discountCode;
-
-    /**
-     * Code used to redeem a discount.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDiscountCodeList() {
-        return discountCode;
-    }
-
-    /**
-     * Code used to redeem a discount.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDiscountCode() {
-        return getFirst(discountCode);
-    }
-
-    /**
-     * Code used to redeem a discount.
-     *
-     * @param discountCode Text value to set.
-     */
-    @Override
-    public void addDiscountCode(Text discountCode) {
-        this.discountCode = add(this.discountCode, discountCode);
-    }
-
-    private List<ParcelDelivery> orderDelivery;
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    @Override
-    public List<ParcelDelivery> getOrderDeliveryList() {
-        return orderDelivery;
-    }
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    @Override
-    public ParcelDelivery getOrderDelivery() {
-        return getFirst(orderDelivery);
-    }
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @param orderDelivery ParcelDelivery value to set.
-     */
-    @Override
-    public void addOrderDelivery(ParcelDelivery orderDelivery) {
-        this.orderDelivery = add(this.orderDelivery, orderDelivery);
-    }
-
-    @JsonLdFieldTypes({ Product.class, Service.class, OrderItem.class })
-    private List<Object> orderedItem;
-
-    /**
-     * The item ordered.
-     *
-     * @return {@link Product} or {@link Service} or {@link OrderItem}
-     */
-    @Override
-    public <T> List<T> getOrderedItemList() {
-        return (List<T>) orderedItem;
-    }
-
-    /**
-     * The item ordered.
-     *
-     * @return {@link Product} or {@link Service} or {@link OrderItem}
-     */
-    @Override
-    public <T> T getOrderedItem() {
-        return (T) getFirst(orderedItem);
-    }
-
-    /**
-     * The item ordered.
-     *
-     * @param orderedItem Product value to set.
-     */
-    @Override
-    public void addOrderedItem(Product orderedItem) {
-        this.orderedItem = add(this.orderedItem, orderedItem);
-    }
-    /**
-     * The item ordered.
-     *
-     * @param orderedItem Service value to set.
-     */
-    @Override
-    public void addOrderedItem(Service orderedItem) {
-        this.orderedItem = add(this.orderedItem, orderedItem);
-    }
-    /**
-     * The item ordered.
-     *
-     * @param orderedItem OrderItem value to set.
-     */
-    @Override
-    public void addOrderedItem(OrderItem orderedItem) {
-        this.orderedItem = add(this.orderedItem, orderedItem);
-    }
-
-    private List<PostalAddress> billingAddress;
-
-    /**
-     * The billing address for the order.
-     *
-     * @return {@link PostalAddress}
-     */
-    @Override
-    public List<PostalAddress> getBillingAddressList() {
-        return billingAddress;
-    }
-
-    /**
-     * The billing address for the order.
-     *
-     * @return {@link PostalAddress}
-     */
-    @Override
-    public PostalAddress getBillingAddress() {
-        return getFirst(billingAddress);
-    }
-
-    /**
-     * The billing address for the order.
-     *
-     * @param billingAddress PostalAddress value to set.
-     */
-    @Override
-    public void addBillingAddress(PostalAddress billingAddress) {
-        this.billingAddress = add(this.billingAddress, billingAddress);
-    }
-
-    private List<URL> paymentUrl;
-
-    /**
-     * The URL for sending a payment.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getPaymentUrlList() {
-        return paymentUrl;
-    }
-
-    /**
-     * The URL for sending a payment.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getPaymentUrl() {
-        return getFirst(paymentUrl);
-    }
-
-    /**
-     * The URL for sending a payment.
-     *
-     * @param paymentUrl URL value to set.
-     */
-    @Override
-    public void addPaymentUrl(URL paymentUrl) {
-        this.paymentUrl = add(this.paymentUrl, paymentUrl);
+    public void addMerchant(Organization merchant) {
+        this.merchant = add(this.merchant, merchant);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Date.class })
@@ -835,78 +435,631 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.orderDate = add(this.orderDate, orderDate);
     }
 
-    private List<Action> potentialAction;
+    private List<OrderStatus> orderStatus;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The current status of the order.
      *
-     * @return {@link Action}
+     * @return {@link OrderStatus}
      */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
+    public List<OrderStatus> getOrderStatusList() {
+        return orderStatus;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The current status of the order.
      *
-     * @return {@link Action}
+     * @return {@link OrderStatus}
      */
     @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public OrderStatus getOrderStatus() {
+        return getFirst(orderStatus);
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The current status of the order.
      *
-     * @param potentialAction Action value to set.
+     * @param orderStatus OrderStatus value to set.
      */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
+    public void addOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = add(this.orderStatus, orderStatus);
     }
 
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> mainEntityOfPage;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> seller;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public <T> List<T> getSellerList() {
+        return (List<T>) seller;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param mainEntityOfPage URL value to set.
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public <T> T getSeller() {
+        return (T) getFirst(seller);
+    }
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Person value to set.
+     */
+    @Override
+    public void addSeller(Person seller) {
+        this.seller = add(this.seller, seller);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param seller Organization value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addSeller(Organization seller) {
+        this.seller = add(this.seller, seller);
+    }
+
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> discount;
+
+    /**
+     * Any discount applied (to an Order).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDiscountList() {
+        return (List<T>) discount;
+    }
+
+    /**
+     * Any discount applied (to an Order).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> T getDiscount() {
+        return (T) getFirst(discount);
+    }
+
+    /**
+     * Any discount applied (to an Order).
+     *
+     * @param discount Number value to set.
+     */
+    @Override
+    public void addDiscount(Number discount) {
+        this.discount = add(this.discount, discount);
+    }
+    /**
+     * Any discount applied (to an Order).
+     *
+     * @param discount Text value to set.
+     */
+    @Override
+    public void addDiscount(Text discount) {
+        this.discount = add(this.discount, discount);
+    }
+
+    @JsonLdFieldTypes({ PaymentMethod.class, Text.class })
+    private List<Object> paymentMethod;
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public <T> List<T> getPaymentMethodList() {
+        return (List<T>) paymentMethod;
+    }
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public <T> T getPaymentMethod() {
+        return (T) getFirst(paymentMethod);
+    }
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @param paymentMethod PaymentMethod value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public void addPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = add(this.paymentMethod, paymentMethod);
+    }
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @param paymentMethod Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    @Override
+    public void addPaymentMethod(Text paymentMethod) {
+        this.paymentMethod = add(this.paymentMethod, paymentMethod);
+    }
+
+    private List<Text> discountCode;
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDiscountCodeList() {
+        return discountCode;
+    }
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDiscountCode() {
+        return getFirst(discountCode);
+    }
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @param discountCode Text value to set.
+     */
+    @Override
+    public void addDiscountCode(Text discountCode) {
+        this.discountCode = add(this.discountCode, discountCode);
+    }
+
+    private List<Text> paymentMethodId;
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPaymentMethodIdList() {
+        return paymentMethodId;
+    }
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getPaymentMethodId() {
+        return getFirst(paymentMethodId);
+    }
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @param paymentMethodId Text value to set.
+     */
+    @Override
+    public void addPaymentMethodId(Text paymentMethodId) {
+        this.paymentMethodId = add(this.paymentMethodId, paymentMethodId);
+    }
+
+    @JsonLdFieldTypes({ Service.class, Product.class, OrderItem.class })
+    private List<Object> orderedItem;
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Service} or {@link Product} or {@link OrderItem}
+     */
+    @Override
+    public <T> List<T> getOrderedItemList() {
+        return (List<T>) orderedItem;
+    }
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Service} or {@link Product} or {@link OrderItem}
+     */
+    @Override
+    public <T> T getOrderedItem() {
+        return (T) getFirst(orderedItem);
+    }
+
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem Service value to set.
+     */
+    @Override
+    public void addOrderedItem(Service orderedItem) {
+        this.orderedItem = add(this.orderedItem, orderedItem);
+    }
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem Product value to set.
+     */
+    @Override
+    public void addOrderedItem(Product orderedItem) {
+        this.orderedItem = add(this.orderedItem, orderedItem);
+    }
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem OrderItem value to set.
+     */
+    @Override
+    public void addOrderedItem(OrderItem orderedItem) {
+        this.orderedItem = add(this.orderedItem, orderedItem);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> paymentDueDate;
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    @Override
+    public <T> List<T> getPaymentDueDateList() {
+        return (List<T>) paymentDueDate;
+    }
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    @Override
+    public <T> T getPaymentDueDate() {
+        return (T) getFirst(paymentDueDate);
+    }
+
+    /**
+     * The date that payment is due.
+     *
+     * @param paymentDueDate DateTime value to set.
+     */
+    @Override
+    public void addPaymentDueDate(DateTime paymentDueDate) {
+        this.paymentDueDate = add(this.paymentDueDate, paymentDueDate);
+    }
+    /**
+     * The date that payment is due.
+     *
+     * @param paymentDueDate Date value to set.
+     */
+    @Override
+    public void addPaymentDueDate(Date paymentDueDate) {
+        this.paymentDueDate = add(this.paymentDueDate, paymentDueDate);
+    }
+
+    private List<Text> discountCurrency;
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDiscountCurrencyList() {
+        return discountCurrency;
+    }
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDiscountCurrency() {
+        return getFirst(discountCurrency);
+    }
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @param discountCurrency Text value to set.
+     */
+    @Override
+    public void addDiscountCurrency(Text discountCurrency) {
+        this.discountCurrency = add(this.discountCurrency, discountCurrency);
+    }
+
+    private List<Text> confirmationNumber;
+
+    /**
+     * A number that confirms the given order or payment has been received.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getConfirmationNumberList() {
+        return confirmationNumber;
+    }
+
+    /**
+     * A number that confirms the given order or payment has been received.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getConfirmationNumber() {
+        return getFirst(confirmationNumber);
+    }
+
+    /**
+     * A number that confirms the given order or payment has been received.
+     *
+     * @param confirmationNumber Text value to set.
+     */
+    @Override
+    public void addConfirmationNumber(Text confirmationNumber) {
+        this.confirmationNumber = add(this.confirmationNumber, confirmationNumber);
+    }
+
+    private List<PostalAddress> billingAddress;
+
+    /**
+     * The billing address for the order.
+     *
+     * @return {@link PostalAddress}
+     */
+    @Override
+    public List<PostalAddress> getBillingAddressList() {
+        return billingAddress;
+    }
+
+    /**
+     * The billing address for the order.
+     *
+     * @return {@link PostalAddress}
+     */
+    @Override
+    public PostalAddress getBillingAddress() {
+        return getFirst(billingAddress);
+    }
+
+    /**
+     * The billing address for the order.
+     *
+     * @param billingAddress PostalAddress value to set.
+     */
+    @Override
+    public void addBillingAddress(PostalAddress billingAddress) {
+        this.billingAddress = add(this.billingAddress, billingAddress);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -955,36 +1108,120 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param url URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> alternateName;
@@ -1019,68 +1256,78 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> sameAs;
+    private List<URL> url;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
-     * @param sameAs URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> description;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param description Text value to set.
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<Text> disambiguatingDescription;
@@ -1113,167 +1360,5 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
-    }
-
-    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    private List<URL> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
     }
 }

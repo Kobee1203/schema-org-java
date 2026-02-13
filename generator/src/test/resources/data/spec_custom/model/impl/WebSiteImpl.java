@@ -6,48 +6,50 @@
 package spec_custom.model.impl;
 
 import spec_custom.model.datatype.Text;
-import spec_custom.model.CreativeWork;
+import spec_custom.model.Grant;
+import spec_custom.model.Person;
+import spec_custom.model.Organization;
 import spec_custom.model.datatype.URL;
 import spec_custom.model.DefinedTerm;
-import spec_custom.model.MediaObject;
-import spec_custom.model.PublicationEvent;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.Place;
-import spec_custom.model.Organization;
-import spec_custom.model.Person;
-import spec_custom.model.datatype.Date;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.AlignmentObject;
-import spec_custom.model.Review;
-import spec_custom.model.Product;
-import spec_custom.model.Thing;
 import spec_custom.model.datatype.Integer;
 import spec_custom.model.ItemList;
-import spec_custom.model.Claim;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.datatype.DateTime;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Place;
 import spec_custom.model.WebPage;
-import spec_custom.model.Grant;
-import spec_custom.model.InteractionCounter;
-import spec_custom.model.VideoObject;
-import spec_custom.model.Clip;
-import spec_custom.model.datatype.Boolean;
-import spec_custom.model.CorrectionComment;
-import spec_custom.model.Comment;
-import spec_custom.model.Country;
+import spec_custom.model.IPTCDigitalSourceEnumeration;
+import spec_custom.model.Review;
+import spec_custom.model.AggregateRating;
+import spec_custom.model.Product;
+import spec_custom.model.Event;
 import spec_custom.model.Duration;
-import spec_custom.model.Audience;
-import spec_custom.model.MusicRecording;
-import spec_custom.model.AudioObject;
 import spec_custom.model.QuantitativeValue;
 import spec_custom.model.SizeSpecification;
-import spec_custom.model.AggregateRating;
-import spec_custom.model.Rating;
-import spec_custom.model.Event;
-import spec_custom.model.Language;
-import spec_custom.model.Demand;
+import spec_custom.model.InteractionCounter;
 import spec_custom.model.Offer;
-import spec_custom.model.Action;
+import spec_custom.model.Demand;
+import spec_custom.model.Thing;
+import spec_custom.model.MediaObject;
+import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.VideoObject;
+import spec_custom.model.Clip;
+import spec_custom.model.Comment;
+import spec_custom.model.Rating;
+import spec_custom.model.datatype.Date;
+import spec_custom.model.Language;
+import spec_custom.model.MusicRecording;
+import spec_custom.model.AudioObject;
+import spec_custom.model.Audience;
+import spec_custom.model.PublicationEvent;
+import spec_custom.model.CorrectionComment;
+import spec_custom.model.Country;
+import spec_custom.model.AlignmentObject;
+import spec_custom.model.Claim;
 import spec_custom.model.PropertyValue;
-import spec_custom.model.ImageObject;
+import spec_custom.model.Action;
+import spec_custom.model.TextObject;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import java.util.List;
@@ -67,7 +69,6 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
     public List<Text> getIssnList() {
@@ -78,7 +79,6 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
     public Text getIssn() {
@@ -89,280 +89,220 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
      * @param issn Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
     public void addIssn(Text issn) {
         this.issn = add(this.issn, issn);
     }
 
-    private List<CreativeWork> workTranslation;
+    private List<Grant> funding;
 
     /**
-     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public List<CreativeWork> getWorkTranslationList() {
-        return workTranslation;
-    }
-
-    /**
-     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public CreativeWork getWorkTranslation() {
-        return getFirst(workTranslation);
-    }
-
-    /**
-     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-     *
-     * @param workTranslation CreativeWork value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public void addWorkTranslation(CreativeWork workTranslation) {
-        this.workTranslation = add(this.workTranslation, workTranslation);
-    }
-
-    @JsonLdFieldTypes({ Text.class, URL.class, DefinedTerm.class })
-    private List<Object> educationalLevel;
-
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @return {@link Text} or {@link URL} or {@link DefinedTerm}
+     * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public <T> List<T> getEducationalLevelList() {
-        return (List<T>) educationalLevel;
+    public List<Grant> getFundingList() {
+        return funding;
     }
 
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Text} or {@link URL} or {@link DefinedTerm}
+     * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public <T> T getEducationalLevel() {
-        return (T) getFirst(educationalLevel);
+    public Grant getFunding() {
+        return getFirst(funding);
     }
 
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param educationalLevel Text value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
     @Override
-    public void addEducationalLevel(Text educationalLevel) {
-        this.educationalLevel = add(this.educationalLevel, educationalLevel);
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> provider;
+
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param educationalLevel URL value to set.
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void addEducationalLevel(URL educationalLevel) {
-        this.educationalLevel = add(this.educationalLevel, educationalLevel);
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
     }
+
     /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param educationalLevel DefinedTerm value to set.
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void addEducationalLevel(DefinedTerm educationalLevel) {
-        this.educationalLevel = add(this.educationalLevel, educationalLevel);
-    }
-
-    private List<MediaObject> associatedMedia;
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @return {@link MediaObject}
-     */
-    @Override
-    public List<MediaObject> getAssociatedMediaList() {
-        return associatedMedia;
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
     }
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link MediaObject}
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public MediaObject getAssociatedMedia() {
-        return getFirst(associatedMedia);
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class, DefinedTerm.class })
+    private List<Object> genre;
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     */
+    @Override
+    public <T> List<T> getGenreList() {
+        return (List<T>) genre;
     }
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     * Genre of the creative work, broadcast channel or group.
      *
-     * @param associatedMedia MediaObject value to set.
+     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
      */
     @Override
-    public void addAssociatedMedia(MediaObject associatedMedia) {
-        this.associatedMedia = add(this.associatedMedia, associatedMedia);
-    }
-
-    private List<CreativeWork> exampleOfWork;
-
-    /**
-     * A creative work that this work is an example/instance/realization/derivation of.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public List<CreativeWork> getExampleOfWorkList() {
-        return exampleOfWork;
+    public <T> T getGenre() {
+        return (T) getFirst(genre);
     }
 
     /**
-     * A creative work that this work is an example/instance/realization/derivation of.
+     * Genre of the creative work, broadcast channel or group.
      *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @param genre URL value to set.
      */
     @Override
-    public CreativeWork getExampleOfWork() {
-        return getFirst(exampleOfWork);
+    public void addGenre(URL genre) {
+        this.genre = add(this.genre, genre);
+    }
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre Text value to set.
+     */
+    @Override
+    public void addGenre(Text genre) {
+        this.genre = add(this.genre, genre);
+    }
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre DefinedTerm value to set.
+     */
+    @Override
+    public void addGenre(DefinedTerm genre) {
+        this.genre = add(this.genre, genre);
+    }
+
+    private List<Integer> wordCount;
+
+    /**
+     * The number of words in the text of the CreativeWork such as an Article, Book, etc.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getWordCountList() {
+        return wordCount;
     }
 
     /**
-     * A creative work that this work is an example/instance/realization/derivation of.
+     * The number of words in the text of the CreativeWork such as an Article, Book, etc.
      *
-     * @param exampleOfWork CreativeWork value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     * @return {@link Integer}
      */
     @Override
-    public void addExampleOfWork(CreativeWork exampleOfWork) {
-        this.exampleOfWork = add(this.exampleOfWork, exampleOfWork);
-    }
-
-    private List<PublicationEvent> releasedEvent;
-
-    /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
-     *
-     * @return {@link PublicationEvent}
-     */
-    @Override
-    public List<PublicationEvent> getReleasedEventList() {
-        return releasedEvent;
+    public Integer getWordCount() {
+        return getFirst(wordCount);
     }
 
     /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
+     * The number of words in the text of the CreativeWork such as an Article, Book, etc.
      *
-     * @return {@link PublicationEvent}
+     * @param wordCount Integer value to set.
      */
     @Override
-    public PublicationEvent getReleasedEvent() {
-        return getFirst(releasedEvent);
+    public void addWordCount(Integer wordCount) {
+        this.wordCount = add(this.wordCount, wordCount);
+    }
+
+    private List<ItemList> accessModeSufficient;
+
+    /**
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
+     *
+     * @return {@link ItemList}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public List<ItemList> getAccessModeSufficientList() {
+        return accessModeSufficient;
     }
 
     /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
-     * @param releasedEvent PublicationEvent value to set.
+     * @return {@link ItemList}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void addReleasedEvent(PublicationEvent releasedEvent) {
-        this.releasedEvent = add(this.releasedEvent, releasedEvent);
-    }
-
-    @JsonLdFieldTypes({ Number.class, Text.class })
-    private List<Object> version;
-
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getVersionList() {
-        return (List<T>) version;
+    public ItemList getAccessModeSufficient() {
+        return getFirst(accessModeSufficient);
     }
 
     /**
-     * The version of the CreativeWork embodied by a specified resource.
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
-     * @return {@link Number} or {@link Text}
+     * @param accessModeSufficient ItemList value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public <T> T getVersion() {
-        return (T) getFirst(version);
-    }
-
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param version Number value to set.
-     */
-    @Override
-    public void addVersion(Number version) {
-        this.version = add(this.version, version);
-    }
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param version Text value to set.
-     */
-    @Override
-    public void addVersion(Text version) {
-        this.version = add(this.version, version);
-    }
-
-    private List<Place> locationCreated;
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getLocationCreatedList() {
-        return locationCreated;
-    }
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getLocationCreated() {
-        return getFirst(locationCreated);
-    }
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     * @param locationCreated Place value to set.
-     */
-    @Override
-    public void addLocationCreated(Place locationCreated) {
-        this.locationCreated = add(this.locationCreated, locationCreated);
+    public void addAccessModeSufficient(ItemList accessModeSufficient) {
+        this.accessModeSufficient = add(this.accessModeSufficient, accessModeSufficient);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
@@ -415,6 +355,183 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.acquireLicensePage = add(this.acquireLicensePage, acquireLicensePage);
     }
 
+    @JsonLdFieldTypes({ DateTime.class, URL.class, Text.class })
+    private List<Object> temporalCoverage;
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @return {@link DateTime} or {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getTemporalCoverageList() {
+        return (List<T>) temporalCoverage;
+    }
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @return {@link DateTime} or {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getTemporalCoverage() {
+        return (T) getFirst(temporalCoverage);
+    }
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage DateTime value to set.
+     */
+    @Override
+    public void addTemporalCoverage(DateTime temporalCoverage) {
+        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage URL value to set.
+     */
+    @Override
+    public void addTemporalCoverage(URL temporalCoverage) {
+        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage Text value to set.
+     */
+    @Override
+    public void addTemporalCoverage(Text temporalCoverage) {
+        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> publisher;
+
+    /**
+     * The publisher of the article in question.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getPublisherList() {
+        return (List<T>) publisher;
+    }
+
+    /**
+     * The publisher of the article in question.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getPublisher() {
+        return (T) getFirst(publisher);
+    }
+
+    /**
+     * The publisher of the article in question.
+     *
+     * @param publisher Person value to set.
+     */
+    @Override
+    public void addPublisher(Person publisher) {
+        this.publisher = add(this.publisher, publisher);
+    }
+    /**
+     * The publisher of the article in question.
+     *
+     * @param publisher Organization value to set.
+     */
+    @Override
+    public void addPublisher(Organization publisher) {
+        this.publisher = add(this.publisher, publisher);
+    }
+
+    private List<Text> awards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAwards() {
+        return getFirst(awards);
+    }
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @param awards Text value to set.
+     */
+    @Override
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
+    }
+
+    private List<ImageObject> thumbnail;
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    @Override
+    public List<ImageObject> getThumbnailList() {
+        return thumbnail;
+    }
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @return {@link ImageObject}
+     */
+    @Override
+    public ImageObject getThumbnail() {
+        return getFirst(thumbnail);
+    }
+
+    /**
+     * Thumbnail image for an image or video.
+     *
+     * @param thumbnail ImageObject value to set.
+     */
+    @Override
+    public void addThumbnail(ImageObject thumbnail) {
+        this.thumbnail = add(this.thumbnail, thumbnail);
+    }
+
     private List<URL> thumbnailUrl;
 
     /**
@@ -447,216 +564,529 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.thumbnailUrl = add(this.thumbnailUrl, thumbnailUrl);
     }
 
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> provider;
+    private List<Integer> commentCount;
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Integer}
      */
     @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
+    public List<Integer> getCommentCountList() {
+        return commentCount;
     }
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Integer}
      */
     @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
+    public Integer getCommentCount() {
+        return getFirst(commentCount);
     }
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param commentCount Integer value to set.
      */
     @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
+    public void addCommentCount(Integer commentCount) {
+        this.commentCount = add(this.commentCount, commentCount);
     }
 
-    @JsonLdFieldTypes({ Date.class, DateTime.class })
-    private List<Object> expires;
+    private List<Place> displayLocation;
 
     /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    @Override
-    public <T> List<T> getExpiresList() {
-        return (List<T>) expires;
-    }
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    @Override
-    public <T> T getExpires() {
-        return (T) getFirst(expires);
-    }
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @param expires Date value to set.
-     */
-    @Override
-    public void addExpires(Date expires) {
-        this.expires = add(this.expires, expires);
-    }
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @param expires DateTime value to set.
-     */
-    @Override
-    public void addExpires(DateTime expires) {
-        this.expires = add(this.expires, expires);
-    }
-
-    private List<Place> contentLocation;
-
-    /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     * The location at which an item can be viewed or experienced in-person.
      *
      * @return {@link Place}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
      */
     @Override
-    public List<Place> getContentLocationList() {
-        return contentLocation;
+    public List<Place> getDisplayLocationList() {
+        return displayLocation;
     }
 
     /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     * The location at which an item can be viewed or experienced in-person.
      *
      * @return {@link Place}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
      */
     @Override
-    public Place getContentLocation() {
-        return getFirst(contentLocation);
+    public Place getDisplayLocation() {
+        return getFirst(displayLocation);
     }
 
     /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     * The location at which an item can be viewed or experienced in-person.
      *
-     * @param contentLocation Place value to set.
+     * @param displayLocation Place value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
      */
     @Override
-    public void addContentLocation(Place contentLocation) {
-        this.contentLocation = add(this.contentLocation, contentLocation);
+    public void addDisplayLocation(Place displayLocation) {
+        this.displayLocation = add(this.displayLocation, displayLocation);
+    }
+
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
+    private List<Object> archivedAt;
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @return {@link WebPage} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public <T> List<T> getArchivedAtList() {
+        return (List<T>) archivedAt;
+    }
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @return {@link WebPage} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public <T> T getArchivedAt() {
+        return (T) getFirst(archivedAt);
+    }
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @param archivedAt WebPage value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public void addArchivedAt(WebPage archivedAt) {
+        this.archivedAt = add(this.archivedAt, archivedAt);
+    }
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @param archivedAt URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public void addArchivedAt(URL archivedAt) {
+        this.archivedAt = add(this.archivedAt, archivedAt);
+    }
+
+    private List<IPTCDigitalSourceEnumeration> digitalSourceType;
+
+    /**
+     * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some [[CreativeWork]].
+     *
+     * @return {@link IPTCDigitalSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3392">https://github.com/schemaorg/schemaorg/issues/3392</a>
+     */
+    @Override
+    public List<IPTCDigitalSourceEnumeration> getDigitalSourceTypeList() {
+        return digitalSourceType;
+    }
+
+    /**
+     * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some [[CreativeWork]].
+     *
+     * @return {@link IPTCDigitalSourceEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3392">https://github.com/schemaorg/schemaorg/issues/3392</a>
+     */
+    @Override
+    public IPTCDigitalSourceEnumeration getDigitalSourceType() {
+        return getFirst(digitalSourceType);
+    }
+
+    /**
+     * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some [[CreativeWork]].
+     *
+     * @param digitalSourceType IPTCDigitalSourceEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3392">https://github.com/schemaorg/schemaorg/issues/3392</a>
+     */
+    @Override
+    public void addDigitalSourceType(IPTCDigitalSourceEnumeration digitalSourceType) {
+        this.digitalSourceType = add(this.digitalSourceType, digitalSourceType);
+    }
+
+    private List<Review> reviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReviews() {
+        return getFirst(reviews);
+    }
+
+    /**
+     * Review of the item.
+     *
+     * @param reviews Review value to set.
+     */
+    @Override
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> educationalUse;
+    private List<Object> assesses;
 
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
      * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public <T> List<T> getEducationalUseList() {
-        return (List<T>) educationalUse;
+    public <T> List<T> getAssessesList() {
+        return (List<T>) assesses;
     }
 
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
      * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public <T> T getEducationalUse() {
-        return (T) getFirst(educationalUse);
+    public <T> T getAssesses() {
+        return (T) getFirst(assesses);
     }
 
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param educationalUse DefinedTerm value to set.
+     * @param assesses DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void addEducationalUse(DefinedTerm educationalUse) {
-        this.educationalUse = add(this.educationalUse, educationalUse);
+    public void addAssesses(DefinedTerm assesses) {
+        this.assesses = add(this.assesses, assesses);
     }
     /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param educationalUse Text value to set.
+     * @param assesses Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void addEducationalUse(Text educationalUse) {
-        this.educationalUse = add(this.educationalUse, educationalUse);
+    public void addAssesses(Text assesses) {
+        this.assesses = add(this.assesses, assesses);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> license;
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getLicenseList() {
+        return (List<T>) license;
+    }
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getLicense() {
+        return (T) getFirst(license);
+    }
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @param license CreativeWork value to set.
+     */
+    @Override
+    public void addLicense(CreativeWork license) {
+        this.license = add(this.license, license);
+    }
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @param license URL value to set.
+     */
+    @Override
+    public void addLicense(URL license) {
+        this.license = add(this.license, license);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class, URL.class })
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     */
+    @Override
+    public <T> T getKeywords() {
+        return (T) getFirst(keywords);
+    }
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords DefinedTerm value to set.
+     */
+    @Override
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    @Override
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+
+    private List<CreativeWork> hasPart;
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public List<CreativeWork> getHasPartList() {
+        return hasPart;
+    }
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public CreativeWork getHasPart() {
+        return getFirst(hasPart);
+    }
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @param hasPart CreativeWork value to set.
+     */
+    @Override
+    public void addHasPart(CreativeWork hasPart) {
+        this.hasPart = add(this.hasPart, hasPart);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> copyrightHolder;
+    private List<Object> funder;
 
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> List<T> getCopyrightHolderList() {
-        return (List<T>) copyrightHolder;
+    public <T> List<T> getFunderList() {
+        return (List<T>) funder;
     }
 
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getCopyrightHolder() {
-        return (T) getFirst(copyrightHolder);
+    public <T> T getFunder() {
+        return (T) getFirst(funder);
     }
 
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param copyrightHolder Organization value to set.
+     * @param funder Organization value to set.
      */
     @Override
-    public void addCopyrightHolder(Organization copyrightHolder) {
-        this.copyrightHolder = add(this.copyrightHolder, copyrightHolder);
+    public void addFunder(Organization funder) {
+        this.funder = add(this.funder, funder);
     }
     /**
-     * The party holding the legal copyright to the CreativeWork.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param copyrightHolder Person value to set.
+     * @param funder Person value to set.
      */
     @Override
-    public void addCopyrightHolder(Person copyrightHolder) {
-        this.copyrightHolder = add(this.copyrightHolder, copyrightHolder);
+    public void addFunder(Person funder) {
+        this.funder = add(this.funder, funder);
+    }
+
+    private List<Text> accessMode;
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public List<Text> getAccessModeList() {
+        return accessMode;
+    }
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public Text getAccessMode() {
+        return getFirst(accessMode);
+    }
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @param accessMode Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public void addAccessMode(Text accessMode) {
+        this.accessMode = add(this.accessMode, accessMode);
+    }
+
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return getFirst(aggregateRating);
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    @Override
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
+    }
+
+    @JsonLdFieldTypes({ Product.class, URL.class, Text.class })
+    private List<Object> material;
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Product} or {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getMaterialList() {
+        return (List<T>) material;
+    }
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Product} or {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getMaterial() {
+        return (T) getFirst(material);
+    }
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material Product value to set.
+     */
+    @Override
+    public void addMaterial(Product material) {
+        this.material = add(this.material, material);
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material URL value to set.
+     */
+    @Override
+    public void addMaterial(URL material) {
+        this.material = add(this.material, material);
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material Text value to set.
+     */
+    @Override
+    public void addMaterial(Text material) {
+        this.material = add(this.material, material);
     }
 
     private List<Text> accessibilityControl;
@@ -689,6 +1119,38 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     @Override
     public void addAccessibilityControl(Text accessibilityControl) {
         this.accessibilityControl = add(this.accessibilityControl, accessibilityControl);
+    }
+
+    private List<Event> recordedAt;
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getRecordedAtList() {
+        return recordedAt;
+    }
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getRecordedAt() {
+        return getFirst(recordedAt);
+    }
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @param recordedAt Event value to set.
+     */
+    @Override
+    public void addRecordedAt(Event recordedAt) {
+        this.recordedAt = add(this.recordedAt, recordedAt);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
@@ -745,2168 +1207,10 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.maintainer = add(this.maintainer, maintainer);
     }
 
-    private List<AlignmentObject> educationalAlignment;
-
-    /**
-     * An alignment to an established educational framework.
-     * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-     *
-     * @return {@link AlignmentObject}
-     */
-    @Override
-    public List<AlignmentObject> getEducationalAlignmentList() {
-        return educationalAlignment;
-    }
-
-    /**
-     * An alignment to an established educational framework.
-     * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-     *
-     * @return {@link AlignmentObject}
-     */
-    @Override
-    public AlignmentObject getEducationalAlignment() {
-        return getFirst(educationalAlignment);
-    }
-
-    /**
-     * An alignment to an established educational framework.
-     * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-     *
-     * @param educationalAlignment AlignmentObject value to set.
-     */
-    @Override
-    public void addEducationalAlignment(AlignmentObject educationalAlignment) {
-        this.educationalAlignment = add(this.educationalAlignment, educationalAlignment);
-    }
-
-    private List<Place> spatial;
-
-    /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getSpatialList() {
-        return spatial;
-    }
-
-    /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getSpatial() {
-        return getFirst(spatial);
-    }
-
-    /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-     *
-     * @param spatial Place value to set.
-     */
-    @Override
-    public void addSpatial(Place spatial) {
-        this.spatial = add(this.spatial, spatial);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> publisher;
-
-    /**
-     * The publisher of the creative work.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getPublisherList() {
-        return (List<T>) publisher;
-    }
-
-    /**
-     * The publisher of the creative work.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getPublisher() {
-        return (T) getFirst(publisher);
-    }
-
-    /**
-     * The publisher of the creative work.
-     *
-     * @param publisher Organization value to set.
-     */
-    @Override
-    public void addPublisher(Organization publisher) {
-        this.publisher = add(this.publisher, publisher);
-    }
-    /**
-     * The publisher of the creative work.
-     *
-     * @param publisher Person value to set.
-     */
-    @Override
-    public void addPublisher(Person publisher) {
-        this.publisher = add(this.publisher, publisher);
-    }
-
-    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
-    private List<Object> keywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getKeywordsList() {
-        return (List<T>) keywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) getFirst(keywords);
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    @Override
-    public void addKeywords(URL keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    @Override
-    public void addKeywords(DefinedTerm keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    @Override
-    public void addKeywords(Text keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> assesses;
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public <T> List<T> getAssessesList() {
-        return (List<T>) assesses;
-    }
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public <T> T getAssesses() {
-        return (T) getFirst(assesses);
-    }
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @param assesses DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public void addAssesses(DefinedTerm assesses) {
-        this.assesses = add(this.assesses, assesses);
-    }
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @param assesses Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public void addAssesses(Text assesses) {
-        this.assesses = add(this.assesses, assesses);
-    }
-
-    private List<Review> reviews;
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public List<Review> getReviewsList() {
-        return reviews;
-    }
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReviews() {
-        return getFirst(reviews);
-    }
-
-    /**
-     * Review of the item.
-     *
-     * @param reviews Review value to set.
-     */
-    @Override
-    public void addReviews(Review reviews) {
-        this.reviews = add(this.reviews, reviews);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Product.class, CreativeWork.class })
-    private List<Object> isBasedOn;
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getIsBasedOnList() {
-        return (List<T>) isBasedOn;
-    }
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getIsBasedOn() {
-        return (T) getFirst(isBasedOn);
-    }
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param isBasedOn URL value to set.
-     */
-    @Override
-    public void addIsBasedOn(URL isBasedOn) {
-        this.isBasedOn = add(this.isBasedOn, isBasedOn);
-    }
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param isBasedOn Product value to set.
-     */
-    @Override
-    public void addIsBasedOn(Product isBasedOn) {
-        this.isBasedOn = add(this.isBasedOn, isBasedOn);
-    }
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param isBasedOn CreativeWork value to set.
-     */
-    @Override
-    public void addIsBasedOn(CreativeWork isBasedOn) {
-        this.isBasedOn = add(this.isBasedOn, isBasedOn);
-    }
-
-    private List<Thing> mentions;
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public List<Thing> getMentionsList() {
-        return mentions;
-    }
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getMentions() {
-        return getFirst(mentions);
-    }
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     * @param mentions Thing value to set.
-     */
-    @Override
-    public void addMentions(Thing mentions) {
-        this.mentions = add(this.mentions, mentions);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> publishingPrinciples;
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getPublishingPrinciplesList() {
-        return (List<T>) publishingPrinciples;
-    }
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getPublishingPrinciples() {
-        return (T) getFirst(publishingPrinciples);
-    }
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples CreativeWork value to set.
-     */
-    @Override
-    public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
-        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
-    }
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples URL value to set.
-     */
-    @Override
-    public void addPublishingPrinciples(URL publishingPrinciples) {
-        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> contributor;
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getContributorList() {
-        return (List<T>) contributor;
-    }
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getContributor() {
-        return (T) getFirst(contributor);
-    }
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Organization value to set.
-     */
-    @Override
-    public void addContributor(Organization contributor) {
-        this.contributor = add(this.contributor, contributor);
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Person value to set.
-     */
-    @Override
-    public void addContributor(Person contributor) {
-        this.contributor = add(this.contributor, contributor);
-    }
-
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> license;
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getLicenseList() {
-        return (List<T>) license;
-    }
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getLicense() {
-        return (T) getFirst(license);
-    }
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @param license URL value to set.
-     */
-    @Override
-    public void addLicense(URL license) {
-        this.license = add(this.license, license);
-    }
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @param license CreativeWork value to set.
-     */
-    @Override
-    public void addLicense(CreativeWork license) {
-        this.license = add(this.license, license);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
-    private List<Object> citation;
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @return {@link CreativeWork} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getCitationList() {
-        return (List<T>) citation;
-    }
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @return {@link CreativeWork} or {@link Text}
-     */
-    @Override
-    public <T> T getCitation() {
-        return (T) getFirst(citation);
-    }
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @param citation CreativeWork value to set.
-     */
-    @Override
-    public void addCitation(CreativeWork citation) {
-        this.citation = add(this.citation, citation);
-    }
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @param citation Text value to set.
-     */
-    @Override
-    public void addCitation(Text citation) {
-        this.citation = add(this.citation, citation);
-    }
-
-    private List<Text> accessibilitySummary;
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public List<Text> getAccessibilitySummaryList() {
-        return accessibilitySummary;
-    }
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public Text getAccessibilitySummary() {
-        return getFirst(accessibilitySummary);
-    }
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @param accessibilitySummary Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void addAccessibilitySummary(Text accessibilitySummary) {
-        this.accessibilitySummary = add(this.accessibilitySummary, accessibilitySummary);
-    }
-
-    private List<Text> award;
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAwardList() {
-        return award;
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAward() {
-        return getFirst(award);
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    @Override
-    public void addAward(Text award) {
-        this.award = add(this.award, award);
-    }
-
-    private List<Integer> commentCount;
-
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public List<Integer> getCommentCountList() {
-        return commentCount;
-    }
-
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getCommentCount() {
-        return getFirst(commentCount);
-    }
-
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @param commentCount Integer value to set.
-     */
-    @Override
-    public void addCommentCount(Integer commentCount) {
-        this.commentCount = add(this.commentCount, commentCount);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class, DateTime.class })
-    private List<Object> temporalCoverage;
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @return {@link URL} or {@link Text} or {@link DateTime}
-     */
-    @Override
-    public <T> List<T> getTemporalCoverageList() {
-        return (List<T>) temporalCoverage;
-    }
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @return {@link URL} or {@link Text} or {@link DateTime}
-     */
-    @Override
-    public <T> T getTemporalCoverage() {
-        return (T) getFirst(temporalCoverage);
-    }
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param temporalCoverage URL value to set.
-     */
-    @Override
-    public void addTemporalCoverage(URL temporalCoverage) {
-        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
-    }
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param temporalCoverage Text value to set.
-     */
-    @Override
-    public void addTemporalCoverage(Text temporalCoverage) {
-        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
-    }
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param temporalCoverage DateTime value to set.
-     */
-    @Override
-    public void addTemporalCoverage(DateTime temporalCoverage) {
-        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> dateCreated;
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> List<T> getDateCreatedList() {
-        return (List<T>) dateCreated;
-    }
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> T getDateCreated() {
-        return (T) getFirst(dateCreated);
-    }
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param dateCreated DateTime value to set.
-     */
-    @Override
-    public void addDateCreated(DateTime dateCreated) {
-        this.dateCreated = add(this.dateCreated, dateCreated);
-    }
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param dateCreated Date value to set.
-     */
-    @Override
-    public void addDateCreated(Date dateCreated) {
-        this.dateCreated = add(this.dateCreated, dateCreated);
-    }
-
-    private List<URL> discussionUrl;
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getDiscussionUrlList() {
-        return discussionUrl;
-    }
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getDiscussionUrl() {
-        return getFirst(discussionUrl);
-    }
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @param discussionUrl URL value to set.
-     */
-    @Override
-    public void addDiscussionUrl(URL discussionUrl) {
-        this.discussionUrl = add(this.discussionUrl, discussionUrl);
-    }
-
-    private List<Text> copyrightNotice;
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public List<Text> getCopyrightNoticeList() {
-        return copyrightNotice;
-    }
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public Text getCopyrightNotice() {
-        return getFirst(copyrightNotice);
-    }
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @param copyrightNotice Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public void addCopyrightNotice(Text copyrightNotice) {
-        this.copyrightNotice = add(this.copyrightNotice, copyrightNotice);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> learningResourceType;
-
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getLearningResourceTypeList() {
-        return (List<T>) learningResourceType;
-    }
-
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> T getLearningResourceType() {
-        return (T) getFirst(learningResourceType);
-    }
-
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @param learningResourceType DefinedTerm value to set.
-     */
-    @Override
-    public void addLearningResourceType(DefinedTerm learningResourceType) {
-        this.learningResourceType = add(this.learningResourceType, learningResourceType);
-    }
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @param learningResourceType Text value to set.
-     */
-    @Override
-    public void addLearningResourceType(Text learningResourceType) {
-        this.learningResourceType = add(this.learningResourceType, learningResourceType);
-    }
-
-    private List<Text> awards;
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAwardsList() {
-        return awards;
-    }
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAwards() {
-        return getFirst(awards);
-    }
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @param awards Text value to set.
-     */
-    @Override
-    public void addAwards(Text awards) {
-        this.awards = add(this.awards, awards);
-    }
-
-    private List<ItemList> accessModeSufficient;
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @return {@link ItemList}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public List<ItemList> getAccessModeSufficientList() {
-        return accessModeSufficient;
-    }
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @return {@link ItemList}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public ItemList getAccessModeSufficient() {
-        return getFirst(accessModeSufficient);
-    }
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @param accessModeSufficient ItemList value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void addAccessModeSufficient(ItemList accessModeSufficient) {
-        this.accessModeSufficient = add(this.accessModeSufficient, accessModeSufficient);
-    }
-
-    private List<Review> review;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public List<Review> getReviewList() {
-        return review;
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return getFirst(review);
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    @Override
-    public void addReview(Review review) {
-        this.review = add(this.review, review);
-    }
-
-    private List<Text> conditionsOfAccess;
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    @Override
-    public List<Text> getConditionsOfAccessList() {
-        return conditionsOfAccess;
-    }
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    @Override
-    public Text getConditionsOfAccess() {
-        return getFirst(conditionsOfAccess);
-    }
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @param conditionsOfAccess Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    @Override
-    public void addConditionsOfAccess(Text conditionsOfAccess) {
-        this.conditionsOfAccess = add(this.conditionsOfAccess, conditionsOfAccess);
-    }
-
-    private List<Text> interactivityType;
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getInteractivityTypeList() {
-        return interactivityType;
-    }
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getInteractivityType() {
-        return getFirst(interactivityType);
-    }
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @param interactivityType Text value to set.
-     */
-    @Override
-    public void addInteractivityType(Text interactivityType) {
-        this.interactivityType = add(this.interactivityType, interactivityType);
-    }
-
-    private List<Text> abstract_;
-
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    @Override
-    public List<Text> getAbstractList() {
-        return abstract_;
-    }
-
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    @Override
-    public Text getAbstract() {
-        return getFirst(abstract_);
-    }
-
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @param abstract_ Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    @Override
-    public void addAbstract(Text abstract_) {
-        this.abstract_ = add(this.abstract_, abstract_);
-    }
-
-    @JsonLdFieldTypes({ Text.class, URL.class })
-    private List<Object> fileFormat;
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getFileFormatList() {
-        return (List<T>) fileFormat;
-    }
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getFileFormat() {
-        return (T) getFirst(fileFormat);
-    }
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fileFormat Text value to set.
-     */
-    @Override
-    public void addFileFormat(Text fileFormat) {
-        this.fileFormat = add(this.fileFormat, fileFormat);
-    }
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fileFormat URL value to set.
-     */
-    @Override
-    public void addFileFormat(URL fileFormat) {
-        this.fileFormat = add(this.fileFormat, fileFormat);
-    }
-
-    private List<Claim> interpretedAsClaim;
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @return {@link Claim}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public List<Claim> getInterpretedAsClaimList() {
-        return interpretedAsClaim;
-    }
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @return {@link Claim}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public Claim getInterpretedAsClaim() {
-        return getFirst(interpretedAsClaim);
-    }
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @param interpretedAsClaim Claim value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public void addInterpretedAsClaim(Claim interpretedAsClaim) {
-        this.interpretedAsClaim = add(this.interpretedAsClaim, interpretedAsClaim);
-    }
-
-    private List<Text> text;
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getTextList() {
-        return text;
-    }
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getText() {
-        return getFirst(text);
-    }
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @param text Text value to set.
-     */
-    @Override
-    public void addText(Text text) {
-        this.text = add(this.text, text);
-    }
-
-    @JsonLdFieldTypes({ WebPage.class, URL.class })
-    private List<Object> archivedAt;
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @return {@link WebPage} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public <T> List<T> getArchivedAtList() {
-        return (List<T>) archivedAt;
-    }
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @return {@link WebPage} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public <T> T getArchivedAt() {
-        return (T) getFirst(archivedAt);
-    }
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @param archivedAt WebPage value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public void addArchivedAt(WebPage archivedAt) {
-        this.archivedAt = add(this.archivedAt, archivedAt);
-    }
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @param archivedAt URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public void addArchivedAt(URL archivedAt) {
-        this.archivedAt = add(this.archivedAt, archivedAt);
-    }
-
-    private List<Text> alternativeHeadline;
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternativeHeadlineList() {
-        return alternativeHeadline;
-    }
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternativeHeadline() {
-        return getFirst(alternativeHeadline);
-    }
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @param alternativeHeadline Text value to set.
-     */
-    @Override
-    public void addAlternativeHeadline(Text alternativeHeadline) {
-        this.alternativeHeadline = add(this.alternativeHeadline, alternativeHeadline);
-    }
-
-    private List<Text> creditText;
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public List<Text> getCreditTextList() {
-        return creditText;
-    }
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public Text getCreditText() {
-        return getFirst(creditText);
-    }
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @param creditText Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public void addCreditText(Text creditText) {
-        this.creditText = add(this.creditText, creditText);
-    }
-
-    private List<Grant> funding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     */
-    @Override
-    public List<Grant> getFundingList() {
-        return funding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return getFirst(funding);
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     */
-    @Override
-    public void addFunding(Grant funding) {
-        this.funding = add(this.funding, funding);
-    }
-
-    private List<InteractionCounter> interactionStatistic;
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public List<InteractionCounter> getInteractionStatisticList() {
-        return interactionStatistic;
-    }
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public InteractionCounter getInteractionStatistic() {
-        return getFirst(interactionStatistic);
-    }
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @param interactionStatistic InteractionCounter value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
-        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
-    }
-
-    private List<CreativeWork> workExample;
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public List<CreativeWork> getWorkExampleList() {
-        return workExample;
-    }
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public CreativeWork getWorkExample() {
-        return getFirst(workExample);
-    }
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
-     *
-     * @param workExample CreativeWork value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public void addWorkExample(CreativeWork workExample) {
-        this.workExample = add(this.workExample, workExample);
-    }
-
-    private List<Thing> about;
-
-    /**
-     * The subject matter of the content.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public List<Thing> getAboutList() {
-        return about;
-    }
-
-    /**
-     * The subject matter of the content.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public Thing getAbout() {
-        return getFirst(about);
-    }
-
-    /**
-     * The subject matter of the content.
-     *
-     * @param about Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addAbout(Thing about) {
-        this.about = add(this.about, about);
-    }
-
-    private List<MediaObject> encodings;
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     * @return {@link MediaObject}
-     */
-    @Override
-    public List<MediaObject> getEncodingsList() {
-        return encodings;
-    }
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     * @return {@link MediaObject}
-     */
-    @Override
-    public MediaObject getEncodings() {
-        return getFirst(encodings);
-    }
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     * @param encodings MediaObject value to set.
-     */
-    @Override
-    public void addEncodings(MediaObject encodings) {
-        this.encodings = add(this.encodings, encodings);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> funder;
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getFunderList() {
-        return (List<T>) funder;
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getFunder() {
-        return (T) getFirst(funder);
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Organization value to set.
-     */
-    @Override
-    public void addFunder(Organization funder) {
-        this.funder = add(this.funder, funder);
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Person value to set.
-     */
-    @Override
-    public void addFunder(Person funder) {
-        this.funder = add(this.funder, funder);
-    }
-
-    @JsonLdFieldTypes({ VideoObject.class, Clip.class })
-    private List<Object> video;
-
-    /**
-     * An embedded video object.
-     *
-     * @return {@link VideoObject} or {@link Clip}
-     */
-    @Override
-    public <T> List<T> getVideoList() {
-        return (List<T>) video;
-    }
-
-    /**
-     * An embedded video object.
-     *
-     * @return {@link VideoObject} or {@link Clip}
-     */
-    @Override
-    public <T> T getVideo() {
-        return (T) getFirst(video);
-    }
-
-    /**
-     * An embedded video object.
-     *
-     * @param video VideoObject value to set.
-     */
-    @Override
-    public void addVideo(VideoObject video) {
-        this.video = add(this.video, video);
-    }
-    /**
-     * An embedded video object.
-     *
-     * @param video Clip value to set.
-     */
-    @Override
-    public void addVideo(Clip video) {
-        this.video = add(this.video, video);
-    }
-
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> isPartOf;
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getIsPartOfList() {
-        return (List<T>) isPartOf;
-    }
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getIsPartOf() {
-        return (T) getFirst(isPartOf);
-    }
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @param isPartOf URL value to set.
-     */
-    @Override
-    public void addIsPartOf(URL isPartOf) {
-        this.isPartOf = add(this.isPartOf, isPartOf);
-    }
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @param isPartOf CreativeWork value to set.
-     */
-    @Override
-    public void addIsPartOf(CreativeWork isPartOf) {
-        this.isPartOf = add(this.isPartOf, isPartOf);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> pattern;
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> List<T> getPatternList() {
-        return (List<T>) pattern;
-    }
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> T getPattern() {
-        return (T) getFirst(pattern);
-    }
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param pattern DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addPattern(DefinedTerm pattern) {
-        this.pattern = add(this.pattern, pattern);
-    }
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param pattern Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addPattern(Text pattern) {
-        this.pattern = add(this.pattern, pattern);
-    }
-
-    private List<Person> editor;
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getEditorList() {
-        return editor;
-    }
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getEditor() {
-        return getFirst(editor);
-    }
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     * @param editor Person value to set.
-     */
-    @Override
-    public void addEditor(Person editor) {
-        this.editor = add(this.editor, editor);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> dateModified;
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> List<T> getDateModifiedList() {
-        return (List<T>) dateModified;
-    }
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> T getDateModified() {
-        return (T) getFirst(dateModified);
-    }
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param dateModified DateTime value to set.
-     */
-    @Override
-    public void addDateModified(DateTime dateModified) {
-        this.dateModified = add(this.dateModified, dateModified);
-    }
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param dateModified Date value to set.
-     */
-    @Override
-    public void addDateModified(Date dateModified) {
-        this.dateModified = add(this.dateModified, dateModified);
-    }
-
-    private List<CreativeWork> translationOfWork;
-
-    /**
-     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public List<CreativeWork> getTranslationOfWorkList() {
-        return translationOfWork;
-    }
-
-    /**
-     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public CreativeWork getTranslationOfWork() {
-        return getFirst(translationOfWork);
-    }
-
-    /**
-     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
-     *
-     * @param translationOfWork CreativeWork value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public void addTranslationOfWork(CreativeWork translationOfWork) {
-        this.translationOfWork = add(this.translationOfWork, translationOfWork);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> creativeWorkStatus;
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    @Override
-    public <T> List<T> getCreativeWorkStatusList() {
-        return (List<T>) creativeWorkStatus;
-    }
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    @Override
-    public <T> T getCreativeWorkStatus() {
-        return (T) getFirst(creativeWorkStatus);
-    }
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @param creativeWorkStatus DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    @Override
-    public void addCreativeWorkStatus(DefinedTerm creativeWorkStatus) {
-        this.creativeWorkStatus = add(this.creativeWorkStatus, creativeWorkStatus);
-    }
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @param creativeWorkStatus Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    @Override
-    public void addCreativeWorkStatus(Text creativeWorkStatus) {
-        this.creativeWorkStatus = add(this.creativeWorkStatus, creativeWorkStatus);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Product.class, CreativeWork.class })
-    private List<Object> isBasedOnUrl;
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getIsBasedOnUrlList() {
-        return (List<T>) isBasedOnUrl;
-    }
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @return {@link URL} or {@link Product} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getIsBasedOnUrl() {
-        return (T) getFirst(isBasedOnUrl);
-    }
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param isBasedOnUrl URL value to set.
-     */
-    @Override
-    public void addIsBasedOnUrl(URL isBasedOnUrl) {
-        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
-    }
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param isBasedOnUrl Product value to set.
-     */
-    @Override
-    public void addIsBasedOnUrl(Product isBasedOnUrl) {
-        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
-    }
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param isBasedOnUrl CreativeWork value to set.
-     */
-    @Override
-    public void addIsBasedOnUrl(CreativeWork isBasedOnUrl) {
-        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
-    }
-
-    private List<Boolean> isFamilyFriendly;
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public List<Boolean> getIsFamilyFriendlyList() {
-        return isFamilyFriendly;
-    }
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsFamilyFriendly() {
-        return getFirst(isFamilyFriendly);
-    }
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @param isFamilyFriendly Boolean value to set.
-     */
-    @Override
-    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
-        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
-    }
-
-    private List<Boolean> isAccessibleForFree;
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public List<Boolean> getIsAccessibleForFreeList() {
-        return isAccessibleForFree;
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsAccessibleForFree() {
-        return getFirst(isAccessibleForFree);
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param isAccessibleForFree Boolean value to set.
-     */
-    @Override
-    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
-        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> author;
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getAuthorList() {
-        return (List<T>) author;
-    }
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getAuthor() {
-        return (T) getFirst(author);
-    }
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @param author Organization value to set.
-     */
-    @Override
-    public void addAuthor(Organization author) {
-        this.author = add(this.author, author);
-    }
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @param author Person value to set.
-     */
-    @Override
-    public void addAuthor(Person author) {
-        this.author = add(this.author, author);
-    }
-
-    private List<DateTime> contentReferenceTime;
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @return {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    @Override
-    public List<DateTime> getContentReferenceTimeList() {
-        return contentReferenceTime;
-    }
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @return {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    @Override
-    public DateTime getContentReferenceTime() {
-        return getFirst(contentReferenceTime);
-    }
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @param contentReferenceTime DateTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    @Override
-    public void addContentReferenceTime(DateTime contentReferenceTime) {
-        this.contentReferenceTime = add(this.contentReferenceTime, contentReferenceTime);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
-    private List<Object> correction;
-
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @return {@link URL} or {@link Text} or {@link CorrectionComment}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public <T> List<T> getCorrectionList() {
-        return (List<T>) correction;
-    }
-
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @return {@link URL} or {@link Text} or {@link CorrectionComment}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public <T> T getCorrection() {
-        return (T) getFirst(correction);
-    }
-
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param correction URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public void addCorrection(URL correction) {
-        this.correction = add(this.correction, correction);
-    }
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param correction Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public void addCorrection(Text correction) {
-        this.correction = add(this.correction, correction);
-    }
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param correction CorrectionComment value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public void addCorrection(CorrectionComment correction) {
-        this.correction = add(this.correction, correction);
-    }
-
-    private List<Date> sdDatePublished;
-
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public List<Date> getSdDatePublishedList() {
-        return sdDatePublished;
-    }
-
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public Date getSdDatePublished() {
-        return getFirst(sdDatePublished);
-    }
-
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @param sdDatePublished Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public void addSdDatePublished(Date sdDatePublished) {
-        this.sdDatePublished = add(this.sdDatePublished, sdDatePublished);
-    }
-
-    private List<Comment> comment;
-
-    /**
-     * Comments, typically from users.
-     *
-     * @return {@link Comment}
-     */
-    @Override
-    public List<Comment> getCommentList() {
-        return comment;
-    }
-
-    /**
-     * Comments, typically from users.
-     *
-     * @return {@link Comment}
-     */
-    @Override
-    public Comment getComment() {
-        return getFirst(comment);
-    }
-
-    /**
-     * Comments, typically from users.
-     *
-     * @param comment Comment value to set.
-     */
-    @Override
-    public void addComment(Comment comment) {
-        this.comment = add(this.comment, comment);
-    }
-
-    private List<Country> countryOfOrigin;
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    @Override
-    public List<Country> getCountryOfOriginList() {
-        return countryOfOrigin;
-    }
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    @Override
-    public Country getCountryOfOrigin() {
-        return getFirst(countryOfOrigin);
-    }
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @param countryOfOrigin Country value to set.
-     */
-    @Override
-    public void addCountryOfOrigin(Country countryOfOrigin) {
-        this.countryOfOrigin = add(this.countryOfOrigin, countryOfOrigin);
-    }
-
     private List<Duration> timeRequired;
 
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     * Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
      *
      * @return {@link Duration}
      */
@@ -2916,7 +1220,7 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     }
 
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     * Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
      *
      * @return {@link Duration}
      */
@@ -2926,7 +1230,7 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     }
 
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     * Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
      *
      * @param timeRequired Duration value to set.
      */
@@ -2935,512 +1239,55 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.timeRequired = add(this.timeRequired, timeRequired);
     }
 
-    private List<Text> typicalAgeRange;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
+    private List<Object> isBasedOn;
 
     /**
-     * The typical expected age range, e.g. '7-9', '11-'.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
      */
     @Override
-    public List<Text> getTypicalAgeRangeList() {
-        return typicalAgeRange;
+    public <T> List<T> getIsBasedOnList() {
+        return (List<T>) isBasedOn;
     }
 
     /**
-     * The typical expected age range, e.g. '7-9', '11-'.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
      */
     @Override
-    public Text getTypicalAgeRange() {
-        return getFirst(typicalAgeRange);
+    public <T> T getIsBasedOn() {
+        return (T) getFirst(isBasedOn);
     }
 
     /**
-     * The typical expected age range, e.g. '7-9', '11-'.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @param typicalAgeRange Text value to set.
+     * @param isBasedOn CreativeWork value to set.
      */
     @Override
-    public void addTypicalAgeRange(Text typicalAgeRange) {
-        this.typicalAgeRange = add(this.typicalAgeRange, typicalAgeRange);
-    }
-
-    @JsonLdFieldTypes({ Text.class, URL.class })
-    private List<Object> genre;
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getGenreList() {
-        return (List<T>) genre;
-    }
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getGenre() {
-        return (T) getFirst(genre);
-    }
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param genre Text value to set.
-     */
-    @Override
-    public void addGenre(Text genre) {
-        this.genre = add(this.genre, genre);
+    public void addIsBasedOn(CreativeWork isBasedOn) {
+        this.isBasedOn = add(this.isBasedOn, isBasedOn);
     }
     /**
-     * Genre of the creative work, broadcast channel or group.
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @param genre URL value to set.
+     * @param isBasedOn URL value to set.
      */
     @Override
-    public void addGenre(URL genre) {
-        this.genre = add(this.genre, genre);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> producer;
-
-    /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getProducerList() {
-        return (List<T>) producer;
-    }
-
-    /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getProducer() {
-        return (T) getFirst(producer);
-    }
-
-    /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-     *
-     * @param producer Organization value to set.
-     */
-    @Override
-    public void addProducer(Organization producer) {
-        this.producer = add(this.producer, producer);
+    public void addIsBasedOn(URL isBasedOn) {
+        this.isBasedOn = add(this.isBasedOn, isBasedOn);
     }
     /**
-     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     * A resource from which this work is derived or from which it is a modification or adaptation.
      *
-     * @param producer Person value to set.
+     * @param isBasedOn Product value to set.
      */
     @Override
-    public void addProducer(Person producer) {
-        this.producer = add(this.producer, producer);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> schemaVersion;
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getSchemaVersionList() {
-        return (List<T>) schemaVersion;
-    }
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getSchemaVersion() {
-        return (T) getFirst(schemaVersion);
-    }
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param schemaVersion URL value to set.
-     */
-    @Override
-    public void addSchemaVersion(URL schemaVersion) {
-        this.schemaVersion = add(this.schemaVersion, schemaVersion);
-    }
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param schemaVersion Text value to set.
-     */
-    @Override
-    public void addSchemaVersion(Text schemaVersion) {
-        this.schemaVersion = add(this.schemaVersion, schemaVersion);
-    }
-
-    private List<Audience> audience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public List<Audience> getAudienceList() {
-        return audience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return getFirst(audience);
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    @Override
-    public void addAudience(Audience audience) {
-        this.audience = add(this.audience, audience);
-    }
-
-    private List<MediaObject> encoding;
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-     *
-     * @return {@link MediaObject}
-     */
-    @Override
-    public List<MediaObject> getEncodingList() {
-        return encoding;
-    }
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-     *
-     * @return {@link MediaObject}
-     */
-    @Override
-    public MediaObject getEncoding() {
-        return getFirst(encoding);
-    }
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-     *
-     * @param encoding MediaObject value to set.
-     */
-    @Override
-    public void addEncoding(MediaObject encoding) {
-        this.encoding = add(this.encoding, encoding);
-    }
-
-    private List<Organization> publisherImprint;
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public List<Organization> getPublisherImprintList() {
-        return publisherImprint;
-    }
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public Organization getPublisherImprint() {
-        return getFirst(publisherImprint);
-    }
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @param publisherImprint Organization value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public void addPublisherImprint(Organization publisherImprint) {
-        this.publisherImprint = add(this.publisherImprint, publisherImprint);
-    }
-
-    private List<Text> accessibilityAPI;
-
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAccessibilityAPIList() {
-        return accessibilityAPI;
-    }
-
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAccessibilityAPI() {
-        return getFirst(accessibilityAPI);
-    }
-
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @param accessibilityAPI Text value to set.
-     */
-    @Override
-    public void addAccessibilityAPI(Text accessibilityAPI) {
-        this.accessibilityAPI = add(this.accessibilityAPI, accessibilityAPI);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> sdPublisher;
-
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public <T> List<T> getSdPublisherList() {
-        return (List<T>) sdPublisher;
-    }
-
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public <T> T getSdPublisher() {
-        return (T) getFirst(sdPublisher);
-    }
-
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @param sdPublisher Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public void addSdPublisher(Organization sdPublisher) {
-        this.sdPublisher = add(this.sdPublisher, sdPublisher);
-    }
-    /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
-     *
-     * @param sdPublisher Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public void addSdPublisher(Person sdPublisher) {
-        this.sdPublisher = add(this.sdPublisher, sdPublisher);
-    }
-
-    @JsonLdFieldTypes({ MusicRecording.class, AudioObject.class, Clip.class })
-    private List<Object> audio;
-
-    /**
-     * An embedded audio object.
-     *
-     * @return {@link MusicRecording} or {@link AudioObject} or {@link Clip}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    @Override
-    public <T> List<T> getAudioList() {
-        return (List<T>) audio;
-    }
-
-    /**
-     * An embedded audio object.
-     *
-     * @return {@link MusicRecording} or {@link AudioObject} or {@link Clip}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    @Override
-    public <T> T getAudio() {
-        return (T) getFirst(audio);
-    }
-
-    /**
-     * An embedded audio object.
-     *
-     * @param audio MusicRecording value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    @Override
-    public void addAudio(MusicRecording audio) {
-        this.audio = add(this.audio, audio);
-    }
-    /**
-     * An embedded audio object.
-     *
-     * @param audio AudioObject value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    @Override
-    public void addAudio(AudioObject audio) {
-        this.audio = add(this.audio, audio);
-    }
-    /**
-     * An embedded audio object.
-     *
-     * @param audio Clip value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    @Override
-    public void addAudio(Clip audio) {
-        this.audio = add(this.audio, audio);
-    }
-
-    private List<Text> accessibilityFeature;
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAccessibilityFeatureList() {
-        return accessibilityFeature;
-    }
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAccessibilityFeature() {
-        return getFirst(accessibilityFeature);
-    }
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @param accessibilityFeature Text value to set.
-     */
-    @Override
-    public void addAccessibilityFeature(Text accessibilityFeature) {
-        this.accessibilityFeature = add(this.accessibilityFeature, accessibilityFeature);
-    }
-
-    private List<Place> spatialCoverage;
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getSpatialCoverageList() {
-        return spatialCoverage;
-    }
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getSpatialCoverage() {
-        return getFirst(spatialCoverage);
-    }
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     * @param spatialCoverage Place value to set.
-     */
-    @Override
-    public void addSpatialCoverage(Place spatialCoverage) {
-        this.spatialCoverage = add(this.spatialCoverage, spatialCoverage);
-    }
-
-    private List<Text> accessMode;
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public List<Text> getAccessModeList() {
-        return accessMode;
-    }
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public Text getAccessMode() {
-        return getFirst(accessMode);
-    }
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @param accessMode Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void addAccessMode(Text accessMode) {
-        this.accessMode = add(this.accessMode, accessMode);
+    public void addIsBasedOn(Product isBasedOn) {
+        this.isBasedOn = add(this.isBasedOn, isBasedOn);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class })
@@ -3509,104 +1356,1075 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.editEIDR = add(this.editEIDR, editEIDR);
     }
 
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> usageInfo;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class, DefinedTerm.class, SizeSpecification.class })
+    private List<Object> size;
 
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link QuantitativeValue} or {@link Text} or {@link DefinedTerm} or {@link SizeSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public <T> List<T> getUsageInfoList() {
-        return (List<T>) usageInfo;
+    public <T> List<T> getSizeList() {
+        return (List<T>) size;
     }
 
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link QuantitativeValue} or {@link Text} or {@link DefinedTerm} or {@link SizeSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public <T> T getUsageInfo() {
-        return (T) getFirst(usageInfo);
+    public <T> T getSize() {
+        return (T) getFirst(size);
     }
 
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param usageInfo URL value to set.
+     * @param size QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void addUsageInfo(URL usageInfo) {
-        this.usageInfo = add(this.usageInfo, usageInfo);
+    public void addSize(QuantitativeValue size) {
+        this.size = add(this.size, size);
     }
     /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param usageInfo CreativeWork value to set.
+     * @param size Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void addUsageInfo(CreativeWork usageInfo) {
-        this.usageInfo = add(this.usageInfo, usageInfo);
-    }
-
-    @JsonLdFieldTypes({ Text.class, Integer.class })
-    private List<Object> position;
-
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    @Override
-    public <T> List<T> getPositionList() {
-        return (List<T>) position;
-    }
-
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    @Override
-    public <T> T getPosition() {
-        return (T) getFirst(position);
-    }
-
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param position Text value to set.
-     */
-    @Override
-    public void addPosition(Text position) {
-        this.position = add(this.position, position);
+    public void addSize(Text size) {
+        this.size = add(this.size, size);
     }
     /**
-     * The position of an item in a series or sequence of items.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param position Integer value to set.
+     * @param size DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void addPosition(Integer position) {
-        this.position = add(this.position, position);
+    public void addSize(DefinedTerm size) {
+        this.size = add(this.size, size);
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size SizeSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void addSize(SizeSpecification size) {
+        this.size = add(this.size, size);
+    }
+
+    @JsonLdFieldTypes({ Text.class, CreativeWork.class })
+    private List<Object> citation;
+
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @return {@link Text} or {@link CreativeWork}
+     */
+    @Override
+    public <T> List<T> getCitationList() {
+        return (List<T>) citation;
+    }
+
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @return {@link Text} or {@link CreativeWork}
+     */
+    @Override
+    public <T> T getCitation() {
+        return (T) getFirst(citation);
+    }
+
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @param citation Text value to set.
+     */
+    @Override
+    public void addCitation(Text citation) {
+        this.citation = add(this.citation, citation);
+    }
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @param citation CreativeWork value to set.
+     */
+    @Override
+    public void addCitation(CreativeWork citation) {
+        this.citation = add(this.citation, citation);
+    }
+
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return getFirst(review);
+    }
+
+    /**
+     * A review of the item.
+     *
+     * @param review Review value to set.
+     */
+    @Override
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
+    }
+
+    private List<Text> headline;
+
+    /**
+     * Headline of the article.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getHeadlineList() {
+        return headline;
+    }
+
+    /**
+     * Headline of the article.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getHeadline() {
+        return getFirst(headline);
+    }
+
+    /**
+     * Headline of the article.
+     *
+     * @param headline Text value to set.
+     */
+    @Override
+    public void addHeadline(Text headline) {
+        this.headline = add(this.headline, headline);
+    }
+
+    private List<InteractionCounter> interactionStatistic;
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public List<InteractionCounter> getInteractionStatisticList() {
+        return interactionStatistic;
+    }
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public InteractionCounter getInteractionStatistic() {
+        return getFirst(interactionStatistic);
+    }
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @param interactionStatistic InteractionCounter value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
+    }
+
+    private List<CreativeWork> workExample;
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public List<CreativeWork> getWorkExampleList() {
+        return workExample;
+    }
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public CreativeWork getWorkExample() {
+        return getFirst(workExample);
+    }
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
+     *
+     * @param workExample CreativeWork value to set.
+     */
+    @Override
+    public void addWorkExample(CreativeWork workExample) {
+        this.workExample = add(this.workExample, workExample);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
+    private List<Object> materialExtent;
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public <T> List<T> getMaterialExtentList() {
+        return (List<T>) materialExtent;
+    }
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public <T> T getMaterialExtent() {
+        return (T) getFirst(materialExtent);
+    }
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @param materialExtent QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public void addMaterialExtent(QuantitativeValue materialExtent) {
+        this.materialExtent = add(this.materialExtent, materialExtent);
+    }
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @param materialExtent Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public void addMaterialExtent(Text materialExtent) {
+        this.materialExtent = add(this.materialExtent, materialExtent);
+    }
+
+    private List<Place> spatial;
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getSpatialList() {
+        return spatial;
+    }
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getSpatial() {
+        return getFirst(spatial);
+    }
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @param spatial Place value to set.
+     */
+    @Override
+    public void addSpatial(Place spatial) {
+        this.spatial = add(this.spatial, spatial);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> producer;
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getProducerList() {
+        return (List<T>) producer;
+    }
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getProducer() {
+        return (T) getFirst(producer);
+    }
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @param producer Person value to set.
+     */
+    @Override
+    public void addProducer(Person producer) {
+        this.producer = add(this.producer, producer);
+    }
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
+     *
+     * @param producer Organization value to set.
+     */
+    @Override
+    public void addProducer(Organization producer) {
+        this.producer = add(this.producer, producer);
+    }
+
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getOffers() {
+        return (T) getFirst(offers);
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Offer value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
+    }
+
+    private List<Thing> mentions;
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getMentionsList() {
+        return mentions;
+    }
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getMentions() {
+        return getFirst(mentions);
+    }
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @param mentions Thing value to set.
+     */
+    @Override
+    public void addMentions(Thing mentions) {
+        this.mentions = add(this.mentions, mentions);
+    }
+
+    private List<MediaObject> encodings;
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public List<MediaObject> getEncodingsList() {
+        return encodings;
+    }
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public MediaObject getEncodings() {
+        return getFirst(encodings);
+    }
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @param encodings MediaObject value to set.
+     */
+    @Override
+    public void addEncodings(MediaObject encodings) {
+        this.encodings = add(this.encodings, encodings);
+    }
+
+    private List<Boolean> isFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsFamilyFriendlyList() {
+        return isFamilyFriendly;
+    }
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsFamilyFriendly() {
+        return getFirst(isFamilyFriendly);
+    }
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @param isFamilyFriendly Boolean value to set.
+     */
+    @Override
+    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
+    }
+
+    private List<Text> accessibilityFeature;
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAccessibilityFeatureList() {
+        return accessibilityFeature;
+    }
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAccessibilityFeature() {
+        return getFirst(accessibilityFeature);
+    }
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @param accessibilityFeature Text value to set.
+     */
+    @Override
+    public void addAccessibilityFeature(Text accessibilityFeature) {
+        this.accessibilityFeature = add(this.accessibilityFeature, accessibilityFeature);
+    }
+
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> version;
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getVersionList() {
+        return (List<T>) version;
+    }
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> T getVersion() {
+        return (T) getFirst(version);
+    }
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param version Number value to set.
+     */
+    @Override
+    public void addVersion(Number version) {
+        this.version = add(this.version, version);
+    }
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param version Text value to set.
+     */
+    @Override
+    public void addVersion(Text version) {
+        this.version = add(this.version, version);
+    }
+
+    @JsonLdFieldTypes({ VideoObject.class, Clip.class })
+    private List<Object> video;
+
+    /**
+     * An embedded video object.
+     *
+     * @return {@link VideoObject} or {@link Clip}
+     */
+    @Override
+    public <T> List<T> getVideoList() {
+        return (List<T>) video;
+    }
+
+    /**
+     * An embedded video object.
+     *
+     * @return {@link VideoObject} or {@link Clip}
+     */
+    @Override
+    public <T> T getVideo() {
+        return (T) getFirst(video);
+    }
+
+    /**
+     * An embedded video object.
+     *
+     * @param video VideoObject value to set.
+     */
+    @Override
+    public void addVideo(VideoObject video) {
+        this.video = add(this.video, video);
+    }
+    /**
+     * An embedded video object.
+     *
+     * @param video Clip value to set.
+     */
+    @Override
+    public void addVideo(Clip video) {
+        this.video = add(this.video, video);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> author;
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getAuthorList() {
+        return (List<T>) author;
+    }
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getAuthor() {
+        return (T) getFirst(author);
+    }
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param author Organization value to set.
+     */
+    @Override
+    public void addAuthor(Organization author) {
+        this.author = add(this.author, author);
+    }
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param author Person value to set.
+     */
+    @Override
+    public void addAuthor(Person author) {
+        this.author = add(this.author, author);
+    }
+
+    private List<Comment> comment;
+
+    /**
+     * Comments, typically from users.
+     *
+     * @return {@link Comment}
+     */
+    @Override
+    public List<Comment> getCommentList() {
+        return comment;
+    }
+
+    /**
+     * Comments, typically from users.
+     *
+     * @return {@link Comment}
+     */
+    @Override
+    public Comment getComment() {
+        return getFirst(comment);
+    }
+
+    /**
+     * Comments, typically from users.
+     *
+     * @param comment Comment value to set.
+     */
+    @Override
+    public void addComment(Comment comment) {
+        this.comment = add(this.comment, comment);
+    }
+
+    @JsonLdFieldTypes({ Text.class, Rating.class })
+    private List<Object> contentRating;
+
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @return {@link Text} or {@link Rating}
+     */
+    @Override
+    public <T> List<T> getContentRatingList() {
+        return (List<T>) contentRating;
+    }
+
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @return {@link Text} or {@link Rating}
+     */
+    @Override
+    public <T> T getContentRating() {
+        return (T) getFirst(contentRating);
+    }
+
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @param contentRating Text value to set.
+     */
+    @Override
+    public void addContentRating(Text contentRating) {
+        this.contentRating = add(this.contentRating, contentRating);
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     *
+     * @param contentRating Rating value to set.
+     */
+    @Override
+    public void addContentRating(Rating contentRating) {
+        this.contentRating = add(this.contentRating, contentRating);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> sdLicense;
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public <T> List<T> getSdLicenseList() {
+        return (List<T>) sdLicense;
+    }
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public <T> T getSdLicense() {
+        return (T) getFirst(sdLicense);
+    }
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @param sdLicense CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void addSdLicense(CreativeWork sdLicense) {
+        this.sdLicense = add(this.sdLicense, sdLicense);
+    }
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @param sdLicense URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void addSdLicense(URL sdLicense) {
+        this.sdLicense = add(this.sdLicense, sdLicense);
+    }
+
+    private List<DateTime> contentReferenceTime;
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @return {@link DateTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    @Override
+    public List<DateTime> getContentReferenceTimeList() {
+        return contentReferenceTime;
+    }
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @return {@link DateTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    @Override
+    public DateTime getContentReferenceTime() {
+        return getFirst(contentReferenceTime);
+    }
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @param contentReferenceTime DateTime value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    @Override
+    public void addContentReferenceTime(DateTime contentReferenceTime) {
+        this.contentReferenceTime = add(this.contentReferenceTime, contentReferenceTime);
+    }
+
+    private List<Place> contentLocation;
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContentLocationList() {
+        return contentLocation;
+    }
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContentLocation() {
+        return getFirst(contentLocation);
+    }
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @param contentLocation Place value to set.
+     */
+    @Override
+    public void addContentLocation(Place contentLocation) {
+        this.contentLocation = add(this.contentLocation, contentLocation);
+    }
+
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> datePublished;
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getDatePublishedList() {
+        return (List<T>) datePublished;
+    }
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> T getDatePublished() {
+        return (T) getFirst(datePublished);
+    }
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @param datePublished Date value to set.
+     */
+    @Override
+    public void addDatePublished(Date datePublished) {
+        this.datePublished = add(this.datePublished, datePublished);
+    }
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @param datePublished DateTime value to set.
+     */
+    @Override
+    public void addDatePublished(DateTime datePublished) {
+        this.datePublished = add(this.datePublished, datePublished);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> sdPublisher;
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public <T> List<T> getSdPublisherList() {
+        return (List<T>) sdPublisher;
+    }
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public <T> T getSdPublisher() {
+        return (T) getFirst(sdPublisher);
+    }
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @param sdPublisher Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void addSdPublisher(Person sdPublisher) {
+        this.sdPublisher = add(this.sdPublisher, sdPublisher);
+    }
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @param sdPublisher Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void addSdPublisher(Organization sdPublisher) {
+        this.sdPublisher = add(this.sdPublisher, sdPublisher);
+    }
+
+    private List<Text> alternativeHeadline;
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternativeHeadlineList() {
+        return alternativeHeadline;
+    }
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternativeHeadline() {
+        return getFirst(alternativeHeadline);
+    }
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @param alternativeHeadline Text value to set.
+     */
+    @Override
+    public void addAlternativeHeadline(Text alternativeHeadline) {
+        this.alternativeHeadline = add(this.alternativeHeadline, alternativeHeadline);
+    }
+
+    private List<Text> abstract_;
+
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    @Override
+    public List<Text> getAbstractList() {
+        return abstract_;
+    }
+
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    @Override
+    public Text getAbstract() {
+        return getFirst(abstract_);
+    }
+
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @param abstract_ Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    @Override
+    public void addAbstract(Text abstract_) {
+        this.abstract_ = add(this.abstract_, abstract_);
+    }
+
+    private List<Organization> publisherImprint;
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public List<Organization> getPublisherImprintList() {
+        return publisherImprint;
+    }
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public Organization getPublisherImprint() {
+        return getFirst(publisherImprint);
+    }
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @param publisherImprint Organization value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public void addPublisherImprint(Organization publisherImprint) {
+        this.publisherImprint = add(this.publisherImprint, publisherImprint);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class })
@@ -3667,68 +2485,403 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.encodingFormat = add(this.encodingFormat, encodingFormat);
     }
 
-    private List<Number> copyrightYear;
+    @JsonLdFieldTypes({ Language.class, Text.class })
+    private List<Object> inLanguage;
 
     /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @return {@link Number}
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public List<Number> getCopyrightYearList() {
-        return copyrightYear;
+    public <T> List<T> getInLanguageList() {
+        return (List<T>) inLanguage;
     }
 
     /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @return {@link Number}
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public Number getCopyrightYear() {
-        return getFirst(copyrightYear);
+    public <T> T getInLanguage() {
+        return (T) getFirst(inLanguage);
     }
 
     /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param copyrightYear Number value to set.
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void addCopyrightYear(Number copyrightYear) {
-        this.copyrightYear = add(this.copyrightYear, copyrightYear);
+    public void addInLanguage(Language inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void addInLanguage(Text inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
     }
 
-    private List<Thing> mainEntity;
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> dateCreated;
 
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @return {@link Thing}
+     * @return {@link DateTime} or {@link Date}
      */
     @Override
-    public List<Thing> getMainEntityList() {
-        return mainEntity;
+    public <T> List<T> getDateCreatedList() {
+        return (List<T>) dateCreated;
     }
 
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @return {@link Thing}
+     * @return {@link DateTime} or {@link Date}
      */
     @Override
-    public Thing getMainEntity() {
-        return getFirst(mainEntity);
+    public <T> T getDateCreated() {
+        return (T) getFirst(dateCreated);
     }
 
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param mainEntity Thing value to set.
+     * @param dateCreated DateTime value to set.
      */
     @Override
-    public void addMainEntity(Thing mainEntity) {
-        this.mainEntity = add(this.mainEntity, mainEntity);
+    public void addDateCreated(DateTime dateCreated) {
+        this.dateCreated = add(this.dateCreated, dateCreated);
+    }
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param dateCreated Date value to set.
+     */
+    @Override
+    public void addDateCreated(Date dateCreated) {
+        this.dateCreated = add(this.dateCreated, dateCreated);
+    }
+
+    private List<Organization> sourceOrganization;
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getSourceOrganizationList() {
+        return sourceOrganization;
+    }
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getSourceOrganization() {
+        return getFirst(sourceOrganization);
+    }
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @param sourceOrganization Organization value to set.
+     */
+    @Override
+    public void addSourceOrganization(Organization sourceOrganization) {
+        this.sourceOrganization = add(this.sourceOrganization, sourceOrganization);
+    }
+
+    @JsonLdFieldTypes({ MusicRecording.class, Clip.class, AudioObject.class })
+    private List<Object> audio;
+
+    /**
+     * An embedded audio object.
+     *
+     * @return {@link MusicRecording} or {@link Clip} or {@link AudioObject}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public <T> List<T> getAudioList() {
+        return (List<T>) audio;
+    }
+
+    /**
+     * An embedded audio object.
+     *
+     * @return {@link MusicRecording} or {@link Clip} or {@link AudioObject}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public <T> T getAudio() {
+        return (T) getFirst(audio);
+    }
+
+    /**
+     * An embedded audio object.
+     *
+     * @param audio MusicRecording value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void addAudio(MusicRecording audio) {
+        this.audio = add(this.audio, audio);
+    }
+    /**
+     * An embedded audio object.
+     *
+     * @param audio Clip value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void addAudio(Clip audio) {
+        this.audio = add(this.audio, audio);
+    }
+    /**
+     * An embedded audio object.
+     *
+     * @param audio AudioObject value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void addAudio(AudioObject audio) {
+        this.audio = add(this.audio, audio);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> learningResourceType;
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    @Override
+    public <T> List<T> getLearningResourceTypeList() {
+        return (List<T>) learningResourceType;
+    }
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    @Override
+    public <T> T getLearningResourceType() {
+        return (T) getFirst(learningResourceType);
+    }
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param learningResourceType Text value to set.
+     */
+    @Override
+    public void addLearningResourceType(Text learningResourceType) {
+        this.learningResourceType = add(this.learningResourceType, learningResourceType);
+    }
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param learningResourceType DefinedTerm value to set.
+     */
+    @Override
+    public void addLearningResourceType(DefinedTerm learningResourceType) {
+        this.learningResourceType = add(this.learningResourceType, learningResourceType);
+    }
+
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
+    private List<Object> creativeWorkStatus;
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public <T> List<T> getCreativeWorkStatusList() {
+        return (List<T>) creativeWorkStatus;
+    }
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public <T> T getCreativeWorkStatus() {
+        return (T) getFirst(creativeWorkStatus);
+    }
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @param creativeWorkStatus DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public void addCreativeWorkStatus(DefinedTerm creativeWorkStatus) {
+        this.creativeWorkStatus = add(this.creativeWorkStatus, creativeWorkStatus);
+    }
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @param creativeWorkStatus Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public void addCreativeWorkStatus(Text creativeWorkStatus) {
+        this.creativeWorkStatus = add(this.creativeWorkStatus, creativeWorkStatus);
+    }
+
+    private List<Audience> audience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public Audience getAudience() {
+        return getFirst(audience);
+    }
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @param audience Audience value to set.
+     */
+    @Override
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
+    }
+
+    private List<Place> locationCreated;
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getLocationCreatedList() {
+        return locationCreated;
+    }
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getLocationCreated() {
+        return getFirst(locationCreated);
+    }
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @param locationCreated Place value to set.
+     */
+    @Override
+    public void addLocationCreated(Place locationCreated) {
+        this.locationCreated = add(this.locationCreated, locationCreated);
+    }
+
+    private List<CreativeWork> workTranslation;
+
+    /**
+     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public List<CreativeWork> getWorkTranslationList() {
+        return workTranslation;
+    }
+
+    /**
+     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public CreativeWork getWorkTranslation() {
+        return getFirst(workTranslation);
+    }
+
+    /**
+     * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @param workTranslation CreativeWork value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public void addWorkTranslation(CreativeWork workTranslation) {
+        this.workTranslation = add(this.workTranslation, workTranslation);
+    }
+
+    private List<Text> typicalAgeRange;
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTypicalAgeRangeList() {
+        return typicalAgeRange;
+    }
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTypicalAgeRange() {
+        return getFirst(typicalAgeRange);
+    }
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @param typicalAgeRange Text value to set.
+     */
+    @Override
+    public void addTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = add(this.typicalAgeRange, typicalAgeRange);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
@@ -3771,6 +2924,540 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     @Override
     public void addCreator(Organization creator) {
         this.creator = add(this.creator, creator);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
+    private List<Object> isBasedOnUrl;
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getIsBasedOnUrlList() {
+        return (List<T>) isBasedOnUrl;
+    }
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> T getIsBasedOnUrl() {
+        return (T) getFirst(isBasedOnUrl);
+    }
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl CreativeWork value to set.
+     */
+    @Override
+    public void addIsBasedOnUrl(CreativeWork isBasedOnUrl) {
+        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
+    }
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl URL value to set.
+     */
+    @Override
+    public void addIsBasedOnUrl(URL isBasedOnUrl) {
+        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
+    }
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl Product value to set.
+     */
+    @Override
+    public void addIsBasedOnUrl(Product isBasedOnUrl) {
+        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> fileFormat;
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getFileFormatList() {
+        return (List<T>) fileFormat;
+    }
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getFileFormat() {
+        return (T) getFirst(fileFormat);
+    }
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fileFormat URL value to set.
+     */
+    @Override
+    public void addFileFormat(URL fileFormat) {
+        this.fileFormat = add(this.fileFormat, fileFormat);
+    }
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fileFormat Text value to set.
+     */
+    @Override
+    public void addFileFormat(Text fileFormat) {
+        this.fileFormat = add(this.fileFormat, fileFormat);
+    }
+
+    private List<MediaObject> encoding;
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public List<MediaObject> getEncodingList() {
+        return encoding;
+    }
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public MediaObject getEncoding() {
+        return getFirst(encoding);
+    }
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @param encoding MediaObject value to set.
+     */
+    @Override
+    public void addEncoding(MediaObject encoding) {
+        this.encoding = add(this.encoding, encoding);
+    }
+
+    private List<PublicationEvent> releasedEvent;
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @return {@link PublicationEvent}
+     */
+    @Override
+    public List<PublicationEvent> getReleasedEventList() {
+        return releasedEvent;
+    }
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @return {@link PublicationEvent}
+     */
+    @Override
+    public PublicationEvent getReleasedEvent() {
+        return getFirst(releasedEvent);
+    }
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @param releasedEvent PublicationEvent value to set.
+     */
+    @Override
+    public void addReleasedEvent(PublicationEvent releasedEvent) {
+        this.releasedEvent = add(this.releasedEvent, releasedEvent);
+    }
+
+    private List<Person> accountablePerson;
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getAccountablePersonList() {
+        return accountablePerson;
+    }
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getAccountablePerson() {
+        return getFirst(accountablePerson);
+    }
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @param accountablePerson Person value to set.
+     */
+    @Override
+    public void addAccountablePerson(Person accountablePerson) {
+        this.accountablePerson = add(this.accountablePerson, accountablePerson);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> educationalUse;
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    @Override
+    public <T> List<T> getEducationalUseList() {
+        return (List<T>) educationalUse;
+    }
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     */
+    @Override
+    public <T> T getEducationalUse() {
+        return (T) getFirst(educationalUse);
+    }
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param educationalUse Text value to set.
+     */
+    @Override
+    public void addEducationalUse(Text educationalUse) {
+        this.educationalUse = add(this.educationalUse, educationalUse);
+    }
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param educationalUse DefinedTerm value to set.
+     */
+    @Override
+    public void addEducationalUse(DefinedTerm educationalUse) {
+        this.educationalUse = add(this.educationalUse, educationalUse);
+    }
+
+    @JsonLdFieldTypes({ Text.class, URL.class })
+    private List<Object> schemaVersion;
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getSchemaVersionList() {
+        return (List<T>) schemaVersion;
+    }
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> T getSchemaVersion() {
+        return (T) getFirst(schemaVersion);
+    }
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param schemaVersion Text value to set.
+     */
+    @Override
+    public void addSchemaVersion(Text schemaVersion) {
+        this.schemaVersion = add(this.schemaVersion, schemaVersion);
+    }
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param schemaVersion URL value to set.
+     */
+    @Override
+    public void addSchemaVersion(URL schemaVersion) {
+        this.schemaVersion = add(this.schemaVersion, schemaVersion);
+    }
+
+    private List<Text> accessibilityHazard;
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAccessibilityHazardList() {
+        return accessibilityHazard;
+    }
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAccessibilityHazard() {
+        return getFirst(accessibilityHazard);
+    }
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @param accessibilityHazard Text value to set.
+     */
+    @Override
+    public void addAccessibilityHazard(Text accessibilityHazard) {
+        this.accessibilityHazard = add(this.accessibilityHazard, accessibilityHazard);
+    }
+
+    @JsonLdFieldTypes({ CorrectionComment.class, URL.class, Text.class })
+    private List<Object> correction;
+
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @return {@link CorrectionComment} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public <T> List<T> getCorrectionList() {
+        return (List<T>) correction;
+    }
+
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @return {@link CorrectionComment} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public <T> T getCorrection() {
+        return (T) getFirst(correction);
+    }
+
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction CorrectionComment value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void addCorrection(CorrectionComment correction) {
+        this.correction = add(this.correction, correction);
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void addCorrection(URL correction) {
+        this.correction = add(this.correction, correction);
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void addCorrection(Text correction) {
+        this.correction = add(this.correction, correction);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DateTime.class })
+    private List<Object> temporal;
+
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @return {@link Text} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getTemporalList() {
+        return (List<T>) temporal;
+    }
+
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @return {@link Text} or {@link DateTime}
+     */
+    @Override
+    public <T> T getTemporal() {
+        return (T) getFirst(temporal);
+    }
+
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param temporal Text value to set.
+     */
+    @Override
+    public void addTemporal(Text temporal) {
+        this.temporal = add(this.temporal, temporal);
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param temporal DateTime value to set.
+     */
+    @Override
+    public void addTemporal(DateTime temporal) {
+        this.temporal = add(this.temporal, temporal);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> expires;
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    @Override
+    public <T> List<T> getExpiresList() {
+        return (List<T>) expires;
+    }
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    @Override
+    public <T> T getExpires() {
+        return (T) getFirst(expires);
+    }
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @param expires DateTime value to set.
+     */
+    @Override
+    public void addExpires(DateTime expires) {
+        this.expires = add(this.expires, expires);
+    }
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @param expires Date value to set.
+     */
+    @Override
+    public void addExpires(Date expires) {
+        this.expires = add(this.expires, expires);
+    }
+
+    private List<Text> copyrightNotice;
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public List<Text> getCopyrightNoticeList() {
+        return copyrightNotice;
+    }
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public Text getCopyrightNotice() {
+        return getFirst(copyrightNotice);
+    }
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @param copyrightNotice Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public void addCopyrightNotice(Text copyrightNotice) {
+        this.copyrightNotice = add(this.copyrightNotice, copyrightNotice);
+    }
+
+    private List<Date> sdDatePublished;
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]].
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public List<Date> getSdDatePublishedList() {
+        return sdDatePublished;
+    }
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]].
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public Date getSdDatePublished() {
+        return getFirst(sdDatePublished);
+    }
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]].
+     *
+     * @param sdDatePublished Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void addSdDatePublished(Date sdDatePublished) {
+        this.sdDatePublished = add(this.sdDatePublished, sdDatePublished);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
@@ -3823,122 +3510,434 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.teaches = add(this.teaches, teaches);
     }
 
-    @JsonLdFieldTypes({ DateTime.class, Text.class })
-    private List<Object> temporal;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> publishingPrinciples;
 
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @return {@link DateTime} or {@link Text}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public <T> List<T> getTemporalList() {
-        return (List<T>) temporal;
+    public <T> List<T> getPublishingPrinciplesList() {
+        return (List<T>) publishingPrinciples;
     }
 
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @return {@link DateTime} or {@link Text}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public <T> T getTemporal() {
-        return (T) getFirst(temporal);
+    public <T> T getPublishingPrinciples() {
+        return (T) getFirst(publishingPrinciples);
     }
 
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param temporal DateTime value to set.
+     * @param publishingPrinciples CreativeWork value to set.
      */
     @Override
-    public void addTemporal(DateTime temporal) {
-        this.temporal = add(this.temporal, temporal);
+    public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param temporal Text value to set.
+     * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void addTemporal(Text temporal) {
-        this.temporal = add(this.temporal, temporal);
+    public void addPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
 
-    @JsonLdFieldTypes({ DefinedTerm.class, QuantitativeValue.class, Text.class, SizeSpecification.class })
-    private List<Object> size;
+    private List<Person> editor;
 
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * Specifies the Person who edited the CreativeWork.
      *
-     * @return {@link DefinedTerm} or {@link QuantitativeValue} or {@link Text} or {@link SizeSpecification}
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getEditorList() {
+        return editor;
+    }
+
+    /**
+     * Specifies the Person who edited the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getEditor() {
+        return getFirst(editor);
+    }
+
+    /**
+     * Specifies the Person who edited the CreativeWork.
+     *
+     * @param editor Person value to set.
+     */
+    @Override
+    public void addEditor(Person editor) {
+        this.editor = add(this.editor, editor);
+    }
+
+    private List<Place> spatialCoverage;
+
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getSpatialCoverageList() {
+        return spatialCoverage;
+    }
+
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getSpatialCoverage() {
+        return getFirst(spatialCoverage);
+    }
+
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     *
+     * @param spatialCoverage Place value to set.
+     */
+    @Override
+    public void addSpatialCoverage(Place spatialCoverage) {
+        this.spatialCoverage = add(this.spatialCoverage, spatialCoverage);
+    }
+
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAward() {
+        return getFirst(award);
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    @Override
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> usageInfo;
+
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public <T> List<T> getSizeList() {
-        return (List<T>) size;
+    public <T> List<T> getUsageInfoList() {
+        return (List<T>) usageInfo;
     }
 
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
-     * @return {@link DefinedTerm} or {@link QuantitativeValue} or {@link Text} or {@link SizeSpecification}
+     * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public <T> T getSize() {
-        return (T) getFirst(size);
+    public <T> T getUsageInfo() {
+        return (T) getFirst(usageInfo);
     }
 
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
-     * @param size DefinedTerm value to set.
+     * @param usageInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void addSize(DefinedTerm size) {
-        this.size = add(this.size, size);
+    public void addUsageInfo(CreativeWork usageInfo) {
+        this.usageInfo = add(this.usageInfo, usageInfo);
     }
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
-     * @param size QuantitativeValue value to set.
+     * @param usageInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void addSize(QuantitativeValue size) {
-        this.size = add(this.size, size);
+    public void addUsageInfo(URL usageInfo) {
+        this.usageInfo = add(this.usageInfo, usageInfo);
+    }
+
+    private List<Boolean> isAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsAccessibleForFreeList() {
+        return isAccessibleForFree;
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsAccessibleForFree() {
+        return getFirst(isAccessibleForFree);
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param isAccessibleForFree Boolean value to set.
+     */
+    @Override
+    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
+    }
+
+    private List<Thing> about;
+
+    /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public List<Thing> getAboutList() {
+        return about;
+    }
+
+    /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public Thing getAbout() {
+        return getFirst(about);
+    }
+
+    /**
+     * The subject matter of an object.
+     *
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void addAbout(Thing about) {
+        this.about = add(this.about, about);
+    }
+
+    private List<URL> discussionUrl;
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getDiscussionUrlList() {
+        return discussionUrl;
+    }
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getDiscussionUrl() {
+        return getFirst(discussionUrl);
+    }
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @param discussionUrl URL value to set.
+     */
+    @Override
+    public void addDiscussionUrl(URL discussionUrl) {
+        this.discussionUrl = add(this.discussionUrl, discussionUrl);
+    }
+
+    private List<Country> countryOfOrigin;
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public List<Country> getCountryOfOriginList() {
+        return countryOfOrigin;
+    }
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public Country getCountryOfOrigin() {
+        return getFirst(countryOfOrigin);
+    }
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @param countryOfOrigin Country value to set.
+     */
+    @Override
+    public void addCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = add(this.countryOfOrigin, countryOfOrigin);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> sponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getSponsorList() {
+        return (List<T>) sponsor;
+    }
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getSponsor() {
+        return (T) getFirst(sponsor);
+    }
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Person value to set.
+     */
+    @Override
+    public void addSponsor(Person sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param size Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void addSize(Text size) {
-        this.size = add(this.size, size);
+    public void addSponsor(Organization sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
+
+    private List<Text> interactivityType;
+
     /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
      *
-     * @param size SizeSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     * @return {@link Text}
      */
     @Override
-    public void addSize(SizeSpecification size) {
-        this.size = add(this.size, size);
+    public List<Text> getInteractivityTypeList() {
+        return interactivityType;
+    }
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getInteractivityType() {
+        return getFirst(interactivityType);
+    }
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @param interactivityType Text value to set.
+     */
+    @Override
+    public void addInteractivityType(Text interactivityType) {
+        this.interactivityType = add(this.interactivityType, interactivityType);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
@@ -3983,174 +3982,338 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.translator = add(this.translator, translator);
     }
 
-    private List<AggregateRating> aggregateRating;
+    private List<Text> creditText;
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @return {@link AggregateRating}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public List<AggregateRating> getAggregateRatingList() {
-        return aggregateRating;
+    public List<Text> getCreditTextList() {
+        return creditText;
     }
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @return {@link AggregateRating}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public AggregateRating getAggregateRating() {
-        return getFirst(aggregateRating);
+    public Text getCreditText() {
+        return getFirst(creditText);
     }
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @param aggregateRating AggregateRating value to set.
+     * @param creditText Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void addAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = add(this.aggregateRating, aggregateRating);
+    public void addCreditText(Text creditText) {
+        this.creditText = add(this.creditText, creditText);
     }
 
-    private List<Person> accountablePerson;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> contributor;
 
     /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @return {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public List<Person> getAccountablePersonList() {
-        return accountablePerson;
-    }
-
-    /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getAccountablePerson() {
-        return getFirst(accountablePerson);
+    public <T> List<T> getContributorList() {
+        return (List<T>) contributor;
     }
 
     /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
+     * A secondary contributor to the CreativeWork or Event.
      *
-     * @param accountablePerson Person value to set.
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public void addAccountablePerson(Person accountablePerson) {
-        this.accountablePerson = add(this.accountablePerson, accountablePerson);
+    public <T> T getContributor() {
+        return (T) getFirst(contributor);
     }
 
-    private List<Text> accessibilityHazard;
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Person value to set.
+     */
+    @Override
+    public void addContributor(Person contributor) {
+        this.contributor = add(this.contributor, contributor);
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Organization value to set.
+     */
+    @Override
+    public void addContributor(Organization contributor) {
+        this.contributor = add(this.contributor, contributor);
+    }
+
+    private List<CreativeWork> translationOfWork;
 
     /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public List<CreativeWork> getTranslationOfWorkList() {
+        return translationOfWork;
+    }
+
+    /**
+     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public CreativeWork getTranslationOfWork() {
+        return getFirst(translationOfWork);
+    }
+
+    /**
+     * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
+     *
+     * @param translationOfWork CreativeWork value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public void addTranslationOfWork(CreativeWork translationOfWork) {
+        this.translationOfWork = add(this.translationOfWork, translationOfWork);
+    }
+
+    private List<MediaObject> associatedMedia;
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public List<MediaObject> getAssociatedMediaList() {
+        return associatedMedia;
+    }
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public MediaObject getAssociatedMedia() {
+        return getFirst(associatedMedia);
+    }
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @param associatedMedia MediaObject value to set.
+     */
+    @Override
+    public void addAssociatedMedia(MediaObject associatedMedia) {
+        this.associatedMedia = add(this.associatedMedia, associatedMedia);
+    }
+
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
+    private List<Object> pattern;
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> List<T> getPatternList() {
+        return (List<T>) pattern;
+    }
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> T getPattern() {
+        return (T) getFirst(pattern);
+    }
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param pattern DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void addPattern(DefinedTerm pattern) {
+        this.pattern = add(this.pattern, pattern);
+    }
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param pattern Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void addPattern(Text pattern) {
+        this.pattern = add(this.pattern, pattern);
+    }
+
+    private List<AlignmentObject> educationalAlignment;
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @return {@link AlignmentObject}
+     */
+    @Override
+    public List<AlignmentObject> getEducationalAlignmentList() {
+        return educationalAlignment;
+    }
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @return {@link AlignmentObject}
+     */
+    @Override
+    public AlignmentObject getEducationalAlignment() {
+        return getFirst(educationalAlignment);
+    }
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @param educationalAlignment AlignmentObject value to set.
+     */
+    @Override
+    public void addEducationalAlignment(AlignmentObject educationalAlignment) {
+        this.educationalAlignment = add(this.educationalAlignment, educationalAlignment);
+    }
+
+    private List<Text> accessibilityAPI;
+
+    /**
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAccessibilityHazardList() {
-        return accessibilityHazard;
+    public List<Text> getAccessibilityAPIList() {
+        return accessibilityAPI;
     }
 
     /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAccessibilityHazard() {
-        return getFirst(accessibilityHazard);
+    public Text getAccessibilityAPI() {
+        return getFirst(accessibilityAPI);
     }
 
     /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
-     * @param accessibilityHazard Text value to set.
+     * @param accessibilityAPI Text value to set.
      */
     @Override
-    public void addAccessibilityHazard(Text accessibilityHazard) {
-        this.accessibilityHazard = add(this.accessibilityHazard, accessibilityHazard);
+    public void addAccessibilityAPI(Text accessibilityAPI) {
+        this.accessibilityAPI = add(this.accessibilityAPI, accessibilityAPI);
     }
 
-    @JsonLdFieldTypes({ Text.class, Rating.class })
-    private List<Object> contentRating;
+    private List<Text> accessibilitySummary;
 
     /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
      *
-     * @return {@link Text} or {@link Rating}
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public <T> List<T> getContentRatingList() {
-        return (List<T>) contentRating;
-    }
-
-    /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
-     *
-     * @return {@link Text} or {@link Rating}
-     */
-    @Override
-    public <T> T getContentRating() {
-        return (T) getFirst(contentRating);
+    public List<Text> getAccessibilitySummaryList() {
+        return accessibilitySummary;
     }
 
     /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
      *
-     * @param contentRating Text value to set.
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void addContentRating(Text contentRating) {
-        this.contentRating = add(this.contentRating, contentRating);
-    }
-    /**
-     * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
-     *
-     * @param contentRating Rating value to set.
-     */
-    @Override
-    public void addContentRating(Rating contentRating) {
-        this.contentRating = add(this.contentRating, contentRating);
-    }
-
-    private List<Event> recordedAt;
-
-    /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public List<Event> getRecordedAtList() {
-        return recordedAt;
+    public Text getAccessibilitySummary() {
+        return getFirst(accessibilitySummary);
     }
 
     /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
      *
-     * @return {@link Event}
+     * @param accessibilitySummary Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public Event getRecordedAt() {
-        return getFirst(recordedAt);
+    public void addAccessibilitySummary(Text accessibilitySummary) {
+        this.accessibilitySummary = add(this.accessibilitySummary, accessibilitySummary);
+    }
+
+    private List<CreativeWork> exampleOfWork;
+
+    /**
+     * A creative work that this work is an example/instance/realization/derivation of.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public List<CreativeWork> getExampleOfWorkList() {
+        return exampleOfWork;
     }
 
     /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     * A creative work that this work is an example/instance/realization/derivation of.
      *
-     * @param recordedAt Event value to set.
+     * @return {@link CreativeWork}
      */
     @Override
-    public void addRecordedAt(Event recordedAt) {
-        this.recordedAt = add(this.recordedAt, recordedAt);
+    public CreativeWork getExampleOfWork() {
+        return getFirst(exampleOfWork);
+    }
+
+    /**
+     * A creative work that this work is an example/instance/realization/derivation of.
+     *
+     * @param exampleOfWork CreativeWork value to set.
+     */
+    @Override
+    public void addExampleOfWork(CreativeWork exampleOfWork) {
+        this.exampleOfWork = add(this.exampleOfWork, exampleOfWork);
     }
 
     private List<PublicationEvent> publication;
@@ -4185,434 +4348,321 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.publication = add(this.publication, publication);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> sdLicense;
+    @JsonLdFieldTypes({ Text.class, Integer.class })
+    private List<Object> position;
 
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @return {@link Text} or {@link Integer}
      */
     @Override
-    public <T> List<T> getSdLicenseList() {
-        return (List<T>) sdLicense;
+    public <T> List<T> getPositionList() {
+        return (List<T>) position;
     }
 
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @return {@link Text} or {@link Integer}
      */
     @Override
-    public <T> T getSdLicense() {
-        return (T) getFirst(sdLicense);
+    public <T> T getPosition() {
+        return (T) getFirst(position);
     }
 
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @param sdLicense CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @param position Text value to set.
      */
     @Override
-    public void addSdLicense(CreativeWork sdLicense) {
-        this.sdLicense = add(this.sdLicense, sdLicense);
+    public void addPosition(Text position) {
+        this.position = add(this.position, position);
     }
     /**
-     * A license document that applies to this structured data, typically indicated by URL.
+     * The position of an item in a series or sequence of items.
      *
-     * @param sdLicense URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @param position Integer value to set.
      */
     @Override
-    public void addSdLicense(URL sdLicense) {
-        this.sdLicense = add(this.sdLicense, sdLicense);
+    public void addPosition(Integer position) {
+        this.position = add(this.position, position);
     }
 
-    private List<Text> headline;
+    private List<Text> conditionsOfAccess;
 
     /**
-     * Headline of the article.
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    @Override
+    public List<Text> getConditionsOfAccessList() {
+        return conditionsOfAccess;
+    }
+
+    /**
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    @Override
+    public Text getConditionsOfAccess() {
+        return getFirst(conditionsOfAccess);
+    }
+
+    /**
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @param conditionsOfAccess Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    @Override
+    public void addConditionsOfAccess(Text conditionsOfAccess) {
+        this.conditionsOfAccess = add(this.conditionsOfAccess, conditionsOfAccess);
+    }
+
+    private List<Thing> mainEntity;
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getMainEntityList() {
+        return mainEntity;
+    }
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getMainEntity() {
+        return getFirst(mainEntity);
+    }
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @param mainEntity Thing value to set.
+     */
+    @Override
+    public void addMainEntity(Thing mainEntity) {
+        this.mainEntity = add(this.mainEntity, mainEntity);
+    }
+
+    private List<Number> copyrightYear;
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getCopyrightYearList() {
+        return copyrightYear;
+    }
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getCopyrightYear() {
+        return getFirst(copyrightYear);
+    }
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @param copyrightYear Number value to set.
+     */
+    @Override
+    public void addCopyrightYear(Number copyrightYear) {
+        this.copyrightYear = add(this.copyrightYear, copyrightYear);
+    }
+
+    private List<Text> text;
+
+    /**
+     * The textual content of this CreativeWork.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getHeadlineList() {
-        return headline;
+    public List<Text> getTextList() {
+        return text;
     }
 
     /**
-     * Headline of the article.
+     * The textual content of this CreativeWork.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getHeadline() {
-        return getFirst(headline);
+    public Text getText() {
+        return getFirst(text);
     }
 
     /**
-     * Headline of the article.
+     * The textual content of this CreativeWork.
      *
-     * @param headline Text value to set.
+     * @param text Text value to set.
      */
     @Override
-    public void addHeadline(Text headline) {
-        this.headline = add(this.headline, headline);
+    public void addText(Text text) {
+        this.text = add(this.text, text);
     }
 
-    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
-    private List<Object> materialExtent;
+    private List<Claim> interpretedAsClaim;
 
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @return {@link QuantitativeValue} or {@link Text}
+     * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public <T> List<T> getMaterialExtentList() {
-        return (List<T>) materialExtent;
+    public List<Claim> getInterpretedAsClaimList() {
+        return interpretedAsClaim;
     }
 
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @return {@link QuantitativeValue} or {@link Text}
+     * @return {@link Claim}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public <T> T getMaterialExtent() {
-        return (T) getFirst(materialExtent);
+    public Claim getInterpretedAsClaim() {
+        return getFirst(interpretedAsClaim);
     }
 
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @param materialExtent QuantitativeValue value to set.
+     * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void addMaterialExtent(QuantitativeValue materialExtent) {
-        this.materialExtent = add(this.materialExtent, materialExtent);
+    public void addInterpretedAsClaim(Claim interpretedAsClaim) {
+        this.interpretedAsClaim = add(this.interpretedAsClaim, interpretedAsClaim);
+    }
+
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> isPartOf;
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> List<T> getIsPartOfList() {
+        return (List<T>) isPartOf;
+    }
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> T getIsPartOf() {
+        return (T) getFirst(isPartOf);
+    }
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @param isPartOf URL value to set.
+     */
+    @Override
+    public void addIsPartOf(URL isPartOf) {
+        this.isPartOf = add(this.isPartOf, isPartOf);
     }
     /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
-     * @param materialExtent Text value to set.
+     * @param isPartOf CreativeWork value to set.
+     */
+    @Override
+    public void addIsPartOf(CreativeWork isPartOf) {
+        this.isPartOf = add(this.isPartOf, isPartOf);
+    }
+
+    @JsonLdFieldTypes({ DefinedTerm.class, URL.class, Text.class })
+    private List<Object> educationalLevel;
+
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void addMaterialExtent(Text materialExtent) {
-        this.materialExtent = add(this.materialExtent, materialExtent);
-    }
-
-    @JsonLdFieldTypes({ Text.class, Language.class })
-    private List<Object> inLanguage;
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public <T> List<T> getInLanguageList() {
-        return (List<T>) inLanguage;
+    public <T> List<T> getEducationalLevelList() {
+        return (List<T>) educationalLevel;
     }
 
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public <T> T getInLanguage() {
-        return (T) getFirst(inLanguage);
+    public <T> T getEducationalLevel() {
+        return (T) getFirst(educationalLevel);
     }
 
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param inLanguage Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @param educationalLevel DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void addInLanguage(Text inLanguage) {
-        this.inLanguage = add(this.inLanguage, inLanguage);
+    public void addEducationalLevel(DefinedTerm educationalLevel) {
+        this.educationalLevel = add(this.educationalLevel, educationalLevel);
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param inLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     * @param educationalLevel URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void addInLanguage(Language inLanguage) {
-        this.inLanguage = add(this.inLanguage, inLanguage);
-    }
-
-    @JsonLdFieldTypes({ Product.class, URL.class, Text.class })
-    private List<Object> material;
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Product} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getMaterialList() {
-        return (List<T>) material;
-    }
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Product} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getMaterial() {
-        return (T) getFirst(material);
-    }
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material Product value to set.
-     */
-    @Override
-    public void addMaterial(Product material) {
-        this.material = add(this.material, material);
+    public void addEducationalLevel(URL educationalLevel) {
+        this.educationalLevel = add(this.educationalLevel, educationalLevel);
     }
     /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param material URL value to set.
+     * @param educationalLevel Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void addMaterial(URL material) {
-        this.material = add(this.material, material);
-    }
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material Text value to set.
-     */
-    @Override
-    public void addMaterial(Text material) {
-        this.material = add(this.material, material);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> datePublished;
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> List<T> getDatePublishedList() {
-        return (List<T>) datePublished;
-    }
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> T getDatePublished() {
-        return (T) getFirst(datePublished);
-    }
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param datePublished DateTime value to set.
-     */
-    @Override
-    public void addDatePublished(DateTime datePublished) {
-        this.datePublished = add(this.datePublished, datePublished);
-    }
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param datePublished Date value to set.
-     */
-    @Override
-    public void addDatePublished(Date datePublished) {
-        this.datePublished = add(this.datePublished, datePublished);
-    }
-
-    @JsonLdFieldTypes({ Demand.class, Offer.class })
-    private List<Object> offers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getOffersList() {
-        return (List<T>) offers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Demand} or {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) getFirst(offers);
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Demand offers) {
-        this.offers = add(this.offers, offers);
-    }
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Offer offers) {
-        this.offers = add(this.offers, offers);
-    }
-
-    private List<CreativeWork> hasPart;
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public List<CreativeWork> getHasPartList() {
-        return hasPart;
-    }
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public CreativeWork getHasPart() {
-        return getFirst(hasPart);
-    }
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @param hasPart CreativeWork value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public void addHasPart(CreativeWork hasPart) {
-        this.hasPart = add(this.hasPart, hasPart);
-    }
-
-    private List<Organization> sourceOrganization;
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getSourceOrganizationList() {
-        return sourceOrganization;
-    }
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getSourceOrganization() {
-        return getFirst(sourceOrganization);
-    }
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     * @param sourceOrganization Organization value to set.
-     */
-    @Override
-    public void addSourceOrganization(Organization sourceOrganization) {
-        this.sourceOrganization = add(this.sourceOrganization, sourceOrganization);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> sponsor;
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getSponsorList() {
-        return (List<T>) sponsor;
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSponsor() {
-        return (T) getFirst(sponsor);
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Organization value to set.
-     */
-    @Override
-    public void addSponsor(Organization sponsor) {
-        this.sponsor = add(this.sponsor, sponsor);
-    }
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Person value to set.
-     */
-    @Override
-    public void addSponsor(Person sponsor) {
-        this.sponsor = add(this.sponsor, sponsor);
+    public void addEducationalLevel(Text educationalLevel) {
+        this.educationalLevel = add(this.educationalLevel, educationalLevel);
     }
 
     private List<Person> character;
@@ -4647,78 +4697,300 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.character = add(this.character, character);
     }
 
-    private List<Action> potentialAction;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> copyrightHolder;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The party holding the legal copyright to the CreativeWork.
      *
-     * @return {@link Action}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
+    public <T> List<T> getCopyrightHolderList() {
+        return (List<T>) copyrightHolder;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The party holding the legal copyright to the CreativeWork.
      *
-     * @return {@link Action}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public <T> T getCopyrightHolder() {
+        return (T) getFirst(copyrightHolder);
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * The party holding the legal copyright to the CreativeWork.
      *
-     * @param potentialAction Action value to set.
+     * @param copyrightHolder Person value to set.
      */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addCopyrightHolder(Person copyrightHolder) {
+        this.copyrightHolder = add(this.copyrightHolder, copyrightHolder);
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The party holding the legal copyright to the CreativeWork.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param copyrightHolder Organization value to set.
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addCopyrightHolder(Organization copyrightHolder) {
+        this.copyrightHolder = add(this.copyrightHolder, copyrightHolder);
+    }
+
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> dateModified;
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getDateModifiedList() {
+        return (List<T>) dateModified;
+    }
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> T getDateModified() {
+        return (T) getFirst(dateModified);
+    }
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param dateModified Date value to set.
+     */
+    @Override
+    public void addDateModified(Date dateModified) {
+        this.dateModified = add(this.dateModified, dateModified);
+    }
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param dateModified DateTime value to set.
+     */
+    @Override
+    public void addDateModified(DateTime dateModified) {
+        this.dateModified = add(this.dateModified, dateModified);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -4767,36 +5039,120 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of the item.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param url URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> alternateName;
@@ -4831,68 +5187,78 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> sameAs;
+    private List<URL> url;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<URL> getUrlList() {
+        return url;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
      * @return {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public URL getUrl() {
+        return getFirst(url);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * URL of the item.
      *
-     * @param sameAs URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private List<Text> description;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getDescriptionList() {
-        return description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return getFirst(description);
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * A description of the item.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param description Text value to set.
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<Text> disambiguatingDescription;
@@ -4925,167 +5291,5 @@ public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
-    }
-
-    @JsonLdFieldTypes({ PropertyValue.class, URL.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    private List<URL> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getAdditionalTypeList() {
-        return additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
     }
 }

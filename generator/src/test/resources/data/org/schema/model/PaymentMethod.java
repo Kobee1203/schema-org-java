@@ -6,13 +6,40 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.PaymentMethodType;
 
 /**
- * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#ByBankTransferInAdvance<br/>* http://purl.org/goodrelations/v1#ByInvoice<br/>* http://purl.org/goodrelations/v1#Cash<br/>* http://purl.org/goodrelations/v1#CheckInAdvance<br/>* http://purl.org/goodrelations/v1#COD<br/>* http://purl.org/goodrelations/v1#DirectDebit<br/>* http://purl.org/goodrelations/v1#GoogleCheckout<br/>* http://purl.org/goodrelations/v1#PayPal<br/>* http://purl.org/goodrelations/v1#PaySwarm
- *         
+ * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction. The following legacy values should be accepted: <br/><br/>* http://purl.org/goodrelations/v1#ByBankTransferInAdvance<br/>* http://purl.org/goodrelations/v1#ByInvoice<br/>* http://purl.org/goodrelations/v1#Cash<br/>* http://purl.org/goodrelations/v1#CheckInAdvance<br/>* http://purl.org/goodrelations/v1#COD<br/>* http://purl.org/goodrelations/v1#DirectDebit<br/>* http://purl.org/goodrelations/v1#GoogleCheckout<br/>* http://purl.org/goodrelations/v1#PayPal<br/>* http://purl.org/goodrelations/v1#PaySwarm<br/><br/>Structured values, or [UNCE payment means](https://vocabulary.uncefact.org/PaymentMeans) are recommended or for newer annotations.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
+ * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
  * @see <a href="https://schema.org/PaymentMethod">https://schema.org/PaymentMethod</a>
  */
-public interface PaymentMethod extends Enumeration {
+public interface PaymentMethod extends Intangible {
+
+    /**
+     * The type of a payment method.
+     *
+     * @return {@link PaymentMethodType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    List<PaymentMethodType> getPaymentMethodTypeList();
+
+    /**
+     * The type of a payment method.
+     *
+     * @return {@link PaymentMethodType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    PaymentMethodType getPaymentMethodType();
+
+    /**
+     * The type of a payment method.
+     *
+     * @param paymentMethodType PaymentMethodType value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    void addPaymentMethodType(PaymentMethodType paymentMethodType);
 }

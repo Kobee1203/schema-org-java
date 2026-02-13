@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.BlogPosting;
 import org.schema.model.datatype.DateTime;
+import org.schema.model.BlogPosting;
 
 /**
  * A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.
@@ -15,27 +15,6 @@ import org.schema.model.datatype.DateTime;
  * @see <a href="https://schema.org/LiveBlogPosting">https://schema.org/LiveBlogPosting</a>
  */
 public interface LiveBlogPosting extends BlogPosting {
-
-    /**
-     * An update to the LiveBlog.
-     *
-     * @return {@link BlogPosting}
-     */
-    List<BlogPosting> getLiveBlogUpdateList();
-
-    /**
-     * An update to the LiveBlog.
-     *
-     * @return {@link BlogPosting}
-     */
-    BlogPosting getLiveBlogUpdate();
-
-    /**
-     * An update to the LiveBlog.
-     *
-     * @param liveBlogUpdate BlogPosting value to set.
-     */
-    void addLiveBlogUpdate(BlogPosting liveBlogUpdate);
 
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
@@ -57,6 +36,27 @@ public interface LiveBlogPosting extends BlogPosting {
      * @param coverageStartTime DateTime value to set.
      */
     void addCoverageStartTime(DateTime coverageStartTime);
+
+    /**
+     * An update to the LiveBlog.
+     *
+     * @return {@link BlogPosting}
+     */
+    List<BlogPosting> getLiveBlogUpdateList();
+
+    /**
+     * An update to the LiveBlog.
+     *
+     * @return {@link BlogPosting}
+     */
+    BlogPosting getLiveBlogUpdate();
+
+    /**
+     * An update to the LiveBlog.
+     *
+     * @param liveBlogUpdate BlogPosting value to set.
+     */
+    void addLiveBlogUpdate(BlogPosting liveBlogUpdate);
 
     /**
      * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.

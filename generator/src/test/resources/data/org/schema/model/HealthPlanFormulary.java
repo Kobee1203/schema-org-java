@@ -6,11 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.HealthPlanCostSharingSpecification;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Text;
 
 /**
- * For a given health insurance plan, the specification for costs and coverage of prescription drugs. 
+ * For a given health insurance plan, the specification for costs and coverage of prescription drugs.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
@@ -21,21 +22,29 @@ public interface HealthPlanFormulary extends Intangible {
     /**
      * The costs to the patient for services under this network or formulary.
      *
-     * @return {@link Boolean}
+     * @return {@link HealthPlanCostSharingSpecification} or {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    List<Boolean> getHealthPlanCostSharingList();
+    <T> List<T> getHealthPlanCostSharingList();
 
     /**
      * The costs to the patient for services under this network or formulary.
      *
-     * @return {@link Boolean}
+     * @return {@link HealthPlanCostSharingSpecification} or {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    Boolean getHealthPlanCostSharing();
+    <T> T getHealthPlanCostSharing();
 
+    /**
+     * The costs to the patient for services under this network or formulary.
+     *
+     * @param healthPlanCostSharing HealthPlanCostSharingSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanCostSharing(HealthPlanCostSharingSpecification healthPlanCostSharing);
     /**
      * The costs to the patient for services under this network or formulary.
      *
@@ -44,33 +53,6 @@ public interface HealthPlanFormulary extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanCostSharing(Boolean healthPlanCostSharing);
-
-    /**
-     * Whether prescriptions can be delivered by mail.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<Boolean> getOffersPrescriptionByMailList();
-
-    /**
-     * Whether prescriptions can be delivered by mail.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    Boolean getOffersPrescriptionByMail();
-
-    /**
-     * Whether prescriptions can be delivered by mail.
-     *
-     * @param offersPrescriptionByMail Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addOffersPrescriptionByMail(Boolean offersPrescriptionByMail);
 
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
@@ -98,4 +80,31 @@ public interface HealthPlanFormulary extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanDrugTier(Text healthPlanDrugTier);
+
+    /**
+     * Whether prescriptions can be delivered by mail.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Boolean> getOffersPrescriptionByMailList();
+
+    /**
+     * Whether prescriptions can be delivered by mail.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    Boolean getOffersPrescriptionByMail();
+
+    /**
+     * Whether prescriptions can be delivered by mail.
+     *
+     * @param offersPrescriptionByMail Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addOffersPrescriptionByMail(Boolean offersPrescriptionByMail);
 }

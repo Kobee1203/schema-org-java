@@ -68,54 +68,54 @@ public interface DataFeedItem extends Intangible {
     /**
      * The datetime the item was removed from the DataFeed.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DateTime} or {@link Date}
      */
     <T> List<T> getDateDeletedList();
 
     /**
      * The datetime the item was removed from the DataFeed.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DateTime} or {@link Date}
      */
     <T> T getDateDeleted();
 
     /**
      * The datetime the item was removed from the DataFeed.
      *
-     * @param dateDeleted Date value to set.
-     */
-    void addDateDeleted(Date dateDeleted);
-    /**
-     * The datetime the item was removed from the DataFeed.
-     *
      * @param dateDeleted DateTime value to set.
      */
     void addDateDeleted(DateTime dateDeleted);
+    /**
+     * The datetime the item was removed from the DataFeed.
+     *
+     * @param dateDeleted Date value to set.
+     */
+    void addDateDeleted(Date dateDeleted);
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Date} or {@link DateTime}
      */
     <T> List<T> getDateModifiedList();
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Date} or {@link DateTime}
      */
     <T> T getDateModified();
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @param dateModified DateTime value to set.
-     */
-    void addDateModified(DateTime dateModified);
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
      * @param dateModified Date value to set.
      */
     void addDateModified(Date dateModified);
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param dateModified DateTime value to set.
+     */
+    void addDateModified(DateTime dateModified);
 }
