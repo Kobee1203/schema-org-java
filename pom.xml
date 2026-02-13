@@ -70,7 +70,7 @@
         <mockito-junit-jupiter.version>5.20.0</mockito-junit-jupiter.version>
         <equalsverifier.version>4.3.1</equalsverifier.version>
         <to-string-verifier.version>1.4.8</to-string-verifier.version>
-        <json-unit-assertj.version>5.0.0</json-unit-assertj.version>
+        <json-unit-assertj.version>5.1.0</json-unit-assertj.version>
         <system-stubs-jupiter.version>2.1.8</system-stubs-jupiter.version>
         <logcaptor.version>2.12.2</logcaptor.version>
         <inject-resources-junit-jupiter.version>1.0.0</inject-resources-junit-jupiter.version>
@@ -82,7 +82,7 @@
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
+        <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
         <maven-jxr-plugin.version>3.6.0</maven-jxr-plugin.version>
         <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.9.0</maven-project-info-reports-plugin.version>
