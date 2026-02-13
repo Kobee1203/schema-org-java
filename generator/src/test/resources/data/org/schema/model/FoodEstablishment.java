@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Rating;
 import org.schema.model.datatype.Text;
-import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.URL;
 import org.schema.model.Menu;
+import org.schema.model.Rating;
 
 /**
  * A food-related business.
@@ -18,30 +18,6 @@ import org.schema.model.Menu;
  * @see <a href="https://schema.org/FoodEstablishment">https://schema.org/FoodEstablishment</a>
  */
 public interface FoodEstablishment extends LocalBusiness {
-
-    /**
-     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
-     *
-     * @return {@link Rating}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    List<Rating> getStarRatingList();
-
-    /**
-     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
-     *
-     * @return {@link Rating}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    Rating getStarRating();
-
-    /**
-     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
-     *
-     * @param starRating Rating value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addStarRating(Rating starRating);
 
     /**
      * The cuisine of the restaurant.
@@ -67,17 +43,23 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
-     * @return {@link URL} or {@link Text} or {@link Boolean}
+     * @return {@link Boolean} or {@link URL} or {@link Text}
      */
     <T> List<T> getAcceptsReservationsList();
 
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
-     * @return {@link URL} or {@link Text} or {@link Boolean}
+     * @return {@link Boolean} or {@link URL} or {@link Text}
      */
     <T> T getAcceptsReservations();
 
+    /**
+     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
+     *
+     * @param acceptsReservations Boolean value to set.
+     */
+    void addAcceptsReservations(Boolean acceptsReservations);
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
@@ -90,24 +72,18 @@ public interface FoodEstablishment extends LocalBusiness {
      * @param acceptsReservations Text value to set.
      */
     void addAcceptsReservations(Text acceptsReservations);
-    /**
-     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
-     *
-     * @param acceptsReservations Boolean value to set.
-     */
-    void addAcceptsReservations(Boolean acceptsReservations);
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
-     * @return {@link Menu} or {@link Text} or {@link URL}
+     * @return {@link Menu} or {@link URL} or {@link Text}
      */
     <T> List<T> getMenuList();
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
-     * @return {@link Menu} or {@link Text} or {@link URL}
+     * @return {@link Menu} or {@link URL} or {@link Text}
      */
     <T> T getMenu();
 
@@ -120,36 +96,51 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
-     * @param menu Text value to set.
-     */
-    void addMenu(Text menu);
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
      * @param menu URL value to set.
      */
     void addMenu(URL menu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param menu Text value to set.
+     */
+    void addMenu(Text menu);
+
+    /**
+     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+     *
+     * @return {@link Rating}
+     */
+    List<Rating> getStarRatingList();
+
+    /**
+     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+     *
+     * @return {@link Rating}
+     */
+    Rating getStarRating();
+
+    /**
+     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+     *
+     * @param starRating Rating value to set.
+     */
+    void addStarRating(Rating starRating);
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
-     * @return {@link URL} or {@link Text} or {@link Menu}
+     * @return {@link Text} or {@link Menu} or {@link URL}
      */
     <T> List<T> getHasMenuList();
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
-     * @return {@link URL} or {@link Text} or {@link Menu}
+     * @return {@link Text} or {@link Menu} or {@link URL}
      */
     <T> T getHasMenu();
 
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @param hasMenu URL value to set.
-     */
-    void addHasMenu(URL hasMenu);
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
@@ -162,4 +153,10 @@ public interface FoodEstablishment extends LocalBusiness {
      * @param hasMenu Menu value to set.
      */
     void addHasMenu(Menu hasMenu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param hasMenu URL value to set.
+     */
+    void addHasMenu(URL hasMenu);
 }

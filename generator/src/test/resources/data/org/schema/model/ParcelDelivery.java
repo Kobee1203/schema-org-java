@@ -6,17 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Person;
+import org.schema.model.Organization;
+import org.schema.model.Order;
 import org.schema.model.Product;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
-import org.schema.model.Organization;
-import org.schema.model.Person;
 import org.schema.model.PostalAddress;
-import org.schema.model.DeliveryEvent;
-import org.schema.model.datatype.URL;
-import org.schema.model.Order;
 import org.schema.model.DeliveryMethod;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
+import org.schema.model.DeliveryEvent;
 
 /**
  * The delivery of a parcel either via the postal service or a commercial service.
@@ -24,6 +24,66 @@ import org.schema.model.DeliveryMethod;
  * @see <a href="https://schema.org/ParcelDelivery">https://schema.org/ParcelDelivery</a>
  */
 public interface ParcelDelivery extends Intangible {
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> List<T> getProviderList();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    <T> T getProvider();
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Person provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Organization provider);
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @return {@link Order}
+     */
+    List<Order> getPartOfOrderList();
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @return {@link Order}
+     */
+    Order getPartOfOrder();
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @param partOfOrder Order value to set.
+     */
+    void addPartOfOrder(Order partOfOrder);
 
     /**
      * Item(s) being shipped.
@@ -47,91 +107,79 @@ public interface ParcelDelivery extends Intangible {
     void addItemShipped(Product itemShipped);
 
     /**
-     * Shipper tracking number.
+     * The earliest date the package may arrive.
      *
-     * @return {@link Text}
+     * @return {@link DateTime} or {@link Date}
      */
-    List<Text> getTrackingNumberList();
+    <T> List<T> getExpectedArrivalFromList();
 
     /**
-     * Shipper tracking number.
+     * The earliest date the package may arrive.
      *
-     * @return {@link Text}
+     * @return {@link DateTime} or {@link Date}
      */
-    Text getTrackingNumber();
+    <T> T getExpectedArrivalFrom();
 
     /**
-     * Shipper tracking number.
+     * The earliest date the package may arrive.
      *
-     * @param trackingNumber Text value to set.
+     * @param expectedArrivalFrom DateTime value to set.
      */
-    void addTrackingNumber(Text trackingNumber);
+    void addExpectedArrivalFrom(DateTime expectedArrivalFrom);
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param expectedArrivalFrom Date value to set.
+     */
+    void addExpectedArrivalFrom(Date expectedArrivalFrom);
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getCarrierList();
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    Organization getCarrier();
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @param carrier Organization value to set.
+     */
+    void addCarrier(Organization carrier);
 
     /**
      * The latest date the package may arrive.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Date} or {@link DateTime}
      */
     <T> List<T> getExpectedArrivalUntilList();
 
     /**
      * The latest date the package may arrive.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Date} or {@link DateTime}
      */
     <T> T getExpectedArrivalUntil();
 
     /**
      * The latest date the package may arrive.
      *
-     * @param expectedArrivalUntil DateTime value to set.
-     */
-    void addExpectedArrivalUntil(DateTime expectedArrivalUntil);
-    /**
-     * The latest date the package may arrive.
-     *
      * @param expectedArrivalUntil Date value to set.
      */
     void addExpectedArrivalUntil(Date expectedArrivalUntil);
-
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The latest date the package may arrive.
      *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param expectedArrivalUntil DateTime value to set.
      */
-    <T> List<T> getProviderList();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    <T> T getProvider();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addProvider(Organization provider);
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addProvider(Person provider);
+    void addExpectedArrivalUntil(DateTime expectedArrivalUntil);
 
     /**
      * Destination address.
@@ -155,52 +203,67 @@ public interface ParcelDelivery extends Intangible {
     void addDeliveryAddress(PostalAddress deliveryAddress);
 
     /**
-     * The earliest date the package may arrive.
+     * Method used for delivery or shipping.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DeliveryMethod}
      */
-    <T> List<T> getExpectedArrivalFromList();
+    List<DeliveryMethod> getHasDeliveryMethodList();
 
     /**
-     * The earliest date the package may arrive.
+     * Method used for delivery or shipping.
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link DeliveryMethod}
      */
-    <T> T getExpectedArrivalFrom();
+    DeliveryMethod getHasDeliveryMethod();
 
     /**
-     * The earliest date the package may arrive.
+     * Method used for delivery or shipping.
      *
-     * @param expectedArrivalFrom Date value to set.
+     * @param hasDeliveryMethod DeliveryMethod value to set.
      */
-    void addExpectedArrivalFrom(Date expectedArrivalFrom);
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @param expectedArrivalFrom DateTime value to set.
-     */
-    void addExpectedArrivalFrom(DateTime expectedArrivalFrom);
+    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
 
     /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     * Shipper tracking number.
      *
-     * @return {@link Organization}
+     * @return {@link Text}
      */
-    List<Organization> getCarrierList();
+    List<Text> getTrackingNumberList();
 
     /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     * Shipper tracking number.
      *
-     * @return {@link Organization}
+     * @return {@link Text}
      */
-    Organization getCarrier();
+    Text getTrackingNumber();
 
     /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     * Shipper tracking number.
      *
-     * @param carrier Organization value to set.
+     * @param trackingNumber Text value to set.
      */
-    void addCarrier(Organization carrier);
+    void addTrackingNumber(Text trackingNumber);
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getTrackingUrlList();
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @return {@link URL}
+     */
+    URL getTrackingUrl();
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @param trackingUrl URL value to set.
+     */
+    void addTrackingUrl(URL trackingUrl);
 
     /**
      * Shipper's address.
@@ -243,67 +306,4 @@ public interface ParcelDelivery extends Intangible {
      * @param deliveryStatus DeliveryEvent value to set.
      */
     void addDeliveryStatus(DeliveryEvent deliveryStatus);
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getTrackingUrlList();
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @return {@link URL}
-     */
-    URL getTrackingUrl();
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @param trackingUrl URL value to set.
-     */
-    void addTrackingUrl(URL trackingUrl);
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @return {@link Order}
-     */
-    List<Order> getPartOfOrderList();
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @return {@link Order}
-     */
-    Order getPartOfOrder();
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @param partOfOrder Order value to set.
-     */
-    void addPartOfOrder(Order partOfOrder);
-
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    List<DeliveryMethod> getHasDeliveryMethodList();
-
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    DeliveryMethod getHasDeliveryMethod();
-
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @param hasDeliveryMethod DeliveryMethod value to set.
-     */
-    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
 }

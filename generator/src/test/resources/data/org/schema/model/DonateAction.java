@@ -6,38 +6,87 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Organization;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 import org.schema.model.ContactPoint;
 import org.schema.model.Person;
+import org.schema.model.Organization;
 import org.schema.model.Audience;
+import org.schema.model.PriceSpecification;
 
 /**
  * The act of providing goods, services, or money without compensation, often for philanthropic reasons.
  *
  * @see <a href="https://schema.org/DonateAction">https://schema.org/DonateAction</a>
  */
-public interface DonateAction extends TradeAction {
+public interface DonateAction extends TransferAction {
+
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> List<T> getPriceList();
+
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> T getPrice();
+
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
+     *
+     * @param price Number value to set.
+     */
+    void addPrice(Number price);
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+     *       
+     *
+     * @param price Text value to set.
+     */
+    void addPrice(Text price);
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPriceCurrencyList();
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    Text getPriceCurrency();
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @param priceCurrency Text value to set.
+     */
+    void addPriceCurrency(Text priceCurrency);
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
      */
     <T> List<T> getRecipientList();
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
      */
     <T> T getRecipient();
 
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @param recipient Organization value to set.
-     */
-    void addRecipient(Organization recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
@@ -53,7 +102,34 @@ public interface DonateAction extends TradeAction {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
+     * @param recipient Organization value to set.
+     */
+    void addRecipient(Organization recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
      * @param recipient Audience value to set.
      */
     void addRecipient(Audience recipient);
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     */
+    List<PriceSpecification> getPriceSpecificationList();
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     */
+    PriceSpecification getPriceSpecification();
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @param priceSpecification PriceSpecification value to set.
+     */
+    void addPriceSpecification(PriceSpecification priceSpecification);
 }

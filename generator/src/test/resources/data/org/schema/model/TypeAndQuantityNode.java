@@ -7,16 +7,15 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Number;
-import org.schema.model.BusinessFunction;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.URL;
-import org.schema.model.Product;
 import org.schema.model.Service;
+import org.schema.model.Product;
+import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Text;
+import org.schema.model.BusinessFunction;
 
 /**
  * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/TypeAndQuantityNode">https://schema.org/TypeAndQuantityNode</a>
  */
 public interface TypeAndQuantityNode extends StructuredValue {
@@ -25,7 +24,6 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The quantity of the goods included in the offer.
      *
      * @return {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<Number> getAmountOfThisGoodList();
 
@@ -33,7 +31,6 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The quantity of the goods included in the offer.
      *
      * @return {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     Number getAmountOfThisGood();
 
@@ -41,15 +38,67 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The quantity of the goods included in the offer.
      *
      * @param amountOfThisGood Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addAmountOfThisGood(Number amountOfThisGood);
+
+    /**
+     * The product that this structured value is referring to.
+     *
+     * @return {@link Service} or {@link Product}
+     */
+    <T> List<T> getTypeOfGoodList();
+
+    /**
+     * The product that this structured value is referring to.
+     *
+     * @return {@link Service} or {@link Product}
+     */
+    <T> T getTypeOfGood();
+
+    /**
+     * The product that this structured value is referring to.
+     *
+     * @param typeOfGood Service value to set.
+     */
+    void addTypeOfGood(Service typeOfGood);
+    /**
+     * The product that this structured value is referring to.
+     *
+     * @param typeOfGood Product value to set.
+     */
+    void addTypeOfGood(Product typeOfGood);
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getUnitCodeList();
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getUnitCode();
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode URL value to set.
+     */
+    void addUnitCode(URL unitCode);
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode Text value to set.
+     */
+    void addUnitCode(Text unitCode);
 
     /**
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<BusinessFunction> getBusinessFunctionList();
 
@@ -57,7 +106,6 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     BusinessFunction getBusinessFunction();
 
@@ -65,40 +113,8 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @param businessFunction BusinessFunction value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addBusinessFunction(BusinessFunction businessFunction);
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @return {@link Text} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getUnitCodeList();
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @return {@link Text} or {@link URL}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getUnitCode();
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param unitCode Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addUnitCode(Text unitCode);
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param unitCode URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addUnitCode(URL unitCode);
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
@@ -123,35 +139,4 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * @param unitText Text value to set.
      */
     void addUnitText(Text unitText);
-
-    /**
-     * The product that this structured value is referring to.
-     *
-     * @return {@link Product} or {@link Service}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getTypeOfGoodList();
-
-    /**
-     * The product that this structured value is referring to.
-     *
-     * @return {@link Product} or {@link Service}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getTypeOfGood();
-
-    /**
-     * The product that this structured value is referring to.
-     *
-     * @param typeOfGood Product value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addTypeOfGood(Product typeOfGood);
-    /**
-     * The product that this structured value is referring to.
-     *
-     * @param typeOfGood Service value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addTypeOfGood(Service typeOfGood);
 }

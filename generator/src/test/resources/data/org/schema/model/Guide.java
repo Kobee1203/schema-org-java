@@ -7,6 +7,11 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.datatype.Text;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.CategoryCode;
+import org.schema.model.Thing;
+import org.schema.model.datatype.URL;
+import org.schema.model.StructuredValue;
 
 /**
  * [[Guide]] is a page or article that recommends specific products or services, or aspects of a thing for a user to consider. A [[Guide]] may represent a Buying Guide and detail aspects of products or services for a user to consider. A [[Guide]] may represent a Product Guide and recommend specific products or services. A [[Guide]] may represent a Ranked List and recommend specific products or services with ranking.
@@ -18,20 +23,79 @@ import org.schema.model.datatype.Text;
 public interface Guide extends CreativeWork {
 
     /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    List<Text> getReviewAspectList();
+    <T> List<T> getCategoryList();
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    <T> T getCategory();
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(Text category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(PhysicalActivityCategory category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(CategoryCode category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(Thing category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void addCategory(URL category);
 
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
-     * @return {@link Text}
+     * @return {@link Text} or {@link StructuredValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    Text getReviewAspect();
+    <T> List<T> getReviewAspectList();
+
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     *
+     * @return {@link Text} or {@link StructuredValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     */
+    <T> T getReviewAspect();
 
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
@@ -40,4 +104,11 @@ public interface Guide extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
     void addReviewAspect(Text reviewAspect);
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     *
+     * @param reviewAspect StructuredValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     */
+    void addReviewAspect(StructuredValue reviewAspect);
 }

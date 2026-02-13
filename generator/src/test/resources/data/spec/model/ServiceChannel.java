@@ -6,13 +6,13 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.PostalAddress;
 import spec.model.ContactPoint;
-import spec.model.datatype.Text;
-import spec.model.Language;
+import spec.model.Service;
 import spec.model.datatype.URL;
 import spec.model.Duration;
-import spec.model.PostalAddress;
-import spec.model.Service;
+import spec.model.Language;
+import spec.model.datatype.Text;
 import spec.model.Place;
 
 /**
@@ -21,6 +21,69 @@ import spec.model.Place;
  * @see <a href="https://schema.org/ServiceChannel">https://schema.org/ServiceChannel</a>
  */
 public interface ServiceChannel extends Intangible {
+
+    /**
+     * The address for accessing the service by mail.
+     *
+     * @return {@link PostalAddress}
+     */
+    List<PostalAddress> getServicePostalAddressList();
+
+    /**
+     * The address for accessing the service by mail.
+     *
+     * @return {@link PostalAddress}
+     */
+    PostalAddress getServicePostalAddress();
+
+    /**
+     * The address for accessing the service by mail.
+     *
+     * @param servicePostalAddress PostalAddress value to set.
+     */
+    void addServicePostalAddress(PostalAddress servicePostalAddress);
+
+    /**
+     * The number to access the service by text message.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getServiceSmsNumberList();
+
+    /**
+     * The number to access the service by text message.
+     *
+     * @return {@link ContactPoint}
+     */
+    ContactPoint getServiceSmsNumber();
+
+    /**
+     * The number to access the service by text message.
+     *
+     * @param serviceSmsNumber ContactPoint value to set.
+     */
+    void addServiceSmsNumber(ContactPoint serviceSmsNumber);
+
+    /**
+     * The service provided by this channel.
+     *
+     * @return {@link Service}
+     */
+    List<Service> getProvidesServiceList();
+
+    /**
+     * The service provided by this channel.
+     *
+     * @return {@link Service}
+     */
+    Service getProvidesService();
+
+    /**
+     * The service provided by this channel.
+     *
+     * @param providesService Service value to set.
+     */
+    void addProvidesService(Service providesService);
 
     /**
      * The phone number to use to access the service.
@@ -42,33 +105,6 @@ public interface ServiceChannel extends Intangible {
      * @param servicePhone ContactPoint value to set.
      */
     void addServicePhone(ContactPoint servicePhone);
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     */
-    <T> List<T> getAvailableLanguageList();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     */
-    <T> T getAvailableLanguage();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Text value to set.
-     */
-    void addAvailableLanguage(Text availableLanguage);
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Language value to set.
-     */
-    void addAvailableLanguage(Language availableLanguage);
 
     /**
      * The website to access the service.
@@ -113,67 +149,31 @@ public interface ServiceChannel extends Intangible {
     void addProcessingTime(Duration processingTime);
 
     /**
-     * The address for accessing the service by mail.
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
      *
-     * @return {@link PostalAddress}
+     * @return {@link Language} or {@link Text}
      */
-    List<PostalAddress> getServicePostalAddressList();
+    <T> List<T> getAvailableLanguageList();
 
     /**
-     * The address for accessing the service by mail.
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
      *
-     * @return {@link PostalAddress}
+     * @return {@link Language} or {@link Text}
      */
-    PostalAddress getServicePostalAddress();
+    <T> T getAvailableLanguage();
 
     /**
-     * The address for accessing the service by mail.
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
      *
-     * @param servicePostalAddress PostalAddress value to set.
+     * @param availableLanguage Language value to set.
      */
-    void addServicePostalAddress(PostalAddress servicePostalAddress);
-
+    void addAvailableLanguage(Language availableLanguage);
     /**
-     * The service provided by this channel.
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
      *
-     * @return {@link Service}
+     * @param availableLanguage Text value to set.
      */
-    List<Service> getProvidesServiceList();
-
-    /**
-     * The service provided by this channel.
-     *
-     * @return {@link Service}
-     */
-    Service getProvidesService();
-
-    /**
-     * The service provided by this channel.
-     *
-     * @param providesService Service value to set.
-     */
-    void addProvidesService(Service providesService);
-
-    /**
-     * The number to access the service by text message.
-     *
-     * @return {@link ContactPoint}
-     */
-    List<ContactPoint> getServiceSmsNumberList();
-
-    /**
-     * The number to access the service by text message.
-     *
-     * @return {@link ContactPoint}
-     */
-    ContactPoint getServiceSmsNumber();
-
-    /**
-     * The number to access the service by text message.
-     *
-     * @param serviceSmsNumber ContactPoint value to set.
-     */
-    void addServiceSmsNumber(ContactPoint serviceSmsNumber);
+    void addAvailableLanguage(Text availableLanguage);
 
     /**
      * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.

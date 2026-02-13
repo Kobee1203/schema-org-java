@@ -10,6 +10,20 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+## [0.9.0]
+
+### Added
+
+- [generator, serializer] Support custom Serializers and Deserializers #182 by @Kobee1203 in #193
+- [generator] Allows custom java types for schema.org Data Types #182 by @Kobee1203 in #194
+
+### Changed
+
+- Bump nl.jqno.equalsverifier:equalsverifier from 3.19.3 to 3.19.4 by @dependabot in #192
+- Bump com.fasterxml.jackson:jackson-bom from 2.18.3 to 2.19.0 by @dependabot in #191
+
+### Fixed
+
 ## [0.8.0]
 
 ### Added
@@ -249,7 +263,10 @@ All notable changes to this project will be documented in this file.
 
 schema-org-java is alive!
 
-[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.6.0...HEAD
+[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.9.0...HEAD
+[0.9.0]: https://github.com/Kobee1203/schema-org-java/compare/0.8.0...0.9.0
+[0.8.0]: https://github.com/Kobee1203/schema-org-java/compare/0.7.0...0.9.0
+[0.7.0]: https://github.com/Kobee1203/schema-org-java/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/Kobee1203/schema-org-java/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/Kobee1203/schema-org-java/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/Kobee1203/schema-org-java/compare/0.3.1...0.4.0

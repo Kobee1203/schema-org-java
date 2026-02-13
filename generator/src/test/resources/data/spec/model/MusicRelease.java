@@ -6,101 +6,64 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.MusicAlbum;
-import spec.model.MusicReleaseFormatType;
 import spec.model.Duration;
+import spec.model.QuantitativeValue;
 import spec.model.Organization;
+import spec.model.MusicAlbum;
 import spec.model.datatype.Text;
 import spec.model.Person;
+import spec.model.MusicReleaseFormatType;
 
 /**
  * A MusicRelease is a specific release of a music album.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicRelease">https://schema.org/MusicRelease</a>
  */
 public interface MusicRelease extends MusicPlaylist {
 
     /**
-     * The album this is a release of.
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @return {@link MusicAlbum}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<MusicAlbum> getReleaseOfList();
-
-    /**
-     * The album this is a release of.
-     *
-     * @return {@link MusicAlbum}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    MusicAlbum getReleaseOf();
-
-    /**
-     * The album this is a release of.
-     *
-     * @param releaseOf MusicAlbum value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addReleaseOf(MusicAlbum releaseOf);
-
-    /**
-     * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
-     *
-     * @return {@link MusicReleaseFormatType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    List<MusicReleaseFormatType> getMusicReleaseFormatList();
-
-    /**
-     * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
-     *
-     * @return {@link MusicReleaseFormatType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    MusicReleaseFormatType getMusicReleaseFormat();
-
-    /**
-     * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
-     *
-     * @param musicReleaseFormat MusicReleaseFormatType value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat);
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @return {@link Duration} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    List<Duration> getDurationList();
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    Duration getDuration();
+    <T> List<T> getDurationList();
 
     /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    <T> T getDuration();
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @param duration Duration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addDuration(Duration duration);
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param duration QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addDuration(QuantitativeValue duration);
 
     /**
      * The label that issued the release.
      *
      * @return {@link Organization}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     List<Organization> getRecordLabelList();
 
@@ -108,7 +71,6 @@ public interface MusicRelease extends MusicPlaylist {
      * The label that issued the release.
      *
      * @return {@link Organization}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     Organization getRecordLabel();
 
@@ -116,15 +78,34 @@ public interface MusicRelease extends MusicPlaylist {
      * The label that issued the release.
      *
      * @param recordLabel Organization value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addRecordLabel(Organization recordLabel);
+
+    /**
+     * The album this is a release of.
+     *
+     * @return {@link MusicAlbum}
+     */
+    List<MusicAlbum> getReleaseOfList();
+
+    /**
+     * The album this is a release of.
+     *
+     * @return {@link MusicAlbum}
+     */
+    MusicAlbum getReleaseOf();
+
+    /**
+     * The album this is a release of.
+     *
+     * @param releaseOf MusicAlbum value to set.
+     */
+    void addReleaseOf(MusicAlbum releaseOf);
 
     /**
      * The catalog number for the release.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     List<Text> getCatalogNumberList();
 
@@ -132,7 +113,6 @@ public interface MusicRelease extends MusicPlaylist {
      * The catalog number for the release.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     Text getCatalogNumber();
 
@@ -140,7 +120,6 @@ public interface MusicRelease extends MusicPlaylist {
      * The catalog number for the release.
      *
      * @param catalogNumber Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addCatalogNumber(Text catalogNumber);
 
@@ -148,7 +127,6 @@ public interface MusicRelease extends MusicPlaylist {
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @return {@link Person} or {@link Organization}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     <T> List<T> getCreditedToList();
 
@@ -156,7 +134,6 @@ public interface MusicRelease extends MusicPlaylist {
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @return {@link Person} or {@link Organization}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     <T> T getCreditedTo();
 
@@ -164,14 +141,33 @@ public interface MusicRelease extends MusicPlaylist {
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @param creditedTo Person value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addCreditedTo(Person creditedTo);
     /**
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @param creditedTo Organization value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void addCreditedTo(Organization creditedTo);
+
+    /**
+     * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
+     *
+     * @return {@link MusicReleaseFormatType}
+     */
+    List<MusicReleaseFormatType> getMusicReleaseFormatList();
+
+    /**
+     * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
+     *
+     * @return {@link MusicReleaseFormatType}
+     */
+    MusicReleaseFormatType getMusicReleaseFormat();
+
+    /**
+     * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
+     *
+     * @param musicReleaseFormat MusicReleaseFormatType value to set.
+     */
+    void addMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat);
 }

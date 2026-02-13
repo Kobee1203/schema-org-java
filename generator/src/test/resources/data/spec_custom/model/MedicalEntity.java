@@ -6,16 +6,16 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Organization;
-import spec_custom.model.MedicalSpecialty;
-import spec_custom.model.MedicineSystem;
 import spec_custom.model.Grant;
+import spec_custom.model.MedicalSpecialty;
+import spec_custom.model.MedicalStudy;
+import spec_custom.model.MedicalCode;
 import spec_custom.model.datatype.Text;
 import spec_custom.model.DrugLegalStatus;
 import spec_custom.model.MedicalEnumeration;
-import spec_custom.model.MedicalStudy;
+import spec_custom.model.Organization;
 import spec_custom.model.MedicalGuideline;
-import spec_custom.model.MedicalCode;
+import spec_custom.model.MedicineSystem;
 
 /**
  * The most generic type of entity related to health and the practice of medicine.
@@ -26,28 +26,31 @@ import spec_custom.model.MedicalCode;
 public interface MedicalEntity extends Thing {
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Organization}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    List<Organization> getRecognizingAuthorityList();
+    List<Grant> getFundingList();
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Organization}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    Organization getRecognizingAuthority();
+    Grant getFunding();
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param recognizingAuthority Organization value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @param funding Grant value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void addRecognizingAuthority(Organization recognizingAuthority);
+    void addFunding(Grant funding);
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
@@ -74,58 +77,52 @@ public interface MedicalEntity extends Thing {
     void addRelevantSpecialty(MedicalSpecialty relevantSpecialty);
 
     /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     * A medical study or trial related to this entity.
      *
-     * @return {@link MedicineSystem}
+     * @return {@link MedicalStudy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicineSystem> getMedicineSystemList();
+    List<MedicalStudy> getStudyList();
 
     /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     * A medical study or trial related to this entity.
      *
-     * @return {@link MedicineSystem}
+     * @return {@link MedicalStudy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicineSystem getMedicineSystem();
+    MedicalStudy getStudy();
 
     /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     * A medical study or trial related to this entity.
      *
-     * @param medicineSystem MedicineSystem value to set.
+     * @param study MedicalStudy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addMedicineSystem(MedicineSystem medicineSystem);
+    void addStudy(MedicalStudy study);
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @return {@link MedicalCode}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Grant> getFundingList();
+    List<MedicalCode> getCodeList();
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @return {@link MedicalCode}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Grant getFunding();
+    MedicalCode getCode();
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @param code MedicalCode value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addFunding(Grant funding);
+    void addCode(MedicalCode code);
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -166,28 +163,28 @@ public interface MedicalEntity extends Thing {
     void addLegalStatus(MedicalEnumeration legalStatus);
 
     /**
-     * A medical study or trial related to this entity.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @return {@link MedicalStudy}
+     * @return {@link Organization}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalStudy> getStudyList();
+    List<Organization> getRecognizingAuthorityList();
 
     /**
-     * A medical study or trial related to this entity.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @return {@link MedicalStudy}
+     * @return {@link Organization}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalStudy getStudy();
+    Organization getRecognizingAuthority();
 
     /**
-     * A medical study or trial related to this entity.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @param study MedicalStudy value to set.
+     * @param recognizingAuthority Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addStudy(MedicalStudy study);
+    void addRecognizingAuthority(Organization recognizingAuthority);
 
     /**
      * A medical guideline related to this entity.
@@ -214,26 +211,26 @@ public interface MedicalEntity extends Thing {
     void addGuideline(MedicalGuideline guideline);
 
     /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link MedicalCode}
+     * @return {@link MedicineSystem}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalCode> getCodeList();
+    List<MedicineSystem> getMedicineSystemList();
 
     /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link MedicalCode}
+     * @return {@link MedicineSystem}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalCode getCode();
+    MedicineSystem getMedicineSystem();
 
     /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @param code MedicalCode value to set.
+     * @param medicineSystem MedicineSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addCode(MedicalCode code);
+    void addMedicineSystem(MedicineSystem medicineSystem);
 }

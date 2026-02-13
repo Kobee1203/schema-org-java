@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Organization;
-import spec_custom.model.Person;
 import spec_custom.model.CreativeWork;
+import spec_custom.model.Person;
+import spec_custom.model.Organization;
 
 /**
  * A [[Claim]] in Schema.org represents a specific, factually-oriented claim that could be the [[itemReviewed]] in a [[ClaimReview]]. The content of a claim can be summarized with the [[text]] property. Variations on well known claims can have their common identity indicated via [[sameAs]] links, and summarized with a [[name]]. Ideally, a [[Claim]] description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.
@@ -23,45 +23,6 @@ import spec_custom.model.CreativeWork;
  * @see <a href="https://schema.org/Claim">https://schema.org/Claim</a>
  */
 public interface Claim extends CreativeWork {
-
-    /**
-     * For a [[Claim]] interpreted from [[MediaObject]] content
-     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    <T> List<T> getClaimInterpreterList();
-
-    /**
-     * For a [[Claim]] interpreted from [[MediaObject]] content
-     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    <T> T getClaimInterpreter();
-
-    /**
-     * For a [[Claim]] interpreted from [[MediaObject]] content
-     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
-     *
-     * @param claimInterpreter Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addClaimInterpreter(Organization claimInterpreter);
-    /**
-     * For a [[Claim]] interpreted from [[MediaObject]] content
-     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
-     *
-     * @param claimInterpreter Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addClaimInterpreter(Person claimInterpreter);
 
     /**
      * Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
@@ -116,4 +77,39 @@ public interface Claim extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */
     void addFirstAppearance(CreativeWork firstAppearance);
+
+    /**
+     * For a [[Claim]] interpreted from [[MediaObject]] content, the [[interpretedAsClaim]] property can be used to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    <T> List<T> getClaimInterpreterList();
+
+    /**
+     * For a [[Claim]] interpreted from [[MediaObject]] content, the [[interpretedAsClaim]] property can be used to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    <T> T getClaimInterpreter();
+
+    /**
+     * For a [[Claim]] interpreted from [[MediaObject]] content, the [[interpretedAsClaim]] property can be used to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
+     *
+     * @param claimInterpreter Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void addClaimInterpreter(Person claimInterpreter);
+    /**
+     * For a [[Claim]] interpreted from [[MediaObject]] content, the [[interpretedAsClaim]] property can be used to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
+     *
+     * @param claimInterpreter Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void addClaimInterpreter(Organization claimInterpreter);
 }

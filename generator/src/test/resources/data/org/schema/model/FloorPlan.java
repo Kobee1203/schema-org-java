@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
-import org.schema.model.datatype.URL;
-import org.schema.model.ImageObject;
-import org.schema.model.LocationFeatureSpecification;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Boolean;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.Accommodation;
+import org.schema.model.ImageObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Integer;
+import org.schema.model.LocationFeatureSpecification;
 
 /**
  * A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a [[FloorPlan]].  A FloorPlan is always in the context of a particular place, either a larger [[ApartmentComplex]] or a single [[Apartment]]. The visual/spatial aspects of a floor plan (i.e. room layout, [see wikipedia](https://en.wikipedia.org/wiki/Floor_plan)) can be indicated using [[image]]. 
@@ -24,103 +24,6 @@ import org.schema.model.Accommodation;
  * @see <a href="https://schema.org/FloorPlan">https://schema.org/FloorPlan</a>
  */
 public interface FloorPlan extends Intangible {
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    List<QuantitativeValue> getFloorSizeList();
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    QuantitativeValue getFloorSize();
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @param floorSize QuantitativeValue value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addFloorSize(QuantitativeValue floorSize);
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    <T> List<T> getNumberOfRoomsList();
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    <T> T getNumberOfRooms();
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param numberOfRooms Number value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addNumberOfRooms(Number numberOfRooms);
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param numberOfRooms QuantitativeValue value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addNumberOfRooms(QuantitativeValue numberOfRooms);
-
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    <T> List<T> getLayoutImageList();
-
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    <T> T getLayoutImage();
-
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @param layoutImage URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    void addLayoutImage(URL layoutImage);
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @param layoutImage ImageObject value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    void addLayoutImage(ImageObject layoutImage);
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
@@ -150,119 +53,6 @@ public interface FloorPlan extends Intangible {
     void addNumberOfFullBathrooms(Number numberOfFullBathrooms);
 
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    List<LocationFeatureSpecification> getAmenityFeatureList();
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    LocationFeatureSpecification getAmenityFeature();
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @param amenityFeature LocationFeatureSpecification value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addAmenityFeature(LocationFeatureSpecification amenityFeature);
-
-    /**
-     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    List<Integer> getNumberOfBathroomsTotalList();
-
-    /**
-     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    Integer getNumberOfBathroomsTotal();
-
-    /**
-     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @param numberOfBathroomsTotal Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void addNumberOfBathroomsTotal(Integer numberOfBathroomsTotal);
-
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    <T> List<T> getNumberOfBedroomsList();
-
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    <T> T getNumberOfBedrooms();
-
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @param numberOfBedrooms Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void addNumberOfBedrooms(Number numberOfBedrooms);
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @param numberOfBedrooms QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void addNumberOfBedrooms(QuantitativeValue numberOfBedrooms);
-
-    /**
-     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    List<QuantitativeValue> getNumberOfAvailableAccommodationUnitsList();
-
-    /**
-     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    QuantitativeValue getNumberOfAvailableAccommodationUnits();
-
-    /**
-     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
-     *
-     * @param numberOfAvailableAccommodationUnits QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void addNumberOfAvailableAccommodationUnits(QuantitativeValue numberOfAvailableAccommodationUnits);
-
-    /**
      * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
      *
      * @return {@link QuantitativeValue}
@@ -290,35 +80,86 @@ public interface FloorPlan extends Intangible {
     void addNumberOfAccommodationUnits(QuantitativeValue numberOfAccommodationUnits);
 
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @return {@link Text} or {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @return {@link QuantitativeValue} or {@link Number}
      */
-    <T> List<T> getPetsAllowedList();
+    <T> List<T> getNumberOfRoomsList();
 
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @return {@link Text} or {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @return {@link QuantitativeValue} or {@link Number}
      */
-    <T> T getPetsAllowed();
+    <T> T getNumberOfRooms();
 
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param petsAllowed Text value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @param numberOfRooms QuantitativeValue value to set.
      */
-    void addPetsAllowed(Text petsAllowed);
+    void addNumberOfRooms(QuantitativeValue numberOfRooms);
     /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param petsAllowed Boolean value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @param numberOfRooms Number value to set.
      */
-    void addPetsAllowed(Boolean petsAllowed);
+    void addNumberOfRooms(Number numberOfRooms);
+
+    /**
+     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    List<Number> getNumberOfPartialBathroomsList();
+
+    /**
+     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    Number getNumberOfPartialBathrooms();
+
+    /**
+     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     *
+     * @param numberOfPartialBathrooms Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    void addNumberOfPartialBathrooms(Number numberOfPartialBathrooms);
+
+    /**
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getFloorSizeList();
+
+    /**
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    QuantitativeValue getFloorSize();
+
+    /**
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
+     *
+     * @param floorSize QuantitativeValue value to set.
+     */
+    void addFloorSize(QuantitativeValue floorSize);
 
     /**
      * Indicates some accommodation that this floor plan describes.
@@ -348,29 +189,174 @@ public interface FloorPlan extends Intangible {
     void addIsPlanForApartment(Accommodation isPlanForApartment);
 
     /**
-     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
      *
-     * @return {@link Number}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    List<Number> getNumberOfPartialBathroomsList();
+    List<QuantitativeValue> getNumberOfAvailableAccommodationUnitsList();
 
     /**
-     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
      *
-     * @return {@link Number}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    Number getNumberOfPartialBathrooms();
+    QuantitativeValue getNumberOfAvailableAccommodationUnits();
 
     /**
-     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
      *
-     * @param numberOfPartialBathrooms Number value to set.
+     * @param numberOfAvailableAccommodationUnits QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void addNumberOfPartialBathrooms(Number numberOfPartialBathrooms);
+    void addNumberOfAvailableAccommodationUnits(QuantitativeValue numberOfAvailableAccommodationUnits);
+
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @return {@link ImageObject} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    <T> List<T> getLayoutImageList();
+
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @return {@link ImageObject} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    <T> T getLayoutImage();
+
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @param layoutImage ImageObject value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    void addLayoutImage(ImageObject layoutImage);
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @param layoutImage URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    void addLayoutImage(URL layoutImage);
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @return {@link Boolean} or {@link Text}
+     */
+    <T> List<T> getPetsAllowedList();
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @return {@link Boolean} or {@link Text}
+     */
+    <T> T getPetsAllowed();
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Boolean value to set.
+     */
+    void addPetsAllowed(Boolean petsAllowed);
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Text value to set.
+     */
+    void addPetsAllowed(Text petsAllowed);
+
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    <T> List<T> getNumberOfBedroomsList();
+
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    <T> T getNumberOfBedrooms();
+
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @param numberOfBedrooms QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    void addNumberOfBedrooms(QuantitativeValue numberOfBedrooms);
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @param numberOfBedrooms Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    void addNumberOfBedrooms(Number numberOfBedrooms);
+
+    /**
+     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    List<Integer> getNumberOfBathroomsTotalList();
+
+    /**
+     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    Integer getNumberOfBathroomsTotal();
+
+    /**
+     * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+     *
+     * @param numberOfBathroomsTotal Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    void addNumberOfBathroomsTotal(Integer numberOfBathroomsTotal);
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     */
+    List<LocationFeatureSpecification> getAmenityFeatureList();
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     */
+    LocationFeatureSpecification getAmenityFeature();
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @param amenityFeature LocationFeatureSpecification value to set.
+     */
+    void addAmenityFeature(LocationFeatureSpecification amenityFeature);
 }

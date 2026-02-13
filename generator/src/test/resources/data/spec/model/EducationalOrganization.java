@@ -13,7 +13,7 @@ import spec.model.Person;
  *
  * @see <a href="https://schema.org/EducationalOrganization">https://schema.org/EducationalOrganization</a>
  */
-public interface EducationalOrganization extends CivicStructure, Organization {
+public interface EducationalOrganization extends Organization, CivicStructure {
 
     /**
      * Alumni of an organization.

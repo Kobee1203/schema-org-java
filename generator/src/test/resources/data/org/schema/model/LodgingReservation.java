@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
 import org.schema.model.datatype.Text;
 import org.schema.model.QualitativeValue;
-import org.schema.model.datatype.Integer;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Time;
 
 /**
  * A reservation for lodging at a hotel, motel, inn, etc.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
@@ -21,112 +21,79 @@ import org.schema.model.QuantitativeValue;
 public interface LodgingReservation extends Reservation {
 
     /**
-     * The latest someone may check out of a lodging establishment.
+     * A full description of the lodging unit.
      *
-     * @return {@link DateTime} or {@link Time}
+     * @return {@link Text}
      */
-    <T> List<T> getCheckoutTimeList();
+    List<Text> getLodgingUnitDescriptionList();
 
     /**
-     * The latest someone may check out of a lodging establishment.
+     * A full description of the lodging unit.
      *
-     * @return {@link DateTime} or {@link Time}
+     * @return {@link Text}
      */
-    <T> T getCheckoutTime();
+    Text getLodgingUnitDescription();
 
     /**
-     * The latest someone may check out of a lodging establishment.
+     * A full description of the lodging unit.
      *
-     * @param checkoutTime DateTime value to set.
+     * @param lodgingUnitDescription Text value to set.
      */
-    void addCheckoutTime(DateTime checkoutTime);
-    /**
-     * The latest someone may check out of a lodging establishment.
-     *
-     * @param checkoutTime Time value to set.
-     */
-    void addCheckoutTime(Time checkoutTime);
+    void addLodgingUnitDescription(Text lodgingUnitDescription);
 
     /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      *
-     * @return {@link Text} or {@link QualitativeValue}
+     * @return {@link QualitativeValue} or {@link Text}
      */
     <T> List<T> getLodgingUnitTypeList();
 
     /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      *
-     * @return {@link Text} or {@link QualitativeValue}
+     * @return {@link QualitativeValue} or {@link Text}
      */
     <T> T getLodgingUnitType();
 
     /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      *
-     * @param lodgingUnitType Text value to set.
-     */
-    void addLodgingUnitType(Text lodgingUnitType);
-    /**
-     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-     *
      * @param lodgingUnitType QualitativeValue value to set.
      */
     void addLodgingUnitType(QualitativeValue lodgingUnitType);
+    /**
+     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+     *
+     * @param lodgingUnitType Text value to set.
+     */
+    void addLodgingUnitType(Text lodgingUnitType);
 
     /**
      * The number of children staying in the unit.
      *
-     * @return {@link Integer} or {@link QuantitativeValue}
+     * @return {@link QuantitativeValue} or {@link Integer}
      */
     <T> List<T> getNumChildrenList();
 
     /**
      * The number of children staying in the unit.
      *
-     * @return {@link Integer} or {@link QuantitativeValue}
+     * @return {@link QuantitativeValue} or {@link Integer}
      */
     <T> T getNumChildren();
 
     /**
      * The number of children staying in the unit.
      *
-     * @param numChildren Integer value to set.
-     */
-    void addNumChildren(Integer numChildren);
-    /**
-     * The number of children staying in the unit.
-     *
      * @param numChildren QuantitativeValue value to set.
      */
     void addNumChildren(QuantitativeValue numChildren);
-
     /**
-     * The number of adults staying in the unit.
+     * The number of children staying in the unit.
      *
-     * @return {@link QuantitativeValue} or {@link Integer}
+     * @param numChildren Integer value to set.
      */
-    <T> List<T> getNumAdultsList();
-
-    /**
-     * The number of adults staying in the unit.
-     *
-     * @return {@link QuantitativeValue} or {@link Integer}
-     */
-    <T> T getNumAdults();
-
-    /**
-     * The number of adults staying in the unit.
-     *
-     * @param numAdults QuantitativeValue value to set.
-     */
-    void addNumAdults(QuantitativeValue numAdults);
-    /**
-     * The number of adults staying in the unit.
-     *
-     * @param numAdults Integer value to set.
-     */
-    void addNumAdults(Integer numAdults);
+    void addNumChildren(Integer numChildren);
 
     /**
      * The earliest someone may check into a lodging establishment.
@@ -156,23 +123,56 @@ public interface LodgingReservation extends Reservation {
     void addCheckinTime(Time checkinTime);
 
     /**
-     * A full description of the lodging unit.
+     * The latest someone may check out of a lodging establishment.
      *
-     * @return {@link Text}
+     * @return {@link DateTime} or {@link Time}
      */
-    List<Text> getLodgingUnitDescriptionList();
+    <T> List<T> getCheckoutTimeList();
 
     /**
-     * A full description of the lodging unit.
+     * The latest someone may check out of a lodging establishment.
      *
-     * @return {@link Text}
+     * @return {@link DateTime} or {@link Time}
      */
-    Text getLodgingUnitDescription();
+    <T> T getCheckoutTime();
 
     /**
-     * A full description of the lodging unit.
+     * The latest someone may check out of a lodging establishment.
      *
-     * @param lodgingUnitDescription Text value to set.
+     * @param checkoutTime DateTime value to set.
      */
-    void addLodgingUnitDescription(Text lodgingUnitDescription);
+    void addCheckoutTime(DateTime checkoutTime);
+    /**
+     * The latest someone may check out of a lodging establishment.
+     *
+     * @param checkoutTime Time value to set.
+     */
+    void addCheckoutTime(Time checkoutTime);
+
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @return {@link QuantitativeValue} or {@link Integer}
+     */
+    <T> List<T> getNumAdultsList();
+
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @return {@link QuantitativeValue} or {@link Integer}
+     */
+    <T> T getNumAdults();
+
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @param numAdults QuantitativeValue value to set.
+     */
+    void addNumAdults(QuantitativeValue numAdults);
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @param numAdults Integer value to set.
+     */
+    void addNumAdults(Integer numAdults);
 }

@@ -50,6 +50,30 @@ public interface Diet extends CreativeWork, LifestyleModification {
     void addEndorsers(Organization endorsers);
 
     /**
+     * Medical expert advice related to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getExpertConsiderationsList();
+
+    /**
+     * Medical expert advice related to the plan.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getExpertConsiderations();
+
+    /**
+     * Medical expert advice related to the plan.
+     *
+     * @param expertConsiderations Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addExpertConsiderations(Text expertConsiderations);
+
+    /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
      *
      * @return {@link Text}
@@ -96,30 +120,6 @@ public interface Diet extends CreativeWork, LifestyleModification {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addPhysiologicalBenefits(Text physiologicalBenefits);
-
-    /**
-     * Medical expert advice related to the plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getExpertConsiderationsList();
-
-    /**
-     * Medical expert advice related to the plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getExpertConsiderations();
-
-    /**
-     * Medical expert advice related to the plan.
-     *
-     * @param expertConsiderations Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addExpertConsiderations(Text expertConsiderations);
 
     /**
      * Specific physiologic risks associated to the diet plan.

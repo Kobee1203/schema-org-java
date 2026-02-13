@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Language;
-import org.schema.model.datatype.Text;
 import org.schema.model.Movie;
+import org.schema.model.datatype.Text;
+import org.schema.model.Language;
 
 /**
  * A screening of a movie or other video.
@@ -18,39 +18,25 @@ import org.schema.model.Movie;
 public interface ScreeningEvent extends Event {
 
     /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     * The movie presented during this event.
      *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     * @return {@link Movie}
      */
-    <T> List<T> getSubtitleLanguageList();
+    List<Movie> getWorkPresentedList();
 
     /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     * The movie presented during this event.
      *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     * @return {@link Movie}
      */
-    <T> T getSubtitleLanguage();
+    Movie getWorkPresented();
 
     /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     * The movie presented during this event.
      *
-     * @param subtitleLanguage Language value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     * @param workPresented Movie value to set.
      */
-    void addSubtitleLanguage(Language subtitleLanguage);
-    /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-     *
-     * @param subtitleLanguage Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
-     */
-    void addSubtitleLanguage(Text subtitleLanguage);
+    void addWorkPresented(Movie workPresented);
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -74,23 +60,37 @@ public interface ScreeningEvent extends Event {
     void addVideoFormat(Text videoFormat);
 
     /**
-     * The movie presented during this event.
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link Movie}
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    List<Movie> getWorkPresentedList();
+    <T> List<T> getSubtitleLanguageList();
 
     /**
-     * The movie presented during this event.
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link Movie}
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    Movie getWorkPresented();
+    <T> T getSubtitleLanguage();
 
     /**
-     * The movie presented during this event.
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @param workPresented Movie value to set.
+     * @param subtitleLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void addWorkPresented(Movie workPresented);
+    void addSubtitleLanguage(Text subtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param subtitleLanguage Language value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void addSubtitleLanguage(Language subtitleLanguage);
 }

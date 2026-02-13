@@ -11,7 +11,6 @@ import org.schema.model.datatype.Text;
 /**
  * An EducationalAudience.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass</a>
  * @see <a href="https://schema.org/EducationalAudience">https://schema.org/EducationalAudience</a>
  */
 public interface EducationalAudience extends Audience {

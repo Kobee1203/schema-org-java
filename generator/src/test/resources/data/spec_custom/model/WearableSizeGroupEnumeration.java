@@ -5,6 +5,8 @@
  */
 package spec_custom.model;
 
+import java.util.List;
+
 /**
  * Enumerates common size groups (also known as "size types") for wearable products.
  *

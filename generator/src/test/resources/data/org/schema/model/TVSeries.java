@@ -6,15 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
 import org.schema.model.CreativeWorkSeason;
+import org.schema.model.MusicGroup;
+import org.schema.model.Person;
+import org.schema.model.PerformingGroup;
 import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.URL;
+import org.schema.model.Episode;
 import org.schema.model.VideoObject;
+import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Text;
 import org.schema.model.Organization;
 import org.schema.model.Country;
-import org.schema.model.Episode;
-import org.schema.model.MusicGroup;
 
 /**
  * CreativeWorkSeries dedicated to TV broadcast and associated online delivery.
@@ -22,27 +24,6 @@ import org.schema.model.MusicGroup;
  * @see <a href="https://schema.org/TVSeries">https://schema.org/TVSeries</a>
  */
 public interface TVSeries extends CreativeWork, CreativeWorkSeries {
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorsList();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActors();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actors Person value to set.
-     */
-    void addActors(Person actors);
 
     /**
      * A season that is part of the media series.
@@ -66,6 +47,81 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addContainsSeason(CreativeWorkSeason containsSeason);
 
     /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getSeasonsList();
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    CreativeWorkSeason getSeasons();
+
+    /**
+     * A season in a media series.
+     *
+     * @param seasons CreativeWorkSeason value to set.
+     */
+    void addSeasons(CreativeWorkSeason seasons);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> List<T> getMusicByList();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> T getMusicBy();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void addMusicBy(MusicGroup musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy Person value to set.
+     */
+    void addMusicBy(Person musicBy);
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> List<T> getActorList();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> T getActor();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor Person value to set.
+     */
+    void addActor(Person actor);
+
+    /**
      * The number of seasons in this series.
      *
      * @return {@link Integer}
@@ -87,52 +143,25 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addNumberOfSeasons(Integer numberOfSeasons);
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An episode of a TV, radio or game media within a series or season.
      *
-     * @return {@link Person}
+     * @return {@link Episode}
      */
-    List<Person> getActorList();
+    List<Episode> getEpisodeList();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An episode of a TV, radio or game media within a series or season.
      *
-     * @return {@link Person}
+     * @return {@link Episode}
      */
-    Person getActor();
+    Episode getEpisode();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An episode of a TV, radio or game media within a series or season.
      *
-     * @param actor Person value to set.
+     * @param episode Episode value to set.
      */
-    void addActor(Person actor);
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link URL} or {@link CreativeWorkSeason}
-     */
-    <T> List<T> getSeasonList();
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link URL} or {@link CreativeWorkSeason}
-     */
-    <T> T getSeason();
-
-    /**
-     * A season in a media series.
-     *
-     * @param season URL value to set.
-     */
-    void addSeason(URL season);
-    /**
-     * A season in a media series.
-     *
-     * @param season CreativeWorkSeason value to set.
-     */
-    void addSeason(CreativeWorkSeason season);
+    void addEpisode(Episode episode);
 
     /**
      * The trailer of a movie or TV/radio series, season, episode, etc.
@@ -156,6 +185,105 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addTrailer(VideoObject trailer);
 
     /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason} or {@link URL}
+     */
+    <T> List<T> getSeasonList();
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason} or {@link URL}
+     */
+    <T> T getSeason();
+
+    /**
+     * A season in a media series.
+     *
+     * @param season CreativeWorkSeason value to set.
+     */
+    void addSeason(CreativeWorkSeason season);
+    /**
+     * A season in a media series.
+     *
+     * @param season URL value to set.
+     */
+    void addSeason(URL season);
+
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+     * 
+     * Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeries]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    <T> List<T> getTitleEIDRList();
+
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+     * 
+     * Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeries]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    <T> T getTitleEIDR();
+
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+     * 
+     * Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeries]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @param titleEIDR URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    void addTitleEIDR(URL titleEIDR);
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+     * 
+     * Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeries]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @param titleEIDR Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    void addTitleEIDR(Text titleEIDR);
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfEpisodesList();
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @return {@link Integer}
+     */
+    Integer getNumberOfEpisodes();
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @param numberOfEpisodes Integer value to set.
+     */
+    void addNumberOfEpisodes(Integer numberOfEpisodes);
+
+    /**
      * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
      * @return {@link Organization}
@@ -175,6 +303,27 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
      * @param productionCompany Organization value to set.
      */
     void addProductionCompany(Organization productionCompany);
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirectors();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param directors Person value to set.
+     */
+    void addDirectors(Person directors);
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -210,67 +359,25 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addCountryOfOrigin(Country countryOfOrigin);
 
     /**
-     * An episode of a TV/radio series or season.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Episode}
+     * @return {@link Person}
      */
-    List<Episode> getEpisodesList();
+    List<Person> getActorsList();
 
     /**
-     * An episode of a TV/radio series or season.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Episode}
+     * @return {@link Person}
      */
-    Episode getEpisodes();
+    Person getActors();
 
     /**
-     * An episode of a TV/radio series or season.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param episodes Episode value to set.
+     * @param actors Person value to set.
      */
-    void addEpisodes(Episode episodes);
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    List<CreativeWorkSeason> getSeasonsList();
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    CreativeWorkSeason getSeasons();
-
-    /**
-     * A season in a media series.
-     *
-     * @param seasons CreativeWorkSeason value to set.
-     */
-    void addSeasons(CreativeWorkSeason seasons);
-
-    /**
-     * An episode of a TV, radio or game media within a series or season.
-     *
-     * @return {@link Episode}
-     */
-    List<Episode> getEpisodeList();
-
-    /**
-     * An episode of a TV, radio or game media within a series or season.
-     *
-     * @return {@link Episode}
-     */
-    Episode getEpisode();
-
-    /**
-     * An episode of a TV, radio or game media within a series or season.
-     *
-     * @param episode Episode value to set.
-     */
-    void addEpisode(Episode episode);
+    void addActors(Person actors);
 
     /**
      * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -294,71 +401,23 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addDirector(Person director);
 
     /**
-     * The number of episodes in this season or series.
+     * An episode of a TV/radio series or season.
      *
-     * @return {@link Integer}
+     * @return {@link Episode}
      */
-    List<Integer> getNumberOfEpisodesList();
+    List<Episode> getEpisodesList();
 
     /**
-     * The number of episodes in this season or series.
+     * An episode of a TV/radio series or season.
      *
-     * @return {@link Integer}
+     * @return {@link Episode}
      */
-    Integer getNumberOfEpisodes();
+    Episode getEpisodes();
 
     /**
-     * The number of episodes in this season or series.
+     * An episode of a TV/radio series or season.
      *
-     * @param numberOfEpisodes Integer value to set.
+     * @param episodes Episode value to set.
      */
-    void addNumberOfEpisodes(Integer numberOfEpisodes);
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorsList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirectors();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param directors Person value to set.
-     */
-    void addDirectors(Person directors);
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link MusicGroup} or {@link Person}
-     */
-    <T> List<T> getMusicByList();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link MusicGroup} or {@link Person}
-     */
-    <T> T getMusicBy();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy MusicGroup value to set.
-     */
-    void addMusicBy(MusicGroup musicBy);
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy Person value to set.
-     */
-    void addMusicBy(Person musicBy);
+    void addEpisodes(Episode episodes);
 }

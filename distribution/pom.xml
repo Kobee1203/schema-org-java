@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.weedow</groupId>
         <artifactId>schema-org-parent</artifactId>
-        <version>0.8.0-SNAPSHOT</version>
+        <version>0.9.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -16,7 +16,8 @@
     <description>Schema.org Java Distribution</description>
 
     <properties>
-        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.install.skip>true</maven.install.skip>
+		<maven.deploy.skip>true</maven.deploy.skip>
 
         <github-release-plugin.version>1.6.0</github-release-plugin.version>
     </properties>
@@ -24,33 +25,6 @@
     <profiles>
         <profile>
             <id>release</id>
-
-            <!--
-            NOTE: These dependency declarations are only required to sort this project to the end of the line in the multimodule build.
-            We need to ensure this distribution project builds AFTER the following modules.
-            -->
-            <dependencies>
-                <dependency>
-                    <groupId>com.weedow</groupId>
-                    <artifactId>schema-org-java-commons</artifactId>
-                    <version>${project.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>com.weedow</groupId>
-                    <artifactId>schema-org-generator</artifactId>
-                    <version>${project.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>com.weedow</groupId>
-                    <artifactId>schema-org-generator-maven-plugin</artifactId>
-                    <version>${project.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>com.weedow</groupId>
-                    <artifactId>schema-org-serializer</artifactId>
-                    <version>${project.version}</version>
-                </dependency>
-            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -101,14 +75,20 @@
         </profile>
 
         <profile>
-            <id>ossrh</id>
+            <id>central</id>
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>injected-central-publishing</id>
+                                <phase>none</phase>
+                            </execution>
+                        </executions>
                         <configuration>
-                            <skipNexusStagingDeployMojo>${maven.deploy.skip}</skipNexusStagingDeployMojo>
+                            <skipPublishing>${maven.deploy.skip}</skipPublishing>
                         </configuration>
                     </plugin>
                 </plugins>

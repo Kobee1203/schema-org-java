@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.BedType;
 import org.schema.model.datatype.Text;
 import org.schema.model.BedDetails;
-import org.schema.model.BedType;
 import org.schema.model.QuantitativeValue;
 
 /**
@@ -16,7 +16,6 @@ import org.schema.model.QuantitativeValue;
  * <br /><br />
  * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
  *
- * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/HotelRoom">https://schema.org/HotelRoom</a>
  */
 public interface HotelRoom extends Room {
@@ -25,8 +24,7 @@ public interface HotelRoom extends Room {
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
-     * @return {@link Text} or {@link BedDetails} or {@link BedType}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @return {@link BedType} or {@link Text} or {@link BedDetails}
      */
     <T> List<T> getBedList();
 
@@ -34,8 +32,7 @@ public interface HotelRoom extends Room {
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
-     * @return {@link Text} or {@link BedDetails} or {@link BedType}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     * @return {@link BedType} or {@link Text} or {@link BedDetails}
      */
     <T> T getBed();
 
@@ -43,8 +40,14 @@ public interface HotelRoom extends Room {
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
+     * @param bed BedType value to set.
+     */
+    void addBed(BedType bed);
+    /**
+     * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+     *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
+     *
      * @param bed Text value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     void addBed(Text bed);
     /**
@@ -52,42 +55,30 @@ public interface HotelRoom extends Room {
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @param bed BedDetails value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     void addBed(BedDetails bed);
-    /**
-     * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
-     *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
-     *
-     * @param bed BedType value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void addBed(BedType bed);
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
-     * Typical unit code(s): C62 for person
+     * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     List<QuantitativeValue> getOccupancyList();
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
-     * Typical unit code(s): C62 for person
+     * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     QuantitativeValue getOccupancy();
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
-     * Typical unit code(s): C62 for person
+     * Typical unit code(s): C62 for person.
      *
      * @param occupancy QuantitativeValue value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     void addOccupancy(QuantitativeValue occupancy);
 }

@@ -14,7 +14,6 @@ import org.schema.model.Thing;
 /**
  * A Property value specification.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass</a>
  * @see <a href="https://schema.org/PropertyValueSpecification">https://schema.org/PropertyValueSpecification</a>
  */
 public interface PropertyValueSpecification extends Intangible {
@@ -62,25 +61,25 @@ public interface PropertyValueSpecification extends Intangible {
     void addReadonlyValue(Boolean readonlyValue);
 
     /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
+     * The upper value of some characteristic or property.
      *
      * @return {@link Number}
      */
-    List<Number> getValueMinLengthList();
+    List<Number> getMaxValueList();
 
     /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
+     * The upper value of some characteristic or property.
      *
      * @return {@link Number}
      */
-    Number getValueMinLength();
+    Number getMaxValue();
 
     /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
+     * The upper value of some characteristic or property.
      *
-     * @param valueMinLength Number value to set.
+     * @param maxValue Number value to set.
      */
-    void addValueMinLength(Number valueMinLength);
+    void addMaxValue(Number maxValue);
 
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
@@ -102,120 +101,6 @@ public interface PropertyValueSpecification extends Intangible {
      * @param valueName Text value to set.
      */
     void addValueName(Text valueName);
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<Number> getMaxValueList();
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    Number getMaxValue();
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @param maxValue Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addMaxValue(Number maxValue);
-
-    /**
-     * Specifies the allowed range for number of characters in a literal value.
-     *
-     * @return {@link Number}
-     */
-    List<Number> getValueMaxLengthList();
-
-    /**
-     * Specifies the allowed range for number of characters in a literal value.
-     *
-     * @return {@link Number}
-     */
-    Number getValueMaxLength();
-
-    /**
-     * Specifies the allowed range for number of characters in a literal value.
-     *
-     * @param valueMaxLength Number value to set.
-     */
-    void addValueMaxLength(Number valueMaxLength);
-
-    /**
-     * Whether the property must be filled in to complete the action.  Default is false.
-     *
-     * @return {@link Boolean}
-     */
-    List<Boolean> getValueRequiredList();
-
-    /**
-     * Whether the property must be filled in to complete the action.  Default is false.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getValueRequired();
-
-    /**
-     * Whether the property must be filled in to complete the action.  Default is false.
-     *
-     * @param valueRequired Boolean value to set.
-     */
-    void addValueRequired(Boolean valueRequired);
-
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     *
-     * @return {@link Number}
-     */
-    List<Number> getStepValueList();
-
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     *
-     * @return {@link Number}
-     */
-    Number getStepValue();
-
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     *
-     * @param stepValue Number value to set.
-     */
-    void addStepValue(Number stepValue);
-
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @return {@link Thing} or {@link Text}
-     */
-    <T> List<T> getDefaultValueList();
-
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @return {@link Thing} or {@link Text}
-     */
-    <T> T getDefaultValue();
-
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @param defaultValue Thing value to set.
-     */
-    void addDefaultValue(Thing defaultValue);
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @param defaultValue Text value to set.
-     */
-    void addDefaultValue(Text defaultValue);
 
     /**
      * Whether multiple values are allowed for the property.  Default is false.
@@ -242,7 +127,6 @@ public interface PropertyValueSpecification extends Intangible {
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<Number> getMinValueList();
 
@@ -250,7 +134,6 @@ public interface PropertyValueSpecification extends Intangible {
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     Number getMinValue();
 
@@ -258,7 +141,117 @@ public interface PropertyValueSpecification extends Intangible {
      * The lower value of some characteristic or property.
      *
      * @param minValue Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addMinValue(Number minValue);
+
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getStepValueList();
+
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     *
+     * @return {@link Number}
+     */
+    Number getStepValue();
+
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     *
+     * @param stepValue Number value to set.
+     */
+    void addStepValue(Number stepValue);
+
+    /**
+     * Specifies the allowed range for number of characters in a literal value.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getValueMaxLengthList();
+
+    /**
+     * Specifies the allowed range for number of characters in a literal value.
+     *
+     * @return {@link Number}
+     */
+    Number getValueMaxLength();
+
+    /**
+     * Specifies the allowed range for number of characters in a literal value.
+     *
+     * @param valueMaxLength Number value to set.
+     */
+    void addValueMaxLength(Number valueMaxLength);
+
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getValueMinLengthList();
+
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     *
+     * @return {@link Number}
+     */
+    Number getValueMinLength();
+
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     *
+     * @param valueMinLength Number value to set.
+     */
+    void addValueMinLength(Number valueMinLength);
+
+    /**
+     * Whether the property must be filled in to complete the action.  Default is false.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getValueRequiredList();
+
+    /**
+     * Whether the property must be filled in to complete the action.  Default is false.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getValueRequired();
+
+    /**
+     * Whether the property must be filled in to complete the action.  Default is false.
+     *
+     * @param valueRequired Boolean value to set.
+     */
+    void addValueRequired(Boolean valueRequired);
+
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     *
+     * @return {@link Text} or {@link Thing}
+     */
+    <T> List<T> getDefaultValueList();
+
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     *
+     * @return {@link Text} or {@link Thing}
+     */
+    <T> T getDefaultValue();
+
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     *
+     * @param defaultValue Text value to set.
+     */
+    void addDefaultValue(Text defaultValue);
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     *
+     * @param defaultValue Thing value to set.
+     */
+    void addDefaultValue(Thing defaultValue);
 }
