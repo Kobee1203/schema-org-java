@@ -5,10 +5,12 @@
  */
 package spec_custom.model;
 
+import java.util.List;
+
 /**
  * A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.
  *
  * @see <a href="https://schema.org/HowToStep">https://schema.org/HowToStep</a>
  */
-public interface HowToStep extends ItemList, CreativeWork, ListItem {
+public interface HowToStep extends CreativeWork, ItemList, ListItem {
 }

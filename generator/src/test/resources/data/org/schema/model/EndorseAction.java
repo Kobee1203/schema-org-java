@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Organization;
 import org.schema.model.Person;
+import org.schema.model.Organization;
 
 /**
  * An agent approves/certifies/likes/supports/sanctions an object.
@@ -19,27 +19,27 @@ public interface EndorseAction extends ReactAction {
     /**
      * A sub property of participant. The person/organization being supported.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     <T> List<T> getEndorseeList();
 
     /**
      * A sub property of participant. The person/organization being supported.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     <T> T getEndorsee();
 
     /**
      * A sub property of participant. The person/organization being supported.
      *
-     * @param endorsee Organization value to set.
-     */
-    void addEndorsee(Organization endorsee);
-    /**
-     * A sub property of participant. The person/organization being supported.
-     *
      * @param endorsee Person value to set.
      */
     void addEndorsee(Person endorsee);
+    /**
+     * A sub property of participant. The person/organization being supported.
+     *
+     * @param endorsee Organization value to set.
+     */
+    void addEndorsee(Organization endorsee);
 }

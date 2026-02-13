@@ -51,6 +51,12 @@ public final class ModelHandlerTestUtils {
         return source;
     }
 
+    public static Contributor contributor(String id) {
+        Contributor contributor = new Contributor();
+        contributor.setId(id);
+        return contributor;
+    }
+
     public static SupersededBy supersededBy(String id) {
         SupersededBy supersededBy = new SupersededBy();
         supersededBy.setId(id);

@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.MediaManipulationRatingEnumeration;
 import org.schema.model.WebPage;
 import org.schema.model.MediaObject;
 import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
-import org.schema.model.MediaManipulationRatingEnumeration;
 
 /**
  * A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.
@@ -23,6 +23,33 @@ import org.schema.model.MediaManipulationRatingEnumeration;
  * @see <a href="https://schema.org/MediaReview">https://schema.org/MediaReview</a>
  */
 public interface MediaReview extends Review {
+
+    /**
+     * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
+     *
+     * @return {@link MediaManipulationRatingEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    List<MediaManipulationRatingEnumeration> getMediaAuthenticityCategoryList();
+
+    /**
+     * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
+     *
+     * @return {@link MediaManipulationRatingEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    MediaManipulationRatingEnumeration getMediaAuthenticityCategory();
+
+    /**
+     * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
+     *
+     * @param mediaAuthenticityCategory MediaManipulationRatingEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void addMediaAuthenticityCategory(MediaManipulationRatingEnumeration mediaAuthenticityCategory);
 
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
@@ -93,31 +120,4 @@ public interface MediaReview extends Review {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void addOriginalMediaContextDescription(Text originalMediaContextDescription);
-
-    /**
-     * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
-     *
-     * @return {@link MediaManipulationRatingEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    List<MediaManipulationRatingEnumeration> getMediaAuthenticityCategoryList();
-
-    /**
-     * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
-     *
-     * @return {@link MediaManipulationRatingEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    MediaManipulationRatingEnumeration getMediaAuthenticityCategory();
-
-    /**
-     * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
-     *
-     * @param mediaAuthenticityCategory MediaManipulationRatingEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addMediaAuthenticityCategory(MediaManipulationRatingEnumeration mediaAuthenticityCategory);
 }

@@ -8,11 +8,11 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.Comment;
 import org.schema.model.WebContent;
+import org.schema.model.CreativeWork;
 
 /**
  * An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange</a>
  * @see <a href="https://schema.org/Answer">https://schema.org/Answer</a>
  */
 public interface Answer extends Comment {
@@ -51,4 +51,31 @@ public interface Answer extends Comment {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
     void addAnswerExplanation(WebContent answerExplanation);
+
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @return {@link CreativeWork} or {@link Comment}
+     */
+    <T> List<T> getParentItemList();
+
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @return {@link CreativeWork} or {@link Comment}
+     */
+    <T> T getParentItem();
+
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @param parentItem CreativeWork value to set.
+     */
+    void addParentItem(CreativeWork parentItem);
+    /**
+     * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+     *
+     * @param parentItem Comment value to set.
+     */
+    void addParentItem(Comment parentItem);
 }

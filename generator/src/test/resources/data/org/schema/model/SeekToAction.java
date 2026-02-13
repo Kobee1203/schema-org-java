@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
 import org.schema.model.HyperTocEntry;
+import org.schema.model.datatype.Number;
 
 /**
  * This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.
@@ -21,7 +21,7 @@ public interface SeekToAction extends Action {
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
      *
-     * @return {@link Number} or {@link HyperTocEntry}
+     * @return {@link HyperTocEntry} or {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
@@ -30,7 +30,7 @@ public interface SeekToAction extends Action {
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
      *
-     * @return {@link Number} or {@link HyperTocEntry}
+     * @return {@link HyperTocEntry} or {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
@@ -39,17 +39,17 @@ public interface SeekToAction extends Action {
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
      *
-     * @param startOffset Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
-     */
-    void addStartOffset(Number startOffset);
-    /**
-     * The start time of the clip expressed as the number of seconds from the beginning of the work.
-     *
      * @param startOffset HyperTocEntry value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
     void addStartOffset(HyperTocEntry startOffset);
+    /**
+     * The start time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @param startOffset Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
+    void addStartOffset(Number startOffset);
 }

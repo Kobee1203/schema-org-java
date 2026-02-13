@@ -42,6 +42,30 @@ public interface Joint extends AnatomicalStructure {
     void addStructuralClass(Text structuralClass);
 
     /**
+     * The biomechanical properties of the bone.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getBiomechnicalClassList();
+
+    /**
+     * The biomechanical properties of the bone.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getBiomechnicalClass();
+
+    /**
+     * The biomechanical properties of the bone.
+     *
+     * @param biomechnicalClass Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addBiomechnicalClass(Text biomechnicalClass);
+
+    /**
      * The degree of mobility the joint allows.
      *
      * @return {@link MedicalEntity} or {@link Text}
@@ -71,28 +95,4 @@ public interface Joint extends AnatomicalStructure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addFunctionalClass(Text functionalClass);
-
-    /**
-     * The biomechanical properties of the bone.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getBiomechnicalClassList();
-
-    /**
-     * The biomechanical properties of the bone.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getBiomechnicalClass();
-
-    /**
-     * The biomechanical properties of the bone.
-     *
-     * @param biomechnicalClass Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addBiomechnicalClass(Text biomechnicalClass);
 }

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Organization;
 import org.schema.model.Person;
+import org.schema.model.Organization;
 import org.schema.model.WarrantyPromise;
 
 /**
@@ -20,29 +20,29 @@ public interface SellAction extends TradeAction {
     /**
      * A sub property of participant. The participant/person/organization that bought the object.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     <T> List<T> getBuyerList();
 
     /**
      * A sub property of participant. The participant/person/organization that bought the object.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
      */
     <T> T getBuyer();
 
     /**
      * A sub property of participant. The participant/person/organization that bought the object.
      *
-     * @param buyer Organization value to set.
-     */
-    void addBuyer(Organization buyer);
-    /**
-     * A sub property of participant. The participant/person/organization that bought the object.
-     *
      * @param buyer Person value to set.
      */
     void addBuyer(Person buyer);
+    /**
+     * A sub property of participant. The participant/person/organization that bought the object.
+     *
+     * @param buyer Organization value to set.
+     */
+    void addBuyer(Organization buyer);
 
     /**
      * The warranty promise(s) included in the offer.

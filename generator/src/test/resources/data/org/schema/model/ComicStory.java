@@ -19,28 +19,58 @@ import org.schema.model.Person;
 public interface ComicStory extends CreativeWork {
 
     /**
-     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     * The individual who adds color to inked drawings.
      *
      * @return {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    List<Person> getInkerList();
+    List<Person> getColoristList();
 
     /**
-     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     * The individual who adds color to inked drawings.
      *
      * @return {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    Person getInker();
+    Person getColorist();
 
     /**
-     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     * The individual who adds color to inked drawings.
      *
-     * @param inker Person value to set.
+     * @param colorist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void addInker(Person inker);
+    void addColorist(Person colorist);
+
+    /**
+     * The primary artist for a work
+     *     	in a medium other than pencils or digital line art--for example, if the
+     *     	primary artwork is done in watercolors or digital paints.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getArtistList();
+
+    /**
+     * The primary artist for a work
+     *     	in a medium other than pencils or digital line art--for example, if the
+     *     	primary artwork is done in watercolors or digital paints.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getArtist();
+
+    /**
+     * The primary artist for a work
+     *     	in a medium other than pencils or digital line art--for example, if the
+     *     	primary artwork is done in watercolors or digital paints.
+     *
+     * @param artist Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addArtist(Person artist);
 
     /**
      * The individual who adds lettering, including speech balloons and sound effects, to artwork.
@@ -91,56 +121,26 @@ public interface ComicStory extends CreativeWork {
     void addPenciler(Person penciler);
 
     /**
-     * The primary artist for a work
-     *     	in a medium other than pencils or digital line art--for example, if the
-     *     	primary artwork is done in watercolors or digital paints.
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
      *
      * @return {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    List<Person> getArtistList();
+    List<Person> getInkerList();
 
     /**
-     * The primary artist for a work
-     *     	in a medium other than pencils or digital line art--for example, if the
-     *     	primary artwork is done in watercolors or digital paints.
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
      *
      * @return {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    Person getArtist();
+    Person getInker();
 
     /**
-     * The primary artist for a work
-     *     	in a medium other than pencils or digital line art--for example, if the
-     *     	primary artwork is done in watercolors or digital paints.
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
      *
-     * @param artist Person value to set.
+     * @param inker Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void addArtist(Person artist);
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getColoristList();
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getColorist();
-
-    /**
-     * The individual who adds color to inked drawings.
-     *
-     * @param colorist Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addColorist(Person colorist);
+    void addInker(Person inker);
 }

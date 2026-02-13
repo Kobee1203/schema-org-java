@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AnatomicalStructure;
-import org.schema.model.AnatomicalSystem;
 import org.schema.model.Vessel;
+import org.schema.model.AnatomicalSystem;
 
 /**
  * A type of blood vessel that specifically carries blood to the heart.
@@ -43,6 +43,30 @@ public interface Vein extends Vessel {
     void addTributary(AnatomicalStructure tributary);
 
     /**
+     * The vasculature that the vein drains into.
+     *
+     * @return {@link Vessel}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Vessel> getDrainsToList();
+
+    /**
+     * The vasculature that the vein drains into.
+     *
+     * @return {@link Vessel}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Vessel getDrainsTo();
+
+    /**
+     * The vasculature that the vein drains into.
+     *
+     * @param drainsTo Vessel value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addDrainsTo(Vessel drainsTo);
+
+    /**
      * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
      *
      * @return {@link AnatomicalSystem} or {@link AnatomicalStructure}
@@ -72,28 +96,4 @@ public interface Vein extends Vessel {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addRegionDrained(AnatomicalStructure regionDrained);
-
-    /**
-     * The vasculature that the vein drains into.
-     *
-     * @return {@link Vessel}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Vessel> getDrainsToList();
-
-    /**
-     * The vasculature that the vein drains into.
-     *
-     * @return {@link Vessel}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Vessel getDrainsTo();
-
-    /**
-     * The vasculature that the vein drains into.
-     *
-     * @param drainsTo Vessel value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addDrainsTo(Vessel drainsTo);
 }

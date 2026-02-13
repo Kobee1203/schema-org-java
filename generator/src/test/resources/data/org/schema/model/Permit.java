@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Audience;
-import org.schema.model.Organization;
-import org.schema.model.datatype.Date;
-import org.schema.model.Duration;
 import org.schema.model.AdministrativeArea;
 import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Date;
+import org.schema.model.Audience;
 import org.schema.model.Service;
+import org.schema.model.Duration;
+import org.schema.model.Organization;
 
 /**
  * A permit issued by an organization, e.g. a parking pass.
@@ -20,6 +20,57 @@ import org.schema.model.Service;
  * @see <a href="https://schema.org/Permit">https://schema.org/Permit</a>
  */
 public interface Permit extends Intangible {
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    List<AdministrativeArea> getValidInList();
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    AdministrativeArea getValidIn();
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @param validIn AdministrativeArea value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void addValidIn(AdministrativeArea validIn);
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getValidFromList();
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> T getValidFrom();
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom DateTime value to set.
+     */
+    void addValidFrom(DateTime validFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom Date value to set.
+     */
+    void addValidFrom(Date validFrom);
 
     /**
      * The target audience for this permit.
@@ -43,25 +94,25 @@ public interface Permit extends Intangible {
     void addPermitAudience(Audience permitAudience);
 
     /**
-     * The organization issuing the ticket or permit.
+     * The service through which the permit was granted.
      *
-     * @return {@link Organization}
+     * @return {@link Service}
      */
-    List<Organization> getIssuedByList();
+    List<Service> getIssuedThroughList();
 
     /**
-     * The organization issuing the ticket or permit.
+     * The service through which the permit was granted.
      *
-     * @return {@link Organization}
+     * @return {@link Service}
      */
-    Organization getIssuedBy();
+    Service getIssuedThrough();
 
     /**
-     * The organization issuing the ticket or permit.
+     * The service through which the permit was granted.
      *
-     * @param issuedBy Organization value to set.
+     * @param issuedThrough Service value to set.
      */
-    void addIssuedBy(Organization issuedBy);
+    void addIssuedThrough(Service issuedThrough);
 
     /**
      * The date when the item is no longer valid.
@@ -109,78 +160,23 @@ public interface Permit extends Intangible {
     void addValidFor(Duration validFor);
 
     /**
-     * The geographic area where a permit or similar thing is valid.
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Organization}
      */
-    List<AdministrativeArea> getValidInList();
+    List<Organization> getIssuedByList();
 
     /**
-     * The geographic area where a permit or similar thing is valid.
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Organization}
      */
-    AdministrativeArea getValidIn();
+    Organization getIssuedBy();
 
     /**
-     * The geographic area where a permit or similar thing is valid.
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @param validIn AdministrativeArea value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @param issuedBy Organization value to set.
      */
-    void addValidIn(AdministrativeArea validIn);
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> List<T> getValidFromList();
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    <T> T getValidFrom();
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addValidFrom(Date validFrom);
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom DateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addValidFrom(DateTime validFrom);
-
-    /**
-     * The service through which the permit was granted.
-     *
-     * @return {@link Service}
-     */
-    List<Service> getIssuedThroughList();
-
-    /**
-     * The service through which the permit was granted.
-     *
-     * @return {@link Service}
-     */
-    Service getIssuedThrough();
-
-    /**
-     * The service through which the permit was granted.
-     *
-     * @param issuedThrough Service value to set.
-     */
-    void addIssuedThrough(Service issuedThrough);
+    void addIssuedBy(Organization issuedBy);
 }

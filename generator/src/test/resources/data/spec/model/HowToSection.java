@@ -6,37 +6,37 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.ItemList;
 import spec.model.CreativeWork;
+import spec.model.ItemList;
+import spec.model.datatype.Text;
 
 /**
  * A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).
  *
  * @see <a href="https://schema.org/HowToSection">https://schema.org/HowToSection</a>
  */
-public interface HowToSection extends ItemList, CreativeWork, ListItem {
+public interface HowToSection extends CreativeWork, ItemList, ListItem {
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
+     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
      */
     <T> List<T> getStepsList();
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
+     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
      */
     <T> T getSteps();
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param steps Text value to set.
+     * @param steps CreativeWork value to set.
      */
-    void addSteps(Text steps);
+    void addSteps(CreativeWork steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
@@ -46,7 +46,7 @@ public interface HowToSection extends ItemList, CreativeWork, ListItem {
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param steps CreativeWork value to set.
+     * @param steps Text value to set.
      */
-    void addSteps(CreativeWork steps);
+    void addSteps(Text steps);
 }

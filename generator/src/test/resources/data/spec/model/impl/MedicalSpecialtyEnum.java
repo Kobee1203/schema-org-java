@@ -5,15 +5,18 @@
  */
 package spec.model.impl;
 
-import spec.model.Class;
 import spec.model.Property;
+import spec.model.Class;
 import spec.model.Enumeration;
-import spec.model.Action;
 import spec.model.datatype.URL;
-import spec.model.CreativeWork;
-import spec.model.Event;
 import spec.model.datatype.Text;
 import spec.model.PropertyValue;
+import spec.model.Person;
+import spec.model.Organization;
+import spec.model.Event;
+import spec.model.CreativeWork;
+import spec.model.Action;
+import spec.model.TextObject;
 import spec.model.ImageObject;
 import spec.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -32,48 +35,48 @@ import spec.model.MedicalSpecialty;
  */
 @JsonLdTypeName("MedicalSpecialty")
 public enum MedicalSpecialtyEnum implements MedicalSpecialty {
-    PUBLIC_HEALTH("PublicHealth"),
+    CARDIOVASCULAR("Cardiovascular"),
     DIET_NUTRITION("DietNutrition"),
-    RHEUMATOLOGIC("Rheumatologic"),
-    GASTROENTEROLOGIC("Gastroenterologic"),
-    ENDOCRINE("Endocrine"),
+    PLASTIC_SURGERY("PlasticSurgery"),
+    LABORATORY_SCIENCE("LaboratoryScience"),
+    RADIOGRAPHY("Radiography"),
+    ONCOLOGIC("Oncologic"),
+    SPEECH_PATHOLOGY("SpeechPathology"),
+    COMMUNITY_HEALTH("CommunityHealth"),
+    UROLOGIC("Urologic"),
     DERMATOLOGY("Dermatology"),
+    HEMATOLOGIC("Hematologic"),
+    PRIMARY_CARE("PrimaryCare"),
+    DENTISTRY("Dentistry"),
+    PUBLIC_HEALTH("PublicHealth"),
+    GASTROENTEROLOGIC("Gastroenterologic"),
+    PHYSIOTHERAPY("Physiotherapy"),
     SURGICAL("Surgical"),
+    EMERGENCY("Emergency"),
+    RENAL("Renal"),
+    NURSING("Nursing"),
+    TOXICOLOGIC("Toxicologic"),
+    PODIATRIC("Podiatric"),
+    GYNECOLOGIC("Gynecologic"),
+    ANESTHESIA("Anesthesia"),
+    PHARMACY_SPECIALTY("PharmacySpecialty"),
+    PATHOLOGY("Pathology"),
+    RESPIRATORY_THERAPY("RespiratoryTherapy"),
+    INFECTIOUS("Infectious"),
     OPTOMETRIC("Optometric"),
     GENETIC("Genetic"),
-    RESPIRATORY_THERAPY("RespiratoryTherapy"),
-    TOXICOLOGIC("Toxicologic"),
-    PRIMARY_CARE("PrimaryCare"),
-    PODIATRIC("Podiatric"),
-    MIDWIFERY("Midwifery"),
-    SPEECH_PATHOLOGY("SpeechPathology"),
-    UROLOGIC("Urologic"),
-    CARDIOVASCULAR("Cardiovascular"),
-    GYNECOLOGIC("Gynecologic"),
-    PHYSIOTHERAPY("Physiotherapy"),
-    HEMATOLOGIC("Hematologic"),
-    COMMUNITY_HEALTH("CommunityHealth"),
-    GERIATRIC("Geriatric"),
-    ANESTHESIA("Anesthesia"),
-    MUSCULOSKELETAL("Musculoskeletal"),
-    PHARMACY_SPECIALTY("PharmacySpecialty"),
-    NURSING("Nursing"),
-    PULMONARY("Pulmonary"),
-    DERMATOLOGIC("Dermatologic"),
-    RADIOGRAPHY("Radiography"),
-    OTOLARYNGOLOGIC("Otolaryngologic"),
-    EMERGENCY("Emergency"),
-    PATHOLOGY("Pathology"),
-    NEUROLOGIC("Neurologic"),
-    PSYCHIATRIC("Psychiatric"),
-    PLASTIC_SURGERY("PlasticSurgery"),
-    DENTISTRY("Dentistry"),
-    ONCOLOGIC("Oncologic"),
-    RENAL("Renal"),
-    LABORATORY_SCIENCE("LaboratoryScience"),
-    OBSTETRIC("Obstetric"),
+    ENDOCRINE("Endocrine"),
     PEDIATRIC("Pediatric"),
-    INFECTIOUS("Infectious")
+    MIDWIFERY("Midwifery"),
+    OBSTETRIC("Obstetric"),
+    PULMONARY("Pulmonary"),
+    NEUROLOGIC("Neurologic"),
+    GERIATRIC("Geriatric"),
+    PSYCHIATRIC("Psychiatric"),
+    OTOLARYNGOLOGIC("Otolaryngologic"),
+    MUSCULOSKELETAL("Musculoskeletal"),
+    DERMATOLOGIC("Dermatologic"),
+    RHEUMATOLOGIC("Rheumatologic")
     ;
 
     private final String enumValue;
@@ -137,12 +140,12 @@ public enum MedicalSpecialtyEnum implements MedicalSpecialty {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Class supersededBy) {
+    public void addSupersededBy(Property supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSupersededBy(Property supersededBy) {
+    public void addSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -152,34 +155,88 @@ public enum MedicalSpecialtyEnum implements MedicalSpecialty {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Action> getPotentialActionList() { return null; }
+    public List<URL> getSameAsList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Action getPotentialAction() { return null; }
+    public URL getSameAs() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum MedicalSpecialtyEnum");
+    public void addSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getMainEntityOfPageList() { return null; }
+    public List<Text> getNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getMainEntityOfPage() { return null; }
+    public Text getName() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum MedicalSpecialtyEnum");
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum MedicalSpecialtyEnum");
+    public <T> List<T> getAdditionalTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getAdditionalType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getIdentifierList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getIdentifier() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getOwnerList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getOwner() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Person owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Organization owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -201,16 +258,52 @@ public enum MedicalSpecialtyEnum implements MedicalSpecialty {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getUrlList() { return null; }
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getUrl() { return null; }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum MedicalSpecialtyEnum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Action> getPotentialActionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Action getPotentialAction() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(TextObject description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -227,29 +320,34 @@ public enum MedicalSpecialtyEnum implements MedicalSpecialty {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<URL> getSameAsList() { return null; }
+    public List<URL> getUrlList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public URL getSameAs() { return null; }
+    public URL getUrl() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addSameAs(URL sameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum MedicalSpecialtyEnum");
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Text> getDescriptionList() { return null; }
+    public <T> List<T> getImageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDescription() { return null; }
+    public <T> T getImage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalSpecialtyEnum");
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalSpecialtyEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalSpecialtyEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -263,72 +361,5 @@ public enum MedicalSpecialtyEnum implements MedicalSpecialty {
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum MedicalSpecialtyEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getIdentifierList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getIdentifier() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MedicalSpecialtyEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(URL identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MedicalSpecialtyEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addIdentifier(Text identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MedicalSpecialtyEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getImageList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getImage() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalSpecialtyEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalSpecialtyEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum MedicalSpecialtyEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<URL> getAdditionalTypeList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getAdditionalType() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum MedicalSpecialtyEnum");
     }
 }
