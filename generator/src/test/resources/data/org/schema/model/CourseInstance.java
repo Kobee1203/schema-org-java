@@ -6,9 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Person;
+import org.schema.model.Schedule;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.Person;
 
 /**
  * An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.
@@ -18,31 +19,52 @@ import org.schema.model.Person;
 public interface CourseInstance extends Event {
 
     /**
-     * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
+     * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1909">https://github.com/schemaorg/schemaorg/issues/1909</a>
+     * @return {@link Person}
      */
-    List<Text> getCourseWorkloadList();
+    List<Person> getInstructorList();
 
     /**
-     * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
+     * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1909">https://github.com/schemaorg/schemaorg/issues/1909</a>
+     * @return {@link Person}
      */
-    Text getCourseWorkload();
+    Person getInstructor();
 
     /**
-     * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
+     * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
      *
-     * @param courseWorkload Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1909">https://github.com/schemaorg/schemaorg/issues/1909</a>
+     * @param instructor Person value to set.
      */
-    void addCourseWorkload(Text courseWorkload);
+    void addInstructor(Person instructor);
+
+    /**
+     * Represents the length and pace of a course, expressed as a [[Schedule]].
+     *
+     * @return {@link Schedule}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3281">https://github.com/schemaorg/schemaorg/issues/3281</a>
+     */
+    List<Schedule> getCourseScheduleList();
+
+    /**
+     * Represents the length and pace of a course, expressed as a [[Schedule]].
+     *
+     * @return {@link Schedule}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3281">https://github.com/schemaorg/schemaorg/issues/3281</a>
+     */
+    Schedule getCourseSchedule();
+
+    /**
+     * Represents the length and pace of a course, expressed as a [[Schedule]].
+     *
+     * @param courseSchedule Schedule value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3281">https://github.com/schemaorg/schemaorg/issues/3281</a>
+     */
+    void addCourseSchedule(Schedule courseSchedule);
 
     /**
      * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous).
@@ -72,23 +94,29 @@ public interface CourseInstance extends Event {
     void addCourseMode(URL courseMode);
 
     /**
-     * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
+     * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
      *
-     * @return {@link Person}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1909">https://github.com/schemaorg/schemaorg/issues/1909</a>
      */
-    List<Person> getInstructorList();
+    List<Text> getCourseWorkloadList();
 
     /**
-     * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
+     * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
      *
-     * @return {@link Person}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1909">https://github.com/schemaorg/schemaorg/issues/1909</a>
      */
-    Person getInstructor();
+    Text getCourseWorkload();
 
     /**
-     * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
+     * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
      *
-     * @param instructor Person value to set.
+     * @param courseWorkload Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1909">https://github.com/schemaorg/schemaorg/issues/1909</a>
      */
-    void addInstructor(Person instructor);
+    void addCourseWorkload(Text courseWorkload);
 }

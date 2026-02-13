@@ -13,11 +13,30 @@ import spec.model.datatype.Text;
  * 
  * A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
  *
- * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP-draws">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP-draws</a>
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/NewsArticle">https://schema.org/NewsArticle</a>
  */
 public interface NewsArticle extends Article {
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPrintPageList();
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
+     *
+     * @return {@link Text}
+     */
+    Text getPrintPage();
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
+     *
+     * @param printPage Text value to set.
+     */
+    void addPrintPage(Text printPage);
 
     /**
      * The number of the column in which the NewsArticle appears in the print edition.
@@ -62,48 +81,6 @@ public interface NewsArticle extends Article {
     void addPrintEdition(Text printEdition);
 
     /**
-     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPrintSectionList();
-
-    /**
-     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
-     *
-     * @return {@link Text}
-     */
-    Text getPrintSection();
-
-    /**
-     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
-     *
-     * @param printSection Text value to set.
-     */
-    void addPrintSection(Text printSection);
-
-    /**
-     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPrintPageList();
-
-    /**
-     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
-     *
-     * @return {@link Text}
-     */
-    Text getPrintPage();
-
-    /**
-     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
-     *
-     * @param printPage Text value to set.
-     */
-    void addPrintPage(Text printPage);
-
-    /**
      * A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
      * 
      * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created, e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
@@ -138,4 +115,25 @@ public interface NewsArticle extends Article {
      * @param dateline Text value to set.
      */
     void addDateline(Text dateline);
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPrintSectionList();
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
+     *
+     * @return {@link Text}
+     */
+    Text getPrintSection();
+
+    /**
+     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
+     *
+     * @param printSection Text value to set.
+     */
+    void addPrintSection(Text printSection);
 }

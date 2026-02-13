@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.DeliveryMethod;
-import org.schema.model.Audience;
 import org.schema.model.Organization;
+import org.schema.model.Audience;
 import org.schema.model.Person;
 
 /**
@@ -42,29 +42,29 @@ public interface ReceiveAction extends TransferAction {
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
-     * @return {@link Audience} or {@link Organization} or {@link Person}
+     * @return {@link Organization} or {@link Audience} or {@link Person}
      */
     <T> List<T> getSenderList();
 
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
-     * @return {@link Audience} or {@link Organization} or {@link Person}
+     * @return {@link Organization} or {@link Audience} or {@link Person}
      */
     <T> T getSender();
 
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
-     * @param sender Audience value to set.
-     */
-    void addSender(Audience sender);
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     *
      * @param sender Organization value to set.
      */
     void addSender(Organization sender);
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @param sender Audience value to set.
+     */
+    void addSender(Audience sender);
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *

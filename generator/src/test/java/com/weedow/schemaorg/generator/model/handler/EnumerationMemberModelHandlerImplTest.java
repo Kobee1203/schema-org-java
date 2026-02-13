@@ -30,8 +30,9 @@ class EnumerationMemberModelHandlerImplTest {
 
     @ParameterizedTest
     @MethodSource
-    void supports(List<String> types, boolean expected) {
+    void supports(String id, List<String> types, boolean expected) {
         GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getId()).thenReturn(id);
         when(graphItem.getTypes()).thenReturn(types);
 
         ParserOptions options = mock(ParserOptions.class);
@@ -118,11 +119,12 @@ class EnumerationMemberModelHandlerImplTest {
 
     private static Stream<Arguments> supports() {
         return Stream.of(
-                Arguments.of(List.of("schema:MedicalImagingTechnique"), true),
-                Arguments.of(List.of("schema:MedicalImagingTechnique", "schema:MedicalSpecialty"), true),
-                Arguments.of(List.of("schema:MedicalImagingTechnique", "rdfs:Class"), false), // types don't contain only 'schema:*'
-                Arguments.of(List.of("rdfs:MedicalImagingTechnique"), false), // type not started with "schema:"
-                Arguments.of(List.of("schema:DataType"), false) // "schema:DataType" not allowed
+                Arguments.of("schema:myEnum", List.of("schema:MedicalImagingTechnique"), true),
+                Arguments.of("schema:myEnum", List.of("schema:MedicalImagingTechnique", "schema:MedicalSpecialty"), true),
+                Arguments.of("schema:myEnum", List.of("schema:MedicalImagingTechnique", "rdfs:Class"), false), // types don't contain only 'schema:*'
+                Arguments.of("schema:myEnum", List.of("rdfs:MedicalImagingTechnique"), false), // type not started with "schema:"
+                Arguments.of("schema:myEnum", List.of("schema:DataType"), false), // "schema:DataType" not allowed
+                Arguments.of("bibo:myEnum", List.of("schema:MedicalImagingTechnique"), false) // id not started with "schema:"
         );
     }
 }

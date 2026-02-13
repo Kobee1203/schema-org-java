@@ -8,7 +8,7 @@ package org.schema.model;
 import java.util.List;
 
 /**
- * Enumerates common size systems specific for wearable products
+ * Enumerates common size systems specific for wearable products.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>

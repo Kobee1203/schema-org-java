@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Number;
 import org.schema.model.PriceSpecification;
+import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,14 +21,14 @@ public interface EmployeeRole extends OrganizationRole {
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
+     * @return {@link MonetaryAmount} or {@link PriceSpecification} or {@link Number}
      */
     <T> List<T> getBaseSalaryList();
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @return {@link MonetaryAmount} or {@link Number} or {@link PriceSpecification}
+     * @return {@link MonetaryAmount} or {@link PriceSpecification} or {@link Number}
      */
     <T> T getBaseSalary();
 
@@ -41,15 +41,15 @@ public interface EmployeeRole extends OrganizationRole {
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @param baseSalary Number value to set.
-     */
-    void addBaseSalary(Number baseSalary);
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
      * @param baseSalary PriceSpecification value to set.
      */
     void addBaseSalary(PriceSpecification baseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary Number value to set.
+     */
+    void addBaseSalary(Number baseSalary);
 
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.

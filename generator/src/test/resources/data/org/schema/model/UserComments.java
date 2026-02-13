@@ -6,21 +6,95 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.CreativeWork;
 import org.schema.model.Person;
 import org.schema.model.Organization;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.CreativeWork;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/UserComments">https://schema.org/UserComments</a>
  */
 public interface UserComments extends UserInteraction {
+
+    /**
+     * The time at which the UserComment was made.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getCommentTimeList();
+
+    /**
+     * The time at which the UserComment was made.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> T getCommentTime();
+
+    /**
+     * The time at which the UserComment was made.
+     *
+     * @param commentTime Date value to set.
+     */
+    void addCommentTime(Date commentTime);
+    /**
+     * The time at which the UserComment was made.
+     *
+     * @param commentTime DateTime value to set.
+     */
+    void addCommentTime(DateTime commentTime);
+
+    /**
+     * Specifies the CreativeWork associated with the UserComment.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getDiscussesList();
+
+    /**
+     * Specifies the CreativeWork associated with the UserComment.
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getDiscusses();
+
+    /**
+     * Specifies the CreativeWork associated with the UserComment.
+     *
+     * @param discusses CreativeWork value to set.
+     */
+    void addDiscusses(CreativeWork discusses);
+
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getCreatorList();
+
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getCreator();
+
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @param creator Person value to set.
+     */
+    void addCreator(Person creator);
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @param creator Organization value to set.
+     */
+    void addCreator(Organization creator);
 
     /**
      * The text of the UserComment.
@@ -63,79 +137,4 @@ public interface UserComments extends UserInteraction {
      * @param replyToUrl URL value to set.
      */
     void addReplyToUrl(URL replyToUrl);
-
-    /**
-     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getCreatorList();
-
-    /**
-     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getCreator();
-
-    /**
-     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-     *
-     * @param creator Person value to set.
-     */
-    void addCreator(Person creator);
-    /**
-     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-     *
-     * @param creator Organization value to set.
-     */
-    void addCreator(Organization creator);
-
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getCommentTimeList();
-
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getCommentTime();
-
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @param commentTime DateTime value to set.
-     */
-    void addCommentTime(DateTime commentTime);
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @param commentTime Date value to set.
-     */
-    void addCommentTime(Date commentTime);
-
-    /**
-     * Specifies the CreativeWork associated with the UserComment.
-     *
-     * @return {@link CreativeWork}
-     */
-    List<CreativeWork> getDiscussesList();
-
-    /**
-     * Specifies the CreativeWork associated with the UserComment.
-     *
-     * @return {@link CreativeWork}
-     */
-    CreativeWork getDiscusses();
-
-    /**
-     * Specifies the CreativeWork associated with the UserComment.
-     *
-     * @param discusses CreativeWork value to set.
-     */
-    void addDiscusses(CreativeWork discusses);
 }

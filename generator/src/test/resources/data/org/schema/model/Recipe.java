@@ -6,13 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
+import org.schema.model.CreativeWork;
+import org.schema.model.ItemList;
 import org.schema.model.datatype.Text;
 import org.schema.model.NutritionInformation;
+import org.schema.model.PropertyValue;
 import org.schema.model.RestrictedDiet;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.Duration;
-import org.schema.model.ItemList;
-import org.schema.model.CreativeWork;
 
 /**
  * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.
@@ -22,31 +23,37 @@ import org.schema.model.CreativeWork;
 public interface Recipe extends HowTo {
 
     /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @return {@link QuantitativeValue} or {@link Text}
+     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
      */
-    <T> List<T> getRecipeYieldList();
+    <T> List<T> getRecipeInstructionsList();
 
     /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @return {@link QuantitativeValue} or {@link Text}
+     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
      */
-    <T> T getRecipeYield();
+    <T> T getRecipeInstructions();
 
     /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @param recipeYield QuantitativeValue value to set.
+     * @param recipeInstructions CreativeWork value to set.
      */
-    void addRecipeYield(QuantitativeValue recipeYield);
+    void addRecipeInstructions(CreativeWork recipeInstructions);
     /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @param recipeYield Text value to set.
+     * @param recipeInstructions ItemList value to set.
      */
-    void addRecipeYield(Text recipeYield);
+    void addRecipeInstructions(ItemList recipeInstructions);
+    /**
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     *
+     * @param recipeInstructions Text value to set.
+     */
+    void addRecipeInstructions(Text recipeInstructions);
 
     /**
      * Nutrition information about the recipe or menu item.
@@ -68,6 +75,39 @@ public interface Recipe extends HowTo {
      * @param nutrition NutritionInformation value to set.
      */
     void addNutrition(NutritionInformation nutrition);
+
+    /**
+     * An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.
+     *
+     * @return {@link ItemList} or {@link PropertyValue} or {@link Text}
+     */
+    <T> List<T> getRecipeIngredientList();
+
+    /**
+     * An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.
+     *
+     * @return {@link ItemList} or {@link PropertyValue} or {@link Text}
+     */
+    <T> T getRecipeIngredient();
+
+    /**
+     * An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.
+     *
+     * @param recipeIngredient ItemList value to set.
+     */
+    void addRecipeIngredient(ItemList recipeIngredient);
+    /**
+     * An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.
+     *
+     * @param recipeIngredient PropertyValue value to set.
+     */
+    void addRecipeIngredient(PropertyValue recipeIngredient);
+    /**
+     * An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.
+     *
+     * @param recipeIngredient Text value to set.
+     */
+    void addRecipeIngredient(Text recipeIngredient);
 
     /**
      * The method of cooking, such as Frying, Steaming, ...
@@ -112,27 +152,6 @@ public interface Recipe extends HowTo {
     void addSuitableForDiet(RestrictedDiet suitableForDiet);
 
     /**
-     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     */
-    List<Duration> getCookTimeList();
-
-    /**
-     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     */
-    Duration getCookTime();
-
-    /**
-     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @param cookTime Duration value to set.
-     */
-    void addCookTime(Duration cookTime);
-
-    /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
      * @return {@link Text}
@@ -152,6 +171,33 @@ public interface Recipe extends HowTo {
      * @param ingredients Text value to set.
      */
     void addIngredients(Text ingredients);
+
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     */
+    <T> List<T> getRecipeYieldList();
+
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     */
+    <T> T getRecipeYield();
+
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     *
+     * @param recipeYield QuantitativeValue value to set.
+     */
+    void addRecipeYield(QuantitativeValue recipeYield);
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     *
+     * @param recipeYield Text value to set.
+     */
+    void addRecipeYield(Text recipeYield);
 
     /**
      * The cuisine of the recipe (for example, French or Ethiopian).
@@ -175,60 +221,6 @@ public interface Recipe extends HowTo {
     void addRecipeCuisine(Text recipeCuisine);
 
     /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     *
-     * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
-     */
-    <T> List<T> getRecipeInstructionsList();
-
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     *
-     * @return {@link Text} or {@link ItemList} or {@link CreativeWork}
-     */
-    <T> T getRecipeInstructions();
-
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     *
-     * @param recipeInstructions Text value to set.
-     */
-    void addRecipeInstructions(Text recipeInstructions);
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     *
-     * @param recipeInstructions ItemList value to set.
-     */
-    void addRecipeInstructions(ItemList recipeInstructions);
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     *
-     * @param recipeInstructions CreativeWork value to set.
-     */
-    void addRecipeInstructions(CreativeWork recipeInstructions);
-
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getRecipeIngredientList();
-
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @return {@link Text}
-     */
-    Text getRecipeIngredient();
-
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @param recipeIngredient Text value to set.
-     */
-    void addRecipeIngredient(Text recipeIngredient);
-
-    /**
      * The category of the recipe—for example, appetizer, entree, etc.
      *
      * @return {@link Text}
@@ -248,4 +240,25 @@ public interface Recipe extends HowTo {
      * @param recipeCategory Text value to set.
      */
     void addRecipeCategory(Text recipeCategory);
+
+    /**
+     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getCookTimeList();
+
+    /**
+     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    Duration getCookTime();
+
+    /**
+     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param cookTime Duration value to set.
+     */
+    void addCookTime(Duration cookTime);
 }

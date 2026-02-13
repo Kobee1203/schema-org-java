@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MenuSection;
 import org.schema.model.MenuItem;
+import org.schema.model.MenuSection;
 
 /**
  * A structured representation of food or drink items available from a FoodEstablishment.
@@ -15,27 +15,6 @@ import org.schema.model.MenuItem;
  * @see <a href="https://schema.org/Menu">https://schema.org/Menu</a>
  */
 public interface Menu extends CreativeWork {
-
-    /**
-     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-     *
-     * @return {@link MenuSection}
-     */
-    List<MenuSection> getHasMenuSectionList();
-
-    /**
-     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-     *
-     * @return {@link MenuSection}
-     */
-    MenuSection getHasMenuSection();
-
-    /**
-     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-     *
-     * @param hasMenuSection MenuSection value to set.
-     */
-    void addHasMenuSection(MenuSection hasMenuSection);
 
     /**
      * A food or drink item contained in a menu or menu section.
@@ -57,4 +36,25 @@ public interface Menu extends CreativeWork {
      * @param hasMenuItem MenuItem value to set.
      */
     void addHasMenuItem(MenuItem hasMenuItem);
+
+    /**
+     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
+     *
+     * @return {@link MenuSection}
+     */
+    List<MenuSection> getHasMenuSectionList();
+
+    /**
+     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
+     *
+     * @return {@link MenuSection}
+     */
+    MenuSection getHasMenuSection();
+
+    /**
+     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
+     *
+     * @param hasMenuSection MenuSection value to set.
+     */
+    void addHasMenuSection(MenuSection hasMenuSection);
 }

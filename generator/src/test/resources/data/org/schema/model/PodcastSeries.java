@@ -6,6 +6,7 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.PerformingGroup;
 import org.schema.model.Person;
 import org.schema.model.DataFeed;
 import org.schema.model.datatype.URL;
@@ -20,21 +21,27 @@ import org.schema.model.datatype.URL;
 public interface PodcastSeries extends CreativeWorkSeries {
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Person}
+     * @return {@link PerformingGroup} or {@link Person}
      */
-    List<Person> getActorList();
+    <T> List<T> getActorList();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Person}
+     * @return {@link PerformingGroup} or {@link Person}
      */
-    Person getActor();
+    <T> T getActor();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
      * @param actor Person value to set.
      */

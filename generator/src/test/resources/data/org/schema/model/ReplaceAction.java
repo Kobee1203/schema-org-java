@@ -16,27 +16,6 @@ import org.schema.model.Thing;
 public interface ReplaceAction extends UpdateAction {
 
     /**
-     * A sub property of object. The object that is being replaced.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getReplaceeList();
-
-    /**
-     * A sub property of object. The object that is being replaced.
-     *
-     * @return {@link Thing}
-     */
-    Thing getReplacee();
-
-    /**
-     * A sub property of object. The object that is being replaced.
-     *
-     * @param replacee Thing value to set.
-     */
-    void addReplacee(Thing replacee);
-
-    /**
      * A sub property of object. The object that replaces.
      *
      * @return {@link Thing}
@@ -56,4 +35,25 @@ public interface ReplaceAction extends UpdateAction {
      * @param replacer Thing value to set.
      */
     void addReplacer(Thing replacer);
+
+    /**
+     * A sub property of object. The object that is being replaced.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getReplaceeList();
+
+    /**
+     * A sub property of object. The object that is being replaced.
+     *
+     * @return {@link Thing}
+     */
+    Thing getReplacee();
+
+    /**
+     * A sub property of object. The object that is being replaced.
+     *
+     * @param replacee Thing value to set.
+     */
+    void addReplacee(Thing replacee);
 }

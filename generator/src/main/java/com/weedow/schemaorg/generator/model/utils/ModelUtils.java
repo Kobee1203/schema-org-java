@@ -58,7 +58,9 @@ public final class ModelUtils {
 
     public static List<Type> getPropertyTypes(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
         final List<RangeIncludes> rangeIncludes = graphItem.getRangeIncludes();
-        return rangeIncludes != null ? rangeIncludes.stream().map(rangIncludes -> getType(schemaDefinitions, rangIncludes.getId())).toList() : Collections.emptyList();
+        return rangeIncludes != null ? rangeIncludes.stream()
+                .filter(rangeInclude -> rangeInclude.getId().startsWith(SchemaConstants.SCHEMA_PREFIX))
+                .map(rangeInclude -> getType(schemaDefinitions, rangeInclude.getId())).toList() : Collections.emptyList();
     }
 
     public static Type getType(Map<String, Type> schemaDefinitions, String typeId) {

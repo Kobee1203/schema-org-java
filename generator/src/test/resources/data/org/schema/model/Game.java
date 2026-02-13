@@ -7,10 +7,10 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Thing;
-import org.schema.model.PostalAddress;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.URL;
 import org.schema.model.Place;
-import org.schema.model.QuantitativeValue;
+import org.schema.model.PostalAddress;
 
 /**
  * The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.
@@ -41,58 +41,25 @@ public interface Game extends CreativeWork {
     void addCharacterAttribute(Thing characterAttribute);
 
     /**
-     * Real or fictional location of the game (or part of game).
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
      *
-     * @return {@link PostalAddress} or {@link URL} or {@link Place}
+     * @return {@link Thing}
      */
-    <T> List<T> getGameLocationList();
+    List<Thing> getQuestList();
 
     /**
-     * Real or fictional location of the game (or part of game).
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
      *
-     * @return {@link PostalAddress} or {@link URL} or {@link Place}
+     * @return {@link Thing}
      */
-    <T> T getGameLocation();
+    Thing getQuest();
 
     /**
-     * Real or fictional location of the game (or part of game).
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
      *
-     * @param gameLocation PostalAddress value to set.
+     * @param quest Thing value to set.
      */
-    void addGameLocation(PostalAddress gameLocation);
-    /**
-     * Real or fictional location of the game (or part of game).
-     *
-     * @param gameLocation URL value to set.
-     */
-    void addGameLocation(URL gameLocation);
-    /**
-     * Real or fictional location of the game (or part of game).
-     *
-     * @param gameLocation Place value to set.
-     */
-    void addGameLocation(Place gameLocation);
-
-    /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
-     *
-     * @return {@link QuantitativeValue}
-     */
-    List<QuantitativeValue> getNumberOfPlayersList();
-
-    /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
-     *
-     * @return {@link QuantitativeValue}
-     */
-    QuantitativeValue getNumberOfPlayers();
-
-    /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
-     *
-     * @param numberOfPlayers QuantitativeValue value to set.
-     */
-    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
+    void addQuest(Thing quest);
 
     /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
@@ -116,23 +83,56 @@ public interface Game extends CreativeWork {
     void addGameItem(Thing gameItem);
 
     /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     * Indicate how many people can play this game (minimum, maximum, or range).
      *
-     * @return {@link Thing}
+     * @return {@link QuantitativeValue}
      */
-    List<Thing> getQuestList();
+    List<QuantitativeValue> getNumberOfPlayersList();
 
     /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     * Indicate how many people can play this game (minimum, maximum, or range).
      *
-     * @return {@link Thing}
+     * @return {@link QuantitativeValue}
      */
-    Thing getQuest();
+    QuantitativeValue getNumberOfPlayers();
 
     /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     * Indicate how many people can play this game (minimum, maximum, or range).
      *
-     * @param quest Thing value to set.
+     * @param numberOfPlayers QuantitativeValue value to set.
      */
-    void addQuest(Thing quest);
+    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
+
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @return {@link URL} or {@link Place} or {@link PostalAddress}
+     */
+    <T> List<T> getGameLocationList();
+
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @return {@link URL} or {@link Place} or {@link PostalAddress}
+     */
+    <T> T getGameLocation();
+
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param gameLocation URL value to set.
+     */
+    void addGameLocation(URL gameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param gameLocation Place value to set.
+     */
+    void addGameLocation(Place gameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param gameLocation PostalAddress value to set.
+     */
+    void addGameLocation(PostalAddress gameLocation);
 }

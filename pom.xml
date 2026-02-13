@@ -4,7 +4,7 @@
 
     <groupId>com.weedow</groupId>
     <artifactId>schema-org-parent</artifactId>
-    <version>0.8.0-SNAPSHOT</version>
+    <version>0.9.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>schema-org-java-parent</name>
@@ -60,19 +60,19 @@
         <!-- Dependencies -->
         <lombok.version>1.18.38</lombok.version>
         <logback-classic.version>1.5.18</logback-classic.version>
-        <jackson.version>2.19.0</jackson.version>
+        <jackson.version>2.20.0</jackson.version>
         <handlebars-helpers.version>4.4.0</handlebars-helpers.version>
-        <commons-cli.version>1.9.0</commons-cli.version>
+        <commons-cli.version>1.10.0</commons-cli.version>
 
         <!-- Test Dependencies -->
-        <junit-jupiter-engine.version>5.12.2</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>5.13.4</junit-jupiter-engine.version>
         <assertj-core.version>3.27.3</assertj-core.version>
-        <mockito-junit-jupiter.version>5.17.0</mockito-junit-jupiter.version>
+        <mockito-junit-jupiter.version>5.20.0</mockito-junit-jupiter.version>
         <equalsverifier.version>3.19.4</equalsverifier.version>
         <to-string-verifier.version>1.4.8</to-string-verifier.version>
         <json-unit-assertj.version>5.0.0</json-unit-assertj.version>
         <system-stubs-jupiter.version>2.1.8</system-stubs-jupiter.version>
-        <logcaptor.version>2.11.0</logcaptor.version>
+        <logcaptor.version>2.12.1</logcaptor.version>
         <inject-resources-junit-jupiter.version>1.0.0</inject-resources-junit-jupiter.version>
 
         <!-- Plugins -->
@@ -89,7 +89,7 @@
         <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
-        <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
         <sign-maven-plugin.version>1.1.0</sign-maven-plugin.version>
     </properties>
 
@@ -100,8 +100,6 @@
         <module>serializer</module>
         <module>report</module>
         <module>distribution</module>
-        <!-- nexus-staging-maven-plugin requires the last module to be not skipped for deployment -->
-        <module>dummy-module</module>
     </modules>
 
     <dependencies>
@@ -336,6 +334,13 @@
                         <groupId>org.projectlombok</groupId>
                         <artifactId>lombok-maven-plugin</artifactId>
                         <version>${lombok-maven-plugin.version}</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </dependency>
+                        </dependencies>
                         <configuration>
                             <encoding>UTF-8</encoding>
                             <sourceDirectory>src/main/java</sourceDirectory>
@@ -396,31 +401,31 @@
             </build>
         </profile>
         <profile>
-            <id>ossrh</id>
+            <id>central</id>
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>${nexus-staging-maven-plugin.version}</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${central-publishing-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <waitUntil>published</waitUntil>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
             <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
                 <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                    <id>central</id>
+                    <url>https://central.sonatype.com</url>
                 </repository>
+                <snapshotRepository>
+                    <id>central</id>
+                    <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+                </snapshotRepository>
             </distributionManagement>
         </profile>
     </profiles>

@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.weedow</groupId>
         <artifactId>schema-org-parent</artifactId>
-        <version>0.8.0-SNAPSHOT</version>
+        <version>0.9.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -17,7 +17,7 @@
     <url>https://github.com/Kobee1203/schema-org-java</url>
 
     <properties>
-        <maven-plugin-api.version>3.9.9</maven-plugin-api.version>
+        <maven-plugin-api.version>3.9.11</maven-plugin-api.version>
         <maven-plugin-annotations.version>3.15.1</maven-plugin-annotations.version>
         <maven-project.version>2.2.1</maven-project.version>
 
@@ -94,7 +94,7 @@
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
-            <version>3.9.9</version>
+            <version>3.9.11</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

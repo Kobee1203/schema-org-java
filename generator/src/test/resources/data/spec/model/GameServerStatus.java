@@ -5,6 +5,8 @@
  */
 package spec.model;
 
+import java.util.List;
+
 /**
  * Status of a game server.
  *
