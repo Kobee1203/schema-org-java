@@ -21,6 +21,30 @@ import org.schema.model.DrugCostCategory;
 public interface DrugCost extends MedicalEntity {
 
     /**
+     * The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getCostCurrencyList();
+
+    /**
+     * The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getCostCurrency();
+
+    /**
+     * The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     *
+     * @param costCurrency Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addCostCurrency(Text costCurrency);
+
+    /**
      * The cost per unit of the drug.
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link Number}
@@ -83,30 +107,6 @@ public interface DrugCost extends MedicalEntity {
     void addApplicableLocation(AdministrativeArea applicableLocation);
 
     /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getDrugUnitList();
-
-    /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getDrugUnit();
-
-    /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
-     *
-     * @param drugUnit Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addDrugUnit(Text drugUnit);
-
-    /**
      * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
      *
      * @return {@link Text}
@@ -155,26 +155,26 @@ public interface DrugCost extends MedicalEntity {
     void addCostCategory(DrugCostCategory costCategory);
 
     /**
-     * The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getCostCurrencyList();
+    List<Text> getDrugUnitList();
 
     /**
-     * The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getCostCurrency();
+    Text getDrugUnit();
 
     /**
-     * The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
      *
-     * @param costCurrency Text value to set.
+     * @param drugUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addCostCurrency(Text costCurrency);
+    void addDrugUnit(Text drugUnit);
 }

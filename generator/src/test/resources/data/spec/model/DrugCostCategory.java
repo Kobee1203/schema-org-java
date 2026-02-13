@@ -5,6 +5,8 @@
  */
 package spec.model;
 
+import java.util.List;
+
 /**
  * Enumerated categories of medical drug costs.
  *

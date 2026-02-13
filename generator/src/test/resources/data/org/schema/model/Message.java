@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Organization;
 import org.schema.model.ContactPoint;
 import org.schema.model.Person;
+import org.schema.model.Organization;
 import org.schema.model.Audience;
-import org.schema.model.CreativeWork;
+import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
+import org.schema.model.CreativeWork;
 
 /**
  * A single message from a sender to one or more organizations or people.
@@ -20,6 +20,78 @@ import org.schema.model.datatype.Date;
  * @see <a href="https://schema.org/Message">https://schema.org/Message</a>
  */
 public interface Message extends CreativeWork {
+
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
+     */
+    <T> List<T> getToRecipientList();
+
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
+     */
+    <T> T getToRecipient();
+
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @param toRecipient ContactPoint value to set.
+     */
+    void addToRecipient(ContactPoint toRecipient);
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @param toRecipient Person value to set.
+     */
+    void addToRecipient(Person toRecipient);
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @param toRecipient Organization value to set.
+     */
+    void addToRecipient(Organization toRecipient);
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @param toRecipient Audience value to set.
+     */
+    void addToRecipient(Audience toRecipient);
+
+    /**
+     * A sub property of recipient. The recipient copied on a message.
+     *
+     * @return {@link ContactPoint} or {@link Organization} or {@link Person}
+     */
+    <T> List<T> getCcRecipientList();
+
+    /**
+     * A sub property of recipient. The recipient copied on a message.
+     *
+     * @return {@link ContactPoint} or {@link Organization} or {@link Person}
+     */
+    <T> T getCcRecipient();
+
+    /**
+     * A sub property of recipient. The recipient copied on a message.
+     *
+     * @param ccRecipient ContactPoint value to set.
+     */
+    void addCcRecipient(ContactPoint ccRecipient);
+    /**
+     * A sub property of recipient. The recipient copied on a message.
+     *
+     * @param ccRecipient Organization value to set.
+     */
+    void addCcRecipient(Organization ccRecipient);
+    /**
+     * A sub property of recipient. The recipient copied on a message.
+     *
+     * @param ccRecipient Person value to set.
+     */
+    void addCcRecipient(Person ccRecipient);
 
     /**
      * The date/time the message was received if a single recipient exists.
@@ -45,23 +117,17 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
      */
     <T> List<T> getRecipientList();
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person} or {@link Audience}
+     * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
      */
     <T> T getRecipient();
 
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     *
-     * @param recipient Organization value to set.
-     */
-    void addRecipient(Organization recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
@@ -77,123 +143,42 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
+     * @param recipient Organization value to set.
+     */
+    void addRecipient(Organization recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
      * @param recipient Audience value to set.
      */
     void addRecipient(Audience recipient);
 
     /**
-     * A CreativeWork attached to the message.
-     *
-     * @return {@link CreativeWork}
-     */
-    List<CreativeWork> getMessageAttachmentList();
-
-    /**
-     * A CreativeWork attached to the message.
-     *
-     * @return {@link CreativeWork}
-     */
-    CreativeWork getMessageAttachment();
-
-    /**
-     * A CreativeWork attached to the message.
-     *
-     * @param messageAttachment CreativeWork value to set.
-     */
-    void addMessageAttachment(CreativeWork messageAttachment);
-
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person}
-     */
-    <T> List<T> getCcRecipientList();
-
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person}
-     */
-    <T> T getCcRecipient();
-
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     *
-     * @param ccRecipient Organization value to set.
-     */
-    void addCcRecipient(Organization ccRecipient);
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     *
-     * @param ccRecipient ContactPoint value to set.
-     */
-    void addCcRecipient(ContactPoint ccRecipient);
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     *
-     * @param ccRecipient Person value to set.
-     */
-    void addCcRecipient(Person ccRecipient);
-
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person}
-     */
-    <T> List<T> getBccRecipientList();
-
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     *
-     * @return {@link Organization} or {@link ContactPoint} or {@link Person}
-     */
-    <T> T getBccRecipient();
-
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     *
-     * @param bccRecipient Organization value to set.
-     */
-    void addBccRecipient(Organization bccRecipient);
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     *
-     * @param bccRecipient ContactPoint value to set.
-     */
-    void addBccRecipient(ContactPoint bccRecipient);
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     *
-     * @param bccRecipient Person value to set.
-     */
-    void addBccRecipient(Person bccRecipient);
-
-    /**
      * The date/time at which the message has been read by the recipient if a single recipient exists.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Date} or {@link DateTime}
      */
     <T> List<T> getDateReadList();
 
     /**
      * The date/time at which the message has been read by the recipient if a single recipient exists.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Date} or {@link DateTime}
      */
     <T> T getDateRead();
 
     /**
      * The date/time at which the message has been read by the recipient if a single recipient exists.
      *
-     * @param dateRead DateTime value to set.
-     */
-    void addDateRead(DateTime dateRead);
-    /**
-     * The date/time at which the message has been read by the recipient if a single recipient exists.
-     *
      * @param dateRead Date value to set.
      */
     void addDateRead(Date dateRead);
+    /**
+     * The date/time at which the message has been read by the recipient if a single recipient exists.
+     *
+     * @param dateRead DateTime value to set.
+     */
+    void addDateRead(DateTime dateRead);
 
     /**
      * The date/time at which the message was sent.
@@ -217,25 +202,73 @@ public interface Message extends CreativeWork {
     void addDateSent(DateTime dateSent);
 
     /**
+     * A sub property of recipient. The recipient blind copied on a message.
+     *
+     * @return {@link Person} or {@link Organization} or {@link ContactPoint}
+     */
+    <T> List<T> getBccRecipientList();
+
+    /**
+     * A sub property of recipient. The recipient blind copied on a message.
+     *
+     * @return {@link Person} or {@link Organization} or {@link ContactPoint}
+     */
+    <T> T getBccRecipient();
+
+    /**
+     * A sub property of recipient. The recipient blind copied on a message.
+     *
+     * @param bccRecipient Person value to set.
+     */
+    void addBccRecipient(Person bccRecipient);
+    /**
+     * A sub property of recipient. The recipient blind copied on a message.
+     *
+     * @param bccRecipient Organization value to set.
+     */
+    void addBccRecipient(Organization bccRecipient);
+    /**
+     * A sub property of recipient. The recipient blind copied on a message.
+     *
+     * @param bccRecipient ContactPoint value to set.
+     */
+    void addBccRecipient(ContactPoint bccRecipient);
+
+    /**
+     * A CreativeWork attached to the message.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getMessageAttachmentList();
+
+    /**
+     * A CreativeWork attached to the message.
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getMessageAttachment();
+
+    /**
+     * A CreativeWork attached to the message.
+     *
+     * @param messageAttachment CreativeWork value to set.
+     */
+    void addMessageAttachment(CreativeWork messageAttachment);
+
+    /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
-     * @return {@link Audience} or {@link Organization} or {@link Person}
+     * @return {@link Organization} or {@link Audience} or {@link Person}
      */
     <T> List<T> getSenderList();
 
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
-     * @return {@link Audience} or {@link Organization} or {@link Person}
+     * @return {@link Organization} or {@link Audience} or {@link Person}
      */
     <T> T getSender();
 
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     *
-     * @param sender Audience value to set.
-     */
-    void addSender(Audience sender);
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
@@ -245,46 +278,13 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
+     * @param sender Audience value to set.
+     */
+    void addSender(Audience sender);
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
      * @param sender Person value to set.
      */
     void addSender(Person sender);
-
-    /**
-     * A sub property of recipient. The recipient who was directly sent the message.
-     *
-     * @return {@link Person} or {@link Organization} or {@link ContactPoint} or {@link Audience}
-     */
-    <T> List<T> getToRecipientList();
-
-    /**
-     * A sub property of recipient. The recipient who was directly sent the message.
-     *
-     * @return {@link Person} or {@link Organization} or {@link ContactPoint} or {@link Audience}
-     */
-    <T> T getToRecipient();
-
-    /**
-     * A sub property of recipient. The recipient who was directly sent the message.
-     *
-     * @param toRecipient Person value to set.
-     */
-    void addToRecipient(Person toRecipient);
-    /**
-     * A sub property of recipient. The recipient who was directly sent the message.
-     *
-     * @param toRecipient Organization value to set.
-     */
-    void addToRecipient(Organization toRecipient);
-    /**
-     * A sub property of recipient. The recipient who was directly sent the message.
-     *
-     * @param toRecipient ContactPoint value to set.
-     */
-    void addToRecipient(ContactPoint toRecipient);
-    /**
-     * A sub property of recipient. The recipient who was directly sent the message.
-     *
-     * @param toRecipient Audience value to set.
-     */
-    void addToRecipient(Audience toRecipient);
 }

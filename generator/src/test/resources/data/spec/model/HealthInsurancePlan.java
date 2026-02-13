@@ -6,101 +6,20 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
 import spec.model.HealthPlanFormulary;
 import spec.model.ContactPoint;
+import spec.model.datatype.URL;
+import spec.model.datatype.Text;
 import spec.model.HealthPlanNetwork;
 
 /**
- * A US-style health insurance plan, including PPOs, EPOs, and HMOs. 
+ * A US-style health insurance plan, including PPOs, EPOs, and HMOs.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
  * @see <a href="https://schema.org/HealthInsurancePlan">https://schema.org/HealthInsurancePlan</a>
  */
 public interface HealthInsurancePlan extends Intangible {
-
-    /**
-     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<URL> getBenefitsSummaryUrlList();
-
-    /**
-     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    URL getBenefitsSummaryUrl();
-
-    /**
-     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
-     *
-     * @param benefitsSummaryUrl URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addBenefitsSummaryUrl(URL benefitsSummaryUrl);
-
-    /**
-     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<Text> getHealthPlanIdList();
-
-    /**
-     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    Text getHealthPlanId();
-
-    /**
-     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-     *
-     * @param healthPlanId Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addHealthPlanId(Text healthPlanId);
-
-    /**
-     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<URL> getHealthPlanMarketingUrlList();
-
-    /**
-     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    URL getHealthPlanMarketingUrl();
-
-    /**
-     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-     *
-     * @param healthPlanMarketingUrl URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addHealthPlanMarketingUrl(URL healthPlanMarketingUrl);
 
     /**
      * Formularies covered by this plan.
@@ -149,6 +68,114 @@ public interface HealthInsurancePlan extends Intangible {
      * @param contactPoint ContactPoint value to set.
      */
     void addContactPoint(ContactPoint contactPoint);
+
+    /**
+     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<URL> getBenefitsSummaryUrlList();
+
+    /**
+     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    URL getBenefitsSummaryUrl();
+
+    /**
+     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
+     *
+     * @param benefitsSummaryUrl URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addBenefitsSummaryUrl(URL benefitsSummaryUrl);
+
+    /**
+     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<URL> getHealthPlanMarketingUrlList();
+
+    /**
+     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    URL getHealthPlanMarketingUrl();
+
+    /**
+     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+     *
+     * @param healthPlanMarketingUrl URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanMarketingUrl(URL healthPlanMarketingUrl);
+
+    /**
+     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Text> getHealthPlanIdList();
+
+    /**
+     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    Text getHealthPlanId();
+
+    /**
+     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+     *
+     * @param healthPlanId Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanId(Text healthPlanId);
+
+    /**
+     * Networks covered by this plan.
+     *
+     * @return {@link HealthPlanNetwork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<HealthPlanNetwork> getIncludesHealthPlanNetworkList();
+
+    /**
+     * Networks covered by this plan.
+     *
+     * @return {@link HealthPlanNetwork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    HealthPlanNetwork getIncludesHealthPlanNetwork();
+
+    /**
+     * Networks covered by this plan.
+     *
+     * @param includesHealthPlanNetwork HealthPlanNetwork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addIncludesHealthPlanNetwork(HealthPlanNetwork includesHealthPlanNetwork);
 
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
@@ -203,33 +230,6 @@ public interface HealthInsurancePlan extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanDrugOption(Text healthPlanDrugOption);
-
-    /**
-     * Networks covered by this plan.
-     *
-     * @return {@link HealthPlanNetwork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<HealthPlanNetwork> getIncludesHealthPlanNetworkList();
-
-    /**
-     * Networks covered by this plan.
-     *
-     * @return {@link HealthPlanNetwork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    HealthPlanNetwork getIncludesHealthPlanNetwork();
-
-    /**
-     * Networks covered by this plan.
-     *
-     * @param includesHealthPlanNetwork HealthPlanNetwork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addIncludesHealthPlanNetwork(HealthPlanNetwork includesHealthPlanNetwork);
 
     /**
      * The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.

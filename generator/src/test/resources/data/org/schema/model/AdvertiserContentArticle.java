@@ -11,7 +11,6 @@ import java.util.List;
  * An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
  * @see <a href="https://schema.org/AdvertiserContentArticle">https://schema.org/AdvertiserContentArticle</a>
  */

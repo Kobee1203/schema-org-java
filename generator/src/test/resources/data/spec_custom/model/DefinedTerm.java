@@ -6,12 +6,13 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.DefinedTermSet;
+import spec_custom.model.Thing;
 import spec_custom.model.datatype.URL;
+import spec_custom.model.DefinedTermSet;
 import spec_custom.model.datatype.Text;
 
 /**
- * A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.
+ * A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. Use the about property to specify what the term is about.
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
@@ -20,9 +21,36 @@ import spec_custom.model.datatype.Text;
 public interface DefinedTerm extends Intangible {
 
     /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    List<Thing> getAboutList();
+
+    /**
+     * The subject matter of an object.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    Thing getAbout();
+
+    /**
+     * The subject matter of an object.
+     *
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    void addAbout(Thing about);
+
+    /**
      * A [[DefinedTermSet]] that contains this term.
      *
-     * @return {@link DefinedTermSet} or {@link URL}
+     * @return {@link URL} or {@link DefinedTermSet}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
@@ -31,7 +59,7 @@ public interface DefinedTerm extends Intangible {
     /**
      * A [[DefinedTermSet]] that contains this term.
      *
-     * @return {@link DefinedTermSet} or {@link URL}
+     * @return {@link URL} or {@link DefinedTermSet}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
@@ -40,22 +68,22 @@ public interface DefinedTerm extends Intangible {
     /**
      * A [[DefinedTermSet]] that contains this term.
      *
-     * @param inDefinedTermSet DefinedTermSet value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void addInDefinedTermSet(DefinedTermSet inDefinedTermSet);
-    /**
-     * A [[DefinedTermSet]] that contains this term.
-     *
      * @param inDefinedTermSet URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     void addInDefinedTermSet(URL inDefinedTermSet);
+    /**
+     * A [[DefinedTermSet]] that contains this term.
+     *
+     * @param inDefinedTermSet DefinedTermSet value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    void addInDefinedTermSet(DefinedTermSet inDefinedTermSet);
 
     /**
-     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]].
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -64,7 +92,7 @@ public interface DefinedTerm extends Intangible {
     List<Text> getTermCodeList();
 
     /**
-     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]].
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -73,7 +101,7 @@ public interface DefinedTerm extends Intangible {
     Text getTermCode();
 
     /**
-     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]].
      *
      * @param termCode Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>

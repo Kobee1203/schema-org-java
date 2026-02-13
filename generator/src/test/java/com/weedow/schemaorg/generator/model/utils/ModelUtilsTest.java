@@ -120,11 +120,11 @@ class ModelUtilsTest {
         Map<String, Type> schemaDefinitions = new HashMap<>();
 
         GraphItem graphItem = mock(GraphItem.class);
-        when(graphItem.getRangeIncludes()).thenReturn(List.of(rangeInclude("id1"), rangeInclude("id2")));
+        when(graphItem.getRangeIncludes()).thenReturn(List.of(rangeInclude("schema:id1"), rangeInclude("schema:id2"), rangeInclude("id3")));
 
         Assertions.assertThat(ModelUtils.getPropertyTypes(schemaDefinitions, graphItem))
                 .extracting("id")
-                .containsExactly("id1", "id2");
+                .containsExactly("schema:id1", "schema:id2");
     }
 
     @Test

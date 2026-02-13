@@ -13,8 +13,10 @@ public class EnumerationMemberModelHandlerImpl implements ModelHandler {
 
     @Override
     public boolean supports(GraphItem graphItem, ParserOptions options) {
+        final String id = graphItem.getId();
         final List<String> types = graphItem.getTypes();
-        return types.stream().allMatch(s -> s.startsWith(SchemaConstants.SCHEMA_PREFIX)) && !types.contains(SchemaConstants.SCHEMA_DATA_TYPE);
+        return id.startsWith(SchemaConstants.SCHEMA_PREFIX)
+                && types.stream().allMatch(s -> s.startsWith(SchemaConstants.SCHEMA_PREFIX)) && !types.contains(SchemaConstants.SCHEMA_DATA_TYPE);
     }
 
     @Override

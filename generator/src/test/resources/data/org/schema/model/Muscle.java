@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Nerve;
-import org.schema.model.datatype.Text;
-import org.schema.model.Vessel;
-import org.schema.model.Muscle;
 import org.schema.model.AnatomicalStructure;
+import org.schema.model.Nerve;
+import org.schema.model.Vessel;
+import org.schema.model.datatype.Text;
+import org.schema.model.Muscle;
 
 /**
  * A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.
@@ -19,6 +19,30 @@ import org.schema.model.AnatomicalStructure;
  * @see <a href="https://schema.org/Muscle">https://schema.org/Muscle</a>
  */
 public interface Muscle extends AnatomicalStructure {
+
+    /**
+     * The place of attachment of a muscle, or what the muscle moves.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getInsertionList();
+
+    /**
+     * The place of attachment of a muscle, or what the muscle moves.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AnatomicalStructure getInsertion();
+
+    /**
+     * The place of attachment of a muscle, or what the muscle moves.
+     *
+     * @param insertion AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addInsertion(AnatomicalStructure insertion);
 
     /**
      * The underlying innervation associated with the muscle.
@@ -45,30 +69,6 @@ public interface Muscle extends AnatomicalStructure {
     void addNerve(Nerve nerve);
 
     /**
-     * The movement the muscle generates.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getMuscleActionList();
-
-    /**
-     * The movement the muscle generates.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getMuscleAction();
-
-    /**
-     * The movement the muscle generates.
-     *
-     * @param muscleAction Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMuscleAction(Text muscleAction);
-
-    /**
      * The blood vessel that carries blood from the heart to the muscle.
      *
      * @return {@link Vessel}
@@ -93,6 +93,30 @@ public interface Muscle extends AnatomicalStructure {
     void addBloodSupply(Vessel bloodSupply);
 
     /**
+     * The movement the muscle generates.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getMuscleActionList();
+
+    /**
+     * The movement the muscle generates.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getMuscleAction();
+
+    /**
+     * The movement the muscle generates.
+     *
+     * @param muscleAction Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMuscleAction(Text muscleAction);
+
+    /**
      * The muscle whose action counteracts the specified muscle.
      *
      * @return {@link Muscle}
@@ -115,28 +139,4 @@ public interface Muscle extends AnatomicalStructure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addAntagonist(Muscle antagonist);
-
-    /**
-     * The place of attachment of a muscle, or what the muscle moves.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AnatomicalStructure> getInsertionList();
-
-    /**
-     * The place of attachment of a muscle, or what the muscle moves.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AnatomicalStructure getInsertion();
-
-    /**
-     * The place of attachment of a muscle, or what the muscle moves.
-     *
-     * @param insertion AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addInsertion(AnatomicalStructure insertion);
 }

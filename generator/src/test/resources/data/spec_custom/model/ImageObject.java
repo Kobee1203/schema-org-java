@@ -6,11 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.MediaObject;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.ImageObject;
-import spec_custom.model.PropertyValue;
 import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.MediaObject;
+import spec_custom.model.PropertyValue;
 
 /**
  * An image file.
@@ -20,79 +19,52 @@ import spec_custom.model.datatype.Boolean;
 public interface ImageObject extends MediaObject {
 
     /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getRepresentativeOfPageList();
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getRepresentativeOfPage();
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @param representativeOfPage Boolean value to set.
+     */
+    void addRepresentativeOfPage(Boolean representativeOfPage);
+
+    /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @return {@link MediaObject} or {@link Text}
+     * @return {@link Text} or {@link MediaObject}
      */
     <T> List<T> getCaptionList();
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @return {@link MediaObject} or {@link Text}
+     * @return {@link Text} or {@link MediaObject}
      */
     <T> T getCaption();
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @param caption MediaObject value to set.
-     */
-    void addCaption(MediaObject caption);
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
      * @param caption Text value to set.
      */
     void addCaption(Text caption);
-
     /**
-     * Thumbnail image for an image or video.
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @return {@link ImageObject}
+     * @param caption MediaObject value to set.
      */
-    List<ImageObject> getThumbnailList();
-
-    /**
-     * Thumbnail image for an image or video.
-     *
-     * @return {@link ImageObject}
-     */
-    ImageObject getThumbnail();
-
-    /**
-     * Thumbnail image for an image or video.
-     *
-     * @param thumbnail ImageObject value to set.
-     */
-    void addThumbnail(ImageObject thumbnail);
-
-    /**
-     * exif data for this object.
-     *
-     * @return {@link Text} or {@link PropertyValue}
-     */
-    <T> List<T> getExifDataList();
-
-    /**
-     * exif data for this object.
-     *
-     * @return {@link Text} or {@link PropertyValue}
-     */
-    <T> T getExifData();
-
-    /**
-     * exif data for this object.
-     *
-     * @param exifData Text value to set.
-     */
-    void addExifData(Text exifData);
-    /**
-     * exif data for this object.
-     *
-     * @param exifData PropertyValue value to set.
-     */
-    void addExifData(PropertyValue exifData);
+    void addCaption(MediaObject caption);
 
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
@@ -122,23 +94,29 @@ public interface ImageObject extends MediaObject {
     void addEmbeddedTextCaption(Text embeddedTextCaption);
 
     /**
-     * Indicates whether this image is representative of the content of the page.
+     * exif data for this object.
      *
-     * @return {@link Boolean}
+     * @return {@link PropertyValue} or {@link Text}
      */
-    List<Boolean> getRepresentativeOfPageList();
+    <T> List<T> getExifDataList();
 
     /**
-     * Indicates whether this image is representative of the content of the page.
+     * exif data for this object.
      *
-     * @return {@link Boolean}
+     * @return {@link PropertyValue} or {@link Text}
      */
-    Boolean getRepresentativeOfPage();
+    <T> T getExifData();
 
     /**
-     * Indicates whether this image is representative of the content of the page.
+     * exif data for this object.
      *
-     * @param representativeOfPage Boolean value to set.
+     * @param exifData PropertyValue value to set.
      */
-    void addRepresentativeOfPage(Boolean representativeOfPage);
+    void addExifData(PropertyValue exifData);
+    /**
+     * exif data for this object.
+     *
+     * @param exifData Text value to set.
+     */
+    void addExifData(Text exifData);
 }
