@@ -39,6 +39,27 @@ public interface DeliveryEvent extends Event {
     void addAvailableThrough(DateTime availableThrough);
 
     /**
+     * When the item is available for pickup from the store, locker, etc.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getAvailableFromList();
+
+    /**
+     * When the item is available for pickup from the store, locker, etc.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getAvailableFrom();
+
+    /**
+     * When the item is available for pickup from the store, locker, etc.
+     *
+     * @param availableFrom DateTime value to set.
+     */
+    void addAvailableFrom(DateTime availableFrom);
+
+    /**
      * Password, PIN, or access code needed for delivery (e.g. from a locker).
      *
      * @return {@link Text}
@@ -79,25 +100,4 @@ public interface DeliveryEvent extends Event {
      * @param hasDeliveryMethod DeliveryMethod value to set.
      */
     void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
-
-    /**
-     * When the item is available for pickup from the store, locker, etc.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getAvailableFromList();
-
-    /**
-     * When the item is available for pickup from the store, locker, etc.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getAvailableFrom();
-
-    /**
-     * When the item is available for pickup from the store, locker, etc.
-     *
-     * @param availableFrom DateTime value to set.
-     */
-    void addAvailableFrom(DateTime availableFrom);
 }

@@ -8,8 +8,8 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.Place;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Integer;
+import org.schema.model.QuantitativeValue;
 
 /**
  * A reservation for a taxi.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
@@ -63,27 +63,27 @@ public interface TaxiReservation extends Reservation {
     /**
      * Number of people the reservation should accommodate.
      *
-     * @return {@link QuantitativeValue} or {@link Integer}
+     * @return {@link Integer} or {@link QuantitativeValue}
      */
     <T> List<T> getPartySizeList();
 
     /**
      * Number of people the reservation should accommodate.
      *
-     * @return {@link QuantitativeValue} or {@link Integer}
+     * @return {@link Integer} or {@link QuantitativeValue}
      */
     <T> T getPartySize();
 
     /**
      * Number of people the reservation should accommodate.
      *
-     * @param partySize QuantitativeValue value to set.
-     */
-    void addPartySize(QuantitativeValue partySize);
-    /**
-     * Number of people the reservation should accommodate.
-     *
      * @param partySize Integer value to set.
      */
     void addPartySize(Integer partySize);
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     * @param partySize QuantitativeValue value to set.
+     */
+    void addPartySize(QuantitativeValue partySize);
 }

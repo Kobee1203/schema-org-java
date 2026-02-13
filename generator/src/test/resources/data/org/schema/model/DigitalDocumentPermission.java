@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DigitalDocumentPermissionType;
 import org.schema.model.Audience;
-import org.schema.model.Organization;
 import org.schema.model.ContactPoint;
 import org.schema.model.Person;
-import org.schema.model.DigitalDocumentPermissionType;
+import org.schema.model.Organization;
 
 /**
  * A permission for a particular person or group to access a particular file.
@@ -18,45 +18,6 @@ import org.schema.model.DigitalDocumentPermissionType;
  * @see <a href="https://schema.org/DigitalDocumentPermission">https://schema.org/DigitalDocumentPermission</a>
  */
 public interface DigitalDocumentPermission extends Intangible {
-
-    /**
-     * The person, organization, contact point, or audience that has been granted this permission.
-     *
-     * @return {@link Audience} or {@link Organization} or {@link ContactPoint} or {@link Person}
-     */
-    <T> List<T> getGranteeList();
-
-    /**
-     * The person, organization, contact point, or audience that has been granted this permission.
-     *
-     * @return {@link Audience} or {@link Organization} or {@link ContactPoint} or {@link Person}
-     */
-    <T> T getGrantee();
-
-    /**
-     * The person, organization, contact point, or audience that has been granted this permission.
-     *
-     * @param grantee Audience value to set.
-     */
-    void addGrantee(Audience grantee);
-    /**
-     * The person, organization, contact point, or audience that has been granted this permission.
-     *
-     * @param grantee Organization value to set.
-     */
-    void addGrantee(Organization grantee);
-    /**
-     * The person, organization, contact point, or audience that has been granted this permission.
-     *
-     * @param grantee ContactPoint value to set.
-     */
-    void addGrantee(ContactPoint grantee);
-    /**
-     * The person, organization, contact point, or audience that has been granted this permission.
-     *
-     * @param grantee Person value to set.
-     */
-    void addGrantee(Person grantee);
 
     /**
      * The type of permission granted the person, organization, or audience.
@@ -78,4 +39,43 @@ public interface DigitalDocumentPermission extends Intangible {
      * @param permissionType DigitalDocumentPermissionType value to set.
      */
     void addPermissionType(DigitalDocumentPermissionType permissionType);
+
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @return {@link Audience} or {@link ContactPoint} or {@link Person} or {@link Organization}
+     */
+    <T> List<T> getGranteeList();
+
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @return {@link Audience} or {@link ContactPoint} or {@link Person} or {@link Organization}
+     */
+    <T> T getGrantee();
+
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @param grantee Audience value to set.
+     */
+    void addGrantee(Audience grantee);
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @param grantee ContactPoint value to set.
+     */
+    void addGrantee(ContactPoint grantee);
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @param grantee Person value to set.
+     */
+    void addGrantee(Person grantee);
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @param grantee Organization value to set.
+     */
+    void addGrantee(Organization grantee);
 }

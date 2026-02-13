@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
 
 /**
  * The act of expressing a preference from a set of options or a large or unbounded set of choices/options.
@@ -15,6 +15,33 @@ import org.schema.model.Thing;
  * @see <a href="https://schema.org/ChooseAction">https://schema.org/ChooseAction</a>
  */
 public interface ChooseAction extends AssessAction {
+
+    /**
+     * A sub property of object. The options subject to this action.
+     *
+     * @return {@link Thing} or {@link Text}
+     */
+    <T> List<T> getActionOptionList();
+
+    /**
+     * A sub property of object. The options subject to this action.
+     *
+     * @return {@link Thing} or {@link Text}
+     */
+    <T> T getActionOption();
+
+    /**
+     * A sub property of object. The options subject to this action.
+     *
+     * @param actionOption Thing value to set.
+     */
+    void addActionOption(Thing actionOption);
+    /**
+     * A sub property of object. The options subject to this action.
+     *
+     * @param actionOption Text value to set.
+     */
+    void addActionOption(Text actionOption);
 
     /**
      * A sub property of object. The options subject to this action.
@@ -42,31 +69,4 @@ public interface ChooseAction extends AssessAction {
      * @param option Thing value to set.
      */
     void addOption(Thing option);
-
-    /**
-     * A sub property of object. The options subject to this action.
-     *
-     * @return {@link Text} or {@link Thing}
-     */
-    <T> List<T> getActionOptionList();
-
-    /**
-     * A sub property of object. The options subject to this action.
-     *
-     * @return {@link Text} or {@link Thing}
-     */
-    <T> T getActionOption();
-
-    /**
-     * A sub property of object. The options subject to this action.
-     *
-     * @param actionOption Text value to set.
-     */
-    void addActionOption(Text actionOption);
-    /**
-     * A sub property of object. The options subject to this action.
-     *
-     * @param actionOption Thing value to set.
-     */
-    void addActionOption(Thing actionOption);
 }

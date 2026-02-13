@@ -6,48 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MonetaryAmount;
 import org.schema.model.datatype.Boolean;
+import org.schema.model.MonetaryAmount;
 
 /**
  * A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
  * @see <a href="https://schema.org/MortgageLoan">https://schema.org/MortgageLoan</a>
  */
 public interface MortgageLoan extends LoanOrCredit {
-
-    /**
-     * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    List<MonetaryAmount> getLoanMortgageMandateAmountList();
-
-    /**
-     * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    MonetaryAmount getLoanMortgageMandateAmount();
-
-    /**
-     * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
-     *
-     * @param loanMortgageMandateAmount MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void addLoanMortgageMandateAmount(MonetaryAmount loanMortgageMandateAmount);
 
     /**
      * Whether borrower is a resident of the jurisdiction where the property is located.
@@ -55,7 +24,6 @@ public interface MortgageLoan extends LoanOrCredit {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     List<Boolean> getDomiciledMortgageList();
 
@@ -65,7 +33,6 @@ public interface MortgageLoan extends LoanOrCredit {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     Boolean getDomiciledMortgage();
 
@@ -75,7 +42,33 @@ public interface MortgageLoan extends LoanOrCredit {
      * @param domiciledMortgage Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     void addDomiciledMortgage(Boolean domiciledMortgage);
+
+    /**
+     * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    List<MonetaryAmount> getLoanMortgageMandateAmountList();
+
+    /**
+     * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    MonetaryAmount getLoanMortgageMandateAmount();
+
+    /**
+     * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
+     *
+     * @param loanMortgageMandateAmount MonetaryAmount value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void addLoanMortgageMandateAmount(MonetaryAmount loanMortgageMandateAmount);
 }

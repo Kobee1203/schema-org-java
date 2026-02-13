@@ -5,6 +5,8 @@
  */
 package spec.model;
 
+import java.util.List;
+
 /**
  * Categories of medical devices, organized by the purpose or intended use of the device.
  *

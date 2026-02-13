@@ -11,7 +11,6 @@ import org.schema.model.QuantitativeValue;
 /**
  * A placeholder for multiple similar products of the same kind.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/SomeProducts">https://schema.org/SomeProducts</a>
  */
 public interface SomeProducts extends Product {
@@ -20,7 +19,6 @@ public interface SomeProducts extends Product {
      * The current approximate inventory level for the item or items.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getInventoryLevelList();
 
@@ -28,7 +26,6 @@ public interface SomeProducts extends Product {
      * The current approximate inventory level for the item or items.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     QuantitativeValue getInventoryLevel();
 
@@ -36,7 +33,6 @@ public interface SomeProducts extends Product {
      * The current approximate inventory level for the item or items.
      *
      * @param inventoryLevel QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addInventoryLevel(QuantitativeValue inventoryLevel);
 }

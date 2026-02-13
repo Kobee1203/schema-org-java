@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.RealEstateAgent;
-import org.schema.model.Person;
 import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.
@@ -41,27 +41,27 @@ public interface RentAction extends TradeAction {
     /**
      * A sub property of participant. The owner of the real estate property.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     <T> List<T> getLandlordList();
 
     /**
      * A sub property of participant. The owner of the real estate property.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     <T> T getLandlord();
 
     /**
      * A sub property of participant. The owner of the real estate property.
      *
-     * @param landlord Person value to set.
-     */
-    void addLandlord(Person landlord);
-    /**
-     * A sub property of participant. The owner of the real estate property.
-     *
      * @param landlord Organization value to set.
      */
     void addLandlord(Organization landlord);
+    /**
+     * A sub property of participant. The owner of the real estate property.
+     *
+     * @param landlord Person value to set.
+     */
+    void addLandlord(Person landlord);
 }

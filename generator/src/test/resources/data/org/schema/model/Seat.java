@@ -38,27 +38,6 @@ public interface Seat extends Intangible {
     void addSeatSection(Text seatSection);
 
     /**
-     * The location of the reserved seat (e.g., 27).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSeatNumberList();
-
-    /**
-     * The location of the reserved seat (e.g., 27).
-     *
-     * @return {@link Text}
-     */
-    Text getSeatNumber();
-
-    /**
-     * The location of the reserved seat (e.g., 27).
-     *
-     * @param seatNumber Text value to set.
-     */
-    void addSeatNumber(Text seatNumber);
-
-    /**
      * The type/class of the seat.
      *
      * @return {@link Text} or {@link QualitativeValue}
@@ -84,6 +63,27 @@ public interface Seat extends Intangible {
      * @param seatingType QualitativeValue value to set.
      */
     void addSeatingType(QualitativeValue seatingType);
+
+    /**
+     * The location of the reserved seat (e.g., 27).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSeatNumberList();
+
+    /**
+     * The location of the reserved seat (e.g., 27).
+     *
+     * @return {@link Text}
+     */
+    Text getSeatNumber();
+
+    /**
+     * The location of the reserved seat (e.g., 27).
+     *
+     * @param seatNumber Text value to set.
+     */
+    void addSeatNumber(Text seatNumber);
 
     /**
      * The row location of the reserved seat (e.g., B).

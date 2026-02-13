@@ -13,39 +13,18 @@ import org.schema.model.datatype.Text;
  * A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)).
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+ * @see <a href="http://bioschemas.org">http://bioschemas.org</a>
+ * @see <a href="https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999">https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999</a>
  * @see <a href="https://schema.org/ChemicalSubstance">https://schema.org/ChemicalSubstance</a>
  */
 public interface ChemicalSubstance extends BioChemEntity {
-
-    /**
-     * A role played by the BioChemEntity within a chemical context.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    List<DefinedTerm> getChemicalRoleList();
-
-    /**
-     * A role played by the BioChemEntity within a chemical context.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    DefinedTerm getChemicalRole();
-
-    /**
-     * A role played by the BioChemEntity within a chemical context.
-     *
-     * @param chemicalRole DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void addChemicalRole(DefinedTerm chemicalRole);
 
     /**
      * Intended use of the BioChemEntity by humans.
      *
      * @return {@link DefinedTerm}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
      */
     List<DefinedTerm> getPotentialUseList();
 
@@ -54,6 +33,7 @@ public interface ChemicalSubstance extends BioChemEntity {
      *
      * @return {@link DefinedTerm}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
      */
     DefinedTerm getPotentialUse();
 
@@ -62,6 +42,7 @@ public interface ChemicalSubstance extends BioChemEntity {
      *
      * @param potentialUse DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
      */
     void addPotentialUse(DefinedTerm potentialUse);
 
@@ -70,6 +51,7 @@ public interface ChemicalSubstance extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
      */
     List<Text> getChemicalCompositionList();
 
@@ -78,6 +60,7 @@ public interface ChemicalSubstance extends BioChemEntity {
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
      */
     Text getChemicalComposition();
 
@@ -86,6 +69,34 @@ public interface ChemicalSubstance extends BioChemEntity {
      *
      * @param chemicalComposition Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
      */
     void addChemicalComposition(Text chemicalComposition);
+
+    /**
+     * A role played by the BioChemEntity within a chemical context.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
+     */
+    List<DefinedTerm> getChemicalRoleList();
+
+    /**
+     * A role played by the BioChemEntity within a chemical context.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
+     */
+    DefinedTerm getChemicalRole();
+
+    /**
+     * A role played by the BioChemEntity within a chemical context.
+     *
+     * @param chemicalRole DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
+     */
+    void addChemicalRole(DefinedTerm chemicalRole);
 }

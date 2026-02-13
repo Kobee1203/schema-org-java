@@ -59,27 +59,6 @@ public interface RentalCarReservation extends Reservation {
     void addPickupLocation(Place pickupLocation);
 
     /**
-     * Where a rental car can be dropped off.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getDropoffLocationList();
-
-    /**
-     * Where a rental car can be dropped off.
-     *
-     * @return {@link Place}
-     */
-    Place getDropoffLocation();
-
-    /**
-     * Where a rental car can be dropped off.
-     *
-     * @param dropoffLocation Place value to set.
-     */
-    void addDropoffLocation(Place dropoffLocation);
-
-    /**
      * When a rental car can be dropped off.
      *
      * @return {@link DateTime}
@@ -99,4 +78,25 @@ public interface RentalCarReservation extends Reservation {
      * @param dropoffTime DateTime value to set.
      */
     void addDropoffTime(DateTime dropoffTime);
+
+    /**
+     * Where a rental car can be dropped off.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getDropoffLocationList();
+
+    /**
+     * Where a rental car can be dropped off.
+     *
+     * @return {@link Place}
+     */
+    Place getDropoffLocation();
+
+    /**
+     * Where a rental car can be dropped off.
+     *
+     * @param dropoffLocation Place value to set.
+     */
+    void addDropoffLocation(Place dropoffLocation);
 }

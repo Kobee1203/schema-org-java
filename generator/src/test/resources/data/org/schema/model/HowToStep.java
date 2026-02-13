@@ -12,5 +12,5 @@ import java.util.List;
  *
  * @see <a href="https://schema.org/HowToStep">https://schema.org/HowToStep</a>
  */
-public interface HowToStep extends ItemList, CreativeWork, ListItem {
+public interface HowToStep extends CreativeWork, ItemList, ListItem {
 }

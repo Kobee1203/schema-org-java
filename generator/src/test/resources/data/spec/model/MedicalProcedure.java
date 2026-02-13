@@ -8,8 +8,8 @@ package spec.model;
 import java.util.List;
 import spec.model.datatype.Text;
 import spec.model.MedicalProcedureType;
-import spec.model.MedicalStudyStatus;
 import spec.model.EventStatusType;
+import spec.model.MedicalStudyStatus;
 import spec.model.MedicalEntity;
 
 /**
@@ -69,42 +69,28 @@ public interface MedicalProcedure extends MedicalEntity {
     void addProcedureType(MedicalProcedureType procedureType);
 
     /**
-     * The status of the study (enumerated).
+     * Typical or recommended followup care after the procedure is performed.
      *
-     * @return {@link MedicalStudyStatus} or {@link Text} or {@link EventStatusType}
+     * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    <T> List<T> getStatusList();
+    List<Text> getFollowupList();
 
     /**
-     * The status of the study (enumerated).
+     * Typical or recommended followup care after the procedure is performed.
      *
-     * @return {@link MedicalStudyStatus} or {@link Text} or {@link EventStatusType}
+     * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    <T> T getStatus();
+    Text getFollowup();
 
     /**
-     * The status of the study (enumerated).
+     * Typical or recommended followup care after the procedure is performed.
      *
-     * @param status MedicalStudyStatus value to set.
+     * @param followup Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addStatus(MedicalStudyStatus status);
-    /**
-     * The status of the study (enumerated).
-     *
-     * @param status Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStatus(Text status);
-    /**
-     * The status of the study (enumerated).
-     *
-     * @param status EventStatusType value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStatus(EventStatusType status);
+    void addFollowup(Text followup);
 
     /**
      * Location in the body of the anatomical structure.
@@ -131,28 +117,42 @@ public interface MedicalProcedure extends MedicalEntity {
     void addBodyLocation(Text bodyLocation);
 
     /**
-     * Typical or recommended followup care after the procedure is performed.
+     * The status of the study (enumerated).
      *
-     * @return {@link Text}
+     * @return {@link EventStatusType} or {@link Text} or {@link MedicalStudyStatus}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getFollowupList();
+    <T> List<T> getStatusList();
 
     /**
-     * Typical or recommended followup care after the procedure is performed.
+     * The status of the study (enumerated).
      *
-     * @return {@link Text}
+     * @return {@link EventStatusType} or {@link Text} or {@link MedicalStudyStatus}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getFollowup();
+    <T> T getStatus();
 
     /**
-     * Typical or recommended followup care after the procedure is performed.
+     * The status of the study (enumerated).
      *
-     * @param followup Text value to set.
+     * @param status EventStatusType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addFollowup(Text followup);
+    void addStatus(EventStatusType status);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(Text status);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status MedicalStudyStatus value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStatus(MedicalStudyStatus status);
 
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.

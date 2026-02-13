@@ -6,8 +6,8 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.XPathType;
 import spec_custom.model.datatype.CssSelectorType;
+import spec_custom.model.datatype.XPathType;
 
 /**
  * A web page element, like a table or an image.
@@ -15,30 +15,6 @@ import spec_custom.model.datatype.CssSelectorType;
  * @see <a href="https://schema.org/WebPageElement">https://schema.org/WebPageElement</a>
  */
 public interface WebPageElement extends CreativeWork {
-
-    /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     *
-     * @return {@link XPathType}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    List<XPathType> getXpathList();
-
-    /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     *
-     * @return {@link XPathType}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    XPathType getXpath();
-
-    /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     *
-     * @param xpath XPathType value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    void addXpath(XPathType xpath);
 
     /**
      * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
@@ -63,4 +39,28 @@ public interface WebPageElement extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
     void addCssSelector(CssSelectorType cssSelector);
+
+    /**
+     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @return {@link XPathType}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    List<XPathType> getXpathList();
+
+    /**
+     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @return {@link XPathType}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    XPathType getXpath();
+
+    /**
+     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+     *
+     * @param xpath XPathType value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
+     */
+    void addXpath(XPathType xpath);
 }

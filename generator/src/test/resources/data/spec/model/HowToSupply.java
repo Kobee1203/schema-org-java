@@ -6,8 +6,8 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
 import spec.model.MonetaryAmount;
+import spec.model.datatype.Text;
 
 /**
  * A supply consumed when performing the instructions for how to achieve a result.
@@ -19,27 +19,27 @@ public interface HowToSupply extends HowToItem {
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
-     * @return {@link Text} or {@link MonetaryAmount}
+     * @return {@link MonetaryAmount} or {@link Text}
      */
     <T> List<T> getEstimatedCostList();
 
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
-     * @return {@link Text} or {@link MonetaryAmount}
+     * @return {@link MonetaryAmount} or {@link Text}
      */
     <T> T getEstimatedCost();
 
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
-     * @param estimatedCost Text value to set.
-     */
-    void addEstimatedCost(Text estimatedCost);
-    /**
-     * The estimated cost of the supply or supplies consumed when performing instructions.
-     *
      * @param estimatedCost MonetaryAmount value to set.
      */
     void addEstimatedCost(MonetaryAmount estimatedCost);
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @param estimatedCost Text value to set.
+     */
+    void addEstimatedCost(Text estimatedCost);
 }

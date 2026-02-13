@@ -6,14 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
 import org.schema.model.Class;
 
 /**
  * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.
- * The properties [[numConstraints]] and [[constrainingProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical
- * population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.
- *   
+ * The properties [[numConstraints]] and [[constraintProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical
+ * population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], where a [[populationType]] such as [[Person]] or [[Event]] can be indicated directly. In most cases it may be better to use [[StatisticalVariable]] instead of [[StatisticalPopulation]].
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
@@ -22,37 +20,7 @@ import org.schema.model.Class;
 public interface StatisticalPopulation extends Intangible {
 
     /**
-     * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
-     *   corresponding to an indicated type (via [[populationType]]).
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    List<Integer> getConstrainingPropertyList();
-
-    /**
-     * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
-     *   corresponding to an indicated type (via [[populationType]]).
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    Integer getConstrainingProperty();
-
-    /**
-     * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
-     *   corresponding to an indicated type (via [[populationType]]).
-     *
-     * @param constrainingProperty Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    void addConstrainingProperty(Integer constrainingProperty);
-
-    /**
-     * Indicates the populationType common to all members of a [[StatisticalPopulation]].
+     * Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
      *
      * @return {@link Class}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -61,7 +29,7 @@ public interface StatisticalPopulation extends Intangible {
     List<Class> getPopulationTypeList();
 
     /**
-     * Indicates the populationType common to all members of a [[StatisticalPopulation]].
+     * Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
      *
      * @return {@link Class}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
@@ -70,38 +38,11 @@ public interface StatisticalPopulation extends Intangible {
     Class getPopulationType();
 
     /**
-     * Indicates the populationType common to all members of a [[StatisticalPopulation]].
+     * Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
      *
      * @param populationType Class value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
     void addPopulationType(Class populationType);
-
-    /**
-     * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    List<Integer> getNumConstraintsList();
-
-    /**
-     * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    Integer getNumConstraints();
-
-    /**
-     * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
-     *
-     * @param numConstraints Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    void addNumConstraints(Integer numConstraints);
 }

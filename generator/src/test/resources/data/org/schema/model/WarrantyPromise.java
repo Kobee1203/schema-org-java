@@ -6,46 +6,20 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.WarrantyScope;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.WarrantyScope;
 
 /**
  * A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/WarrantyPromise">https://schema.org/WarrantyPromise</a>
  */
 public interface WarrantyPromise extends StructuredValue {
 
     /**
-     * The scope of the warranty promise.
-     *
-     * @return {@link WarrantyScope}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    List<WarrantyScope> getWarrantyScopeList();
-
-    /**
-     * The scope of the warranty promise.
-     *
-     * @return {@link WarrantyScope}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    WarrantyScope getWarrantyScope();
-
-    /**
-     * The scope of the warranty promise.
-     *
-     * @param warrantyScope WarrantyScope value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void addWarrantyScope(WarrantyScope warrantyScope);
-
-    /**
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getDurationOfWarrantyList();
 
@@ -53,7 +27,6 @@ public interface WarrantyPromise extends StructuredValue {
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     QuantitativeValue getDurationOfWarranty();
 
@@ -61,7 +34,27 @@ public interface WarrantyPromise extends StructuredValue {
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @param durationOfWarranty QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void addDurationOfWarranty(QuantitativeValue durationOfWarranty);
+
+    /**
+     * The scope of the warranty promise.
+     *
+     * @return {@link WarrantyScope}
+     */
+    List<WarrantyScope> getWarrantyScopeList();
+
+    /**
+     * The scope of the warranty promise.
+     *
+     * @return {@link WarrantyScope}
+     */
+    WarrantyScope getWarrantyScope();
+
+    /**
+     * The scope of the warranty promise.
+     *
+     * @param warrantyScope WarrantyScope value to set.
+     */
+    void addWarrantyScope(WarrantyScope warrantyScope);
 }

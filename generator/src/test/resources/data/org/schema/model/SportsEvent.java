@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.SportsTeam;
 import org.schema.model.Person;
+import org.schema.model.SportsTeam;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
@@ -19,31 +19,52 @@ import org.schema.model.datatype.URL;
 public interface SportsEvent extends Event {
 
     /**
-     * A competitor in a sports event.
+     * The home team in a sports event.
      *
-     * @return {@link SportsTeam} or {@link Person}
+     * @return {@link Person} or {@link SportsTeam}
      */
-    <T> List<T> getCompetitorList();
+    <T> List<T> getHomeTeamList();
 
     /**
-     * A competitor in a sports event.
+     * The home team in a sports event.
      *
-     * @return {@link SportsTeam} or {@link Person}
+     * @return {@link Person} or {@link SportsTeam}
      */
-    <T> T getCompetitor();
+    <T> T getHomeTeam();
 
     /**
-     * A competitor in a sports event.
+     * The home team in a sports event.
      *
-     * @param competitor SportsTeam value to set.
+     * @param homeTeam Person value to set.
      */
-    void addCompetitor(SportsTeam competitor);
+    void addHomeTeam(Person homeTeam);
     /**
-     * A competitor in a sports event.
+     * The home team in a sports event.
      *
-     * @param competitor Person value to set.
+     * @param homeTeam SportsTeam value to set.
      */
-    void addCompetitor(Person competitor);
+    void addHomeTeam(SportsTeam homeTeam);
+
+    /**
+     * An official who watches a game or match closely to enforce the rules and arbitrate on matters arising from the play such as referees, umpires or judges. The name of the effective function can vary according to the sport.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getRefereeList();
+
+    /**
+     * An official who watches a game or match closely to enforce the rules and arbitrate on matters arising from the play such as referees, umpires or judges. The name of the effective function can vary according to the sport.
+     *
+     * @return {@link Person}
+     */
+    Person getReferee();
+
+    /**
+     * An official who watches a game or match closely to enforce the rules and arbitrate on matters arising from the play such as referees, umpires or judges. The name of the effective function can vary according to the sport.
+     *
+     * @param referee Person value to set.
+     */
+    void addReferee(Person referee);
 
     /**
      * The away team in a sports event.
@@ -108,29 +129,29 @@ public interface SportsEvent extends Event {
     void addSport(URL sport);
 
     /**
-     * The home team in a sports event.
+     * A competitor in a sports event.
      *
-     * @return {@link SportsTeam} or {@link Person}
+     * @return {@link Person} or {@link SportsTeam}
      */
-    <T> List<T> getHomeTeamList();
+    <T> List<T> getCompetitorList();
 
     /**
-     * The home team in a sports event.
+     * A competitor in a sports event.
      *
-     * @return {@link SportsTeam} or {@link Person}
+     * @return {@link Person} or {@link SportsTeam}
      */
-    <T> T getHomeTeam();
+    <T> T getCompetitor();
 
     /**
-     * The home team in a sports event.
+     * A competitor in a sports event.
      *
-     * @param homeTeam SportsTeam value to set.
+     * @param competitor Person value to set.
      */
-    void addHomeTeam(SportsTeam homeTeam);
+    void addCompetitor(Person competitor);
     /**
-     * The home team in a sports event.
+     * A competitor in a sports event.
      *
-     * @param homeTeam Person value to set.
+     * @param competitor SportsTeam value to set.
      */
-    void addHomeTeam(Person homeTeam);
+    void addCompetitor(SportsTeam competitor);
 }
