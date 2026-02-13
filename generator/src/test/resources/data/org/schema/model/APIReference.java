@@ -16,27 +16,6 @@ import org.schema.model.datatype.Text;
 public interface APIReference extends TechArticle {
 
     /**
-     * Indicates whether API is managed or unmanaged.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getProgrammingModelList();
-
-    /**
-     * Indicates whether API is managed or unmanaged.
-     *
-     * @return {@link Text}
-     */
-    Text getProgrammingModel();
-
-    /**
-     * Indicates whether API is managed or unmanaged.
-     *
-     * @param programmingModel Text value to set.
-     */
-    void addProgrammingModel(Text programmingModel);
-
-    /**
      * Type of app development: phone, Metro style, desktop, XBox, etc.
      *
      * @return {@link Text}
@@ -98,6 +77,27 @@ public interface APIReference extends TechArticle {
      * @param assemblyVersion Text value to set.
      */
     void addAssemblyVersion(Text assemblyVersion);
+
+    /**
+     * Indicates whether API is managed or unmanaged.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProgrammingModelList();
+
+    /**
+     * Indicates whether API is managed or unmanaged.
+     *
+     * @return {@link Text}
+     */
+    Text getProgrammingModel();
+
+    /**
+     * Indicates whether API is managed or unmanaged.
+     *
+     * @param programmingModel Text value to set.
+     */
+    void addProgrammingModel(Text programmingModel);
 
     /**
      * Library file name, e.g., mscorlib.dll, system.web.dll.

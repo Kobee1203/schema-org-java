@@ -5,6 +5,8 @@
  */
 package spec.model;
 
+import java.util.List;
+
 /**
  * Target audiences types for medical web pages. Enumerated type.
  *

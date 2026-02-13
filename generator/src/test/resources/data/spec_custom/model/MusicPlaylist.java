@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.MusicRecording;
-import spec_custom.model.ItemList;
 import spec_custom.model.datatype.Integer;
+import spec_custom.model.ItemList;
+import spec_custom.model.MusicRecording;
 
 /**
  * A collection of music tracks in playlist form.
@@ -16,58 +16,6 @@ import spec_custom.model.datatype.Integer;
  * @see <a href="https://schema.org/MusicPlaylist">https://schema.org/MusicPlaylist</a>
  */
 public interface MusicPlaylist extends CreativeWork {
-
-    /**
-     * A music recording (track)&#x2014;usually a single song.
-     *
-     * @return {@link MusicRecording}
-     */
-    List<MusicRecording> getTracksList();
-
-    /**
-     * A music recording (track)&#x2014;usually a single song.
-     *
-     * @return {@link MusicRecording}
-     */
-    MusicRecording getTracks();
-
-    /**
-     * A music recording (track)&#x2014;usually a single song.
-     *
-     * @param tracks MusicRecording value to set.
-     */
-    void addTracks(MusicRecording tracks);
-
-    /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-     *
-     * @return {@link ItemList} or {@link MusicRecording}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    <T> List<T> getTrackList();
-
-    /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-     *
-     * @return {@link ItemList} or {@link MusicRecording}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    <T> T getTrack();
-
-    /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-     *
-     * @param track ItemList value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addTrack(ItemList track);
-    /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-     *
-     * @param track MusicRecording value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    void addTrack(MusicRecording track);
 
     /**
      * The number of tracks in this album or playlist.
@@ -89,4 +37,52 @@ public interface MusicPlaylist extends CreativeWork {
      * @param numTracks Integer value to set.
      */
     void addNumTracks(Integer numTracks);
+
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @return {@link ItemList} or {@link MusicRecording}
+     */
+    <T> List<T> getTrackList();
+
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @return {@link ItemList} or {@link MusicRecording}
+     */
+    <T> T getTrack();
+
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @param track ItemList value to set.
+     */
+    void addTrack(ItemList track);
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @param track MusicRecording value to set.
+     */
+    void addTrack(MusicRecording track);
+
+    /**
+     * A music recording (track)&#x2014;usually a single song.
+     *
+     * @return {@link MusicRecording}
+     */
+    List<MusicRecording> getTracksList();
+
+    /**
+     * A music recording (track)&#x2014;usually a single song.
+     *
+     * @return {@link MusicRecording}
+     */
+    MusicRecording getTracks();
+
+    /**
+     * A music recording (track)&#x2014;usually a single song.
+     *
+     * @param tracks MusicRecording value to set.
+     */
+    void addTracks(MusicRecording tracks);
 }

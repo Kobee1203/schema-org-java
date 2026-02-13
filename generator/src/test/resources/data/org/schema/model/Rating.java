@@ -6,9 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.Organization;
 import org.schema.model.Person;
+import org.schema.model.datatype.Text;
+import org.schema.model.StructuredValue;
 import org.schema.model.datatype.Number;
 
 /**
@@ -17,30 +18,6 @@ import org.schema.model.datatype.Number;
  * @see <a href="https://schema.org/Rating">https://schema.org/Rating</a>
  */
 public interface Rating extends Intangible {
-
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
-    List<Text> getReviewAspectList();
-
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
-    Text getReviewAspect();
-
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @param reviewAspect Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
-    void addReviewAspect(Text reviewAspect);
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -70,58 +47,35 @@ public interface Rating extends Intangible {
     void addAuthor(Person author);
 
     /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     * @return {@link Text} or {@link StructuredValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    List<Text> getRatingExplanationList();
+    <T> List<T> getReviewAspectList();
 
     /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     * @return {@link Text} or {@link StructuredValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    Text getRatingExplanation();
+    <T> T getReviewAspect();
 
     /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
-     * @param ratingExplanation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     * @param reviewAspect Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    void addRatingExplanation(Text ratingExplanation);
-
+    void addReviewAspect(Text reviewAspect);
     /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
-     * @return {@link Text} or {@link Number}
+     * @param reviewAspect StructuredValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    <T> List<T> getBestRatingList();
-
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> T getBestRating();
-
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     *
-     * @param bestRating Text value to set.
-     */
-    void addBestRating(Text bestRating);
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     *
-     * @param bestRating Number value to set.
-     */
-    void addBestRating(Number bestRating);
+    void addReviewAspect(StructuredValue reviewAspect);
 
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -151,29 +105,83 @@ public interface Rating extends Intangible {
     void addRatingValue(Text ratingValue);
 
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    List<Text> getRatingExplanationList();
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    Text getRatingExplanation();
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @param ratingExplanation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    void addRatingExplanation(Text ratingExplanation);
+
+    /**
+     * The lowest value allowed in this rating system.
      *
      * @return {@link Text} or {@link Number}
      */
     <T> List<T> getWorstRatingList();
 
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     * The lowest value allowed in this rating system.
      *
      * @return {@link Text} or {@link Number}
      */
     <T> T getWorstRating();
 
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     * The lowest value allowed in this rating system.
      *
      * @param worstRating Text value to set.
      */
     void addWorstRating(Text worstRating);
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     * The lowest value allowed in this rating system.
      *
      * @param worstRating Number value to set.
      */
     void addWorstRating(Number worstRating);
+
+    /**
+     * The highest value allowed in this rating system.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> List<T> getBestRatingList();
+
+    /**
+     * The highest value allowed in this rating system.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> T getBestRating();
+
+    /**
+     * The highest value allowed in this rating system.
+     *
+     * @param bestRating Text value to set.
+     */
+    void addBestRating(Text bestRating);
+    /**
+     * The highest value allowed in this rating system.
+     *
+     * @param bestRating Number value to set.
+     */
+    void addBestRating(Number bestRating);
 }

@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalCondition;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.GenderType;
+import org.schema.model.MedicalCondition;
 import org.schema.model.datatype.Integer;
 import org.schema.model.QuantitativeValue;
-import org.schema.model.GenderType;
 
 /**
  * A set of characteristics belonging to people, e.g. who compose an item's target audience.
@@ -19,6 +19,75 @@ import org.schema.model.GenderType;
  * @see <a href="https://schema.org/PeopleAudience">https://schema.org/PeopleAudience</a>
  */
 public interface PeopleAudience extends Audience {
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getSuggestedMinAgeList();
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    Number getSuggestedMinAge();
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @param suggestedMinAge Number value to set.
+     */
+    void addSuggestedMinAge(Number suggestedMinAge);
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRequiredGenderList();
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @return {@link Text}
+     */
+    Text getRequiredGender();
+
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @param requiredGender Text value to set.
+     */
+    void addRequiredGender(Text requiredGender);
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link Text} or {@link GenderType}
+     */
+    <T> List<T> getSuggestedGenderList();
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link Text} or {@link GenderType}
+     */
+    <T> T getSuggestedGender();
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender Text value to set.
+     */
+    void addSuggestedGender(Text suggestedGender);
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender GenderType value to set.
+     */
+    void addSuggestedGender(GenderType suggestedGender);
 
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
@@ -45,48 +114,6 @@ public interface PeopleAudience extends Audience {
     void addHealthCondition(MedicalCondition healthCondition);
 
     /**
-     * Audiences defined by a person's gender.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getRequiredGenderList();
-
-    /**
-     * Audiences defined by a person's gender.
-     *
-     * @return {@link Text}
-     */
-    Text getRequiredGender();
-
-    /**
-     * Audiences defined by a person's gender.
-     *
-     * @param requiredGender Text value to set.
-     */
-    void addRequiredGender(Text requiredGender);
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    List<Number> getSuggestedMinAgeList();
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    Number getSuggestedMinAge();
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     * @param suggestedMinAge Number value to set.
-     */
-    void addSuggestedMinAge(Number suggestedMinAge);
-
-    /**
      * Audiences defined by a person's minimum age.
      *
      * @return {@link Integer}
@@ -108,58 +135,25 @@ public interface PeopleAudience extends Audience {
     void addRequiredMinAge(Integer requiredMinAge);
 
     /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     * Maximum recommended age in years for the audience or user.
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @return {@link Number}
      */
-    List<QuantitativeValue> getSuggestedMeasurementList();
+    List<Number> getSuggestedMaxAgeList();
 
     /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     * Maximum recommended age in years for the audience or user.
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @return {@link Number}
      */
-    QuantitativeValue getSuggestedMeasurement();
+    Number getSuggestedMaxAge();
 
     /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     * Maximum recommended age in years for the audience or user.
      *
-     * @param suggestedMeasurement QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @param suggestedMaxAge Number value to set.
      */
-    void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    <T> List<T> getSuggestedGenderList();
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    <T> T getSuggestedGender();
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @param suggestedGender GenderType value to set.
-     */
-    void addSuggestedGender(GenderType suggestedGender);
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @param suggestedGender Text value to set.
-     */
-    void addSuggestedGender(Text suggestedGender);
+    void addSuggestedMaxAge(Number suggestedMaxAge);
 
     /**
      * Audiences defined by a person's maximum age.
@@ -210,23 +204,29 @@ public interface PeopleAudience extends Audience {
     void addSuggestedAge(QuantitativeValue suggestedAge);
 
     /**
-     * Maximum recommended age in years for the audience or user.
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      *
-     * @return {@link Number}
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    List<Number> getSuggestedMaxAgeList();
+    List<QuantitativeValue> getSuggestedMeasurementList();
 
     /**
-     * Maximum recommended age in years for the audience or user.
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      *
-     * @return {@link Number}
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    Number getSuggestedMaxAge();
+    QuantitativeValue getSuggestedMeasurement();
 
     /**
-     * Maximum recommended age in years for the audience or user.
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      *
-     * @param suggestedMaxAge Number value to set.
+     * @param suggestedMeasurement QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    void addSuggestedMaxAge(Number suggestedMaxAge);
+    void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
 }

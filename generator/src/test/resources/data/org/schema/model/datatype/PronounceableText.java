@@ -81,7 +81,7 @@ public class PronounceableText extends Text {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @return {@link Text} or {@link Language}
+     * @return {@link Language} or {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     public <T> T getInLanguage() {
@@ -91,19 +91,19 @@ public class PronounceableText extends Text {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param inLanguage Text value to set.
+     * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    public void setInLanguage(Text inLanguage) {
+    public void setInLanguage(Language inLanguage) {
         this.inLanguage = inLanguage;
     }
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param inLanguage Language value to set.
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    public void setInLanguage(Language inLanguage) {
+    public void setInLanguage(Text inLanguage) {
         this.inLanguage = inLanguage;
     }
 

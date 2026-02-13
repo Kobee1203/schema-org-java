@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.RecommendedDoseSchedule;
+import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Text;
 import org.schema.model.DrugLegalStatus;
 import org.schema.model.MedicalEnumeration;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.MaximumDoseSchedule;
-import org.schema.model.RecommendedDoseSchedule;
 
 /**
  * A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.
@@ -19,55 +19,79 @@ import org.schema.model.RecommendedDoseSchedule;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DietarySupplement">https://schema.org/DietarySupplement</a>
  */
-public interface DietarySupplement extends Product, Substance {
+public interface DietarySupplement extends Substance, Product {
 
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link RecommendedDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<RecommendedDoseSchedule> getRecommendedIntakeList();
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link RecommendedDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    RecommendedDoseSchedule getRecommendedIntake();
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @param recommendedIntake RecommendedDoseSchedule value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addRecommendedIntake(RecommendedDoseSchedule recommendedIntake);
+
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Boolean> getIsProprietaryList();
+
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Boolean getIsProprietary();
+
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @param isProprietary Boolean value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addIsProprietary(Boolean isProprietary);
+
+    /**
+     * Proprietary name given to the diet plan, typically by its originator or creator.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getActiveIngredientList();
+    List<Text> getProprietaryNameList();
 
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * Proprietary name given to the diet plan, typically by its originator or creator.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getActiveIngredient();
+    Text getProprietaryName();
 
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * Proprietary name given to the diet plan, typically by its originator or creator.
      *
-     * @param activeIngredient Text value to set.
+     * @param proprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addActiveIngredient(Text activeIngredient);
-
-    /**
-     * The generic name of this drug or supplement.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getNonProprietaryNameList();
-
-    /**
-     * The generic name of this drug or supplement.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getNonProprietaryName();
-
-    /**
-     * The generic name of this drug or supplement.
-     *
-     * @param nonProprietaryName Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addNonProprietaryName(Text nonProprietaryName);
+    void addProprietaryName(Text proprietaryName);
 
     /**
      * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
@@ -94,28 +118,52 @@ public interface DietarySupplement extends Product, Substance {
     void addSafetyConsideration(Text safetyConsideration);
 
     /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getProprietaryNameList();
+    List<Text> getMechanismOfActionList();
 
     /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getProprietaryName();
+    Text getMechanismOfAction();
 
     /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
-     * @param proprietaryName Text value to set.
+     * @param mechanismOfAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addProprietaryName(Text proprietaryName);
+    void addMechanismOfAction(Text mechanismOfAction);
+
+    /**
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getTargetPopulationList();
+
+    /**
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getTargetPopulation();
+
+    /**
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     *
+     * @param targetPopulation Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addTargetPopulation(Text targetPopulation);
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -156,52 +204,28 @@ public interface DietarySupplement extends Product, Substance {
     void addLegalStatus(MedicalEnumeration legalStatus);
 
     /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getTargetPopulationList();
+    List<Text> getActiveIngredientList();
 
     /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getTargetPopulation();
+    Text getActiveIngredient();
 
     /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
-     * @param targetPopulation Text value to set.
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addTargetPopulation(Text targetPopulation);
-
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Boolean> getIsProprietaryList();
-
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Boolean getIsProprietary();
-
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     *
-     * @param isProprietary Boolean value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addIsProprietary(Boolean isProprietary);
+    void addActiveIngredient(Text activeIngredient);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -228,50 +252,26 @@ public interface DietarySupplement extends Product, Substance {
     void addMaximumIntake(MaximumDoseSchedule maximumIntake);
 
     /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @return {@link RecommendedDoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<RecommendedDoseSchedule> getRecommendedIntakeList();
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @return {@link RecommendedDoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    RecommendedDoseSchedule getRecommendedIntake();
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @param recommendedIntake RecommendedDoseSchedule value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addRecommendedIntake(RecommendedDoseSchedule recommendedIntake);
-
-    /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     * The generic name of this drug or supplement.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getMechanismOfActionList();
+    List<Text> getNonProprietaryNameList();
 
     /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     * The generic name of this drug or supplement.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getMechanismOfAction();
+    Text getNonProprietaryName();
 
     /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     * The generic name of this drug or supplement.
      *
-     * @param mechanismOfAction Text value to set.
+     * @param nonProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addMechanismOfAction(Text mechanismOfAction);
+    void addNonProprietaryName(Text nonProprietaryName);
 }

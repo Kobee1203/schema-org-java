@@ -6,54 +6,19 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.CDCPMDRecord;
-import org.schema.model.Dataset;
 import org.schema.model.MedicalSpecialty;
-import org.schema.model.MedicalTherapy;
-import org.schema.model.MedicalTest;
 import org.schema.model.MedicalProcedure;
+import org.schema.model.MedicalTest;
+import org.schema.model.MedicalTherapy;
+import org.schema.model.Dataset;
+import org.schema.model.CDCPMDRecord;
 
 /**
  * A hospital.
  *
  * @see <a href="https://schema.org/Hospital">https://schema.org/Hospital</a>
  */
-public interface Hospital extends EmergencyService, MedicalOrganization, CivicStructure {
-
-    /**
-     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
-     *
-     * @return {@link CDCPMDRecord} or {@link Dataset}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    <T> List<T> getHealthcareReportingDataList();
-
-    /**
-     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
-     *
-     * @return {@link CDCPMDRecord} or {@link Dataset}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    <T> T getHealthcareReportingData();
-
-    /**
-     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
-     *
-     * @param healthcareReportingData CDCPMDRecord value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void addHealthcareReportingData(CDCPMDRecord healthcareReportingData);
-    /**
-     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
-     *
-     * @param healthcareReportingData Dataset value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void addHealthcareReportingData(Dataset healthcareReportingData);
+public interface Hospital extends CivicStructure, EmergencyService, MedicalOrganization {
 
     /**
      * A medical specialty of the provider.
@@ -82,7 +47,7 @@ public interface Hospital extends EmergencyService, MedicalOrganization, CivicSt
     /**
      * A medical service available from this provider.
      *
-     * @return {@link MedicalTherapy} or {@link MedicalTest} or {@link MedicalProcedure}
+     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> List<T> getAvailableServiceList();
@@ -90,7 +55,7 @@ public interface Hospital extends EmergencyService, MedicalOrganization, CivicSt
     /**
      * A medical service available from this provider.
      *
-     * @return {@link MedicalTherapy} or {@link MedicalTest} or {@link MedicalProcedure}
+     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     <T> T getAvailableService();
@@ -98,10 +63,10 @@ public interface Hospital extends EmergencyService, MedicalOrganization, CivicSt
     /**
      * A medical service available from this provider.
      *
-     * @param availableService MedicalTherapy value to set.
+     * @param availableService MedicalProcedure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addAvailableService(MedicalTherapy availableService);
+    void addAvailableService(MedicalProcedure availableService);
     /**
      * A medical service available from this provider.
      *
@@ -112,8 +77,43 @@ public interface Hospital extends EmergencyService, MedicalOrganization, CivicSt
     /**
      * A medical service available from this provider.
      *
-     * @param availableService MedicalProcedure value to set.
+     * @param availableService MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addAvailableService(MedicalProcedure availableService);
+    void addAvailableService(MedicalTherapy availableService);
+
+    /**
+     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
+     *
+     * @return {@link Dataset} or {@link CDCPMDRecord}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    <T> List<T> getHealthcareReportingDataList();
+
+    /**
+     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
+     *
+     * @return {@link Dataset} or {@link CDCPMDRecord}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    <T> T getHealthcareReportingData();
+
+    /**
+     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
+     *
+     * @param healthcareReportingData Dataset value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void addHealthcareReportingData(Dataset healthcareReportingData);
+    /**
+     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
+     *
+     * @param healthcareReportingData CDCPMDRecord value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void addHealthcareReportingData(CDCPMDRecord healthcareReportingData);
 }

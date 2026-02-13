@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
  *
- * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicReleaseFormatType">https://schema.org/MusicReleaseFormatType</a>
  */
 public interface MusicReleaseFormatType extends Enumeration {
