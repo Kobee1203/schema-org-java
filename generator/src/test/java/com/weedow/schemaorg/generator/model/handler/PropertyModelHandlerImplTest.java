@@ -70,14 +70,14 @@ class PropertyModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:Text", null, typeName1, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(),
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
         Assertions.assertThat(schemaDefinitions.get("schema:PronounceableText"))
                 .extracting(
@@ -85,14 +85,14 @@ class PropertyModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:PronounceableText", null, typeName2, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(),
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
         Assertions.assertThat(schemaDefinitions.get("schema:OtherType"))
                 .extracting(
@@ -100,14 +100,14 @@ class PropertyModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:OtherType", null, "OtherType", null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(),
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
 
         Type myType = schemaDefinitions.get("schema:MyType");
@@ -117,14 +117,14 @@ class PropertyModelHandlerImplTest {
                         /*"properties", "allProperties",*/
                         "parents",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:MyType", null, null, null,
                         /*Collections.emptySet(), Collections.emptySet(),*/
                         Collections.emptyList(),
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
 
         Set<Property> properties = myType.getProperties();
@@ -135,17 +135,41 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(properties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting(
+                        "name", "fieldName", "getterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "fieldTypeLinks", "returnFieldType", "cast"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link " + typeName1 + "} or {@link " + typeName2 + "} or {@link OtherType}", "<T> T", "(T)")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "getMyPropertyList", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                "{@link " + typeName1 + "} or {@link " + typeName2 + "} or {@link OtherType}", "<T> T", "(T)"
+                        )
                 );
         Assertions.assertThat(properties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting(
+                        "name", "fieldName", "setterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "paramType", "paramValue"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), typeName1, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), typeName2, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "OtherType", "myProperty")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                typeName1, "myProperty"
+                        ),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                typeName2, "myProperty"
+                        ),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                "OtherType", "myProperty"
+                        )
                 );
 
         Set<Property> allProperties = myType.getAllProperties();
@@ -156,17 +180,38 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(allProperties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting(
+                        "name", "fieldName", "getterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "fieldTypeLinks", "returnFieldType", "cast"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link " + typeName1 + "} or {@link " + typeName2 + "} or {@link OtherType}", "<T> T", "(T)")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "getMyPropertyList", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                "{@link " + typeName1 + "} or {@link " + typeName2 + "} or {@link OtherType}", "<T> T", "(T)"
+                        )
                 );
         Assertions.assertThat(allProperties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting(
+                        "name", "fieldName", "setterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "paramType", "paramValue"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), typeName1, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), typeName2, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "OtherType", "myProperty")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                typeName1, "myProperty"),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                typeName2, "myProperty"),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                "OtherType", "myProperty")
                 );
     }
 
@@ -199,14 +244,14 @@ class PropertyModelHandlerImplTest {
                         /*"properties", "allProperties",*/
                         "parents",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:MyType", null, null, null,
                         /*Collections.emptySet(), Collections.emptySet(),*/
                         Collections.emptyList(),
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
 
         Set<Property> properties = myType.getProperties();
@@ -217,17 +262,41 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(properties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting(
+                        "name", "fieldName", "getterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "fieldTypeLinks", "returnFieldType", "cast"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null} or {@link null} or {@link null}", "<T> T", "(T)")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "getMyPropertyList", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                "{@link null} or {@link null} or {@link null}", "<T> T", "(T)"
+                        )
                 );
         Assertions.assertThat(properties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting(
+                        "name", "fieldName", "setterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "paramType", "paramValue"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                null, "myProperty"
+                        ),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                null, "myProperty"
+                        ),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                null, "myProperty"
+                        )
                 );
 
         Set<Property> allProperties = myType.getAllProperties();
@@ -238,17 +307,41 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(allProperties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting(
+                        "name", "fieldName", "getterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "fieldTypeLinks", "returnFieldType", "cast"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null} or {@link null} or {@link null}", "<T> T", "(T)")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "getMyPropertyList", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                "{@link null} or {@link null} or {@link null}", "<T> T", "(T)"
+                        )
                 );
         Assertions.assertThat(allProperties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting(
+                        "name", "fieldName", "setterMethod", "description",
+                        "partOf", "source", "contributor",
+                        "paramType", "paramValue"
+                )
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty"),
-                        Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty")
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                null, "myProperty"
+                        ),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                null, "myProperty"
+                        ),
+                        Tuple.tuple(
+                                "myProperty", "myProperty", "setMyProperty", "This is my Property",
+                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ"),
+                                null, "myProperty"
+                        )
                 );
     }
 
@@ -275,6 +368,7 @@ class PropertyModelHandlerImplTest {
         when(graphItem.getComment()).thenReturn(comment("en", "This is my Property"));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
+        when(graphItem.getContributor()).thenReturn(List.of(contributor("https://schema.org/docs/collab/MBZ")));
         when(graphItem.getDomainIncludes()).thenReturn(List.of(domainInclude("schema:MyType")));
         return graphItem;
     }

@@ -15,6 +15,7 @@ import org.schema.model.Dataset;
 /**
  * A collection of datasets.
  *
+ * @see <a href="https://schema.org/docs/collab/DatasetClass">https://schema.org/docs/collab/DatasetClass</a>
  * @see <a href="https://schema.org/DataCatalog">https://schema.org/DataCatalog</a>
  */
 public interface DataCatalog extends CreativeWork {

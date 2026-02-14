@@ -14,6 +14,7 @@ import org.schema.model.SoftwareApplication;
 /**
  * An entry point, within some Web-based protocol.
  *
+ * @see <a href="https://schema.org/docs/collab/ActionCollabClass">https://schema.org/docs/collab/ActionCollabClass</a>
  * @see <a href="https://schema.org/EntryPoint">https://schema.org/EntryPoint</a>
  */
 public interface EntryPoint extends Intangible {

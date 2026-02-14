@@ -709,6 +709,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Place} or {@link ItemList}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public <T> List<T> getItineraryList() {
@@ -721,6 +722,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Place} or {@link ItemList}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public <T> T getItinerary() {
@@ -733,6 +735,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param itinerary Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addItinerary(Place itinerary) {
@@ -744,6 +747,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param itinerary ItemList value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addItinerary(ItemList itinerary) {
@@ -758,6 +762,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public List<Trip> getSubTripList() {
@@ -770,6 +775,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public Trip getSubTrip() {
@@ -782,6 +788,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param subTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addSubTrip(Trip subTrip) {
@@ -846,6 +853,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public List<Trip> getPartOfTripList() {
@@ -858,6 +866,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public Trip getPartOfTrip() {
@@ -870,6 +879,7 @@ public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param partOfTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addPartOfTrip(Trip partOfTrip) {

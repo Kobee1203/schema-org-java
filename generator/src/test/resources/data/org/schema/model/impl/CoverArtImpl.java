@@ -75,6 +75,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getWeightList() {
@@ -86,6 +87,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getWeight() {
@@ -97,6 +99,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @param weight Mass value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(Mass weight) {
@@ -107,6 +110,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @param weight QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(QuantitativeValue weight) {
@@ -369,6 +373,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getDepthList() {
@@ -380,6 +385,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getDepth() {
@@ -391,6 +397,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @param depth Distance value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(Distance depth) {
@@ -401,6 +408,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *
      * @param depth QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(QuantitativeValue depth) {
@@ -650,6 +658,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -662,6 +671,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -674,6 +684,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1450,6 +1461,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1460,6 +1472,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1470,6 +1483,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -2122,6 +2136,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -2132,6 +2147,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -2142,6 +2158,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -3791,6 +3808,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -3803,6 +3821,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -3815,6 +3834,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -3826,6 +3846,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -3837,6 +3858,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -4837,6 +4859,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -4847,6 +4870,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -4857,6 +4881,7 @@ public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {

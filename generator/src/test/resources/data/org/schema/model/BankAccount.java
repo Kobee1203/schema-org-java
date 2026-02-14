@@ -13,6 +13,7 @@ import org.schema.model.MonetaryAmount;
 /**
  * A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/BankAccount">https://schema.org/BankAccount</a>
  */
 public interface BankAccount extends FinancialProduct {
@@ -23,6 +24,7 @@ public interface BankAccount extends FinancialProduct {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getBankAccountTypeList();
 
@@ -32,6 +34,7 @@ public interface BankAccount extends FinancialProduct {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getBankAccountType();
 
@@ -41,6 +44,7 @@ public interface BankAccount extends FinancialProduct {
      * @param bankAccountType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addBankAccountType(URL bankAccountType);
     /**
@@ -49,6 +53,7 @@ public interface BankAccount extends FinancialProduct {
      * @param bankAccountType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addBankAccountType(Text bankAccountType);
 
@@ -58,6 +63,7 @@ public interface BankAccount extends FinancialProduct {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<MonetaryAmount> getAccountOverdraftLimitList();
 
@@ -67,6 +73,7 @@ public interface BankAccount extends FinancialProduct {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     MonetaryAmount getAccountOverdraftLimit();
 
@@ -76,6 +83,7 @@ public interface BankAccount extends FinancialProduct {
      * @param accountOverdraftLimit MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addAccountOverdraftLimit(MonetaryAmount accountOverdraftLimit);
 
@@ -85,6 +93,7 @@ public interface BankAccount extends FinancialProduct {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<MonetaryAmount> getAccountMinimumInflowList();
 
@@ -94,6 +103,7 @@ public interface BankAccount extends FinancialProduct {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     MonetaryAmount getAccountMinimumInflow();
 
@@ -103,6 +113,7 @@ public interface BankAccount extends FinancialProduct {
      * @param accountMinimumInflow MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addAccountMinimumInflow(MonetaryAmount accountMinimumInflow);
 }

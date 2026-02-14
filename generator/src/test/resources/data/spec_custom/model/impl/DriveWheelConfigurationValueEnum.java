@@ -33,6 +33,7 @@ import spec_custom.model.DriveWheelConfigurationValue;
 /**
  * A value indicating which roadwheels will receive torque.
  *
+ * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/DriveWheelConfigurationValue">https://schema.org/DriveWheelConfigurationValue</a>
  */
 @JsonLdTypeName("DriveWheelConfigurationValue")

@@ -27,6 +27,7 @@ import org.schema.model.BedDetails;
 /**
  * An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).
  *
+ * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/BedDetails">https://schema.org/BedDetails</a>
  */
 @JsonLdTypeName("BedDetails")
@@ -38,6 +39,7 @@ public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Number> getNumberOfBedsList() {
@@ -48,6 +50,7 @@ public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Number getNumberOfBeds() {
@@ -58,6 +61,7 @@ public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
      *
      * @param numberOfBeds Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addNumberOfBeds(Number numberOfBeds) {
@@ -71,6 +75,7 @@ public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
      *
      * @return {@link Text} or {@link BedType}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getTypeOfBedList() {
@@ -81,6 +86,7 @@ public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
      *
      * @return {@link Text} or {@link BedType}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getTypeOfBed() {
@@ -91,6 +97,7 @@ public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
      *
      * @param typeOfBed Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addTypeOfBed(Text typeOfBed) {
@@ -100,6 +107,7 @@ public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
      *
      * @param typeOfBed BedType value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addTypeOfBed(BedType typeOfBed) {

@@ -37,6 +37,7 @@ public class Property {
                 .add("types=" + types())
                 .add("partOf=" + Optional.ofNullable(accessor).map(Accessor::getPartOf).orElse(null))
                 .add("source=" + Optional.ofNullable(accessor).map(Accessor::getSource).orElse(null))
+                .add("contributor=" + Optional.ofNullable(accessor).map(Accessor::getContributor).orElse(null))
                 .toString();
     }
 }

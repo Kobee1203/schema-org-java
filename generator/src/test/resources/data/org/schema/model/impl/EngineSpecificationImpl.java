@@ -28,6 +28,7 @@ import org.schema.model.EngineSpecification;
 /**
  * Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.
  *
+ * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/EngineSpecification">https://schema.org/EngineSpecification</a>
  */
 @JsonLdTypeName("EngineSpecification")
@@ -40,6 +41,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getTorqueList() {
@@ -51,6 +53,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getTorque() {
@@ -62,6 +65,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @param torque QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addTorque(QuantitativeValue torque) {
@@ -75,6 +79,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getFuelTypeList() {
@@ -85,6 +90,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getFuelType() {
@@ -95,6 +101,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType URL value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelType(URL fuelType) {
@@ -104,6 +111,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelType(Text fuelType) {
@@ -113,6 +121,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelType(QualitativeValue fuelType) {
@@ -127,6 +136,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getEngineTypeList() {
@@ -138,6 +148,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getEngineType() {
@@ -149,6 +160,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @param engineType URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addEngineType(URL engineType) {
@@ -159,6 +171,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @param engineType Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addEngineType(Text engineType) {
@@ -169,6 +182,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @param engineType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addEngineType(QualitativeValue engineType) {
@@ -182,6 +196,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getEngineDisplacementList() {
@@ -193,6 +208,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getEngineDisplacement() {
@@ -204,6 +220,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @param engineDisplacement QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addEngineDisplacement(QuantitativeValue engineDisplacement) {
@@ -218,6 +235,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getEnginePowerList() {
@@ -230,6 +248,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getEnginePower() {
@@ -242,6 +261,7 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      *
      * @param enginePower QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addEnginePower(QuantitativeValue enginePower) {

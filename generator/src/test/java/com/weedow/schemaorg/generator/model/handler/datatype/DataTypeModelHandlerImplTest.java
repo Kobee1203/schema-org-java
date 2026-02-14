@@ -51,6 +51,7 @@ class DataTypeModelHandlerImplTest {
         when(graphItem.getComment()).thenReturn(comment("en", "This is " + label));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
+        when(graphItem.getContributor()).thenReturn(List.of(contributor("https://schema.org/docs/collab/MBZ")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("rdfs:Class"), subClassOf("schema:Parent")));
 
         ParserOptions options = mock(ParserOptions.class);
@@ -65,14 +66,14 @@ class DataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         id, expectedJavaType, false, label, "This is " + label,
                         Collections.emptySet(), Collections.emptySet(),
                         List.of(schemaDefinitions.get("schema:Parent"), schemaDefinitions.get("schema:DataType")), null,
                         false, Collections.emptyList(),
-                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
+                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ")
                 );
         Assertions.assertThat(schemaDefinitions.get("schema:Parent"))
                 .extracting(
@@ -80,14 +81,14 @@ class DataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:Parent", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(), null,
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
         Assertions.assertThat(schemaDefinitions.get("schema:DataType"))
                 .extracting(
@@ -95,14 +96,14 @@ class DataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:DataType", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(),
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
     }
 
@@ -117,6 +118,7 @@ class DataTypeModelHandlerImplTest {
         when(graphItem.getComment()).thenReturn(comment("en", "This is " + label));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
+        when(graphItem.getContributor()).thenReturn(List.of(contributor("https://schema.org/docs/collab/MBZ")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("rdfs:Class"), subClassOf("schema:Parent")));
 
         ParserOptions options = mock(ParserOptions.class);
@@ -132,14 +134,14 @@ class DataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         id, null, true, expectedJavaType, "This is " + label,
                         Collections.emptySet(), Collections.emptySet(),
                         List.of(schemaDefinitions.get("schema:Parent")), null,
                         false, Collections.emptyList(),
-                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
+                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ")
                 );
         Assertions.assertThat(schemaDefinitions.get("schema:Parent"))
                 .extracting(
@@ -147,14 +149,14 @@ class DataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:Parent", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(), null,
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
     }
 

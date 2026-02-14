@@ -28,6 +28,7 @@ import spec_custom.model.MusicAlbumProductionType;
 /**
  * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
  *
+ * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
  * @see <a href="https://schema.org/MusicAlbumProductionType">https://schema.org/MusicAlbumProductionType</a>
  */
 @JsonLdTypeName("MusicAlbumProductionType")

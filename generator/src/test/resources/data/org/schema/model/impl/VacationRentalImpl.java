@@ -82,6 +82,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getNumberOfRoomsList() {
@@ -93,6 +94,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getNumberOfRooms() {
@@ -104,6 +106,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addNumberOfRooms(QuantitativeValue numberOfRooms) {
@@ -114,6 +117,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addNumberOfRooms(Number numberOfRooms) {
@@ -284,6 +288,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @return {@link Rating}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Rating> getStarRatingList() {
@@ -294,6 +299,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @return {@link Rating}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Rating getStarRating() {
@@ -304,6 +310,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @param starRating Rating value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addStarRating(Rating starRating) {
@@ -317,6 +324,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getPetsAllowedList() {
@@ -327,6 +335,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getPetsAllowed() {
@@ -337,6 +346,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addPetsAllowed(Boolean petsAllowed) {
@@ -346,6 +356,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addPetsAllowed(Text petsAllowed) {
@@ -358,6 +369,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<LocationFeatureSpecification> getAmenityFeatureList() {
@@ -368,6 +380,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
@@ -378,6 +391,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @param amenityFeature LocationFeatureSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
@@ -659,6 +673,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Boolean> getSmokingAllowedList() {
@@ -669,6 +684,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Boolean getSmokingAllowed() {
@@ -679,6 +695,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @param smokingAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addSmokingAllowed(Boolean smokingAllowed) {
@@ -775,6 +792,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
@@ -785,6 +803,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
@@ -795,6 +814,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The opening hours of a certain place.
      *
      * @param openingHoursSpecification OpeningHoursSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
@@ -840,6 +860,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -850,6 +871,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -860,6 +882,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -869,6 +892,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -1154,6 +1178,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -1164,6 +1189,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -1174,6 +1200,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1573,6 +1600,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getIsicV4List() {
@@ -1583,6 +1611,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getIsicV4() {
@@ -1593,6 +1622,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsicV4(Text isicV4) {
@@ -2762,6 +2792,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -2774,6 +2805,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -2786,6 +2818,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -2833,6 +2866,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getKnowsAboutList() {
@@ -2845,6 +2879,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getKnowsAbout() {
@@ -2857,6 +2892,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param knowsAbout Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(Text knowsAbout) {
@@ -2868,6 +2904,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param knowsAbout Thing value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(Thing knowsAbout) {
@@ -2879,6 +2916,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param knowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(URL knowsAbout) {
@@ -2958,6 +2996,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getDiversityStaffingReportList() {
@@ -2970,6 +3009,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getDiversityStaffingReport() {
@@ -2982,6 +3022,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityStaffingReport(URL diversityStaffingReport) {
@@ -2993,6 +3034,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param diversityStaffingReport Article value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityStaffingReport(Article diversityStaffingReport) {
@@ -3047,6 +3089,8 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     @Override
     public List<Text> getLeiCodeList() {
@@ -3057,6 +3101,8 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     @Override
     public Text getLeiCode() {
@@ -3067,6 +3113,8 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @param leiCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     @Override
     public void addLeiCode(Text leiCode) {
@@ -3082,6 +3130,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getKnowsLanguageList() {
@@ -3094,6 +3143,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getKnowsLanguage() {
@@ -3106,6 +3156,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param knowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsLanguage(Language knowsLanguage) {
@@ -3117,6 +3168,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param knowsLanguage Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsLanguage(Text knowsLanguage) {
@@ -3221,6 +3273,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getNaicsList() {
@@ -3231,6 +3284,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getNaics() {
@@ -3241,6 +3295,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @param naics Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addNaics(Text naics) {
@@ -3460,6 +3515,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getLegalNameList() {
@@ -3470,6 +3526,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getLegalName() {
@@ -3480,6 +3537,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The official name of the organization, e.g. the registered company name.
      *
      * @param legalName Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLegalName(Text legalName) {
@@ -3546,6 +3604,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getActionableFeedbackPolicyList() {
@@ -3558,6 +3617,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getActionableFeedbackPolicy() {
@@ -3570,6 +3630,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param actionableFeedbackPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
@@ -3581,6 +3642,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param actionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
@@ -3831,6 +3893,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionsPolicyList() {
@@ -3843,6 +3906,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrectionsPolicy() {
@@ -3855,6 +3919,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrectionsPolicy(URL correctionsPolicy) {
@@ -3866,6 +3931,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param correctionsPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrectionsPolicy(CreativeWork correctionsPolicy) {
@@ -3880,6 +3946,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getAcceptedPaymentMethodList() {
@@ -3891,6 +3958,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getAcceptedPaymentMethod() {
@@ -3902,6 +3970,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @param acceptedPaymentMethod Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcceptedPaymentMethod(Text acceptedPaymentMethod) {
@@ -3912,6 +3981,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @param acceptedPaymentMethod LoanOrCredit value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
@@ -3922,6 +3992,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @param acceptedPaymentMethod PaymentMethod value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
@@ -4352,6 +4423,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getOwnershipFundingInfoList() {
@@ -4364,6 +4436,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getOwnershipFundingInfo() {
@@ -4376,6 +4449,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param ownershipFundingInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
@@ -4387,6 +4461,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param ownershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(URL ownershipFundingInfo) {
@@ -4398,6 +4473,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param ownershipFundingInfo AboutPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
@@ -4409,6 +4485,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param ownershipFundingInfo Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(Text ownershipFundingInfo) {
@@ -4421,6 +4498,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getTaxIDList() {
@@ -4431,6 +4509,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getTaxID() {
@@ -4441,6 +4520,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @param taxID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addTaxID(Text taxID) {
@@ -4456,6 +4536,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getDiversityPolicyList() {
@@ -4468,6 +4549,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getDiversityPolicy() {
@@ -4480,6 +4562,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param diversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityPolicy(CreativeWork diversityPolicy) {
@@ -4491,6 +4574,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param diversityPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityPolicy(URL diversityPolicy) {
@@ -4681,6 +4765,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Demand> getSeeksList() {
@@ -4691,6 +4776,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Demand getSeeks() {
@@ -4701,6 +4787,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @param seeks Demand value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addSeeks(Demand seeks) {
@@ -4713,6 +4800,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Offer> getMakesOfferList() {
@@ -4723,6 +4811,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Offer getMakesOffer() {
@@ -4733,6 +4822,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A pointer to products or services offered by the organization or person.
      *
      * @param makesOffer Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMakesOffer(Offer makesOffer) {
@@ -4745,6 +4835,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getVatIDList() {
@@ -4755,6 +4846,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getVatID() {
@@ -4765,6 +4857,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Value-added Tax ID of the organization or person.
      *
      * @param vatID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addVatID(Text vatID) {
@@ -4819,6 +4912,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getDunsList() {
@@ -4829,6 +4923,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getDuns() {
@@ -4839,6 +4934,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @param duns Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDuns(Text duns) {
@@ -4889,6 +4985,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Place> getHasPOSList() {
@@ -4899,6 +4996,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Place getHasPOS() {
@@ -4909,6 +5007,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * Points-of-Sales operated by the organization or person.
      *
      * @param hasPOS Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addHasPOS(Place hasPOS) {
@@ -5090,6 +5189,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getUnnamedSourcesPolicyList() {
@@ -5102,6 +5202,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getUnnamedSourcesPolicy() {
@@ -5114,6 +5215,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
@@ -5125,6 +5227,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param unnamedSourcesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
@@ -5138,6 +5241,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Thing> getOwnsList() {
@@ -5149,6 +5253,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Thing getOwns() {
@@ -5160,6 +5265,7 @@ public class VacationRentalImpl extends com.weedow.schemaorg.commons.model.JsonL
      *
      * @param owns Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOwns(Thing owns) {

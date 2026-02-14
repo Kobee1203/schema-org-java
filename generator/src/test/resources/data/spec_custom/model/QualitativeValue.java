@@ -18,6 +18,7 @@ import spec_custom.model.datatype.Text;
 /**
  * A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/QualitativeValue">https://schema.org/QualitativeValue</a>
  */
 public interface QualitativeValue extends Enumeration {
@@ -26,6 +27,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is not equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QualitativeValue> getNonEqualList();
 
@@ -33,6 +35,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is not equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QualitativeValue getNonEqual();
 
@@ -40,6 +43,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is not equal to the object.
      *
      * @param nonEqual QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addNonEqual(QualitativeValue nonEqual);
 
@@ -47,6 +51,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QualitativeValue> getLesserOrEqualList();
 
@@ -54,6 +59,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QualitativeValue getLesserOrEqual();
 
@@ -61,6 +67,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
      *
      * @param lesserOrEqual QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLesserOrEqual(QualitativeValue lesserOrEqual);
 
@@ -68,6 +75,7 @@ public interface QualitativeValue extends Enumeration {
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @return {@link StructuredValue} or {@link DefinedTerm} or {@link PropertyValue} or {@link QuantitativeValue} or {@link Enumeration} or {@link MeasurementTypeEnumeration} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValueReferenceList();
 
@@ -75,6 +83,7 @@ public interface QualitativeValue extends Enumeration {
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @return {@link StructuredValue} or {@link DefinedTerm} or {@link PropertyValue} or {@link QuantitativeValue} or {@link Enumeration} or {@link MeasurementTypeEnumeration} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValueReference();
 
@@ -82,48 +91,56 @@ public interface QualitativeValue extends Enumeration {
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference StructuredValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(StructuredValue valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference DefinedTerm value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(DefinedTerm valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference PropertyValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(PropertyValue valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(QuantitativeValue valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference Enumeration value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(Enumeration valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference MeasurementTypeEnumeration value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(MeasurementTypeEnumeration valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(Text valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(QualitativeValue valueReference);
 
@@ -152,6 +169,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QualitativeValue> getEqualList();
 
@@ -159,6 +177,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QualitativeValue getEqual();
 
@@ -166,6 +185,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
      * @param equal QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEqual(QualitativeValue equal);
 
@@ -173,6 +193,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QualitativeValue> getGreaterOrEqualList();
 
@@ -180,6 +201,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QualitativeValue getGreaterOrEqual();
 
@@ -187,6 +209,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
      *
      * @param greaterOrEqual QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGreaterOrEqual(QualitativeValue greaterOrEqual);
 
@@ -194,6 +217,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is greater than the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QualitativeValue> getGreaterList();
 
@@ -201,6 +225,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is greater than the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QualitativeValue getGreater();
 
@@ -208,6 +233,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is greater than the object.
      *
      * @param greater QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGreater(QualitativeValue greater);
 
@@ -215,6 +241,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is lesser than the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QualitativeValue> getLesserList();
 
@@ -222,6 +249,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is lesser than the object.
      *
      * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QualitativeValue getLesser();
 
@@ -229,6 +257,7 @@ public interface QualitativeValue extends Enumeration {
      * This ordering relation for qualitative values indicates that the subject is lesser than the object.
      *
      * @param lesser QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLesser(QualitativeValue lesser);
 }

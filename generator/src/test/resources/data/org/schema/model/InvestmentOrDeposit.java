@@ -12,6 +12,7 @@ import org.schema.model.MonetaryAmount;
 /**
  * A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/InvestmentOrDeposit">https://schema.org/InvestmentOrDeposit</a>
  */
 public interface InvestmentOrDeposit extends FinancialProduct {

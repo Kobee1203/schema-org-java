@@ -50,6 +50,7 @@ class BaseDataTypeModelHandlerImplTest {
         when(graphItem.getComment()).thenReturn(comment("en", "This is my Type"));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
+        when(graphItem.getContributor()).thenReturn(List.of(contributor("https://schema.org/docs/collab/MBZ")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("rdfs:Class"), subClassOf("schema:Parent")));
 
         ParserOptions options = mockParserOptions(null);
@@ -64,7 +65,7 @@ class BaseDataTypeModelHandlerImplTest {
                         "parents",
                         "baseParent.id", "baseParent.interfaceClass", "baseParent.implementationClass",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:MyType", null, "MyType", "This is my Type",
@@ -72,7 +73,7 @@ class BaseDataTypeModelHandlerImplTest {
                         List.of(schemaDefinitions.get("schema:Parent")),
                         "java:JsonLdDataType", JsonLdDataType.class, null,
                         false, Collections.emptyList(),
-                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
+                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), List.of("https://schema.org/docs/collab/MBZ")
                 );
         Assertions.assertThat(schemaDefinitions.get("schema:Parent"))
                 .extracting(
@@ -80,14 +81,14 @@ class BaseDataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:Parent", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(), null,
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
     }
 

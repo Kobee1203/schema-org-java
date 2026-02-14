@@ -14,6 +14,7 @@ import org.schema.model.LegalValueLevel;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+ * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
  * @see <a href="https://schema.org/LegislationObject">https://schema.org/LegislationObject</a>
  */
 public interface LegislationObject extends MediaObject, Legislation {
@@ -25,6 +26,7 @@ public interface LegislationObject extends MediaObject, Legislation {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<LegalValueLevel> getLegislationLegalValueList();
 
@@ -35,6 +37,7 @@ public interface LegislationObject extends MediaObject, Legislation {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     LegalValueLevel getLegislationLegalValue();
 
@@ -45,6 +48,7 @@ public interface LegislationObject extends MediaObject, Legislation {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationLegalValue(LegalValueLevel legislationLegalValue);
 }

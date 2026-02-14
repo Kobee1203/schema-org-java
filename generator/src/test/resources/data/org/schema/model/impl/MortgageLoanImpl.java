@@ -53,6 +53,7 @@ import org.schema.model.MortgageLoan;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/MortgageLoan">https://schema.org/MortgageLoan</a>
  */
 @JsonLdTypeName("MortgageLoan")
@@ -66,6 +67,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getDomiciledMortgageList() {
@@ -78,6 +80,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getDomiciledMortgage() {
@@ -90,6 +93,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param domiciledMortgage Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addDomiciledMortgage(Boolean domiciledMortgage) {
@@ -104,6 +108,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<MonetaryAmount> getLoanMortgageMandateAmountList() {
@@ -116,6 +121,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public MonetaryAmount getLoanMortgageMandateAmount() {
@@ -128,6 +134,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param loanMortgageMandateAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanMortgageMandateAmount(MonetaryAmount loanMortgageMandateAmount) {
@@ -226,6 +233,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getRequiredCollateralList() {
@@ -236,6 +244,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getRequiredCollateral() {
@@ -246,6 +255,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Thing value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRequiredCollateral(Thing requiredCollateral) {
@@ -255,6 +265,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRequiredCollateral(Text requiredCollateral) {
@@ -269,6 +280,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getRecourseLoanList() {
@@ -281,6 +293,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getRecourseLoan() {
@@ -293,6 +306,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param recourseLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRecourseLoan(Boolean recourseLoan) {
@@ -307,6 +321,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<RepaymentSpecification> getLoanRepaymentFormList() {
@@ -319,6 +334,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public RepaymentSpecification getLoanRepaymentForm() {
@@ -331,6 +347,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param loanRepaymentForm RepaymentSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanRepaymentForm(RepaymentSpecification loanRepaymentForm) {
@@ -345,6 +362,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getRenegotiableLoanList() {
@@ -357,6 +375,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getRenegotiableLoan() {
@@ -369,6 +388,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param renegotiableLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRenegotiableLoan(Boolean renegotiableLoan) {
@@ -381,6 +401,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<QuantitativeValue> getLoanTermList() {
@@ -391,6 +412,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public QuantitativeValue getLoanTerm() {
@@ -401,6 +423,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The duration of the loan or credit agreement.
      *
      * @param loanTerm QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanTerm(QuantitativeValue loanTerm) {
@@ -415,6 +438,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Duration> getGracePeriodList() {
@@ -427,6 +451,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Duration getGracePeriod() {
@@ -439,6 +464,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param gracePeriod Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addGracePeriod(Duration gracePeriod) {
@@ -454,6 +480,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getLoanTypeList() {
@@ -466,6 +493,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getLoanType() {
@@ -478,6 +506,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param loanType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanType(URL loanType) {
@@ -489,6 +518,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param loanType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanType(Text loanType) {
@@ -502,6 +532,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getFeesAndCommissionsSpecificationList() {
@@ -512,6 +543,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getFeesAndCommissionsSpecification() {
@@ -522,6 +554,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
@@ -531,6 +564,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
@@ -544,6 +578,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getInterestRateList() {
@@ -554,6 +589,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getInterestRate() {
@@ -564,6 +600,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(QuantitativeValue interestRate) {
@@ -573,6 +610,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(Number interestRate) {
@@ -586,6 +624,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getAnnualPercentageRateList() {
@@ -596,6 +635,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getAnnualPercentageRate() {
@@ -606,6 +646,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
@@ -615,6 +656,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(Number annualPercentageRate) {
@@ -788,6 +830,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -798,6 +841,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -808,6 +852,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -817,6 +862,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -862,6 +908,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsRelatedToList() {
@@ -872,6 +919,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsRelatedTo() {
@@ -882,6 +930,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Service isRelatedTo) {
@@ -891,6 +940,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Product isRelatedTo) {
@@ -1541,6 +1591,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsSimilarToList() {
@@ -1551,6 +1602,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsSimilarTo() {
@@ -1561,6 +1613,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Service isSimilarTo) {
@@ -1570,6 +1623,7 @@ public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Product isSimilarTo) {

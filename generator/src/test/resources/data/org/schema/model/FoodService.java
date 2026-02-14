@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * A food service, like breakfast, lunch, or dinner.
  *
+ * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/FoodService">https://schema.org/FoodService</a>
  */
 public interface FoodService extends Service {

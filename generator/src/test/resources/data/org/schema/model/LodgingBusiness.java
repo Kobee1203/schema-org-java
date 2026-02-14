@@ -29,6 +29,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> List<T> getNumberOfRoomsList();
 
@@ -37,6 +38,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> T getNumberOfRooms();
 
@@ -45,6 +47,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addNumberOfRooms(QuantitativeValue numberOfRooms);
     /**
@@ -52,6 +55,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addNumberOfRooms(Number numberOfRooms);
 
@@ -161,6 +165,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @return {@link Rating}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     List<Rating> getStarRatingList();
 
@@ -168,6 +173,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @return {@link Rating}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     Rating getStarRating();
 
@@ -175,6 +181,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @param starRating Rating value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addStarRating(Rating starRating);
 
@@ -182,6 +189,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> List<T> getPetsAllowedList();
 
@@ -189,6 +197,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> T getPetsAllowed();
 
@@ -196,12 +205,14 @@ public interface LodgingBusiness extends LocalBusiness {
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addPetsAllowed(Boolean petsAllowed);
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addPetsAllowed(Text petsAllowed);
 
@@ -209,6 +220,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     List<LocationFeatureSpecification> getAmenityFeatureList();
 
@@ -216,6 +228,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     LocationFeatureSpecification getAmenityFeature();
 
@@ -223,6 +236,7 @@ public interface LodgingBusiness extends LocalBusiness {
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @param amenityFeature LocationFeatureSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addAmenityFeature(LocationFeatureSpecification amenityFeature);
 }

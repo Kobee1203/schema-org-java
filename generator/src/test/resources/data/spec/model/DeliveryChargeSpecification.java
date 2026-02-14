@@ -15,6 +15,7 @@ import spec.model.DeliveryMethod;
 /**
  * The price for the delivery of an offer using a particular delivery method.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/DeliveryChargeSpecification">https://schema.org/DeliveryChargeSpecification</a>
  */
 public interface DeliveryChargeSpecification extends PriceSpecification {
@@ -110,6 +111,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<DeliveryMethod> getAppliesToDeliveryMethodList();
 
@@ -117,6 +119,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     DeliveryMethod getAppliesToDeliveryMethod();
 
@@ -124,6 +127,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @param appliesToDeliveryMethod DeliveryMethod value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod);
 
@@ -133,6 +137,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getEligibleRegionList();
 
@@ -142,6 +147,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getEligibleRegion();
 
@@ -151,6 +157,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      *
      * @param eligibleRegion GeoShape value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(GeoShape eligibleRegion);
     /**
@@ -159,6 +166,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      *
      * @param eligibleRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(Text eligibleRegion);
     /**
@@ -167,6 +175,7 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      *
      * @param eligibleRegion Place value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(Place eligibleRegion);
 }

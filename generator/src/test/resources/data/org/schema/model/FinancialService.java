@@ -20,6 +20,7 @@ public interface FinancialService extends LocalBusiness {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getFeesAndCommissionsSpecificationList();
 
@@ -27,6 +28,7 @@ public interface FinancialService extends LocalBusiness {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getFeesAndCommissionsSpecification();
 
@@ -34,12 +36,14 @@ public interface FinancialService extends LocalBusiness {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
 }

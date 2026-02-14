@@ -11,6 +11,7 @@ import java.util.List;
  * Design models for medical trials. Enumerated type.
  *
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+ * @see <a href="https://schema.org/docs/collab/WikiDoc">https://schema.org/docs/collab/WikiDoc</a>
  * @see <a href="https://schema.org/MedicalTrialDesign">https://schema.org/MedicalTrialDesign</a>
  */
 public interface MedicalTrialDesign extends MedicalEnumeration {

@@ -12,6 +12,7 @@ import org.schema.model.datatype.Text;
 /**
  * A car is a wheeled, self-powered motor vehicle used for transportation.
  *
+ * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/Car">https://schema.org/Car</a>
  */
 public interface Car extends Vehicle {
@@ -21,6 +22,7 @@ public interface Car extends Vehicle {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getRoofLoadList();
 
@@ -29,6 +31,7 @@ public interface Car extends Vehicle {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getRoofLoad();
 
@@ -37,6 +40,7 @@ public interface Car extends Vehicle {
      *
      * @param roofLoad QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addRoofLoad(QuantitativeValue roofLoad);
 
@@ -45,6 +49,7 @@ public interface Car extends Vehicle {
      *
      * @return {@link Text}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Text> getAcrissCodeList();
 
@@ -53,6 +58,7 @@ public interface Car extends Vehicle {
      *
      * @return {@link Text}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Text getAcrissCode();
 
@@ -61,6 +67,7 @@ public interface Car extends Vehicle {
      *
      * @param acrissCode Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addAcrissCode(Text acrissCode);
 }

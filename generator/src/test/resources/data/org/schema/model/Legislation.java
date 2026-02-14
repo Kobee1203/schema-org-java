@@ -22,6 +22,7 @@ import org.schema.model.LegalForceStatus;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+ * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
  * @see <a href="https://schema.org/Legislation">https://schema.org/Legislation</a>
  */
 public interface Legislation extends CreativeWork {
@@ -33,6 +34,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> List<T> getLegislationPassedByList();
 
@@ -43,6 +45,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> T getLegislationPassedBy();
 
@@ -53,6 +56,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationPassedBy(Organization legislationPassedBy);
     /**
@@ -62,6 +66,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationPassedBy(Person legislationPassedBy);
 
@@ -72,6 +77,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> List<T> getLegislationIdentifierList();
 
@@ -82,6 +88,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> T getLegislationIdentifier();
 
@@ -92,6 +99,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationIdentifier(Text legislationIdentifier);
     /**
@@ -101,6 +109,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationIdentifier(URL legislationIdentifier);
 
@@ -111,6 +120,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationCommencesList();
 
@@ -121,6 +131,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationCommences();
 
@@ -131,6 +142,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationCommences(Legislation legislationCommences);
 
@@ -141,6 +153,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationConsolidatesList();
 
@@ -151,6 +164,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationConsolidates();
 
@@ -161,6 +175,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationConsolidates(Legislation legislationConsolidates);
 
@@ -171,6 +186,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationTransposesList();
 
@@ -181,6 +197,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationTransposes();
 
@@ -191,6 +208,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationTransposes(Legislation legislationTransposes);
 
@@ -201,6 +219,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> List<T> getLegislationTypeList();
 
@@ -211,6 +230,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> T getLegislationType();
 
@@ -221,6 +241,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationType(Text legislationType);
     /**
@@ -230,6 +251,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationType(CategoryCode legislationType);
 
@@ -240,6 +262,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Date> getLegislationDateOfApplicabilityList();
 
@@ -250,6 +273,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Date getLegislationDateOfApplicability();
 
@@ -260,6 +284,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationDateOfApplicability(Date legislationDateOfApplicability);
 
@@ -270,6 +295,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> List<T> getLegislationJurisdictionList();
 
@@ -280,6 +306,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> T getLegislationJurisdiction();
 
@@ -290,6 +317,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationJurisdiction(Text legislationJurisdiction);
     /**
@@ -299,6 +327,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationJurisdiction(AdministrativeArea legislationJurisdiction);
 
@@ -309,6 +338,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<LegalForceStatus> getLegislationLegalForceList();
 
@@ -319,6 +349,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     LegalForceStatus getLegislationLegalForce();
 
@@ -329,6 +360,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationLegalForce(LegalForceStatus legislationLegalForce);
 
@@ -339,6 +371,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Date> getLegislationDateVersionList();
 
@@ -349,6 +382,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Date getLegislationDateVersion();
 
@@ -359,6 +393,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationDateVersion(Date legislationDateVersion);
 
@@ -369,6 +404,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationRepealsList();
 
@@ -379,6 +415,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationRepeals();
 
@@ -389,6 +426,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationRepeals(Legislation legislationRepeals);
 
@@ -399,6 +437,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationEnsuresImplementationOfList();
 
@@ -409,6 +448,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationEnsuresImplementationOf();
 
@@ -419,6 +459,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationEnsuresImplementationOf(Legislation legislationEnsuresImplementationOf);
 
@@ -464,6 +505,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> List<T> getLegislationCountersignedByList();
 
@@ -474,6 +516,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> T getLegislationCountersignedBy();
 
@@ -484,6 +527,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationCountersignedBy(Person legislationCountersignedBy);
     /**
@@ -493,6 +537,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationCountersignedBy(Organization legislationCountersignedBy);
 
@@ -503,6 +548,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationCorrectsList();
 
@@ -513,6 +559,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationCorrects();
 
@@ -523,6 +570,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationCorrects(Legislation legislationCorrects);
 
@@ -533,6 +581,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> List<T> getLegislationResponsibleList();
 
@@ -543,6 +592,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     <T> T getLegislationResponsible();
 
@@ -553,6 +603,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationResponsible(Person legislationResponsible);
     /**
@@ -562,6 +613,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationResponsible(Organization legislationResponsible);
 
@@ -572,6 +624,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationAmendsList();
 
@@ -582,6 +635,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationAmends();
 
@@ -592,6 +646,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationAmends(Legislation legislationAmends);
 
@@ -602,6 +657,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Date> getLegislationDateList();
 
@@ -612,6 +668,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Date getLegislationDate();
 
@@ -622,6 +679,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationDate(Date legislationDate);
 
@@ -632,6 +690,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationAppliesList();
 
@@ -642,6 +701,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationApplies();
 
@@ -652,6 +712,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationApplies(Legislation legislationApplies);
 
@@ -662,6 +723,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     List<Legislation> getLegislationChangesList();
 
@@ -672,6 +734,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     Legislation getLegislationChanges();
 
@@ -682,6 +745,7 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationChanges(Legislation legislationChanges);
 }

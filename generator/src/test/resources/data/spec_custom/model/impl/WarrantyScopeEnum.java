@@ -29,6 +29,7 @@ import spec_custom.model.WarrantyScope;
  * A range of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#Labor-BringIn<br/>* http://purl.org/goodrelations/v1#PartsAndLabor-BringIn<br/>* http://purl.org/goodrelations/v1#PartsAndLabor-PickUp
  *       
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/WarrantyScope">https://schema.org/WarrantyScope</a>
  */
 @JsonLdTypeName("WarrantyScope")

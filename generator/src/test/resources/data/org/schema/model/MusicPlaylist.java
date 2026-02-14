@@ -42,6 +42,7 @@ public interface MusicPlaylist extends CreativeWork {
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @return {@link ItemList} or {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> List<T> getTrackList();
 
@@ -49,6 +50,7 @@ public interface MusicPlaylist extends CreativeWork {
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @return {@link ItemList} or {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> T getTrack();
 
@@ -56,12 +58,14 @@ public interface MusicPlaylist extends CreativeWork {
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @param track ItemList value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addTrack(ItemList track);
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @param track MusicRecording value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addTrack(MusicRecording track);
 

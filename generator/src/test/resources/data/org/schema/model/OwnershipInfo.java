@@ -15,6 +15,7 @@ import org.schema.model.Organization;
 /**
  * A structured value providing information about when a certain organization or person owned a certain product.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/OwnershipInfo">https://schema.org/OwnershipInfo</a>
  */
 public interface OwnershipInfo extends StructuredValue {
@@ -23,6 +24,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getTypeOfGoodList();
 
@@ -30,6 +32,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getTypeOfGood();
 
@@ -37,12 +40,14 @@ public interface OwnershipInfo extends StructuredValue {
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addTypeOfGood(Service typeOfGood);
     /**
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addTypeOfGood(Product typeOfGood);
 
@@ -50,6 +55,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The date and time of obtaining the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<DateTime> getOwnedFromList();
 
@@ -57,6 +63,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The date and time of obtaining the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     DateTime getOwnedFrom();
 
@@ -64,6 +71,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The date and time of obtaining the product.
      *
      * @param ownedFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addOwnedFrom(DateTime ownedFrom);
 
@@ -71,6 +79,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The date and time of giving up ownership on the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<DateTime> getOwnedThroughList();
 
@@ -78,6 +87,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The date and time of giving up ownership on the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     DateTime getOwnedThrough();
 
@@ -85,6 +95,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The date and time of giving up ownership on the product.
      *
      * @param ownedThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addOwnedThrough(DateTime ownedThrough);
 
@@ -92,6 +103,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The organization or person from which the product was acquired.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getAcquiredFromList();
 
@@ -99,6 +111,7 @@ public interface OwnershipInfo extends StructuredValue {
      * The organization or person from which the product was acquired.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getAcquiredFrom();
 
@@ -106,12 +119,14 @@ public interface OwnershipInfo extends StructuredValue {
      * The organization or person from which the product was acquired.
      *
      * @param acquiredFrom Person value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcquiredFrom(Person acquiredFrom);
     /**
      * The organization or person from which the product was acquired.
      *
      * @param acquiredFrom Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcquiredFrom(Organization acquiredFrom);
 }

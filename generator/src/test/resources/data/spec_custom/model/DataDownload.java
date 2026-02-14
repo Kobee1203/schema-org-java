@@ -14,6 +14,7 @@ import spec_custom.model.datatype.Text;
 /**
  * All or part of a [[Dataset]] in downloadable form. 
  *
+ * @see <a href="https://schema.org/docs/collab/DatasetClass">https://schema.org/docs/collab/DatasetClass</a>
  * @see <a href="https://schema.org/DataDownload">https://schema.org/DataDownload</a>
  */
 public interface DataDownload extends MediaObject {

@@ -30,6 +30,7 @@ import spec_custom.model.RepaymentSpecification;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/RepaymentSpecification">https://schema.org/RepaymentSpecification</a>
  */
 @JsonLdTypeName("RepaymentSpecification")
@@ -43,6 +44,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<MonetaryAmount> getLoanPaymentAmountList() {
@@ -55,6 +57,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public MonetaryAmount getLoanPaymentAmount() {
@@ -67,6 +70,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @param loanPaymentAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanPaymentAmount(MonetaryAmount loanPaymentAmount) {
@@ -82,6 +86,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getDownPaymentList() {
@@ -94,6 +99,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getDownPayment() {
@@ -106,6 +112,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @param downPayment Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addDownPayment(Number downPayment) {
@@ -117,6 +124,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @param downPayment MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addDownPayment(MonetaryAmount downPayment) {
@@ -131,6 +139,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Number> getLoanPaymentFrequencyList() {
@@ -143,6 +152,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Number getLoanPaymentFrequency() {
@@ -155,6 +165,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @param loanPaymentFrequency Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanPaymentFrequency(Number loanPaymentFrequency) {
@@ -169,6 +180,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Number> getNumberOfLoanPaymentsList() {
@@ -181,6 +193,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Number getNumberOfLoanPayments() {
@@ -193,6 +206,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @param numberOfLoanPayments Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addNumberOfLoanPayments(Number numberOfLoanPayments) {
@@ -207,6 +221,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<MonetaryAmount> getEarlyPrepaymentPenaltyList() {
@@ -219,6 +234,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public MonetaryAmount getEarlyPrepaymentPenalty() {
@@ -231,6 +247,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * @param earlyPrepaymentPenalty MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addEarlyPrepaymentPenalty(MonetaryAmount earlyPrepaymentPenalty) {

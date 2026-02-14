@@ -11,6 +11,7 @@ import org.schema.model.QuantitativeValue;
 /**
  * A placeholder for multiple similar products of the same kind.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/SomeProducts">https://schema.org/SomeProducts</a>
  */
 public interface SomeProducts extends Product {
@@ -19,6 +20,7 @@ public interface SomeProducts extends Product {
      * The current approximate inventory level for the item or items.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getInventoryLevelList();
 
@@ -26,6 +28,7 @@ public interface SomeProducts extends Product {
      * The current approximate inventory level for the item or items.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getInventoryLevel();
 
@@ -33,6 +36,7 @@ public interface SomeProducts extends Product {
      * The current approximate inventory level for the item or items.
      *
      * @param inventoryLevel QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addInventoryLevel(QuantitativeValue inventoryLevel);
 }

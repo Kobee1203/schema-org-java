@@ -28,6 +28,7 @@ import spec_custom.model.WarrantyPromise;
 /**
  * A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/WarrantyPromise">https://schema.org/WarrantyPromise</a>
  */
 @JsonLdTypeName("WarrantyPromise")
@@ -39,6 +40,7 @@ public class WarrantyPromiseImpl extends com.weedow.schemaorg.commons.model.Json
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<QuantitativeValue> getDurationOfWarrantyList() {
@@ -49,6 +51,7 @@ public class WarrantyPromiseImpl extends com.weedow.schemaorg.commons.model.Json
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public QuantitativeValue getDurationOfWarranty() {
@@ -59,6 +62,7 @@ public class WarrantyPromiseImpl extends com.weedow.schemaorg.commons.model.Json
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @param durationOfWarranty QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDurationOfWarranty(QuantitativeValue durationOfWarranty) {
@@ -71,6 +75,7 @@ public class WarrantyPromiseImpl extends com.weedow.schemaorg.commons.model.Json
      * The scope of the warranty promise.
      *
      * @return {@link WarrantyScope}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<WarrantyScope> getWarrantyScopeList() {
@@ -81,6 +86,7 @@ public class WarrantyPromiseImpl extends com.weedow.schemaorg.commons.model.Json
      * The scope of the warranty promise.
      *
      * @return {@link WarrantyScope}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public WarrantyScope getWarrantyScope() {
@@ -91,6 +97,7 @@ public class WarrantyPromiseImpl extends com.weedow.schemaorg.commons.model.Json
      * The scope of the warranty promise.
      *
      * @param warrantyScope WarrantyScope value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWarrantyScope(WarrantyScope warrantyScope) {

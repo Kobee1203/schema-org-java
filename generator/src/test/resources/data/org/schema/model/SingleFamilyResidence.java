@@ -21,6 +21,7 @@ public interface SingleFamilyResidence extends House {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> List<T> getNumberOfRoomsList();
 
@@ -29,6 +30,7 @@ public interface SingleFamilyResidence extends House {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> T getNumberOfRooms();
 
@@ -37,6 +39,7 @@ public interface SingleFamilyResidence extends House {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addNumberOfRooms(QuantitativeValue numberOfRooms);
     /**
@@ -44,6 +47,7 @@ public interface SingleFamilyResidence extends House {
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addNumberOfRooms(Number numberOfRooms);
 
@@ -52,6 +56,7 @@ public interface SingleFamilyResidence extends House {
      * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     List<QuantitativeValue> getOccupancyList();
 
@@ -60,6 +65,7 @@ public interface SingleFamilyResidence extends House {
      * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     QuantitativeValue getOccupancy();
 
@@ -68,6 +74,7 @@ public interface SingleFamilyResidence extends House {
      * Typical unit code(s): C62 for person.
      *
      * @param occupancy QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addOccupancy(QuantitativeValue occupancy);
 }

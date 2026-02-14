@@ -28,6 +28,7 @@ import spec_custom.model.MusicAlbumReleaseType;
 /**
  * The kind of release which this album is: single, EP or album.
  *
+ * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
  * @see <a href="https://schema.org/MusicAlbumReleaseType">https://schema.org/MusicAlbumReleaseType</a>
  */
 @JsonLdTypeName("MusicAlbumReleaseType")

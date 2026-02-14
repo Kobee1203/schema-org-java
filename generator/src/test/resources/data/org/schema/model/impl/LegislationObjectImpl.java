@@ -71,6 +71,7 @@ import org.schema.model.LegislationObject;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+ * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
  * @see <a href="https://schema.org/LegislationObject">https://schema.org/LegislationObject</a>
  */
 @JsonLdTypeName("LegislationObject")
@@ -85,6 +86,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<LegalValueLevel> getLegislationLegalValueList() {
@@ -98,6 +100,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public LegalValueLevel getLegislationLegalValue() {
@@ -111,6 +114,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationLegalValue(LegalValueLevel legislationLegalValue) {
@@ -939,6 +943,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -951,6 +956,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -963,6 +969,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1739,6 +1746,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1749,6 +1757,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1759,6 +1768,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -2411,6 +2421,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -2421,6 +2432,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -2431,6 +2443,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -4022,6 +4035,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -4034,6 +4048,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -4046,6 +4061,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -4057,6 +4073,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -4068,6 +4085,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -5068,6 +5086,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -5078,6 +5097,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -5088,6 +5108,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {
@@ -6043,6 +6064,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> List<T> getLegislationPassedByList() {
@@ -6056,6 +6078,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> T getLegislationPassedBy() {
@@ -6069,6 +6092,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationPassedBy(Organization legislationPassedBy) {
@@ -6081,6 +6105,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationPassedBy(Person legislationPassedBy) {
@@ -6097,6 +6122,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> List<T> getLegislationIdentifierList() {
@@ -6110,6 +6136,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> T getLegislationIdentifier() {
@@ -6123,6 +6150,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationIdentifier(Text legislationIdentifier) {
@@ -6135,6 +6163,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationIdentifier(URL legislationIdentifier) {
@@ -6150,6 +6179,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationCommencesList() {
@@ -6163,6 +6193,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationCommences() {
@@ -6176,6 +6207,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationCommences(Legislation legislationCommences) {
@@ -6191,6 +6223,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationConsolidatesList() {
@@ -6204,6 +6237,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationConsolidates() {
@@ -6217,6 +6251,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationConsolidates(Legislation legislationConsolidates) {
@@ -6232,6 +6267,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationTransposesList() {
@@ -6245,6 +6281,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationTransposes() {
@@ -6258,6 +6295,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationTransposes(Legislation legislationTransposes) {
@@ -6274,6 +6312,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> List<T> getLegislationTypeList() {
@@ -6287,6 +6326,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> T getLegislationType() {
@@ -6300,6 +6340,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationType(Text legislationType) {
@@ -6312,6 +6353,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationType(CategoryCode legislationType) {
@@ -6327,6 +6369,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Date> getLegislationDateOfApplicabilityList() {
@@ -6340,6 +6383,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Date getLegislationDateOfApplicability() {
@@ -6353,6 +6397,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationDateOfApplicability(Date legislationDateOfApplicability) {
@@ -6369,6 +6414,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> List<T> getLegislationJurisdictionList() {
@@ -6382,6 +6428,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> T getLegislationJurisdiction() {
@@ -6395,6 +6442,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationJurisdiction(Text legislationJurisdiction) {
@@ -6407,6 +6455,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationJurisdiction(AdministrativeArea legislationJurisdiction) {
@@ -6422,6 +6471,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<LegalForceStatus> getLegislationLegalForceList() {
@@ -6435,6 +6485,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public LegalForceStatus getLegislationLegalForce() {
@@ -6448,6 +6499,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationLegalForce(LegalForceStatus legislationLegalForce) {
@@ -6463,6 +6515,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Date> getLegislationDateVersionList() {
@@ -6476,6 +6529,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Date getLegislationDateVersion() {
@@ -6489,6 +6543,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationDateVersion(Date legislationDateVersion) {
@@ -6504,6 +6559,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationRepealsList() {
@@ -6517,6 +6573,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationRepeals() {
@@ -6530,6 +6587,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationRepeals(Legislation legislationRepeals) {
@@ -6545,6 +6603,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationEnsuresImplementationOfList() {
@@ -6558,6 +6617,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationEnsuresImplementationOf() {
@@ -6571,6 +6631,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationEnsuresImplementationOf(Legislation legislationEnsuresImplementationOf) {
@@ -6637,6 +6698,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> List<T> getLegislationCountersignedByList() {
@@ -6650,6 +6712,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> T getLegislationCountersignedBy() {
@@ -6663,6 +6726,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationCountersignedBy(Person legislationCountersignedBy) {
@@ -6675,6 +6739,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationCountersignedBy(Organization legislationCountersignedBy) {
@@ -6690,6 +6755,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationCorrectsList() {
@@ -6703,6 +6769,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationCorrects() {
@@ -6716,6 +6783,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationCorrects(Legislation legislationCorrects) {
@@ -6732,6 +6800,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> List<T> getLegislationResponsibleList() {
@@ -6745,6 +6814,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public <T> T getLegislationResponsible() {
@@ -6758,6 +6828,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationResponsible(Person legislationResponsible) {
@@ -6770,6 +6841,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationResponsible(Organization legislationResponsible) {
@@ -6785,6 +6857,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationAmendsList() {
@@ -6798,6 +6871,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationAmends() {
@@ -6811,6 +6885,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationAmends(Legislation legislationAmends) {
@@ -6826,6 +6901,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Date> getLegislationDateList() {
@@ -6839,6 +6915,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Date getLegislationDate() {
@@ -6852,6 +6929,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationDate(Date legislationDate) {
@@ -6867,6 +6945,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationAppliesList() {
@@ -6880,6 +6959,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationApplies() {
@@ -6893,6 +6973,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationApplies(Legislation legislationApplies) {
@@ -6908,6 +6989,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public List<Legislation> getLegislationChangesList() {
@@ -6921,6 +7003,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public Legislation getLegislationChanges() {
@@ -6934,6 +7017,7 @@ public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     @Override
     public void addLegislationChanges(Legislation legislationChanges) {

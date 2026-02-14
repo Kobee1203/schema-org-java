@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * A publication in any medium issued in successive parts bearing numerical or chronological designations and intended to continue indefinitely, such as a magazine, scholarly journal, or newspaper.<br/><br/>See also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
  *
+ * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
  * @see <a href="https://schema.org/Periodical">https://schema.org/Periodical</a>
  */
 public interface Periodical extends CreativeWorkSeries {

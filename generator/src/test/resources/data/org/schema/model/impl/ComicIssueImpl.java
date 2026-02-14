@@ -299,6 +299,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Identifies the issue of publication; for example, "iii" or "2".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getIssueNumberList() {
@@ -309,6 +310,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Identifies the issue of publication; for example, "iii" or "2".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getIssueNumber() {
@@ -319,6 +321,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Identifies the issue of publication; for example, "iii" or "2".
      *
      * @param issueNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addIssueNumber(Text issueNumber) {
@@ -328,6 +331,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Identifies the issue of publication; for example, "iii" or "2".
      *
      * @param issueNumber Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addIssueNumber(Integer issueNumber) {
@@ -341,6 +345,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getPageEndList() {
@@ -351,6 +356,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getPageEnd() {
@@ -361,6 +367,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageEnd(Integer pageEnd) {
@@ -370,6 +377,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageEnd(Text pageEnd) {
@@ -383,6 +391,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getPageStartList() {
@@ -393,6 +402,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getPageStart() {
@@ -403,6 +413,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageStart(Text pageStart) {
@@ -412,6 +423,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageStart(Integer pageStart) {
@@ -424,6 +436,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<Text> getPaginationList() {
@@ -434,6 +447,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public Text getPagination() {
@@ -444,6 +458,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @param pagination Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPagination(Text pagination) {
@@ -458,6 +473,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -470,6 +486,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -482,6 +499,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1258,6 +1276,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1268,6 +1287,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1278,6 +1298,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -1930,6 +1951,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -1940,6 +1962,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -1950,6 +1973,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -3599,6 +3623,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -3611,6 +3636,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -3623,6 +3649,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -3634,6 +3661,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -3645,6 +3673,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -4645,6 +4674,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -4655,6 +4685,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -4665,6 +4696,7 @@ public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {

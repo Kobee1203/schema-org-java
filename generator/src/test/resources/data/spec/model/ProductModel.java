@@ -12,6 +12,7 @@ import spec.model.ProductGroup;
 /**
  * A datasheet or vendor specification of a product (in the sense of a prototypical description).
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/ProductModel">https://schema.org/ProductModel</a>
  */
 public interface ProductModel extends Product {
@@ -20,6 +21,7 @@ public interface ProductModel extends Product {
      * A pointer from a newer variant of a product  to its previous, often discontinued predecessor.
      *
      * @return {@link ProductModel}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<ProductModel> getSuccessorOfList();
 
@@ -27,6 +29,7 @@ public interface ProductModel extends Product {
      * A pointer from a newer variant of a product  to its previous, often discontinued predecessor.
      *
      * @return {@link ProductModel}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     ProductModel getSuccessorOf();
 
@@ -34,6 +37,7 @@ public interface ProductModel extends Product {
      * A pointer from a newer variant of a product  to its previous, often discontinued predecessor.
      *
      * @param successorOf ProductModel value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addSuccessorOf(ProductModel successorOf);
 
@@ -41,6 +45,7 @@ public interface ProductModel extends Product {
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getIsVariantOfList();
 
@@ -48,6 +53,7 @@ public interface ProductModel extends Product {
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getIsVariantOf();
 
@@ -55,12 +61,14 @@ public interface ProductModel extends Product {
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductModel value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsVariantOf(ProductModel isVariantOf);
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductGroup value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsVariantOf(ProductGroup isVariantOf);
 
@@ -68,6 +76,7 @@ public interface ProductModel extends Product {
      * A pointer from a previous, often discontinued variant of the product to its newer variant.
      *
      * @return {@link ProductModel}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<ProductModel> getPredecessorOfList();
 
@@ -75,6 +84,7 @@ public interface ProductModel extends Product {
      * A pointer from a previous, often discontinued variant of the product to its newer variant.
      *
      * @return {@link ProductModel}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     ProductModel getPredecessorOf();
 
@@ -82,6 +92,7 @@ public interface ProductModel extends Product {
      * A pointer from a previous, often discontinued variant of the product to its newer variant.
      *
      * @param predecessorOf ProductModel value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addPredecessorOf(ProductModel predecessorOf);
 }

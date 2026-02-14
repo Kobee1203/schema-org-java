@@ -12,6 +12,7 @@ import spec.model.PaymentMethodType;
  * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction. The following legacy values should be accepted: <br/><br/>* http://purl.org/goodrelations/v1#ByBankTransferInAdvance<br/>* http://purl.org/goodrelations/v1#ByInvoice<br/>* http://purl.org/goodrelations/v1#Cash<br/>* http://purl.org/goodrelations/v1#CheckInAdvance<br/>* http://purl.org/goodrelations/v1#COD<br/>* http://purl.org/goodrelations/v1#DirectDebit<br/>* http://purl.org/goodrelations/v1#GoogleCheckout<br/>* http://purl.org/goodrelations/v1#PayPal<br/>* http://purl.org/goodrelations/v1#PaySwarm<br/><br/>Structured values, or [UNCE payment means](https://vocabulary.uncefact.org/PaymentMeans) are recommended or for newer annotations.
  *
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/PaymentMethod">https://schema.org/PaymentMethod</a>
  */
 public interface PaymentMethod extends Intangible {

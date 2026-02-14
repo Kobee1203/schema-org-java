@@ -21,6 +21,7 @@ public interface ProductCollection extends Product, Collection {
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
      * @return {@link TypeAndQuantityNode}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<TypeAndQuantityNode> getIncludesObjectList();
 
@@ -28,6 +29,7 @@ public interface ProductCollection extends Product, Collection {
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
      * @return {@link TypeAndQuantityNode}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     TypeAndQuantityNode getIncludesObject();
 
@@ -35,6 +37,7 @@ public interface ProductCollection extends Product, Collection {
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
      * @param includesObject TypeAndQuantityNode value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIncludesObject(TypeAndQuantityNode includesObject);
 }

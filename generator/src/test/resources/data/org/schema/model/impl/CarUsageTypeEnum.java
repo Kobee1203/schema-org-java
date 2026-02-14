@@ -29,6 +29,7 @@ import org.schema.model.CarUsageType;
  * A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.
  *
  * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+ * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/CarUsageType">https://schema.org/CarUsageType</a>
  */
 @JsonLdTypeName("CarUsageType")

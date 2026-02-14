@@ -14,6 +14,7 @@ import org.schema.model.QualitativeValue;
 /**
  * Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.
  *
+ * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/EngineSpecification">https://schema.org/EngineSpecification</a>
  */
 public interface EngineSpecification extends StructuredValue {
@@ -23,6 +24,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getTorqueList();
 
@@ -31,6 +33,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getTorque();
 
@@ -39,6 +42,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @param torque QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addTorque(QuantitativeValue torque);
 
@@ -46,6 +50,7 @@ public interface EngineSpecification extends StructuredValue {
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getFuelTypeList();
 
@@ -53,6 +58,7 @@ public interface EngineSpecification extends StructuredValue {
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getFuelType();
 
@@ -60,18 +66,21 @@ public interface EngineSpecification extends StructuredValue {
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType URL value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelType(URL fuelType);
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelType(Text fuelType);
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelType(QualitativeValue fuelType);
 
@@ -80,6 +89,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getEngineTypeList();
 
@@ -88,6 +98,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getEngineType();
 
@@ -96,6 +107,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @param engineType URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addEngineType(URL engineType);
     /**
@@ -103,6 +115,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @param engineType Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addEngineType(Text engineType);
     /**
@@ -110,6 +123,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @param engineType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addEngineType(QualitativeValue engineType);
 
@@ -118,6 +132,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getEngineDisplacementList();
 
@@ -126,6 +141,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getEngineDisplacement();
 
@@ -134,6 +150,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @param engineDisplacement QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addEngineDisplacement(QuantitativeValue engineDisplacement);
 
@@ -143,6 +160,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getEnginePowerList();
 
@@ -152,6 +170,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getEnginePower();
 
@@ -161,6 +180,7 @@ public interface EngineSpecification extends StructuredValue {
      *
      * @param enginePower QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addEnginePower(QuantitativeValue enginePower);
 }

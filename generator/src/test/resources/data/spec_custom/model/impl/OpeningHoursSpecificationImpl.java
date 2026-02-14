@@ -32,6 +32,7 @@ import spec_custom.model.OpeningHoursSpecification;
  * The place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.<br/><br/>If the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.
  *       
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/OpeningHoursSpecification">https://schema.org/OpeningHoursSpecification</a>
  */
 @JsonLdTypeName("OpeningHoursSpecification")
@@ -43,6 +44,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The closing hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Time> getClosesList() {
@@ -53,6 +55,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The closing hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Time getCloses() {
@@ -63,6 +66,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The closing hour of the place or service on the given day(s) of the week.
      *
      * @param closes Time value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addCloses(Time closes) {
@@ -75,6 +79,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The opening hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Time> getOpensList() {
@@ -85,6 +90,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The opening hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Time getOpens() {
@@ -95,6 +101,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The opening hour of the place or service on the given day(s) of the week.
      *
      * @param opens Time value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOpens(Time opens) {
@@ -108,6 +115,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidFromList() {
@@ -118,6 +126,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidFrom() {
@@ -128,6 +137,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(DateTime validFrom) {
@@ -137,6 +147,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(Date validFrom) {
@@ -149,6 +160,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<DayOfWeek> getDayOfWeekList() {
@@ -159,6 +171,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public DayOfWeek getDayOfWeek() {
@@ -169,6 +182,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The day of the week for which these opening hours are valid.
      *
      * @param dayOfWeek DayOfWeek value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDayOfWeek(DayOfWeek dayOfWeek) {
@@ -182,6 +196,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidThroughList() {
@@ -192,6 +207,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidThrough() {
@@ -202,6 +218,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(DateTime validThrough) {
@@ -211,6 +228,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(Date validThrough) {

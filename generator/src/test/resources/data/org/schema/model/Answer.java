@@ -13,6 +13,7 @@ import org.schema.model.CreativeWork;
 /**
  * An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
  *
+ * @see <a href="https://schema.org/docs/collab/QAStackExchange">https://schema.org/docs/collab/QAStackExchange</a>
  * @see <a href="https://schema.org/Answer">https://schema.org/Answer</a>
  */
 public interface Answer extends Comment {

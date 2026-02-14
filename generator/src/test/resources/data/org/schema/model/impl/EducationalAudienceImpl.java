@@ -27,6 +27,7 @@ import org.schema.model.EducationalAudience;
 /**
  * An EducationalAudience.
  *
+ * @see <a href="https://schema.org/docs/collab/LRMIClass">https://schema.org/docs/collab/LRMIClass</a>
  * @see <a href="https://schema.org/EducationalAudience">https://schema.org/EducationalAudience</a>
  */
 @JsonLdTypeName("EducationalAudience")

@@ -171,6 +171,7 @@ public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -183,6 +184,7 @@ public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -195,6 +197,7 @@ public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -961,6 +964,7 @@ public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> List<T> getComposerList() {
@@ -971,6 +975,7 @@ public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> T getComposer() {
@@ -981,6 +986,7 @@ public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addComposer(Person composer) {
@@ -990,6 +996,7 @@ public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addComposer(Organization composer) {

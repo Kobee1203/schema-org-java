@@ -196,6 +196,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getEligibleRegionList();
 
@@ -205,6 +206,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getEligibleRegion();
 
@@ -214,6 +216,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param eligibleRegion GeoShape value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(GeoShape eligibleRegion);
     /**
@@ -222,6 +225,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param eligibleRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(Text eligibleRegion);
     /**
@@ -230,6 +234,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param eligibleRegion Place value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(Place eligibleRegion);
 
@@ -238,6 +243,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getAvailabilityStartsList();
 
@@ -246,6 +252,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getAvailabilityStarts();
 
@@ -254,6 +261,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param availabilityStarts DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityStarts(DateTime availabilityStarts);
     /**
@@ -261,6 +269,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param availabilityStarts Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityStarts(Date availabilityStarts);
     /**
@@ -268,6 +277,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param availabilityStarts Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityStarts(Time availabilityStarts);
 
@@ -276,6 +286,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getAvailabilityEndsList();
 
@@ -284,6 +295,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getAvailabilityEnds();
 
@@ -292,6 +304,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param availabilityEnds DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityEnds(DateTime availabilityEnds);
     /**
@@ -299,6 +312,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param availabilityEnds Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityEnds(Date availabilityEnds);
     /**
@@ -306,6 +320,7 @@ public interface ActionAccessSpecification extends Intangible {
      *
      * @param availabilityEnds Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityEnds(Time availabilityEnds);
 }

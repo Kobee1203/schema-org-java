@@ -29,6 +29,7 @@ import org.schema.model.OwnershipInfo;
 /**
  * A structured value providing information about when a certain organization or person owned a certain product.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/OwnershipInfo">https://schema.org/OwnershipInfo</a>
  */
 @JsonLdTypeName("OwnershipInfo")
@@ -41,6 +42,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getTypeOfGoodList() {
@@ -51,6 +53,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getTypeOfGood() {
@@ -61,6 +64,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addTypeOfGood(Service typeOfGood) {
@@ -70,6 +74,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addTypeOfGood(Product typeOfGood) {
@@ -82,6 +87,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The date and time of obtaining the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<DateTime> getOwnedFromList() {
@@ -92,6 +98,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The date and time of obtaining the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public DateTime getOwnedFrom() {
@@ -102,6 +109,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The date and time of obtaining the product.
      *
      * @param ownedFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOwnedFrom(DateTime ownedFrom) {
@@ -114,6 +122,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The date and time of giving up ownership on the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<DateTime> getOwnedThroughList() {
@@ -124,6 +133,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The date and time of giving up ownership on the product.
      *
      * @return {@link DateTime}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public DateTime getOwnedThrough() {
@@ -134,6 +144,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The date and time of giving up ownership on the product.
      *
      * @param ownedThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOwnedThrough(DateTime ownedThrough) {
@@ -147,6 +158,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The organization or person from which the product was acquired.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getAcquiredFromList() {
@@ -157,6 +169,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The organization or person from which the product was acquired.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getAcquiredFrom() {
@@ -167,6 +180,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The organization or person from which the product was acquired.
      *
      * @param acquiredFrom Person value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcquiredFrom(Person acquiredFrom) {
@@ -176,6 +190,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The organization or person from which the product was acquired.
      *
      * @param acquiredFrom Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcquiredFrom(Organization acquiredFrom) {

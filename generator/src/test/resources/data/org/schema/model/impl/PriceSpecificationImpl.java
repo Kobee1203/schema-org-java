@@ -32,6 +32,7 @@ import org.schema.model.StructuredValue;
 /**
  * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/PriceSpecification">https://schema.org/PriceSpecification</a>
  */
 @JsonLdTypeName("PriceSpecification")
@@ -121,6 +122,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMaxPriceList() {
@@ -131,6 +133,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMaxPrice() {
@@ -141,6 +144,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The highest price if the price is a range.
      *
      * @param maxPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMaxPrice(Number maxPrice) {
@@ -153,6 +157,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Boolean> getValueAddedTaxIncludedList() {
@@ -163,6 +168,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Boolean getValueAddedTaxIncluded() {
@@ -173,6 +179,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @param valueAddedTaxIncluded Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueAddedTaxIncluded(Boolean valueAddedTaxIncluded) {
@@ -236,6 +243,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidFromList() {
@@ -246,6 +254,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidFrom() {
@@ -256,6 +265,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(DateTime validFrom) {
@@ -265,6 +275,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(Date validFrom) {
@@ -318,6 +329,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMinPriceList() {
@@ -328,6 +340,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMinPrice() {
@@ -338,6 +351,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The lowest price if the price is a range.
      *
      * @param minPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMinPrice(Number minPrice) {
@@ -350,6 +364,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<PriceSpecification> getEligibleTransactionVolumeList() {
@@ -360,6 +375,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public PriceSpecification getEligibleTransactionVolume() {
@@ -370,6 +386,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @param eligibleTransactionVolume PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
@@ -382,6 +399,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<QuantitativeValue> getEligibleQuantityList() {
@@ -392,6 +410,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public QuantitativeValue getEligibleQuantity() {
@@ -402,6 +421,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @param eligibleQuantity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleQuantity(QuantitativeValue eligibleQuantity) {
@@ -415,6 +435,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidThroughList() {
@@ -425,6 +446,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidThrough() {
@@ -435,6 +457,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(DateTime validThrough) {
@@ -444,6 +467,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(Date validThrough) {

@@ -213,6 +213,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @return {@link Rating}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Rating> getStarRatingList() {
@@ -223,6 +224,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @return {@link Rating}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Rating getStarRating() {
@@ -233,6 +235,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @param starRating Rating value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addStarRating(Rating starRating) {
@@ -565,6 +568,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Boolean> getSmokingAllowedList() {
@@ -575,6 +579,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Boolean getSmokingAllowed() {
@@ -585,6 +590,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @param smokingAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addSmokingAllowed(Boolean smokingAllowed) {
@@ -681,6 +687,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
@@ -691,6 +698,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
@@ -701,6 +709,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The opening hours of a certain place.
      *
      * @param openingHoursSpecification OpeningHoursSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
@@ -746,6 +755,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -756,6 +766,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -766,6 +777,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -775,6 +787,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -1060,6 +1073,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -1070,6 +1084,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -1080,6 +1095,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1479,6 +1495,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getIsicV4List() {
@@ -1489,6 +1506,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getIsicV4() {
@@ -1499,6 +1517,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsicV4(Text isicV4) {
@@ -2154,6 +2173,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<LocationFeatureSpecification> getAmenityFeatureList() {
@@ -2164,6 +2184,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
@@ -2174,6 +2195,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @param amenityFeature LocationFeatureSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
@@ -2700,6 +2722,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -2712,6 +2735,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -2724,6 +2748,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -2771,6 +2796,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getKnowsAboutList() {
@@ -2783,6 +2809,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getKnowsAbout() {
@@ -2795,6 +2822,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param knowsAbout Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(Text knowsAbout) {
@@ -2806,6 +2834,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param knowsAbout Thing value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(Thing knowsAbout) {
@@ -2817,6 +2846,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param knowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(URL knowsAbout) {
@@ -2896,6 +2926,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getDiversityStaffingReportList() {
@@ -2908,6 +2939,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getDiversityStaffingReport() {
@@ -2920,6 +2952,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityStaffingReport(URL diversityStaffingReport) {
@@ -2931,6 +2964,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param diversityStaffingReport Article value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityStaffingReport(Article diversityStaffingReport) {
@@ -2985,6 +3019,8 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     @Override
     public List<Text> getLeiCodeList() {
@@ -2995,6 +3031,8 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     @Override
     public Text getLeiCode() {
@@ -3005,6 +3043,8 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @param leiCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     @Override
     public void addLeiCode(Text leiCode) {
@@ -3020,6 +3060,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getKnowsLanguageList() {
@@ -3032,6 +3073,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getKnowsLanguage() {
@@ -3044,6 +3086,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param knowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsLanguage(Language knowsLanguage) {
@@ -3055,6 +3098,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param knowsLanguage Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsLanguage(Text knowsLanguage) {
@@ -3159,6 +3203,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getNaicsList() {
@@ -3169,6 +3214,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getNaics() {
@@ -3179,6 +3225,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @param naics Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addNaics(Text naics) {
@@ -3398,6 +3445,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getLegalNameList() {
@@ -3408,6 +3456,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getLegalName() {
@@ -3418,6 +3467,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The official name of the organization, e.g. the registered company name.
      *
      * @param legalName Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLegalName(Text legalName) {
@@ -3484,6 +3534,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getActionableFeedbackPolicyList() {
@@ -3496,6 +3547,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getActionableFeedbackPolicy() {
@@ -3508,6 +3560,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param actionableFeedbackPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
@@ -3519,6 +3572,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param actionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
@@ -3769,6 +3823,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionsPolicyList() {
@@ -3781,6 +3836,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrectionsPolicy() {
@@ -3793,6 +3849,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrectionsPolicy(URL correctionsPolicy) {
@@ -3804,6 +3861,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param correctionsPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrectionsPolicy(CreativeWork correctionsPolicy) {
@@ -3818,6 +3876,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getAcceptedPaymentMethodList() {
@@ -3829,6 +3888,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getAcceptedPaymentMethod() {
@@ -3840,6 +3900,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @param acceptedPaymentMethod Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcceptedPaymentMethod(Text acceptedPaymentMethod) {
@@ -3850,6 +3911,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @param acceptedPaymentMethod LoanOrCredit value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
@@ -3860,6 +3922,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @param acceptedPaymentMethod PaymentMethod value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
@@ -4290,6 +4353,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getOwnershipFundingInfoList() {
@@ -4302,6 +4366,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getOwnershipFundingInfo() {
@@ -4314,6 +4379,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param ownershipFundingInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
@@ -4325,6 +4391,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param ownershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(URL ownershipFundingInfo) {
@@ -4336,6 +4403,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param ownershipFundingInfo AboutPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
@@ -4347,6 +4415,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param ownershipFundingInfo Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addOwnershipFundingInfo(Text ownershipFundingInfo) {
@@ -4359,6 +4428,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getTaxIDList() {
@@ -4369,6 +4439,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getTaxID() {
@@ -4379,6 +4450,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @param taxID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addTaxID(Text taxID) {
@@ -4394,6 +4466,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getDiversityPolicyList() {
@@ -4406,6 +4479,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getDiversityPolicy() {
@@ -4418,6 +4492,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param diversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityPolicy(CreativeWork diversityPolicy) {
@@ -4429,6 +4504,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param diversityPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addDiversityPolicy(URL diversityPolicy) {
@@ -4619,6 +4695,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Demand> getSeeksList() {
@@ -4629,6 +4706,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Demand getSeeks() {
@@ -4639,6 +4717,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @param seeks Demand value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addSeeks(Demand seeks) {
@@ -4651,6 +4730,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Offer> getMakesOfferList() {
@@ -4661,6 +4741,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Offer getMakesOffer() {
@@ -4671,6 +4752,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to products or services offered by the organization or person.
      *
      * @param makesOffer Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMakesOffer(Offer makesOffer) {
@@ -4683,6 +4765,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getVatIDList() {
@@ -4693,6 +4776,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getVatID() {
@@ -4703,6 +4787,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Value-added Tax ID of the organization or person.
      *
      * @param vatID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addVatID(Text vatID) {
@@ -4757,6 +4842,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getDunsList() {
@@ -4767,6 +4853,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getDuns() {
@@ -4777,6 +4864,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @param duns Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDuns(Text duns) {
@@ -4827,6 +4915,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Place> getHasPOSList() {
@@ -4837,6 +4926,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Place getHasPOS() {
@@ -4847,6 +4937,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Points-of-Sales operated by the organization or person.
      *
      * @param hasPOS Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addHasPOS(Place hasPOS) {
@@ -5028,6 +5119,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getUnnamedSourcesPolicyList() {
@@ -5040,6 +5132,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getUnnamedSourcesPolicy() {
@@ -5052,6 +5145,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
@@ -5063,6 +5157,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param unnamedSourcesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
@@ -5076,6 +5171,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Thing> getOwnsList() {
@@ -5087,6 +5183,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Thing getOwns() {
@@ -5098,6 +5195,7 @@ public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *
      * @param owns Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOwns(Thing owns) {

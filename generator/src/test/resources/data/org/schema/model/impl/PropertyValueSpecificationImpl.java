@@ -27,6 +27,7 @@ import org.schema.model.PropertyValueSpecification;
 /**
  * A Property value specification.
  *
+ * @see <a href="https://schema.org/docs/collab/ActionCollabClass">https://schema.org/docs/collab/ActionCollabClass</a>
  * @see <a href="https://schema.org/PropertyValueSpecification">https://schema.org/PropertyValueSpecification</a>
  */
 @JsonLdTypeName("PropertyValueSpecification")
@@ -102,6 +103,7 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMaxValueList() {
@@ -112,6 +114,7 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMaxValue() {
@@ -122,6 +125,7 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      * The upper value of some characteristic or property.
      *
      * @param maxValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMaxValue(Number maxValue) {
@@ -198,6 +202,7 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMinValueList() {
@@ -208,6 +213,7 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMinValue() {
@@ -218,6 +224,7 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      * The lower value of some characteristic or property.
      *
      * @param minValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMinValue(Number minValue) {

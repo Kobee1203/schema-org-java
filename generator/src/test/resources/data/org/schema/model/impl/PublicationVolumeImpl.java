@@ -58,6 +58,7 @@ import org.schema.model.PublicationVolume;
 /**
  * A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.<br/><br/>See also [blog post](https://blog-schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
  *
+ * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
  * @see <a href="https://schema.org/PublicationVolume">https://schema.org/PublicationVolume</a>
  */
 @JsonLdTypeName("PublicationVolume")
@@ -70,6 +71,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getPageEndList() {
@@ -80,6 +82,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getPageEnd() {
@@ -90,6 +93,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageEnd(Integer pageEnd) {
@@ -99,6 +103,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageEnd(Text pageEnd) {
@@ -112,6 +117,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getVolumeNumberList() {
@@ -122,6 +128,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getVolumeNumber() {
@@ -132,6 +139,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @param volumeNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addVolumeNumber(Text volumeNumber) {
@@ -141,6 +149,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @param volumeNumber Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addVolumeNumber(Integer volumeNumber) {
@@ -154,6 +163,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getPageStartList() {
@@ -164,6 +174,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getPageStart() {
@@ -174,6 +185,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageStart(Text pageStart) {
@@ -183,6 +195,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageStart(Integer pageStart) {
@@ -195,6 +208,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<Text> getPaginationList() {
@@ -205,6 +219,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public Text getPagination() {
@@ -215,6 +230,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @param pagination Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPagination(Text pagination) {
@@ -229,6 +245,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -241,6 +258,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -253,6 +271,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1029,6 +1048,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1039,6 +1059,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1049,6 +1070,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -1701,6 +1723,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -1711,6 +1734,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -1721,6 +1745,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -3370,6 +3395,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -3382,6 +3408,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -3394,6 +3421,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -3405,6 +3433,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -3416,6 +3445,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -4416,6 +4446,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -4426,6 +4457,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -4436,6 +4468,7 @@ public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.Js
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {

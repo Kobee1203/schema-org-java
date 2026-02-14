@@ -12,6 +12,7 @@ import org.schema.model.datatype.Text;
 /**
  * A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.<br/><br/>See also [blog post](https://blog-schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
  *
+ * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
  * @see <a href="https://schema.org/PublicationVolume">https://schema.org/PublicationVolume</a>
  */
 public interface PublicationVolume extends CreativeWork {
@@ -20,6 +21,7 @@ public interface PublicationVolume extends CreativeWork {
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> List<T> getPageEndList();
 
@@ -27,6 +29,7 @@ public interface PublicationVolume extends CreativeWork {
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> T getPageEnd();
 
@@ -34,12 +37,14 @@ public interface PublicationVolume extends CreativeWork {
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageEnd(Integer pageEnd);
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageEnd(Text pageEnd);
 
@@ -47,6 +52,7 @@ public interface PublicationVolume extends CreativeWork {
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> List<T> getVolumeNumberList();
 
@@ -54,6 +60,7 @@ public interface PublicationVolume extends CreativeWork {
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> T getVolumeNumber();
 
@@ -61,12 +68,14 @@ public interface PublicationVolume extends CreativeWork {
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @param volumeNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addVolumeNumber(Text volumeNumber);
     /**
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
      * @param volumeNumber Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addVolumeNumber(Integer volumeNumber);
 
@@ -74,6 +83,7 @@ public interface PublicationVolume extends CreativeWork {
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> List<T> getPageStartList();
 
@@ -81,6 +91,7 @@ public interface PublicationVolume extends CreativeWork {
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> T getPageStart();
 
@@ -88,12 +99,14 @@ public interface PublicationVolume extends CreativeWork {
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageStart(Text pageStart);
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageStart(Integer pageStart);
 
@@ -101,6 +114,7 @@ public interface PublicationVolume extends CreativeWork {
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     List<Text> getPaginationList();
 
@@ -108,6 +122,7 @@ public interface PublicationVolume extends CreativeWork {
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     Text getPagination();
 
@@ -115,6 +130,7 @@ public interface PublicationVolume extends CreativeWork {
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @param pagination Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPagination(Text pagination);
 }

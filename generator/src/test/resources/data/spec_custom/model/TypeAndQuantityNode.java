@@ -16,6 +16,7 @@ import spec_custom.model.BusinessFunction;
 /**
  * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/TypeAndQuantityNode">https://schema.org/TypeAndQuantityNode</a>
  */
 public interface TypeAndQuantityNode extends StructuredValue {
@@ -24,6 +25,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The quantity of the goods included in the offer.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Number> getAmountOfThisGoodList();
 
@@ -31,6 +33,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The quantity of the goods included in the offer.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Number getAmountOfThisGood();
 
@@ -38,6 +41,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The quantity of the goods included in the offer.
      *
      * @param amountOfThisGood Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAmountOfThisGood(Number amountOfThisGood);
 
@@ -45,6 +49,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getTypeOfGoodList();
 
@@ -52,6 +57,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getTypeOfGood();
 
@@ -59,12 +65,14 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addTypeOfGood(Service typeOfGood);
     /**
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addTypeOfGood(Product typeOfGood);
 
@@ -72,6 +80,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getUnitCodeList();
 
@@ -79,6 +88,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getUnitCode();
 
@@ -86,12 +96,14 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addUnitCode(URL unitCode);
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addUnitCode(Text unitCode);
 
@@ -99,6 +111,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<BusinessFunction> getBusinessFunctionList();
 
@@ -106,6 +119,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     BusinessFunction getBusinessFunction();
 
@@ -113,6 +127,7 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @param businessFunction BusinessFunction value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addBusinessFunction(BusinessFunction businessFunction);
 

@@ -71,6 +71,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Text> getVehicleConfigurationList() {
@@ -81,6 +82,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Text getVehicleConfiguration() {
@@ -91,6 +93,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @param vehicleConfiguration Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleConfiguration(Text vehicleConfiguration) {
@@ -104,6 +107,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getWeightTotalList() {
@@ -115,6 +119,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getWeightTotal() {
@@ -126,6 +131,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param weightTotal QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addWeightTotal(QuantitativeValue weightTotal) {
@@ -139,6 +145,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getNumberOfForwardGearsList() {
@@ -149,6 +156,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getNumberOfForwardGears() {
@@ -159,6 +167,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfForwardGears Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfForwardGears(Number numberOfForwardGears) {
@@ -168,6 +177,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfForwardGears QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfForwardGears(QuantitativeValue numberOfForwardGears) {
@@ -181,6 +191,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getVehicleTransmissionList() {
@@ -191,6 +202,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getVehicleTransmission() {
@@ -201,6 +213,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @param vehicleTransmission Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleTransmission(Text vehicleTransmission) {
@@ -210,6 +223,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @param vehicleTransmission QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleTransmission(QualitativeValue vehicleTransmission) {
@@ -219,6 +233,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @param vehicleTransmission URL value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleTransmission(URL vehicleTransmission) {
@@ -231,6 +246,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A textual description of known damages, both repaired and unrepaired.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Text> getKnownVehicleDamagesList() {
@@ -241,6 +257,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A textual description of known damages, both repaired and unrepaired.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Text getKnownVehicleDamages() {
@@ -251,6 +268,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A textual description of known damages, both repaired and unrepaired.
      *
      * @param knownVehicleDamages Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addKnownVehicleDamages(Text knownVehicleDamages) {
@@ -263,6 +281,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The position of the steering wheel or similar device (mostly for cars).
      *
      * @return {@link SteeringPositionValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<SteeringPositionValue> getSteeringPositionList() {
@@ -273,6 +292,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The position of the steering wheel or similar device (mostly for cars).
      *
      * @return {@link SteeringPositionValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public SteeringPositionValue getSteeringPosition() {
@@ -283,6 +303,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The position of the steering wheel or similar device (mostly for cars).
      *
      * @param steeringPosition SteeringPositionValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addSteeringPosition(SteeringPositionValue steeringPosition) {
@@ -296,6 +317,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Number> getEmissionsCO2List() {
@@ -307,6 +329,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Number getEmissionsCO2() {
@@ -318,6 +341,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param emissionsCO2 Number value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addEmissionsCO2(Number emissionsCO2) {
@@ -330,6 +354,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Text> getVehicleInteriorTypeList() {
@@ -340,6 +365,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Text getVehicleInteriorType() {
@@ -350,6 +376,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
      * @param vehicleInteriorType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleInteriorType(Text vehicleInteriorType) {
@@ -363,6 +390,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getPayloadList() {
@@ -374,6 +402,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getPayload() {
@@ -385,6 +414,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param payload QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addPayload(QuantitativeValue payload) {
@@ -398,6 +428,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getAccelerationTimeList() {
@@ -409,6 +440,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getAccelerationTime() {
@@ -420,6 +452,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param accelerationTime QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addAccelerationTime(QuantitativeValue accelerationTime) {
@@ -434,6 +467,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getMeetsEmissionStandardList() {
@@ -445,6 +479,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getMeetsEmissionStandard() {
@@ -456,6 +491,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param meetsEmissionStandard Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addMeetsEmissionStandard(Text meetsEmissionStandard) {
@@ -466,6 +502,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param meetsEmissionStandard QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addMeetsEmissionStandard(QualitativeValue meetsEmissionStandard) {
@@ -476,6 +513,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param meetsEmissionStandard URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addMeetsEmissionStandard(URL meetsEmissionStandard) {
@@ -490,6 +528,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue} or {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getSeatingCapacityList() {
@@ -501,6 +540,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue} or {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getSeatingCapacity() {
@@ -512,6 +552,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param seatingCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addSeatingCapacity(QuantitativeValue seatingCapacity) {
@@ -522,6 +563,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param seatingCapacity Number value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addSeatingCapacity(Number seatingCapacity) {
@@ -535,6 +577,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getNumberOfDoorsList() {
@@ -545,6 +588,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getNumberOfDoors() {
@@ -555,6 +599,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfDoors QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfDoors(QuantitativeValue numberOfDoors) {
@@ -564,6 +609,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfDoors Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfDoors(Number numberOfDoors) {
@@ -578,6 +624,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text} or {@link CarUsageType}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getVehicleSpecialUsageList() {
@@ -589,6 +636,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text} or {@link CarUsageType}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getVehicleSpecialUsage() {
@@ -600,6 +648,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param vehicleSpecialUsage Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleSpecialUsage(Text vehicleSpecialUsage) {
@@ -610,6 +659,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param vehicleSpecialUsage CarUsageType value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleSpecialUsage(CarUsageType vehicleSpecialUsage) {
@@ -623,6 +673,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getVehicleSeatingCapacityList() {
@@ -633,6 +684,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getVehicleSeatingCapacity() {
@@ -643,6 +695,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @param vehicleSeatingCapacity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity) {
@@ -652,6 +705,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @param vehicleSeatingCapacity Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleSeatingCapacity(Number vehicleSeatingCapacity) {
@@ -664,6 +718,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getMileageFromOdometerList() {
@@ -674,6 +729,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getMileageFromOdometer() {
@@ -684,6 +740,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @param mileageFromOdometer QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addMileageFromOdometer(QuantitativeValue mileageFromOdometer) {
@@ -696,6 +753,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Date> getPurchaseDateList() {
@@ -706,6 +764,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Date getPurchaseDate() {
@@ -716,6 +775,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @param purchaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addPurchaseDate(Date purchaseDate) {
@@ -729,6 +789,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getFuelCapacityList() {
@@ -740,6 +801,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getFuelCapacity() {
@@ -751,6 +813,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param fuelCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelCapacity(QuantitativeValue fuelCapacity) {
@@ -764,6 +827,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getTrailerWeightList() {
@@ -775,6 +839,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getTrailerWeight() {
@@ -786,6 +851,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param trailerWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addTrailerWeight(QuantitativeValue trailerWeight) {
@@ -799,6 +865,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Date}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Date> getModelDateList() {
@@ -810,6 +877,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Date}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Date getModelDate() {
@@ -821,6 +889,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param modelDate Date value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addModelDate(Date modelDate) {
@@ -834,6 +903,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getTongueWeightList() {
@@ -845,6 +915,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getTongueWeight() {
@@ -856,6 +927,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param tongueWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addTongueWeight(QuantitativeValue tongueWeight) {
@@ -868,6 +940,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Text> getVehicleIdentificationNumberList() {
@@ -878,6 +951,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Text getVehicleIdentificationNumber() {
@@ -888,6 +962,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
      * @param vehicleIdentificationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleIdentificationNumber(Text vehicleIdentificationNumber) {
@@ -901,6 +976,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getNumberOfPreviousOwnersList() {
@@ -911,6 +987,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getNumberOfPreviousOwners() {
@@ -921,6 +998,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfPreviousOwners QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners) {
@@ -930,6 +1008,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfPreviousOwners Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfPreviousOwners(Number numberOfPreviousOwners) {
@@ -943,6 +1022,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getWheelbaseList() {
@@ -954,6 +1034,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getWheelbase() {
@@ -965,6 +1046,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param wheelbase QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addWheelbase(QuantitativeValue wheelbase) {
@@ -977,6 +1059,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Information about the engine or engines of the vehicle.
      *
      * @return {@link EngineSpecification}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<EngineSpecification> getVehicleEngineList() {
@@ -987,6 +1070,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Information about the engine or engines of the vehicle.
      *
      * @return {@link EngineSpecification}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public EngineSpecification getVehicleEngine() {
@@ -997,6 +1081,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Information about the engine or engines of the vehicle.
      *
      * @param vehicleEngine EngineSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleEngine(EngineSpecification vehicleEngine) {
@@ -1011,6 +1096,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getBodyTypeList() {
@@ -1022,6 +1108,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getBodyType() {
@@ -1033,6 +1120,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param bodyType Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addBodyType(Text bodyType) {
@@ -1043,6 +1131,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param bodyType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addBodyType(QualitativeValue bodyType) {
@@ -1053,6 +1142,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param bodyType URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addBodyType(URL bodyType) {
@@ -1066,6 +1156,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number or type of airbags in the vehicle.
      *
      * @return {@link Number} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getNumberOfAirbagsList() {
@@ -1076,6 +1167,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number or type of airbags in the vehicle.
      *
      * @return {@link Number} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getNumberOfAirbags() {
@@ -1086,6 +1178,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number or type of airbags in the vehicle.
      *
      * @param numberOfAirbags Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfAirbags(Number numberOfAirbags) {
@@ -1095,6 +1188,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number or type of airbags in the vehicle.
      *
      * @param numberOfAirbags Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfAirbags(Text numberOfAirbags) {
@@ -1107,6 +1201,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getCargoVolumeList() {
@@ -1117,6 +1212,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getCargoVolume() {
@@ -1127,6 +1223,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @param cargoVolume QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addCargoVolume(QuantitativeValue cargoVolume) {
@@ -1139,6 +1236,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Date> getProductionDateList() {
@@ -1149,6 +1247,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Date getProductionDate() {
@@ -1159,6 +1258,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of production of the item, e.g. vehicle.
      *
      * @param productionDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addProductionDate(Date productionDate) {
@@ -1171,6 +1271,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getFuelConsumptionList() {
@@ -1181,6 +1282,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getFuelConsumption() {
@@ -1191,6 +1293,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
      * @param fuelConsumption QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelConsumption(QuantitativeValue fuelConsumption) {
@@ -1203,6 +1306,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Date> getDateVehicleFirstRegisteredList() {
@@ -1213,6 +1317,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Date getDateVehicleFirstRegistered() {
@@ -1223,6 +1328,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @param dateVehicleFirstRegistered Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addDateVehicleFirstRegistered(Date dateVehicleFirstRegistered) {
@@ -1236,6 +1342,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getFuelTypeList() {
@@ -1246,6 +1353,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getFuelType() {
@@ -1256,6 +1364,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType URL value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelType(URL fuelType) {
@@ -1265,6 +1374,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelType(Text fuelType) {
@@ -1274,6 +1384,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelType(QualitativeValue fuelType) {
@@ -1287,6 +1398,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getSpeedList() {
@@ -1298,6 +1410,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getSpeed() {
@@ -1309,6 +1422,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param speed QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addSpeed(QuantitativeValue speed) {
@@ -1321,6 +1435,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color or color combination of the interior of the vehicle.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Text> getVehicleInteriorColorList() {
@@ -1331,6 +1446,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color or color combination of the interior of the vehicle.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Text getVehicleInteriorColor() {
@@ -1341,6 +1457,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color or color combination of the interior of the vehicle.
      *
      * @param vehicleInteriorColor Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleInteriorColor(Text vehicleInteriorColor) {
@@ -1353,6 +1470,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<QuantitativeValue> getFuelEfficiencyList() {
@@ -1363,6 +1481,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public QuantitativeValue getFuelEfficiency() {
@@ -1373,6 +1492,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
      * @param fuelEfficiency QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addFuelEfficiency(QuantitativeValue fuelEfficiency) {
@@ -1385,6 +1505,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Date> getVehicleModelDateList() {
@@ -1395,6 +1516,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Date getVehicleModelDate() {
@@ -1405,6 +1527,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @param vehicleModelDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addVehicleModelDate(Date vehicleModelDate) {
@@ -1418,6 +1541,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getDriveWheelConfigurationList() {
@@ -1428,6 +1552,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getDriveWheelConfiguration() {
@@ -1438,6 +1563,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @param driveWheelConfiguration Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addDriveWheelConfiguration(Text driveWheelConfiguration) {
@@ -1447,6 +1573,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @param driveWheelConfiguration DriveWheelConfigurationValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration) {
@@ -1498,6 +1625,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> List<T> getNumberOfAxlesList() {
@@ -1508,6 +1636,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public <T> T getNumberOfAxles() {
@@ -1518,6 +1647,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfAxles QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfAxles(QuantitativeValue numberOfAxles) {
@@ -1527,6 +1657,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfAxles Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addNumberOfAxles(Number numberOfAxles) {
@@ -1541,6 +1672,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -1553,6 +1685,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -1565,6 +1698,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1617,6 +1751,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getWeightList() {
@@ -1628,6 +1763,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getWeight() {
@@ -1639,6 +1775,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param weight Mass value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(Mass weight) {
@@ -1649,6 +1786,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param weight QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(QuantitativeValue weight) {
@@ -1888,6 +2026,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -1898,6 +2037,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -1908,6 +2048,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -1917,6 +2058,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -1962,6 +2104,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsRelatedToList() {
@@ -1972,6 +2115,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsRelatedTo() {
@@ -1982,6 +2126,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Service isRelatedTo) {
@@ -1991,6 +2136,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Product isRelatedTo) {
@@ -2324,6 +2470,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGtin14List() {
@@ -2334,6 +2481,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGtin14() {
@@ -2344,6 +2492,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin14 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGtin14(Text gtin14) {
@@ -2578,6 +2727,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGtin8List() {
@@ -2588,6 +2738,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGtin8() {
@@ -2598,6 +2749,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin8 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGtin8(Text gtin8) {
@@ -2610,6 +2762,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getSkuList() {
@@ -2620,6 +2773,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getSku() {
@@ -2630,6 +2784,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @param sku Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addSku(Text sku) {
@@ -2725,6 +2880,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGtin13List() {
@@ -2735,6 +2891,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGtin13() {
@@ -2745,6 +2902,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin13 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGtin13(Text gtin13) {
@@ -3226,6 +3384,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getDepthList() {
@@ -3237,6 +3396,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getDepth() {
@@ -3248,6 +3408,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param depth Distance value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(Distance depth) {
@@ -3258,6 +3419,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param depth QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(QuantitativeValue depth) {
@@ -3340,6 +3502,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color of the product.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getColorList() {
@@ -3350,6 +3513,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color of the product.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getColor() {
@@ -3360,6 +3524,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color of the product.
      *
      * @param color Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addColor(Text color) {
@@ -3405,6 +3570,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsVariantOfList() {
@@ -3415,6 +3581,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsVariantOf() {
@@ -3425,6 +3592,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductModel value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsVariantOf(ProductModel isVariantOf) {
@@ -3434,6 +3602,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductGroup value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsVariantOf(ProductGroup isVariantOf) {
@@ -3447,6 +3616,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsSimilarToList() {
@@ -3457,6 +3627,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsSimilarTo() {
@@ -3467,6 +3638,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Service isSimilarTo) {
@@ -3476,6 +3648,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Product isSimilarTo) {
@@ -3488,6 +3661,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getMpnList() {
@@ -3498,6 +3672,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getMpn() {
@@ -3508,6 +3683,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @param mpn Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMpn(Text mpn) {
@@ -3676,6 +3852,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Product> getIsConsumableForList() {
@@ -3686,6 +3863,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Product getIsConsumableFor() {
@@ -3696,6 +3874,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @param isConsumableFor Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsConsumableFor(Product isConsumableFor) {
@@ -3866,6 +4045,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Product> getIsAccessoryOrSparePartForList() {
@@ -3876,6 +4056,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Product getIsAccessoryOrSparePartFor() {
@@ -3886,6 +4067,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @param isAccessoryOrSparePartFor Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
@@ -3936,6 +4118,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Date> getReleaseDateList() {
@@ -3946,6 +4129,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Date getReleaseDate() {
@@ -3956,6 +4140,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @param releaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addReleaseDate(Date releaseDate) {

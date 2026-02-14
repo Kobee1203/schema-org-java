@@ -13,6 +13,7 @@ import java.util.List;
  * 
  * See also the dedicated [document on the use of schema.org for marking up hotels and other forms of accommodations](/docs/hotels.html).
  *
+ * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Campground">https://schema.org/Campground</a>
  */
 public interface Campground extends CivicStructure, LodgingBusiness {

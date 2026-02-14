@@ -12,6 +12,7 @@ import spec.model.WarrantyScope;
 /**
  * A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/WarrantyPromise">https://schema.org/WarrantyPromise</a>
  */
 public interface WarrantyPromise extends StructuredValue {
@@ -20,6 +21,7 @@ public interface WarrantyPromise extends StructuredValue {
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getDurationOfWarrantyList();
 
@@ -27,6 +29,7 @@ public interface WarrantyPromise extends StructuredValue {
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getDurationOfWarranty();
 
@@ -34,6 +37,7 @@ public interface WarrantyPromise extends StructuredValue {
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
      * @param durationOfWarranty QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addDurationOfWarranty(QuantitativeValue durationOfWarranty);
 
@@ -41,6 +45,7 @@ public interface WarrantyPromise extends StructuredValue {
      * The scope of the warranty promise.
      *
      * @return {@link WarrantyScope}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<WarrantyScope> getWarrantyScopeList();
 
@@ -48,6 +53,7 @@ public interface WarrantyPromise extends StructuredValue {
      * The scope of the warranty promise.
      *
      * @return {@link WarrantyScope}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     WarrantyScope getWarrantyScope();
 
@@ -55,6 +61,7 @@ public interface WarrantyPromise extends StructuredValue {
      * The scope of the warranty promise.
      *
      * @param warrantyScope WarrantyScope value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addWarrantyScope(WarrantyScope warrantyScope);
 }

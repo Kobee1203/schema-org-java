@@ -15,6 +15,8 @@ import org.schema.model.Audience;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+ * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
+ * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
  * @see <a href="https://schema.org/TouristTrip">https://schema.org/TouristTrip</a>
  */
 public interface TouristTrip extends Trip {
@@ -23,6 +25,8 @@ public interface TouristTrip extends Trip {
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     <T> List<T> getTouristTypeList();
 
@@ -30,6 +34,8 @@ public interface TouristTrip extends Trip {
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     <T> T getTouristType();
 
@@ -37,12 +43,16 @@ public interface TouristTrip extends Trip {
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     void addTouristType(Text touristType);
     /**
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Audience value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     void addTouristType(Audience touristType);
 }

@@ -871,6 +871,7 @@ public class EducationalOccupationalProgramImpl extends com.weedow.schemaorg.com
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<DayOfWeek> getDayOfWeekList() {
@@ -881,6 +882,7 @@ public class EducationalOccupationalProgramImpl extends com.weedow.schemaorg.com
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public DayOfWeek getDayOfWeek() {
@@ -891,6 +893,7 @@ public class EducationalOccupationalProgramImpl extends com.weedow.schemaorg.com
      * The day of the week for which these opening hours are valid.
      *
      * @param dayOfWeek DayOfWeek value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDayOfWeek(DayOfWeek dayOfWeek) {

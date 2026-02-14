@@ -122,6 +122,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getNumberOfRoomsList() {
@@ -133,6 +134,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getNumberOfRooms() {
@@ -144,6 +146,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addNumberOfRooms(QuantitativeValue numberOfRooms) {
@@ -154,6 +157,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addNumberOfRooms(Number numberOfRooms) {
@@ -205,6 +209,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<QuantitativeValue> getFloorSizeList() {
@@ -216,6 +221,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public QuantitativeValue getFloorSize() {
@@ -227,6 +233,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
      * @param floorSize QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addFloorSize(QuantitativeValue floorSize) {
@@ -366,6 +373,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getPetsAllowedList() {
@@ -376,6 +384,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getPetsAllowed() {
@@ -386,6 +395,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addPetsAllowed(Boolean petsAllowed) {
@@ -395,6 +405,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addPetsAllowed(Text petsAllowed) {
@@ -495,6 +506,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<LocationFeatureSpecification> getAmenityFeatureList() {
@@ -505,6 +517,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
@@ -515,6 +528,7 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @param amenityFeature LocationFeatureSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {

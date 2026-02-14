@@ -52,6 +52,7 @@ import org.schema.model.PriceSpecification;
 /**
  * An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.<br/><br/>Note: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.<br/><br/>For [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).
  *
+ * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
  * @see <a href="https://schema.org/Offer">https://schema.org/Offer</a>
  */
 public interface Offer extends Intangible {
@@ -84,6 +85,7 @@ public interface Offer extends Intangible {
      * The duration for which the given offer is valid.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getEligibleDurationList();
 
@@ -91,6 +93,7 @@ public interface Offer extends Intangible {
      * The duration for which the given offer is valid.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getEligibleDuration();
 
@@ -98,6 +101,7 @@ public interface Offer extends Intangible {
      * The duration for which the given offer is valid.
      *
      * @param eligibleDuration QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleDuration(QuantitativeValue eligibleDuration);
 
@@ -132,6 +136,7 @@ public interface Offer extends Intangible {
      * The warranty promise(s) included in the offer.
      *
      * @return {@link WarrantyPromise}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<WarrantyPromise> getWarrantyList();
 
@@ -139,6 +144,7 @@ public interface Offer extends Intangible {
      * The warranty promise(s) included in the offer.
      *
      * @return {@link WarrantyPromise}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     WarrantyPromise getWarranty();
 
@@ -146,6 +152,7 @@ public interface Offer extends Intangible {
      * The warranty promise(s) included in the offer.
      *
      * @param warranty WarrantyPromise value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addWarranty(WarrantyPromise warranty);
 
@@ -316,6 +323,7 @@ public interface Offer extends Intangible {
      * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Offer> getAddOnList();
 
@@ -323,6 +331,7 @@ public interface Offer extends Intangible {
      * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Offer getAddOn();
 
@@ -330,6 +339,7 @@ public interface Offer extends Intangible {
      * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
      *
      * @param addOn Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAddOn(Offer addOn);
 
@@ -358,6 +368,7 @@ public interface Offer extends Intangible {
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getDeliveryLeadTimeList();
 
@@ -365,6 +376,7 @@ public interface Offer extends Intangible {
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getDeliveryLeadTime();
 
@@ -372,6 +384,7 @@ public interface Offer extends Intangible {
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
      * @param deliveryLeadTime QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addDeliveryLeadTime(QuantitativeValue deliveryLeadTime);
 
@@ -436,6 +449,7 @@ public interface Offer extends Intangible {
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getGtin14List();
 
@@ -443,6 +457,7 @@ public interface Offer extends Intangible {
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getGtin14();
 
@@ -450,6 +465,7 @@ public interface Offer extends Intangible {
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin14 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGtin14(Text gtin14);
 
@@ -550,6 +566,7 @@ public interface Offer extends Intangible {
      * The delivery method(s) available for this offer.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<DeliveryMethod> getAvailableDeliveryMethodList();
 
@@ -557,6 +574,7 @@ public interface Offer extends Intangible {
      * The delivery method(s) available for this offer.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     DeliveryMethod getAvailableDeliveryMethod();
 
@@ -564,6 +582,7 @@ public interface Offer extends Intangible {
      * The delivery method(s) available for this offer.
      *
      * @param availableDeliveryMethod DeliveryMethod value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod);
 
@@ -571,6 +590,7 @@ public interface Offer extends Intangible {
      * The current approximate inventory level for the item or items.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getInventoryLevelList();
 
@@ -578,6 +598,7 @@ public interface Offer extends Intangible {
      * The current approximate inventory level for the item or items.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getInventoryLevel();
 
@@ -585,6 +606,7 @@ public interface Offer extends Intangible {
      * The current approximate inventory level for the item or items.
      *
      * @param inventoryLevel QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addInventoryLevel(QuantitativeValue inventoryLevel);
 
@@ -613,6 +635,7 @@ public interface Offer extends Intangible {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getGtin8List();
 
@@ -620,6 +643,7 @@ public interface Offer extends Intangible {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getGtin8();
 
@@ -627,6 +651,7 @@ public interface Offer extends Intangible {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin8 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGtin8(Text gtin8);
 
@@ -634,6 +659,7 @@ public interface Offer extends Intangible {
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getSkuList();
 
@@ -641,6 +667,7 @@ public interface Offer extends Intangible {
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getSku();
 
@@ -648,6 +675,7 @@ public interface Offer extends Intangible {
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @param sku Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addSku(Text sku);
 
@@ -714,6 +742,7 @@ public interface Offer extends Intangible {
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getGtin13List();
 
@@ -721,6 +750,7 @@ public interface Offer extends Intangible {
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getGtin13();
 
@@ -728,6 +758,7 @@ public interface Offer extends Intangible {
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin13 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGtin13(Text gtin13);
 
@@ -804,6 +835,7 @@ public interface Offer extends Intangible {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidFromList();
 
@@ -811,6 +843,7 @@ public interface Offer extends Intangible {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidFrom();
 
@@ -818,12 +851,14 @@ public interface Offer extends Intangible {
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(Date validFrom);
 
@@ -866,6 +901,7 @@ public interface Offer extends Intangible {
      * The type(s) of customers for which the given offer is valid.
      *
      * @return {@link BusinessEntityType}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<BusinessEntityType> getEligibleCustomerTypeList();
 
@@ -873,6 +909,7 @@ public interface Offer extends Intangible {
      * The type(s) of customers for which the given offer is valid.
      *
      * @return {@link BusinessEntityType}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     BusinessEntityType getEligibleCustomerType();
 
@@ -880,6 +917,7 @@ public interface Offer extends Intangible {
      * The type(s) of customers for which the given offer is valid.
      *
      * @param eligibleCustomerType BusinessEntityType value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleCustomerType(BusinessEntityType eligibleCustomerType);
 
@@ -966,6 +1004,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getAcceptedPaymentMethodList();
 
@@ -974,6 +1013,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getAcceptedPaymentMethod();
 
@@ -982,6 +1022,7 @@ public interface Offer extends Intangible {
      *
      * @param acceptedPaymentMethod Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcceptedPaymentMethod(Text acceptedPaymentMethod);
     /**
@@ -989,6 +1030,7 @@ public interface Offer extends Intangible {
      *
      * @param acceptedPaymentMethod LoanOrCredit value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod);
     /**
@@ -996,6 +1038,7 @@ public interface Offer extends Intangible {
      *
      * @param acceptedPaymentMethod PaymentMethod value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod);
 
@@ -1081,6 +1124,7 @@ public interface Offer extends Intangible {
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
      * @return {@link TypeAndQuantityNode}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<TypeAndQuantityNode> getIncludesObjectList();
 
@@ -1088,6 +1132,7 @@ public interface Offer extends Intangible {
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
      * @return {@link TypeAndQuantityNode}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     TypeAndQuantityNode getIncludesObject();
 
@@ -1095,6 +1140,7 @@ public interface Offer extends Intangible {
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
      * @param includesObject TypeAndQuantityNode value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIncludesObject(TypeAndQuantityNode includesObject);
 
@@ -1123,6 +1169,7 @@ public interface Offer extends Intangible {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<BusinessFunction> getBusinessFunctionList();
 
@@ -1130,6 +1177,7 @@ public interface Offer extends Intangible {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     BusinessFunction getBusinessFunction();
 
@@ -1137,6 +1185,7 @@ public interface Offer extends Intangible {
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @param businessFunction BusinessFunction value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addBusinessFunction(BusinessFunction businessFunction);
 
@@ -1144,6 +1193,7 @@ public interface Offer extends Intangible {
      * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getAdvanceBookingRequirementList();
 
@@ -1151,6 +1201,7 @@ public interface Offer extends Intangible {
      * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getAdvanceBookingRequirement();
 
@@ -1158,6 +1209,7 @@ public interface Offer extends Intangible {
      * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      *
      * @param advanceBookingRequirement QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement);
 
@@ -1165,6 +1217,7 @@ public interface Offer extends Intangible {
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getMpnList();
 
@@ -1172,6 +1225,7 @@ public interface Offer extends Intangible {
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getMpn();
 
@@ -1179,6 +1233,7 @@ public interface Offer extends Intangible {
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @param mpn Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addMpn(Text mpn);
 
@@ -1188,6 +1243,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getEligibleRegionList();
 
@@ -1197,6 +1253,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getEligibleRegion();
 
@@ -1206,6 +1263,7 @@ public interface Offer extends Intangible {
      *
      * @param eligibleRegion GeoShape value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(GeoShape eligibleRegion);
     /**
@@ -1214,6 +1272,7 @@ public interface Offer extends Intangible {
      *
      * @param eligibleRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(Text eligibleRegion);
     /**
@@ -1222,6 +1281,7 @@ public interface Offer extends Intangible {
      *
      * @param eligibleRegion Place value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleRegion(Place eligibleRegion);
 
@@ -1230,6 +1290,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getAvailabilityStartsList();
 
@@ -1238,6 +1299,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getAvailabilityStarts();
 
@@ -1246,6 +1308,7 @@ public interface Offer extends Intangible {
      *
      * @param availabilityStarts DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityStarts(DateTime availabilityStarts);
     /**
@@ -1253,6 +1316,7 @@ public interface Offer extends Intangible {
      *
      * @param availabilityStarts Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityStarts(Date availabilityStarts);
     /**
@@ -1260,6 +1324,7 @@ public interface Offer extends Intangible {
      *
      * @param availabilityStarts Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityStarts(Time availabilityStarts);
 
@@ -1267,6 +1332,7 @@ public interface Offer extends Intangible {
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<PriceSpecification> getEligibleTransactionVolumeList();
 
@@ -1274,6 +1340,7 @@ public interface Offer extends Intangible {
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     PriceSpecification getEligibleTransactionVolume();
 
@@ -1281,6 +1348,7 @@ public interface Offer extends Intangible {
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @param eligibleTransactionVolume PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume);
 
@@ -1335,6 +1403,7 @@ public interface Offer extends Intangible {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getSerialNumberList();
 
@@ -1342,6 +1411,7 @@ public interface Offer extends Intangible {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getSerialNumber();
 
@@ -1349,6 +1419,7 @@ public interface Offer extends Intangible {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @param serialNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addSerialNumber(Text serialNumber);
 
@@ -1383,6 +1454,7 @@ public interface Offer extends Intangible {
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getEligibleQuantityList();
 
@@ -1390,6 +1462,7 @@ public interface Offer extends Intangible {
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getEligibleQuantity();
 
@@ -1397,6 +1470,7 @@ public interface Offer extends Intangible {
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @param eligibleQuantity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleQuantity(QuantitativeValue eligibleQuantity);
 
@@ -1404,6 +1478,7 @@ public interface Offer extends Intangible {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidThroughList();
 
@@ -1411,6 +1486,7 @@ public interface Offer extends Intangible {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidThrough();
 
@@ -1418,12 +1494,14 @@ public interface Offer extends Intangible {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidThrough(DateTime validThrough);
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidThrough(Date validThrough);
 
@@ -1458,6 +1536,7 @@ public interface Offer extends Intangible {
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<PriceSpecification> getPriceSpecificationList();
 
@@ -1465,6 +1544,7 @@ public interface Offer extends Intangible {
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     PriceSpecification getPriceSpecification();
 
@@ -1472,6 +1552,7 @@ public interface Offer extends Intangible {
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
      * @param priceSpecification PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addPriceSpecification(PriceSpecification priceSpecification);
 
@@ -1480,6 +1561,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getAvailabilityEndsList();
 
@@ -1488,6 +1570,7 @@ public interface Offer extends Intangible {
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getAvailabilityEnds();
 
@@ -1496,6 +1579,7 @@ public interface Offer extends Intangible {
      *
      * @param availabilityEnds DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityEnds(DateTime availabilityEnds);
     /**
@@ -1503,6 +1587,7 @@ public interface Offer extends Intangible {
      *
      * @param availabilityEnds Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityEnds(Date availabilityEnds);
     /**
@@ -1510,6 +1595,7 @@ public interface Offer extends Intangible {
      *
      * @param availabilityEnds Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailabilityEnds(Time availabilityEnds);
 
@@ -1538,6 +1624,7 @@ public interface Offer extends Intangible {
      * The place(s) from which the offer can be obtained (e.g. store locations).
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Place> getAvailableAtOrFromList();
 
@@ -1545,6 +1632,7 @@ public interface Offer extends Intangible {
      * The place(s) from which the offer can be obtained (e.g. store locations).
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Place getAvailableAtOrFrom();
 
@@ -1552,6 +1640,7 @@ public interface Offer extends Intangible {
      * The place(s) from which the offer can be obtained (e.g. store locations).
      *
      * @param availableAtOrFrom Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAvailableAtOrFrom(Place availableAtOrFrom);
 }

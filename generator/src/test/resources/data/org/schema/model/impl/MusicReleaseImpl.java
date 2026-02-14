@@ -61,6 +61,7 @@ import org.schema.model.MusicRelease;
 /**
  * A MusicRelease is a specific release of a music album.
  *
+ * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
  * @see <a href="https://schema.org/MusicRelease">https://schema.org/MusicRelease</a>
  */
 @JsonLdTypeName("MusicRelease")
@@ -126,6 +127,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The label that issued the release.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<Organization> getRecordLabelList() {
@@ -136,6 +138,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The label that issued the release.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public Organization getRecordLabel() {
@@ -146,6 +149,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The label that issued the release.
      *
      * @param recordLabel Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addRecordLabel(Organization recordLabel) {
@@ -158,6 +162,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The album this is a release of.
      *
      * @return {@link MusicAlbum}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<MusicAlbum> getReleaseOfList() {
@@ -168,6 +173,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The album this is a release of.
      *
      * @return {@link MusicAlbum}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public MusicAlbum getReleaseOf() {
@@ -178,6 +184,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The album this is a release of.
      *
      * @param releaseOf MusicAlbum value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addReleaseOf(MusicAlbum releaseOf) {
@@ -190,6 +197,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The catalog number for the release.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<Text> getCatalogNumberList() {
@@ -200,6 +208,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The catalog number for the release.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public Text getCatalogNumber() {
@@ -210,6 +219,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The catalog number for the release.
      *
      * @param catalogNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addCatalogNumber(Text catalogNumber) {
@@ -223,6 +233,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> List<T> getCreditedToList() {
@@ -233,6 +244,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> T getCreditedTo() {
@@ -243,6 +255,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @param creditedTo Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addCreditedTo(Person creditedTo) {
@@ -252,6 +265,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @param creditedTo Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addCreditedTo(Organization creditedTo) {
@@ -264,6 +278,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
      *
      * @return {@link MusicReleaseFormatType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<MusicReleaseFormatType> getMusicReleaseFormatList() {
@@ -274,6 +289,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
      *
      * @return {@link MusicReleaseFormatType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public MusicReleaseFormatType getMusicReleaseFormat() {
@@ -284,6 +300,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
      *
      * @param musicReleaseFormat MusicReleaseFormatType value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat) {
@@ -329,6 +346,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @return {@link ItemList} or {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> List<T> getTrackList() {
@@ -339,6 +357,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @return {@link ItemList} or {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> T getTrack() {
@@ -349,6 +368,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @param track ItemList value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addTrack(ItemList track) {
@@ -358,6 +378,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @param track MusicRecording value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addTrack(MusicRecording track) {
@@ -404,6 +425,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -416,6 +438,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -428,6 +451,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1204,6 +1228,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1214,6 +1239,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1224,6 +1250,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -1876,6 +1903,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -1886,6 +1914,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -1896,6 +1925,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -3545,6 +3575,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -3557,6 +3588,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -3569,6 +3601,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -3580,6 +3613,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -3591,6 +3625,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -4591,6 +4626,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -4601,6 +4637,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -4611,6 +4648,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {

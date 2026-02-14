@@ -19,6 +19,7 @@ import java.util.List;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+ * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
  * @see <a href="https://schema.org/ReportageNewsArticle">https://schema.org/ReportageNewsArticle</a>
  */
 public interface ReportageNewsArticle extends NewsArticle {

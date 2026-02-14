@@ -47,6 +47,8 @@ public final class Type {
 
     private List<String> source = new ArrayList<>();
 
+    private List<String> contributor = new ArrayList<>();
+
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     private Boolean enumerationType;
@@ -136,6 +138,7 @@ public final class Type {
                 "subTypes      = " + subTypes() + "\n" +
                 "partOf        = " + String.join(", ", partOf) + "\n" +
                 "source        = " + String.join(", ", source) + "\n" +
+                "contributor   = " + String.join(", ", contributor) + "\n" +
                 "properties    = " + toFormattedString(properties) + "\n" +
                 "enum members  = " + String.join(", ", enumerationMembers) + "\n";
     }

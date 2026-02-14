@@ -17,6 +17,7 @@ import org.schema.model.datatype.URL;
 /**
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
  * @see <a href="https://schema.org/UserComments">https://schema.org/UserComments</a>
  */
 public interface UserComments extends UserInteraction {
