@@ -5,11 +5,23 @@
     <import class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"/>
     <import class="ch.qos.logback.core.ConsoleAppender"/>
 
+    <conversionRule conversionWord="highlightMsg" class="com.weedow.schemaorg.generator.logging.HighlightConverter"/>
+
     <appender name="STDOUT" class="ConsoleAppender">
         <encoder class="PatternLayoutEncoder">
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%highlight(%-5level) - %highlightMsg(%msg) %n</pattern>
         </encoder>
     </appender>
+
+    <appender name="PROGRESS" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="PROGRESS_BAR" level="INFO" additivity="false">
+        <appender-ref ref="PROGRESS"/>
+    </logger>
 
     <logger name="com.weedow.schemaorg" level="INFO"/>
 

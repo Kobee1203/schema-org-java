@@ -9,6 +9,7 @@ import com.weedow.schemaorg.generator.core.handler.CompleteHandler;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
 import com.weedow.schemaorg.generator.core.stream.StreamService;
+import com.weedow.schemaorg.generator.logging.ProgressTracker;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.template.TemplateService;
 import org.junit.jupiter.api.AfterEach;
@@ -29,7 +30,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -65,7 +68,11 @@ class SchemaModelGeneratorImplTest {
     void generate_without_schema_definitions() {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Collections.emptyMap());
 
-        schemaModelGenerator.generate();
+        try (MockedConstruction<ProgressTracker> mockedTracker = mockConstruction(ProgressTracker.class)) {
+            schemaModelGenerator.generate();
+
+            assertThat(mockedTracker.constructed()).isEmpty();
+        }
 
         verifyNoInteractions(streamService);
         verifyNoInteractions(copyService);
@@ -82,7 +89,7 @@ class SchemaModelGeneratorImplTest {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("DataType"));
 
         Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
         verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
@@ -107,7 +114,7 @@ class SchemaModelGeneratorImplTest {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Boolean"));
 
         Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
         verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
@@ -136,7 +143,7 @@ class SchemaModelGeneratorImplTest {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("XPathType"));
 
         Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
         verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
@@ -163,7 +170,7 @@ class SchemaModelGeneratorImplTest {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("ActionStatusType"));
 
         Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
         verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
@@ -193,7 +200,7 @@ class SchemaModelGeneratorImplTest {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Thing"));
 
         verify(templateService).apply(
                 "templates/type_interface",
@@ -210,13 +217,17 @@ class SchemaModelGeneratorImplTest {
     @Test
     void cannot_generate_type_when_java_types_are_used() {
         final Type type = mock(Type.class);
+        when(type.getName()).thenReturn("Thing");
         when(type.isUsedJavaType()).thenReturn(true);
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker ->
+                // tick() is always called regardless of isUsedJavaType
+                verify(tracker).tick("Thing")
+        );
 
         verifyNoInteractions(templateService);
     }
@@ -242,7 +253,7 @@ class SchemaModelGeneratorImplTest {
         final String modelPackage = options.getModelPackage();
         final String modelImplPackage = options.getModelImplPackage();
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Thing"));
 
         verify(successHandler).onSuccess(
                 "templates/type_interface",
@@ -292,7 +303,7 @@ class SchemaModelGeneratorImplTest {
                 new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName(), List.class.getName()))
         );
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Thing"));
 
         verify(errorHandler).onError(
                 "templates/type_interface",
@@ -330,7 +341,8 @@ class SchemaModelGeneratorImplTest {
 
         try (
                 MockedStatic<Instant> mockedInstant = mockStatic(Instant.class);
-                MockedStatic<Duration> mockedDuration = mockStatic(Duration.class)
+                MockedStatic<Duration> mockedDuration = mockStatic(Duration.class);
+                MockedConstruction<ProgressTracker> mockedTracker = mockedProgressTracker(filteredSchemaDefinitions.size())
         ) {
             mockedInstant.when(Instant::now).thenReturn(instantStart, instantEnd);
             mockedInstant.when(() -> Instant.ofEpochSecond(anyLong(), anyLong())).thenReturn(instantStart);
@@ -339,6 +351,8 @@ class SchemaModelGeneratorImplTest {
             schemaModelGenerator.generate();
 
             verify(completeHandler).onComplete(expectedDuration);
+
+            verifyProgressTracker(mockedTracker, tracker -> verify(tracker).tick("Thing"));
         }
     }
 
@@ -409,7 +423,7 @@ class SchemaModelGeneratorImplTest {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
-        schemaModelGenerator.generate();
+        runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Boolean"));
 
         verifyNoInteractions(copyService);
 
@@ -418,5 +432,28 @@ class SchemaModelGeneratorImplTest {
                 options.getDataTypeFolder().resolve("Boolean.java"),
                 new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getName()))
         );
+    }
+
+    private void runTestWithMockedTracker(int expectedSize, Consumer<ProgressTracker> verify) {
+        try (MockedConstruction<ProgressTracker> mockedTracker = mockedProgressTracker(expectedSize)) {
+            schemaModelGenerator.generate();
+
+            verifyProgressTracker(mockedTracker, verify);
+        }
+    }
+
+    private static MockedConstruction<ProgressTracker> mockedProgressTracker(int expectedSize) {
+        return mockConstruction(ProgressTracker.class,
+                (mock, context) -> {
+                    assertThat(context.arguments()).hasSize(1);
+                    assertThat(context.arguments().get(0)).isEqualTo(expectedSize);
+                });
+    }
+
+    private static void verifyProgressTracker(MockedConstruction<ProgressTracker> mockedTracker, Consumer<ProgressTracker> verify) {
+        assertThat(mockedTracker.constructed()).hasSize(1);
+        ProgressTracker progressTracker = mockedTracker.constructed().get(0);
+        verify.accept(progressTracker);
+        verifyNoMoreInteractions(progressTracker);
     }
 }

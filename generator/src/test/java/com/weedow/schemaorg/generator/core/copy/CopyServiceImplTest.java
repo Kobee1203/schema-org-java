@@ -1,7 +1,10 @@
 package com.weedow.schemaorg.generator.core.copy;
 
+import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
 import nl.altindag.log.LogCaptor;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
@@ -17,6 +20,16 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 
 class CopyServiceImplTest {
+
+    @BeforeAll
+    static void setup() {
+        SchemaModelGeneratorConstants.setVerbose(true);
+    }
+
+    @AfterAll
+    static void tearDown() {
+        SchemaModelGeneratorConstants.setVerbose(false);
+    }
 
     @Test
     void copy() {

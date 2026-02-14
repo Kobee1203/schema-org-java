@@ -105,7 +105,7 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .doesNotContain("VERBOSE MODE: ON.")
-                .contains("Java types are used instead of Schema.org Data Types")
+                .contains("Java types are used instead of Schema.org Data Types.")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
                 .anyMatch(s -> s.matches("Finished: \\d+ s"));
 
@@ -178,7 +178,7 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .contains("Custom data Types configured: DateTime=java.time.ZonedDateTime, XPathType=javax.xml.xpath.XPath")
-                .contains("Java types are used instead of Schema.org Data Types")
+                .contains("Java types are used instead of Schema.org Data Types.")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
                 .anyMatch(s -> s.matches("Finished: \\d+ s"));
 

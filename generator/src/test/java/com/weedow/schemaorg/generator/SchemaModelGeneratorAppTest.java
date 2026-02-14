@@ -7,12 +7,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import uk.org.webcompere.systemstubs.jupiter.SystemStub;
 import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
+import uk.org.webcompere.systemstubs.security.SystemExit;
 
 import static uk.org.webcompere.systemstubs.SystemStubs.tapSystemOutNormalized;
 
 @ExtendWith(SystemStubsExtension.class)
 class SchemaModelGeneratorAppTest {
+
+    @SystemStub
+    private final SystemExit exit = new SystemExit();
 
     @AfterEach
     void tearDown() {
@@ -23,44 +28,50 @@ class SchemaModelGeneratorAppTest {
     @ValueSource(strings = {"--help", "-h"})
     void help(String option) throws Exception {
         String[] args = new String[]{option};
-        String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
+        String text = tapSystemOutNormalized(() -> exit.execute(() -> SchemaModelGeneratorApp.main(args)));
+        Assertions.assertThat(exit.getExitCode()).isZero();
         Assertions.assertThat(text).isEqualTo(
                 """
-                        usage: java -jar schema-org-generator.jar SchemaModelGeneratorApp [-cd
-                               <TYPE=JAVA_TYPE>] [-dp <package>] [-h] [-j] [-m <models>] [-mip
-                               <package>] [-mp <package>] [-o <output>] [-R <resource>] [-V <version>]
-                               [-v]
-                         -cd,--custom-datatypes <TYPE=JAVA_TYPE>   Configures Java types to be used for
-                                                                   Schema.org data types during code
-                                                                   generation (eg.
-                                                                   DateTime=java.time.ZonedDateTime)
-                         -dp,--datatype-package <package>          Package of the data types - Default
-                                                                   is "org.schema.model.datatype"
-                         -h,--help                                 Show the help message
-                         -j,--javatypes                            Use Java types instead of schema.org
-                                                                   DataTypes. If not specified,
-                                                                   schema.org DataTypes are used.
-                         -m,--models <models>                      list of models to be generated. If
-                                                                   not specified, all models will be
-                                                                   generated.
-                         -mip,--model-impl-package <package>       Package of the model implementations
-                                                                   - Default is "org.schema.model.impl"
-                         -mp,--model-package <package>             Package of the models - Default is
-                                                                   "org.schema.model"
-                         -o,--output <output>                      Location of the output directory -
-                                                                   Default is
-                                                                   "/target/generated-sources/schemaorg"
-                         -R,--resource <resource>                  Schema resource to be used: either a
-                                                                   "classpath:" pseudo URL, a "file:"
-                                                                   URL, an URL or a plain file path.
-                         -V,--version <version>                    Schema version to be used: 'latest'
-                                                                   to use the latest version, or
-                                                                   specific version (eg. 13.0). If not
-                                                                   specified, the generator uses the
-                                                                   resource in the JAR. see
-                                                                   https://github.com/schemaorg/schemaor
-                                                                   g/tree/main/data/releases
-                         -v,--verbose                              Verbose
+                        Usage: java -jar schema-org-generator-{version}-jar-with-dependencies.jar
+                               [-hVjv] [-m=<models>]... [-o=<output>] [-r=<schemaResource>]
+                               [-s=<schemaVersion>] [-D=<dataTypePackage>] [-I=<modelImplPackage>]
+                               [-M=<modelPackage>] [-c=<TYPE=JAVA_TYPE>]...
+                        
+                        A CLI tool to generate Java models and data types from Schema.org definitions.
+                        
+                          -h, --help              Show this help message and exit.
+                          -V, --version           Print version information and exit.
+                          -m, --models=<models>   list of models to be generated. If not specified, all
+                                                    models will be generated.
+                          -o, --output=<output>   Location of the output directory (default:
+                                                    target/generated-sources/schemaorg)
+                          -r, --resource=<schemaResource>
+                                                  Schema resource to be used: either a "classpath:"
+                                                    pseudo URL, a "file:" URL, an URL or a plain file
+                                                    path.
+                          -s, --schema-version=<schemaVersion>
+                                                  Schema version to be used: 'latest' to use the latest
+                                                    version, or specific version (eg. 13.0). If not
+                                                    specified, the generator uses the resource in the
+                                                    JAR.
+                          -D, --datatype-package=<dataTypePackage>
+                                                  Package of the data types
+                                                    Default: org.schema.model.datatype
+                          -I, --model-impl-package=<modelImplPackage>
+                                                  Package of the model implementations
+                                                    Default: org.schema.model.impl
+                          -M, --model-package=<modelPackage>
+                                                  Package of the models
+                                                    Default: org.schema.model.models
+                          -j, --javatypes         Use Java types instead of schema.org DataTypes. If
+                                                    not specified, schema.org DataTypes are used.
+                          -c, --custom-datatypes=<TYPE=JAVA_TYPE>
+                                                  Configures Java types to be used for Schema.org data
+                                                    types during code generation (eg. DateTime=java.
+                                                    time.ZonedDateTime)
+                          -v, --verbose           Verbose mode. Helpful for troubleshooting.
+                        
+                        Please report issues at https://github.com/Kobee1203/schema-org-java/issues
                         """
         );
     }
@@ -68,94 +79,104 @@ class SchemaModelGeneratorAppTest {
     @Test
     void generate() throws Exception {
         String[] args = new String[]{"--models", "Thing"};
-        String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
+        String text = tapSystemOutNormalized(() -> exit.execute(() -> SchemaModelGeneratorApp.main(args)));
         Assertions.assertThat(text)
                 .contains("Loading local default resource 'classpath:schemaorg-current-https.jsonld'")
                 .contains("Parsing the schema definitions...")
                 .contains("Parsing completed.")
+                .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("Model generation completed.")
-                .containsPattern("Finished: \\d+ s");
+                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (272/272)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .containsPattern("Finished: \\d+ s")
+                .contains("Model generation completed.");
     }
 
     @Test
     void generate_custom_resource() throws Exception {
         String[] args = new String[]{
                 "--resource", "classpath:example.jsonld",
-                "-mp", "org.custom.model",
-                "-mip", "org.custom.model.impl",
-                "-dp", "org.custom.model.datatype"
+                "-M", "org.custom.model",
+                "-I", "org.custom.model.impl",
+                "-D", "org.custom.model.datatype"
         };
-        String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
+        String text = tapSystemOutNormalized(() -> exit.execute(() -> SchemaModelGeneratorApp.main(args)));
         Assertions.assertThat(text)
-                .doesNotContain("Java types are used instead of Schema.org Data Types")
+                .doesNotContain("Java types are used instead of Schema.org Data Types.")
                 .contains("Loading resource 'classpath:example.jsonld'")
                 .contains("Parsing the schema definitions...")
                 .contains("Parsing completed.")
+                .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("Model generation completed.")
-                .containsPattern("Finished: \\d+ s");
+                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (14/14)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .containsPattern("Finished: \\d+ s")
+                .contains("Model generation completed.");
     }
 
     @Test
     void generate_with_java_types() throws Exception {
         String[] args = new String[]{
                 "--resource", "classpath:example.jsonld",
-                "-mp", "org.javatypes.models",
-                "-mip", "org.javatypes.models.impl",
-                "-dp", "org.javatypes.models.datatype",
+                "-M", "org.javatypes.models",
+                "-I", "org.javatypes.models.impl",
+                "-D", "org.javatypes.models.datatype",
                 "--javatypes"
         };
-        String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
+        String text = tapSystemOutNormalized(() -> exit.execute(() -> SchemaModelGeneratorApp.main(args)));
         Assertions.assertThat(text)
-                .contains("Java types are used instead of Schema.org Data Types")
+                .contains("Java types are used instead of Schema.org Data Types.")
                 .contains("Loading resource 'classpath:example.jsonld'")
                 .contains("Parsing the schema definitions...")
                 .contains("Parsing completed.")
+                .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("Model generation completed.")
-                .containsPattern("Finished: \\d+ s");
+                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (13/13)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .containsPattern("Finished: \\d+ s")
+                .contains("Model generation completed.");
     }
 
     @Test
     void generate_with_custom_data_types() throws Exception {
         String[] args = new String[]{
                 "--resource", "classpath:example.jsonld",
-                "-mp", "org.custom_dt.models",
-                "-mip", "org.custom_dt.models.impl",
-                "-dp", "org.custom_dt.models.datatype",
-                "-cd", "DateTime=java.time.ZonedDateTime XPathType=javax.xml.xpath.XPath"
+                "-M", "org.custom_dt.models",
+                "-I", "org.custom_dt.models.impl",
+                "-D", "org.custom_dt.models.datatype",
+                "-c", "DateTime=java.time.ZonedDateTime XPathType=javax.xml.xpath.XPath"
         };
-        String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
+        String text = tapSystemOutNormalized(() -> exit.execute(() -> SchemaModelGeneratorApp.main(args)));
         Assertions.assertThat(text)
                 .contains("Custom data Types configured: DateTime=java.time.ZonedDateTime, XPathType=javax.xml.xpath.XPath")
                 .contains("Loading resource 'classpath:example.jsonld'")
                 .contains("Parsing the schema definitions...")
                 .contains("Parsing completed.")
+                .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("Model generation completed.")
-                .containsPattern("Finished: \\d+ s");
+                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (14/14)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .containsPattern("Finished: \\d+ s")
+                .contains("Model generation completed.");
     }
 
     @Test
     void generate_with_custom_data_types_and_java_types() throws Exception {
         String[] args = new String[]{
                 "--resource", "classpath:example.jsonld",
-                "-mp", "org.custom_dt_jt.models",
-                "-mip", "org.custom_dt_jt.models.impl",
-                "-dp", "org.custom_dt_jt.models.datatype",
+                "-M", "org.custom_dt_jt.models",
+                "-I", "org.custom_dt_jt.models.impl",
+                "-D", "org.custom_dt_jt.models.datatype",
                 "--custom-datatypes", "schema:DateTime=java.time.ZonedDateTime XPathType=javax.xml.xpath.XPath",
                 "-j"
         };
-        String text = tapSystemOutNormalized(() -> SchemaModelGeneratorApp.main(args));
+        String text = tapSystemOutNormalized(() -> exit.execute(() -> SchemaModelGeneratorApp.main(args)));
         Assertions.assertThat(text)
                 .contains("Custom data Types configured: schema:DateTime=java.time.ZonedDateTime, XPathType=javax.xml.xpath.XPath")
-                .contains("Java types are used instead of Schema.org Data Types")
+                .contains("Java types are used instead of Schema.org Data Types.")
                 .contains("Loading resource 'classpath:example.jsonld'")
                 .contains("Parsing the schema definitions...")
                 .contains("Parsing completed.")
+                .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("Model generation completed.")
-                .containsPattern("Finished: \\d+ s");
+                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (13/13)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .containsPattern("Finished: \\d+ s")
+                .contains("Model generation completed.");
     }
 }

@@ -18,6 +18,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.weedow.schemaorg.generator.logging.LoggingConstants.DEPRECATED;
+
 public class PropertyModelHandlerImpl implements ModelHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(PropertyModelHandlerImpl.class);
@@ -33,7 +35,7 @@ public class PropertyModelHandlerImpl implements ModelHandler {
     public void handle(Map<String, Type> schemaDefinitions, GraphItem graphItem, ParserOptions options) {
         List<Type> propertyTypes = deduplicateJavaTypes(ModelUtils.getPropertyTypes(schemaDefinitions, graphItem), options);
         if (propertyTypes.isEmpty()) {
-            LOG.info("** DEPRECATED ** {} is superseded by {}", graphItem.getId(), graphItem.getSupersededBy().getId());
+            LOG.info(DEPRECATED + " {} is superseded by {}", graphItem.getId(), graphItem.getSupersededBy().getId());
             return;
         }
 
