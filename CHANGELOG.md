@@ -10,6 +10,53 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+## [0.10.0]
+
+### Added
+
+- [generator] Include subtypes of enumeration types when specifying models to generate [#237](https://github.com/Kobee1203/schema-org-java/issues/237)
+- [generator] Handle contributor property in GraphItem
+- [generator] Filter types without a "name" (retired types still referenced by some properties like schema:DeliveryTimeSettings)
+
+### Changed
+
+- Migration from OSSRH to Maven Central Portal
+- [generator] Skip classes/properties that don't start with 'schema:' prefix [#237](https://github.com/Kobee1203/schema-org-java/issues/237)
+- [generator] Update schema.org JSON-LD resource to latest version [#237](https://github.com/Kobee1203/schema-org-java/issues/237)
+- Bump org.projectlombok:lombok from 1.18.38 to 1.18.42
+- Bump ch.qos.logback:logback-classic from 1.5.18 to 1.5.29
+- Bump com.fasterxml.jackson:jackson-bom from 2.19.0 to 2.20.0
+- Bump com.github.jknack:handlebars-helpers from 4.4.0 to 4.5.0
+- Bump commons-cli:commons-cli from 1.9.0 to 1.11.0
+- Bump junit-jupiter-engine.version from 5.12.2 to 6.0.2
+- Bump org.assertj:assertj-core from 3.27.3 to 3.27.7
+- Bump org.mockito:mockito-junit-jupiter from 5.17.0 to 5.21.0
+- Bump nl.jqno.equalsverifier:equalsverifier from 3.19.4 to 4.3.1
+- Bump net.javacrumbs.json-unit:json-unit-assertj from 4.1.0 to 5.1.0
+- Bump io.github.hakky54:logcaptor from 2.11.0 to 2.12.2
+- Bump org.apache.maven:maven-core from 3.9.9 to 3.9.12
+- Bump org.apache.maven:maven-plugin-api from 3.9.9 to 3.9.12
+- Bump org.apache.maven.plugins:maven-compiler-plugin from 3.14.0 to 3.15.0
+- Bump org.apache.maven.plugins:maven-source-plugin from 3.3.1 to 3.4.0
+- Bump org.apache.maven.plugins:maven-surefire-plugin from 3.5.3 to 3.5.4
+- Bump org.apache.maven.plugins:maven-failsafe-plugin from 3.5.3 to 3.5.4
+- Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.11.2 to 3.12.0
+- Bump org.apache.maven.plugins:maven-release-plugin from 3.1.1 to 3.3.1
+- Bump org.apache.maven.plugins:maven-dependency-plugin from 3.8.1 to 3.10.0
+- Bump org.apache.maven.plugins:maven-assembly-plugin from 3.7.1 to 3.8.0
+- Bump org.apache.maven.plugins:maven-plugin-plugin from 3.15.1 to 3.15.2
+- Bump org.apache.maven.plugin-tools:maven-plugin-annotations from 3.13.0 to 3.15.2
+- Bump org.sonarsource.scanner.maven:sonar-maven-plugin from 5.1.0.4751 to 5.5.0.6356
+- Bump org.jacoco:jacoco-maven-plugin from 0.8.13 to 0.8.14
+- Bump actions/checkout from 4 to 6
+- Bump actions/setup-java from 4 to 5
+- Bump actions/cache from 4 to 5
+
+### Fixed
+
+- [maven-plugin] Fix integration tests
+- [generator] Fix handling of enumeration subtypes [#237](https://github.com/Kobee1203/schema-org-java/issues/237)
+
 ## [0.9.0]
 
 ### Added
@@ -263,9 +310,10 @@ All notable changes to this project will be documented in this file.
 
 schema-org-java is alive!
 
-[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.9.0...HEAD
+[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.10.0...HEAD
+[0.10.0]: https://github.com/Kobee1203/schema-org-java/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/Kobee1203/schema-org-java/compare/0.8.0...0.9.0
-[0.8.0]: https://github.com/Kobee1203/schema-org-java/compare/0.7.0...0.9.0
+[0.8.0]: https://github.com/Kobee1203/schema-org-java/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/Kobee1203/schema-org-java/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/Kobee1203/schema-org-java/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/Kobee1203/schema-org-java/compare/0.4.0...0.5.0
