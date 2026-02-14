@@ -16,6 +16,7 @@ import org.schema.model.datatype.Text;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/MoneyTransfer">https://schema.org/MoneyTransfer</a>
  */
 public interface MoneyTransfer extends TransferAction {
@@ -61,6 +62,7 @@ public interface MoneyTransfer extends TransferAction {
      * @return {@link BankOrCreditUnion} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getBeneficiaryBankList();
 
@@ -70,6 +72,7 @@ public interface MoneyTransfer extends TransferAction {
      * @return {@link BankOrCreditUnion} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getBeneficiaryBank();
 
@@ -79,6 +82,7 @@ public interface MoneyTransfer extends TransferAction {
      * @param beneficiaryBank BankOrCreditUnion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addBeneficiaryBank(BankOrCreditUnion beneficiaryBank);
     /**
@@ -87,6 +91,7 @@ public interface MoneyTransfer extends TransferAction {
      * @param beneficiaryBank Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addBeneficiaryBank(Text beneficiaryBank);
 }

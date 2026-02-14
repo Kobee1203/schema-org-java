@@ -12,6 +12,7 @@ import java.util.List;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/BrokerageAccount">https://schema.org/BrokerageAccount</a>
  */
 public interface BrokerageAccount extends InvestmentOrDeposit {

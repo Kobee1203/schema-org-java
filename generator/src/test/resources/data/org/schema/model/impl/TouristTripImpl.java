@@ -36,6 +36,8 @@ import org.schema.model.TouristTrip;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+ * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
+ * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
  * @see <a href="https://schema.org/TouristTrip">https://schema.org/TouristTrip</a>
  */
 @JsonLdTypeName("TouristTrip")
@@ -48,6 +50,8 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public <T> List<T> getTouristTypeList() {
@@ -58,6 +62,8 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public <T> T getTouristType() {
@@ -68,6 +74,8 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public void addTouristType(Text touristType) {
@@ -77,6 +85,8 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Audience value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public void addTouristType(Audience touristType) {
@@ -230,6 +240,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link Place} or {@link ItemList}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public <T> List<T> getItineraryList() {
@@ -242,6 +253,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link Place} or {@link ItemList}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public <T> T getItinerary() {
@@ -254,6 +266,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param itinerary Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addItinerary(Place itinerary) {
@@ -265,6 +278,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param itinerary ItemList value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addItinerary(ItemList itinerary) {
@@ -279,6 +293,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public List<Trip> getSubTripList() {
@@ -291,6 +306,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public Trip getSubTrip() {
@@ -303,6 +319,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param subTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addSubTrip(Trip subTrip) {
@@ -367,6 +384,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public List<Trip> getPartOfTripList() {
@@ -379,6 +397,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public Trip getPartOfTrip() {
@@ -391,6 +410,7 @@ public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param partOfTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     @Override
     public void addPartOfTrip(Trip partOfTrip) {

@@ -38,6 +38,7 @@ import org.schema.model.MoneyTransfer;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/MoneyTransfer">https://schema.org/MoneyTransfer</a>
  */
 @JsonLdTypeName("MoneyTransfer")
@@ -102,6 +103,7 @@ public class MoneyTransferImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @return {@link BankOrCreditUnion} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getBeneficiaryBankList() {
@@ -114,6 +116,7 @@ public class MoneyTransferImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @return {@link BankOrCreditUnion} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getBeneficiaryBank() {
@@ -126,6 +129,7 @@ public class MoneyTransferImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param beneficiaryBank BankOrCreditUnion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addBeneficiaryBank(BankOrCreditUnion beneficiaryBank) {
@@ -137,6 +141,7 @@ public class MoneyTransferImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * @param beneficiaryBank Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addBeneficiaryBank(Text beneficiaryBank) {

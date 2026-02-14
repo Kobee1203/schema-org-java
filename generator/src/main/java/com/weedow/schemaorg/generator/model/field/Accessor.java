@@ -18,6 +18,7 @@ public class Accessor {
     String description;
     List<String> partOf;
     List<String> source;
+    List<String> contributor;
     @NonNull
     Supplier<String> fieldTypeLinks;
     @NonNull
@@ -39,12 +40,14 @@ public class Accessor {
             String description,
             List<String> partOf,
             List<String> source,
+            List<String> contributor,
             List<Type> types
     ) {
         this.name = name;
         this.description = description;
         this.partOf = partOf;
         this.source = source;
+        this.contributor = contributor;
         this.fieldTypeLinks = supplier(types, t -> t.stream().map(type -> "{@link " + type.getName() + "}").collect(Collectors.joining(" or ")));
         this.returnFieldType = supplier(types, t -> t.size() > 1 ? "<T> T" : t.get(0).getName());
         this.returnFieldTypeAsList = supplier(types, t -> t.size() > 1 ? "<T> List<T>" : "List<" + t.get(0).getName() + ">");

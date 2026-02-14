@@ -189,6 +189,22 @@ class ModelUtilsTest {
         Assertions.assertThat(ModelUtils.getPartOf(graphItem)).isEmpty();
     }
 
+    @Test
+    void getContributor() {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getContributor()).thenReturn(List.of(contributor("contributor1"), contributor("contributor2")));
+
+        Assertions.assertThat(ModelUtils.getContributor(graphItem)).containsExactly("contributor1", "contributor2");
+    }
+
+    @Test
+    void getContributor_when_contributor_is_null() {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getContributor()).thenReturn(null);
+
+        Assertions.assertThat(ModelUtils.getContributor(graphItem)).isEmpty();
+    }
+
     @ParameterizedTest
     @CsvSource(value = {
             "myField, myField",

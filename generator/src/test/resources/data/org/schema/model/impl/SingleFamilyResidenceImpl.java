@@ -60,6 +60,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getNumberOfRoomsList() {
@@ -71,6 +72,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getNumberOfRooms() {
@@ -82,6 +84,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addNumberOfRooms(QuantitativeValue numberOfRooms) {
@@ -92,6 +95,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
      * @param numberOfRooms Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addNumberOfRooms(Number numberOfRooms) {
@@ -105,6 +109,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<QuantitativeValue> getOccupancyList() {
@@ -116,6 +121,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public QuantitativeValue getOccupancy() {
@@ -127,6 +133,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): C62 for person.
      *
      * @param occupancy QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addOccupancy(QuantitativeValue occupancy) {
@@ -254,6 +261,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<QuantitativeValue> getFloorSizeList() {
@@ -265,6 +273,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public QuantitativeValue getFloorSize() {
@@ -276,6 +285,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
      *
      * @param floorSize QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addFloorSize(QuantitativeValue floorSize) {
@@ -290,6 +300,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @return {@link BedType} or {@link Text} or {@link BedDetails}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getBedList() {
@@ -301,6 +312,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @return {@link BedType} or {@link Text} or {@link BedDetails}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getBed() {
@@ -312,6 +324,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @param bed BedType value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addBed(BedType bed) {
@@ -322,6 +335,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @param bed Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addBed(Text bed) {
@@ -332,6 +346,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @param bed BedDetails value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addBed(BedDetails bed) {
@@ -382,6 +397,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indications regarding the permitted usage of the accommodation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Text> getPermittedUsageList() {
@@ -392,6 +408,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indications regarding the permitted usage of the accommodation.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Text getPermittedUsage() {
@@ -402,6 +419,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indications regarding the permitted usage of the accommodation.
      *
      * @param permittedUsage Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addPermittedUsage(Text permittedUsage) {
@@ -541,6 +559,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> List<T> getPetsAllowedList() {
@@ -551,6 +570,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @return {@link Boolean} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public <T> T getPetsAllowed() {
@@ -561,6 +581,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addPetsAllowed(Boolean petsAllowed) {
@@ -570,6 +591,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
      * @param petsAllowed Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addPetsAllowed(Text petsAllowed) {
@@ -711,6 +733,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<LocationFeatureSpecification> getAmenityFeatureList() {
@@ -721,6 +744,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
@@ -731,6 +755,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @param amenityFeature LocationFeatureSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {
@@ -852,6 +877,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Boolean> getSmokingAllowedList() {
@@ -862,6 +888,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Boolean getSmokingAllowed() {
@@ -872,6 +899,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @param smokingAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addSmokingAllowed(Boolean smokingAllowed) {
@@ -968,6 +996,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
@@ -978,6 +1007,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
@@ -988,6 +1018,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The opening hours of a certain place.
      *
      * @param openingHoursSpecification OpeningHoursSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
@@ -1033,6 +1064,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -1043,6 +1075,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -1053,6 +1086,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -1062,6 +1096,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -1347,6 +1382,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -1357,6 +1393,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -1367,6 +1404,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1728,6 +1766,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getIsicV4List() {
@@ -1738,6 +1777,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getIsicV4() {
@@ -1748,6 +1788,7 @@ public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.mode
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsicV4(Text isicV4) {

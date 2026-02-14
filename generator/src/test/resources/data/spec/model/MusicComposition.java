@@ -17,6 +17,7 @@ import spec.model.datatype.Text;
 /**
  * A musical composition.
  *
+ * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
  * @see <a href="https://schema.org/MusicComposition">https://schema.org/MusicComposition</a>
  */
 public interface MusicComposition extends CreativeWork {
@@ -25,6 +26,7 @@ public interface MusicComposition extends CreativeWork {
      * An audio recording of the work.
      *
      * @return {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicRecording> getRecordedAsList();
 
@@ -32,6 +34,7 @@ public interface MusicComposition extends CreativeWork {
      * An audio recording of the work.
      *
      * @return {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicRecording getRecordedAs();
 
@@ -39,6 +42,7 @@ public interface MusicComposition extends CreativeWork {
      * An audio recording of the work.
      *
      * @param recordedAs MusicRecording value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addRecordedAs(MusicRecording recordedAs);
 
@@ -46,6 +50,7 @@ public interface MusicComposition extends CreativeWork {
      * The date and place the work was first performed.
      *
      * @return {@link Event}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Event> getFirstPerformanceList();
 
@@ -53,6 +58,7 @@ public interface MusicComposition extends CreativeWork {
      * The date and place the work was first performed.
      *
      * @return {@link Event}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Event getFirstPerformance();
 
@@ -60,6 +66,7 @@ public interface MusicComposition extends CreativeWork {
      * The date and place the work was first performed.
      *
      * @param firstPerformance Event value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addFirstPerformance(Event firstPerformance);
 
@@ -67,6 +74,7 @@ public interface MusicComposition extends CreativeWork {
      * The words in the song.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<CreativeWork> getLyricsList();
 
@@ -74,6 +82,7 @@ public interface MusicComposition extends CreativeWork {
      * The words in the song.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     CreativeWork getLyrics();
 
@@ -81,6 +90,7 @@ public interface MusicComposition extends CreativeWork {
      * The words in the song.
      *
      * @param lyrics CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addLyrics(CreativeWork lyrics);
 
@@ -88,6 +98,7 @@ public interface MusicComposition extends CreativeWork {
      * An arrangement derived from the composition.
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicComposition> getMusicArrangementList();
 
@@ -95,6 +106,7 @@ public interface MusicComposition extends CreativeWork {
      * An arrangement derived from the composition.
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicComposition getMusicArrangement();
 
@@ -102,6 +114,7 @@ public interface MusicComposition extends CreativeWork {
      * An arrangement derived from the composition.
      *
      * @param musicArrangement MusicComposition value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addMusicArrangement(MusicComposition musicArrangement);
 
@@ -109,6 +122,7 @@ public interface MusicComposition extends CreativeWork {
      * The person who wrote the words.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Person> getLyricistList();
 
@@ -116,6 +130,7 @@ public interface MusicComposition extends CreativeWork {
      * The person who wrote the words.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Person getLyricist();
 
@@ -123,6 +138,7 @@ public interface MusicComposition extends CreativeWork {
      * The person who wrote the words.
      *
      * @param lyricist Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addLyricist(Person lyricist);
 
@@ -130,6 +146,7 @@ public interface MusicComposition extends CreativeWork {
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> List<T> getComposerList();
 
@@ -137,6 +154,7 @@ public interface MusicComposition extends CreativeWork {
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> T getComposer();
 
@@ -144,12 +162,14 @@ public interface MusicComposition extends CreativeWork {
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addComposer(Person composer);
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addComposer(Organization composer);
 
@@ -157,6 +177,7 @@ public interface MusicComposition extends CreativeWork {
      * The International Standard Musical Work Code for the composition.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Text> getIswcCodeList();
 
@@ -164,6 +185,7 @@ public interface MusicComposition extends CreativeWork {
      * The International Standard Musical Work Code for the composition.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Text getIswcCode();
 
@@ -171,6 +193,7 @@ public interface MusicComposition extends CreativeWork {
      * The International Standard Musical Work Code for the composition.
      *
      * @param iswcCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addIswcCode(Text iswcCode);
 
@@ -178,6 +201,7 @@ public interface MusicComposition extends CreativeWork {
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Text> getMusicCompositionFormList();
 
@@ -185,6 +209,7 @@ public interface MusicComposition extends CreativeWork {
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Text getMusicCompositionForm();
 
@@ -192,6 +217,7 @@ public interface MusicComposition extends CreativeWork {
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
      * @param musicCompositionForm Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addMusicCompositionForm(Text musicCompositionForm);
 
@@ -199,6 +225,7 @@ public interface MusicComposition extends CreativeWork {
      * Smaller compositions included in this work (e.g. a movement in a symphony).
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicComposition> getIncludedCompositionList();
 
@@ -206,6 +233,7 @@ public interface MusicComposition extends CreativeWork {
      * Smaller compositions included in this work (e.g. a movement in a symphony).
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicComposition getIncludedComposition();
 
@@ -213,6 +241,7 @@ public interface MusicComposition extends CreativeWork {
      * Smaller compositions included in this work (e.g. a movement in a symphony).
      *
      * @param includedComposition MusicComposition value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addIncludedComposition(MusicComposition includedComposition);
 
@@ -220,6 +249,7 @@ public interface MusicComposition extends CreativeWork {
      * The key, mode, or scale this composition uses.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Text> getMusicalKeyList();
 
@@ -227,6 +257,7 @@ public interface MusicComposition extends CreativeWork {
      * The key, mode, or scale this composition uses.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Text getMusicalKey();
 
@@ -234,6 +265,7 @@ public interface MusicComposition extends CreativeWork {
      * The key, mode, or scale this composition uses.
      *
      * @param musicalKey Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addMusicalKey(Text musicalKey);
 }

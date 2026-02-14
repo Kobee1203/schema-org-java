@@ -28,6 +28,7 @@ public interface Vehicle extends Product {
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Text> getVehicleConfigurationList();
 
@@ -35,6 +36,7 @@ public interface Vehicle extends Product {
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Text getVehicleConfiguration();
 
@@ -42,6 +44,7 @@ public interface Vehicle extends Product {
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @param vehicleConfiguration Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleConfiguration(Text vehicleConfiguration);
 
@@ -50,6 +53,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getWeightTotalList();
 
@@ -58,6 +62,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getWeightTotal();
 
@@ -66,6 +71,7 @@ public interface Vehicle extends Product {
      *
      * @param weightTotal QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addWeightTotal(QuantitativeValue weightTotal);
 
@@ -73,6 +79,7 @@ public interface Vehicle extends Product {
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getNumberOfForwardGearsList();
 
@@ -80,6 +87,7 @@ public interface Vehicle extends Product {
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getNumberOfForwardGears();
 
@@ -87,12 +95,14 @@ public interface Vehicle extends Product {
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfForwardGears Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfForwardGears(Number numberOfForwardGears);
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfForwardGears QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfForwardGears(QuantitativeValue numberOfForwardGears);
 
@@ -100,6 +110,7 @@ public interface Vehicle extends Product {
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getVehicleTransmissionList();
 
@@ -107,6 +118,7 @@ public interface Vehicle extends Product {
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getVehicleTransmission();
 
@@ -114,18 +126,21 @@ public interface Vehicle extends Product {
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @param vehicleTransmission Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleTransmission(Text vehicleTransmission);
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @param vehicleTransmission QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleTransmission(QualitativeValue vehicleTransmission);
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
      * @param vehicleTransmission URL value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleTransmission(URL vehicleTransmission);
 
@@ -133,6 +148,7 @@ public interface Vehicle extends Product {
      * A textual description of known damages, both repaired and unrepaired.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Text> getKnownVehicleDamagesList();
 
@@ -140,6 +156,7 @@ public interface Vehicle extends Product {
      * A textual description of known damages, both repaired and unrepaired.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Text getKnownVehicleDamages();
 
@@ -147,6 +164,7 @@ public interface Vehicle extends Product {
      * A textual description of known damages, both repaired and unrepaired.
      *
      * @param knownVehicleDamages Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addKnownVehicleDamages(Text knownVehicleDamages);
 
@@ -154,6 +172,7 @@ public interface Vehicle extends Product {
      * The position of the steering wheel or similar device (mostly for cars).
      *
      * @return {@link SteeringPositionValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<SteeringPositionValue> getSteeringPositionList();
 
@@ -161,6 +180,7 @@ public interface Vehicle extends Product {
      * The position of the steering wheel or similar device (mostly for cars).
      *
      * @return {@link SteeringPositionValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     SteeringPositionValue getSteeringPosition();
 
@@ -168,6 +188,7 @@ public interface Vehicle extends Product {
      * The position of the steering wheel or similar device (mostly for cars).
      *
      * @param steeringPosition SteeringPositionValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addSteeringPosition(SteeringPositionValue steeringPosition);
 
@@ -176,6 +197,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Number> getEmissionsCO2List();
 
@@ -184,6 +206,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Number getEmissionsCO2();
 
@@ -192,6 +215,7 @@ public interface Vehicle extends Product {
      *
      * @param emissionsCO2 Number value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addEmissionsCO2(Number emissionsCO2);
 
@@ -199,6 +223,7 @@ public interface Vehicle extends Product {
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Text> getVehicleInteriorTypeList();
 
@@ -206,6 +231,7 @@ public interface Vehicle extends Product {
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Text getVehicleInteriorType();
 
@@ -213,6 +239,7 @@ public interface Vehicle extends Product {
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
      * @param vehicleInteriorType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleInteriorType(Text vehicleInteriorType);
 
@@ -221,6 +248,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getPayloadList();
 
@@ -229,6 +257,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getPayload();
 
@@ -237,6 +266,7 @@ public interface Vehicle extends Product {
      *
      * @param payload QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addPayload(QuantitativeValue payload);
 
@@ -245,6 +275,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getAccelerationTimeList();
 
@@ -253,6 +284,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getAccelerationTime();
 
@@ -261,6 +293,7 @@ public interface Vehicle extends Product {
      *
      * @param accelerationTime QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addAccelerationTime(QuantitativeValue accelerationTime);
 
@@ -269,6 +302,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getMeetsEmissionStandardList();
 
@@ -277,6 +311,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getMeetsEmissionStandard();
 
@@ -285,6 +320,7 @@ public interface Vehicle extends Product {
      *
      * @param meetsEmissionStandard Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addMeetsEmissionStandard(Text meetsEmissionStandard);
     /**
@@ -292,6 +328,7 @@ public interface Vehicle extends Product {
      *
      * @param meetsEmissionStandard QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addMeetsEmissionStandard(QualitativeValue meetsEmissionStandard);
     /**
@@ -299,6 +336,7 @@ public interface Vehicle extends Product {
      *
      * @param meetsEmissionStandard URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addMeetsEmissionStandard(URL meetsEmissionStandard);
 
@@ -307,6 +345,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue} or {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getSeatingCapacityList();
 
@@ -315,6 +354,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue} or {@link Number}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getSeatingCapacity();
 
@@ -323,6 +363,7 @@ public interface Vehicle extends Product {
      *
      * @param seatingCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addSeatingCapacity(QuantitativeValue seatingCapacity);
     /**
@@ -330,6 +371,7 @@ public interface Vehicle extends Product {
      *
      * @param seatingCapacity Number value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addSeatingCapacity(Number seatingCapacity);
 
@@ -337,6 +379,7 @@ public interface Vehicle extends Product {
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getNumberOfDoorsList();
 
@@ -344,6 +387,7 @@ public interface Vehicle extends Product {
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getNumberOfDoors();
 
@@ -351,12 +395,14 @@ public interface Vehicle extends Product {
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfDoors QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfDoors(QuantitativeValue numberOfDoors);
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfDoors Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfDoors(Number numberOfDoors);
 
@@ -365,6 +411,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Text} or {@link CarUsageType}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getVehicleSpecialUsageList();
 
@@ -373,6 +420,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Text} or {@link CarUsageType}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getVehicleSpecialUsage();
 
@@ -381,6 +429,7 @@ public interface Vehicle extends Product {
      *
      * @param vehicleSpecialUsage Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleSpecialUsage(Text vehicleSpecialUsage);
     /**
@@ -388,6 +437,7 @@ public interface Vehicle extends Product {
      *
      * @param vehicleSpecialUsage CarUsageType value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleSpecialUsage(CarUsageType vehicleSpecialUsage);
 
@@ -395,6 +445,7 @@ public interface Vehicle extends Product {
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getVehicleSeatingCapacityList();
 
@@ -402,6 +453,7 @@ public interface Vehicle extends Product {
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getVehicleSeatingCapacity();
 
@@ -409,12 +461,14 @@ public interface Vehicle extends Product {
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @param vehicleSeatingCapacity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity);
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
      * @param vehicleSeatingCapacity Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleSeatingCapacity(Number vehicleSeatingCapacity);
 
@@ -422,6 +476,7 @@ public interface Vehicle extends Product {
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getMileageFromOdometerList();
 
@@ -429,6 +484,7 @@ public interface Vehicle extends Product {
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getMileageFromOdometer();
 
@@ -436,6 +492,7 @@ public interface Vehicle extends Product {
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @param mileageFromOdometer QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addMileageFromOdometer(QuantitativeValue mileageFromOdometer);
 
@@ -443,6 +500,7 @@ public interface Vehicle extends Product {
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Date> getPurchaseDateList();
 
@@ -450,6 +508,7 @@ public interface Vehicle extends Product {
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Date getPurchaseDate();
 
@@ -457,6 +516,7 @@ public interface Vehicle extends Product {
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @param purchaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addPurchaseDate(Date purchaseDate);
 
@@ -465,6 +525,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getFuelCapacityList();
 
@@ -473,6 +534,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getFuelCapacity();
 
@@ -481,6 +543,7 @@ public interface Vehicle extends Product {
      *
      * @param fuelCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelCapacity(QuantitativeValue fuelCapacity);
 
@@ -489,6 +552,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getTrailerWeightList();
 
@@ -497,6 +561,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getTrailerWeight();
 
@@ -505,6 +570,7 @@ public interface Vehicle extends Product {
      *
      * @param trailerWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addTrailerWeight(QuantitativeValue trailerWeight);
 
@@ -513,6 +579,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Date}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Date> getModelDateList();
 
@@ -521,6 +588,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Date}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Date getModelDate();
 
@@ -529,6 +597,7 @@ public interface Vehicle extends Product {
      *
      * @param modelDate Date value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addModelDate(Date modelDate);
 
@@ -537,6 +606,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getTongueWeightList();
 
@@ -545,6 +615,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getTongueWeight();
 
@@ -553,6 +624,7 @@ public interface Vehicle extends Product {
      *
      * @param tongueWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addTongueWeight(QuantitativeValue tongueWeight);
 
@@ -560,6 +632,7 @@ public interface Vehicle extends Product {
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Text> getVehicleIdentificationNumberList();
 
@@ -567,6 +640,7 @@ public interface Vehicle extends Product {
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Text getVehicleIdentificationNumber();
 
@@ -574,6 +648,7 @@ public interface Vehicle extends Product {
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
      * @param vehicleIdentificationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleIdentificationNumber(Text vehicleIdentificationNumber);
 
@@ -581,6 +656,7 @@ public interface Vehicle extends Product {
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getNumberOfPreviousOwnersList();
 
@@ -588,6 +664,7 @@ public interface Vehicle extends Product {
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getNumberOfPreviousOwners();
 
@@ -595,12 +672,14 @@ public interface Vehicle extends Product {
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfPreviousOwners QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners);
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfPreviousOwners Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfPreviousOwners(Number numberOfPreviousOwners);
 
@@ -609,6 +688,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getWheelbaseList();
 
@@ -617,6 +697,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getWheelbase();
 
@@ -625,6 +706,7 @@ public interface Vehicle extends Product {
      *
      * @param wheelbase QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addWheelbase(QuantitativeValue wheelbase);
 
@@ -632,6 +714,7 @@ public interface Vehicle extends Product {
      * Information about the engine or engines of the vehicle.
      *
      * @return {@link EngineSpecification}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<EngineSpecification> getVehicleEngineList();
 
@@ -639,6 +722,7 @@ public interface Vehicle extends Product {
      * Information about the engine or engines of the vehicle.
      *
      * @return {@link EngineSpecification}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     EngineSpecification getVehicleEngine();
 
@@ -646,6 +730,7 @@ public interface Vehicle extends Product {
      * Information about the engine or engines of the vehicle.
      *
      * @param vehicleEngine EngineSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleEngine(EngineSpecification vehicleEngine);
 
@@ -654,6 +739,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getBodyTypeList();
 
@@ -662,6 +748,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link Text} or {@link QualitativeValue} or {@link URL}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getBodyType();
 
@@ -670,6 +757,7 @@ public interface Vehicle extends Product {
      *
      * @param bodyType Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addBodyType(Text bodyType);
     /**
@@ -677,6 +765,7 @@ public interface Vehicle extends Product {
      *
      * @param bodyType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addBodyType(QualitativeValue bodyType);
     /**
@@ -684,6 +773,7 @@ public interface Vehicle extends Product {
      *
      * @param bodyType URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addBodyType(URL bodyType);
 
@@ -691,6 +781,7 @@ public interface Vehicle extends Product {
      * The number or type of airbags in the vehicle.
      *
      * @return {@link Number} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getNumberOfAirbagsList();
 
@@ -698,6 +789,7 @@ public interface Vehicle extends Product {
      * The number or type of airbags in the vehicle.
      *
      * @return {@link Number} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getNumberOfAirbags();
 
@@ -705,12 +797,14 @@ public interface Vehicle extends Product {
      * The number or type of airbags in the vehicle.
      *
      * @param numberOfAirbags Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfAirbags(Number numberOfAirbags);
     /**
      * The number or type of airbags in the vehicle.
      *
      * @param numberOfAirbags Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfAirbags(Text numberOfAirbags);
 
@@ -718,6 +812,7 @@ public interface Vehicle extends Product {
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getCargoVolumeList();
 
@@ -725,6 +820,7 @@ public interface Vehicle extends Product {
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getCargoVolume();
 
@@ -732,6 +828,7 @@ public interface Vehicle extends Product {
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @param cargoVolume QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addCargoVolume(QuantitativeValue cargoVolume);
 
@@ -739,6 +836,7 @@ public interface Vehicle extends Product {
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Date> getProductionDateList();
 
@@ -746,6 +844,7 @@ public interface Vehicle extends Product {
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Date getProductionDate();
 
@@ -753,6 +852,7 @@ public interface Vehicle extends Product {
      * The date of production of the item, e.g. vehicle.
      *
      * @param productionDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addProductionDate(Date productionDate);
 
@@ -760,6 +860,7 @@ public interface Vehicle extends Product {
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getFuelConsumptionList();
 
@@ -767,6 +868,7 @@ public interface Vehicle extends Product {
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getFuelConsumption();
 
@@ -774,6 +876,7 @@ public interface Vehicle extends Product {
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
      * @param fuelConsumption QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelConsumption(QuantitativeValue fuelConsumption);
 
@@ -781,6 +884,7 @@ public interface Vehicle extends Product {
      * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Date> getDateVehicleFirstRegisteredList();
 
@@ -788,6 +892,7 @@ public interface Vehicle extends Product {
      * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Date getDateVehicleFirstRegistered();
 
@@ -795,6 +900,7 @@ public interface Vehicle extends Product {
      * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @param dateVehicleFirstRegistered Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addDateVehicleFirstRegistered(Date dateVehicleFirstRegistered);
 
@@ -802,6 +908,7 @@ public interface Vehicle extends Product {
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getFuelTypeList();
 
@@ -809,6 +916,7 @@ public interface Vehicle extends Product {
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @return {@link URL} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getFuelType();
 
@@ -816,18 +924,21 @@ public interface Vehicle extends Product {
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType URL value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelType(URL fuelType);
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelType(Text fuelType);
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
      * @param fuelType QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelType(QualitativeValue fuelType);
 
@@ -836,6 +947,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getSpeedList();
 
@@ -844,6 +956,7 @@ public interface Vehicle extends Product {
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getSpeed();
 
@@ -852,6 +965,7 @@ public interface Vehicle extends Product {
      *
      * @param speed QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addSpeed(QuantitativeValue speed);
 
@@ -859,6 +973,7 @@ public interface Vehicle extends Product {
      * The color or color combination of the interior of the vehicle.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Text> getVehicleInteriorColorList();
 
@@ -866,6 +981,7 @@ public interface Vehicle extends Product {
      * The color or color combination of the interior of the vehicle.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Text getVehicleInteriorColor();
 
@@ -873,6 +989,7 @@ public interface Vehicle extends Product {
      * The color or color combination of the interior of the vehicle.
      *
      * @param vehicleInteriorColor Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleInteriorColor(Text vehicleInteriorColor);
 
@@ -880,6 +997,7 @@ public interface Vehicle extends Product {
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<QuantitativeValue> getFuelEfficiencyList();
 
@@ -887,6 +1005,7 @@ public interface Vehicle extends Product {
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     QuantitativeValue getFuelEfficiency();
 
@@ -894,6 +1013,7 @@ public interface Vehicle extends Product {
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
      * @param fuelEfficiency QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addFuelEfficiency(QuantitativeValue fuelEfficiency);
 
@@ -901,6 +1021,7 @@ public interface Vehicle extends Product {
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Date> getVehicleModelDateList();
 
@@ -908,6 +1029,7 @@ public interface Vehicle extends Product {
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Date getVehicleModelDate();
 
@@ -915,6 +1037,7 @@ public interface Vehicle extends Product {
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @param vehicleModelDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addVehicleModelDate(Date vehicleModelDate);
 
@@ -922,6 +1045,7 @@ public interface Vehicle extends Product {
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getDriveWheelConfigurationList();
 
@@ -929,6 +1053,7 @@ public interface Vehicle extends Product {
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getDriveWheelConfiguration();
 
@@ -936,12 +1061,14 @@ public interface Vehicle extends Product {
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @param driveWheelConfiguration Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addDriveWheelConfiguration(Text driveWheelConfiguration);
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
      * @param driveWheelConfiguration DriveWheelConfigurationValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration);
 
@@ -976,6 +1103,7 @@ public interface Vehicle extends Product {
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> List<T> getNumberOfAxlesList();
 
@@ -983,6 +1111,7 @@ public interface Vehicle extends Product {
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     <T> T getNumberOfAxles();
 
@@ -990,12 +1119,14 @@ public interface Vehicle extends Product {
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfAxles QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfAxles(QuantitativeValue numberOfAxles);
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62.
      *
      * @param numberOfAxles Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfAxles(Number numberOfAxles);
 }

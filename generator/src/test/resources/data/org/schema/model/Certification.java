@@ -83,6 +83,7 @@ public interface Certification extends CreativeWork {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getLogoList();
 
@@ -90,6 +91,7 @@ public interface Certification extends CreativeWork {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getLogo();
 
@@ -97,12 +99,14 @@ public interface Certification extends CreativeWork {
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(ImageObject logo);
 
@@ -161,6 +165,7 @@ public interface Certification extends CreativeWork {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidFromList();
 
@@ -168,6 +173,7 @@ public interface Certification extends CreativeWork {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidFrom();
 
@@ -175,12 +181,14 @@ public interface Certification extends CreativeWork {
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(Date validFrom);
 

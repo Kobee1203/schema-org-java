@@ -14,6 +14,7 @@ import org.schema.model.Thing;
 /**
  * A Property value specification.
  *
+ * @see <a href="https://schema.org/docs/collab/ActionCollabClass">https://schema.org/docs/collab/ActionCollabClass</a>
  * @see <a href="https://schema.org/PropertyValueSpecification">https://schema.org/PropertyValueSpecification</a>
  */
 public interface PropertyValueSpecification extends Intangible {
@@ -64,6 +65,7 @@ public interface PropertyValueSpecification extends Intangible {
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Number> getMaxValueList();
 
@@ -71,6 +73,7 @@ public interface PropertyValueSpecification extends Intangible {
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Number getMaxValue();
 
@@ -78,6 +81,7 @@ public interface PropertyValueSpecification extends Intangible {
      * The upper value of some characteristic or property.
      *
      * @param maxValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addMaxValue(Number maxValue);
 
@@ -127,6 +131,7 @@ public interface PropertyValueSpecification extends Intangible {
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Number> getMinValueList();
 
@@ -134,6 +139,7 @@ public interface PropertyValueSpecification extends Intangible {
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Number getMinValue();
 
@@ -141,6 +147,7 @@ public interface PropertyValueSpecification extends Intangible {
      * The lower value of some characteristic or property.
      *
      * @param minValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addMinValue(Number minValue);
 

@@ -11,6 +11,7 @@ import org.schema.model.datatype.Text;
 /**
  * A single, identifiable product instance (e.g. a laptop with a particular serial number).
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/IndividualProduct">https://schema.org/IndividualProduct</a>
  */
 public interface IndividualProduct extends Product {
@@ -19,6 +20,7 @@ public interface IndividualProduct extends Product {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getSerialNumberList();
 
@@ -26,6 +28,7 @@ public interface IndividualProduct extends Product {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getSerialNumber();
 
@@ -33,6 +36,7 @@ public interface IndividualProduct extends Product {
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
      * @param serialNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addSerialNumber(Text serialNumber);
 }

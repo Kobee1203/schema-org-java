@@ -16,6 +16,7 @@ import org.schema.model.QuantitativeValue;
  * <br /><br />
  * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
  *
+ * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/HotelRoom">https://schema.org/HotelRoom</a>
  */
 public interface HotelRoom extends Room {
@@ -25,6 +26,7 @@ public interface HotelRoom extends Room {
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @return {@link BedType} or {@link Text} or {@link BedDetails}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> List<T> getBedList();
 
@@ -33,6 +35,7 @@ public interface HotelRoom extends Room {
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @return {@link BedType} or {@link Text} or {@link BedDetails}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     <T> T getBed();
 
@@ -41,6 +44,7 @@ public interface HotelRoom extends Room {
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @param bed BedType value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addBed(BedType bed);
     /**
@@ -48,6 +52,7 @@ public interface HotelRoom extends Room {
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @param bed Text value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addBed(Text bed);
     /**
@@ -55,6 +60,7 @@ public interface HotelRoom extends Room {
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
      * @param bed BedDetails value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addBed(BedDetails bed);
 
@@ -63,6 +69,7 @@ public interface HotelRoom extends Room {
      * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     List<QuantitativeValue> getOccupancyList();
 
@@ -71,6 +78,7 @@ public interface HotelRoom extends Room {
      * Typical unit code(s): C62 for person.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     QuantitativeValue getOccupancy();
 
@@ -79,6 +87,7 @@ public interface HotelRoom extends Room {
      * Typical unit code(s): C62 for person.
      *
      * @param occupancy QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addOccupancy(QuantitativeValue occupancy);
 }

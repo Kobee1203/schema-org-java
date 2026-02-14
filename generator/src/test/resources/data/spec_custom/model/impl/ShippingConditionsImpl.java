@@ -50,6 +50,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getWeightList() {
@@ -61,6 +62,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getWeight() {
@@ -72,6 +74,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @param weight Mass value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(Mass weight) {
@@ -82,6 +85,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @param weight QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(QuantitativeValue weight) {
@@ -284,6 +288,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getDepthList() {
@@ -295,6 +300,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getDepth() {
@@ -306,6 +312,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @param depth Distance value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(Distance depth) {
@@ -316,6 +323,7 @@ public class ShippingConditionsImpl extends com.weedow.schemaorg.commons.model.J
      *
      * @param depth QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(QuantitativeValue depth) {

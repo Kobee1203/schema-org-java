@@ -30,6 +30,7 @@ import spec.model.MonetaryAmount;
 /**
  * A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/MonetaryAmount">https://schema.org/MonetaryAmount</a>
  */
 @JsonLdTypeName("MonetaryAmount")
@@ -77,6 +78,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValueList() {
@@ -87,6 +89,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValue() {
@@ -97,6 +100,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(Boolean value) {
@@ -106,6 +110,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(Number value) {
@@ -115,6 +120,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(Text value) {
@@ -124,6 +130,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value StructuredValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(StructuredValue value) {
@@ -136,6 +143,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMaxValueList() {
@@ -146,6 +154,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMaxValue() {
@@ -156,6 +165,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The upper value of some characteristic or property.
      *
      * @param maxValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMaxValue(Number maxValue) {
@@ -169,6 +179,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidFromList() {
@@ -179,6 +190,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidFrom() {
@@ -189,6 +201,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(DateTime validFrom) {
@@ -198,6 +211,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(Date validFrom) {
@@ -210,6 +224,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMinValueList() {
@@ -220,6 +235,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMinValue() {
@@ -230,6 +246,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The lower value of some characteristic or property.
      *
      * @param minValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMinValue(Number minValue) {
@@ -243,6 +260,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidThroughList() {
@@ -253,6 +271,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidThrough() {
@@ -263,6 +282,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(DateTime validThrough) {
@@ -272,6 +292,7 @@ public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(Date validThrough) {

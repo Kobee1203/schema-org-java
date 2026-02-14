@@ -136,6 +136,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getFundedItemList() {
@@ -149,6 +150,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getFundedItem() {
@@ -162,6 +164,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFundedItem(Product fundedItem) {
@@ -174,6 +177,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFundedItem(Event fundedItem) {
@@ -186,6 +190,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFundedItem(CreativeWork fundedItem) {
@@ -198,6 +203,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFundedItem(MedicalEntity fundedItem) {
@@ -210,6 +216,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFundedItem(BioChemEntity fundedItem) {
@@ -222,6 +229,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFundedItem(Person fundedItem) {
@@ -234,6 +242,7 @@ public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFundedItem(Organization fundedItem) {

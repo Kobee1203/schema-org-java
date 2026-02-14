@@ -104,6 +104,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getPageEndList() {
@@ -114,6 +115,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getPageEnd() {
@@ -124,6 +126,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageEnd(Integer pageEnd) {
@@ -133,6 +136,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageEnd(Text pageEnd) {
@@ -146,6 +150,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> List<T> getPageStartList() {
@@ -156,6 +161,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public <T> T getPageStart() {
@@ -166,6 +172,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageStart(Text pageStart) {
@@ -175,6 +182,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPageStart(Integer pageStart) {
@@ -285,6 +293,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<Text> getPaginationList() {
@@ -295,6 +304,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public Text getPagination() {
@@ -305,6 +315,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @param pagination Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addPagination(Text pagination) {
@@ -384,6 +395,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link Text} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getBackstoryList() {
@@ -396,6 +408,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link Text} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getBackstory() {
@@ -408,6 +421,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param backstory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addBackstory(Text backstory) {
@@ -419,6 +433,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param backstory CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addBackstory(CreativeWork backstory) {
@@ -433,6 +448,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -445,6 +461,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -457,6 +474,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1201,6 +1219,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1211,6 +1230,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1221,6 +1241,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -1873,6 +1894,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -1883,6 +1905,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -1893,6 +1916,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -3542,6 +3566,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -3554,6 +3579,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -3566,6 +3592,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -3577,6 +3604,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -3588,6 +3616,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -4588,6 +4617,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -4598,6 +4628,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -4608,6 +4639,7 @@ public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.Jso
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {

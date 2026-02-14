@@ -16,6 +16,7 @@ import org.schema.model.Comment;
 /**
  * A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.
  *
+ * @see <a href="https://schema.org/docs/collab/QAStackExchange">https://schema.org/docs/collab/QAStackExchange</a>
  * @see <a href="https://schema.org/Question">https://schema.org/Question</a>
  */
 public interface Question extends Comment {

@@ -199,6 +199,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Boolean> getSmokingAllowedList() {
@@ -209,6 +210,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Boolean getSmokingAllowed() {
@@ -219,6 +221,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @param smokingAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addSmokingAllowed(Boolean smokingAllowed) {
@@ -315,6 +318,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
@@ -325,6 +329,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
@@ -335,6 +340,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The opening hours of a certain place.
      *
      * @param openingHoursSpecification OpeningHoursSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
@@ -380,6 +386,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -390,6 +397,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -400,6 +408,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -409,6 +418,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -694,6 +704,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -704,6 +715,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -714,6 +726,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1113,6 +1126,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getIsicV4List() {
@@ -1123,6 +1137,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getIsicV4() {
@@ -1133,6 +1148,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsicV4(Text isicV4) {
@@ -1788,6 +1804,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<LocationFeatureSpecification> getAmenityFeatureList() {
@@ -1798,6 +1815,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
@@ -1808,6 +1826,7 @@ public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @param amenityFeature LocationFeatureSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {

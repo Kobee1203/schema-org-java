@@ -618,6 +618,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -630,6 +631,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -642,6 +644,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1418,6 +1421,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1428,6 +1432,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1438,6 +1443,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -2090,6 +2096,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -2100,6 +2107,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -2110,6 +2118,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -3759,6 +3768,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -3771,6 +3781,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -3783,6 +3794,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -3794,6 +3806,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -3805,6 +3818,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -4761,6 +4775,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -4771,6 +4786,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -4781,6 +4797,7 @@ public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {

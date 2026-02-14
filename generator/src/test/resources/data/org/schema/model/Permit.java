@@ -49,6 +49,7 @@ public interface Permit extends Intangible {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidFromList();
 
@@ -56,6 +57,7 @@ public interface Permit extends Intangible {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidFrom();
 
@@ -63,12 +65,14 @@ public interface Permit extends Intangible {
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(Date validFrom);
 

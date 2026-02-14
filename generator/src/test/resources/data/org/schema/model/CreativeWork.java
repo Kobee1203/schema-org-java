@@ -52,6 +52,7 @@ import org.schema.model.Claim;
 /**
  * The most generic kind of creative work, including books, movies, photographs, software programs, etc.
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
  * @see <a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a>
  */
 public interface CreativeWork extends Thing {
@@ -62,6 +63,7 @@ public interface CreativeWork extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     List<Grant> getFundingList();
 
@@ -71,6 +73,7 @@ public interface CreativeWork extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     Grant getFunding();
 
@@ -80,6 +83,7 @@ public interface CreativeWork extends Thing {
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addFunding(Grant funding);
 
@@ -608,6 +612,7 @@ public interface CreativeWork extends Thing {
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     List<CreativeWork> getHasPartList();
 
@@ -615,6 +620,7 @@ public interface CreativeWork extends Thing {
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     CreativeWork getHasPart();
 
@@ -622,6 +628,7 @@ public interface CreativeWork extends Thing {
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addHasPart(CreativeWork hasPart);
 
@@ -1064,6 +1071,7 @@ public interface CreativeWork extends Thing {
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     List<CreativeWork> getWorkExampleList();
 
@@ -1071,6 +1079,7 @@ public interface CreativeWork extends Thing {
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     CreativeWork getWorkExample();
 
@@ -1078,6 +1087,7 @@ public interface CreativeWork extends Thing {
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addWorkExample(CreativeWork workExample);
 
@@ -2180,6 +2190,7 @@ public interface CreativeWork extends Thing {
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getCorrectionList();
 
@@ -2189,6 +2200,7 @@ public interface CreativeWork extends Thing {
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getCorrection();
 
@@ -2198,6 +2210,7 @@ public interface CreativeWork extends Thing {
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrection(CorrectionComment correction);
     /**
@@ -2206,6 +2219,7 @@ public interface CreativeWork extends Thing {
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrection(URL correction);
     /**
@@ -2214,6 +2228,7 @@ public interface CreativeWork extends Thing {
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrection(Text correction);
 
@@ -2898,6 +2913,7 @@ public interface CreativeWork extends Thing {
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     List<CreativeWork> getExampleOfWorkList();
 
@@ -2905,6 +2921,7 @@ public interface CreativeWork extends Thing {
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     CreativeWork getExampleOfWork();
 
@@ -2912,6 +2929,7 @@ public interface CreativeWork extends Thing {
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addExampleOfWork(CreativeWork exampleOfWork);
 

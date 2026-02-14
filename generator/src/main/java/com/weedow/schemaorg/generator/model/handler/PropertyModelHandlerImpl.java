@@ -41,6 +41,7 @@ public class PropertyModelHandlerImpl implements ModelHandler {
         final String description = graphItem.getComment().getValue();
         final List<String> partOf = ModelUtils.getPartOf(graphItem);
         final List<String> source = ModelUtils.getSource(graphItem);
+        final List<String> contributor = ModelUtils.getContributor(graphItem);
 
         final Field field = new Field(
                 name,
@@ -52,6 +53,7 @@ public class PropertyModelHandlerImpl implements ModelHandler {
                 description,
                 partOf,
                 source,
+                contributor,
                 propertyTypes
         );
 
@@ -63,6 +65,7 @@ public class PropertyModelHandlerImpl implements ModelHandler {
                                 description,
                                 partOf,
                                 source,
+                                contributor,
                                 type::getName,
                                 field::getFieldName
                         ))

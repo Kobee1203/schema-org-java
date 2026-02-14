@@ -14,6 +14,7 @@ import spec_custom.model.datatype.Number;
 /**
  * A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/FinancialProduct">https://schema.org/FinancialProduct</a>
  */
 public interface FinancialProduct extends Service {
@@ -22,6 +23,7 @@ public interface FinancialProduct extends Service {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getFeesAndCommissionsSpecificationList();
 
@@ -29,6 +31,7 @@ public interface FinancialProduct extends Service {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getFeesAndCommissionsSpecification();
 
@@ -36,12 +39,14 @@ public interface FinancialProduct extends Service {
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
 
@@ -49,6 +54,7 @@ public interface FinancialProduct extends Service {
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getInterestRateList();
 
@@ -56,6 +62,7 @@ public interface FinancialProduct extends Service {
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getInterestRate();
 
@@ -63,12 +70,14 @@ public interface FinancialProduct extends Service {
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addInterestRate(QuantitativeValue interestRate);
     /**
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addInterestRate(Number interestRate);
 
@@ -76,6 +85,7 @@ public interface FinancialProduct extends Service {
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getAnnualPercentageRateList();
 
@@ -83,6 +93,7 @@ public interface FinancialProduct extends Service {
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getAnnualPercentageRate();
 
@@ -90,12 +101,14 @@ public interface FinancialProduct extends Service {
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addAnnualPercentageRate(QuantitativeValue annualPercentageRate);
     /**
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addAnnualPercentageRate(Number annualPercentageRate);
 }

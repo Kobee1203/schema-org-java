@@ -58,6 +58,7 @@ import java.util.List;
 /**
  * A musical composition.
  *
+ * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
  * @see <a href="https://schema.org/MusicComposition">https://schema.org/MusicComposition</a>
  */
 @JsonLdTypeName("MusicComposition")
@@ -69,6 +70,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * An audio recording of the work.
      *
      * @return {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<MusicRecording> getRecordedAsList() {
@@ -79,6 +81,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * An audio recording of the work.
      *
      * @return {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public MusicRecording getRecordedAs() {
@@ -89,6 +92,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * An audio recording of the work.
      *
      * @param recordedAs MusicRecording value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addRecordedAs(MusicRecording recordedAs) {
@@ -101,6 +105,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The date and place the work was first performed.
      *
      * @return {@link Event}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<Event> getFirstPerformanceList() {
@@ -111,6 +116,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The date and place the work was first performed.
      *
      * @return {@link Event}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public Event getFirstPerformance() {
@@ -121,6 +127,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The date and place the work was first performed.
      *
      * @param firstPerformance Event value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addFirstPerformance(Event firstPerformance) {
@@ -133,6 +140,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The words in the song.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<CreativeWork> getLyricsList() {
@@ -143,6 +151,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The words in the song.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public CreativeWork getLyrics() {
@@ -153,6 +162,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The words in the song.
      *
      * @param lyrics CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addLyrics(CreativeWork lyrics) {
@@ -165,6 +175,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * An arrangement derived from the composition.
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<MusicComposition> getMusicArrangementList() {
@@ -175,6 +186,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * An arrangement derived from the composition.
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public MusicComposition getMusicArrangement() {
@@ -185,6 +197,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * An arrangement derived from the composition.
      *
      * @param musicArrangement MusicComposition value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addMusicArrangement(MusicComposition musicArrangement) {
@@ -197,6 +210,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The person who wrote the words.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<Person> getLyricistList() {
@@ -207,6 +221,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The person who wrote the words.
      *
      * @return {@link Person}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public Person getLyricist() {
@@ -217,6 +232,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The person who wrote the words.
      *
      * @param lyricist Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addLyricist(Person lyricist) {
@@ -230,6 +246,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> List<T> getComposerList() {
@@ -240,6 +257,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> T getComposer() {
@@ -250,6 +268,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addComposer(Person composer) {
@@ -259,6 +278,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addComposer(Organization composer) {
@@ -271,6 +291,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The International Standard Musical Work Code for the composition.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<Text> getIswcCodeList() {
@@ -281,6 +302,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The International Standard Musical Work Code for the composition.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public Text getIswcCode() {
@@ -291,6 +313,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The International Standard Musical Work Code for the composition.
      *
      * @param iswcCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addIswcCode(Text iswcCode) {
@@ -303,6 +326,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<Text> getMusicCompositionFormList() {
@@ -313,6 +337,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public Text getMusicCompositionForm() {
@@ -323,6 +348,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
      * @param musicCompositionForm Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addMusicCompositionForm(Text musicCompositionForm) {
@@ -335,6 +361,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Smaller compositions included in this work (e.g. a movement in a symphony).
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<MusicComposition> getIncludedCompositionList() {
@@ -345,6 +372,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Smaller compositions included in this work (e.g. a movement in a symphony).
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public MusicComposition getIncludedComposition() {
@@ -355,6 +383,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Smaller compositions included in this work (e.g. a movement in a symphony).
      *
      * @param includedComposition MusicComposition value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addIncludedComposition(MusicComposition includedComposition) {
@@ -367,6 +396,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The key, mode, or scale this composition uses.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public List<Text> getMusicalKeyList() {
@@ -377,6 +407,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The key, mode, or scale this composition uses.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public Text getMusicalKey() {
@@ -387,6 +418,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * The key, mode, or scale this composition uses.
      *
      * @param musicalKey Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addMusicalKey(Text musicalKey) {
@@ -401,6 +433,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -413,6 +446,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -425,6 +459,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1201,6 +1236,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getHasPartList() {
@@ -1211,6 +1247,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getHasPart() {
@@ -1221,6 +1258,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
      * @param hasPart CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addHasPart(CreativeWork hasPart) {
@@ -1873,6 +1911,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getWorkExampleList() {
@@ -1883,6 +1922,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getWorkExample() {
@@ -1893,6 +1933,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
      *
      * @param workExample CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addWorkExample(CreativeWork workExample) {
@@ -3542,6 +3583,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getCorrectionList() {
@@ -3554,6 +3596,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @return {@link CorrectionComment} or {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getCorrection() {
@@ -3566,6 +3609,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(CorrectionComment correction) {
@@ -3577,6 +3621,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(URL correction) {
@@ -3588,6 +3633,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addCorrection(Text correction) {
@@ -4588,6 +4634,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public List<CreativeWork> getExampleOfWorkList() {
@@ -4598,6 +4645,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @return {@link CreativeWork}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public CreativeWork getExampleOfWork() {
@@ -4608,6 +4656,7 @@ public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.Jso
      * A creative work that this work is an example/instance/realization/derivation of.
      *
      * @param exampleOfWork CreativeWork value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     @Override
     public void addExampleOfWork(CreativeWork exampleOfWork) {

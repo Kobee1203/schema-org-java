@@ -199,6 +199,7 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<PriceSpecification> getPriceSpecificationList() {
@@ -209,6 +210,7 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public PriceSpecification getPriceSpecification() {
@@ -219,6 +221,7 @@ public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
      * @param priceSpecification PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addPriceSpecification(PriceSpecification priceSpecification) {

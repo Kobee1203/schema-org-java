@@ -53,6 +53,7 @@ import java.util.List;
 /**
  * Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.
  *
+ * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
  * @see <a href="https://schema.org/Product">https://schema.org/Product</a>
  */
 @JsonLdTypeName("Product")
@@ -66,6 +67,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -78,6 +80,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -90,6 +93,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -142,6 +146,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getWeightList() {
@@ -153,6 +158,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getWeight() {
@@ -164,6 +170,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param weight Mass value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(Mass weight) {
@@ -174,6 +181,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param weight QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(QuantitativeValue weight) {
@@ -413,6 +421,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -423,6 +432,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -433,6 +443,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -442,6 +453,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -487,6 +499,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsRelatedToList() {
@@ -497,6 +510,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsRelatedTo() {
@@ -507,6 +521,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Service isRelatedTo) {
@@ -516,6 +531,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Product isRelatedTo) {
@@ -849,6 +865,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGtin14List() {
@@ -859,6 +876,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGtin14() {
@@ -869,6 +887,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin14 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGtin14(Text gtin14) {
@@ -1103,6 +1122,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGtin8List() {
@@ -1113,6 +1133,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGtin8() {
@@ -1123,6 +1144,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin8 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGtin8(Text gtin8) {
@@ -1135,6 +1157,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getSkuList() {
@@ -1145,6 +1168,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getSku() {
@@ -1155,6 +1179,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @param sku Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addSku(Text sku) {
@@ -1250,6 +1275,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGtin13List() {
@@ -1260,6 +1286,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGtin13() {
@@ -1270,6 +1297,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin13 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGtin13(Text gtin13) {
@@ -1364,6 +1392,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Date> getPurchaseDateList() {
@@ -1374,6 +1403,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Date getPurchaseDate() {
@@ -1384,6 +1414,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @param purchaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addPurchaseDate(Date purchaseDate) {
@@ -1783,6 +1814,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getDepthList() {
@@ -1794,6 +1826,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getDepth() {
@@ -1805,6 +1838,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param depth Distance value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(Distance depth) {
@@ -1815,6 +1849,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *
      * @param depth QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDepth(QuantitativeValue depth) {
@@ -1897,6 +1932,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color of the product.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getColorList() {
@@ -1907,6 +1943,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color of the product.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getColor() {
@@ -1917,6 +1954,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The color of the product.
      *
      * @param color Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addColor(Text color) {
@@ -1961,6 +1999,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public List<Date> getProductionDateList() {
@@ -1971,6 +2010,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public Date getProductionDate() {
@@ -1981,6 +2021,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The date of production of the item, e.g. vehicle.
      *
      * @param productionDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void addProductionDate(Date productionDate) {
@@ -1994,6 +2035,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsVariantOfList() {
@@ -2004,6 +2046,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsVariantOf() {
@@ -2014,6 +2057,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductModel value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsVariantOf(ProductModel isVariantOf) {
@@ -2023,6 +2067,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductGroup value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsVariantOf(ProductGroup isVariantOf) {
@@ -2036,6 +2081,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsSimilarToList() {
@@ -2046,6 +2092,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsSimilarTo() {
@@ -2056,6 +2103,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Service isSimilarTo) {
@@ -2065,6 +2113,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Product isSimilarTo) {
@@ -2077,6 +2126,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getMpnList() {
@@ -2087,6 +2137,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getMpn() {
@@ -2097,6 +2148,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @param mpn Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMpn(Text mpn) {
@@ -2265,6 +2317,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Product> getIsConsumableForList() {
@@ -2275,6 +2328,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Product getIsConsumableFor() {
@@ -2285,6 +2339,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @param isConsumableFor Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsConsumableFor(Product isConsumableFor) {
@@ -2455,6 +2510,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Product> getIsAccessoryOrSparePartForList() {
@@ -2465,6 +2521,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Product getIsAccessoryOrSparePartFor() {
@@ -2475,6 +2532,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @param isAccessoryOrSparePartFor Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
@@ -2525,6 +2583,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Date> getReleaseDateList() {
@@ -2535,6 +2594,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Date getReleaseDate() {
@@ -2545,6 +2605,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @param releaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addReleaseDate(Date releaseDate) {

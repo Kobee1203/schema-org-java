@@ -47,6 +47,7 @@ import org.schema.model.BankAccount;
 /**
  * A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/BankAccount">https://schema.org/BankAccount</a>
  */
 @JsonLdTypeName("BankAccount")
@@ -61,6 +62,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getBankAccountTypeList() {
@@ -73,6 +75,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getBankAccountType() {
@@ -85,6 +88,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param bankAccountType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addBankAccountType(URL bankAccountType) {
@@ -96,6 +100,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param bankAccountType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addBankAccountType(Text bankAccountType) {
@@ -110,6 +115,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<MonetaryAmount> getAccountOverdraftLimitList() {
@@ -122,6 +128,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public MonetaryAmount getAccountOverdraftLimit() {
@@ -134,6 +141,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param accountOverdraftLimit MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAccountOverdraftLimit(MonetaryAmount accountOverdraftLimit) {
@@ -148,6 +156,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<MonetaryAmount> getAccountMinimumInflowList() {
@@ -160,6 +169,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public MonetaryAmount getAccountMinimumInflow() {
@@ -172,6 +182,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * @param accountMinimumInflow MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAccountMinimumInflow(MonetaryAmount accountMinimumInflow) {
@@ -185,6 +196,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getFeesAndCommissionsSpecificationList() {
@@ -195,6 +207,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getFeesAndCommissionsSpecification() {
@@ -205,6 +218,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
@@ -214,6 +228,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
@@ -227,6 +242,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getInterestRateList() {
@@ -237,6 +253,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getInterestRate() {
@@ -247,6 +264,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(QuantitativeValue interestRate) {
@@ -256,6 +274,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(Number interestRate) {
@@ -269,6 +288,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getAnnualPercentageRateList() {
@@ -279,6 +299,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getAnnualPercentageRate() {
@@ -289,6 +310,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
@@ -298,6 +320,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(Number annualPercentageRate) {
@@ -471,6 +494,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -481,6 +505,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -491,6 +516,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -500,6 +526,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -545,6 +572,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsRelatedToList() {
@@ -555,6 +583,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsRelatedTo() {
@@ -565,6 +594,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Service isRelatedTo) {
@@ -574,6 +604,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Product isRelatedTo) {
@@ -1224,6 +1255,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsSimilarToList() {
@@ -1234,6 +1266,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsSimilarTo() {
@@ -1244,6 +1277,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Service isSimilarTo) {
@@ -1253,6 +1287,7 @@ public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Product isSimilarTo) {

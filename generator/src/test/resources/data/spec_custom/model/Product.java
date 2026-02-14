@@ -46,6 +46,7 @@ import spec_custom.model.Country;
 /**
  * Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.
  *
+ * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
  * @see <a href="https://schema.org/Product">https://schema.org/Product</a>
  */
 public interface Product extends Thing {
@@ -56,6 +57,7 @@ public interface Product extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     List<Grant> getFundingList();
 
@@ -65,6 +67,7 @@ public interface Product extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     Grant getFunding();
 
@@ -74,6 +77,7 @@ public interface Product extends Thing {
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addFunding(Grant funding);
 
@@ -109,6 +113,7 @@ public interface Product extends Thing {
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getWeightList();
 
@@ -117,6 +122,7 @@ public interface Product extends Thing {
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getWeight();
 
@@ -125,6 +131,7 @@ public interface Product extends Thing {
      *
      * @param weight Mass value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addWeight(Mass weight);
     /**
@@ -132,6 +139,7 @@ public interface Product extends Thing {
      *
      * @param weight QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addWeight(QuantitativeValue weight);
 
@@ -302,6 +310,7 @@ public interface Product extends Thing {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getLogoList();
 
@@ -309,6 +318,7 @@ public interface Product extends Thing {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getLogo();
 
@@ -316,12 +326,14 @@ public interface Product extends Thing {
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(ImageObject logo);
 
@@ -350,6 +362,7 @@ public interface Product extends Thing {
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getIsRelatedToList();
 
@@ -357,6 +370,7 @@ public interface Product extends Thing {
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getIsRelatedTo();
 
@@ -364,12 +378,14 @@ public interface Product extends Thing {
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsRelatedTo(Service isRelatedTo);
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsRelatedTo(Product isRelatedTo);
 
@@ -596,6 +612,7 @@ public interface Product extends Thing {
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getGtin14List();
 
@@ -603,6 +620,7 @@ public interface Product extends Thing {
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getGtin14();
 
@@ -610,6 +628,7 @@ public interface Product extends Thing {
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin14 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGtin14(Text gtin14);
 
@@ -770,6 +789,7 @@ public interface Product extends Thing {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getGtin8List();
 
@@ -777,6 +797,7 @@ public interface Product extends Thing {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getGtin8();
 
@@ -784,6 +805,7 @@ public interface Product extends Thing {
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin8 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGtin8(Text gtin8);
 
@@ -791,6 +813,7 @@ public interface Product extends Thing {
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getSkuList();
 
@@ -798,6 +821,7 @@ public interface Product extends Thing {
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getSku();
 
@@ -805,6 +829,7 @@ public interface Product extends Thing {
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
      * @param sku Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addSku(Text sku);
 
@@ -871,6 +896,7 @@ public interface Product extends Thing {
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getGtin13List();
 
@@ -878,6 +904,7 @@ public interface Product extends Thing {
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getGtin13();
 
@@ -885,6 +912,7 @@ public interface Product extends Thing {
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @param gtin13 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGtin13(Text gtin13);
 
@@ -948,6 +976,7 @@ public interface Product extends Thing {
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Date> getPurchaseDateList();
 
@@ -955,6 +984,7 @@ public interface Product extends Thing {
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Date getPurchaseDate();
 
@@ -962,6 +992,7 @@ public interface Product extends Thing {
      * The date the item, e.g. vehicle, was purchased by the current owner.
      *
      * @param purchaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addPurchaseDate(Date purchaseDate);
 
@@ -1254,6 +1285,7 @@ public interface Product extends Thing {
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getDepthList();
 
@@ -1262,6 +1294,7 @@ public interface Product extends Thing {
      *
      * @return {@link Distance} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getDepth();
 
@@ -1270,6 +1303,7 @@ public interface Product extends Thing {
      *
      * @param depth Distance value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addDepth(Distance depth);
     /**
@@ -1277,6 +1311,7 @@ public interface Product extends Thing {
      *
      * @param depth QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addDepth(QuantitativeValue depth);
 
@@ -1332,6 +1367,7 @@ public interface Product extends Thing {
      * The color of the product.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getColorList();
 
@@ -1339,6 +1375,7 @@ public interface Product extends Thing {
      * The color of the product.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getColor();
 
@@ -1346,6 +1383,7 @@ public interface Product extends Thing {
      * The color of the product.
      *
      * @param color Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addColor(Text color);
 
@@ -1374,6 +1412,7 @@ public interface Product extends Thing {
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     List<Date> getProductionDateList();
 
@@ -1381,6 +1420,7 @@ public interface Product extends Thing {
      * The date of production of the item, e.g. vehicle.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     Date getProductionDate();
 
@@ -1388,6 +1428,7 @@ public interface Product extends Thing {
      * The date of production of the item, e.g. vehicle.
      *
      * @param productionDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addProductionDate(Date productionDate);
 
@@ -1395,6 +1436,7 @@ public interface Product extends Thing {
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getIsVariantOfList();
 
@@ -1402,6 +1444,7 @@ public interface Product extends Thing {
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getIsVariantOf();
 
@@ -1409,12 +1452,14 @@ public interface Product extends Thing {
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductModel value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsVariantOf(ProductModel isVariantOf);
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
      * @param isVariantOf ProductGroup value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsVariantOf(ProductGroup isVariantOf);
 
@@ -1422,6 +1467,7 @@ public interface Product extends Thing {
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getIsSimilarToList();
 
@@ -1429,6 +1475,7 @@ public interface Product extends Thing {
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getIsSimilarTo();
 
@@ -1436,12 +1483,14 @@ public interface Product extends Thing {
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsSimilarTo(Service isSimilarTo);
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsSimilarTo(Product isSimilarTo);
 
@@ -1449,6 +1498,7 @@ public interface Product extends Thing {
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getMpnList();
 
@@ -1456,6 +1506,7 @@ public interface Product extends Thing {
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getMpn();
 
@@ -1463,6 +1514,7 @@ public interface Product extends Thing {
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @param mpn Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addMpn(Text mpn);
 
@@ -1578,6 +1630,7 @@ public interface Product extends Thing {
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Product> getIsConsumableForList();
 
@@ -1585,6 +1638,7 @@ public interface Product extends Thing {
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Product getIsConsumableFor();
 
@@ -1592,6 +1646,7 @@ public interface Product extends Thing {
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
      * @param isConsumableFor Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsConsumableFor(Product isConsumableFor);
 
@@ -1712,6 +1767,7 @@ public interface Product extends Thing {
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Product> getIsAccessoryOrSparePartForList();
 
@@ -1719,6 +1775,7 @@ public interface Product extends Thing {
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @return {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Product getIsAccessoryOrSparePartFor();
 
@@ -1726,6 +1783,7 @@ public interface Product extends Thing {
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
      * @param isAccessoryOrSparePartFor Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor);
 
@@ -1760,6 +1818,7 @@ public interface Product extends Thing {
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Date> getReleaseDateList();
 
@@ -1767,6 +1826,7 @@ public interface Product extends Thing {
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Date getReleaseDate();
 
@@ -1774,6 +1834,7 @@ public interface Product extends Thing {
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
      * @param releaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addReleaseDate(Date releaseDate);
 }

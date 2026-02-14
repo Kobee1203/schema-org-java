@@ -14,6 +14,7 @@ import org.schema.model.MonetaryAmount;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/MortgageLoan">https://schema.org/MortgageLoan</a>
  */
 public interface MortgageLoan extends LoanOrCredit {
@@ -24,6 +25,7 @@ public interface MortgageLoan extends LoanOrCredit {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<Boolean> getDomiciledMortgageList();
 
@@ -33,6 +35,7 @@ public interface MortgageLoan extends LoanOrCredit {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     Boolean getDomiciledMortgage();
 
@@ -42,6 +45,7 @@ public interface MortgageLoan extends LoanOrCredit {
      * @param domiciledMortgage Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addDomiciledMortgage(Boolean domiciledMortgage);
 
@@ -51,6 +55,7 @@ public interface MortgageLoan extends LoanOrCredit {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<MonetaryAmount> getLoanMortgageMandateAmountList();
 
@@ -60,6 +65,7 @@ public interface MortgageLoan extends LoanOrCredit {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     MonetaryAmount getLoanMortgageMandateAmount();
 
@@ -69,6 +75,7 @@ public interface MortgageLoan extends LoanOrCredit {
      * @param loanMortgageMandateAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addLoanMortgageMandateAmount(MonetaryAmount loanMortgageMandateAmount);
 }

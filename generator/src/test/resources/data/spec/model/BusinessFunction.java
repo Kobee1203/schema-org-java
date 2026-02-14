@@ -11,6 +11,7 @@ import java.util.List;
  * The business function specifies the type of activity or access (i.e., the bundle of rights) offered by the organization or business person through the offer. Typical are sell, rental or lease, maintenance or repair, manufacture / produce, recycle / dispose, engineering / construction, or installation. Proprietary specifications of access rights are also instances of this class.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#ConstructionInstallation<br/>* http://purl.org/goodrelations/v1#Dispose<br/>* http://purl.org/goodrelations/v1#LeaseOut<br/>* http://purl.org/goodrelations/v1#Maintain<br/>* http://purl.org/goodrelations/v1#ProvideService<br/>* http://purl.org/goodrelations/v1#Repair<br/>* http://purl.org/goodrelations/v1#Sell<br/>* http://purl.org/goodrelations/v1#Buy
  *         
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/BusinessFunction">https://schema.org/BusinessFunction</a>
  */
 public interface BusinessFunction extends Enumeration {

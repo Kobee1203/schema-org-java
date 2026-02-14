@@ -12,6 +12,7 @@ import org.schema.model.MediaObject;
 /**
  * An audio file.
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
  * @see <a href="https://schema.org/AudioObject">https://schema.org/AudioObject</a>
  */
 public interface AudioObject extends MediaObject {

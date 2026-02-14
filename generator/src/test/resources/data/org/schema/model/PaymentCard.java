@@ -13,6 +13,7 @@ import org.schema.model.datatype.Number;
 /**
  * A payment method using a credit, debit, store or other card to associate the payment with an account.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/PaymentCard">https://schema.org/PaymentCard</a>
  */
 public interface PaymentCard extends FinancialProduct, PaymentMethod {
@@ -23,6 +24,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<MonetaryAmount> getFloorLimitList();
 
@@ -32,6 +34,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     MonetaryAmount getFloorLimit();
 
@@ -41,6 +44,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @param floorLimit MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addFloorLimit(MonetaryAmount floorLimit);
 
@@ -50,6 +54,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<Boolean> getContactlessPaymentList();
 
@@ -59,6 +64,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     Boolean getContactlessPayment();
 
@@ -68,6 +74,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @param contactlessPayment Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addContactlessPayment(Boolean contactlessPayment);
 
@@ -77,6 +84,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getMonthlyMinimumRepaymentAmountList();
 
@@ -86,6 +94,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getMonthlyMinimumRepaymentAmount();
 
@@ -95,6 +104,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @param monthlyMinimumRepaymentAmount Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addMonthlyMinimumRepaymentAmount(Number monthlyMinimumRepaymentAmount);
     /**
@@ -103,6 +113,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @param monthlyMinimumRepaymentAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addMonthlyMinimumRepaymentAmount(MonetaryAmount monthlyMinimumRepaymentAmount);
 
@@ -112,6 +123,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link Boolean} or {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getCashBackList();
 
@@ -121,6 +133,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @return {@link Boolean} or {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getCashBack();
 
@@ -130,6 +143,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @param cashBack Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addCashBack(Boolean cashBack);
     /**
@@ -138,6 +152,7 @@ public interface PaymentCard extends FinancialProduct, PaymentMethod {
      * @param cashBack Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addCashBack(Number cashBack);
 }

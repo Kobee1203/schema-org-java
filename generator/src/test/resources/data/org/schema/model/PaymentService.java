@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * A Service to transfer funds from a person or organization to a beneficiary person or organization.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/PaymentService">https://schema.org/PaymentService</a>
  */
 public interface PaymentService extends FinancialProduct, PaymentMethod {

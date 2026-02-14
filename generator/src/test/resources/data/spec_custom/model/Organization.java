@@ -58,6 +58,7 @@ public interface Organization extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     List<Grant> getFundingList();
 
@@ -67,6 +68,7 @@ public interface Organization extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     Grant getFunding();
 
@@ -76,6 +78,7 @@ public interface Organization extends Thing {
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addFunding(Grant funding);
 
@@ -106,6 +109,7 @@ public interface Organization extends Thing {
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getKnowsAboutList();
 
@@ -115,6 +119,7 @@ public interface Organization extends Thing {
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getKnowsAbout();
 
@@ -124,6 +129,7 @@ public interface Organization extends Thing {
      * @param knowsAbout Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addKnowsAbout(Text knowsAbout);
     /**
@@ -132,6 +138,7 @@ public interface Organization extends Thing {
      * @param knowsAbout Thing value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addKnowsAbout(Thing knowsAbout);
     /**
@@ -140,6 +147,7 @@ public interface Organization extends Thing {
      * @param knowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addKnowsAbout(URL knowsAbout);
 
@@ -189,6 +197,7 @@ public interface Organization extends Thing {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getLogoList();
 
@@ -196,6 +205,7 @@ public interface Organization extends Thing {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getLogo();
 
@@ -203,12 +213,14 @@ public interface Organization extends Thing {
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(ImageObject logo);
 
@@ -239,6 +251,7 @@ public interface Organization extends Thing {
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getDiversityStaffingReportList();
 
@@ -248,6 +261,7 @@ public interface Organization extends Thing {
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getDiversityStaffingReport();
 
@@ -257,6 +271,7 @@ public interface Organization extends Thing {
      * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityStaffingReport(URL diversityStaffingReport);
     /**
@@ -265,6 +280,7 @@ public interface Organization extends Thing {
      * @param diversityStaffingReport Article value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityStaffingReport(Article diversityStaffingReport);
 
@@ -374,6 +390,8 @@ public interface Organization extends Thing {
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     List<Text> getLeiCodeList();
 
@@ -381,6 +399,8 @@ public interface Organization extends Thing {
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     Text getLeiCode();
 
@@ -388,6 +408,8 @@ public interface Organization extends Thing {
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
      * @param leiCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
     void addLeiCode(Text leiCode);
 
@@ -397,6 +419,7 @@ public interface Organization extends Thing {
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getKnowsLanguageList();
 
@@ -406,6 +429,7 @@ public interface Organization extends Thing {
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getKnowsLanguage();
 
@@ -415,6 +439,7 @@ public interface Organization extends Thing {
      * @param knowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addKnowsLanguage(Language knowsLanguage);
     /**
@@ -423,6 +448,7 @@ public interface Organization extends Thing {
      * @param knowsLanguage Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addKnowsLanguage(Text knowsLanguage);
 
@@ -492,6 +518,7 @@ public interface Organization extends Thing {
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getNaicsList();
 
@@ -499,6 +526,7 @@ public interface Organization extends Thing {
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getNaics();
 
@@ -506,6 +534,7 @@ public interface Organization extends Thing {
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @param naics Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addNaics(Text naics);
 
@@ -627,6 +656,7 @@ public interface Organization extends Thing {
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getGlobalLocationNumberList();
 
@@ -634,6 +664,7 @@ public interface Organization extends Thing {
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getGlobalLocationNumber();
 
@@ -641,6 +672,7 @@ public interface Organization extends Thing {
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addGlobalLocationNumber(Text globalLocationNumber);
 
@@ -714,6 +746,7 @@ public interface Organization extends Thing {
      * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getLegalNameList();
 
@@ -721,6 +754,7 @@ public interface Organization extends Thing {
      * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getLegalName();
 
@@ -728,6 +762,7 @@ public interface Organization extends Thing {
      * The official name of the organization, e.g. the registered company name.
      *
      * @param legalName Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLegalName(Text legalName);
 
@@ -797,6 +832,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getActionableFeedbackPolicyList();
 
@@ -806,6 +842,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getActionableFeedbackPolicy();
 
@@ -815,6 +852,7 @@ public interface Organization extends Thing {
      * @param actionableFeedbackPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy);
     /**
@@ -823,6 +861,7 @@ public interface Organization extends Thing {
      * @param actionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addActionableFeedbackPolicy(URL actionableFeedbackPolicy);
 
@@ -1035,6 +1074,7 @@ public interface Organization extends Thing {
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getCorrectionsPolicyList();
 
@@ -1044,6 +1084,7 @@ public interface Organization extends Thing {
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getCorrectionsPolicy();
 
@@ -1053,6 +1094,7 @@ public interface Organization extends Thing {
      * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrectionsPolicy(URL correctionsPolicy);
     /**
@@ -1061,6 +1103,7 @@ public interface Organization extends Thing {
      * @param correctionsPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrectionsPolicy(CreativeWork correctionsPolicy);
 
@@ -1069,6 +1112,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getAcceptedPaymentMethodList();
 
@@ -1077,6 +1121,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getAcceptedPaymentMethod();
 
@@ -1085,6 +1130,7 @@ public interface Organization extends Thing {
      *
      * @param acceptedPaymentMethod Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcceptedPaymentMethod(Text acceptedPaymentMethod);
     /**
@@ -1092,6 +1138,7 @@ public interface Organization extends Thing {
      *
      * @param acceptedPaymentMethod LoanOrCredit value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod);
     /**
@@ -1099,6 +1146,7 @@ public interface Organization extends Thing {
      *
      * @param acceptedPaymentMethod PaymentMethod value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod);
 
@@ -1106,6 +1154,7 @@ public interface Organization extends Thing {
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getIsicV4List();
 
@@ -1113,6 +1162,7 @@ public interface Organization extends Thing {
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getIsicV4();
 
@@ -1120,6 +1170,7 @@ public interface Organization extends Thing {
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addIsicV4(Text isicV4);
 
@@ -1425,6 +1476,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getOwnershipFundingInfoList();
 
@@ -1434,6 +1486,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getOwnershipFundingInfo();
 
@@ -1443,6 +1496,7 @@ public interface Organization extends Thing {
      * @param ownershipFundingInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo);
     /**
@@ -1451,6 +1505,7 @@ public interface Organization extends Thing {
      * @param ownershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(URL ownershipFundingInfo);
     /**
@@ -1459,6 +1514,7 @@ public interface Organization extends Thing {
      * @param ownershipFundingInfo AboutPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(AboutPage ownershipFundingInfo);
     /**
@@ -1467,6 +1523,7 @@ public interface Organization extends Thing {
      * @param ownershipFundingInfo Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(Text ownershipFundingInfo);
 
@@ -1474,6 +1531,7 @@ public interface Organization extends Thing {
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getTaxIDList();
 
@@ -1481,6 +1539,7 @@ public interface Organization extends Thing {
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getTaxID();
 
@@ -1488,6 +1547,7 @@ public interface Organization extends Thing {
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @param taxID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addTaxID(Text taxID);
 
@@ -1497,6 +1557,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getDiversityPolicyList();
 
@@ -1506,6 +1567,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getDiversityPolicy();
 
@@ -1515,6 +1577,7 @@ public interface Organization extends Thing {
      * @param diversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityPolicy(CreativeWork diversityPolicy);
     /**
@@ -1523,6 +1586,7 @@ public interface Organization extends Thing {
      * @param diversityPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityPolicy(URL diversityPolicy);
 
@@ -1650,6 +1714,7 @@ public interface Organization extends Thing {
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Demand> getSeeksList();
 
@@ -1657,6 +1722,7 @@ public interface Organization extends Thing {
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Demand getSeeks();
 
@@ -1664,6 +1730,7 @@ public interface Organization extends Thing {
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @param seeks Demand value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addSeeks(Demand seeks);
 
@@ -1671,6 +1738,7 @@ public interface Organization extends Thing {
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Offer> getMakesOfferList();
 
@@ -1678,6 +1746,7 @@ public interface Organization extends Thing {
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Offer getMakesOffer();
 
@@ -1685,6 +1754,7 @@ public interface Organization extends Thing {
      * A pointer to products or services offered by the organization or person.
      *
      * @param makesOffer Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addMakesOffer(Offer makesOffer);
 
@@ -1692,6 +1762,7 @@ public interface Organization extends Thing {
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getVatIDList();
 
@@ -1699,6 +1770,7 @@ public interface Organization extends Thing {
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getVatID();
 
@@ -1706,6 +1778,7 @@ public interface Organization extends Thing {
      * The Value-added Tax ID of the organization or person.
      *
      * @param vatID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addVatID(Text vatID);
 
@@ -1740,6 +1813,7 @@ public interface Organization extends Thing {
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Text> getDunsList();
 
@@ -1747,6 +1821,7 @@ public interface Organization extends Thing {
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Text getDuns();
 
@@ -1754,6 +1829,7 @@ public interface Organization extends Thing {
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @param duns Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addDuns(Text duns);
 
@@ -1809,6 +1885,7 @@ public interface Organization extends Thing {
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Place> getHasPOSList();
 
@@ -1816,6 +1893,7 @@ public interface Organization extends Thing {
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Place getHasPOS();
 
@@ -1823,6 +1901,7 @@ public interface Organization extends Thing {
      * Points-of-Sales operated by the organization or person.
      *
      * @param hasPOS Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addHasPOS(Place hasPOS);
 
@@ -1970,6 +2049,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getUnnamedSourcesPolicyList();
 
@@ -1979,6 +2059,7 @@ public interface Organization extends Thing {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getUnnamedSourcesPolicy();
 
@@ -1988,6 +2069,7 @@ public interface Organization extends Thing {
      * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
     /**
@@ -1996,6 +2078,7 @@ public interface Organization extends Thing {
      * @param unnamedSourcesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 
@@ -2004,6 +2087,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Thing> getOwnsList();
 
@@ -2012,6 +2096,7 @@ public interface Organization extends Thing {
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Thing getOwns();
 
@@ -2020,6 +2105,7 @@ public interface Organization extends Thing {
      *
      * @param owns Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addOwns(Thing owns);
 }

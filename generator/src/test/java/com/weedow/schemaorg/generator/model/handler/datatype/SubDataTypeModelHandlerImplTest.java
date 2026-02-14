@@ -136,14 +136,14 @@ class SubDataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:Text", expectedData.expectedParentJavaType, expectedData.parentUsedJavaTypes, expectedData.expectedParentName, expectedData.expectParentComment,
                         Collections.emptySet(), Collections.emptySet(),
                         Collections.emptyList(), null,
                         false, Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
 
         Assertions.assertThat(schemaDefinitions.get("schema:" + expectedData.itemName))
@@ -152,14 +152,14 @@ class SubDataTypeModelHandlerImplTest {
                         "properties", "allProperties",
                         "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
-                        "partOf", "source"
+                        "partOf", "source", "contributor"
                 )
                 .containsExactly(
                         "schema:" + expectedData.itemName, expectedData.expectedJavaType, expectedData.usedJavaTypes, expectedData.stringifiable, expectedData.expectedName, "This is " + expectedData.itemName,
                         Collections.emptySet(), Collections.emptySet(),
                         List.of(schemaDefinitions.get("schema:Text")), null,
                         false, Collections.emptyList(),
-                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/1672")
+                        List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/1672"), List.of("https://schema.org/docs/collab/MBZ")
                 );
     }
 
@@ -170,6 +170,7 @@ class SubDataTypeModelHandlerImplTest {
         when(graphItem.getComment()).thenReturn(comment("en", "This is " + itemName));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/1672")));
+        when(graphItem.getContributor()).thenReturn(List.of(contributor("https://schema.org/docs/collab/MBZ")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("schema:Text")));
         return graphItem;
     }

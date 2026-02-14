@@ -11,6 +11,7 @@ import java.util.List;
  * A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.
  *
  * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+ * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/MotorizedBicycle">https://schema.org/MotorizedBicycle</a>
  */
 public interface MotorizedBicycle extends Vehicle {

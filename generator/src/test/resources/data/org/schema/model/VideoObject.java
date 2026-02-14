@@ -15,6 +15,7 @@ import org.schema.model.MediaObject;
 /**
  * A video file.
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
  * @see <a href="https://schema.org/VideoObject">https://schema.org/VideoObject</a>
  */
 public interface VideoObject extends MediaObject {

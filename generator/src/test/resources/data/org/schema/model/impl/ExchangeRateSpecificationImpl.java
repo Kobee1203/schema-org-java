@@ -31,6 +31,7 @@ import org.schema.model.ExchangeRateSpecification;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/ExchangeRateSpecification">https://schema.org/ExchangeRateSpecification</a>
  */
 @JsonLdTypeName("ExchangeRateSpecification")
@@ -80,6 +81,7 @@ public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getExchangeRateSpreadList() {
@@ -92,6 +94,7 @@ public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getExchangeRateSpread() {
@@ -104,6 +107,7 @@ public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.
      * @param exchangeRateSpread Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addExchangeRateSpread(Number exchangeRateSpread) {
@@ -115,6 +119,7 @@ public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.
      * @param exchangeRateSpread MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addExchangeRateSpread(MonetaryAmount exchangeRateSpread) {
@@ -129,6 +134,7 @@ public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.
      * @return {@link UnitPriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<UnitPriceSpecification> getCurrentExchangeRateList() {
@@ -141,6 +147,7 @@ public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.
      * @return {@link UnitPriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public UnitPriceSpecification getCurrentExchangeRate() {
@@ -153,6 +160,7 @@ public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.
      * @param currentExchangeRate UnitPriceSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addCurrentExchangeRate(UnitPriceSpecification currentExchangeRate) {

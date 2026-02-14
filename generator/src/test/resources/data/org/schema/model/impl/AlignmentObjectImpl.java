@@ -26,6 +26,7 @@ import org.schema.model.AlignmentObject;
  * An intangible item that describes an alignment between a learning resource and a node in an educational framework.
  * Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
  *
+ * @see <a href="https://schema.org/docs/collab/LRMIClass">https://schema.org/docs/collab/LRMIClass</a>
  * @see <a href="https://schema.org/AlignmentObject">https://schema.org/AlignmentObject</a>
  */
 @JsonLdTypeName("AlignmentObject")

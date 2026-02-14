@@ -415,6 +415,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidFromList() {
@@ -425,6 +426,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidFrom() {
@@ -435,6 +437,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(DateTime validFrom) {
@@ -444,6 +447,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(Date validFrom) {
@@ -677,6 +681,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidThroughList() {
@@ -687,6 +692,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidThrough() {
@@ -697,6 +703,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(DateTime validThrough) {
@@ -706,6 +713,7 @@ public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.J
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(Date validThrough) {

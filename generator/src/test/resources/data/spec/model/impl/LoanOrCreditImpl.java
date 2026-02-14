@@ -50,6 +50,7 @@ import spec.model.LoanOrCredit;
 /**
  * A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/LoanOrCredit">https://schema.org/LoanOrCredit</a>
  */
 @JsonLdTypeName("LoanOrCredit")
@@ -147,6 +148,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getRequiredCollateralList() {
@@ -157,6 +159,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getRequiredCollateral() {
@@ -167,6 +170,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Thing value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRequiredCollateral(Thing requiredCollateral) {
@@ -176,6 +180,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRequiredCollateral(Text requiredCollateral) {
@@ -190,6 +195,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getRecourseLoanList() {
@@ -202,6 +208,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getRecourseLoan() {
@@ -214,6 +221,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param recourseLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRecourseLoan(Boolean recourseLoan) {
@@ -228,6 +236,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<RepaymentSpecification> getLoanRepaymentFormList() {
@@ -240,6 +249,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public RepaymentSpecification getLoanRepaymentForm() {
@@ -252,6 +262,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param loanRepaymentForm RepaymentSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanRepaymentForm(RepaymentSpecification loanRepaymentForm) {
@@ -266,6 +277,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getRenegotiableLoanList() {
@@ -278,6 +290,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getRenegotiableLoan() {
@@ -290,6 +303,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param renegotiableLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRenegotiableLoan(Boolean renegotiableLoan) {
@@ -302,6 +316,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<QuantitativeValue> getLoanTermList() {
@@ -312,6 +327,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public QuantitativeValue getLoanTerm() {
@@ -322,6 +338,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The duration of the loan or credit agreement.
      *
      * @param loanTerm QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanTerm(QuantitativeValue loanTerm) {
@@ -336,6 +353,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Duration> getGracePeriodList() {
@@ -348,6 +366,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Duration getGracePeriod() {
@@ -360,6 +379,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param gracePeriod Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addGracePeriod(Duration gracePeriod) {
@@ -375,6 +395,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getLoanTypeList() {
@@ -387,6 +408,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getLoanType() {
@@ -399,6 +421,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param loanType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanType(URL loanType) {
@@ -410,6 +433,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param loanType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanType(Text loanType) {
@@ -423,6 +447,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getFeesAndCommissionsSpecificationList() {
@@ -433,6 +458,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getFeesAndCommissionsSpecification() {
@@ -443,6 +469,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
@@ -452,6 +479,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
@@ -465,6 +493,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getInterestRateList() {
@@ -475,6 +504,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getInterestRate() {
@@ -485,6 +515,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(QuantitativeValue interestRate) {
@@ -494,6 +525,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(Number interestRate) {
@@ -507,6 +539,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getAnnualPercentageRateList() {
@@ -517,6 +550,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getAnnualPercentageRate() {
@@ -527,6 +561,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
@@ -536,6 +571,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(Number annualPercentageRate) {
@@ -709,6 +745,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -719,6 +756,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -729,6 +767,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -738,6 +777,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -783,6 +823,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsRelatedToList() {
@@ -793,6 +834,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsRelatedTo() {
@@ -803,6 +845,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Service isRelatedTo) {
@@ -812,6 +855,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Product isRelatedTo) {
@@ -1462,6 +1506,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsSimilarToList() {
@@ -1472,6 +1517,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsSimilarTo() {
@@ -1482,6 +1528,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Service isSimilarTo) {
@@ -1491,6 +1538,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Product isSimilarTo) {

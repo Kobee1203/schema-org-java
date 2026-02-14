@@ -30,6 +30,7 @@ import spec.model.TypeAndQuantityNode;
 /**
  * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/TypeAndQuantityNode">https://schema.org/TypeAndQuantityNode</a>
  */
 @JsonLdTypeName("TypeAndQuantityNode")
@@ -41,6 +42,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The quantity of the goods included in the offer.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getAmountOfThisGoodList() {
@@ -51,6 +53,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The quantity of the goods included in the offer.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getAmountOfThisGood() {
@@ -61,6 +64,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The quantity of the goods included in the offer.
      *
      * @param amountOfThisGood Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAmountOfThisGood(Number amountOfThisGood) {
@@ -74,6 +78,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getTypeOfGoodList() {
@@ -84,6 +89,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getTypeOfGood() {
@@ -94,6 +100,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addTypeOfGood(Service typeOfGood) {
@@ -103,6 +110,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The product that this structured value is referring to.
      *
      * @param typeOfGood Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addTypeOfGood(Product typeOfGood) {
@@ -116,6 +124,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getUnitCodeList() {
@@ -126,6 +135,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getUnitCode() {
@@ -136,6 +146,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addUnitCode(URL unitCode) {
@@ -145,6 +156,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addUnitCode(Text unitCode) {
@@ -157,6 +169,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<BusinessFunction> getBusinessFunctionList() {
@@ -167,6 +180,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public BusinessFunction getBusinessFunction() {
@@ -177,6 +191,7 @@ public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
      * @param businessFunction BusinessFunction value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addBusinessFunction(BusinessFunction businessFunction) {

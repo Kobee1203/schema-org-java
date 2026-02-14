@@ -36,6 +36,7 @@ import org.schema.model.UnitPriceSpecification;
 /**
  * The price asked for a given offer by the respective organization or person.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/UnitPriceSpecification">https://schema.org/UnitPriceSpecification</a>
  */
 @JsonLdTypeName("UnitPriceSpecification")
@@ -109,6 +110,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or, a UN/EDIFACT 5387 code, or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
      *
      * @return {@link Text} or {@link PriceTypeEnumeration}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getPriceTypeList() {
@@ -119,6 +121,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or, a UN/EDIFACT 5387 code, or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
      *
      * @return {@link Text} or {@link PriceTypeEnumeration}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getPriceType() {
@@ -129,6 +132,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or, a UN/EDIFACT 5387 code, or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
      *
      * @param priceType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addPriceType(Text priceType) {
@@ -138,6 +142,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or, a UN/EDIFACT 5387 code, or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
      *
      * @param priceType PriceTypeEnumeration value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addPriceType(PriceTypeEnumeration priceType) {
@@ -151,6 +156,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getUnitCodeList() {
@@ -161,6 +167,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getUnitCode() {
@@ -171,6 +178,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addUnitCode(URL unitCode) {
@@ -180,6 +188,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addUnitCode(Text unitCode) {
@@ -192,6 +201,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<QuantitativeValue> getReferenceQuantityList() {
@@ -202,6 +212,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public QuantitativeValue getReferenceQuantity() {
@@ -212,6 +223,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
      *
      * @param referenceQuantity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addReferenceQuantity(QuantitativeValue referenceQuantity) {
@@ -297,6 +309,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getBillingIncrementList() {
@@ -307,6 +320,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getBillingIncrement() {
@@ -317,6 +331,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
      *
      * @param billingIncrement Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addBillingIncrement(Number billingIncrement) {
@@ -445,6 +460,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMaxPriceList() {
@@ -455,6 +471,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMaxPrice() {
@@ -465,6 +482,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The highest price if the price is a range.
      *
      * @param maxPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMaxPrice(Number maxPrice) {
@@ -477,6 +495,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Boolean> getValueAddedTaxIncludedList() {
@@ -487,6 +506,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Boolean getValueAddedTaxIncluded() {
@@ -497,6 +517,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @param valueAddedTaxIncluded Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueAddedTaxIncluded(Boolean valueAddedTaxIncluded) {
@@ -560,6 +581,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidFromList() {
@@ -570,6 +592,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidFrom() {
@@ -580,6 +603,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(DateTime validFrom) {
@@ -589,6 +613,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(Date validFrom) {
@@ -642,6 +667,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMinPriceList() {
@@ -652,6 +678,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMinPrice() {
@@ -662,6 +689,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The lowest price if the price is a range.
      *
      * @param minPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMinPrice(Number minPrice) {
@@ -674,6 +702,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<PriceSpecification> getEligibleTransactionVolumeList() {
@@ -684,6 +713,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public PriceSpecification getEligibleTransactionVolume() {
@@ -694,6 +724,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @param eligibleTransactionVolume PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
@@ -706,6 +737,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<QuantitativeValue> getEligibleQuantityList() {
@@ -716,6 +748,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public QuantitativeValue getEligibleQuantity() {
@@ -726,6 +759,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @param eligibleQuantity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleQuantity(QuantitativeValue eligibleQuantity) {
@@ -739,6 +773,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidThroughList() {
@@ -749,6 +784,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidThrough() {
@@ -759,6 +795,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(DateTime validThrough) {
@@ -768,6 +805,7 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(Date validThrough) {

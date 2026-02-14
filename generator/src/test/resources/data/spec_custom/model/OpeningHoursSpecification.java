@@ -16,6 +16,7 @@ import spec_custom.model.DayOfWeek;
  * The place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.<br/><br/>If the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.
  *       
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/OpeningHoursSpecification">https://schema.org/OpeningHoursSpecification</a>
  */
 public interface OpeningHoursSpecification extends StructuredValue {
@@ -24,6 +25,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The closing hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Time> getClosesList();
 
@@ -31,6 +33,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The closing hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Time getCloses();
 
@@ -38,6 +41,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The closing hour of the place or service on the given day(s) of the week.
      *
      * @param closes Time value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addCloses(Time closes);
 
@@ -45,6 +49,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The opening hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Time> getOpensList();
 
@@ -52,6 +57,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The opening hour of the place or service on the given day(s) of the week.
      *
      * @return {@link Time}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Time getOpens();
 
@@ -59,6 +65,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The opening hour of the place or service on the given day(s) of the week.
      *
      * @param opens Time value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addOpens(Time opens);
 
@@ -66,6 +73,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidFromList();
 
@@ -73,6 +81,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidFrom();
 
@@ -80,12 +89,14 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(Date validFrom);
 
@@ -93,6 +104,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<DayOfWeek> getDayOfWeekList();
 
@@ -100,6 +112,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     DayOfWeek getDayOfWeek();
 
@@ -107,6 +120,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The day of the week for which these opening hours are valid.
      *
      * @param dayOfWeek DayOfWeek value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addDayOfWeek(DayOfWeek dayOfWeek);
 
@@ -114,6 +128,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidThroughList();
 
@@ -121,6 +136,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidThrough();
 
@@ -128,12 +144,14 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidThrough(DateTime validThrough);
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidThrough(Date validThrough);
 }

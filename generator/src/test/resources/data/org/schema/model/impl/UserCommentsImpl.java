@@ -47,6 +47,7 @@ import org.schema.model.UserComments;
 /**
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
  * @see <a href="https://schema.org/UserComments">https://schema.org/UserComments</a>
  */
 @JsonLdTypeName("UserComments")
@@ -240,6 +241,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -252,6 +254,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -264,6 +267,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -1030,6 +1034,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> List<T> getComposerList() {
@@ -1040,6 +1045,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public <T> T getComposer() {
@@ -1050,6 +1056,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addComposer(Person composer) {
@@ -1059,6 +1066,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     @Override
     public void addComposer(Organization composer) {

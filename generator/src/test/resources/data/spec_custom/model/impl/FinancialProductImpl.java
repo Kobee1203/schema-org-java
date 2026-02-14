@@ -45,6 +45,7 @@ import spec_custom.model.FinancialProduct;
 /**
  * A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/FinancialProduct">https://schema.org/FinancialProduct</a>
  */
 @JsonLdTypeName("FinancialProduct")
@@ -57,6 +58,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getFeesAndCommissionsSpecificationList() {
@@ -67,6 +69,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getFeesAndCommissionsSpecification() {
@@ -77,6 +80,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
@@ -86,6 +90,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
@@ -99,6 +104,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getInterestRateList() {
@@ -109,6 +115,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getInterestRate() {
@@ -119,6 +126,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(QuantitativeValue interestRate) {
@@ -128,6 +136,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(Number interestRate) {
@@ -141,6 +150,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getAnnualPercentageRateList() {
@@ -151,6 +161,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getAnnualPercentageRate() {
@@ -161,6 +172,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
@@ -170,6 +182,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(Number annualPercentageRate) {
@@ -343,6 +356,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -353,6 +367,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -363,6 +378,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -372,6 +388,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -417,6 +434,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsRelatedToList() {
@@ -427,6 +445,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsRelatedTo() {
@@ -437,6 +456,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Service isRelatedTo) {
@@ -446,6 +466,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Product isRelatedTo) {
@@ -1096,6 +1117,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsSimilarToList() {
@@ -1106,6 +1128,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsSimilarTo() {
@@ -1116,6 +1139,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Service isSimilarTo) {
@@ -1125,6 +1149,7 @@ public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.Jso
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Product isSimilarTo) {

@@ -11,6 +11,7 @@ import java.util.List;
  * A type of bed. This is used for indicating the bed or beds available in an accommodation.
  *
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1262">https://github.com/schemaorg/schemaorg/issues/1262</a>
+ * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/BedType">https://schema.org/BedType</a>
  */
 public interface BedType extends QualitativeValue {

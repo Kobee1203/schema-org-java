@@ -32,6 +32,7 @@ import spec.model.LegalForceStatus;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+ * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
  * @see <a href="https://schema.org/LegalForceStatus">https://schema.org/LegalForceStatus</a>
  */
 @JsonLdTypeName("LegalForceStatus")

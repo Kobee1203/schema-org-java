@@ -17,6 +17,7 @@ import spec_custom.model.MusicReleaseFormatType;
 /**
  * A MusicRelease is a specific release of a music album.
  *
+ * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
  * @see <a href="https://schema.org/MusicRelease">https://schema.org/MusicRelease</a>
  */
 public interface MusicRelease extends MusicPlaylist {
@@ -64,6 +65,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The label that issued the release.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Organization> getRecordLabelList();
 
@@ -71,6 +73,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The label that issued the release.
      *
      * @return {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Organization getRecordLabel();
 
@@ -78,6 +81,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The label that issued the release.
      *
      * @param recordLabel Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addRecordLabel(Organization recordLabel);
 
@@ -85,6 +89,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The album this is a release of.
      *
      * @return {@link MusicAlbum}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicAlbum> getReleaseOfList();
 
@@ -92,6 +97,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The album this is a release of.
      *
      * @return {@link MusicAlbum}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicAlbum getReleaseOf();
 
@@ -99,6 +105,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The album this is a release of.
      *
      * @param releaseOf MusicAlbum value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addReleaseOf(MusicAlbum releaseOf);
 
@@ -106,6 +113,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The catalog number for the release.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Text> getCatalogNumberList();
 
@@ -113,6 +121,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The catalog number for the release.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Text getCatalogNumber();
 
@@ -120,6 +129,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The catalog number for the release.
      *
      * @param catalogNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addCatalogNumber(Text catalogNumber);
 
@@ -127,6 +137,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> List<T> getCreditedToList();
 
@@ -134,6 +145,7 @@ public interface MusicRelease extends MusicPlaylist {
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> T getCreditedTo();
 
@@ -141,12 +153,14 @@ public interface MusicRelease extends MusicPlaylist {
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @param creditedTo Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addCreditedTo(Person creditedTo);
     /**
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
      * @param creditedTo Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addCreditedTo(Organization creditedTo);
 
@@ -154,6 +168,7 @@ public interface MusicRelease extends MusicPlaylist {
      * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
      *
      * @return {@link MusicReleaseFormatType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicReleaseFormatType> getMusicReleaseFormatList();
 
@@ -161,6 +176,7 @@ public interface MusicRelease extends MusicPlaylist {
      * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
      *
      * @return {@link MusicReleaseFormatType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicReleaseFormatType getMusicReleaseFormat();
 
@@ -168,6 +184,7 @@ public interface MusicRelease extends MusicPlaylist {
      * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
      *
      * @param musicReleaseFormat MusicReleaseFormatType value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat);
 }

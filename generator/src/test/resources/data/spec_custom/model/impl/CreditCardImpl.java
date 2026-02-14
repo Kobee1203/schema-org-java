@@ -55,6 +55,8 @@ import spec_custom.model.CreditCard;
  * A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#AmericanExpress<br/>* http://purl.org/goodrelations/v1#DinersClub<br/>* http://purl.org/goodrelations/v1#Discover<br/>* http://purl.org/goodrelations/v1#JCB<br/>* http://purl.org/goodrelations/v1#MasterCard<br/>* http://purl.org/goodrelations/v1#VISA
  *        
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/CreditCard">https://schema.org/CreditCard</a>
  */
 @JsonLdTypeName("CreditCard")
@@ -152,6 +154,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getRequiredCollateralList() {
@@ -162,6 +165,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getRequiredCollateral() {
@@ -172,6 +176,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Thing value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRequiredCollateral(Thing requiredCollateral) {
@@ -181,6 +186,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRequiredCollateral(Text requiredCollateral) {
@@ -195,6 +201,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getRecourseLoanList() {
@@ -207,6 +214,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getRecourseLoan() {
@@ -219,6 +227,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param recourseLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRecourseLoan(Boolean recourseLoan) {
@@ -233,6 +242,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<RepaymentSpecification> getLoanRepaymentFormList() {
@@ -245,6 +255,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public RepaymentSpecification getLoanRepaymentForm() {
@@ -257,6 +268,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param loanRepaymentForm RepaymentSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanRepaymentForm(RepaymentSpecification loanRepaymentForm) {
@@ -271,6 +283,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getRenegotiableLoanList() {
@@ -283,6 +296,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getRenegotiableLoan() {
@@ -295,6 +309,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param renegotiableLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addRenegotiableLoan(Boolean renegotiableLoan) {
@@ -307,6 +322,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<QuantitativeValue> getLoanTermList() {
@@ -317,6 +333,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public QuantitativeValue getLoanTerm() {
@@ -327,6 +344,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The duration of the loan or credit agreement.
      *
      * @param loanTerm QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanTerm(QuantitativeValue loanTerm) {
@@ -341,6 +359,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Duration> getGracePeriodList() {
@@ -353,6 +372,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Duration getGracePeriod() {
@@ -365,6 +385,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param gracePeriod Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addGracePeriod(Duration gracePeriod) {
@@ -380,6 +401,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getLoanTypeList() {
@@ -392,6 +414,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getLoanType() {
@@ -404,6 +427,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param loanType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanType(URL loanType) {
@@ -415,6 +439,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param loanType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addLoanType(Text loanType) {
@@ -428,6 +453,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getFeesAndCommissionsSpecificationList() {
@@ -438,6 +464,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getFeesAndCommissionsSpecification() {
@@ -448,6 +475,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification URL value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification) {
@@ -457,6 +485,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
      * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification) {
@@ -470,6 +499,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getInterestRateList() {
@@ -480,6 +510,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getInterestRate() {
@@ -490,6 +521,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(QuantitativeValue interestRate) {
@@ -499,6 +531,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
      * @param interestRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addInterestRate(Number interestRate) {
@@ -512,6 +545,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getAnnualPercentageRateList() {
@@ -522,6 +556,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getAnnualPercentageRate() {
@@ -532,6 +567,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(QuantitativeValue annualPercentageRate) {
@@ -541,6 +577,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
      * @param annualPercentageRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addAnnualPercentageRate(Number annualPercentageRate) {
@@ -714,6 +751,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -724,6 +762,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -734,6 +773,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -743,6 +783,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -788,6 +829,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsRelatedToList() {
@@ -798,6 +840,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, somehow related product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsRelatedTo() {
@@ -808,6 +851,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Service isRelatedTo) {
@@ -817,6 +861,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, somehow related product (or multiple products).
      *
      * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsRelatedTo(Product isRelatedTo) {
@@ -1467,6 +1512,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getIsSimilarToList() {
@@ -1477,6 +1523,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getIsSimilarTo() {
@@ -1487,6 +1534,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Service isSimilarTo) {
@@ -1496,6 +1544,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * A pointer to another, functionally similar product (or multiple products).
      *
      * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsSimilarTo(Product isSimilarTo) {
@@ -2086,6 +2135,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<MonetaryAmount> getFloorLimitList() {
@@ -2098,6 +2148,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public MonetaryAmount getFloorLimit() {
@@ -2110,6 +2161,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param floorLimit MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addFloorLimit(MonetaryAmount floorLimit) {
@@ -2124,6 +2176,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public List<Boolean> getContactlessPaymentList() {
@@ -2136,6 +2189,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public Boolean getContactlessPayment() {
@@ -2148,6 +2202,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param contactlessPayment Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addContactlessPayment(Boolean contactlessPayment) {
@@ -2163,6 +2218,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getMonthlyMinimumRepaymentAmountList() {
@@ -2175,6 +2231,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getMonthlyMinimumRepaymentAmount() {
@@ -2187,6 +2244,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param monthlyMinimumRepaymentAmount Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addMonthlyMinimumRepaymentAmount(Number monthlyMinimumRepaymentAmount) {
@@ -2198,6 +2256,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param monthlyMinimumRepaymentAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addMonthlyMinimumRepaymentAmount(MonetaryAmount monthlyMinimumRepaymentAmount) {
@@ -2213,6 +2272,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean} or {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> List<T> getCashBackList() {
@@ -2225,6 +2285,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @return {@link Boolean} or {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public <T> T getCashBack() {
@@ -2237,6 +2298,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param cashBack Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addCashBack(Boolean cashBack) {
@@ -2248,6 +2310,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param cashBack Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     @Override
     public void addCashBack(Number cashBack) {

@@ -71,6 +71,7 @@ public interface MusicAlbum extends MusicPlaylist {
      * The kind of release which this album is: single, EP or album.
      *
      * @return {@link MusicAlbumReleaseType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicAlbumReleaseType> getAlbumReleaseTypeList();
 
@@ -78,6 +79,7 @@ public interface MusicAlbum extends MusicPlaylist {
      * The kind of release which this album is: single, EP or album.
      *
      * @return {@link MusicAlbumReleaseType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicAlbumReleaseType getAlbumReleaseType();
 
@@ -85,6 +87,7 @@ public interface MusicAlbum extends MusicPlaylist {
      * The kind of release which this album is: single, EP or album.
      *
      * @param albumReleaseType MusicAlbumReleaseType value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addAlbumReleaseType(MusicAlbumReleaseType albumReleaseType);
 
@@ -92,6 +95,7 @@ public interface MusicAlbum extends MusicPlaylist {
      * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
      * @return {@link MusicAlbumProductionType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicAlbumProductionType> getAlbumProductionTypeList();
 
@@ -99,6 +103,7 @@ public interface MusicAlbum extends MusicPlaylist {
      * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
      * @return {@link MusicAlbumProductionType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicAlbumProductionType getAlbumProductionType();
 
@@ -106,6 +111,7 @@ public interface MusicAlbum extends MusicPlaylist {
      * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
      * @param albumProductionType MusicAlbumProductionType value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addAlbumProductionType(MusicAlbumProductionType albumProductionType);
 }

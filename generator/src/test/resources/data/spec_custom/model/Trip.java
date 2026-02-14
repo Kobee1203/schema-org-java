@@ -19,6 +19,7 @@ import spec_custom.model.Demand;
 /**
  * A trip or journey. An itinerary of visits to one or more places.
  *
+ * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
  * @see <a href="https://schema.org/Trip">https://schema.org/Trip</a>
  */
 public interface Trip extends Intangible {
@@ -122,6 +123,7 @@ public interface Trip extends Intangible {
      * @return {@link Place} or {@link ItemList}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     <T> List<T> getItineraryList();
 
@@ -131,6 +133,7 @@ public interface Trip extends Intangible {
      * @return {@link Place} or {@link ItemList}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     <T> T getItinerary();
 
@@ -140,6 +143,7 @@ public interface Trip extends Intangible {
      * @param itinerary Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     void addItinerary(Place itinerary);
     /**
@@ -148,6 +152,7 @@ public interface Trip extends Intangible {
      * @param itinerary ItemList value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     void addItinerary(ItemList itinerary);
 
@@ -157,6 +162,7 @@ public interface Trip extends Intangible {
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     List<Trip> getSubTripList();
 
@@ -166,6 +172,7 @@ public interface Trip extends Intangible {
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     Trip getSubTrip();
 
@@ -175,6 +182,7 @@ public interface Trip extends Intangible {
      * @param subTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     void addSubTrip(Trip subTrip);
 
@@ -219,6 +227,7 @@ public interface Trip extends Intangible {
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     List<Trip> getPartOfTripList();
 
@@ -228,6 +237,7 @@ public interface Trip extends Intangible {
      * @return {@link Trip}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     Trip getPartOfTrip();
 
@@ -237,6 +247,7 @@ public interface Trip extends Intangible {
      * @param partOfTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
      */
     void addPartOfTrip(Trip partOfTrip);
 

@@ -3,10 +3,7 @@ package com.weedow.schemaorg.generator.model.utils;
 import com.weedow.schemaorg.commons.model.SchemaDataType;
 import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.model.Type;
-import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
-import com.weedow.schemaorg.generator.model.jsonld.PartOf;
-import com.weedow.schemaorg.generator.model.jsonld.RangeIncludes;
-import com.weedow.schemaorg.generator.model.jsonld.Source;
+import com.weedow.schemaorg.generator.model.jsonld.*;
 
 import javax.lang.model.SourceVersion;
 import java.util.Collections;
@@ -79,6 +76,11 @@ public final class ModelUtils {
     public static List<String> getPartOf(GraphItem graphItem) {
         final List<PartOf> partOf = graphItem.getPartOf();
         return partOf != null ? partOf.stream().map(PartOf::getId).toList() : Collections.emptyList();
+    }
+
+    public static List<String> getContributor(GraphItem graphItem) {
+        final List<Contributor> contributor = graphItem.getContributor();
+        return contributor != null ? contributor.stream().map(Contributor::getId).toList() : Collections.emptyList();
     }
 
     public static String getFieldName(String name) {

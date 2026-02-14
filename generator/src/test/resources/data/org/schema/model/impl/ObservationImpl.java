@@ -1112,6 +1112,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValueList() {
@@ -1122,6 +1123,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValue() {
@@ -1132,6 +1134,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(Boolean value) {
@@ -1141,6 +1144,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(Number value) {
@@ -1150,6 +1154,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(Text value) {
@@ -1159,6 +1164,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @param value StructuredValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValue(StructuredValue value) {
@@ -1171,6 +1177,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMaxValueList() {
@@ -1181,6 +1188,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The upper value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMaxValue() {
@@ -1191,6 +1199,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The upper value of some characteristic or property.
      *
      * @param maxValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMaxValue(Number maxValue) {
@@ -1204,6 +1213,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getUnitCodeList() {
@@ -1214,6 +1224,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getUnitCode() {
@@ -1224,6 +1235,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addUnitCode(URL unitCode) {
@@ -1233,6 +1245,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
      * @param unitCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addUnitCode(Text unitCode) {
@@ -1246,6 +1259,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @return {@link StructuredValue} or {@link DefinedTerm} or {@link PropertyValue} or {@link QuantitativeValue} or {@link Enumeration} or {@link MeasurementTypeEnumeration} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValueReferenceList() {
@@ -1256,6 +1270,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @return {@link StructuredValue} or {@link DefinedTerm} or {@link PropertyValue} or {@link QuantitativeValue} or {@link Enumeration} or {@link MeasurementTypeEnumeration} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValueReference() {
@@ -1266,6 +1281,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference StructuredValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(StructuredValue valueReference) {
@@ -1275,6 +1291,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference DefinedTerm value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(DefinedTerm valueReference) {
@@ -1284,6 +1301,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference PropertyValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(PropertyValue valueReference) {
@@ -1293,6 +1311,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(QuantitativeValue valueReference) {
@@ -1302,6 +1321,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference Enumeration value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(Enumeration valueReference) {
@@ -1311,6 +1331,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference MeasurementTypeEnumeration value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(MeasurementTypeEnumeration valueReference) {
@@ -1320,6 +1341,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(Text valueReference) {
@@ -1329,6 +1351,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
      * @param valueReference QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueReference(QualitativeValue valueReference) {
@@ -1373,6 +1396,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMinValueList() {
@@ -1383,6 +1407,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The lower value of some characteristic or property.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMinValue() {
@@ -1393,6 +1418,7 @@ public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The lower value of some characteristic or property.
      *
      * @param minValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMinValue(Number minValue) {

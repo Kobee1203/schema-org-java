@@ -33,6 +33,7 @@ import com.weedow.schemaorg.commons.model.JsonLdSubTypes;
 /**
  * A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/QualitativeValue">https://schema.org/QualitativeValue</a>
  */
 @JsonLdTypeName("QualitativeValue")

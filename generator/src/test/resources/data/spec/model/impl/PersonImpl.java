@@ -49,6 +49,7 @@ import java.util.List;
 /**
  * A person (alive, dead, undead, or fictional).
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
  * @see <a href="https://schema.org/Person">https://schema.org/Person</a>
  */
 @JsonLdTypeName("Person")
@@ -62,6 +63,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public List<Grant> getFundingList() {
@@ -74,6 +76,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public Grant getFunding() {
@@ -86,6 +89,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addFunding(Grant funding) {
@@ -132,6 +136,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getWeightList() {
@@ -143,6 +148,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @return {@link Mass} or {@link QuantitativeValue}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getWeight() {
@@ -154,6 +160,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @param weight Mass value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(Mass weight) {
@@ -164,6 +171,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @param weight QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addWeight(QuantitativeValue weight) {
@@ -257,6 +265,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getKnowsAboutList() {
@@ -269,6 +278,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getKnowsAbout() {
@@ -281,6 +291,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param knowsAbout Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(Text knowsAbout) {
@@ -292,6 +303,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param knowsAbout Thing value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(Thing knowsAbout) {
@@ -303,6 +315,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param knowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsAbout(URL knowsAbout) {
@@ -410,6 +423,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> List<T> getKnowsLanguageList() {
@@ -422,6 +436,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @return {@link Language} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public <T> T getKnowsLanguage() {
@@ -434,6 +449,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param knowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsLanguage(Language knowsLanguage) {
@@ -445,6 +461,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * @param knowsLanguage Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     @Override
     public void addKnowsLanguage(Text knowsLanguage) {
@@ -549,6 +566,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getNaicsList() {
@@ -559,6 +577,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getNaics() {
@@ -569,6 +588,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @param naics Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addNaics(Text naics) {
@@ -581,6 +601,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -591,6 +612,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -601,6 +623,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1135,6 +1158,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getIsicV4List() {
@@ -1145,6 +1169,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getIsicV4() {
@@ -1155,6 +1180,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsicV4(Text isicV4) {
@@ -1764,6 +1790,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getTaxIDList() {
@@ -1774,6 +1801,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getTaxID() {
@@ -1784,6 +1812,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @param taxID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addTaxID(Text taxID) {
@@ -2074,6 +2103,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Demand> getSeeksList() {
@@ -2084,6 +2114,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Demand getSeeks() {
@@ -2094,6 +2125,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A pointer to products or services sought by the organization or person (demand).
      *
      * @param seeks Demand value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addSeeks(Demand seeks) {
@@ -2106,6 +2138,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Offer> getMakesOfferList() {
@@ -2116,6 +2149,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A pointer to products or services offered by the organization or person.
      *
      * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Offer getMakesOffer() {
@@ -2126,6 +2160,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A pointer to products or services offered by the organization or person.
      *
      * @param makesOffer Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMakesOffer(Offer makesOffer) {
@@ -2138,6 +2173,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getVatIDList() {
@@ -2148,6 +2184,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getVatID() {
@@ -2158,6 +2195,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Value-added Tax ID of the organization or person.
      *
      * @param vatID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addVatID(Text vatID) {
@@ -2170,6 +2208,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getDunsList() {
@@ -2180,6 +2219,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getDuns() {
@@ -2190,6 +2230,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
      * @param duns Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addDuns(Text duns) {
@@ -2276,6 +2317,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Place> getHasPOSList() {
@@ -2286,6 +2328,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * Points-of-Sales operated by the organization or person.
      *
      * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Place getHasPOS() {
@@ -2296,6 +2339,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * Points-of-Sales operated by the organization or person.
      *
      * @param hasPOS Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addHasPOS(Place hasPOS) {
@@ -2539,6 +2583,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Thing> getOwnsList() {
@@ -2550,6 +2595,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @return {@link Thing}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Thing getOwns() {
@@ -2561,6 +2607,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      *
      * @param owns Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOwns(Thing owns) {

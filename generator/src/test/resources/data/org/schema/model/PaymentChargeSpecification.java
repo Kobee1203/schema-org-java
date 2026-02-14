@@ -12,6 +12,7 @@ import org.schema.model.PaymentMethod;
 /**
  * The costs of settling the payment using a particular payment method.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/PaymentChargeSpecification">https://schema.org/PaymentChargeSpecification</a>
  */
 public interface PaymentChargeSpecification extends PriceSpecification {
@@ -20,6 +21,7 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<DeliveryMethod> getAppliesToDeliveryMethodList();
 
@@ -27,6 +29,7 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     DeliveryMethod getAppliesToDeliveryMethod();
 
@@ -34,6 +37,7 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @param appliesToDeliveryMethod DeliveryMethod value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod);
 
@@ -41,6 +45,7 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * The payment method(s) to which the payment charge specification applies.
      *
      * @return {@link PaymentMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<PaymentMethod> getAppliesToPaymentMethodList();
 
@@ -48,6 +53,7 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * The payment method(s) to which the payment charge specification applies.
      *
      * @return {@link PaymentMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     PaymentMethod getAppliesToPaymentMethod();
 
@@ -55,6 +61,7 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * The payment method(s) to which the payment charge specification applies.
      *
      * @param appliesToPaymentMethod PaymentMethod value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addAppliesToPaymentMethod(PaymentMethod appliesToPaymentMethod);
 }

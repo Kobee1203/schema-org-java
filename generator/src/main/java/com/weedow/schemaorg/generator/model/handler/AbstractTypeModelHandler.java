@@ -21,7 +21,8 @@ public abstract class AbstractTypeModelHandler implements ModelHandler {
                 .setName(typeName.equals("3DModel") ? "ThreeDimensionalModel" : typeName)
                 .setDescription(graphItem.getComment().getValue())
                 .setPartOf(ModelUtils.getPartOf(graphItem))
-                .setSource(ModelUtils.getSource(graphItem));
+                .setSource(ModelUtils.getSource(graphItem))
+                .setContributor(ModelUtils.getContributor(graphItem));
 
         final List<SubClassOf> subClassOf = graphItem.getSubClassOf();
         if (subClassOf != null) {

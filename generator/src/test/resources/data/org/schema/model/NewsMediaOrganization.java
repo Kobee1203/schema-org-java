@@ -17,6 +17,7 @@ import org.schema.model.datatype.Text;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+ * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
  * @see <a href="https://schema.org/NewsMediaOrganization">https://schema.org/NewsMediaOrganization</a>
  */
 public interface NewsMediaOrganization extends Organization {
@@ -27,6 +28,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getNoBylinesPolicyList();
 
@@ -36,6 +38,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getNoBylinesPolicy();
 
@@ -45,6 +48,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param noBylinesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addNoBylinesPolicy(CreativeWork noBylinesPolicy);
     /**
@@ -53,6 +57,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param noBylinesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addNoBylinesPolicy(URL noBylinesPolicy);
 
@@ -62,6 +67,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getMissionCoveragePrioritiesPolicyList();
 
@@ -71,6 +77,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getMissionCoveragePrioritiesPolicy();
 
@@ -80,6 +87,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param missionCoveragePrioritiesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addMissionCoveragePrioritiesPolicy(CreativeWork missionCoveragePrioritiesPolicy);
     /**
@@ -88,6 +96,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param missionCoveragePrioritiesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addMissionCoveragePrioritiesPolicy(URL missionCoveragePrioritiesPolicy);
 
@@ -97,6 +106,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getDiversityStaffingReportList();
 
@@ -106,6 +116,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link URL} or {@link Article}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getDiversityStaffingReport();
 
@@ -115,6 +126,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityStaffingReport(URL diversityStaffingReport);
     /**
@@ -123,6 +135,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param diversityStaffingReport Article value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityStaffingReport(Article diversityStaffingReport);
 
@@ -132,6 +145,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getActionableFeedbackPolicyList();
 
@@ -141,6 +155,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getActionableFeedbackPolicy();
 
@@ -150,6 +165,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param actionableFeedbackPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy);
     /**
@@ -158,6 +174,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param actionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addActionableFeedbackPolicy(URL actionableFeedbackPolicy);
 
@@ -202,6 +219,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getCorrectionsPolicyList();
 
@@ -211,6 +229,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getCorrectionsPolicy();
 
@@ -220,6 +239,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrectionsPolicy(URL correctionsPolicy);
     /**
@@ -228,6 +248,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param correctionsPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrectionsPolicy(CreativeWork correctionsPolicy);
 
@@ -237,6 +258,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getOwnershipFundingInfoList();
 
@@ -246,6 +268,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getOwnershipFundingInfo();
 
@@ -255,6 +278,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param ownershipFundingInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo);
     /**
@@ -263,6 +287,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param ownershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(URL ownershipFundingInfo);
     /**
@@ -271,6 +296,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param ownershipFundingInfo AboutPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(AboutPage ownershipFundingInfo);
     /**
@@ -279,6 +305,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param ownershipFundingInfo Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addOwnershipFundingInfo(Text ownershipFundingInfo);
 
@@ -288,6 +315,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getDiversityPolicyList();
 
@@ -297,6 +325,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getDiversityPolicy();
 
@@ -306,6 +335,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param diversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityPolicy(CreativeWork diversityPolicy);
     /**
@@ -314,6 +344,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param diversityPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addDiversityPolicy(URL diversityPolicy);
 
@@ -323,6 +354,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getMastheadList();
 
@@ -332,6 +364,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getMasthead();
 
@@ -341,6 +374,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param masthead CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addMasthead(CreativeWork masthead);
     /**
@@ -349,6 +383,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param masthead URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addMasthead(URL masthead);
 
@@ -358,6 +393,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getVerificationFactCheckingPolicyList();
 
@@ -367,6 +403,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link URL} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getVerificationFactCheckingPolicy();
 
@@ -376,6 +413,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param verificationFactCheckingPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addVerificationFactCheckingPolicy(URL verificationFactCheckingPolicy);
     /**
@@ -384,6 +422,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param verificationFactCheckingPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addVerificationFactCheckingPolicy(CreativeWork verificationFactCheckingPolicy);
 
@@ -393,6 +432,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getUnnamedSourcesPolicyList();
 
@@ -402,6 +442,7 @@ public interface NewsMediaOrganization extends Organization {
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getUnnamedSourcesPolicy();
 
@@ -411,6 +452,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
     /**
@@ -419,6 +461,7 @@ public interface NewsMediaOrganization extends Organization {
      * @param unnamedSourcesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 }

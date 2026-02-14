@@ -67,7 +67,13 @@ class ModelVerifierTest {
                 // Ignore 'types' field that is not present in toString() method, but just type names to prevent recursivity error
                 .withIgnoredFields("types")
                 .verify();
-        Property property = newProperty("id", "name", "fieldName", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")), List.of("partOf1", "partOf2"), List.of("source1", "source2"));
+        Property property = newProperty(
+                "id", "name", "fieldName", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")),
+                List.of("partOf1", "partOf2"),
+                List.of("source1", "source2"),
+                List.of("contributor1", "contributor2")
+        );
         Assertions.assertThat(property).hasToString(
                 // @formatter:off
                 "Property(" +
@@ -78,6 +84,7 @@ class ModelVerifierTest {
                             "description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., " +
                             "partOf=[partOf1, partOf2], " +
                             "source=[source1, source2], " +
+                            "contributor=[contributor1, contributor2], " +
                             "fieldTypeLinks={@link type name 1} or {@link type name 2}, " +
                             "returnFieldType=<T> T, " +
                             "returnFieldTypeAsList=<T> List<T>, " +
@@ -93,6 +100,7 @@ class ModelVerifierTest {
                             "description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., " +
                             "partOf=[partOf1, partOf2], " +
                             "source=[source1, source2], " +
+                            "contributor=[contributor1, contributor2], " +
                             "paramType=Object, " +
                             "paramValue=fieldName, " +
                             "fieldName=name, " +
@@ -104,7 +112,7 @@ class ModelVerifierTest {
                 // @formatter:on
         );
 
-        Property nullProperty = newProperty(null, null, null, null, null, null, null);
+        Property nullProperty = newProperty(null, null, null, null, null, null, null, null);
         Assertions.assertThat(nullProperty).hasToString(
                 // @formatter:off
                 "Property(" +
@@ -115,6 +123,7 @@ class ModelVerifierTest {
                                 "description=null, " +
                                 "partOf=null, " +
                                 "source=null, " +
+                                "contributor=null, " +
                                 "fieldTypeLinks=null, " +
                                 "returnFieldType=null, " +
                                 "returnFieldTypeAsList=null, " +
@@ -130,6 +139,7 @@ class ModelVerifierTest {
                             "description=null, " +
                             "partOf=null, " +
                             "source=null, " +
+                            "contributor=null, " +
                             "paramType=Object, " +
                             "paramValue=null, " +
                             "fieldName=null, " +
@@ -151,6 +161,7 @@ class ModelVerifierTest {
                 .setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry.")
                 .setPartOf(List.of("partOf1", "partOf2"))
                 .setSource(List.of("source1", "source2"))
+                .setContributor(List.of("contributor1", "contributor2"))
                 .addEnumerationMember("enumMember1").addEnumerationMember("enumMember2")
                 .addParent(parent1).addParent(new Type("parent2"))
                 .addProperty(newProperty("id1",
@@ -159,13 +170,15 @@ class ModelVerifierTest {
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                         List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")),
                         List.of("partOf1", "partOf2"),
-                        List.of("source1", "source2")
+                        List.of("source1", "source2"),
+                        List.of("contributor1", "contributor2")
                 ))
                 .addProperty(newProperty("id2",
                         "name2",
                         "fieldName2",
                         null,
                         List.of(new Type("id1").setName("type name 1")),
+                        null,
                         null,
                         null
                 ));
@@ -179,9 +192,10 @@ class ModelVerifierTest {
                 subTypes      = []
                 partOf        = partOf1, partOf2
                 source        = source1, source2
+                contributor   = contributor1, contributor2
                 properties    = [
-                    Property(id='id1', name='name1', description='Lorem Ipsum is simply dummy text of the printing a', types=[type name 1, type name 2], partOf=[partOf1, partOf2], source=[source1, source2])
-                    Property(id='id2', name='name2', description='null', types=[type name 1], partOf=null, source=null)
+                    Property(id='id1', name='name1', description='Lorem Ipsum is simply dummy text of the printing a', types=[type name 1, type name 2], partOf=[partOf1, partOf2], source=[source1, source2], contributor=[contributor1, contributor2])
+                    Property(id='id2', name='name2', description='null', types=[type name 1], partOf=null, source=null, contributor=null)
                 ]
                 enum members  = enumMember1, enumMember2
                 """);
@@ -195,6 +209,7 @@ class ModelVerifierTest {
                 subTypes      = [id]
                 partOf        =\s
                 source        =\s
+                contributor   =\s
                 properties    = []
                 enum members  =\s
                 """);
@@ -210,17 +225,18 @@ class ModelVerifierTest {
                 subTypes      = []
                 partOf        =\s
                 source        =\s
+                contributor   =\s
                 properties    = []
                 enum members  =\s
                 """);
     }
 
-    private static Property newProperty(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source) {
+    private static Property newProperty(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source, List<String> contributor) {
         return new Property(
                 id,
                 new Field(name, types),
-                new Accessor(name, description, partOf, source, types),
-                List.of(new Mutator(name, description, partOf, source, () -> "Object", () -> fieldName)),
+                new Accessor(name, description, partOf, source, contributor, types),
+                List.of(new Mutator(name, description, partOf, source, contributor, () -> "Object", () -> fieldName)),
                 types
         );
     }

@@ -15,6 +15,7 @@ import spec_custom.model.CreativeWork;
 /**
  * An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.<br/><br/>See also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
  * @see <a href="https://schema.org/Article">https://schema.org/Article</a>
  */
 public interface Article extends CreativeWork {
@@ -44,6 +45,7 @@ public interface Article extends CreativeWork {
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> List<T> getPageEndList();
 
@@ -51,6 +53,7 @@ public interface Article extends CreativeWork {
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @return {@link Integer} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> T getPageEnd();
 
@@ -58,12 +61,14 @@ public interface Article extends CreativeWork {
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageEnd(Integer pageEnd);
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageEnd(Text pageEnd);
 
@@ -71,6 +76,7 @@ public interface Article extends CreativeWork {
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> List<T> getPageStartList();
 
@@ -78,6 +84,7 @@ public interface Article extends CreativeWork {
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     <T> T getPageStart();
 
@@ -85,12 +92,14 @@ public interface Article extends CreativeWork {
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageStart(Text pageStart);
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPageStart(Integer pageStart);
 
@@ -181,6 +190,7 @@ public interface Article extends CreativeWork {
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     List<Text> getPaginationList();
 
@@ -188,6 +198,7 @@ public interface Article extends CreativeWork {
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     Text getPagination();
 
@@ -195,6 +206,7 @@ public interface Article extends CreativeWork {
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
      * @param pagination Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPagination(Text pagination);
 
@@ -246,6 +258,7 @@ public interface Article extends CreativeWork {
      * @return {@link Text} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> List<T> getBackstoryList();
 
@@ -255,6 +268,7 @@ public interface Article extends CreativeWork {
      * @return {@link Text} or {@link CreativeWork}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     <T> T getBackstory();
 
@@ -264,6 +278,7 @@ public interface Article extends CreativeWork {
      * @param backstory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addBackstory(Text backstory);
     /**
@@ -272,6 +287,7 @@ public interface Article extends CreativeWork {
      * @param backstory CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addBackstory(CreativeWork backstory);
 }

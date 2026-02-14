@@ -19,6 +19,7 @@ import spec_custom.model.datatype.URL;
 /**
  * A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
  *
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/LoanOrCredit">https://schema.org/LoanOrCredit</a>
  */
 public interface LoanOrCredit extends FinancialProduct {
@@ -86,6 +87,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getRequiredCollateralList();
 
@@ -93,6 +95,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @return {@link Thing} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getRequiredCollateral();
 
@@ -100,12 +103,14 @@ public interface LoanOrCredit extends FinancialProduct {
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Thing value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addRequiredCollateral(Thing requiredCollateral);
     /**
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
      * @param requiredCollateral Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addRequiredCollateral(Text requiredCollateral);
 
@@ -115,6 +120,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<Boolean> getRecourseLoanList();
 
@@ -124,6 +130,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     Boolean getRecourseLoan();
 
@@ -133,6 +140,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @param recourseLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addRecourseLoan(Boolean recourseLoan);
 
@@ -142,6 +150,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<RepaymentSpecification> getLoanRepaymentFormList();
 
@@ -151,6 +160,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link RepaymentSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     RepaymentSpecification getLoanRepaymentForm();
 
@@ -160,6 +170,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @param loanRepaymentForm RepaymentSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addLoanRepaymentForm(RepaymentSpecification loanRepaymentForm);
 
@@ -169,6 +180,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<Boolean> getRenegotiableLoanList();
 
@@ -178,6 +190,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     Boolean getRenegotiableLoan();
 
@@ -187,6 +200,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @param renegotiableLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addRenegotiableLoan(Boolean renegotiableLoan);
 
@@ -194,6 +208,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<QuantitativeValue> getLoanTermList();
 
@@ -201,6 +216,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * The duration of the loan or credit agreement.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     QuantitativeValue getLoanTerm();
 
@@ -208,6 +224,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * The duration of the loan or credit agreement.
      *
      * @param loanTerm QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addLoanTerm(QuantitativeValue loanTerm);
 
@@ -217,6 +234,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<Duration> getGracePeriodList();
 
@@ -226,6 +244,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     Duration getGracePeriod();
 
@@ -235,6 +254,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @param gracePeriod Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addGracePeriod(Duration gracePeriod);
 
@@ -244,6 +264,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getLoanTypeList();
 
@@ -253,6 +274,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @return {@link URL} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getLoanType();
 
@@ -262,6 +284,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @param loanType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addLoanType(URL loanType);
     /**
@@ -270,6 +293,7 @@ public interface LoanOrCredit extends FinancialProduct {
      * @param loanType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addLoanType(Text loanType);
 }

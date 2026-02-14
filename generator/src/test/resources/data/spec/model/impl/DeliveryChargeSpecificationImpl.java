@@ -37,6 +37,7 @@ import spec.model.DeliveryChargeSpecification;
 /**
  * The price for the delivery of an offer using a particular delivery method.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/DeliveryChargeSpecification">https://schema.org/DeliveryChargeSpecification</a>
  */
 @JsonLdTypeName("DeliveryChargeSpecification")
@@ -174,6 +175,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<DeliveryMethod> getAppliesToDeliveryMethodList() {
@@ -184,6 +186,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public DeliveryMethod getAppliesToDeliveryMethod() {
@@ -194,6 +197,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
      * @param appliesToDeliveryMethod DeliveryMethod value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod) {
@@ -209,6 +213,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getEligibleRegionList() {
@@ -221,6 +226,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getEligibleRegion() {
@@ -233,6 +239,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      *
      * @param eligibleRegion GeoShape value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleRegion(GeoShape eligibleRegion) {
@@ -244,6 +251,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      *
      * @param eligibleRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleRegion(Text eligibleRegion) {
@@ -255,6 +263,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      *
      * @param eligibleRegion Place value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleRegion(Place eligibleRegion) {
@@ -345,6 +354,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMaxPriceList() {
@@ -355,6 +365,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMaxPrice() {
@@ -365,6 +376,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The highest price if the price is a range.
      *
      * @param maxPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMaxPrice(Number maxPrice) {
@@ -377,6 +389,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Boolean> getValueAddedTaxIncludedList() {
@@ -387,6 +400,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Boolean getValueAddedTaxIncluded() {
@@ -397,6 +411,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @param valueAddedTaxIncluded Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValueAddedTaxIncluded(Boolean valueAddedTaxIncluded) {
@@ -460,6 +475,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidFromList() {
@@ -470,6 +486,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidFrom() {
@@ -480,6 +497,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(DateTime validFrom) {
@@ -489,6 +507,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidFrom(Date validFrom) {
@@ -542,6 +561,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Number> getMinPriceList() {
@@ -552,6 +572,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Number getMinPrice() {
@@ -562,6 +583,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The lowest price if the price is a range.
      *
      * @param minPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addMinPrice(Number minPrice) {
@@ -574,6 +596,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<PriceSpecification> getEligibleTransactionVolumeList() {
@@ -584,6 +607,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public PriceSpecification getEligibleTransactionVolume() {
@@ -594,6 +618,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @param eligibleTransactionVolume PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
@@ -606,6 +631,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<QuantitativeValue> getEligibleQuantityList() {
@@ -616,6 +642,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public QuantitativeValue getEligibleQuantity() {
@@ -626,6 +653,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @param eligibleQuantity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleQuantity(QuantitativeValue eligibleQuantity) {
@@ -639,6 +667,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getValidThroughList() {
@@ -649,6 +678,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getValidThrough() {
@@ -659,6 +689,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(DateTime validThrough) {
@@ -668,6 +699,7 @@ public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.common
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addValidThrough(Date validThrough) {

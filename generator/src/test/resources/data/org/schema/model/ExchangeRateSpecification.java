@@ -16,6 +16,7 @@ import org.schema.model.UnitPriceSpecification;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/ExchangeRateSpecification">https://schema.org/ExchangeRateSpecification</a>
  */
 public interface ExchangeRateSpecification extends StructuredValue {
@@ -50,6 +51,7 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getExchangeRateSpreadList();
 
@@ -59,6 +61,7 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getExchangeRateSpread();
 
@@ -68,6 +71,7 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @param exchangeRateSpread Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addExchangeRateSpread(Number exchangeRateSpread);
     /**
@@ -76,6 +80,7 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @param exchangeRateSpread MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addExchangeRateSpread(MonetaryAmount exchangeRateSpread);
 
@@ -85,6 +90,7 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @return {@link UnitPriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<UnitPriceSpecification> getCurrentExchangeRateList();
 
@@ -94,6 +100,7 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @return {@link UnitPriceSpecification}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     UnitPriceSpecification getCurrentExchangeRate();
 
@@ -103,6 +110,7 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @param currentExchangeRate UnitPriceSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addCurrentExchangeRate(UnitPriceSpecification currentExchangeRate);
 }

@@ -49,6 +49,7 @@ public interface Event extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     List<Grant> getFundingList();
 
@@ -58,6 +59,7 @@ public interface Event extends Thing {
      * @return {@link Grant}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     Grant getFunding();
 
@@ -67,6 +69,7 @@ public interface Event extends Thing {
      * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addFunding(Grant funding);
 
@@ -579,6 +582,7 @@ public interface Event extends Thing {
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> List<T> getComposerList();
 
@@ -586,6 +590,7 @@ public interface Event extends Thing {
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     <T> T getComposer();
 
@@ -593,12 +598,14 @@ public interface Event extends Thing {
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addComposer(Person composer);
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
      * @param composer Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addComposer(Organization composer);
 

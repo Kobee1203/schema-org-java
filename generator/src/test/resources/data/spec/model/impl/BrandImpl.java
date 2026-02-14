@@ -27,6 +27,7 @@ import spec.model.Brand;
 /**
  * A brand is a name used by an organization or business person for labeling a product, product group, or similar.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/Brand">https://schema.org/Brand</a>
  */
 @JsonLdTypeName("Brand")
@@ -39,6 +40,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -49,6 +51,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -59,6 +62,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -68,6 +72,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {

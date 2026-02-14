@@ -45,6 +45,8 @@ import org.schema.model.TouristDestination;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+ * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+ * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
  * @see <a href="https://schema.org/TouristDestination">https://schema.org/TouristDestination</a>
  */
 @JsonLdTypeName("TouristDestination")
@@ -57,6 +59,8 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public <T> List<T> getTouristTypeList() {
@@ -67,6 +71,8 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public <T> T getTouristType() {
@@ -77,6 +83,8 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public void addTouristType(Text touristType) {
@@ -86,6 +94,8 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Audience value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public void addTouristType(Audience touristType) {
@@ -100,6 +110,8 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * @return {@link TouristAttraction}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public List<TouristAttraction> getIncludesAttractionList() {
@@ -112,6 +124,8 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * @return {@link TouristAttraction}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public TouristAttraction getIncludesAttraction() {
@@ -124,6 +138,8 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * @param includesAttraction TouristAttraction value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     @Override
     public void addIncludesAttraction(TouristAttraction includesAttraction) {
@@ -245,6 +261,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<Boolean> getSmokingAllowedList() {
@@ -255,6 +272,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public Boolean getSmokingAllowed() {
@@ -265,6 +283,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
      * @param smokingAllowed Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addSmokingAllowed(Boolean smokingAllowed) {
@@ -361,6 +380,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<OpeningHoursSpecification> getOpeningHoursSpecificationList() {
@@ -371,6 +391,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The opening hours of a certain place.
      *
      * @return {@link OpeningHoursSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
@@ -381,6 +402,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The opening hours of a certain place.
      *
      * @param openingHoursSpecification OpeningHoursSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
@@ -426,6 +448,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getLogoList() {
@@ -436,6 +459,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getLogo() {
@@ -446,6 +470,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(URL logo) {
@@ -455,6 +480,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addLogo(ImageObject logo) {
@@ -740,6 +766,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getGlobalLocationNumberList() {
@@ -750,6 +777,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getGlobalLocationNumber() {
@@ -760,6 +788,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
@@ -1159,6 +1188,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public List<Text> getIsicV4List() {
@@ -1169,6 +1199,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public Text getIsicV4() {
@@ -1179,6 +1210,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addIsicV4(Text isicV4) {
@@ -1834,6 +1866,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public List<LocationFeatureSpecification> getAmenityFeatureList() {
@@ -1844,6 +1877,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
@@ -1854,6 +1888,7 @@ public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.J
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
      * @param amenityFeature LocationFeatureSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     @Override
     public void addAmenityFeature(LocationFeatureSpecification amenityFeature) {

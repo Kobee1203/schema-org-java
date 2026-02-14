@@ -18,6 +18,7 @@ import org.schema.model.PriceSpecification;
 /**
  * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/PriceSpecification">https://schema.org/PriceSpecification</a>
  */
 public interface PriceSpecification extends StructuredValue {
@@ -78,6 +79,7 @@ public interface PriceSpecification extends StructuredValue {
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Number> getMaxPriceList();
 
@@ -85,6 +87,7 @@ public interface PriceSpecification extends StructuredValue {
      * The highest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Number getMaxPrice();
 
@@ -92,6 +95,7 @@ public interface PriceSpecification extends StructuredValue {
      * The highest price if the price is a range.
      *
      * @param maxPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addMaxPrice(Number maxPrice);
 
@@ -99,6 +103,7 @@ public interface PriceSpecification extends StructuredValue {
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Boolean> getValueAddedTaxIncludedList();
 
@@ -106,6 +111,7 @@ public interface PriceSpecification extends StructuredValue {
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @return {@link Boolean}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Boolean getValueAddedTaxIncluded();
 
@@ -113,6 +119,7 @@ public interface PriceSpecification extends StructuredValue {
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
      * @param valueAddedTaxIncluded Boolean value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueAddedTaxIncluded(Boolean valueAddedTaxIncluded);
 
@@ -155,6 +162,7 @@ public interface PriceSpecification extends StructuredValue {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidFromList();
 
@@ -162,6 +170,7 @@ public interface PriceSpecification extends StructuredValue {
      * The date when the item becomes valid.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidFrom();
 
@@ -169,12 +178,14 @@ public interface PriceSpecification extends StructuredValue {
      * The date when the item becomes valid.
      *
      * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
      * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(Date validFrom);
 
@@ -212,6 +223,7 @@ public interface PriceSpecification extends StructuredValue {
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<Number> getMinPriceList();
 
@@ -219,6 +231,7 @@ public interface PriceSpecification extends StructuredValue {
      * The lowest price if the price is a range.
      *
      * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     Number getMinPrice();
 
@@ -226,6 +239,7 @@ public interface PriceSpecification extends StructuredValue {
      * The lowest price if the price is a range.
      *
      * @param minPrice Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addMinPrice(Number minPrice);
 
@@ -233,6 +247,7 @@ public interface PriceSpecification extends StructuredValue {
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<PriceSpecification> getEligibleTransactionVolumeList();
 
@@ -240,6 +255,7 @@ public interface PriceSpecification extends StructuredValue {
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     PriceSpecification getEligibleTransactionVolume();
 
@@ -247,6 +263,7 @@ public interface PriceSpecification extends StructuredValue {
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
      * @param eligibleTransactionVolume PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume);
 
@@ -254,6 +271,7 @@ public interface PriceSpecification extends StructuredValue {
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<QuantitativeValue> getEligibleQuantityList();
 
@@ -261,6 +279,7 @@ public interface PriceSpecification extends StructuredValue {
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     QuantitativeValue getEligibleQuantity();
 
@@ -268,6 +287,7 @@ public interface PriceSpecification extends StructuredValue {
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
      * @param eligibleQuantity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addEligibleQuantity(QuantitativeValue eligibleQuantity);
 
@@ -275,6 +295,7 @@ public interface PriceSpecification extends StructuredValue {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getValidThroughList();
 
@@ -282,6 +303,7 @@ public interface PriceSpecification extends StructuredValue {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getValidThrough();
 
@@ -289,12 +311,14 @@ public interface PriceSpecification extends StructuredValue {
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidThrough(DateTime validThrough);
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
      * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidThrough(Date validThrough);
 }

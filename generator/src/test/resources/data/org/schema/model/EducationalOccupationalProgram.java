@@ -620,6 +620,7 @@ public interface EducationalOccupationalProgram extends Intangible {
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     List<DayOfWeek> getDayOfWeekList();
 
@@ -627,6 +628,7 @@ public interface EducationalOccupationalProgram extends Intangible {
      * The day of the week for which these opening hours are valid.
      *
      * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     DayOfWeek getDayOfWeek();
 
@@ -634,6 +636,7 @@ public interface EducationalOccupationalProgram extends Intangible {
      * The day of the week for which these opening hours are valid.
      *
      * @param dayOfWeek DayOfWeek value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addDayOfWeek(DayOfWeek dayOfWeek);
 

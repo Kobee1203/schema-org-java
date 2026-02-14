@@ -14,6 +14,7 @@ import org.schema.model.datatype.Number;
  *
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+ * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
  * @see <a href="https://schema.org/RepaymentSpecification">https://schema.org/RepaymentSpecification</a>
  */
 public interface RepaymentSpecification extends StructuredValue {
@@ -24,6 +25,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<MonetaryAmount> getLoanPaymentAmountList();
 
@@ -33,6 +35,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     MonetaryAmount getLoanPaymentAmount();
 
@@ -42,6 +45,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @param loanPaymentAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addLoanPaymentAmount(MonetaryAmount loanPaymentAmount);
 
@@ -51,6 +55,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> List<T> getDownPaymentList();
 
@@ -60,6 +65,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link Number} or {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     <T> T getDownPayment();
 
@@ -69,6 +75,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @param downPayment Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addDownPayment(Number downPayment);
     /**
@@ -77,6 +84,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @param downPayment MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addDownPayment(MonetaryAmount downPayment);
 
@@ -86,6 +94,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<Number> getLoanPaymentFrequencyList();
 
@@ -95,6 +104,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     Number getLoanPaymentFrequency();
 
@@ -104,6 +114,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @param loanPaymentFrequency Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addLoanPaymentFrequency(Number loanPaymentFrequency);
 
@@ -113,6 +124,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<Number> getNumberOfLoanPaymentsList();
 
@@ -122,6 +134,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     Number getNumberOfLoanPayments();
 
@@ -131,6 +144,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @param numberOfLoanPayments Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addNumberOfLoanPayments(Number numberOfLoanPayments);
 
@@ -140,6 +154,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     List<MonetaryAmount> getEarlyPrepaymentPenaltyList();
 
@@ -149,6 +164,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @return {@link MonetaryAmount}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     MonetaryAmount getEarlyPrepaymentPenalty();
 
@@ -158,6 +174,7 @@ public interface RepaymentSpecification extends StructuredValue {
      * @param earlyPrepaymentPenalty MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addEarlyPrepaymentPenalty(MonetaryAmount earlyPrepaymentPenalty);
 }

@@ -13,6 +13,8 @@ import org.schema.model.datatype.Text;
  * 
  * A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
  *
+ * @see <a href="https://schema.org/docs/collab/rNews">https://schema.org/docs/collab/rNews</a>
+ * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
  * @see <a href="https://schema.org/NewsArticle">https://schema.org/NewsArticle</a>
  */
 public interface NewsArticle extends Article {

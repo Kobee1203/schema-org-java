@@ -15,6 +15,7 @@ import spec.model.Review;
 /**
  * A brand is a name used by an organization or business person for labeling a product, product group, or similar.
  *
+ * @see <a href="https://blog.schema.org/2012/11/08/good-relations-and-schema-org/">https://blog.schema.org/2012/11/08/good-relations-and-schema-org/</a>
  * @see <a href="https://schema.org/Brand">https://schema.org/Brand</a>
  */
 public interface Brand extends Intangible {
@@ -23,6 +24,7 @@ public interface Brand extends Intangible {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> List<T> getLogoList();
 
@@ -30,6 +32,7 @@ public interface Brand extends Intangible {
      * An associated logo.
      *
      * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     <T> T getLogo();
 
@@ -37,12 +40,14 @@ public interface Brand extends Intangible {
      * An associated logo.
      *
      * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(URL logo);
     /**
      * An associated logo.
      *
      * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLogo(ImageObject logo);
 

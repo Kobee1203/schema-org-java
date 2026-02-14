@@ -28,6 +28,7 @@ import spec_custom.model.MusicReleaseFormatType;
 /**
  * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
  *
+ * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
  * @see <a href="https://schema.org/MusicReleaseFormatType">https://schema.org/MusicReleaseFormatType</a>
  */
 @JsonLdTypeName("MusicReleaseFormatType")

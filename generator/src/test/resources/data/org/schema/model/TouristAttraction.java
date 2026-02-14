@@ -13,6 +13,8 @@ import org.schema.model.Language;
 /**
  * A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)
  *
+ * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+ * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
  * @see <a href="https://schema.org/TouristAttraction">https://schema.org/TouristAttraction</a>
  */
 public interface TouristAttraction extends Place {
@@ -21,6 +23,8 @@ public interface TouristAttraction extends Place {
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     <T> List<T> getTouristTypeList();
 
@@ -28,6 +32,8 @@ public interface TouristAttraction extends Place {
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @return {@link Text} or {@link Audience}
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     <T> T getTouristType();
 
@@ -35,12 +41,16 @@ public interface TouristAttraction extends Place {
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     void addTouristType(Text touristType);
     /**
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
      *
      * @param touristType Audience value to set.
+     * @see <a href="https://schema.org/docs/collab/Tourism">https://schema.org/docs/collab/Tourism</a>
+     * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     void addTouristType(Audience touristType);
 

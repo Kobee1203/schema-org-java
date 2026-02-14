@@ -113,6 +113,7 @@ public interface MusicRecording extends CreativeWork {
      * The International Standard Recording Code for the recording.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<Text> getIsrcCodeList();
 
@@ -120,6 +121,7 @@ public interface MusicRecording extends CreativeWork {
      * The International Standard Recording Code for the recording.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     Text getIsrcCode();
 
@@ -127,6 +129,7 @@ public interface MusicRecording extends CreativeWork {
      * The International Standard Recording Code for the recording.
      *
      * @param isrcCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addIsrcCode(Text isrcCode);
 
@@ -134,6 +137,7 @@ public interface MusicRecording extends CreativeWork {
      * The composition this track is a recording of.
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     List<MusicComposition> getRecordingOfList();
 
@@ -141,6 +145,7 @@ public interface MusicRecording extends CreativeWork {
      * The composition this track is a recording of.
      *
      * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     MusicComposition getRecordingOf();
 
@@ -148,6 +153,7 @@ public interface MusicRecording extends CreativeWork {
      * The composition this track is a recording of.
      *
      * @param recordingOf MusicComposition value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addRecordingOf(MusicComposition recordingOf);
 

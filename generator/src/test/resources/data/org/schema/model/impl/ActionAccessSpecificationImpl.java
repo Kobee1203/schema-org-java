@@ -280,6 +280,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getEligibleRegionList() {
@@ -292,6 +293,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @return {@link GeoShape} or {@link Text} or {@link Place}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getEligibleRegion() {
@@ -304,6 +306,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param eligibleRegion GeoShape value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleRegion(GeoShape eligibleRegion) {
@@ -315,6 +318,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param eligibleRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleRegion(Text eligibleRegion) {
@@ -326,6 +330,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param eligibleRegion Place value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addEligibleRegion(Place eligibleRegion) {
@@ -340,6 +345,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getAvailabilityStartsList() {
@@ -351,6 +357,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getAvailabilityStarts() {
@@ -362,6 +369,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param availabilityStarts DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAvailabilityStarts(DateTime availabilityStarts) {
@@ -372,6 +380,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param availabilityStarts Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAvailabilityStarts(Date availabilityStarts) {
@@ -382,6 +391,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param availabilityStarts Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAvailabilityStarts(Time availabilityStarts) {
@@ -396,6 +406,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> List<T> getAvailabilityEndsList() {
@@ -407,6 +418,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @return {@link DateTime} or {@link Date} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public <T> T getAvailabilityEnds() {
@@ -418,6 +430,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param availabilityEnds DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAvailabilityEnds(DateTime availabilityEnds) {
@@ -428,6 +441,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param availabilityEnds Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAvailabilityEnds(Date availabilityEnds) {
@@ -438,6 +452,7 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      *
      * @param availabilityEnds Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
     public void addAvailabilityEnds(Time availabilityEnds) {
