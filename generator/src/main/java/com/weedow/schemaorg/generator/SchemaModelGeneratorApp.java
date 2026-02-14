@@ -6,9 +6,15 @@ import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.apache.commons.cli.*;
+import org.apache.commons.cli.help.HelpFormatter;
+import org.apache.commons.cli.help.TextHelpAppendable;
 
+import java.io.IOException;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SchemaModelGeneratorApp {
 
@@ -28,7 +34,7 @@ public class SchemaModelGeneratorApp {
 
     private static final String PACKAGE_ARG_VALUE = "package";
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, IOException {
         // Options
         final Options firstOptions = configFirstParameters();
         final Options options = configParameters(firstOptions);
@@ -39,9 +45,18 @@ public class SchemaModelGeneratorApp {
 
         boolean helpMode = firstLine.hasOption(HELP_OPTION);
         if (helpMode) {
-            final HelpFormatter formatter = new HelpFormatter();
-            formatter.setWidth(80);
-            formatter.printHelp("java -jar schema-org-generator.jar SchemaModelGeneratorApp", options, true);
+            String header = "A CLI tool to generate Java models and data types from Schema.org definitions.";
+            String footer = "Please report issues at https://github.com/Kobee1203/schema-org-java/issues";
+
+            @SuppressWarnings("java:S106")
+            TextHelpAppendable appendable = new TextHelpAppendable(System.out);
+            appendable.setMaxWidth(80);
+
+            HelpFormatter helpFormatter = HelpFormatter.builder()
+                    .setHelpAppendable(appendable)
+                    .setShowSince(false)
+                    .get();
+            helpFormatter.printHelp("java -jar schema-org-generator-{version}-jar-with-dependencies.jar", header, options, footer, true);
             return;
         }
 
@@ -79,7 +94,6 @@ public class SchemaModelGeneratorApp {
                 }
             }
         }
-
 
         // Schema resource location - if null use the 'version' option
         final String schemaResource = line.getOptionValue(RESOURCE_OPTION);
@@ -143,7 +157,7 @@ public class SchemaModelGeneratorApp {
         final Option helpFileOption = Option.builder("h")
                 .longOpt(HELP_OPTION)
                 .desc("Show the help message")
-                .build();
+                .get();
 
         final Options firstOptions = new Options();
 
@@ -159,7 +173,7 @@ public class SchemaModelGeneratorApp {
                 .hasArg()
                 .argName(OUTPUT_OPTION)
                 .required(false)
-                .build();
+                .get();
 
         final Option modelPackageOption = Option.builder("mp")
                 .longOpt(MODEL_PACKAGE_OPTION)
@@ -167,7 +181,7 @@ public class SchemaModelGeneratorApp {
                 .hasArg()
                 .argName(PACKAGE_ARG_VALUE)
                 .required(false)
-                .build();
+                .get();
 
         final Option modelImplPackageOption = Option.builder("mip")
                 .longOpt(MODEL_IMPL_PACKAGE_OPTION)
@@ -175,7 +189,7 @@ public class SchemaModelGeneratorApp {
                 .hasArg()
                 .argName(PACKAGE_ARG_VALUE)
                 .required(false)
-                .build();
+                .get();
 
         final Option dataTypePackageOption = Option.builder("dp")
                 .longOpt(DATATYPE_PACKAGE_OPTION)
@@ -183,7 +197,7 @@ public class SchemaModelGeneratorApp {
                 .hasArg()
                 .argName(PACKAGE_ARG_VALUE)
                 .required(false)
-                .build();
+                .get();
 
         final Option resourceOption = Option.builder("R")
                 .longOpt(RESOURCE_OPTION)
@@ -191,7 +205,7 @@ public class SchemaModelGeneratorApp {
                 .hasArg()
                 .argName(RESOURCE_OPTION)
                 .required(false)
-                .build();
+                .get();
 
         final Option versionOption = Option.builder("V")
                 .longOpt(VERSION_OPTION)
@@ -199,14 +213,14 @@ public class SchemaModelGeneratorApp {
                 .hasArg()
                 .argName(VERSION_OPTION)
                 .required(false)
-                .build();
+                .get();
 
         final Option javaTypesOption = Option.builder("j")
                 .longOpt(JAVATYPES_OPTION)
                 .desc("Use Java types instead of schema.org DataTypes. If not specified, schema.org DataTypes are used.")
                 .hasArg(false)
                 .required(false)
-                .build();
+                .get();
 
         final Option customDataTypesOption = Option.builder("cd")
                 .longOpt(CUSTOM_DATATYPES_OPTION)
@@ -215,7 +229,7 @@ public class SchemaModelGeneratorApp {
                 .valueSeparator(' ')
                 .argName("TYPE=JAVA_TYPE")
                 .required(false)
-                .build();
+                .get();
 
         final Option modelOption = Option.builder("m")
                 .longOpt(MODELS_OPTION)
@@ -223,14 +237,14 @@ public class SchemaModelGeneratorApp {
                 .hasArgs()
                 .argName(MODELS_OPTION)
                 .required(false)
-                .build();
+                .get();
 
         final Option verboseOption = Option.builder("v")
                 .longOpt(VERBOSE_OPTION)
                 .desc("Verbose")
                 .hasArg(false)
                 .required(false)
-                .build();
+                .get();
 
         final Options options = new Options();
 
