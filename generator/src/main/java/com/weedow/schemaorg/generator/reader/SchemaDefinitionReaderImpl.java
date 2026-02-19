@@ -25,7 +25,7 @@ public class SchemaDefinitionReaderImpl implements SchemaDefinitionReader {
                 .findAndAddModules()
                 .enable(JsonGenerator.Feature.IGNORE_UNKNOWN)
                 .enable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
-                .serializationInclusion(JsonInclude.Include.NON_NULL)
+                .defaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.NON_NULL, JsonInclude.Include.NON_NULL))
                 .enable(SerializationFeature.WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED)
                 .enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
