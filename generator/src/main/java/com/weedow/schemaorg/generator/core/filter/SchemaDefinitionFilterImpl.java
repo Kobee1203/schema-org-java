@@ -9,6 +9,8 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static com.weedow.schemaorg.generator.logging.LoggingConstants.ARCHIVED;
+
 public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaDefinitionFilterImpl.class);
@@ -22,7 +24,7 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
                 .filter(entry -> {
                     Type type = entry.getValue();
                     if (type.getName() == null || type.getName().isEmpty()) {
-                        LOG.info("** ARCHIVED ** {} has been retired from the vocabulary (see https://schema.org/docs/attic.home.html)", type.getId());
+                        LOG.info(ARCHIVED + " {} has been retired from the vocabulary (see https://schema.org/docs/attic.home.html)", type.getId());
                         return false;
                     }
                     return true;

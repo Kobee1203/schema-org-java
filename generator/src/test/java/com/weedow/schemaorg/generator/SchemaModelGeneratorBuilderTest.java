@@ -31,7 +31,7 @@ class SchemaModelGeneratorBuilderTest {
     }
 
     @Test
-    //@Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
+    @Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
     void generate_all() {
         Map<Path, List<String>> dataMap = generateAndVerify(null, null, null, false, null);
 
@@ -102,7 +102,7 @@ class SchemaModelGeneratorBuilderTest {
         generatorOptions
                 .addSuccessHandler((templateName, outputFile, context) -> {
                     String expectedFilePath = "/data/" + generatorOptions.getOutputFolder().relativize(outputFile).toString().replace("\\", "/");
-                    LOG.info("Comparing {} with {}", outputFile, expectedFilePath);
+                    LOG.debug("Comparing {} with {}", outputFile, expectedFilePath);
                     try {
                         URL resource = getClass().getResource(expectedFilePath);
                         Assertions.assertThat(resource).as(() -> "Check Resource presence: " + expectedFilePath).isNotNull();

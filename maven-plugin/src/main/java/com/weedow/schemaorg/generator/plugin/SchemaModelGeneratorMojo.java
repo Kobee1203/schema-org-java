@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static com.weedow.schemaorg.generator.logging.LoggingConstants.FINISHED;
+
 /**
  * Goal which generates Schema.org models.
  *
@@ -148,7 +150,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
                 .setModelImplPackage(modelImplPackage)
                 .setDataTypePackage(dataTypePackage)
                 .setCopyCommonModels(copyCommonModels)
-                .addCompleteHandler(elapsedTime -> getLog().info(String.format("Finished: %s s", elapsedTime.toSeconds())));
+                .addCompleteHandler(elapsedTime -> getLog().info(String.format(FINISHED + " %s s", elapsedTime.toSeconds())));
 
         final SchemaModelGenerator generator = schemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)

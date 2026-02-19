@@ -1,6 +1,11 @@
 name: Build and Analyze
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
 
 jobs:
   build:

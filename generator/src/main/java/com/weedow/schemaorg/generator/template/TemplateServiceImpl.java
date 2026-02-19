@@ -31,7 +31,7 @@ public class TemplateServiceImpl implements TemplateService {
 
     @Override
     public void apply(String templateLocation, Path outputFile, Object context) throws IOException {
-        LOG.info("Generating '{}'", outputFile);
+        LOG.verbose("Generating '{}'", outputFile);
         LOG.verbose("... from template '{}'", templateLocation);
         long start = System.currentTimeMillis();
         try (final Writer writer = Files.newBufferedWriter(outputFile, StandardCharsets.UTF_8)) {
