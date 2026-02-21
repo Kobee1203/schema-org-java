@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Thing;
-import spec.model.ListItem;
-import spec.model.datatype.Text;
-import spec.model.datatype.Integer;
 import spec.model.ItemListOrderType;
+import spec.model.ListItem;
+import spec.model.Thing;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
 
 /**
  * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.

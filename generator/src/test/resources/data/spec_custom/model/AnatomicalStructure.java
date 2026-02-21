@@ -7,11 +7,11 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.AnatomicalStructure;
+import spec_custom.model.AnatomicalSystem;
+import spec_custom.model.ImageObject;
+import spec_custom.model.MedicalCondition;
 import spec_custom.model.MedicalTherapy;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.AnatomicalSystem;
-import spec_custom.model.MedicalCondition;
-import spec_custom.model.ImageObject;
 
 /**
  * Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.

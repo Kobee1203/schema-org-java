@@ -6,15 +6,15 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.BioChemEntity;
+import spec_custom.model.DefinedTerm;
+import spec_custom.model.Gene;
 import spec_custom.model.Grant;
+import spec_custom.model.MedicalCondition;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.Taxon;
 import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.DefinedTerm;
-import spec_custom.model.MedicalCondition;
-import spec_custom.model.BioChemEntity;
-import spec_custom.model.Gene;
-import spec_custom.model.Taxon;
 
 /**
  * Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.

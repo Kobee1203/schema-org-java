@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.datatype.Text;
 import org.schema.model.MediaObject;
 import org.schema.model.PropertyValue;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Text;
 
 /**
  * An image file.

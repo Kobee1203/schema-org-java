@@ -5,26 +5,26 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Thing;
-import spec_custom.model.ListItem;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.Integer;
-import spec_custom.model.ItemListOrderType;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.BreadcrumbList;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
 import spec_custom.model.ItemList;
-import spec_custom.model.BreadcrumbList;
+import spec_custom.model.ItemListOrderType;
+import spec_custom.model.ListItem;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Integer;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.<br/><br/>The [[position]] property is used to reconstruct the order of the items in a BreadcrumbList. The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the "top" or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.

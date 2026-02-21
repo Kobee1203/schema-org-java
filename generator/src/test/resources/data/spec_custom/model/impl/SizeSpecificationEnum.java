@@ -5,33 +5,33 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.GenderType;
-import spec_custom.model.SizeGroupEnumeration;
-import spec_custom.model.SizeSystemEnumeration;
-import spec_custom.model.QualitativeValue;
-import spec_custom.model.StructuredValue;
-import spec_custom.model.DefinedTerm;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Enumeration;
-import spec_custom.model.MeasurementTypeEnumeration;
-import spec_custom.model.Property;
-import spec_custom.model.Class;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.Class;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DefinedTerm;
+import spec_custom.model.Enumeration;
+import spec_custom.model.Event;
+import spec_custom.model.GenderType;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
+import spec_custom.model.MeasurementTypeEnumeration;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.Property;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.QualitativeValue;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.SizeGroupEnumeration;
 import spec_custom.model.SizeSpecification;
+import spec_custom.model.SizeSystemEnumeration;
+import spec_custom.model.StructuredValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).

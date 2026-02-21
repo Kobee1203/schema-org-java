@@ -6,8 +6,8 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.MediaObject;
+import spec_custom.model.datatype.Text;
 
 /**
  * An audio file.

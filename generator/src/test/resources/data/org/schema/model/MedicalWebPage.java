@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalAudienceType;
 import org.schema.model.MedicalAudience;
+import org.schema.model.MedicalAudienceType;
 import org.schema.model.datatype.Text;
 
 /**

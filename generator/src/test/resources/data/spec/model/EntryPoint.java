@@ -7,9 +7,9 @@ package spec.model;
 
 import java.util.List;
 import spec.model.DigitalPlatformEnumeration;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
 import spec.model.SoftwareApplication;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * An entry point, within some Web-based protocol.

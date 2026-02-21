@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.GenderType;
 import org.schema.model.Person;
+import org.schema.model.datatype.Text;
 
 /**
  * Organization: Sports team.

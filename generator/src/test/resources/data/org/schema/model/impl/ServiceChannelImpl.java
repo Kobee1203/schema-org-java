@@ -5,28 +5,28 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.PostalAddress;
-import org.schema.model.ContactPoint;
-import org.schema.model.Service;
-import org.schema.model.datatype.URL;
-import org.schema.model.Duration;
-import org.schema.model.Language;
-import org.schema.model.datatype.Text;
-import org.schema.model.Place;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.ContactPoint;
+import org.schema.model.CreativeWork;
+import org.schema.model.Duration;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
 import org.schema.model.Intangible;
+import org.schema.model.Language;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Place;
+import org.schema.model.PostalAddress;
+import org.schema.model.PropertyValue;
+import org.schema.model.Service;
 import org.schema.model.ServiceChannel;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A means for accessing a service, e.g. a government office location, web site, or phone number.

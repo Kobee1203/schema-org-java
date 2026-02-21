@@ -6,11 +6,11 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.MediaObject;
 import spec_custom.model.MusicGroup;
+import spec_custom.model.PerformingGroup;
 import spec_custom.model.Person;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.PerformingGroup;
-import spec_custom.model.MediaObject;
 
 /**
  * A video file.

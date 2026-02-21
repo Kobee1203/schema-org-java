@@ -6,17 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.StructuredValue;
-import org.schema.model.datatype.Integer;
-import org.schema.model.Syllabus;
-import org.schema.model.datatype.Text;
-import org.schema.model.EducationalOccupationalCredential;
-import org.schema.model.datatype.URL;
+import org.schema.model.AlignmentObject;
+import org.schema.model.Course;
 import org.schema.model.CourseInstance;
 import org.schema.model.DefinedTerm;
-import org.schema.model.Course;
-import org.schema.model.AlignmentObject;
+import org.schema.model.EducationalOccupationalCredential;
 import org.schema.model.Language;
+import org.schema.model.StructuredValue;
+import org.schema.model.Syllabus;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A description of an educational course which may be offered as distinct instances which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners.

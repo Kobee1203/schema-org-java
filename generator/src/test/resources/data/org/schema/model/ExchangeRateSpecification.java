@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Number;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.UnitPriceSpecification;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A structured value representing exchange rate.

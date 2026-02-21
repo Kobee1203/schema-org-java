@@ -5,24 +5,24 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.datatype.CssSelectorType;
-import spec_custom.model.datatype.XPathType;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
 import spec_custom.model.SpeakableSpecification;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.CssSelectorType;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
+import spec_custom.model.datatype.XPathType;
 
 /**
  * A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.

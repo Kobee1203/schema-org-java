@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Duration;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.OpeningHoursSpecification;
 import org.schema.model.DayOfWeek;
+import org.schema.model.Duration;
+import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Time;
 
 /**

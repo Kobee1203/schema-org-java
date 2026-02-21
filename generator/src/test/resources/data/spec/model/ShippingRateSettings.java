@@ -6,12 +6,12 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.DefinedRegion;
 import spec.model.DeliveryChargeSpecification;
 import spec.model.MonetaryAmount;
-import spec.model.datatype.Number;
-import spec.model.DefinedRegion;
-import spec.model.datatype.Boolean;
 import spec.model.ShippingRateSettings;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Number;
 
 /**
  * A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished and matched (i.e. identified/referenced) by their different values for [[shippingLabel]].

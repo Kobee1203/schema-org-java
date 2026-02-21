@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Mass;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.Distance;
+import org.schema.model.Mass;
 import org.schema.model.Person;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Integer;
 
 /**
  * A work of art that is primarily visual in character.

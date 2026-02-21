@@ -5,34 +5,34 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.MedicalTherapy;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalCondition;
+import org.schema.model.CreativeWork;
+import org.schema.model.DrugLegalStatus;
+import org.schema.model.Event;
 import org.schema.model.Grant;
+import org.schema.model.ImageObject;
+import org.schema.model.MedicalCode;
+import org.schema.model.MedicalCondition;
+import org.schema.model.MedicalEntity;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalStudy;
-import org.schema.model.MedicalCode;
-import org.schema.model.DrugLegalStatus;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.Organization;
-import org.schema.model.MedicalGuideline;
+import org.schema.model.MedicalTherapy;
 import org.schema.model.MedicineSystem;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
+import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.MedicalEntity;
+import org.schema.model.PropertyValue;
 import org.schema.model.SuperficialAnatomy;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Anatomical features that can be observed by sight (without dissection), including the form and proportions of the human body as well as surface landmarks that correspond to deeper subcutaneous structures. Superficial anatomy plays an important role in sports medicine, phlebotomy, and other medical specialties as underlying anatomical structures can be identified through surface palpation. For example, during back surgery, superficial anatomy can be used to palpate and count vertebrae to find the site of incision. Or in phlebotomy, superficial anatomy can be used to locate an underlying vein; for example, the median cubital vein can be located by palpating the borders of the cubital fossa (such as the epicondyles of the humerus) and then looking for the superficial signs of the vein, such as size, prominence, ability to refill after depression, and feel of surrounding tissue support. As another example, in a subluxation (dislocation) of the glenohumeral joint, the bony structure becomes pronounced with the deltoid muscle failing to cover the glenohumeral joint allowing the edges of the scapula to be superficially visible. Here, the superficial anatomy is the visible edges of the scapula, implying the underlying dislocation of the joint (the related anatomical structure).

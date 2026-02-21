@@ -5,28 +5,28 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.ServicePeriod;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.ShippingConditions;
-import spec_custom.model.MemberProgramTier;
-import spec_custom.model.FulfillmentTypeEnumeration;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.FulfillmentTypeEnumeration;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
-import spec_custom.model.StructuredValue;
+import spec_custom.model.MemberProgramTier;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.ServicePeriod;
+import spec_custom.model.ShippingConditions;
 import spec_custom.model.ShippingService;
+import spec_custom.model.StructuredValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.

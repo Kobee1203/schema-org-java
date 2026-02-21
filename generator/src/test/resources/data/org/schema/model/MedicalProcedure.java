@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalProcedureType;
 import org.schema.model.EventStatusType;
-import org.schema.model.MedicalStudyStatus;
 import org.schema.model.MedicalEntity;
+import org.schema.model.MedicalProcedureType;
+import org.schema.model.MedicalStudyStatus;
+import org.schema.model.datatype.Text;
 
 /**
  * A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.

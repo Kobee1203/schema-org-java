@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
+import org.schema.model.MemberProgram;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.MemberProgram;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.

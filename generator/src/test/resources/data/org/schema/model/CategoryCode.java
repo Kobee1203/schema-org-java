@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.CategoryCodeSet;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
 /**

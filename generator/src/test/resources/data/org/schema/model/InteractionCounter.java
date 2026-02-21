@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
-import org.schema.model.SoftwareApplication;
-import org.schema.model.WebSite;
-import org.schema.model.datatype.Integer;
 import org.schema.model.Action;
-import org.schema.model.datatype.Text;
-import org.schema.model.VirtualLocation;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
+import org.schema.model.SoftwareApplication;
+import org.schema.model.VirtualLocation;
+import org.schema.model.WebSite;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
 
 /**
  * A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.

@@ -5,22 +5,22 @@
  */
 package spec.model.impl;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DefinedTerm;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.Taxon;
+import spec.model.TextObject;
+import spec.model.Thing;
 import spec.model.datatype.Text;
 import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.DefinedTerm;
-import spec.model.Taxon;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
 
 /**
  * A set of organisms asserted to represent a natural cohesive biological unit.

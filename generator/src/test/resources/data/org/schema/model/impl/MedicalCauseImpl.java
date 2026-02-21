@@ -5,30 +5,30 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.MedicalEntity;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.CreativeWork;
+import org.schema.model.DrugLegalStatus;
+import org.schema.model.Event;
 import org.schema.model.Grant;
+import org.schema.model.ImageObject;
+import org.schema.model.MedicalCause;
+import org.schema.model.MedicalCode;
+import org.schema.model.MedicalEntity;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalStudy;
-import org.schema.model.MedicalCode;
-import org.schema.model.datatype.Text;
-import org.schema.model.DrugLegalStatus;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.Organization;
-import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicineSystem;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
+import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
+import org.schema.model.PropertyValue;
 import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
 import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.MedicalCause;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * The causative agent(s) that are responsible for the pathophysiologic process that eventually results in a medical condition, symptom or sign. In this schema, unless otherwise specified this is meant to be the proximate cause of the medical condition, symptom or sign. The proximate cause is defined as the causative agent that most directly results in the medical condition, symptom or sign. For example, the HIV virus could be considered a cause of AIDS. Or in a diagnostic context, if a patient fell and sustained a hip fracture and two days later sustained a pulmonary embolism which eventuated in a cardiac arrest, the cause of the cardiac arrest (the proximate cause) would be the pulmonary embolism and not the fall. Medical causes can include cardiovascular, chemical, dermatologic, endocrine, environmental, gastroenterologic, genetic, hematologic, gynecologic, iatrogenic, infectious, musculoskeletal, neurologic, nutritional, obstetric, oncologic, otolaryngologic, pharmacologic, psychiatric, pulmonary, renal, rheumatologic, toxic, traumatic, or urologic causes; medical conditions can be causes as well.

@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
 import org.schema.model.QualitativeValue;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.

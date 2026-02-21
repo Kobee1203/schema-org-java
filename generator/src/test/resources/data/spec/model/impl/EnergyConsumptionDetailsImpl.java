@@ -5,24 +5,24 @@
  */
 package spec.model.impl;
 
-import spec.model.EnergyEfficiencyEnumeration;
-import spec.model.EUEnergyEfficiencyEnumeration;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec.model.Intangible;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.EUEnergyEfficiencyEnumeration;
 import spec.model.EnergyConsumptionDetails;
+import spec.model.EnergyEfficiencyEnumeration;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * EnergyConsumptionDetails represents information related to the energy efficiency of a product that consumes energy. The information that can be provided is based on international regulations such as for example [EU directive 2017/1369](https://eur-lex.europa.eu/eli/reg/2017/1369/oj) for energy labeling and the [Energy labeling rule](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/energy-water-use-labeling-consumer) under the Energy Policy and Conservation Act (EPCA) in the US.

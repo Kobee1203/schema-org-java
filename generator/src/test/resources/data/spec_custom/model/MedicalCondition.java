@@ -6,22 +6,22 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.MedicalSignOrSymptom;
-import spec_custom.model.MedicalConditionStage;
-import spec_custom.model.MedicalCause;
-import spec_custom.model.SuperficialAnatomy;
 import spec_custom.model.AnatomicalStructure;
 import spec_custom.model.AnatomicalSystem;
+import spec_custom.model.DDxElement;
 import spec_custom.model.Drug;
 import spec_custom.model.DrugClass;
-import spec_custom.model.MedicalTherapy;
-import spec_custom.model.LifestyleModification;
-import spec_custom.model.MedicalRiskFactor;
-import spec_custom.model.MedicalTest;
-import spec_custom.model.DDxElement;
 import spec_custom.model.EventStatusType;
+import spec_custom.model.LifestyleModification;
+import spec_custom.model.MedicalCause;
+import spec_custom.model.MedicalConditionStage;
+import spec_custom.model.MedicalRiskFactor;
+import spec_custom.model.MedicalSignOrSymptom;
 import spec_custom.model.MedicalStudyStatus;
+import spec_custom.model.MedicalTest;
+import spec_custom.model.MedicalTherapy;
+import spec_custom.model.SuperficialAnatomy;
+import spec_custom.model.datatype.Text;
 
 /**
  * Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.

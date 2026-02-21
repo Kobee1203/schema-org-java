@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.BroadcastService;
 import org.schema.model.BroadcastChannel;
-import org.schema.model.Place;
-import org.schema.model.Language;
 import org.schema.model.BroadcastFrequencySpecification;
+import org.schema.model.BroadcastService;
+import org.schema.model.Language;
 import org.schema.model.Organization;
+import org.schema.model.Place;
+import org.schema.model.datatype.Text;
 
 /**
  * A delivery service through which content is provided via broadcast over the air or online.

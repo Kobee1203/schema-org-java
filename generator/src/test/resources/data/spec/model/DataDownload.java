@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.MeasurementMethodEnum;
 import spec.model.DefinedTerm;
-import spec.model.datatype.URL;
+import spec.model.MeasurementMethodEnum;
 import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * All or part of a [[Dataset]] in downloadable form. 

@@ -6,13 +6,13 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
 import spec.model.DefinedTerm;
 import spec.model.ItemList;
-import spec.model.MusicRecording;
 import spec.model.MusicAlbum;
+import spec.model.MusicRecording;
 import spec.model.Person;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.

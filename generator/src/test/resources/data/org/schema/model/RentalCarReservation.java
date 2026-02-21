@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.Place;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A reservation for a rental car.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.

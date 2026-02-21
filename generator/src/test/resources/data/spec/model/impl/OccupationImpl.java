@@ -5,30 +5,30 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Text;
-import spec.model.OccupationalExperienceRequirements;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
 import spec.model.AdministrativeArea;
-import spec.model.DefinedTerm;
 import spec.model.CategoryCode;
+import spec.model.CreativeWork;
+import spec.model.DefinedTerm;
 import spec.model.EducationalOccupationalCredential;
-import spec.model.datatype.Number;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
 import spec.model.MonetaryAmount;
 import spec.model.MonetaryAmountDistribution;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.Intangible;
 import spec.model.Occupation;
+import spec.model.OccupationalExperienceRequirements;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A profession, may involve prolonged training and/or a formal qualification.

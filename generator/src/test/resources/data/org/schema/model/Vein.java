@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AnatomicalStructure;
-import org.schema.model.Vessel;
 import org.schema.model.AnatomicalSystem;
+import org.schema.model.Vessel;
 
 /**
  * A type of blood vessel that specifically carries blood to the heart.

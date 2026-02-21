@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.PostalAddress;
 import org.schema.model.ContactPoint;
-import org.schema.model.Service;
-import org.schema.model.datatype.URL;
 import org.schema.model.Duration;
 import org.schema.model.Language;
-import org.schema.model.datatype.Text;
 import org.schema.model.Place;
+import org.schema.model.PostalAddress;
+import org.schema.model.Service;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A means for accessing a service, e.g. a government office location, web site, or phone number.

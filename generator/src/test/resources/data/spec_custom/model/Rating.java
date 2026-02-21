@@ -8,9 +8,9 @@ package spec_custom.model;
 import java.util.List;
 import spec_custom.model.Organization;
 import spec_custom.model.Person;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.StructuredValue;
 import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 
 /**
  * A rating is an evaluation on a numeric scale, such as 1 to 5 stars.

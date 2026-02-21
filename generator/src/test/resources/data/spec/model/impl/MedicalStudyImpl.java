@@ -5,33 +5,33 @@
  */
 package spec.model.impl;
 
-import spec.model.MedicalCondition;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
 import spec.model.AdministrativeArea;
-import spec.model.MedicalEntity;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.EventStatusType;
-import spec.model.datatype.Text;
-import spec.model.MedicalStudyStatus;
-import spec.model.Grant;
-import spec.model.MedicalSpecialty;
-import spec.model.MedicalStudy;
-import spec.model.MedicalCode;
+import spec.model.CreativeWork;
 import spec.model.DrugLegalStatus;
+import spec.model.Event;
+import spec.model.EventStatusType;
+import spec.model.Grant;
+import spec.model.ImageObject;
+import spec.model.MedicalCode;
+import spec.model.MedicalCondition;
+import spec.model.MedicalEntity;
 import spec.model.MedicalEnumeration;
 import spec.model.MedicalGuideline;
+import spec.model.MedicalSpecialty;
+import spec.model.MedicalStudy;
+import spec.model.MedicalStudyStatus;
 import spec.model.MedicineSystem;
-import spec.model.datatype.URL;
+import spec.model.Organization;
+import spec.model.Person;
 import spec.model.PropertyValue;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
 import spec.model.TextObject;
-import spec.model.ImageObject;
 import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A medical study is an umbrella type covering all kinds of research studies relating to human medicine or health, including observational studies and interventional trials and registries, randomized, controlled or not. When the specific type of study is known, use one of the extensions of this type, such as MedicalTrial or MedicalObservationalStudy. Also, note that this type should be used to mark up data that describes the study itself; to tag an article that publishes the results of a study, use MedicalScholarlyArticle. Note: use the code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID.

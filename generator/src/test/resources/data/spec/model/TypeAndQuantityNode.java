@@ -6,12 +6,12 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Number;
-import spec.model.Service;
-import spec.model.Product;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
 import spec.model.BusinessFunction;
+import spec.model.Product;
+import spec.model.Service;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.

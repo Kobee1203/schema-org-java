@@ -6,8 +6,8 @@
 package org.schema.model.datatype;
 
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import org.schema.model.datatype.Text;
 import org.schema.model.Language;
+import org.schema.model.datatype.Text;
 
 /**
  * Data type: PronounceableText.

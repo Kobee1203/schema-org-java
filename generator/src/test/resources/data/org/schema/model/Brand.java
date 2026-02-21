@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
-import org.schema.model.ImageObject;
-import org.schema.model.datatype.Text;
 import org.schema.model.AggregateRating;
+import org.schema.model.ImageObject;
 import org.schema.model.Review;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A brand is a name used by an organization or business person for labeling a product, product group, or similar.

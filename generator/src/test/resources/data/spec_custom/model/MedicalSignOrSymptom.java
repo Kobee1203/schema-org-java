@@ -8,8 +8,8 @@ package spec_custom.model;
 import java.util.List;
 import spec_custom.model.Drug;
 import spec_custom.model.DrugClass;
-import spec_custom.model.MedicalTherapy;
 import spec_custom.model.LifestyleModification;
+import spec_custom.model.MedicalTherapy;
 
 /**
  * Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.

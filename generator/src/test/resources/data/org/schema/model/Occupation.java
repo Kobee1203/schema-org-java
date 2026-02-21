@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.OccupationalExperienceRequirements;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.DefinedTerm;
 import org.schema.model.CategoryCode;
+import org.schema.model.DefinedTerm;
 import org.schema.model.EducationalOccupationalCredential;
-import org.schema.model.datatype.Number;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.MonetaryAmountDistribution;
+import org.schema.model.OccupationalExperienceRequirements;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A profession, may involve prolonged training and/or a formal qualification.

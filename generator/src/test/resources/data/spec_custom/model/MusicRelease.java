@@ -7,12 +7,12 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.Duration;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.Organization;
 import spec_custom.model.MusicAlbum;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.Person;
 import spec_custom.model.MusicReleaseFormatType;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.datatype.Text;
 
 /**
  * A MusicRelease is a specific release of a music album.

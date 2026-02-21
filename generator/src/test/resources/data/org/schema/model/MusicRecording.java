@@ -7,13 +7,13 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Duration;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.MusicAlbum;
-import org.schema.model.Person;
-import org.schema.model.MusicGroup;
-import org.schema.model.datatype.Text;
 import org.schema.model.MusicComposition;
+import org.schema.model.MusicGroup;
 import org.schema.model.MusicPlaylist;
+import org.schema.model.Person;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Text;
 
 /**
  * A music recording (track), usually a single song.

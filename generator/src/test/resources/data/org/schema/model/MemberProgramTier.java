@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
-import org.schema.model.TierBenefitEnumeration;
+import org.schema.model.CreditCard;
 import org.schema.model.MemberProgram;
 import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Text;
-import org.schema.model.CreditCard;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.TierBenefitEnumeration;
 import org.schema.model.UnitPriceSpecification;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A MemberProgramTier specifies a tier under a loyalty (member) program, for example "gold".

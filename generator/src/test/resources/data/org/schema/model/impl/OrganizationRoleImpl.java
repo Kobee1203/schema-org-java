@@ -5,26 +5,26 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
 import org.schema.model.Intangible;
-import org.schema.model.Role;
+import org.schema.model.Organization;
 import org.schema.model.OrganizationRole;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.Role;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A subclass of Role used to describe roles within organizations.

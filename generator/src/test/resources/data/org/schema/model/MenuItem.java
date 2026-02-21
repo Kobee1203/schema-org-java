@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Demand;
+import org.schema.model.MenuItem;
+import org.schema.model.MenuSection;
 import org.schema.model.NutritionInformation;
 import org.schema.model.Offer;
-import org.schema.model.Demand;
 import org.schema.model.RestrictedDiet;
-import org.schema.model.MenuSection;
-import org.schema.model.MenuItem;
 
 /**
  * A food or drink item listed in a menu or menu section.

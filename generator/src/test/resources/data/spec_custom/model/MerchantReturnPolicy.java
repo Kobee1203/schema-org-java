@@ -6,23 +6,23 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.RefundTypeEnumeration;
 import spec_custom.model.Country;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.ReturnMethodEnumeration;
-import spec_custom.model.ReturnLabelSourceEnumeration;
-import spec_custom.model.datatype.Date;
-import spec_custom.model.datatype.Integer;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.ReturnFeesEnumeration;
-import spec_custom.model.MonetaryAmount;
 import spec_custom.model.MemberProgramTier;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.PropertyValue;
 import spec_custom.model.MerchantReturnEnumeration;
 import spec_custom.model.MerchantReturnPolicySeasonalOverride;
+import spec_custom.model.MonetaryAmount;
 import spec_custom.model.OfferItemCondition;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.RefundTypeEnumeration;
+import spec_custom.model.ReturnFeesEnumeration;
+import spec_custom.model.ReturnLabelSourceEnumeration;
+import spec_custom.model.ReturnMethodEnumeration;
 import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Date;
+import spec_custom.model.datatype.DateTime;
+import spec_custom.model.datatype.Integer;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
 
 /**

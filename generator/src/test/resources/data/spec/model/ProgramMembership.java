@@ -6,12 +6,12 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.QuantitativeValue;
-import spec.model.datatype.Number;
+import spec.model.MemberProgram;
 import spec.model.Organization;
 import spec.model.Person;
-import spec.model.MemberProgram;
+import spec.model.QuantitativeValue;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
 
 /**
  * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.

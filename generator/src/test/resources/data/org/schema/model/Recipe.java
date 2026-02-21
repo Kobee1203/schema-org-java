@@ -7,13 +7,13 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.CreativeWork;
+import org.schema.model.Duration;
 import org.schema.model.ItemList;
-import org.schema.model.datatype.Text;
 import org.schema.model.NutritionInformation;
 import org.schema.model.PropertyValue;
-import org.schema.model.RestrictedDiet;
 import org.schema.model.QuantitativeValue;
-import org.schema.model.Duration;
+import org.schema.model.RestrictedDiet;
+import org.schema.model.datatype.Text;
 
 /**
  * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.

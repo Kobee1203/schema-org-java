@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.BusStop;
 import org.schema.model.BusStation;
+import org.schema.model.BusStop;
+import org.schema.model.datatype.Text;
 
 /**
  * A trip on a commercial bus line.

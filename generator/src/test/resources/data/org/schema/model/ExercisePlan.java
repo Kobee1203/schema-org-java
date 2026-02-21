@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Energy;
-import org.schema.model.datatype.Number;
 import org.schema.model.Duration;
+import org.schema.model.Energy;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician.

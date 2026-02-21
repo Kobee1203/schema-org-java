@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.BedType;
-import org.schema.model.datatype.Text;
 import org.schema.model.BedDetails;
+import org.schema.model.BedType;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Text;
 
 /**
  * A hotel room is a single room in a hotel.

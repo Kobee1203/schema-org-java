@@ -7,10 +7,10 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.MediaManipulationRatingEnumeration;
-import org.schema.model.WebPage;
 import org.schema.model.MediaObject;
-import org.schema.model.datatype.URL;
+import org.schema.model.WebPage;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.

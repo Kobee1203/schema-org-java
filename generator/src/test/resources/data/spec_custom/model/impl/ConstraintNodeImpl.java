@@ -5,24 +5,24 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.datatype.URL;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.ConstraintNode;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
 import spec_custom.model.Property;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
 import spec_custom.model.datatype.Integer;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.Intangible;
-import spec_custom.model.ConstraintNode;
+import spec_custom.model.datatype.URL;
 
 /**
  * The ConstraintNode type is provided to support usecases in which a node in a structured data graph is described with properties which appear to describe a single entity, but are being used in a situation where they serve a more abstract purpose. A [[ConstraintNode]] can be described using [[constraintProperty]] and [[numConstraints]]. These constraint properties can serve a

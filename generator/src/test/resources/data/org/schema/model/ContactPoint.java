@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.OpeningHoursSpecification;
-import org.schema.model.datatype.Text;
-import org.schema.model.Product;
-import org.schema.model.Place;
 import org.schema.model.AdministrativeArea;
+import org.schema.model.ContactPointOption;
 import org.schema.model.GeoShape;
 import org.schema.model.Language;
-import org.schema.model.ContactPointOption;
+import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.Place;
+import org.schema.model.Product;
+import org.schema.model.datatype.Text;
 
 /**
  * A contact point&#x2014;for example, a Customer Complaints department.

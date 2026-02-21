@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Person;
+import spec.model.MusicAlbumProductionType;
+import spec.model.MusicAlbumReleaseType;
 import spec.model.MusicGroup;
 import spec.model.MusicRelease;
-import spec.model.MusicAlbumReleaseType;
-import spec.model.MusicAlbumProductionType;
+import spec.model.Person;
 
 /**
  * A collection of music tracks.

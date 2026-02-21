@@ -5,25 +5,25 @@
  */
 package spec.model.impl;
 
-import spec.model.HealthPlanFormulary;
-import spec.model.ContactPoint;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.HealthPlanNetwork;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec.model.Intangible;
+import spec.model.Action;
+import spec.model.ContactPoint;
+import spec.model.CreativeWork;
+import spec.model.Event;
 import spec.model.HealthInsurancePlan;
+import spec.model.HealthPlanFormulary;
+import spec.model.HealthPlanNetwork;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A US-style health insurance plan, including PPOs, EPOs, and HMOs.

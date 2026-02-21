@@ -5,33 +5,33 @@
  */
 package spec.model.impl;
 
-import spec.model.MedicalSignOrSymptom;
-import spec.model.MedicalCondition;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DDxElement;
+import spec.model.DrugLegalStatus;
+import spec.model.Event;
 import spec.model.Grant;
+import spec.model.ImageObject;
+import spec.model.MedicalCode;
+import spec.model.MedicalCondition;
+import spec.model.MedicalEntity;
+import spec.model.MedicalEnumeration;
+import spec.model.MedicalGuideline;
+import spec.model.MedicalIntangible;
+import spec.model.MedicalSignOrSymptom;
 import spec.model.MedicalSpecialty;
 import spec.model.MedicalStudy;
-import spec.model.MedicalCode;
-import spec.model.datatype.Text;
-import spec.model.DrugLegalStatus;
-import spec.model.MedicalEnumeration;
-import spec.model.Organization;
-import spec.model.MedicalGuideline;
 import spec.model.MedicineSystem;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
+import spec.model.Organization;
 import spec.model.Person;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
+import spec.model.PropertyValue;
 import spec.model.TextObject;
-import spec.model.ImageObject;
 import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.MedicalEntity;
-import spec.model.MedicalIntangible;
-import spec.model.DDxElement;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.

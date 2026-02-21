@@ -6,23 +6,23 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.RefundTypeEnumeration;
 import org.schema.model.Country;
-import org.schema.model.datatype.Text;
-import org.schema.model.ReturnMethodEnumeration;
-import org.schema.model.ReturnLabelSourceEnumeration;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.ReturnFeesEnumeration;
-import org.schema.model.MonetaryAmount;
 import org.schema.model.MemberProgramTier;
-import org.schema.model.datatype.Number;
-import org.schema.model.PropertyValue;
 import org.schema.model.MerchantReturnEnumeration;
 import org.schema.model.MerchantReturnPolicySeasonalOverride;
+import org.schema.model.MonetaryAmount;
 import org.schema.model.OfferItemCondition;
+import org.schema.model.PropertyValue;
+import org.schema.model.RefundTypeEnumeration;
+import org.schema.model.ReturnFeesEnumeration;
+import org.schema.model.ReturnLabelSourceEnumeration;
+import org.schema.model.ReturnMethodEnumeration;
 import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
 /**

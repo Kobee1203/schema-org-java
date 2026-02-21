@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
-import org.schema.model.Article;
 import org.schema.model.AboutPage;
+import org.schema.model.Article;
+import org.schema.model.CreativeWork;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A News/Media organization such as a newspaper or TV station.

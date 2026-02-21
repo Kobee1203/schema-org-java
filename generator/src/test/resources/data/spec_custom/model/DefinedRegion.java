@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Country;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PostalCodeRangeSpecification;
 import spec_custom.model.AdministrativeArea;
+import spec_custom.model.Country;
+import spec_custom.model.PostalCodeRangeSpecification;
+import spec_custom.model.datatype.Text;
 
 /**
  * A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.

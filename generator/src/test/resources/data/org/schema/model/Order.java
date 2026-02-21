@@ -6,23 +6,23 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.Person;
+import org.schema.model.Invoice;
+import org.schema.model.Offer;
+import org.schema.model.OrderItem;
+import org.schema.model.OrderStatus;
 import org.schema.model.Organization;
 import org.schema.model.ParcelDelivery;
-import org.schema.model.Invoice;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Offer;
-import org.schema.model.datatype.Date;
-import org.schema.model.OrderStatus;
-import org.schema.model.datatype.Number;
 import org.schema.model.PaymentMethod;
-import org.schema.model.Service;
-import org.schema.model.Product;
-import org.schema.model.OrderItem;
+import org.schema.model.Person;
 import org.schema.model.PostalAddress;
+import org.schema.model.Product;
+import org.schema.model.Service;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.

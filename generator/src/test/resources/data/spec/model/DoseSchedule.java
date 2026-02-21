@@ -6,9 +6,9 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.datatype.Number;
 import spec.model.QualitativeValue;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
 
 /**
  * A specific dosing schedule for a drug or supplement.

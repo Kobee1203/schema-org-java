@@ -6,17 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.BedType;
-import org.schema.model.datatype.Text;
 import org.schema.model.BedDetails;
-import org.schema.model.datatype.URL;
+import org.schema.model.BedType;
 import org.schema.model.Duration;
 import org.schema.model.FloorPlan;
+import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Integer;
-import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.

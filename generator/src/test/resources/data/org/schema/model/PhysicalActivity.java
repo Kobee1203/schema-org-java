@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.SuperficialAnatomy;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
-import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.SuperficialAnatomy;
 import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
 /**

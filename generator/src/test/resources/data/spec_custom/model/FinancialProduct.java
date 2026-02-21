@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.QuantitativeValue;
 import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.

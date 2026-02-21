@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Mass;
-import spec.model.QuantitativeValue;
-import spec.model.Distance;
 import spec.model.DefinedRegion;
+import spec.model.Distance;
+import spec.model.Mass;
 import spec.model.MemberProgramTier;
-import spec.model.datatype.Boolean;
-import spec.model.ShippingDeliveryTime;
-import spec.model.ShippingService;
 import spec.model.MonetaryAmount;
+import spec.model.QuantitativeValue;
+import spec.model.ShippingDeliveryTime;
 import spec.model.ShippingRateSettings;
+import spec.model.ShippingService;
+import spec.model.datatype.Boolean;
 
 /**
  * OfferShippingDetails represents information about shipping destinations.

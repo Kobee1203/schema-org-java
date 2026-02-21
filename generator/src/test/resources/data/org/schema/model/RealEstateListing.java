@@ -8,8 +8,8 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.Duration;
 import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).

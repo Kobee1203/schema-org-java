@@ -5,31 +5,31 @@
  */
 package spec.model.impl;
 
-import spec.model.RefundTypeEnumeration;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Date;
-import spec.model.ReturnMethodEnumeration;
-import spec.model.datatype.Integer;
-import spec.model.ReturnFeesEnumeration;
-import spec.model.MonetaryAmount;
-import spec.model.datatype.Number;
-import spec.model.MerchantReturnEnumeration;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.Event;
+import spec.model.ImageObject;
 import spec.model.Intangible;
+import spec.model.MerchantReturnEnumeration;
 import spec.model.MerchantReturnPolicySeasonalOverride;
+import spec.model.MonetaryAmount;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.RefundTypeEnumeration;
+import spec.model.ReturnFeesEnumeration;
+import spec.model.ReturnMethodEnumeration;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A seasonal override of a return policy, for example used for holidays.

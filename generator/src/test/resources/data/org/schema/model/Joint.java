@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.MedicalEntity;
+import org.schema.model.datatype.Text;
 
 /**
  * The anatomical location at which two or more bones make contact.

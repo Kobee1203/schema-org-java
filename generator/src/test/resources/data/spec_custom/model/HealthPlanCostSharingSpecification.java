@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.PriceSpecification;
 import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 
 /**
  * A description of costs to the patient under a given network or formulary.

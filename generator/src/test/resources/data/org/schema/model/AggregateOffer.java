@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Offer;
 import org.schema.model.Demand;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Number;
+import org.schema.model.Offer;
 import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.<br/><br/>Note: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.

@@ -5,31 +5,31 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Time;
-import spec.model.SoftwareApplication;
-import spec.model.WebSite;
-import spec.model.datatype.Integer;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
 import spec.model.Action;
-import spec.model.datatype.Text;
-import spec.model.VirtualLocation;
+import spec.model.CreativeWork;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.InteractionCounter;
+import spec.model.Organization;
+import spec.model.Person;
 import spec.model.Place;
 import spec.model.PostalAddress;
-import spec.model.datatype.URL;
 import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.Intangible;
+import spec.model.SoftwareApplication;
 import spec.model.StructuredValue;
-import spec.model.InteractionCounter;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.VirtualLocation;
+import spec.model.WebSite;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
+import spec.model.datatype.Time;
+import spec.model.datatype.URL;
 
 /**
  * A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.

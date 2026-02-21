@@ -6,17 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DefinedTerm;
+import org.schema.model.Enumeration;
+import org.schema.model.MeasurementTypeEnumeration;
+import org.schema.model.PropertyValue;
+import org.schema.model.QualitativeValue;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.StructuredValue;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
-import org.schema.model.StructuredValue;
 import org.schema.model.datatype.URL;
-import org.schema.model.DefinedTerm;
-import org.schema.model.PropertyValue;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Enumeration;
-import org.schema.model.MeasurementTypeEnumeration;
-import org.schema.model.QualitativeValue;
 
 /**
  *  A point value or interval for product characteristics and other purposes.

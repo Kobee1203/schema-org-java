@@ -6,18 +6,18 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.datatype.URL;
-import spec.model.MeasurementMethodEnum;
 import spec.model.DefinedTerm;
+import spec.model.Enumeration;
+import spec.model.MeasurementMethodEnum;
+import spec.model.MeasurementTypeEnumeration;
+import spec.model.PropertyValue;
+import spec.model.QualitativeValue;
+import spec.model.QuantitativeValue;
+import spec.model.StructuredValue;
 import spec.model.datatype.Boolean;
 import spec.model.datatype.Number;
-import spec.model.StructuredValue;
-import spec.model.PropertyValue;
-import spec.model.QuantitativeValue;
-import spec.model.Enumeration;
-import spec.model.MeasurementTypeEnumeration;
-import spec.model.QualitativeValue;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.<br/><br/> Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.

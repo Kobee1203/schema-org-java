@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.BrainStructure;
 import org.schema.model.AnatomicalStructure;
+import org.schema.model.BrainStructure;
 import org.schema.model.Muscle;
 import org.schema.model.SuperficialAnatomy;
 

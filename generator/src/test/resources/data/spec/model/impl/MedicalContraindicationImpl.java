@@ -5,30 +5,30 @@
  */
 package spec.model.impl;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DrugLegalStatus;
+import spec.model.Event;
 import spec.model.Grant;
+import spec.model.ImageObject;
+import spec.model.MedicalCode;
+import spec.model.MedicalContraindication;
+import spec.model.MedicalEntity;
+import spec.model.MedicalEnumeration;
+import spec.model.MedicalGuideline;
 import spec.model.MedicalSpecialty;
 import spec.model.MedicalStudy;
-import spec.model.MedicalCode;
-import spec.model.datatype.Text;
-import spec.model.DrugLegalStatus;
-import spec.model.MedicalEnumeration;
-import spec.model.Organization;
-import spec.model.MedicalGuideline;
 import spec.model.MedicineSystem;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
+import spec.model.Organization;
 import spec.model.Person;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
+import spec.model.PropertyValue;
 import spec.model.TextObject;
-import spec.model.ImageObject;
 import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.MedicalEntity;
-import spec.model.MedicalContraindication;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A condition or factor that serves as a reason to withhold a certain medical therapy. Contraindications can be absolute (there are no reasonable circumstances for undertaking a course of action) or relative (the patient is at higher risk of complications, but these risks may be outweighed by other considerations or mitigated by other measures).

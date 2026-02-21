@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.Audience;
+import org.schema.model.ContactPoint;
 import org.schema.model.DeliveryMethod;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:<br/><br/>* [[ReceiveAction]]: The reciprocal of SendAction.<br/>* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).

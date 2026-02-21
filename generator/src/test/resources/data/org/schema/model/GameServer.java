@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
 import org.schema.model.GameServerStatus;
 import org.schema.model.VideoGame;
+import org.schema.model.datatype.Integer;
 
 /**
  * Server that provides game interaction in a multiplayer game.

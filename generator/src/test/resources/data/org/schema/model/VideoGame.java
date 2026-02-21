@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MusicGroup;
-import org.schema.model.Person;
 import org.schema.model.CreativeWork;
-import org.schema.model.PerformingGroup;
-import org.schema.model.GameServer;
-import org.schema.model.datatype.Text;
-import org.schema.model.VideoObject;
 import org.schema.model.GamePlayMode;
+import org.schema.model.GameServer;
+import org.schema.model.MusicGroup;
+import org.schema.model.PerformingGroup;
+import org.schema.model.Person;
 import org.schema.model.Thing;
+import org.schema.model.VideoObject;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
 /**

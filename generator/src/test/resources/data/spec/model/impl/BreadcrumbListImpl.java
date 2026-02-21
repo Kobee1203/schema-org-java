@@ -5,26 +5,26 @@
  */
 package spec.model.impl;
 
-import spec.model.Thing;
-import spec.model.ListItem;
-import spec.model.datatype.Text;
-import spec.model.datatype.Integer;
-import spec.model.ItemListOrderType;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.BreadcrumbList;
+import spec.model.CreativeWork;
+import spec.model.Event;
+import spec.model.ImageObject;
 import spec.model.Intangible;
 import spec.model.ItemList;
-import spec.model.BreadcrumbList;
+import spec.model.ItemListOrderType;
+import spec.model.ListItem;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.<br/><br/>The [[position]] property is used to reconstruct the order of the items in a BreadcrumbList. The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the "top" or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.

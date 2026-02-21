@@ -5,27 +5,27 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.Text;
-import org.schema.model.Grant;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
-import org.schema.model.DefinedTerm;
-import org.schema.model.MedicalCondition;
-import org.schema.model.BioChemEntity;
-import org.schema.model.Gene;
-import org.schema.model.Taxon;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.BioChemEntity;
+import org.schema.model.CreativeWork;
+import org.schema.model.DefinedTerm;
+import org.schema.model.Event;
+import org.schema.model.Gene;
+import org.schema.model.Grant;
+import org.schema.model.ImageObject;
+import org.schema.model.MedicalCondition;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
 import org.schema.model.Protein;
+import org.schema.model.Taxon;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type :Protein. A protein can thus be a subclass of another protein, e.g. :Protein as a UniProt record can have multiple isoforms inside it which would also be :Protein. They can be imagined, synthetic, hypothetical or naturally occurring.

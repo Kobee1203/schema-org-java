@@ -7,13 +7,13 @@ package spec.model;
 
 import java.util.List;
 import spec.model.Duration;
-import spec.model.QuantitativeValue;
 import spec.model.MusicAlbum;
-import spec.model.Person;
-import spec.model.MusicGroup;
-import spec.model.datatype.Text;
 import spec.model.MusicComposition;
+import spec.model.MusicGroup;
 import spec.model.MusicPlaylist;
+import spec.model.Person;
+import spec.model.QuantitativeValue;
+import spec.model.datatype.Text;
 
 /**
  * A music recording (track), usually a single song.

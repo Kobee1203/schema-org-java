@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.MedicalTherapy;
 import spec_custom.model.AnatomicalStructure;
 import spec_custom.model.AnatomicalSystem;
 import spec_custom.model.MedicalCondition;
+import spec_custom.model.MedicalTherapy;
 import spec_custom.model.datatype.Text;
 
 /**

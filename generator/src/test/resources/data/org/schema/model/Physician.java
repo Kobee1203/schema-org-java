@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalSpecialty;
-import org.schema.model.datatype.Text;
-import org.schema.model.Hospital;
 import org.schema.model.CategoryCode;
+import org.schema.model.Hospital;
 import org.schema.model.MedicalProcedure;
+import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalTest;
 import org.schema.model.MedicalTherapy;
+import org.schema.model.datatype.Text;
 
 /**
  * An individual physician or a physician's office considered as a [[MedicalOrganization]].

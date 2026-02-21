@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.ComputerLanguage;
-import org.schema.model.datatype.URL;
-import org.schema.model.SoftwareApplication;
 import org.schema.model.RuntimePlatform;
+import org.schema.model.SoftwareApplication;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.

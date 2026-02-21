@@ -6,19 +6,19 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Drug;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.DrugStrength;
-import org.schema.model.DrugLegalStatus;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.DrugClass;
-import org.schema.model.DrugPrescriptionStatus;
 import org.schema.model.DoseSchedule;
-import org.schema.model.MaximumDoseSchedule;
+import org.schema.model.Drug;
+import org.schema.model.DrugClass;
+import org.schema.model.DrugLegalStatus;
 import org.schema.model.DrugPregnancyCategory;
+import org.schema.model.DrugPrescriptionStatus;
+import org.schema.model.DrugStrength;
 import org.schema.model.HealthInsurancePlan;
+import org.schema.model.MaximumDoseSchedule;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge makes a clear difference between them.

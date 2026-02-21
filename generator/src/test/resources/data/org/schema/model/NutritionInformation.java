@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Mass;
 import org.schema.model.Energy;
+import org.schema.model.Mass;
 import org.schema.model.datatype.Text;
 
 /**

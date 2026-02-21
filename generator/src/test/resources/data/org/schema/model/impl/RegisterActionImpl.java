@@ -5,30 +5,30 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Thing;
-import org.schema.model.HowTo;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
 import org.schema.model.ActionStatusType;
-import org.schema.model.datatype.Text;
-import org.schema.model.VirtualLocation;
+import org.schema.model.CreativeWork;
+import org.schema.model.EntryPoint;
+import org.schema.model.Event;
+import org.schema.model.HowTo;
+import org.schema.model.ImageObject;
+import org.schema.model.InteractAction;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
-import org.schema.model.EntryPoint;
-import org.schema.model.datatype.URL;
 import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.InteractAction;
 import org.schema.model.RegisterAction;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.VirtualLocation;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * The act of registering to be a user of a service, product or web page.<br/><br/>Related actions:<br/><br/>* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.<br/>* [[FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.<br/>* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.

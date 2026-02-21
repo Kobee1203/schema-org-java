@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
 import org.schema.model.MonetaryAmount;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.

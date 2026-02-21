@@ -6,17 +6,17 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Duration;
-import spec.model.QuantitativeValue;
-import spec.model.MusicGroup;
-import spec.model.Person;
 import spec.model.CreativeWorkSeason;
-import spec.model.PerformingGroup;
-import spec.model.VideoObject;
-import spec.model.datatype.Text;
-import spec.model.datatype.Integer;
 import spec.model.CreativeWorkSeries;
+import spec.model.Duration;
+import spec.model.MusicGroup;
 import spec.model.Organization;
+import spec.model.PerformingGroup;
+import spec.model.Person;
+import spec.model.QuantitativeValue;
+import spec.model.VideoObject;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
 
 /**
  * A media episode (e.g. TV, radio, video game) which can be part of a series or season.

@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Place;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.GeoShape;
-import org.schema.model.datatype.Text;
 import org.schema.model.DeliveryMethod;
+import org.schema.model.GeoShape;
+import org.schema.model.Place;
+import org.schema.model.datatype.Text;
 
 /**
  * The price for the delivery of an offer using a particular delivery method.

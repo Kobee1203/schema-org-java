@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.TrainStation;
+import org.schema.model.datatype.Text;
 
 /**
  * A trip on a commercial train line.

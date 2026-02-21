@@ -6,14 +6,14 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Thing;
-import spec.model.Review;
-import spec.model.ListItem;
-import spec.model.datatype.Text;
-import spec.model.WebContent;
 import spec.model.ItemList;
-import spec.model.StructuredValue;
+import spec.model.ListItem;
 import spec.model.Rating;
+import spec.model.Review;
+import spec.model.StructuredValue;
+import spec.model.Thing;
+import spec.model.WebContent;
+import spec.model.datatype.Text;
 
 /**
  * A review of an item - for example, of a restaurant, movie, or store.

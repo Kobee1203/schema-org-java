@@ -5,22 +5,22 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.Event;
+import spec.model.ImageObject;
 import spec.model.Intangible;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
 import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.

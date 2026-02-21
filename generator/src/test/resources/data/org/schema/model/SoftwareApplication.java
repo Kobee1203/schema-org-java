@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.CreativeWork;
+import org.schema.model.DataFeed;
+import org.schema.model.ImageObject;
+import org.schema.model.OperatingSystem;
+import org.schema.model.RuntimePlatform;
+import org.schema.model.SoftwareApplication;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.SoftwareApplication;
-import org.schema.model.OperatingSystem;
-import org.schema.model.DataFeed;
-import org.schema.model.CreativeWork;
-import org.schema.model.ImageObject;
-import org.schema.model.RuntimePlatform;
 
 /**
  * A software application.

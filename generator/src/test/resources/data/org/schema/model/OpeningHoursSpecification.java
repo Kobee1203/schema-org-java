@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Time;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
 import org.schema.model.DayOfWeek;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Time;
 
 /**
  * A structured value providing information about the opening hours of a place or a certain service inside a place.<br/><br/>

@@ -5,30 +5,30 @@
  */
 package spec_custom.model.impl;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DrugLegalStatus;
+import spec_custom.model.Event;
 import spec_custom.model.Grant;
+import spec_custom.model.ImageObject;
+import spec_custom.model.MedicalCode;
+import spec_custom.model.MedicalEntity;
+import spec_custom.model.MedicalEnumeration;
+import spec_custom.model.MedicalGuideline;
+import spec_custom.model.MedicalIntangible;
 import spec_custom.model.MedicalSpecialty;
 import spec_custom.model.MedicalStudy;
-import spec_custom.model.MedicalCode;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.DrugLegalStatus;
-import spec_custom.model.MedicalEnumeration;
-import spec_custom.model.Organization;
-import spec_custom.model.MedicalGuideline;
 import spec_custom.model.MedicineSystem;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
+import spec_custom.model.Organization;
 import spec_custom.model.Person;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
+import spec_custom.model.PropertyValue;
 import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
 import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.MedicalEntity;
-import spec_custom.model.MedicalIntangible;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.

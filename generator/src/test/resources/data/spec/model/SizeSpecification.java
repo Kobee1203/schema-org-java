@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.QuantitativeValue;
-import spec.model.datatype.Text;
 import spec.model.GenderType;
+import spec.model.QuantitativeValue;
 import spec.model.SizeGroupEnumeration;
 import spec.model.SizeSystemEnumeration;
+import spec.model.datatype.Text;
 
 /**
  * Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).

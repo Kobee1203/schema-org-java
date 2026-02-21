@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DefinedRegion;
 import org.schema.model.DeliveryChargeSpecification;
 import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Number;
-import org.schema.model.DefinedRegion;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.ShippingRateSettings;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Number;
 
 /**
  * A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished and matched (i.e. identified/referenced) by their different values for [[shippingLabel]].

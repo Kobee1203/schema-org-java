@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.TVSeries;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.Language;
 import org.schema.model.Country;
+import org.schema.model.Language;
+import org.schema.model.TVSeries;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A TV episode which can be part of a series or season.

@@ -6,22 +6,22 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalSignOrSymptom;
-import org.schema.model.MedicalConditionStage;
-import org.schema.model.MedicalCause;
-import org.schema.model.SuperficialAnatomy;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
+import org.schema.model.DDxElement;
 import org.schema.model.Drug;
 import org.schema.model.DrugClass;
-import org.schema.model.MedicalTherapy;
-import org.schema.model.LifestyleModification;
-import org.schema.model.MedicalRiskFactor;
-import org.schema.model.MedicalTest;
-import org.schema.model.DDxElement;
 import org.schema.model.EventStatusType;
+import org.schema.model.LifestyleModification;
+import org.schema.model.MedicalCause;
+import org.schema.model.MedicalConditionStage;
+import org.schema.model.MedicalRiskFactor;
+import org.schema.model.MedicalSignOrSymptom;
 import org.schema.model.MedicalStudyStatus;
+import org.schema.model.MedicalTest;
+import org.schema.model.MedicalTherapy;
+import org.schema.model.SuperficialAnatomy;
+import org.schema.model.datatype.Text;
 
 /**
  * Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An intangible item that describes an alignment between a learning resource and a node in an educational framework.

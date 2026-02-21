@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.DataDownload;
 import org.schema.model.DataCatalog;
-import org.schema.model.datatype.Text;
-import org.schema.model.MeasurementMethodEnum;
+import org.schema.model.DataDownload;
 import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.DateTime;
+import org.schema.model.MeasurementMethodEnum;
 import org.schema.model.Property;
 import org.schema.model.PropertyValue;
 import org.schema.model.StatisticalVariable;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A body of structured information describing some topic(s) of interest.

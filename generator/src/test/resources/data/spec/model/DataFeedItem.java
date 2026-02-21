@@ -7,8 +7,8 @@ package spec.model;
 
 import java.util.List;
 import spec.model.Thing;
-import spec.model.datatype.DateTime;
 import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
 
 /**
  * A single item within a larger data feed.

@@ -6,9 +6,9 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.AdministrativeArea;
 import spec.model.Country;
 import spec.model.datatype.Text;
-import spec.model.AdministrativeArea;
 
 /**
  * The mailing address.

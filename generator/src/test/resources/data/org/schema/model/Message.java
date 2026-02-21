@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.Audience;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
+import org.schema.model.ContactPoint;
 import org.schema.model.CreativeWork;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A single message from a sender to one or more organizations or people.

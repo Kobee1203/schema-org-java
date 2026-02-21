@@ -5,34 +5,34 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.Text;
-import org.schema.model.QualitativeValue;
-import org.schema.model.datatype.Number;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
 import org.schema.model.AdministrativeArea;
+import org.schema.model.CreativeWork;
+import org.schema.model.DrugCost;
 import org.schema.model.DrugCostCategory;
+import org.schema.model.DrugLegalStatus;
+import org.schema.model.Event;
 import org.schema.model.Grant;
+import org.schema.model.ImageObject;
+import org.schema.model.MedicalCode;
+import org.schema.model.MedicalEntity;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalStudy;
-import org.schema.model.MedicalCode;
-import org.schema.model.DrugLegalStatus;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.Organization;
-import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicineSystem;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
+import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
+import org.schema.model.PropertyValue;
+import org.schema.model.QualitativeValue;
 import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
 import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.MedicalEntity;
-import org.schema.model.DrugCost;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * The cost per unit of a medical drug. Note that this type is not meant to represent the price in an offer of a drug for sale; see the Offer type for that. This type will typically be used to tag wholesale or average retail cost of a drug, or maximum reimbursable cost. Costs of medical drugs vary widely depending on how and where they are paid for, so while this type captures some of the variables, costs should be used with caution by consumers of this schema's markup.

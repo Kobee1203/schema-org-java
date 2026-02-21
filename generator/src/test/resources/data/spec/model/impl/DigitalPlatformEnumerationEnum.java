@@ -5,25 +5,25 @@
  */
 package spec.model.impl;
 
-import spec.model.Property;
-import spec.model.Class;
-import spec.model.Enumeration;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec.model.Intangible;
+import spec.model.Action;
+import spec.model.Class;
+import spec.model.CreativeWork;
 import spec.model.DigitalPlatformEnumeration;
+import spec.model.Enumeration;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.Property;
+import spec.model.PropertyValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * Enumerates some common technology platforms, for use with properties such as [[actionPlatform]]. It is not supposed to be comprehensive - when a suitable code is not enumerated here, textual or URL values can be used instead. These codes are at a fairly high level and do not deal with versioning and other nuance. Additional codes can be suggested [in github](https://github.com/schemaorg/schemaorg/issues/3057). 

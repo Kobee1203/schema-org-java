@@ -5,25 +5,25 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Property;
-import spec_custom.model.Class;
-import spec_custom.model.Enumeration;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec_custom.model.Intangible;
+import spec_custom.model.Action;
+import spec_custom.model.Class;
+import spec_custom.model.CreativeWork;
 import spec_custom.model.DigitalPlatformEnumeration;
+import spec_custom.model.Enumeration;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.Property;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * Enumerates some common technology platforms, for use with properties such as [[actionPlatform]]. It is not supposed to be comprehensive - when a suitable code is not enumerated here, textual or URL values can be used instead. These codes are at a fairly high level and do not deal with versioning and other nuance. Additional codes can be suggested [in github](https://github.com/schemaorg/schemaorg/issues/3057). 

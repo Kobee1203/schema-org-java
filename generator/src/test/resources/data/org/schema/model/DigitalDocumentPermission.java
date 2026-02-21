@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.DigitalDocumentPermissionType;
 import org.schema.model.Audience;
 import org.schema.model.ContactPoint;
-import org.schema.model.Person;
+import org.schema.model.DigitalDocumentPermissionType;
 import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * A permission for a particular person or group to access a particular file.

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.BlogPosting;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.

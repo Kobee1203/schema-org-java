@@ -5,33 +5,33 @@
  */
 package spec.model.impl;
 
-import spec.model.QuantitativeValue;
-import spec.model.datatype.Text;
-import spec.model.GenderType;
-import spec.model.SizeGroupEnumeration;
-import spec.model.SizeSystemEnumeration;
-import spec.model.QualitativeValue;
-import spec.model.StructuredValue;
-import spec.model.DefinedTerm;
-import spec.model.PropertyValue;
-import spec.model.Enumeration;
-import spec.model.MeasurementTypeEnumeration;
-import spec.model.Property;
-import spec.model.Class;
-import spec.model.datatype.URL;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.Class;
+import spec.model.CreativeWork;
+import spec.model.DefinedTerm;
+import spec.model.Enumeration;
+import spec.model.Event;
+import spec.model.GenderType;
+import spec.model.ImageObject;
 import spec.model.Intangible;
+import spec.model.MeasurementTypeEnumeration;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.Property;
+import spec.model.PropertyValue;
+import spec.model.QualitativeValue;
+import spec.model.QuantitativeValue;
+import spec.model.SizeGroupEnumeration;
 import spec.model.SizeSpecification;
+import spec.model.SizeSystemEnumeration;
+import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).

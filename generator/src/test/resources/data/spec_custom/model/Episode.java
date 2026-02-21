@@ -6,17 +6,17 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Duration;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.MusicGroup;
-import spec_custom.model.Person;
 import spec_custom.model.CreativeWorkSeason;
-import spec_custom.model.PerformingGroup;
-import spec_custom.model.VideoObject;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.Integer;
 import spec_custom.model.CreativeWorkSeries;
+import spec_custom.model.Duration;
+import spec_custom.model.MusicGroup;
 import spec_custom.model.Organization;
+import spec_custom.model.PerformingGroup;
+import spec_custom.model.Person;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.VideoObject;
+import spec_custom.model.datatype.Integer;
+import spec_custom.model.datatype.Text;
 
 /**
  * A media episode (e.g. TV, radio, video game) which can be part of a series or season.

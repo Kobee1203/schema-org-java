@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Property;
 import org.schema.model.Class;
 import org.schema.model.Enumeration;
+import org.schema.model.Property;
 
 /**
  * A class, also often called a 'Type'; equivalent to rdfs:Class.

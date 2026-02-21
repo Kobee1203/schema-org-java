@@ -6,8 +6,8 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.URL;
 import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * An intangible item that describes an alignment between a learning resource and a node in an educational framework.

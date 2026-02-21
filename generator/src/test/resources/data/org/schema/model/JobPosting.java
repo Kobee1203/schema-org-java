@@ -6,26 +6,26 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.OccupationalExperienceRequirements;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.PriceSpecification;
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Date;
-import org.schema.model.Organization;
-import org.schema.model.CategoryCode;
-import org.schema.model.Place;
-import org.schema.model.Occupation;
-import org.schema.model.Person;
-import org.schema.model.EducationalOccupationalCredential;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.AdministrativeArea;
+import org.schema.model.CategoryCode;
 import org.schema.model.ContactPoint;
+import org.schema.model.DefinedTerm;
+import org.schema.model.EducationalOccupationalCredential;
+import org.schema.model.MonetaryAmount;
 import org.schema.model.MonetaryAmountDistribution;
+import org.schema.model.Occupation;
+import org.schema.model.OccupationalExperienceRequirements;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Place;
+import org.schema.model.PriceSpecification;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A listing that describes a job opening in a certain organization.

@@ -5,35 +5,35 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.MedicalObservationalStudyDesign;
-import org.schema.model.MedicalCondition;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.MedicalEntity;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.EventStatusType;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalStudyStatus;
-import org.schema.model.Grant;
-import org.schema.model.MedicalSpecialty;
-import org.schema.model.MedicalStudy;
-import org.schema.model.MedicalCode;
+import org.schema.model.CreativeWork;
 import org.schema.model.DrugLegalStatus;
+import org.schema.model.Event;
+import org.schema.model.EventStatusType;
+import org.schema.model.Grant;
+import org.schema.model.ImageObject;
+import org.schema.model.MedicalCode;
+import org.schema.model.MedicalCondition;
+import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalEnumeration;
 import org.schema.model.MedicalGuideline;
-import org.schema.model.MedicineSystem;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
 import org.schema.model.MedicalObservationalStudy;
+import org.schema.model.MedicalObservationalStudyDesign;
+import org.schema.model.MedicalSpecialty;
+import org.schema.model.MedicalStudy;
+import org.schema.model.MedicalStudyStatus;
+import org.schema.model.MedicineSystem;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An observational study is a type of medical study that attempts to infer the possible effect of a treatment through observation of a cohort of subjects over a period of time. In an observational study, the assignment of subjects into treatment groups versus control groups is outside the control of the investigator. This is in contrast with controlled studies, such as the randomized controlled trials represented by MedicalTrial, where each subject is randomly assigned to a treatment group or a control group before the start of the treatment.

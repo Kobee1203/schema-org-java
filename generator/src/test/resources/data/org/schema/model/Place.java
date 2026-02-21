@@ -6,27 +6,27 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.AggregateRating;
+import org.schema.model.Certification;
+import org.schema.model.DefinedTerm;
+import org.schema.model.Event;
+import org.schema.model.GeoCoordinates;
+import org.schema.model.GeoShape;
 import org.schema.model.GeospatialGeometry;
-import org.schema.model.Place;
+import org.schema.model.ImageObject;
+import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.Map;
 import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.Photograph;
+import org.schema.model.Place;
+import org.schema.model.PostalAddress;
+import org.schema.model.PropertyValue;
+import org.schema.model.Review;
 import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
-import org.schema.model.Review;
 import org.schema.model.datatype.URL;
-import org.schema.model.ImageObject;
-import org.schema.model.DefinedTerm;
-import org.schema.model.GeoShape;
-import org.schema.model.GeoCoordinates;
-import org.schema.model.AggregateRating;
-import org.schema.model.Map;
-import org.schema.model.Event;
-import org.schema.model.PostalAddress;
-import org.schema.model.Certification;
-import org.schema.model.PropertyValue;
-import org.schema.model.Photograph;
-import org.schema.model.datatype.Integer;
-import org.schema.model.LocationFeatureSpecification;
 
 /**
  * Entities that have a somewhat fixed, physical extension.

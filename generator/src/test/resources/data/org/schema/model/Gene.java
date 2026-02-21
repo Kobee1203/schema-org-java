@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
+import org.schema.model.AnatomicalStructure;
+import org.schema.model.AnatomicalSystem;
 import org.schema.model.BioChemEntity;
 import org.schema.model.DefinedTerm;
-import org.schema.model.AnatomicalSystem;
-import org.schema.model.AnatomicalStructure;
 import org.schema.model.Gene;
+import org.schema.model.datatype.Text;
 
 /**
  * A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).

@@ -5,23 +5,23 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.PaymentMethodType;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
 import org.schema.model.Intangible;
+import org.schema.model.Organization;
 import org.schema.model.PaymentMethod;
+import org.schema.model.PaymentMethodType;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction. The following legacy values should be accepted: <br/><br/>* http://purl.org/goodrelations/v1#ByBankTransferInAdvance<br/>* http://purl.org/goodrelations/v1#ByInvoice<br/>* http://purl.org/goodrelations/v1#Cash<br/>* http://purl.org/goodrelations/v1#CheckInAdvance<br/>* http://purl.org/goodrelations/v1#COD<br/>* http://purl.org/goodrelations/v1#DirectDebit<br/>* http://purl.org/goodrelations/v1#GoogleCheckout<br/>* http://purl.org/goodrelations/v1#PayPal<br/>* http://purl.org/goodrelations/v1#PaySwarm<br/><br/>Structured values, or [UNCE payment means](https://vocabulary.uncefact.org/PaymentMeans) are recommended or for newer annotations.

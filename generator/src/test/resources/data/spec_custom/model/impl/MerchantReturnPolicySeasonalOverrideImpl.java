@@ -5,31 +5,31 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.RefundTypeEnumeration;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.datatype.Date;
-import spec_custom.model.ReturnMethodEnumeration;
-import spec_custom.model.datatype.Integer;
-import spec_custom.model.ReturnFeesEnumeration;
-import spec_custom.model.MonetaryAmount;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.MerchantReturnEnumeration;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
+import spec_custom.model.MerchantReturnEnumeration;
 import spec_custom.model.MerchantReturnPolicySeasonalOverride;
+import spec_custom.model.MonetaryAmount;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.RefundTypeEnumeration;
+import spec_custom.model.ReturnFeesEnumeration;
+import spec_custom.model.ReturnMethodEnumeration;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Date;
+import spec_custom.model.datatype.DateTime;
+import spec_custom.model.datatype.Integer;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A seasonal override of a return policy, for example used for holidays.

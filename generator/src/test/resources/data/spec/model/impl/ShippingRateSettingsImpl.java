@@ -5,28 +5,28 @@
  */
 package spec.model.impl;
 
-import spec.model.DeliveryChargeSpecification;
-import spec.model.MonetaryAmount;
-import spec.model.datatype.Number;
-import spec.model.DefinedRegion;
-import spec.model.datatype.Boolean;
-import spec.model.ShippingRateSettings;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DefinedRegion;
+import spec.model.DeliveryChargeSpecification;
+import spec.model.Event;
+import spec.model.ImageObject;
 import spec.model.Intangible;
+import spec.model.MonetaryAmount;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.ShippingRateSettings;
 import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished and matched (i.e. identified/referenced) by their different values for [[shippingLabel]].

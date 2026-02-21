@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.TierBenefitEnumeration;
+import spec_custom.model.CreditCard;
 import spec_custom.model.MemberProgram;
 import spec_custom.model.MonetaryAmount;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.CreditCard;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.TierBenefitEnumeration;
 import spec_custom.model.UnitPriceSpecification;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 
 /**
  * A MemberProgramTier specifies a tier under a loyalty (member) program, for example "gold".

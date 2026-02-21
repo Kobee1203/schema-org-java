@@ -7,9 +7,9 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.QualitativeValue;
-import org.schema.model.datatype.Text;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * The frequency in MHz and the modulation used for a particular BroadcastService.

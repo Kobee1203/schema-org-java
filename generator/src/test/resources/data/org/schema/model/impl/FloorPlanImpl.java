@@ -5,28 +5,28 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.Number;
-import org.schema.model.QuantitativeValue;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
 import org.schema.model.Accommodation;
-import org.schema.model.ImageObject;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Integer;
-import org.schema.model.LocationFeatureSpecification;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
 import org.schema.model.Action;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.FloorPlan;
+import org.schema.model.ImageObject;
+import org.schema.model.Intangible;
+import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.TextObject;
 import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.Intangible;
-import org.schema.model.FloorPlan;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a [[FloorPlan]].  A FloorPlan is always in the context of a particular place, either a larger [[ApartmentComplex]] or a single [[Apartment]]. The visual/spatial aspects of a floor plan (i.e. room layout, [see wikipedia](https://en.wikipedia.org/wiki/Floor_plan)) can be indicated using [[image]]. 

@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Thing;
-import org.schema.model.Review;
-import org.schema.model.ListItem;
-import org.schema.model.datatype.Text;
-import org.schema.model.WebContent;
 import org.schema.model.ItemList;
-import org.schema.model.StructuredValue;
+import org.schema.model.ListItem;
 import org.schema.model.Rating;
+import org.schema.model.Review;
+import org.schema.model.StructuredValue;
+import org.schema.model.Thing;
+import org.schema.model.WebContent;
+import org.schema.model.datatype.Text;
 
 /**
  * A review of an item - for example, of a restaurant, movie, or store.

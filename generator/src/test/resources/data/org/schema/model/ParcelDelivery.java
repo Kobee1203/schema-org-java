@@ -6,17 +6,17 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Order;
-import org.schema.model.Product;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.PostalAddress;
+import org.schema.model.DeliveryEvent;
 import org.schema.model.DeliveryMethod;
+import org.schema.model.Order;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PostalAddress;
+import org.schema.model.Product;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.DeliveryEvent;
 
 /**
  * The delivery of a parcel either via the postal service or a commercial service.

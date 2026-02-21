@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Thing;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A single item within a larger data feed.

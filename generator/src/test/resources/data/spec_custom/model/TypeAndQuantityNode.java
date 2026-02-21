@@ -6,12 +6,12 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.Service;
-import spec_custom.model.Product;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.BusinessFunction;
+import spec_custom.model.Product;
+import spec_custom.model.Service;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.

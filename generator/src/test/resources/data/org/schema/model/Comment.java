@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
-import org.schema.model.CreativeWork;
 import org.schema.model.Comment;
+import org.schema.model.CreativeWork;
+import org.schema.model.datatype.Integer;
 
 /**
  * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.

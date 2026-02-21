@@ -6,13 +6,13 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.BroadcastService;
 import spec.model.BroadcastChannel;
-import spec.model.Place;
-import spec.model.Language;
 import spec.model.BroadcastFrequencySpecification;
+import spec.model.BroadcastService;
+import spec.model.Language;
 import spec.model.Organization;
+import spec.model.Place;
+import spec.model.datatype.Text;
 
 /**
  * A delivery service through which content is provided via broadcast over the air or online.

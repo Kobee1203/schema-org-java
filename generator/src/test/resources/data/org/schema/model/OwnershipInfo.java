@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Service;
-import org.schema.model.Product;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Person;
 import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Product;
+import org.schema.model.Service;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A structured value providing information about when a certain organization or person owned a certain product.

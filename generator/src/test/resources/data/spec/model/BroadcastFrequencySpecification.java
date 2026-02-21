@@ -7,9 +7,9 @@ package spec.model;
 
 import java.util.List;
 import spec.model.QualitativeValue;
-import spec.model.datatype.Text;
 import spec.model.QuantitativeValue;
 import spec.model.datatype.Number;
+import spec.model.datatype.Text;
 
 /**
  * The frequency in MHz and the modulation used for a particular BroadcastService.

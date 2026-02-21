@@ -6,17 +6,17 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.DefinedTerm;
+import spec.model.Enumeration;
+import spec.model.MeasurementTypeEnumeration;
+import spec.model.PropertyValue;
+import spec.model.QualitativeValue;
+import spec.model.QuantitativeValue;
+import spec.model.StructuredValue;
 import spec.model.datatype.Boolean;
 import spec.model.datatype.Number;
 import spec.model.datatype.Text;
-import spec.model.StructuredValue;
 import spec.model.datatype.URL;
-import spec.model.DefinedTerm;
-import spec.model.PropertyValue;
-import spec.model.QuantitativeValue;
-import spec.model.Enumeration;
-import spec.model.MeasurementTypeEnumeration;
-import spec.model.QualitativeValue;
 
 /**
  *  A point value or interval for product characteristics and other purposes.

@@ -5,28 +5,28 @@
  */
 package spec.model.impl;
 
-import spec.model.Duration;
-import spec.model.QuantitativeValue;
-import spec.model.OpeningHoursSpecification;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
 import spec.model.DayOfWeek;
+import spec.model.Duration;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.OpeningHoursSpecification;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.QuantitativeValue;
+import spec.model.ServicePeriod;
+import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
 import spec.model.datatype.Time;
 import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.Intangible;
-import spec.model.StructuredValue;
-import spec.model.ServicePeriod;
 
 /**
  * ServicePeriod represents a duration with some constraints about cutoff time and business days. This is used e.g. in shipping for handling times or transit time.

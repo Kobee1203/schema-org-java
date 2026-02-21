@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Integer;
+import org.schema.model.CreativeWorkSeries;
+import org.schema.model.Episode;
+import org.schema.model.Organization;
 import org.schema.model.PerformingGroup;
 import org.schema.model.Person;
-import org.schema.model.Episode;
 import org.schema.model.VideoObject;
-import org.schema.model.CreativeWorkSeries;
-import org.schema.model.Organization;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * A media season, e.g. TV, radio, video game etc.

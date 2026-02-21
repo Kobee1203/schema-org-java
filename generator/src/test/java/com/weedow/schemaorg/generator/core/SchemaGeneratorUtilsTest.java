@@ -98,19 +98,19 @@ class SchemaGeneratorUtilsTest {
         type.addParent(type("schema:Text", "Parent"));
         Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
         Assertions.assertThat(result).containsExactly(
-                "datatype.Parent",
                 "com.weedow.schemaorg.commons.model.JsonLdTypeName",
-                "java.util.List",
-                "datatype.MyType"
+                "datatype.MyType",
+                "datatype.Parent",
+                "java.util.List"
         );
 
         // Test cache: pass null for parameters not required to read cache
         Set<String> result2 = SchemaGeneratorUtils.getAllImports(null, null, type);
         Assertions.assertThat(result2).containsExactly(
-                "datatype.Parent",
                 "com.weedow.schemaorg.commons.model.JsonLdTypeName",
-                "java.util.List",
-                "datatype.MyType"
+                "datatype.MyType",
+                "datatype.Parent",
+                "java.util.List"
         );
     }
 
@@ -120,11 +120,11 @@ class SchemaGeneratorUtilsTest {
         String dataTypePackage = "datatype";
         Type type = type("schema:NewType", "NewType");
         Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
-        Assertions.assertThat(result).containsExactly("model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "java.util.List");
+        Assertions.assertThat(result).containsExactly("com.weedow.schemaorg.commons.model.JsonLdTypeName", "java.util.List", "model.NewType");
 
         // Test cache: pass null for parameters not required to read cache
         Set<String> result2 = SchemaGeneratorUtils.getAllImports(null, null, type);
-        Assertions.assertThat(result2).containsExactly("model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "java.util.List");
+        Assertions.assertThat(result2).containsExactly("com.weedow.schemaorg.commons.model.JsonLdTypeName", "java.util.List", "model.NewType");
     }
 
     @Test
@@ -135,23 +135,23 @@ class SchemaGeneratorUtilsTest {
         type.addProperty(new Property("schema:property", null, null, null, List.of(type("schema:Type1", "Type1"), type("schema:Type2", "Type2"))));
         Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
         Assertions.assertThat(result).containsExactly(
-                "model.Type1",
-                "model.Type2",
-                "model.NewType",
-                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
                 "com.weedow.schemaorg.commons.model.JsonLdFieldTypes",
-                "java.util.List"
+                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
+                "java.util.List",
+                "model.NewType",
+                "model.Type1",
+                "model.Type2"
         );
 
         // Test cache: pass null for parameters not required to read cache
         Set<String> result2 = SchemaGeneratorUtils.getAllImports(null, null, type);
         Assertions.assertThat(result2).containsExactly(
-                "model.Type1",
-                "model.Type2",
-                "model.NewType",
-                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
                 "com.weedow.schemaorg.commons.model.JsonLdFieldTypes",
-                "java.util.List"
+                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
+                "java.util.List",
+                "model.NewType",
+                "model.Type1",
+                "model.Type2"
         );
     }
 
@@ -165,21 +165,21 @@ class SchemaGeneratorUtilsTest {
         type.addProperty(new Property("schema:property", null, null, null, List.of(type1, type2)));
         Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
         Assertions.assertThat(result).containsExactly(
-                "model.Type1",
-                "model.NewType",
-                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
                 "com.weedow.schemaorg.commons.model.JsonLdFieldTypes",
-                "java.util.List"
+                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
+                "java.util.List",
+                "model.NewType",
+                "model.Type1"
         );
 
         // Test cache: pass null for parameters not required to read cache
         Set<String> result2 = SchemaGeneratorUtils.getAllImports(null, null, type);
         Assertions.assertThat(result2).containsExactly(
-                "model.Type1",
-                "model.NewType",
-                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
                 "com.weedow.schemaorg.commons.model.JsonLdFieldTypes",
-                "java.util.List"
+                "com.weedow.schemaorg.commons.model.JsonLdTypeName",
+                "java.util.List",
+                "model.NewType",
+                "model.Type1"
         );
     }
 

@@ -5,24 +5,24 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.EnergyEfficiencyEnumeration;
-import org.schema.model.EUEnergyEfficiencyEnumeration;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Intangible;
+import org.schema.model.Action;
+import org.schema.model.CreativeWork;
+import org.schema.model.EUEnergyEfficiencyEnumeration;
 import org.schema.model.EnergyConsumptionDetails;
+import org.schema.model.EnergyEfficiencyEnumeration;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
+import org.schema.model.Intangible;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * EnergyConsumptionDetails represents information related to the energy efficiency of a product that consumes energy. The information that can be provided is based on international regulations such as for example [EU directive 2017/1369](https://eur-lex.europa.eu/eli/reg/2017/1369/oj) for energy labeling and the [Energy labeling rule](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/energy-water-use-labeling-consumer) under the Energy Policy and Conservation Act (EPCA) in the US.

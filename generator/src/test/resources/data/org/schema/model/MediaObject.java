@@ -6,22 +6,22 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Duration;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.NewsArticle;
-import org.schema.model.Distance;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Date;
-import org.schema.model.GeoShape;
-import org.schema.model.Place;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.MediaSubscription;
-import org.schema.model.Organization;
-import org.schema.model.CreativeWork;
 import org.schema.model.Claim;
+import org.schema.model.CreativeWork;
+import org.schema.model.Distance;
+import org.schema.model.Duration;
+import org.schema.model.GeoShape;
+import org.schema.model.MediaSubscription;
+import org.schema.model.NewsArticle;
+import org.schema.model.Organization;
+import org.schema.model.Place;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * A media object, such as an image, video, audio, or text object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).

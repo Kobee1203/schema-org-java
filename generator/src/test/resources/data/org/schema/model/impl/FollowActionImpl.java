@@ -5,30 +5,30 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Thing;
-import org.schema.model.HowTo;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
 import org.schema.model.ActionStatusType;
-import org.schema.model.datatype.Text;
-import org.schema.model.VirtualLocation;
+import org.schema.model.CreativeWork;
+import org.schema.model.EntryPoint;
+import org.schema.model.Event;
+import org.schema.model.FollowAction;
+import org.schema.model.HowTo;
+import org.schema.model.ImageObject;
+import org.schema.model.InteractAction;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
-import org.schema.model.EntryPoint;
-import org.schema.model.datatype.URL;
 import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
 import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.InteractAction;
-import org.schema.model.FollowAction;
+import org.schema.model.Thing;
+import org.schema.model.VirtualLocation;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.<br/><br/>Related actions:<br/><br/>* [[BefriendAction]]: Unlike BefriendAction, FollowAction implies that the connection is *not* necessarily reciprocal.<br/>* [[SubscribeAction]]: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.<br/>* [[RegisterAction]]: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.<br/>* [[JoinAction]]: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.<br/>* [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).

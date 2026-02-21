@@ -6,13 +6,13 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.QualitativeValue;
-import spec.model.StructuredValue;
 import spec.model.DefinedTerm;
-import spec.model.PropertyValue;
-import spec.model.QuantitativeValue;
 import spec.model.Enumeration;
 import spec.model.MeasurementTypeEnumeration;
+import spec.model.PropertyValue;
+import spec.model.QualitativeValue;
+import spec.model.QuantitativeValue;
+import spec.model.StructuredValue;
 import spec.model.datatype.Text;
 
 /**

@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.datatype.Number;
 import spec.model.AdministrativeArea;
 import spec.model.MaximumDoseSchedule;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
 
 /**
  * A specific strength in which a medical drug is available in a specific country.

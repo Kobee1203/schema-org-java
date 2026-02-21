@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Date;
-import spec.model.datatype.Text;
-import spec.model.datatype.Integer;
+import spec.model.CreativeWorkSeries;
+import spec.model.Episode;
+import spec.model.Organization;
 import spec.model.PerformingGroup;
 import spec.model.Person;
-import spec.model.Episode;
 import spec.model.VideoObject;
-import spec.model.CreativeWorkSeries;
-import spec.model.Organization;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
 
 /**
  * A media season, e.g. TV, radio, video game etc.

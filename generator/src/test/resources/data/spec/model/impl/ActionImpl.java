@@ -5,28 +5,28 @@
  */
 package spec.model.impl;
 
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Thing;
-import spec.model.HowTo;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Time;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
 import spec.model.ActionStatusType;
-import spec.model.datatype.Text;
-import spec.model.VirtualLocation;
+import spec.model.CreativeWork;
+import spec.model.EntryPoint;
+import spec.model.Event;
+import spec.model.HowTo;
+import spec.model.ImageObject;
+import spec.model.Organization;
+import spec.model.Person;
 import spec.model.Place;
 import spec.model.PostalAddress;
-import spec.model.EntryPoint;
-import spec.model.datatype.URL;
 import spec.model.PropertyValue;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
 import spec.model.TextObject;
-import spec.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import spec.model.Thing;
+import spec.model.VirtualLocation;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Text;
+import spec.model.datatype.Time;
+import spec.model.datatype.URL;
 
 /**
  * An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.<br/><br/>See also [blog post](https://blog.schema.org/2014/04/16/announcing-schema-org-actions/) and [Actions overview document](https://schema.org/docs/actions.html).

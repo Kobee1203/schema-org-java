@@ -8,9 +8,9 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.datatype.Text;
 import org.schema.model.StructuredValue;
 import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A rating is an evaluation on a numeric scale, such as 1 to 5 stars.

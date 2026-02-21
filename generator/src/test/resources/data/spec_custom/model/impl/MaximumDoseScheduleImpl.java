@@ -5,34 +5,34 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.QualitativeValue;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DoseSchedule;
+import spec_custom.model.DrugLegalStatus;
+import spec_custom.model.Event;
 import spec_custom.model.Grant;
+import spec_custom.model.ImageObject;
+import spec_custom.model.MaximumDoseSchedule;
+import spec_custom.model.MedicalCode;
+import spec_custom.model.MedicalEntity;
+import spec_custom.model.MedicalEnumeration;
+import spec_custom.model.MedicalGuideline;
+import spec_custom.model.MedicalIntangible;
 import spec_custom.model.MedicalSpecialty;
 import spec_custom.model.MedicalStudy;
-import spec_custom.model.MedicalCode;
-import spec_custom.model.DrugLegalStatus;
-import spec_custom.model.MedicalEnumeration;
-import spec_custom.model.Organization;
-import spec_custom.model.MedicalGuideline;
 import spec_custom.model.MedicineSystem;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
+import spec_custom.model.Organization;
 import spec_custom.model.Person;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.QualitativeValue;
 import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
 import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.MedicalEntity;
-import spec_custom.model.MedicalIntangible;
-import spec_custom.model.DoseSchedule;
-import spec_custom.model.MaximumDoseSchedule;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * The maximum dosing schedule considered safe for a drug or supplement as recommended by an authority or by the drug/supplement's manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity.

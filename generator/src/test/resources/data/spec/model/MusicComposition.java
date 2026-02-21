@@ -6,12 +6,12 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.MusicRecording;
-import spec.model.Event;
 import spec.model.CreativeWork;
+import spec.model.Event;
 import spec.model.MusicComposition;
-import spec.model.Person;
+import spec.model.MusicRecording;
 import spec.model.Organization;
+import spec.model.Person;
 import spec.model.datatype.Text;
 
 /**

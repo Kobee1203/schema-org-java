@@ -5,30 +5,30 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.datatype.Text;
-import spec_custom.model.OccupationalExperienceRequirements;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
 import spec_custom.model.AdministrativeArea;
-import spec_custom.model.DefinedTerm;
 import spec_custom.model.CategoryCode;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DefinedTerm;
 import spec_custom.model.EducationalOccupationalCredential;
-import spec_custom.model.datatype.Number;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
 import spec_custom.model.MonetaryAmount;
 import spec_custom.model.MonetaryAmountDistribution;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.Intangible;
 import spec_custom.model.Occupation;
+import spec_custom.model.OccupationalExperienceRequirements;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A profession, may involve prolonged training and/or a formal qualification.

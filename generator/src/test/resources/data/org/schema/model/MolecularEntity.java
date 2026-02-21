@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.DefinedTerm;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Text;
 
 /**
  * Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.

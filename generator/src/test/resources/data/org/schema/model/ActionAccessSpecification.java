@@ -6,19 +6,19 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Offer;
-import org.schema.model.datatype.Text;
-import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
-import org.schema.model.Thing;
-import org.schema.model.datatype.URL;
 import org.schema.model.GeoShape;
-import org.schema.model.Place;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.MediaSubscription;
-import org.schema.model.datatype.DateTime;
+import org.schema.model.Offer;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.Place;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * A set of requirements that must be fulfilled in order to perform an Action.

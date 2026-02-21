@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.HealthPlanFormulary;
 import org.schema.model.ContactPoint;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
+import org.schema.model.HealthPlanFormulary;
 import org.schema.model.HealthPlanNetwork;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A US-style health insurance plan, including PPOs, EPOs, and HMOs.

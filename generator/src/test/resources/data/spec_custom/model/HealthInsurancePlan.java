@@ -6,11 +6,11 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.HealthPlanFormulary;
 import spec_custom.model.ContactPoint;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
+import spec_custom.model.HealthPlanFormulary;
 import spec_custom.model.HealthPlanNetwork;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A US-style health insurance plan, including PPOs, EPOs, and HMOs.

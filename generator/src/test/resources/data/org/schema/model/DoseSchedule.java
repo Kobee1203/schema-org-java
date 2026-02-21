@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Number;
 import org.schema.model.QualitativeValue;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A specific dosing schedule for a drug or supplement.

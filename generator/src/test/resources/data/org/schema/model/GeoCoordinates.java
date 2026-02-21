@@ -7,9 +7,9 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Country;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Number;
 import org.schema.model.PostalAddress;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * The geographic coordinates of a place or event.

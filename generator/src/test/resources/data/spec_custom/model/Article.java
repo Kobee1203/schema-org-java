@@ -6,11 +6,11 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.SpeakableSpecification;
 import spec_custom.model.datatype.Integer;
 import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
-import spec_custom.model.SpeakableSpecification;
-import spec_custom.model.CreativeWork;
 
 /**
  * An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.<br/><br/>See also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).

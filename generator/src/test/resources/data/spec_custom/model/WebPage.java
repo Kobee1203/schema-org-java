@@ -7,15 +7,15 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.BreadcrumbList;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.SpeakableSpecification;
+import spec_custom.model.Specialty;
+import spec_custom.model.WebPageElement;
+import spec_custom.model.datatype.Date;
 import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
-import spec_custom.model.WebPageElement;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.SpeakableSpecification;
-import spec_custom.model.datatype.Date;
-import spec_custom.model.Specialty;
-import spec_custom.model.ImageObject;
 
 /**
  * A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.

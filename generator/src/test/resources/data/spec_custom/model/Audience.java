@@ -6,8 +6,8 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.AdministrativeArea;
+import spec_custom.model.datatype.Text;
 
 /**
  * Intended audience for an item, i.e. the group for whom the item was created.

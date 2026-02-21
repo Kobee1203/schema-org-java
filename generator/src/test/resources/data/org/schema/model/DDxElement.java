@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalSignOrSymptom;
 import org.schema.model.MedicalCondition;
+import org.schema.model.MedicalSignOrSymptom;
 
 /**
  * An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.

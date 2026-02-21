@@ -5,26 +5,26 @@
  */
 package spec_custom.model.impl;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.BioChemEntity;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DefinedTerm;
+import spec_custom.model.Event;
+import spec_custom.model.Gene;
 import spec_custom.model.Grant;
+import spec_custom.model.ImageObject;
+import spec_custom.model.MedicalCondition;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.Taxon;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
 import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.DefinedTerm;
-import spec_custom.model.MedicalCondition;
-import spec_custom.model.BioChemEntity;
-import spec_custom.model.Gene;
-import spec_custom.model.Taxon;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
 
 /**
  * Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.

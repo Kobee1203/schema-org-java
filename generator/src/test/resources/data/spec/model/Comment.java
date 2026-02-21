@@ -6,9 +6,9 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Integer;
-import spec.model.CreativeWork;
 import spec.model.Comment;
+import spec.model.CreativeWork;
+import spec.model.datatype.Integer;
 
 /**
  * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.

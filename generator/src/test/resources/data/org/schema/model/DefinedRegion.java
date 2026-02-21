@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Country;
-import org.schema.model.datatype.Text;
-import org.schema.model.PostalCodeRangeSpecification;
 import org.schema.model.AdministrativeArea;
+import org.schema.model.Country;
+import org.schema.model.PostalCodeRangeSpecification;
+import org.schema.model.datatype.Text;
 
 /**
  * A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
 import org.schema.model.Duration;
+import org.schema.model.Person;
 import org.schema.model.QuantitativeValue;
 
 /**

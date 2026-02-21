@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
 import org.schema.model.DefinedTerm;
 import org.schema.model.ItemList;
-import org.schema.model.MusicRecording;
 import org.schema.model.MusicAlbum;
+import org.schema.model.MusicRecording;
 import org.schema.model.Person;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.

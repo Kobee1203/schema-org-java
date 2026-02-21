@@ -6,30 +6,30 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.Audience;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.ImageObject;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.Service;
-import spec_custom.model.Product;
-import spec_custom.model.AggregateRating;
-import spec_custom.model.Thing;
-import spec_custom.model.Brand;
-import spec_custom.model.Place;
 import spec_custom.model.AdministrativeArea;
-import spec_custom.model.GeoShape;
-import spec_custom.model.Review;
-import spec_custom.model.PhysicalActivityCategory;
+import spec_custom.model.AggregateRating;
+import spec_custom.model.Audience;
+import spec_custom.model.Brand;
 import spec_custom.model.CategoryCode;
-import spec_custom.model.Offer;
-import spec_custom.model.Demand;
 import spec_custom.model.Certification;
+import spec_custom.model.Demand;
+import spec_custom.model.GeoShape;
 import spec_custom.model.GovernmentBenefitsType;
-import spec_custom.model.ServiceChannel;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Offer;
 import spec_custom.model.OfferCatalog;
+import spec_custom.model.OpeningHoursSpecification;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PhysicalActivityCategory;
+import spec_custom.model.Place;
+import spec_custom.model.Product;
+import spec_custom.model.Review;
+import spec_custom.model.Service;
+import spec_custom.model.ServiceChannel;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A service provided by an organization, e.g. delivery service, print services, etc.

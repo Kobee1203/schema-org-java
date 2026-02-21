@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DeliveryMethod;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Text;
-import org.schema.model.DeliveryMethod;
 
 /**
  * An event involving the delivery of an item.

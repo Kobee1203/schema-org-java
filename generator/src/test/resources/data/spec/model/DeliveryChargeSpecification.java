@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Place;
 import spec.model.AdministrativeArea;
-import spec.model.GeoShape;
-import spec.model.datatype.Text;
 import spec.model.DeliveryMethod;
+import spec.model.GeoShape;
+import spec.model.Place;
+import spec.model.datatype.Text;
 
 /**
  * The price for the delivery of an offer using a particular delivery method.

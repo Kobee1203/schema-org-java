@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.ParcelDelivery;
-import org.schema.model.OrderStatus;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
-import org.schema.model.Service;
-import org.schema.model.Product;
 import org.schema.model.OrderItem;
+import org.schema.model.OrderStatus;
+import org.schema.model.ParcelDelivery;
+import org.schema.model.Product;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.Service;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * An order item is a line of an order. It includes the quantity and shipping details of a bought offer.

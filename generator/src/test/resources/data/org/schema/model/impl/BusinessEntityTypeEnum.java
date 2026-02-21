@@ -5,25 +5,25 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Property;
-import org.schema.model.Class;
-import org.schema.model.Enumeration;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Intangible;
+import org.schema.model.Action;
 import org.schema.model.BusinessEntityType;
+import org.schema.model.Class;
+import org.schema.model.CreativeWork;
+import org.schema.model.Enumeration;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
+import org.schema.model.Intangible;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Property;
+import org.schema.model.PropertyValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#Business<br/>* http://purl.org/goodrelations/v1#Enduser<br/>* http://purl.org/goodrelations/v1#PublicInstitution<br/>* http://purl.org/goodrelations/v1#Reseller

@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.BioChemEntity;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.MedicalEntity;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.Product;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.MedicalEntity;
-import org.schema.model.BioChemEntity;
 
 /**
  * A grant, typically financial or otherwise quantifiable, of resources. Typically a [[funder]] sponsors some [[MonetaryAmount]] to an [[Organization]] or [[Person]],

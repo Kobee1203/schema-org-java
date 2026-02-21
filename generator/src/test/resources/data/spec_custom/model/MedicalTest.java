@@ -6,12 +6,12 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.MedicalEnumeration;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.MedicalDevice;
-import spec_custom.model.MedicalSign;
 import spec_custom.model.Drug;
 import spec_custom.model.MedicalCondition;
+import spec_custom.model.MedicalDevice;
+import spec_custom.model.MedicalEnumeration;
+import spec_custom.model.MedicalSign;
+import spec_custom.model.datatype.Text;
 
 /**
  * Any medical test, typically performed for diagnostic purposes.

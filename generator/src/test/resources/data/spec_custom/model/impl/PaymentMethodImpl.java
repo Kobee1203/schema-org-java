@@ -5,23 +5,23 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.PaymentMethodType;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
 import spec_custom.model.PaymentMethod;
+import spec_custom.model.PaymentMethodType;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction. The following legacy values should be accepted: <br/><br/>* http://purl.org/goodrelations/v1#ByBankTransferInAdvance<br/>* http://purl.org/goodrelations/v1#ByInvoice<br/>* http://purl.org/goodrelations/v1#Cash<br/>* http://purl.org/goodrelations/v1#CheckInAdvance<br/>* http://purl.org/goodrelations/v1#COD<br/>* http://purl.org/goodrelations/v1#DirectDebit<br/>* http://purl.org/goodrelations/v1#GoogleCheckout<br/>* http://purl.org/goodrelations/v1#PayPal<br/>* http://purl.org/goodrelations/v1#PaySwarm<br/><br/>Structured values, or [UNCE payment means](https://vocabulary.uncefact.org/PaymentMeans) are recommended or for newer annotations.

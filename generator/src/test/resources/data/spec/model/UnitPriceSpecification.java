@@ -7,12 +7,12 @@ package spec.model;
 
 import java.util.List;
 import spec.model.Duration;
+import spec.model.PriceComponentTypeEnumeration;
+import spec.model.PriceTypeEnumeration;
 import spec.model.QuantitativeValue;
 import spec.model.datatype.Number;
 import spec.model.datatype.Text;
-import spec.model.PriceTypeEnumeration;
 import spec.model.datatype.URL;
-import spec.model.PriceComponentTypeEnumeration;
 
 /**
  * The price asked for a given offer by the respective organization or person.

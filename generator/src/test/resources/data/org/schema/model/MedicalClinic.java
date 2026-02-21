@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalProcedure;
+import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalTest;
 import org.schema.model.MedicalTherapy;
 

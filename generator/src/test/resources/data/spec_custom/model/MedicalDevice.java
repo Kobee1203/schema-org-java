@@ -7,8 +7,8 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.MedicalContraindication;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.MedicalEntity;
+import spec_custom.model.datatype.Text;
 
 /**
  * Any object used in a medical capacity, such as to diagnose or treat a patient.

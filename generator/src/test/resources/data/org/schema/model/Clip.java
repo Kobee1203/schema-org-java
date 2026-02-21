@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.HyperTocEntry;
-import org.schema.model.datatype.Number;
-import org.schema.model.MusicGroup;
-import org.schema.model.Person;
 import org.schema.model.CreativeWorkSeason;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Integer;
-import org.schema.model.PerformingGroup;
 import org.schema.model.CreativeWorkSeries;
 import org.schema.model.Episode;
+import org.schema.model.HyperTocEntry;
+import org.schema.model.MusicGroup;
+import org.schema.model.PerformingGroup;
+import org.schema.model.Person;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A short TV or radio program or a segment/part of a program.

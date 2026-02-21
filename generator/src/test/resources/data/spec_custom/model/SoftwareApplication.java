@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DataFeed;
+import spec_custom.model.ImageObject;
+import spec_custom.model.OperatingSystem;
+import spec_custom.model.RuntimePlatform;
+import spec_custom.model.SoftwareApplication;
 import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
-import spec_custom.model.SoftwareApplication;
-import spec_custom.model.OperatingSystem;
-import spec_custom.model.DataFeed;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.ImageObject;
-import spec_custom.model.RuntimePlatform;
 
 /**
  * A software application.

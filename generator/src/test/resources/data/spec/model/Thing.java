@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
 import spec.model.Action;
-import spec.model.TextObject;
+import spec.model.CreativeWork;
+import spec.model.Event;
 import spec.model.ImageObject;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.TextObject;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * The most generic type of item.

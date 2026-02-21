@@ -5,33 +5,33 @@
  */
 package spec.model.impl;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
 import spec.model.Duration;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.MemberProgramTier;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PriceComponentTypeEnumeration;
+import spec.model.PriceSpecification;
+import spec.model.PriceTypeEnumeration;
+import spec.model.PropertyValue;
 import spec.model.QuantitativeValue;
+import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.UnitPriceSpecification;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
 import spec.model.datatype.Number;
 import spec.model.datatype.Text;
-import spec.model.PriceTypeEnumeration;
 import spec.model.datatype.URL;
-import spec.model.PriceComponentTypeEnumeration;
-import spec.model.datatype.Boolean;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Date;
-import spec.model.MemberProgramTier;
-import spec.model.PriceSpecification;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.Intangible;
-import spec.model.StructuredValue;
-import spec.model.UnitPriceSpecification;
 
 /**
  * The price asked for a given offer by the respective organization or person.

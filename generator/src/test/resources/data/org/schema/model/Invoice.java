@@ -6,21 +6,21 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.PriceSpecification;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.Text;
-import org.schema.model.PaymentStatusType;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Order;
-import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
-import org.schema.model.Thing;
-import org.schema.model.datatype.URL;
 import org.schema.model.Duration;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.Order;
+import org.schema.model.Organization;
 import org.schema.model.PaymentMethod;
+import org.schema.model.PaymentStatusType;
+import org.schema.model.Person;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.PriceSpecification;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A statement of the money due for goods or services; a bill.

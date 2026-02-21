@@ -5,36 +5,36 @@
  */
 package spec.model.impl;
 
-import spec.model.MedicalEntity;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
 import spec.model.DoseSchedule;
 import spec.model.Drug;
-import spec.model.datatype.Text;
-import spec.model.MedicalProcedureType;
+import spec.model.DrugLegalStatus;
+import spec.model.Event;
 import spec.model.EventStatusType;
-import spec.model.MedicalStudyStatus;
 import spec.model.Grant;
+import spec.model.ImageObject;
+import spec.model.MedicalCode;
+import spec.model.MedicalEntity;
+import spec.model.MedicalEnumeration;
+import spec.model.MedicalGuideline;
+import spec.model.MedicalProcedure;
+import spec.model.MedicalProcedureType;
 import spec.model.MedicalSpecialty;
 import spec.model.MedicalStudy;
-import spec.model.MedicalCode;
-import spec.model.DrugLegalStatus;
-import spec.model.MedicalEnumeration;
-import spec.model.Organization;
-import spec.model.MedicalGuideline;
+import spec.model.MedicalStudyStatus;
 import spec.model.MedicineSystem;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
+import spec.model.Organization;
 import spec.model.Person;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
+import spec.model.PropertyValue;
 import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.MedicalProcedure;
 import spec.model.TherapeuticProcedure;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.

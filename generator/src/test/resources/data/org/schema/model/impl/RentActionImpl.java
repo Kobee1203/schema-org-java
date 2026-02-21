@@ -5,33 +5,33 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.RealEstateAgent;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.ActionStatusType;
+import org.schema.model.CreativeWork;
+import org.schema.model.EntryPoint;
+import org.schema.model.Event;
+import org.schema.model.HowTo;
+import org.schema.model.ImageObject;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.Text;
-import org.schema.model.PriceSpecification;
-import org.schema.model.Thing;
-import org.schema.model.HowTo;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
-import org.schema.model.ActionStatusType;
-import org.schema.model.VirtualLocation;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
-import org.schema.model.EntryPoint;
-import org.schema.model.datatype.URL;
+import org.schema.model.PriceSpecification;
 import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.TradeAction;
+import org.schema.model.RealEstateAgent;
 import org.schema.model.RentAction;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.TradeAction;
+import org.schema.model.VirtualLocation;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.

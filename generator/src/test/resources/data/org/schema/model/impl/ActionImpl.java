@@ -5,28 +5,28 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Thing;
-import org.schema.model.HowTo;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
 import org.schema.model.ActionStatusType;
-import org.schema.model.datatype.Text;
-import org.schema.model.VirtualLocation;
+import org.schema.model.CreativeWork;
+import org.schema.model.EntryPoint;
+import org.schema.model.Event;
+import org.schema.model.HowTo;
+import org.schema.model.ImageObject;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
-import org.schema.model.EntryPoint;
-import org.schema.model.datatype.URL;
 import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
 import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import org.schema.model.Thing;
+import org.schema.model.VirtualLocation;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.<br/><br/>See also [blog post](https://blog.schema.org/2014/04/16/announcing-schema-org-actions/) and [Actions overview document](https://schema.org/docs/actions.html).

@@ -8,10 +8,10 @@ package org.schema.model;
 import java.util.List;
 import org.schema.model.AdministrativeArea;
 import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.Organization;
 import org.schema.model.Duration;
+import org.schema.model.Organization;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An educational or occupational credential. A diploma, academic degree, certification, qualification, badge, etc., that may be awarded to a person or other entity that meets the requirements defined by the credentialer.

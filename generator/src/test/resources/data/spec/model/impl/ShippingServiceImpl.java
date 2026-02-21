@@ -5,28 +5,28 @@
  */
 package spec.model.impl;
 
-import spec.model.ServicePeriod;
-import spec.model.QuantitativeValue;
-import spec.model.ShippingConditions;
-import spec.model.MemberProgramTier;
-import spec.model.FulfillmentTypeEnumeration;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.Event;
+import spec.model.FulfillmentTypeEnumeration;
+import spec.model.ImageObject;
 import spec.model.Intangible;
-import spec.model.StructuredValue;
+import spec.model.MemberProgramTier;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.QuantitativeValue;
+import spec.model.ServicePeriod;
+import spec.model.ShippingConditions;
 import spec.model.ShippingService;
+import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.

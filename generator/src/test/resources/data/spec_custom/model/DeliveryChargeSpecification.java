@@ -6,11 +6,11 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Place;
 import spec_custom.model.AdministrativeArea;
-import spec_custom.model.GeoShape;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.DeliveryMethod;
+import spec_custom.model.GeoShape;
+import spec_custom.model.Place;
+import spec_custom.model.datatype.Text;
 
 /**
  * The price for the delivery of an offer using a particular delivery method.

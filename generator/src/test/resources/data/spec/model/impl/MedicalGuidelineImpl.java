@@ -5,31 +5,31 @@
  */
 package spec.model.impl;
 
-import spec.model.MedicalEntity;
-import spec.model.datatype.Text;
-import spec.model.MedicalEvidenceLevel;
-import spec.model.datatype.Date;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DrugLegalStatus;
+import spec.model.Event;
 import spec.model.Grant;
+import spec.model.ImageObject;
+import spec.model.MedicalCode;
+import spec.model.MedicalEntity;
+import spec.model.MedicalEnumeration;
+import spec.model.MedicalEvidenceLevel;
+import spec.model.MedicalGuideline;
 import spec.model.MedicalSpecialty;
 import spec.model.MedicalStudy;
-import spec.model.MedicalCode;
-import spec.model.DrugLegalStatus;
-import spec.model.MedicalEnumeration;
-import spec.model.Organization;
-import spec.model.MedicalGuideline;
 import spec.model.MedicineSystem;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
+import spec.model.Organization;
 import spec.model.Person;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
+import spec.model.PropertyValue;
 import spec.model.TextObject;
-import spec.model.ImageObject;
 import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import spec.model.datatype.Date;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * Any recommendation made by a standard society (e.g. ACC/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity.

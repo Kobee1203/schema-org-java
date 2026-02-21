@@ -5,25 +5,25 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Text;
-import spec.model.QuantitativeValue;
-import spec.model.datatype.Number;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.MemberProgram;
 import spec.model.Organization;
 import spec.model.Person;
-import spec.model.MemberProgram;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.Intangible;
 import spec.model.ProgramMembership;
+import spec.model.PropertyValue;
+import spec.model.QuantitativeValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.

@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.HyperTocEntry;
-import spec.model.datatype.Number;
-import spec.model.MusicGroup;
-import spec.model.Person;
 import spec.model.CreativeWorkSeason;
-import spec.model.datatype.Text;
-import spec.model.datatype.Integer;
-import spec.model.PerformingGroup;
 import spec.model.CreativeWorkSeries;
 import spec.model.Episode;
+import spec.model.HyperTocEntry;
+import spec.model.MusicGroup;
+import spec.model.PerformingGroup;
+import spec.model.Person;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
 
 /**
  * A short TV or radio program or a segment/part of a program.

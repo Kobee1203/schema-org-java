@@ -5,24 +5,24 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.datatype.URL;
-import spec_custom.model.ImageObject;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.AggregateRating;
-import spec_custom.model.Review;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
 import spec_custom.model.Action;
+import spec_custom.model.AggregateRating;
+import spec_custom.model.Brand;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.Review;
 import spec_custom.model.TextObject;
 import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.Intangible;
-import spec_custom.model.Brand;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A brand is a name used by an organization or business person for labeling a product, product group, or similar.

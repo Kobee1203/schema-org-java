@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MediaObject;
-import org.schema.model.datatype.URL;
 import org.schema.model.Duration;
-import org.schema.model.HowToTool;
-import org.schema.model.datatype.Text;
 import org.schema.model.HowToSupply;
+import org.schema.model.HowToTool;
+import org.schema.model.MediaObject;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A direction indicating a single action to do in the instructions for how to achieve a result.

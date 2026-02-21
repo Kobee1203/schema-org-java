@@ -6,12 +6,12 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.DefinedTerm;
-import spec_custom.model.CableOrSatelliteService;
 import spec_custom.model.BroadcastFrequencySpecification;
 import spec_custom.model.BroadcastService;
+import spec_custom.model.CableOrSatelliteService;
+import spec_custom.model.DefinedTerm;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A unique instance of a BroadcastService on a CableOrSatelliteService lineup.

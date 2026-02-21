@@ -6,8 +6,8 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Mass;
 import spec_custom.model.Energy;
+import spec_custom.model.Mass;
 import spec_custom.model.datatype.Text;
 
 /**

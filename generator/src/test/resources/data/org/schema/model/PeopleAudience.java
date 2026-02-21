@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.Text;
 import org.schema.model.GenderType;
 import org.schema.model.MedicalCondition;
-import org.schema.model.datatype.Integer;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A set of characteristics belonging to people, e.g. who compose an item's target audience.

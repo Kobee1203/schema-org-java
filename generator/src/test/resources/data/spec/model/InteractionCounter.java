@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Time;
-import spec.model.SoftwareApplication;
-import spec.model.WebSite;
-import spec.model.datatype.Integer;
 import spec.model.Action;
-import spec.model.datatype.Text;
-import spec.model.VirtualLocation;
 import spec.model.Place;
 import spec.model.PostalAddress;
+import spec.model.SoftwareApplication;
+import spec.model.VirtualLocation;
+import spec.model.WebSite;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
+import spec.model.datatype.Time;
 
 /**
  * A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.

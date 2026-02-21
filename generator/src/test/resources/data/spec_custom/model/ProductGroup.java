@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.DefinedTerm;
 import spec_custom.model.Product;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.DefinedTerm;
 
 /**
  * A ProductGroup represents a group of [[Product]]s that vary only in certain well-described ways, such as by [[size]], [[color]], [[material]] etc.

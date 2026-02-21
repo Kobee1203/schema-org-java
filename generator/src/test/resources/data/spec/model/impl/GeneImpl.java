@@ -5,28 +5,28 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Text;
-import spec.model.BioChemEntity;
-import spec.model.DefinedTerm;
-import spec.model.AnatomicalSystem;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
 import spec.model.AnatomicalStructure;
+import spec.model.AnatomicalSystem;
+import spec.model.BioChemEntity;
+import spec.model.CreativeWork;
+import spec.model.DefinedTerm;
+import spec.model.Event;
 import spec.model.Gene;
 import spec.model.Grant;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.MedicalCondition;
-import spec.model.Taxon;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
 import spec.model.ImageObject;
+import spec.model.MedicalCondition;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.Taxon;
+import spec.model.TextObject;
 import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).

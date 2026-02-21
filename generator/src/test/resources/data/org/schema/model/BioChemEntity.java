@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.BioChemEntity;
+import org.schema.model.DefinedTerm;
+import org.schema.model.Gene;
 import org.schema.model.Grant;
+import org.schema.model.MedicalCondition;
+import org.schema.model.PropertyValue;
+import org.schema.model.Taxon;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
-import org.schema.model.DefinedTerm;
-import org.schema.model.MedicalCondition;
-import org.schema.model.BioChemEntity;
-import org.schema.model.Gene;
-import org.schema.model.Taxon;
 
 /**
  * Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.

@@ -5,25 +5,25 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.HealthPlanFormulary;
-import spec_custom.model.ContactPoint;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.HealthPlanNetwork;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec_custom.model.Intangible;
+import spec_custom.model.Action;
+import spec_custom.model.ContactPoint;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
 import spec_custom.model.HealthInsurancePlan;
+import spec_custom.model.HealthPlanFormulary;
+import spec_custom.model.HealthPlanNetwork;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A US-style health insurance plan, including PPOs, EPOs, and HMOs.

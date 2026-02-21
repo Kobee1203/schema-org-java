@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
 import org.schema.model.Organization;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Thing;
-import org.schema.model.datatype.Text;
+import org.schema.model.Person;
+import org.schema.model.PriceSpecification;
 import org.schema.model.ProgramMembership;
 import org.schema.model.ReservationStatusType;
+import org.schema.model.Thing;
 import org.schema.model.Ticket;
+import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Number;
-import org.schema.model.PriceSpecification;
+import org.schema.model.datatype.Text;
 
 /**
  * Describes a reservation for travel, dining or an event. Some reservations require tickets. <br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].

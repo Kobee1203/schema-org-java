@@ -5,31 +5,31 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.MedicalEntity;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalEvidenceLevel;
-import org.schema.model.datatype.Date;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.CreativeWork;
+import org.schema.model.DrugLegalStatus;
+import org.schema.model.Event;
 import org.schema.model.Grant;
+import org.schema.model.ImageObject;
+import org.schema.model.MedicalCode;
+import org.schema.model.MedicalEntity;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.MedicalEvidenceLevel;
+import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalStudy;
-import org.schema.model.MedicalCode;
-import org.schema.model.DrugLegalStatus;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.Organization;
-import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicineSystem;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
+import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
+import org.schema.model.PropertyValue;
 import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
 import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Any recommendation made by a standard society (e.g. ACC/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity.

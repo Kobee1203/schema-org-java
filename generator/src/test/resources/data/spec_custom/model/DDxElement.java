@@ -6,8 +6,8 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.MedicalSignOrSymptom;
 import spec_custom.model.MedicalCondition;
+import spec_custom.model.MedicalSignOrSymptom;
 
 /**
  * An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.

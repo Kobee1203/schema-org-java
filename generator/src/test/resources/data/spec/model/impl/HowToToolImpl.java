@@ -5,27 +5,27 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Number;
-import spec.model.datatype.Text;
-import spec.model.QuantitativeValue;
-import spec.model.Thing;
-import spec.model.ListItem;
-import spec.model.datatype.Integer;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec.model.Intangible;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.Event;
 import spec.model.HowToItem;
 import spec.model.HowToTool;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.ListItem;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.QuantitativeValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A tool used (but not consumed) when performing instructions for how to achieve a result.

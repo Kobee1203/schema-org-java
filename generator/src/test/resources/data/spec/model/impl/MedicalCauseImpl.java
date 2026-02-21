@@ -5,30 +5,30 @@
  */
 package spec.model.impl;
 
-import spec.model.MedicalEntity;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DrugLegalStatus;
+import spec.model.Event;
 import spec.model.Grant;
+import spec.model.ImageObject;
+import spec.model.MedicalCause;
+import spec.model.MedicalCode;
+import spec.model.MedicalEntity;
+import spec.model.MedicalEnumeration;
+import spec.model.MedicalGuideline;
 import spec.model.MedicalSpecialty;
 import spec.model.MedicalStudy;
-import spec.model.MedicalCode;
-import spec.model.datatype.Text;
-import spec.model.DrugLegalStatus;
-import spec.model.MedicalEnumeration;
-import spec.model.Organization;
-import spec.model.MedicalGuideline;
 import spec.model.MedicineSystem;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
+import spec.model.Organization;
 import spec.model.Person;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
+import spec.model.PropertyValue;
 import spec.model.TextObject;
-import spec.model.ImageObject;
 import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.MedicalCause;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * The causative agent(s) that are responsible for the pathophysiologic process that eventually results in a medical condition, symptom or sign. In this schema, unless otherwise specified this is meant to be the proximate cause of the medical condition, symptom or sign. The proximate cause is defined as the causative agent that most directly results in the medical condition, symptom or sign. For example, the HIV virus could be considered a cause of AIDS. Or in a diagnostic context, if a patient fell and sustained a hip fracture and two days later sustained a pulmonary embolism which eventuated in a cardiac arrest, the cause of the cardiac arrest (the proximate cause) would be the pulmonary embolism and not the fall. Medical causes can include cardiovascular, chemical, dermatologic, endocrine, environmental, gastroenterologic, genetic, hematologic, gynecologic, iatrogenic, infectious, musculoskeletal, neurologic, nutritional, obstetric, oncologic, otolaryngologic, pharmacologic, psychiatric, pulmonary, renal, rheumatologic, toxic, traumatic, or urologic causes; medical conditions can be causes as well.

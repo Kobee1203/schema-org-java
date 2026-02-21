@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
-import org.schema.model.PriceSpecification;
 
 /**
  * The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.

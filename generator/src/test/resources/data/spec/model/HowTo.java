@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Duration;
-import spec.model.HowToTool;
-import spec.model.datatype.Text;
-import spec.model.HowToStep;
-import spec.model.HowToSection;
 import spec.model.CreativeWork;
-import spec.model.QuantitativeValue;
+import spec.model.Duration;
+import spec.model.HowToSection;
+import spec.model.HowToStep;
 import spec.model.HowToSupply;
+import spec.model.HowToTool;
 import spec.model.ItemList;
 import spec.model.MonetaryAmount;
+import spec.model.QuantitativeValue;
+import spec.model.datatype.Text;
 
 /**
  * Instructions that explain how to achieve a result by performing a sequence of steps.

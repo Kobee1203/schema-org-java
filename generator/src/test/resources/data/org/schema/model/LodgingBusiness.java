@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
-import org.schema.model.Language;
-import org.schema.model.datatype.Text;
 import org.schema.model.Audience;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
+import org.schema.model.Language;
+import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.Rating;
 import org.schema.model.datatype.Boolean;
-import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
 
 /**
  * A lodging business, such as a motel, hotel, or inn.

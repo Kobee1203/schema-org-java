@@ -5,32 +5,32 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Mass;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.Distance;
-import spec_custom.model.ServicePeriod;
-import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.DefinedRegion;
-import spec_custom.model.datatype.Boolean;
-import spec_custom.model.MonetaryAmount;
-import spec_custom.model.ShippingRateSettings;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DefinedRegion;
+import spec_custom.model.Distance;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
-import spec_custom.model.StructuredValue;
+import spec_custom.model.Mass;
+import spec_custom.model.MonetaryAmount;
+import spec_custom.model.OpeningHoursSpecification;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.ServicePeriod;
 import spec_custom.model.ShippingConditions;
+import spec_custom.model.ShippingRateSettings;
+import spec_custom.model.StructuredValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * ShippingConditions represent a set of constraints and information about the conditions of shipping a product. Such conditions may apply to only a subset of the products being shipped, depending on aspects of the product like weight, size, price, destination, and others. All the specified conditions must be met for this ShippingConditions to apply.

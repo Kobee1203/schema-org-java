@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.Product;
-import spec_custom.model.Place;
 import spec_custom.model.AdministrativeArea;
+import spec_custom.model.ContactPointOption;
 import spec_custom.model.GeoShape;
 import spec_custom.model.Language;
-import spec_custom.model.ContactPointOption;
+import spec_custom.model.OpeningHoursSpecification;
+import spec_custom.model.Place;
+import spec_custom.model.Product;
+import spec_custom.model.datatype.Text;
 
 /**
  * A contact point&#x2014;for example, a Customer Complaints department.

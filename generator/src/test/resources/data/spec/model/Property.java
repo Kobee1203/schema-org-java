@@ -7,8 +7,8 @@ package spec.model;
 
 import java.util.List;
 import spec.model.Class;
-import spec.model.Property;
 import spec.model.Enumeration;
+import spec.model.Property;
 
 /**
  * A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.

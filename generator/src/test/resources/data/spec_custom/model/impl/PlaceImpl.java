@@ -5,36 +5,36 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.GeospatialGeometry;
-import spec_custom.model.Place;
-import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.datatype.Boolean;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.Review;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.ImageObject;
-import spec_custom.model.DefinedTerm;
-import spec_custom.model.GeoShape;
-import spec_custom.model.GeoCoordinates;
-import spec_custom.model.AggregateRating;
-import spec_custom.model.Map;
-import spec_custom.model.Event;
-import spec_custom.model.PostalAddress;
-import spec_custom.model.Certification;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Photograph;
-import spec_custom.model.datatype.Integer;
-import spec_custom.model.LocationFeatureSpecification;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.CreativeWork;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
 import spec_custom.model.Action;
+import spec_custom.model.AggregateRating;
+import spec_custom.model.Certification;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DefinedTerm;
+import spec_custom.model.Event;
+import spec_custom.model.GeoCoordinates;
+import spec_custom.model.GeoShape;
+import spec_custom.model.GeospatialGeometry;
+import spec_custom.model.ImageObject;
+import spec_custom.model.LocationFeatureSpecification;
+import spec_custom.model.Map;
+import spec_custom.model.OpeningHoursSpecification;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.Photograph;
+import spec_custom.model.Place;
+import spec_custom.model.PostalAddress;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.Review;
 import spec_custom.model.TextObject;
 import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Integer;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * Entities that have a somewhat fixed, physical extension.

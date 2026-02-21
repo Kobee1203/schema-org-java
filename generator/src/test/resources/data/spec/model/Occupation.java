@@ -6,15 +6,15 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.OccupationalExperienceRequirements;
 import spec.model.AdministrativeArea;
-import spec.model.DefinedTerm;
 import spec.model.CategoryCode;
+import spec.model.DefinedTerm;
 import spec.model.EducationalOccupationalCredential;
-import spec.model.datatype.Number;
 import spec.model.MonetaryAmount;
 import spec.model.MonetaryAmountDistribution;
+import spec.model.OccupationalExperienceRequirements;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
 
 /**
  * A profession, may involve prolonged training and/or a formal qualification.

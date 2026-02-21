@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.AdministrativeArea;
+import org.schema.model.CategoryCode;
+import org.schema.model.LegalForceStatus;
+import org.schema.model.Legislation;
 import org.schema.model.Organization;
 import org.schema.model.Person;
+import org.schema.model.datatype.Date;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.Legislation;
-import org.schema.model.CategoryCode;
-import org.schema.model.datatype.Date;
-import org.schema.model.AdministrativeArea;
-import org.schema.model.LegalForceStatus;
 
 /**
  * A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).

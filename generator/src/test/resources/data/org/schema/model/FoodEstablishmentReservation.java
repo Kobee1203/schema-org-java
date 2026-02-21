@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
-import org.schema.model.datatype.Integer;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Time;
 
 /**
  * A reservation to dine at a food-related business.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.

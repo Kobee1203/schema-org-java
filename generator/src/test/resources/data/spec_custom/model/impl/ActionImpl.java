@@ -5,28 +5,28 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Thing;
-import spec_custom.model.HowTo;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.datatype.Time;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
 import spec_custom.model.ActionStatusType;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.VirtualLocation;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.EntryPoint;
+import spec_custom.model.Event;
+import spec_custom.model.HowTo;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
 import spec_custom.model.Place;
 import spec_custom.model.PostalAddress;
-import spec_custom.model.EntryPoint;
-import spec_custom.model.datatype.URL;
 import spec_custom.model.PropertyValue;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
 import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
+import spec_custom.model.Thing;
+import spec_custom.model.VirtualLocation;
+import spec_custom.model.datatype.DateTime;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.Time;
+import spec_custom.model.datatype.URL;
 
 /**
  * An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.<br/><br/>See also [blog post](https://blog.schema.org/2014/04/16/announcing-schema-org-actions/) and [Actions overview document](https://schema.org/docs/actions.html).

@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Text;
 import org.schema.model.GenderType;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.SizeGroupEnumeration;
 import org.schema.model.SizeSystemEnumeration;
+import org.schema.model.datatype.Text;
 
 /**
  * Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).

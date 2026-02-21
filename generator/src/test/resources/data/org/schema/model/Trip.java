@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
+import org.schema.model.Demand;
+import org.schema.model.ItemList;
+import org.schema.model.Offer;
 import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Place;
+import org.schema.model.Trip;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Time;
-import org.schema.model.Place;
-import org.schema.model.ItemList;
-import org.schema.model.Trip;
-import org.schema.model.Offer;
-import org.schema.model.Demand;
 
 /**
  * A trip or journey. An itinerary of visits to one or more places.

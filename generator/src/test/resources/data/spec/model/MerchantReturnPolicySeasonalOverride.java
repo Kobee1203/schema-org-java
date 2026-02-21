@@ -6,15 +6,15 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.RefundTypeEnumeration;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Date;
-import spec.model.ReturnMethodEnumeration;
-import spec.model.datatype.Integer;
-import spec.model.ReturnFeesEnumeration;
-import spec.model.MonetaryAmount;
-import spec.model.datatype.Number;
 import spec.model.MerchantReturnEnumeration;
+import spec.model.MonetaryAmount;
+import spec.model.RefundTypeEnumeration;
+import spec.model.ReturnFeesEnumeration;
+import spec.model.ReturnMethodEnumeration;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Number;
 
 /**
  * A seasonal override of a return policy, for example used for holidays.

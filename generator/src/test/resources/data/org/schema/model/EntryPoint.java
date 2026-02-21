@@ -7,9 +7,9 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.DigitalPlatformEnumeration;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
 import org.schema.model.SoftwareApplication;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An entry point, within some Web-based protocol.

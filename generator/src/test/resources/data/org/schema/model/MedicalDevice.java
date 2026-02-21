@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.MedicalContraindication;
-import org.schema.model.datatype.Text;
 import org.schema.model.MedicalEntity;
+import org.schema.model.datatype.Text;
 
 /**
  * Any object used in a medical capacity, such as to diagnose or treat a patient.

@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.Country;
 import spec_custom.model.PostalAddress;
 import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 
 /**
  * The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.

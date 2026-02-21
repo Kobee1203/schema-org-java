@@ -6,15 +6,15 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Person;
+import spec.model.Demand;
+import spec.model.ItemList;
+import spec.model.Offer;
 import spec.model.Organization;
+import spec.model.Person;
+import spec.model.Place;
+import spec.model.Trip;
 import spec.model.datatype.DateTime;
 import spec.model.datatype.Time;
-import spec.model.Place;
-import spec.model.ItemList;
-import spec.model.Trip;
-import spec.model.Offer;
-import spec.model.Demand;
 
 /**
  * A trip or journey. An itinerary of visits to one or more places.

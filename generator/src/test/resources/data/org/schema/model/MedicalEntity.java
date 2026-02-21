@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DrugLegalStatus;
 import org.schema.model.Grant;
+import org.schema.model.MedicalCode;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalStudy;
-import org.schema.model.MedicalCode;
-import org.schema.model.datatype.Text;
-import org.schema.model.DrugLegalStatus;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.Organization;
-import org.schema.model.MedicalGuideline;
 import org.schema.model.MedicineSystem;
+import org.schema.model.Organization;
+import org.schema.model.datatype.Text;
 
 /**
  * The most generic type of entity related to health and the practice of medicine.

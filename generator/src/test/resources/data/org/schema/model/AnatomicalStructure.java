@@ -7,11 +7,11 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AnatomicalStructure;
+import org.schema.model.AnatomicalSystem;
+import org.schema.model.ImageObject;
+import org.schema.model.MedicalCondition;
 import org.schema.model.MedicalTherapy;
 import org.schema.model.datatype.Text;
-import org.schema.model.AnatomicalSystem;
-import org.schema.model.MedicalCondition;
-import org.schema.model.ImageObject;
 
 /**
  * Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.

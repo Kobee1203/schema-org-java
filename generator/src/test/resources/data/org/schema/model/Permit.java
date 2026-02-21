@@ -7,12 +7,12 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
 import org.schema.model.Audience;
-import org.schema.model.Service;
 import org.schema.model.Duration;
 import org.schema.model.Organization;
+import org.schema.model.Service;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A permit issued by an organization, e.g. a parking pass.

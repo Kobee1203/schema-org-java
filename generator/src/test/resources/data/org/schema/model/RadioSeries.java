@@ -7,14 +7,14 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.CreativeWorkSeason;
-import org.schema.model.MusicGroup;
-import org.schema.model.Person;
-import org.schema.model.PerformingGroup;
-import org.schema.model.datatype.Integer;
 import org.schema.model.Episode;
-import org.schema.model.VideoObject;
-import org.schema.model.datatype.URL;
+import org.schema.model.MusicGroup;
 import org.schema.model.Organization;
+import org.schema.model.PerformingGroup;
+import org.schema.model.Person;
+import org.schema.model.VideoObject;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.URL;
 
 /**
  * CreativeWorkSeries dedicated to radio broadcast and associated online delivery.

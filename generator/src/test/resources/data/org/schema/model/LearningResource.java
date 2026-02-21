@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.AlignmentObject;
 import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.AlignmentObject;
 
 /**
  * The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.

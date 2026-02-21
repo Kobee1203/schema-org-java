@@ -5,33 +5,33 @@
  */
 package spec_custom.model.impl;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
 import spec_custom.model.Duration;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
+import spec_custom.model.MemberProgramTier;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PriceComponentTypeEnumeration;
+import spec_custom.model.PriceSpecification;
+import spec_custom.model.PriceTypeEnumeration;
+import spec_custom.model.PropertyValue;
 import spec_custom.model.QuantitativeValue;
+import spec_custom.model.StructuredValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.UnitPriceSpecification;
+import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Date;
+import spec_custom.model.datatype.DateTime;
 import spec_custom.model.datatype.Number;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.PriceTypeEnumeration;
 import spec_custom.model.datatype.URL;
-import spec_custom.model.PriceComponentTypeEnumeration;
-import spec_custom.model.datatype.Boolean;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.datatype.Date;
-import spec_custom.model.MemberProgramTier;
-import spec_custom.model.PriceSpecification;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.Intangible;
-import spec_custom.model.StructuredValue;
-import spec_custom.model.UnitPriceSpecification;
 
 /**
  * The price asked for a given offer by the respective organization or person.

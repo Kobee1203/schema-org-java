@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Duration;
-import spec.model.QuantitativeValue;
-import spec.model.OpeningHoursSpecification;
 import spec.model.DayOfWeek;
+import spec.model.Duration;
+import spec.model.OpeningHoursSpecification;
+import spec.model.QuantitativeValue;
 import spec.model.datatype.Time;
 
 /**

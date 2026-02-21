@@ -5,32 +5,32 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.DeliveryMethod;
-import org.schema.model.Organization;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.ActionStatusType;
 import org.schema.model.Audience;
+import org.schema.model.CreativeWork;
+import org.schema.model.DeliveryMethod;
+import org.schema.model.EntryPoint;
+import org.schema.model.Event;
+import org.schema.model.HowTo;
+import org.schema.model.ImageObject;
+import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.Place;
-import org.schema.model.Thing;
-import org.schema.model.HowTo;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
-import org.schema.model.ActionStatusType;
-import org.schema.model.datatype.Text;
-import org.schema.model.VirtualLocation;
 import org.schema.model.PostalAddress;
-import org.schema.model.EntryPoint;
-import org.schema.model.datatype.URL;
 import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.TransferAction;
 import org.schema.model.ReceiveAction;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.TransferAction;
+import org.schema.model.VirtualLocation;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.<br/><br/>Related actions:<br/><br/>* [[SendAction]]: The reciprocal of ReceiveAction.<br/>* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine).

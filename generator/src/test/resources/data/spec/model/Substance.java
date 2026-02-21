@@ -6,8 +6,8 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
 import spec.model.MaximumDoseSchedule;
+import spec.model.datatype.Text;
 
 /**
  * Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.

@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Thing;
-import org.schema.model.ListItem;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Integer;
 import org.schema.model.ItemListOrderType;
+import org.schema.model.ListItem;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.

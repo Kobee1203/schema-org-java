@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Language;
-import org.schema.model.datatype.Text;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.Audience;
+import org.schema.model.ContactPoint;
+import org.schema.model.Language;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
 
 /**
  * The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.

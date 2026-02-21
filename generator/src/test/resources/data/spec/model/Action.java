@@ -6,18 +6,18 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Thing;
-import spec.model.HowTo;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Time;
 import spec.model.ActionStatusType;
-import spec.model.datatype.Text;
-import spec.model.VirtualLocation;
+import spec.model.EntryPoint;
+import spec.model.HowTo;
+import spec.model.Organization;
+import spec.model.Person;
 import spec.model.Place;
 import spec.model.PostalAddress;
-import spec.model.EntryPoint;
+import spec.model.Thing;
+import spec.model.VirtualLocation;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Text;
+import spec.model.datatype.Time;
 import spec.model.datatype.URL;
 
 /**

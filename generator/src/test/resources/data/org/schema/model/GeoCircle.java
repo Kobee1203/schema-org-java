@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
 import org.schema.model.Distance;
-import org.schema.model.datatype.Text;
 import org.schema.model.GeoCoordinates;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape

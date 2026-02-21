@@ -5,27 +5,27 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Property;
-import spec_custom.model.Class;
-import spec_custom.model.Enumeration;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.Class;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Enumeration;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
-import spec_custom.model.Specialty;
 import spec_custom.model.MedicalEnumeration;
 import spec_custom.model.MedicalSpecialty;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.Property;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.Specialty;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.

@@ -5,36 +5,36 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.MeasurementMethodEnum;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.CreativeWork;
 import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.StatisticalVariable;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Place;
-import org.schema.model.Thing;
 import org.schema.model.Enumeration;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
+import org.schema.model.Intangible;
+import org.schema.model.MeasurementMethodEnum;
+import org.schema.model.MeasurementTypeEnumeration;
+import org.schema.model.Observation;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Place;
 import org.schema.model.Property;
 import org.schema.model.PropertyValue;
+import org.schema.model.QualitativeValue;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.StatisticalVariable;
+import org.schema.model.StructuredValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Date;
 import org.schema.model.datatype.DateTime;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.Intangible;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Number;
-import org.schema.model.StructuredValue;
-import org.schema.model.MeasurementTypeEnumeration;
-import org.schema.model.QualitativeValue;
-import org.schema.model.Observation;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Instances of the class [[Observation]] are used to specify observations about an entity at a particular time. The principal properties of an [[Observation]] are [[observationAbout]], [[measuredProperty]], [[statType]], [[value] and [[observationDate]]  and [[measuredProperty]]. Some but not all Observations represent a [[QuantitativeValue]]. Quantitative observations can be about a [[StatisticalVariable]], which is an abstract specification about which we can make observations that are grounded at a particular location and time.

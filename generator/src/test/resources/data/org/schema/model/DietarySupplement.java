@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DrugLegalStatus;
+import org.schema.model.MaximumDoseSchedule;
+import org.schema.model.MedicalEnumeration;
 import org.schema.model.RecommendedDoseSchedule;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Text;
-import org.schema.model.DrugLegalStatus;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.MaximumDoseSchedule;
 
 /**
  * A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.

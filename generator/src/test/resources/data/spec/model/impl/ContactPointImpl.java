@@ -5,30 +5,30 @@
  */
 package spec.model.impl;
 
-import spec.model.OpeningHoursSpecification;
-import spec.model.datatype.Text;
-import spec.model.Product;
-import spec.model.Place;
-import spec.model.AdministrativeArea;
-import spec.model.GeoShape;
-import spec.model.Language;
-import spec.model.ContactPointOption;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec.model.Intangible;
-import spec.model.StructuredValue;
+import spec.model.Action;
+import spec.model.AdministrativeArea;
 import spec.model.ContactPoint;
+import spec.model.ContactPointOption;
+import spec.model.CreativeWork;
+import spec.model.Event;
+import spec.model.GeoShape;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.Language;
+import spec.model.OpeningHoursSpecification;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.Place;
+import spec.model.Product;
+import spec.model.PropertyValue;
+import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A contact point&#x2014;for example, a Customer Complaints department.

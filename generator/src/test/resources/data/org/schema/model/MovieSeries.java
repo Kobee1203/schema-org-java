@@ -7,10 +7,10 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.MusicGroup;
-import org.schema.model.Person;
-import org.schema.model.PerformingGroup;
-import org.schema.model.VideoObject;
 import org.schema.model.Organization;
+import org.schema.model.PerformingGroup;
+import org.schema.model.Person;
+import org.schema.model.VideoObject;
 
 /**
  * A series of movies. Included movies can be indicated with the hasPart property.

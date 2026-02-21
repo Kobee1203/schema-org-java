@@ -5,31 +5,31 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.Text;
-import org.schema.model.PriceTypeEnumeration;
-import org.schema.model.PriceSpecification;
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.MemberProgramTier;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Intangible;
-import org.schema.model.StructuredValue;
+import org.schema.model.Action;
 import org.schema.model.CompoundPriceSpecification;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
+import org.schema.model.Intangible;
+import org.schema.model.MemberProgramTier;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PriceSpecification;
+import org.schema.model.PriceTypeEnumeration;
+import org.schema.model.PropertyValue;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.StructuredValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning").

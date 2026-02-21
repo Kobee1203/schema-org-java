@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DayOfWeek;
 import org.schema.model.Duration;
 import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Text;
-import org.schema.model.DayOfWeek;
+import org.schema.model.datatype.Time;
 
 /**
  * A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely.

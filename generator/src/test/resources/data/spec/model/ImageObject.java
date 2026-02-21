@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Boolean;
-import spec.model.datatype.Text;
 import spec.model.MediaObject;
 import spec.model.PropertyValue;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Text;
 
 /**
  * An image file.

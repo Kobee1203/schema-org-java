@@ -5,37 +5,37 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Text;
-import spec.model.GeospatialGeometry;
-import spec.model.Place;
-import spec.model.OpeningHoursSpecification;
-import spec.model.datatype.Boolean;
-import spec.model.datatype.Number;
-import spec.model.Review;
-import spec.model.datatype.URL;
-import spec.model.ImageObject;
-import spec.model.DefinedTerm;
-import spec.model.GeoShape;
-import spec.model.GeoCoordinates;
-import spec.model.AggregateRating;
-import spec.model.Map;
-import spec.model.Event;
-import spec.model.PostalAddress;
-import spec.model.Certification;
-import spec.model.PropertyValue;
-import spec.model.Photograph;
-import spec.model.datatype.Integer;
-import spec.model.LocationFeatureSpecification;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.CreativeWork;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
 import spec.model.Action;
+import spec.model.AggregateRating;
+import spec.model.Certification;
+import spec.model.CivicStructure;
+import spec.model.CreativeWork;
+import spec.model.DefinedTerm;
+import spec.model.Event;
+import spec.model.GeoCoordinates;
+import spec.model.GeoShape;
+import spec.model.GeospatialGeometry;
+import spec.model.ImageObject;
+import spec.model.LocationFeatureSpecification;
+import spec.model.Map;
+import spec.model.OpeningHoursSpecification;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.Photograph;
+import spec.model.Place;
+import spec.model.PostalAddress;
+import spec.model.PropertyValue;
+import spec.model.Review;
 import spec.model.TextObject;
 import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec.model.CivicStructure;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A public structure, such as a town hall or concert hall.

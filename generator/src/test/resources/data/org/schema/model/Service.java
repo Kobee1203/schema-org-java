@@ -6,30 +6,30 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.OpeningHoursSpecification;
-import org.schema.model.Audience;
-import org.schema.model.datatype.URL;
-import org.schema.model.ImageObject;
-import org.schema.model.datatype.Text;
-import org.schema.model.Service;
-import org.schema.model.Product;
-import org.schema.model.AggregateRating;
-import org.schema.model.Thing;
-import org.schema.model.Brand;
-import org.schema.model.Place;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.GeoShape;
-import org.schema.model.Review;
-import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.AggregateRating;
+import org.schema.model.Audience;
+import org.schema.model.Brand;
 import org.schema.model.CategoryCode;
-import org.schema.model.Offer;
-import org.schema.model.Demand;
 import org.schema.model.Certification;
+import org.schema.model.Demand;
+import org.schema.model.GeoShape;
 import org.schema.model.GovernmentBenefitsType;
-import org.schema.model.ServiceChannel;
+import org.schema.model.ImageObject;
+import org.schema.model.Offer;
 import org.schema.model.OfferCatalog;
+import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.Place;
+import org.schema.model.Product;
+import org.schema.model.Review;
+import org.schema.model.Service;
+import org.schema.model.ServiceChannel;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A service provided by an organization, e.g. delivery service, print services, etc.

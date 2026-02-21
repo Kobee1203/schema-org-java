@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.DrugLegalStatus;
 import spec.model.Grant;
+import spec.model.MedicalCode;
+import spec.model.MedicalEnumeration;
+import spec.model.MedicalGuideline;
 import spec.model.MedicalSpecialty;
 import spec.model.MedicalStudy;
-import spec.model.MedicalCode;
-import spec.model.datatype.Text;
-import spec.model.DrugLegalStatus;
-import spec.model.MedicalEnumeration;
-import spec.model.Organization;
-import spec.model.MedicalGuideline;
 import spec.model.MedicineSystem;
+import spec.model.Organization;
+import spec.model.datatype.Text;
 
 /**
  * The most generic type of entity related to health and the practice of medicine.

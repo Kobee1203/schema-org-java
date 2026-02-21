@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
-import org.schema.model.Service;
-import org.schema.model.Product;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
 import org.schema.model.BusinessFunction;
+import org.schema.model.Product;
+import org.schema.model.Service;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.

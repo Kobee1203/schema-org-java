@@ -7,12 +7,12 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Duration;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Organization;
 import org.schema.model.MusicAlbum;
-import org.schema.model.datatype.Text;
-import org.schema.model.Person;
 import org.schema.model.MusicReleaseFormatType;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Text;
 
 /**
  * A MusicRelease is a specific release of a music album.

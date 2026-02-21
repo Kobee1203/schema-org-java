@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.MediaObject;
 import spec.model.MusicGroup;
+import spec.model.PerformingGroup;
 import spec.model.Person;
 import spec.model.datatype.Text;
-import spec.model.PerformingGroup;
-import spec.model.MediaObject;
 
 /**
  * A video file.

@@ -5,28 +5,28 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Thing;
-import org.schema.model.datatype.Text;
-import org.schema.model.ProgramMembership;
-import org.schema.model.ReservationStatusType;
-import org.schema.model.Ticket;
-import org.schema.model.datatype.Number;
-import org.schema.model.PriceSpecification;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
 import org.schema.model.Intangible;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PriceSpecification;
+import org.schema.model.ProgramMembership;
+import org.schema.model.PropertyValue;
 import org.schema.model.Reservation;
+import org.schema.model.ReservationStatusType;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.Ticket;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Describes a reservation for travel, dining or an event. Some reservations require tickets. <br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].

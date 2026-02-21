@@ -6,16 +6,16 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Mass;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.Distance;
 import spec_custom.model.DefinedRegion;
+import spec_custom.model.Distance;
+import spec_custom.model.Mass;
 import spec_custom.model.MemberProgramTier;
-import spec_custom.model.datatype.Boolean;
-import spec_custom.model.ShippingDeliveryTime;
-import spec_custom.model.ShippingService;
 import spec_custom.model.MonetaryAmount;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.ShippingDeliveryTime;
 import spec_custom.model.ShippingRateSettings;
+import spec_custom.model.ShippingService;
+import spec_custom.model.datatype.Boolean;
 
 /**
  * OfferShippingDetails represents information about shipping destinations.

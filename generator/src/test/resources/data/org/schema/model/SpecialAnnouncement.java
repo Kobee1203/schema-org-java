@@ -6,20 +6,20 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
-import org.schema.model.WebContent;
-import org.schema.model.GovernmentService;
-import org.schema.model.DataFeed;
-import org.schema.model.datatype.Text;
-import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
-import org.schema.model.Thing;
-import org.schema.model.Dataset;
-import org.schema.model.Observation;
 import org.schema.model.CivicStructure;
+import org.schema.model.DataFeed;
+import org.schema.model.Dataset;
+import org.schema.model.GovernmentService;
 import org.schema.model.LocalBusiness;
-import org.schema.model.datatype.DateTime;
+import org.schema.model.Observation;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.Thing;
+import org.schema.model.WebContent;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A SpecialAnnouncement combines a simple date-stamped textual information update

@@ -6,13 +6,13 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.BioChemEntity;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.MedicalEntity;
 import spec_custom.model.Organization;
 import spec_custom.model.Person;
 import spec_custom.model.Product;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.MedicalEntity;
-import spec_custom.model.BioChemEntity;
 
 /**
  * A grant, typically financial or otherwise quantifiable, of resources. Typically a [[funder]] sponsors some [[MonetaryAmount]] to an [[Organization]] or [[Person]],

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalCondition;
 import org.schema.model.Drug;
+import org.schema.model.MedicalCondition;
 
 /**
  * A patient is any person recipient of health care services.

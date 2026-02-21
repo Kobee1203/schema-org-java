@@ -5,30 +5,30 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Place;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Thing;
-import org.schema.model.HowTo;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
-import org.schema.model.ActionStatusType;
-import org.schema.model.datatype.Text;
-import org.schema.model.VirtualLocation;
-import org.schema.model.PostalAddress;
-import org.schema.model.EntryPoint;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.TransferAction;
+import org.schema.model.Action;
+import org.schema.model.ActionStatusType;
+import org.schema.model.CreativeWork;
+import org.schema.model.EntryPoint;
+import org.schema.model.Event;
+import org.schema.model.HowTo;
+import org.schema.model.ImageObject;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Place;
+import org.schema.model.PostalAddress;
+import org.schema.model.PropertyValue;
 import org.schema.model.TakeAction;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.TransferAction;
+import org.schema.model.VirtualLocation;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
+import org.schema.model.datatype.URL;
 
 /**
  * The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.<br/><br/>Related actions:<br/><br/>* [[GiveAction]]: The reciprocal of TakeAction.<br/>* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transferred.

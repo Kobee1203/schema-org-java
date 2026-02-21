@@ -5,25 +5,25 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Property;
-import spec_custom.model.Class;
-import spec_custom.model.Enumeration;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec_custom.model.Intangible;
+import spec_custom.model.Action;
 import spec_custom.model.BusinessFunction;
+import spec_custom.model.Class;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Enumeration;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.Property;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * The business function specifies the type of activity or access (i.e., the bundle of rights) offered by the organization or business person through the offer. Typical are sell, rental or lease, maintenance or repair, manufacture / produce, recycle / dispose, engineering / construction, or installation. Proprietary specifications of access rights are also instances of this class.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#ConstructionInstallation<br/>* http://purl.org/goodrelations/v1#Dispose<br/>* http://purl.org/goodrelations/v1#LeaseOut<br/>* http://purl.org/goodrelations/v1#Maintain<br/>* http://purl.org/goodrelations/v1#ProvideService<br/>* http://purl.org/goodrelations/v1#Repair<br/>* http://purl.org/goodrelations/v1#Sell<br/>* http://purl.org/goodrelations/v1#Buy

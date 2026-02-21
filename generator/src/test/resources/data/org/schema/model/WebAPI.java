@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
 import org.schema.model.CreativeWork;
+import org.schema.model.datatype.URL;
 
 /**
  * An application programming interface accessible over Web/Internet technologies.

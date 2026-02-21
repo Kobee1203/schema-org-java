@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.URL;
-import org.schema.model.Person;
 import org.schema.model.Organization;
-import org.schema.model.Seat;
-import org.schema.model.datatype.Number;
+import org.schema.model.Person;
 import org.schema.model.PriceSpecification;
+import org.schema.model.Seat;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Used to describe a ticket to an event, a flight, a bus ride, etc.

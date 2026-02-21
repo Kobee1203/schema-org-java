@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ServicePeriod;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.ShippingConditions;
-import org.schema.model.MemberProgramTier;
 import org.schema.model.FulfillmentTypeEnumeration;
+import org.schema.model.MemberProgramTier;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.ServicePeriod;
+import org.schema.model.ShippingConditions;
 
 /**
  * ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.

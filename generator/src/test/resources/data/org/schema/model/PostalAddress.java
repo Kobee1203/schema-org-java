@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.AdministrativeArea;
 import org.schema.model.Country;
 import org.schema.model.datatype.Text;
-import org.schema.model.AdministrativeArea;
 
 /**
  * The mailing address.

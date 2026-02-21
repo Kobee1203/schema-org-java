@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A description of costs to the patient under a given network or formulary.

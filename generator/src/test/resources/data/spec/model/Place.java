@@ -6,27 +6,27 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.AggregateRating;
+import spec.model.Certification;
+import spec.model.DefinedTerm;
+import spec.model.Event;
+import spec.model.GeoCoordinates;
+import spec.model.GeoShape;
 import spec.model.GeospatialGeometry;
-import spec.model.Place;
+import spec.model.ImageObject;
+import spec.model.LocationFeatureSpecification;
+import spec.model.Map;
 import spec.model.OpeningHoursSpecification;
+import spec.model.Photograph;
+import spec.model.Place;
+import spec.model.PostalAddress;
+import spec.model.PropertyValue;
+import spec.model.Review;
 import spec.model.datatype.Boolean;
+import spec.model.datatype.Integer;
 import spec.model.datatype.Number;
 import spec.model.datatype.Text;
-import spec.model.Review;
 import spec.model.datatype.URL;
-import spec.model.ImageObject;
-import spec.model.DefinedTerm;
-import spec.model.GeoShape;
-import spec.model.GeoCoordinates;
-import spec.model.AggregateRating;
-import spec.model.Map;
-import spec.model.Event;
-import spec.model.PostalAddress;
-import spec.model.Certification;
-import spec.model.PropertyValue;
-import spec.model.Photograph;
-import spec.model.datatype.Integer;
-import spec.model.LocationFeatureSpecification;
 
 /**
  * Entities that have a somewhat fixed, physical extension.

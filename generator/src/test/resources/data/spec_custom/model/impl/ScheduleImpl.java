@@ -5,29 +5,29 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Duration;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.datatype.Integer;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.datatype.Time;
-import spec_custom.model.datatype.Date;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.DayOfWeek;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.DayOfWeek;
+import spec_custom.model.Duration;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.QuantitativeValue;
 import spec_custom.model.Schedule;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Date;
+import spec_custom.model.datatype.DateTime;
+import spec_custom.model.datatype.Integer;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.Time;
+import spec_custom.model.datatype.URL;
 
 /**
  * A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely.

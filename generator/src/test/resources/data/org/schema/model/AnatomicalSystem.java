@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalTherapy;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
 import org.schema.model.MedicalCondition;
+import org.schema.model.MedicalTherapy;
 import org.schema.model.datatype.Text;
 
 /**

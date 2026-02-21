@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.PostalAddress;
 import spec_custom.model.ContactPoint;
-import spec_custom.model.Service;
-import spec_custom.model.datatype.URL;
 import spec_custom.model.Duration;
 import spec_custom.model.Language;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.Place;
+import spec_custom.model.PostalAddress;
+import spec_custom.model.Service;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A means for accessing a service, e.g. a government office location, web site, or phone number.

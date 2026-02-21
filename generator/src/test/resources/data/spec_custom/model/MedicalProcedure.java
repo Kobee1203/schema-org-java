@@ -6,11 +6,11 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.MedicalProcedureType;
 import spec_custom.model.EventStatusType;
-import spec_custom.model.MedicalStudyStatus;
 import spec_custom.model.MedicalEntity;
+import spec_custom.model.MedicalProcedureType;
+import spec_custom.model.MedicalStudyStatus;
+import spec_custom.model.datatype.Text;
 
 /**
  * A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.

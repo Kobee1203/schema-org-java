@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QualitativeValue;
-import org.schema.model.StructuredValue;
 import org.schema.model.DefinedTerm;
-import org.schema.model.PropertyValue;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.Enumeration;
 import org.schema.model.MeasurementTypeEnumeration;
+import org.schema.model.PropertyValue;
+import org.schema.model.QualitativeValue;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.StructuredValue;
 import org.schema.model.datatype.Text;
 
 /**

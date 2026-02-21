@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Audience;
+import org.schema.model.ContactPoint;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PriceSpecification;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Audience;
-import org.schema.model.PriceSpecification;
 
 /**
  * The act of providing goods, services, or money without compensation, often for philanthropic reasons.

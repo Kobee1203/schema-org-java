@@ -5,36 +5,36 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.MedicalEntity;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
 import spec_custom.model.DoseSchedule;
 import spec_custom.model.Drug;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.MedicalProcedureType;
+import spec_custom.model.DrugLegalStatus;
+import spec_custom.model.Event;
 import spec_custom.model.EventStatusType;
-import spec_custom.model.MedicalStudyStatus;
 import spec_custom.model.Grant;
+import spec_custom.model.ImageObject;
+import spec_custom.model.MedicalCode;
+import spec_custom.model.MedicalEntity;
+import spec_custom.model.MedicalEnumeration;
+import spec_custom.model.MedicalGuideline;
+import spec_custom.model.MedicalProcedure;
+import spec_custom.model.MedicalProcedureType;
 import spec_custom.model.MedicalSpecialty;
 import spec_custom.model.MedicalStudy;
-import spec_custom.model.MedicalCode;
-import spec_custom.model.DrugLegalStatus;
-import spec_custom.model.MedicalEnumeration;
-import spec_custom.model.Organization;
-import spec_custom.model.MedicalGuideline;
+import spec_custom.model.MedicalStudyStatus;
 import spec_custom.model.MedicineSystem;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
+import spec_custom.model.Organization;
 import spec_custom.model.Person;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
+import spec_custom.model.PropertyValue;
 import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.MedicalProcedure;
 import spec_custom.model.TherapeuticProcedure;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.

@@ -6,24 +6,24 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.IncentiveQualifiedExpenseType;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Text;
-import org.schema.model.Place;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.GeoShape;
-import org.schema.model.PurchaseType;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
 import org.schema.model.DefinedTerm;
-import org.schema.model.Product;
-import org.schema.model.IncentiveType;
+import org.schema.model.GeoShape;
+import org.schema.model.IncentiveQualifiedExpenseType;
 import org.schema.model.IncentiveStatus;
+import org.schema.model.IncentiveType;
 import org.schema.model.LoanOrCredit;
-import org.schema.model.UnitPriceSpecification;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Place;
+import org.schema.model.Product;
+import org.schema.model.PurchaseType;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.UnitPriceSpecification;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
 
 /**
  * <p>Represents financial incentives for goods/services offered by an organization (or individual).</p>

@@ -6,16 +6,16 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.DataDownload;
 import spec.model.DataCatalog;
-import spec.model.datatype.Text;
-import spec.model.MeasurementMethodEnum;
+import spec.model.DataDownload;
 import spec.model.DefinedTerm;
-import spec.model.datatype.URL;
-import spec.model.datatype.DateTime;
+import spec.model.MeasurementMethodEnum;
 import spec.model.Property;
 import spec.model.PropertyValue;
 import spec.model.StatisticalVariable;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A body of structured information describing some topic(s) of interest.

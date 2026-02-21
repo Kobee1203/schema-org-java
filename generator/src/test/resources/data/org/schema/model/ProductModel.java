@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ProductModel;
 import org.schema.model.ProductGroup;
+import org.schema.model.ProductModel;
 
 /**
  * A datasheet or vendor specification of a product (in the sense of a prototypical description).

@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MeasurementMethodEnum;
-import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
 import org.schema.model.Dataset;
+import org.schema.model.DefinedTerm;
+import org.schema.model.MeasurementMethodEnum;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A collection of datasets.

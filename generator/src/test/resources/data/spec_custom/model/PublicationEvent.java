@@ -7,8 +7,8 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.BroadcastService;
-import spec_custom.model.Person;
 import spec_custom.model.Organization;
+import spec_custom.model.Person;
 import spec_custom.model.datatype.Boolean;
 
 /**

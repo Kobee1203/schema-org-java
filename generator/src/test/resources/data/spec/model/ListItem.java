@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Thing;
 import spec.model.ListItem;
-import spec.model.datatype.Text;
+import spec.model.Thing;
 import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
 
 /**
  * An list item, e.g. a step in a checklist or how-to description.

@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Thing;
 import org.schema.model.ListItem;
-import org.schema.model.datatype.Text;
+import org.schema.model.Thing;
 import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * An list item, e.g. a step in a checklist or how-to description.

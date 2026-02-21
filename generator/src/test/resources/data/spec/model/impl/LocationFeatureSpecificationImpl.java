@@ -5,34 +5,34 @@
  */
 package spec.model.impl;
 
-import spec.model.OpeningHoursSpecification;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Date;
-import spec.model.datatype.Text;
-import spec.model.datatype.URL;
-import spec.model.MeasurementMethodEnum;
-import spec.model.DefinedTerm;
-import spec.model.datatype.Boolean;
-import spec.model.datatype.Number;
-import spec.model.StructuredValue;
-import spec.model.PropertyValue;
-import spec.model.QuantitativeValue;
-import spec.model.Enumeration;
-import spec.model.MeasurementTypeEnumeration;
-import spec.model.QualitativeValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DefinedTerm;
+import spec.model.Enumeration;
+import spec.model.Event;
+import spec.model.ImageObject;
 import spec.model.Intangible;
 import spec.model.LocationFeatureSpecification;
+import spec.model.MeasurementMethodEnum;
+import spec.model.MeasurementTypeEnumeration;
+import spec.model.OpeningHoursSpecification;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.QualitativeValue;
+import spec.model.QuantitativeValue;
+import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.

@@ -6,19 +6,19 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MeasurementMethodEnum;
 import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
-import org.schema.model.StatisticalVariable;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Place;
-import org.schema.model.Thing;
 import org.schema.model.Enumeration;
+import org.schema.model.MeasurementMethodEnum;
+import org.schema.model.Place;
 import org.schema.model.Property;
 import org.schema.model.PropertyValue;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.StatisticalVariable;
+import org.schema.model.Thing;
 import org.schema.model.datatype.Date;
 import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Instances of the class [[Observation]] are used to specify observations about an entity at a particular time. The principal properties of an [[Observation]] are [[observationAbout]], [[measuredProperty]], [[statType]], [[value] and [[observationDate]]  and [[measuredProperty]]. Some but not all Observations represent a [[QuantitativeValue]]. Quantitative observations can be about a [[StatisticalVariable]], which is an abstract specification about which we can make observations that are grounded at a particular location and time.

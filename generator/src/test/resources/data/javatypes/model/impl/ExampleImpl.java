@@ -5,10 +5,10 @@
  */
 package javatypes.model.impl;
 
-import javatypes.model.Example;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import javatypes.model.Example;
 
 /**
  * Example class.

@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalEnumeration;
-import org.schema.model.datatype.Text;
-import org.schema.model.MedicalDevice;
-import org.schema.model.MedicalSign;
 import org.schema.model.Drug;
 import org.schema.model.MedicalCondition;
+import org.schema.model.MedicalDevice;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.MedicalSign;
+import org.schema.model.datatype.Text;
 
 /**
  * Any medical test, typically performed for diagnostic purposes.

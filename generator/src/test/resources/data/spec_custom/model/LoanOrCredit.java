@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.Number;
+import spec_custom.model.Duration;
 import spec_custom.model.MonetaryAmount;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.RepaymentSpecification;
 import spec_custom.model.Thing;
 import spec_custom.model.datatype.Boolean;
-import spec_custom.model.RepaymentSpecification;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.Duration;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 import spec_custom.model.datatype.URL;
 
 /**

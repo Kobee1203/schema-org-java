@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.ServicePeriod;
-import spec.model.QuantitativeValue;
-import spec.model.ShippingConditions;
-import spec.model.MemberProgramTier;
 import spec.model.FulfillmentTypeEnumeration;
+import spec.model.MemberProgramTier;
+import spec.model.QuantitativeValue;
+import spec.model.ServicePeriod;
+import spec.model.ShippingConditions;
 
 /**
  * ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.

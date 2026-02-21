@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.BedDetails;
+import org.schema.model.BedType;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
-import org.schema.model.BedType;
 import org.schema.model.datatype.Text;
-import org.schema.model.BedDetails;
 
 /**
  * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Suite_(hotel)">http://en.wikipedia.org/wiki/Suite_(hotel)</a>).

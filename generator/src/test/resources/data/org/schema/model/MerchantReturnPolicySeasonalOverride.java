@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.RefundTypeEnumeration;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.ReturnMethodEnumeration;
-import org.schema.model.datatype.Integer;
-import org.schema.model.ReturnFeesEnumeration;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Number;
 import org.schema.model.MerchantReturnEnumeration;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.RefundTypeEnumeration;
+import org.schema.model.ReturnFeesEnumeration;
+import org.schema.model.ReturnMethodEnumeration;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
 
 /**
  * A seasonal override of a return policy, for example used for holidays.

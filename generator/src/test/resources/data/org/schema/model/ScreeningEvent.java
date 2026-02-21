@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Language;
 import org.schema.model.Movie;
 import org.schema.model.datatype.Text;
-import org.schema.model.Language;
 
 /**
  * A screening of a movie or other video.

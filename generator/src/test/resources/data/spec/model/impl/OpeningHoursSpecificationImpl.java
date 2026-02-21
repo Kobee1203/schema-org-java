@@ -5,27 +5,27 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Time;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Date;
-import spec.model.DayOfWeek;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.DayOfWeek;
+import spec.model.Event;
+import spec.model.ImageObject;
 import spec.model.Intangible;
-import spec.model.StructuredValue;
 import spec.model.OpeningHoursSpecification;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PropertyValue;
+import spec.model.StructuredValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Text;
+import spec.model.datatype.Time;
+import spec.model.datatype.URL;
 
 /**
  * A structured value providing information about the opening hours of a place or a certain service inside a place.<br/><br/>

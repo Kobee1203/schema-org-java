@@ -6,12 +6,12 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.Demand;
+import spec.model.MenuItem;
+import spec.model.MenuSection;
 import spec.model.NutritionInformation;
 import spec.model.Offer;
-import spec.model.Demand;
 import spec.model.RestrictedDiet;
-import spec.model.MenuSection;
-import spec.model.MenuItem;
 
 /**
  * A food or drink item listed in a menu or menu section.

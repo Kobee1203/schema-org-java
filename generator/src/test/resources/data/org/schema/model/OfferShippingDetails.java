@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Mass;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Distance;
 import org.schema.model.DefinedRegion;
+import org.schema.model.Distance;
+import org.schema.model.Mass;
 import org.schema.model.MemberProgramTier;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.ShippingDeliveryTime;
-import org.schema.model.ShippingService;
 import org.schema.model.MonetaryAmount;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.ShippingDeliveryTime;
 import org.schema.model.ShippingRateSettings;
+import org.schema.model.ShippingService;
+import org.schema.model.datatype.Boolean;
 
 /**
  * OfferShippingDetails represents information about shipping destinations.

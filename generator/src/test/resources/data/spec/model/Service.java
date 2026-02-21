@@ -6,30 +6,30 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.OpeningHoursSpecification;
-import spec.model.Audience;
-import spec.model.datatype.URL;
-import spec.model.ImageObject;
-import spec.model.datatype.Text;
-import spec.model.Service;
-import spec.model.Product;
-import spec.model.AggregateRating;
-import spec.model.Thing;
-import spec.model.Brand;
-import spec.model.Place;
 import spec.model.AdministrativeArea;
-import spec.model.GeoShape;
-import spec.model.Review;
-import spec.model.PhysicalActivityCategory;
+import spec.model.AggregateRating;
+import spec.model.Audience;
+import spec.model.Brand;
 import spec.model.CategoryCode;
-import spec.model.Offer;
-import spec.model.Demand;
 import spec.model.Certification;
+import spec.model.Demand;
+import spec.model.GeoShape;
 import spec.model.GovernmentBenefitsType;
-import spec.model.ServiceChannel;
+import spec.model.ImageObject;
+import spec.model.Offer;
 import spec.model.OfferCatalog;
+import spec.model.OpeningHoursSpecification;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PhysicalActivityCategory;
+import spec.model.Place;
+import spec.model.Product;
+import spec.model.Review;
+import spec.model.Service;
+import spec.model.ServiceChannel;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A service provided by an organization, e.g. delivery service, print services, etc.

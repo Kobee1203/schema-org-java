@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A CDCPMDRecord is a data structure representing a record in a CDC tabular data format

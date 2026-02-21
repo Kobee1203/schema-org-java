@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.URL;
-import spec.model.ImageObject;
-import spec.model.datatype.Text;
 import spec.model.AggregateRating;
+import spec.model.ImageObject;
 import spec.model.Review;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A brand is a name used by an organization or business person for labeling a product, product group, or similar.

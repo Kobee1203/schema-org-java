@@ -7,9 +7,9 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.Country;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.Number;
 import spec_custom.model.PostalAddress;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 
 /**
  * The geographic coordinates of a place or event.

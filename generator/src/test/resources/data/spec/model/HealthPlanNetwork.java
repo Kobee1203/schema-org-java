@@ -6,9 +6,9 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
 import spec.model.HealthPlanCostSharingSpecification;
 import spec.model.datatype.Boolean;
+import spec.model.datatype.Text;
 
 /**
  * A US-style health insurance plan network.

@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Duration;
-import org.schema.model.HowToTool;
-import org.schema.model.datatype.Text;
-import org.schema.model.HowToStep;
-import org.schema.model.HowToSection;
 import org.schema.model.CreativeWork;
-import org.schema.model.QuantitativeValue;
+import org.schema.model.Duration;
+import org.schema.model.HowToSection;
+import org.schema.model.HowToStep;
 import org.schema.model.HowToSupply;
+import org.schema.model.HowToTool;
 import org.schema.model.ItemList;
 import org.schema.model.MonetaryAmount;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Text;
 
 /**
  * Instructions that explain how to achieve a result by performing a sequence of steps.

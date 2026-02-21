@@ -6,8 +6,8 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.ProductModel;
 import spec_custom.model.ProductGroup;
+import spec_custom.model.ProductModel;
 
 /**
  * A datasheet or vendor specification of a product (in the sense of a prototypical description).

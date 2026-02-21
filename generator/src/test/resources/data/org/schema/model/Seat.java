@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.QualitativeValue;
+import org.schema.model.datatype.Text;
 
 /**
  * Used to describe a seat, such as a reserved seat in an event reservation.

@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.DefinedTerm;
+import spec.model.PropertyValue;
+import spec.model.Taxon;
 import spec.model.datatype.Text;
 import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.DefinedTerm;
-import spec.model.Taxon;
 
 /**
  * A set of organisms asserted to represent a natural cohesive biological unit.

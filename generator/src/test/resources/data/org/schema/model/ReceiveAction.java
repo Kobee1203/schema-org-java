@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.Audience;
 import org.schema.model.DeliveryMethod;
 import org.schema.model.Organization;
-import org.schema.model.Audience;
 import org.schema.model.Person;
 
 /**

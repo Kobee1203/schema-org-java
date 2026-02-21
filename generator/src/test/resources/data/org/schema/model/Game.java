@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Thing;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.URL;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.Thing;
+import org.schema.model.datatype.URL;
 
 /**
  * The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.

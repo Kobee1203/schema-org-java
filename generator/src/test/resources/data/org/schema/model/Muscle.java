@@ -7,10 +7,10 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AnatomicalStructure;
+import org.schema.model.Muscle;
 import org.schema.model.Nerve;
 import org.schema.model.Vessel;
 import org.schema.model.datatype.Text;
-import org.schema.model.Muscle;
 
 /**
  * A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.

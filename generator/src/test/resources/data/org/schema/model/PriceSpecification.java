@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
 import org.schema.model.MemberProgramTier;
 import org.schema.model.PriceSpecification;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.

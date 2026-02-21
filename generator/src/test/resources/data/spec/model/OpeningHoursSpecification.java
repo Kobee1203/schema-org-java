@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Time;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Date;
 import spec.model.DayOfWeek;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Time;
 
 /**
  * A structured value providing information about the opening hours of a place or a certain service inside a place.<br/><br/>

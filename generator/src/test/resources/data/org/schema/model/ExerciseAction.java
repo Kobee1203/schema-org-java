@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Place;
 import org.schema.model.Diet;
-import org.schema.model.datatype.Text;
-import org.schema.model.Person;
 import org.schema.model.Distance;
-import org.schema.model.SportsActivityLocation;
-import org.schema.model.SportsTeam;
-import org.schema.model.SportsEvent;
 import org.schema.model.ExercisePlan;
+import org.schema.model.Person;
+import org.schema.model.Place;
+import org.schema.model.SportsActivityLocation;
+import org.schema.model.SportsEvent;
+import org.schema.model.SportsTeam;
+import org.schema.model.datatype.Text;
 
 /**
  * The act of participating in exertive activity for the purposes of improving health and fitness.

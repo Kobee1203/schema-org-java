@@ -6,15 +6,15 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
+import org.schema.model.Airport;
 import org.schema.model.BoardingPolicyType;
-import org.schema.model.datatype.Text;
+import org.schema.model.Distance;
 import org.schema.model.Duration;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.Airport;
-import org.schema.model.Distance;
 import org.schema.model.Vehicle;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
 
 /**
  * An airline flight.

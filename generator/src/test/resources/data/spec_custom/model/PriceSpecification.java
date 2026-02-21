@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Number;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.Boolean;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.datatype.Date;
 import spec_custom.model.MemberProgramTier;
 import spec_custom.model.PriceSpecification;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Date;
+import spec_custom.model.datatype.DateTime;
+import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 
 /**
  * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.

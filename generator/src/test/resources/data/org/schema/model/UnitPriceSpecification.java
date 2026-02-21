@@ -7,12 +7,12 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Duration;
+import org.schema.model.PriceComponentTypeEnumeration;
+import org.schema.model.PriceTypeEnumeration;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
-import org.schema.model.PriceTypeEnumeration;
 import org.schema.model.datatype.URL;
-import org.schema.model.PriceComponentTypeEnumeration;
 
 /**
  * The price asked for a given offer by the respective organization or person.

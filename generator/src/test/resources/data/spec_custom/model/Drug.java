@@ -6,19 +6,19 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Drug;
-import spec_custom.model.datatype.Boolean;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.DrugStrength;
-import spec_custom.model.DrugLegalStatus;
-import spec_custom.model.MedicalEnumeration;
-import spec_custom.model.DrugClass;
-import spec_custom.model.DrugPrescriptionStatus;
 import spec_custom.model.DoseSchedule;
-import spec_custom.model.MaximumDoseSchedule;
+import spec_custom.model.Drug;
+import spec_custom.model.DrugClass;
+import spec_custom.model.DrugLegalStatus;
 import spec_custom.model.DrugPregnancyCategory;
+import spec_custom.model.DrugPrescriptionStatus;
+import spec_custom.model.DrugStrength;
 import spec_custom.model.HealthInsurancePlan;
+import spec_custom.model.MaximumDoseSchedule;
+import spec_custom.model.MedicalEnumeration;
+import spec_custom.model.datatype.Boolean;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge makes a clear difference between them.

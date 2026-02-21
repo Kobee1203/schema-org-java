@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Integer;
-import org.schema.model.ItemList;
 import org.schema.model.Answer;
-import org.schema.model.CreativeWork;
 import org.schema.model.Comment;
+import org.schema.model.CreativeWork;
+import org.schema.model.ItemList;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.

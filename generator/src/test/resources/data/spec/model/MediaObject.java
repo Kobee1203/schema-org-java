@@ -6,22 +6,22 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Duration;
-import spec.model.QuantitativeValue;
-import spec.model.NewsArticle;
-import spec.model.Distance;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Time;
-import spec.model.datatype.Text;
-import spec.model.datatype.Date;
-import spec.model.GeoShape;
-import spec.model.Place;
-import spec.model.datatype.URL;
-import spec.model.datatype.Boolean;
-import spec.model.MediaSubscription;
-import spec.model.Organization;
-import spec.model.CreativeWork;
 import spec.model.Claim;
+import spec.model.CreativeWork;
+import spec.model.Distance;
+import spec.model.Duration;
+import spec.model.GeoShape;
+import spec.model.MediaSubscription;
+import spec.model.NewsArticle;
+import spec.model.Organization;
+import spec.model.Place;
+import spec.model.QuantitativeValue;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Text;
+import spec.model.datatype.Time;
+import spec.model.datatype.URL;
 
 /**
  * A media object, such as an image, video, audio, or text object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).

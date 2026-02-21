@@ -6,9 +6,9 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Property;
 import spec.model.Class;
 import spec.model.Enumeration;
+import spec.model.Property;
 
 /**
  * Lists or enumerations—for example, a list of cuisines or music genres, etc.

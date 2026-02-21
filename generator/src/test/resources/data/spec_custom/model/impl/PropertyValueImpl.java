@@ -5,30 +5,30 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.MeasurementMethodEnum;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
 import spec_custom.model.DefinedTerm;
+import spec_custom.model.Enumeration;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
+import spec_custom.model.Intangible;
+import spec_custom.model.MeasurementMethodEnum;
+import spec_custom.model.MeasurementTypeEnumeration;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.QualitativeValue;
+import spec_custom.model.QuantitativeValue;
+import spec_custom.model.StructuredValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
 import spec_custom.model.datatype.Boolean;
 import spec_custom.model.datatype.Number;
-import spec_custom.model.StructuredValue;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.QuantitativeValue;
-import spec_custom.model.Enumeration;
-import spec_custom.model.MeasurementTypeEnumeration;
-import spec_custom.model.QualitativeValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import spec_custom.model.Intangible;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.<br/><br/> Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
