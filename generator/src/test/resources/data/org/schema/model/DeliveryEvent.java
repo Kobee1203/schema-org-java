@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.DeliveryMethod;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Text;
-import org.schema.model.DeliveryMethod;
 
 /**
  * An event involving the delivery of an item.
@@ -18,25 +18,25 @@ import org.schema.model.DeliveryMethod;
 public interface DeliveryEvent extends Event {
 
     /**
-     * After this date, the item will no longer be available for pickup.
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
      *
-     * @return {@link DateTime}
+     * @return {@link Text}
      */
-    List<DateTime> getAvailableThroughList();
+    List<Text> getAccessCodeList();
 
     /**
-     * After this date, the item will no longer be available for pickup.
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
      *
-     * @return {@link DateTime}
+     * @return {@link Text}
      */
-    DateTime getAvailableThrough();
+    Text getAccessCode();
 
     /**
-     * After this date, the item will no longer be available for pickup.
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
      *
-     * @param availableThrough DateTime value to set.
+     * @param accessCode Text value to set.
      */
-    void addAvailableThrough(DateTime availableThrough);
+    void addAccessCode(Text accessCode);
 
     /**
      * When the item is available for pickup from the store, locker, etc.
@@ -60,25 +60,25 @@ public interface DeliveryEvent extends Event {
     void addAvailableFrom(DateTime availableFrom);
 
     /**
-     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     * After this date, the item will no longer be available for pickup.
      *
-     * @return {@link Text}
+     * @return {@link DateTime}
      */
-    List<Text> getAccessCodeList();
+    List<DateTime> getAvailableThroughList();
 
     /**
-     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     * After this date, the item will no longer be available for pickup.
      *
-     * @return {@link Text}
+     * @return {@link DateTime}
      */
-    Text getAccessCode();
+    DateTime getAvailableThrough();
 
     /**
-     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     * After this date, the item will no longer be available for pickup.
      *
-     * @param accessCode Text value to set.
+     * @param availableThrough DateTime value to set.
      */
-    void addAccessCode(Text accessCode);
+    void addAvailableThrough(DateTime availableThrough);
 
     /**
      * Method used for delivery or shipping.

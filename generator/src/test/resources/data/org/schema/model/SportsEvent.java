@@ -19,6 +19,60 @@ import org.schema.model.datatype.URL;
 public interface SportsEvent extends Event {
 
     /**
+     * The away team in a sports event.
+     *
+     * @return {@link SportsTeam} or {@link Person}
+     */
+    <T> List<T> getAwayTeamList();
+
+    /**
+     * The away team in a sports event.
+     *
+     * @return {@link SportsTeam} or {@link Person}
+     */
+    <T> T getAwayTeam();
+
+    /**
+     * The away team in a sports event.
+     *
+     * @param awayTeam SportsTeam value to set.
+     */
+    void addAwayTeam(SportsTeam awayTeam);
+    /**
+     * The away team in a sports event.
+     *
+     * @param awayTeam Person value to set.
+     */
+    void addAwayTeam(Person awayTeam);
+
+    /**
+     * A competitor in a sports event.
+     *
+     * @return {@link Person} or {@link SportsTeam}
+     */
+    <T> List<T> getCompetitorList();
+
+    /**
+     * A competitor in a sports event.
+     *
+     * @return {@link Person} or {@link SportsTeam}
+     */
+    <T> T getCompetitor();
+
+    /**
+     * A competitor in a sports event.
+     *
+     * @param competitor Person value to set.
+     */
+    void addCompetitor(Person competitor);
+    /**
+     * A competitor in a sports event.
+     *
+     * @param competitor SportsTeam value to set.
+     */
+    void addCompetitor(SportsTeam competitor);
+
+    /**
      * The home team in a sports event.
      *
      * @return {@link Person} or {@link SportsTeam}
@@ -67,33 +121,6 @@ public interface SportsEvent extends Event {
     void addReferee(Person referee);
 
     /**
-     * The away team in a sports event.
-     *
-     * @return {@link SportsTeam} or {@link Person}
-     */
-    <T> List<T> getAwayTeamList();
-
-    /**
-     * The away team in a sports event.
-     *
-     * @return {@link SportsTeam} or {@link Person}
-     */
-    <T> T getAwayTeam();
-
-    /**
-     * The away team in a sports event.
-     *
-     * @param awayTeam SportsTeam value to set.
-     */
-    void addAwayTeam(SportsTeam awayTeam);
-    /**
-     * The away team in a sports event.
-     *
-     * @param awayTeam Person value to set.
-     */
-    void addAwayTeam(Person awayTeam);
-
-    /**
      * A type of sport (e.g. Baseball).
      *
      * @return {@link Text} or {@link URL}
@@ -127,31 +154,4 @@ public interface SportsEvent extends Event {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
     void addSport(URL sport);
-
-    /**
-     * A competitor in a sports event.
-     *
-     * @return {@link Person} or {@link SportsTeam}
-     */
-    <T> List<T> getCompetitorList();
-
-    /**
-     * A competitor in a sports event.
-     *
-     * @return {@link Person} or {@link SportsTeam}
-     */
-    <T> T getCompetitor();
-
-    /**
-     * A competitor in a sports event.
-     *
-     * @param competitor Person value to set.
-     */
-    void addCompetitor(Person competitor);
-    /**
-     * A competitor in a sports event.
-     *
-     * @param competitor SportsTeam value to set.
-     */
-    void addCompetitor(SportsTeam competitor);
 }

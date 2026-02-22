@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.BlogPosting;
+import org.schema.model.datatype.Text;
 
 /**
  * A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloquially referred to by the same term.
@@ -15,6 +15,48 @@ import org.schema.model.BlogPosting;
  * @see <a href="https://schema.org/Blog">https://schema.org/Blog</a>
  */
 public interface Blog extends CreativeWork {
+
+    /**
+     * A posting that is part of this blog.
+     *
+     * @return {@link BlogPosting}
+     */
+    List<BlogPosting> getBlogPostList();
+
+    /**
+     * A posting that is part of this blog.
+     *
+     * @return {@link BlogPosting}
+     */
+    BlogPosting getBlogPost();
+
+    /**
+     * A posting that is part of this blog.
+     *
+     * @param blogPost BlogPosting value to set.
+     */
+    void addBlogPost(BlogPosting blogPost);
+
+    /**
+     * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
+     *
+     * @return {@link BlogPosting}
+     */
+    List<BlogPosting> getBlogPostsList();
+
+    /**
+     * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
+     *
+     * @return {@link BlogPosting}
+     */
+    BlogPosting getBlogPosts();
+
+    /**
+     * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
+     *
+     * @param blogPosts BlogPosting value to set.
+     */
+    void addBlogPosts(BlogPosting blogPosts);
 
     /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
@@ -39,46 +81,4 @@ public interface Blog extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addIssn(Text issn);
-
-    /**
-     * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
-     *
-     * @return {@link BlogPosting}
-     */
-    List<BlogPosting> getBlogPostsList();
-
-    /**
-     * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
-     *
-     * @return {@link BlogPosting}
-     */
-    BlogPosting getBlogPosts();
-
-    /**
-     * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
-     *
-     * @param blogPosts BlogPosting value to set.
-     */
-    void addBlogPosts(BlogPosting blogPosts);
-
-    /**
-     * A posting that is part of this blog.
-     *
-     * @return {@link BlogPosting}
-     */
-    List<BlogPosting> getBlogPostList();
-
-    /**
-     * A posting that is part of this blog.
-     *
-     * @return {@link BlogPosting}
-     */
-    BlogPosting getBlogPost();
-
-    /**
-     * A posting that is part of this blog.
-     *
-     * @param blogPost BlogPosting value to set.
-     */
-    void addBlogPost(BlogPosting blogPost);
 }

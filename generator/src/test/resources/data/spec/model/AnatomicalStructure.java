@@ -7,11 +7,11 @@ package spec.model;
 
 import java.util.List;
 import spec.model.AnatomicalStructure;
+import spec.model.AnatomicalSystem;
+import spec.model.ImageObject;
+import spec.model.MedicalCondition;
 import spec.model.MedicalTherapy;
 import spec.model.datatype.Text;
-import spec.model.AnatomicalSystem;
-import spec.model.MedicalCondition;
-import spec.model.ImageObject;
 
 /**
  * Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.
@@ -20,6 +20,54 @@ import spec.model.ImageObject;
  * @see <a href="https://schema.org/AnatomicalStructure">https://schema.org/AnatomicalStructure</a>
  */
 public interface AnatomicalStructure extends MedicalEntity {
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAssociatedPathophysiologyList();
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getAssociatedPathophysiology();
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @param associatedPathophysiology Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAssociatedPathophysiology(Text associatedPathophysiology);
+
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getBodyLocationList();
+
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getBodyLocation();
+
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @param bodyLocation Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addBodyLocation(Text bodyLocation);
 
     /**
      * Other anatomical structures to which this structure is connected.
@@ -46,76 +94,28 @@ public interface AnatomicalStructure extends MedicalEntity {
     void addConnectedTo(AnatomicalStructure connectedTo);
 
     /**
-     * A medical therapy related to this anatomy.
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      *
-     * @return {@link MedicalTherapy}
+     * @return {@link ImageObject}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalTherapy> getRelatedTherapyList();
+    List<ImageObject> getDiagramList();
 
     /**
-     * A medical therapy related to this anatomy.
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      *
-     * @return {@link MedicalTherapy}
+     * @return {@link ImageObject}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalTherapy getRelatedTherapy();
+    ImageObject getDiagram();
 
     /**
-     * A medical therapy related to this anatomy.
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      *
-     * @param relatedTherapy MedicalTherapy value to set.
+     * @param diagram ImageObject value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addRelatedTherapy(MedicalTherapy relatedTherapy);
-
-    /**
-     * Component (sub-)structure(s) that comprise this anatomical structure.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AnatomicalStructure> getSubStructureList();
-
-    /**
-     * Component (sub-)structure(s) that comprise this anatomical structure.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AnatomicalStructure getSubStructure();
-
-    /**
-     * Component (sub-)structure(s) that comprise this anatomical structure.
-     *
-     * @param subStructure AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSubStructure(AnatomicalStructure subStructure);
-
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getBodyLocationList();
-
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getBodyLocation();
-
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @param bodyLocation Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addBodyLocation(Text bodyLocation);
+    void addDiagram(ImageObject diagram);
 
     /**
      * The anatomical or organ system that this structure is part of.
@@ -166,50 +166,50 @@ public interface AnatomicalStructure extends MedicalEntity {
     void addRelatedCondition(MedicalCondition relatedCondition);
 
     /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     * A medical therapy related to this anatomy.
      *
-     * @return {@link Text}
+     * @return {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getAssociatedPathophysiologyList();
+    List<MedicalTherapy> getRelatedTherapyList();
 
     /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     * A medical therapy related to this anatomy.
      *
-     * @return {@link Text}
+     * @return {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getAssociatedPathophysiology();
+    MedicalTherapy getRelatedTherapy();
 
     /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     * A medical therapy related to this anatomy.
      *
-     * @param associatedPathophysiology Text value to set.
+     * @param relatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addAssociatedPathophysiology(Text associatedPathophysiology);
+    void addRelatedTherapy(MedicalTherapy relatedTherapy);
 
     /**
-     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     * Component (sub-)structure(s) that comprise this anatomical structure.
      *
-     * @return {@link ImageObject}
+     * @return {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<ImageObject> getDiagramList();
+    List<AnatomicalStructure> getSubStructureList();
 
     /**
-     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     * Component (sub-)structure(s) that comprise this anatomical structure.
      *
-     * @return {@link ImageObject}
+     * @return {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    ImageObject getDiagram();
+    AnatomicalStructure getSubStructure();
 
     /**
-     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     * Component (sub-)structure(s) that comprise this anatomical structure.
      *
-     * @param diagram ImageObject value to set.
+     * @param subStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addDiagram(ImageObject diagram);
+    void addSubStructure(AnatomicalStructure subStructure);
 }

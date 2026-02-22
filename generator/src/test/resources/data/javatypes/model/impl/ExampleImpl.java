@@ -5,10 +5,10 @@
  */
 package javatypes.model.impl;
 
-import javatypes.model.Example;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import javatypes.model.Example;
 
 /**
  * Example class.
@@ -20,31 +20,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.Boolean> bool;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Boolean}
-     */
     @Override
     public List<java.lang.Boolean> getBoolList() {
         return bool;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Boolean}
-     */
     @Override
     public java.lang.Boolean getBool() {
         return getFirst(bool);
     }
 
-    /**
-     * 
-     *
-     * @param bool java.lang.Boolean value to set.
-     */
     @Override
     public void addBool(java.lang.Boolean bool) {
         this.bool = add(this.bool, bool);
@@ -52,31 +37,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.String> cssSelectorType;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public List<java.lang.String> getCssSelectorTypeList() {
         return cssSelectorType;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public java.lang.String getCssSelectorType() {
         return getFirst(cssSelectorType);
     }
 
-    /**
-     * 
-     *
-     * @param cssSelectorType java.lang.String value to set.
-     */
     @Override
     public void addCssSelectorType(java.lang.String cssSelectorType) {
         this.cssSelectorType = add(this.cssSelectorType, cssSelectorType);
@@ -84,31 +54,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.time.LocalDate> date;
 
-    /**
-     * 
-     *
-     * @return {@link java.time.LocalDate}
-     */
     @Override
     public List<java.time.LocalDate> getDateList() {
         return date;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.time.LocalDate}
-     */
     @Override
     public java.time.LocalDate getDate() {
         return getFirst(date);
     }
 
-    /**
-     * 
-     *
-     * @param date java.time.LocalDate value to set.
-     */
     @Override
     public void addDate(java.time.LocalDate date) {
         this.date = add(this.date, date);
@@ -116,31 +71,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.time.LocalDateTime> dateTime;
 
-    /**
-     * 
-     *
-     * @return {@link java.time.LocalDateTime}
-     */
     @Override
     public List<java.time.LocalDateTime> getDateTimeList() {
         return dateTime;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.time.LocalDateTime}
-     */
     @Override
     public java.time.LocalDateTime getDateTime() {
         return getFirst(dateTime);
     }
 
-    /**
-     * 
-     *
-     * @param dateTime java.time.LocalDateTime value to set.
-     */
     @Override
     public void addDateTime(java.time.LocalDateTime dateTime) {
         this.dateTime = add(this.dateTime, dateTime);
@@ -148,31 +88,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.Float> float_;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Float}
-     */
     @Override
     public List<java.lang.Float> getFloatList() {
         return float_;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Float}
-     */
     @Override
     public java.lang.Float getFloat() {
         return getFirst(float_);
     }
 
-    /**
-     * 
-     *
-     * @param float_ java.lang.Float value to set.
-     */
     @Override
     public void addFloat(java.lang.Float float_) {
         this.float_ = add(this.float_, float_);
@@ -180,31 +105,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.Integer> integer;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Integer}
-     */
     @Override
     public List<java.lang.Integer> getIntegerList() {
         return integer;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Integer}
-     */
     @Override
     public java.lang.Integer getInteger() {
         return getFirst(integer);
     }
 
-    /**
-     * 
-     *
-     * @param integer java.lang.Integer value to set.
-     */
     @Override
     public void addInteger(java.lang.Integer integer) {
         this.integer = add(this.integer, integer);
@@ -212,31 +122,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.Number> number;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Number}
-     */
     @Override
     public List<java.lang.Number> getNumberList() {
         return number;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.Number}
-     */
     @Override
     public java.lang.Number getNumber() {
         return getFirst(number);
     }
 
-    /**
-     * 
-     *
-     * @param number java.lang.Number value to set.
-     */
     @Override
     public void addNumber(java.lang.Number number) {
         this.number = add(this.number, number);
@@ -244,31 +139,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.String> pronounceableText;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public List<java.lang.String> getPronounceableTextList() {
         return pronounceableText;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public java.lang.String getPronounceableText() {
         return getFirst(pronounceableText);
     }
 
-    /**
-     * 
-     *
-     * @param pronounceableText java.lang.String value to set.
-     */
     @Override
     public void addPronounceableText(java.lang.String pronounceableText) {
         this.pronounceableText = add(this.pronounceableText, pronounceableText);
@@ -276,31 +156,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.String> text;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public List<java.lang.String> getTextList() {
         return text;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public java.lang.String getText() {
         return getFirst(text);
     }
 
-    /**
-     * 
-     *
-     * @param text java.lang.String value to set.
-     */
     @Override
     public void addText(java.lang.String text) {
         this.text = add(this.text, text);
@@ -309,40 +174,20 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     @JsonLdFieldTypes({ java.time.LocalTime.class, java.time.LocalDateTime.class })
     private List<Object> time;
 
-    /**
-     * 
-     *
-     * @return {@link java.time.LocalTime} or {@link java.time.LocalDateTime}
-     */
     @Override
     public <T> List<T> getTimeList() {
         return (List<T>) time;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.time.LocalTime} or {@link java.time.LocalDateTime}
-     */
     @Override
     public <T> T getTime() {
         return (T) getFirst(time);
     }
 
-    /**
-     * 
-     *
-     * @param time java.time.LocalTime value to set.
-     */
     @Override
     public void addTime(java.time.LocalTime time) {
         this.time = add(this.time, time);
     }
-    /**
-     * 
-     *
-     * @param time java.time.LocalDateTime value to set.
-     */
     @Override
     public void addTime(java.time.LocalDateTime time) {
         this.time = add(this.time, time);
@@ -351,40 +196,20 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     @JsonLdFieldTypes({ java.lang.String.class, java.net.URL.class })
     private List<Object> url;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String} or {@link java.net.URL}
-     */
     @Override
     public <T> List<T> getUrlList() {
         return (List<T>) url;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String} or {@link java.net.URL}
-     */
     @Override
     public <T> T getUrl() {
         return (T) getFirst(url);
     }
 
-    /**
-     * 
-     *
-     * @param url java.lang.String value to set.
-     */
     @Override
     public void addUrl(java.lang.String url) {
         this.url = add(this.url, url);
     }
-    /**
-     * 
-     *
-     * @param url java.net.URL value to set.
-     */
     @Override
     public void addUrl(java.net.URL url) {
         this.url = add(this.url, url);
@@ -392,31 +217,16 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
 
     private List<java.lang.String> xPathType;
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public List<java.lang.String> getXPathTypeList() {
         return xPathType;
     }
 
-    /**
-     * 
-     *
-     * @return {@link java.lang.String}
-     */
     @Override
     public java.lang.String getXPathType() {
         return getFirst(xPathType);
     }
 
-    /**
-     * 
-     *
-     * @param xPathType java.lang.String value to set.
-     */
     @Override
     public void addXPathType(java.lang.String xPathType) {
         this.xPathType = add(this.xPathType, xPathType);

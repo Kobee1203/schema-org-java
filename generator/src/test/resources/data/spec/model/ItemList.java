@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Thing;
-import spec.model.ListItem;
-import spec.model.datatype.Text;
-import spec.model.datatype.Integer;
 import spec.model.ItemListOrderType;
+import spec.model.ListItem;
+import spec.model.Thing;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
 
 /**
  * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
@@ -18,6 +18,33 @@ import spec.model.ItemListOrderType;
  * @see <a href="https://schema.org/ItemList">https://schema.org/ItemList</a>
  */
 public interface ItemList extends Intangible {
+
+    /**
+     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
+     *
+     * @return {@link Thing}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
+     */
+    List<Thing> getAggregateElementList();
+
+    /**
+     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
+     *
+     * @return {@link Thing}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
+     */
+    Thing getAggregateElement();
+
+    /**
+     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
+     *
+     * @param aggregateElement Thing value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
+     */
+    void addAggregateElement(Thing aggregateElement);
 
     /**
      * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
@@ -53,54 +80,6 @@ public interface ItemList extends Intangible {
     void addItemListElement(Text itemListElement);
 
     /**
-     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
-     *
-     * @return {@link Thing}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
-     */
-    List<Thing> getAggregateElementList();
-
-    /**
-     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
-     *
-     * @return {@link Thing}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
-     */
-    Thing getAggregateElement();
-
-    /**
-     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
-     *
-     * @param aggregateElement Thing value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
-     */
-    void addAggregateElement(Thing aggregateElement);
-
-    /**
-     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getNumberOfItemsList();
-
-    /**
-     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
-     *
-     * @return {@link Integer}
-     */
-    Integer getNumberOfItems();
-
-    /**
-     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
-     *
-     * @param numberOfItems Integer value to set.
-     */
-    void addNumberOfItems(Integer numberOfItems);
-
-    /**
      * Type of ordering (e.g. Ascending, Descending, Unordered).
      *
      * @return {@link ItemListOrderType} or {@link Text}
@@ -126,4 +105,25 @@ public interface ItemList extends Intangible {
      * @param itemListOrder Text value to set.
      */
     void addItemListOrder(Text itemListOrder);
+
+    /**
+     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfItemsList();
+
+    /**
+     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
+     *
+     * @return {@link Integer}
+     */
+    Integer getNumberOfItems();
+
+    /**
+     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
+     *
+     * @param numberOfItems Integer value to set.
+     */
+    void addNumberOfItems(Integer numberOfItems);
 }

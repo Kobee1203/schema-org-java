@@ -6,11 +6,11 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.MedicalProcedureType;
 import spec_custom.model.EventStatusType;
-import spec_custom.model.MedicalStudyStatus;
 import spec_custom.model.MedicalEntity;
+import spec_custom.model.MedicalProcedureType;
+import spec_custom.model.MedicalStudyStatus;
+import spec_custom.model.datatype.Text;
 
 /**
  * A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.
@@ -21,52 +21,28 @@ import spec_custom.model.MedicalEntity;
 public interface MedicalProcedure extends MedicalEntity {
 
     /**
-     * How the procedure is performed.
+     * Location in the body of the anatomical structure.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getHowPerformedList();
+    List<Text> getBodyLocationList();
 
     /**
-     * How the procedure is performed.
+     * Location in the body of the anatomical structure.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getHowPerformed();
+    Text getBodyLocation();
 
     /**
-     * How the procedure is performed.
+     * Location in the body of the anatomical structure.
      *
-     * @param howPerformed Text value to set.
+     * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addHowPerformed(Text howPerformed);
-
-    /**
-     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-     *
-     * @return {@link MedicalProcedureType}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalProcedureType> getProcedureTypeList();
-
-    /**
-     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-     *
-     * @return {@link MedicalProcedureType}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalProcedureType getProcedureType();
-
-    /**
-     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-     *
-     * @param procedureType MedicalProcedureType value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addProcedureType(MedicalProcedureType procedureType);
+    void addBodyLocation(Text bodyLocation);
 
     /**
      * Typical or recommended followup care after the procedure is performed.
@@ -93,28 +69,83 @@ public interface MedicalProcedure extends MedicalEntity {
     void addFollowup(Text followup);
 
     /**
-     * Location in the body of the anatomical structure.
+     * How the procedure is performed.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getBodyLocationList();
+    List<Text> getHowPerformedList();
 
     /**
-     * Location in the body of the anatomical structure.
+     * How the procedure is performed.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getBodyLocation();
+    Text getHowPerformed();
 
     /**
-     * Location in the body of the anatomical structure.
+     * How the procedure is performed.
      *
-     * @param bodyLocation Text value to set.
+     * @param howPerformed Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addBodyLocation(Text bodyLocation);
+    void addHowPerformed(Text howPerformed);
+
+    /**
+     * Typical preparation that a patient must undergo before having the procedure performed.
+     *
+     * @return {@link Text} or {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getPreparationList();
+
+    /**
+     * Typical preparation that a patient must undergo before having the procedure performed.
+     *
+     * @return {@link Text} or {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> T getPreparation();
+
+    /**
+     * Typical preparation that a patient must undergo before having the procedure performed.
+     *
+     * @param preparation Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addPreparation(Text preparation);
+    /**
+     * Typical preparation that a patient must undergo before having the procedure performed.
+     *
+     * @param preparation MedicalEntity value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addPreparation(MedicalEntity preparation);
+
+    /**
+     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+     *
+     * @return {@link MedicalProcedureType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalProcedureType> getProcedureTypeList();
+
+    /**
+     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+     *
+     * @return {@link MedicalProcedureType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalProcedureType getProcedureType();
+
+    /**
+     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+     *
+     * @param procedureType MedicalProcedureType value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addProcedureType(MedicalProcedureType procedureType);
 
     /**
      * The status of the study (enumerated).
@@ -153,35 +184,4 @@ public interface MedicalProcedure extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addStatus(MedicalStudyStatus status);
-
-    /**
-     * Typical preparation that a patient must undergo before having the procedure performed.
-     *
-     * @return {@link Text} or {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> List<T> getPreparationList();
-
-    /**
-     * Typical preparation that a patient must undergo before having the procedure performed.
-     *
-     * @return {@link Text} or {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    <T> T getPreparation();
-
-    /**
-     * Typical preparation that a patient must undergo before having the procedure performed.
-     *
-     * @param preparation Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addPreparation(Text preparation);
-    /**
-     * Typical preparation that a patient must undergo before having the procedure performed.
-     *
-     * @param preparation MedicalEntity value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addPreparation(MedicalEntity preparation);
 }

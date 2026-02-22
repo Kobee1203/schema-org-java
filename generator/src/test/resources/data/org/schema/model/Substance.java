@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.MaximumDoseSchedule;
+import org.schema.model.datatype.Text;
 
 /**
  * Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.

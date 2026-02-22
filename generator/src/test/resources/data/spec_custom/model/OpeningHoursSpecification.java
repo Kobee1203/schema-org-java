@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Time;
-import spec_custom.model.datatype.DateTime;
-import spec_custom.model.datatype.Date;
 import spec_custom.model.DayOfWeek;
+import spec_custom.model.datatype.Date;
+import spec_custom.model.datatype.DateTime;
+import spec_custom.model.datatype.Time;
 
 /**
  * A structured value providing information about the opening hours of a place or a certain service inside a place.<br/><br/>
@@ -44,6 +44,30 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addCloses(Time closes);
+
+    /**
+     * The day of the week for which these opening hours are valid.
+     *
+     * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<DayOfWeek> getDayOfWeekList();
+
+    /**
+     * The day of the week for which these opening hours are valid.
+     *
+     * @return {@link DayOfWeek}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    DayOfWeek getDayOfWeek();
+
+    /**
+     * The day of the week for which these opening hours are valid.
+     *
+     * @param dayOfWeek DayOfWeek value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addDayOfWeek(DayOfWeek dayOfWeek);
 
     /**
      * The opening hour of the place or service on the given day(s) of the week.
@@ -99,30 +123,6 @@ public interface OpeningHoursSpecification extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValidFrom(Date validFrom);
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @return {@link DayOfWeek}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<DayOfWeek> getDayOfWeekList();
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @return {@link DayOfWeek}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    DayOfWeek getDayOfWeek();
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @param dayOfWeek DayOfWeek value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addDayOfWeek(DayOfWeek dayOfWeek);
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.

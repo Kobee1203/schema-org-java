@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.datatype.Number;
 import spec.model.AdministrativeArea;
 import spec.model.MaximumDoseSchedule;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
 
 /**
  * A specific strength in which a medical drug is available in a specific country.
@@ -18,6 +18,78 @@ import spec.model.MaximumDoseSchedule;
  * @see <a href="https://schema.org/DrugStrength">https://schema.org/DrugStrength</a>
  */
 public interface DrugStrength extends MedicalIntangible {
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getActiveIngredientList();
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getActiveIngredient();
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @param activeIngredient Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addActiveIngredient(Text activeIngredient);
+
+    /**
+     * The location in which the strength is available.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AdministrativeArea> getAvailableInList();
+
+    /**
+     * The location in which the strength is available.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AdministrativeArea getAvailableIn();
+
+    /**
+     * The location in which the strength is available.
+     *
+     * @param availableIn AdministrativeArea value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAvailableIn(AdministrativeArea availableIn);
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MaximumDoseSchedule> getMaximumIntakeList();
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MaximumDoseSchedule getMaximumIntake();
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @param maximumIntake MaximumDoseSchedule value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMaximumIntake(MaximumDoseSchedule maximumIntake);
 
     /**
      * The units of an active ingredient's strength, e.g. mg.
@@ -66,76 +138,4 @@ public interface DrugStrength extends MedicalIntangible {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addStrengthValue(Number strengthValue);
-
-    /**
-     * The location in which the strength is available.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AdministrativeArea> getAvailableInList();
-
-    /**
-     * The location in which the strength is available.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AdministrativeArea getAvailableIn();
-
-    /**
-     * The location in which the strength is available.
-     *
-     * @param availableIn AdministrativeArea value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAvailableIn(AdministrativeArea availableIn);
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getActiveIngredientList();
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getActiveIngredient();
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @param activeIngredient Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addActiveIngredient(Text activeIngredient);
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @return {@link MaximumDoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MaximumDoseSchedule> getMaximumIntakeList();
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @return {@link MaximumDoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MaximumDoseSchedule getMaximumIntake();
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @param maximumIntake MaximumDoseSchedule value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMaximumIntake(MaximumDoseSchedule maximumIntake);
 }

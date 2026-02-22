@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.BookFormatType;
 import org.schema.model.Person;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * A book.
@@ -18,6 +18,30 @@ import org.schema.model.datatype.Integer;
  * @see <a href="https://schema.org/Book">https://schema.org/Book</a>
  */
 public interface Book extends CreativeWork {
+
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Boolean> getAbridgedList();
+
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Boolean getAbridged();
+
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @param abridged Boolean value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addAbridged(Boolean abridged);
 
     /**
      * The edition of the book.
@@ -102,30 +126,6 @@ public interface Book extends CreativeWork {
      * @param isbn Text value to set.
      */
     void addIsbn(Text isbn);
-
-    /**
-     * Indicates whether the book is an abridged edition.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Boolean> getAbridgedList();
-
-    /**
-     * Indicates whether the book is an abridged edition.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Boolean getAbridged();
-
-    /**
-     * Indicates whether the book is an abridged edition.
-     *
-     * @param abridged Boolean value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addAbridged(Boolean abridged);
 
     /**
      * The number of pages in the book.

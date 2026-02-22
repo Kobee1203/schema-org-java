@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalEntity;
 import org.schema.model.DoseSchedule;
 import org.schema.model.Drug;
+import org.schema.model.MedicalEntity;
 
 /**
  * A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.

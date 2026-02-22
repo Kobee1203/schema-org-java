@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
 import org.schema.model.ItemList;
 import org.schema.model.MusicRecording;
+import org.schema.model.datatype.Integer;
 
 /**
  * A collection of music tracks in playlist form.

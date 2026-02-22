@@ -6,11 +6,11 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.URL;
-import spec.model.ImageObject;
-import spec.model.datatype.Text;
 import spec.model.AggregateRating;
+import spec.model.ImageObject;
 import spec.model.Review;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A brand is a name used by an organization or business person for labeling a product, product group, or similar.
@@ -19,6 +19,27 @@ import spec.model.Review;
  * @see <a href="https://schema.org/Brand">https://schema.org/Brand</a>
  */
 public interface Brand extends Intangible {
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    AggregateRating getAggregateRating();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    void addAggregateRating(AggregateRating aggregateRating);
 
     /**
      * An associated logo.
@@ -52,48 +73,6 @@ public interface Brand extends Intangible {
     void addLogo(ImageObject logo);
 
     /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSloganList();
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    Text getSlogan();
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param slogan Text value to set.
-     */
-    void addSlogan(Text slogan);
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    List<AggregateRating> getAggregateRatingList();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    AggregateRating getAggregateRating();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    void addAggregateRating(AggregateRating aggregateRating);
-
-    /**
      * A review of the item.
      *
      * @return {@link Review}
@@ -113,4 +92,25 @@ public interface Brand extends Intangible {
      * @param review Review value to set.
      */
     void addReview(Review review);
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSloganList();
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    Text getSlogan();
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param slogan Text value to set.
+     */
+    void addSlogan(Text slogan);
 }

@@ -16,27 +16,6 @@ import org.schema.model.datatype.Text;
 public interface APIReference extends TechArticle {
 
     /**
-     * Type of app development: phone, Metro style, desktop, XBox, etc.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTargetPlatformList();
-
-    /**
-     * Type of app development: phone, Metro style, desktop, XBox, etc.
-     *
-     * @return {@link Text}
-     */
-    Text getTargetPlatform();
-
-    /**
-     * Type of app development: phone, Metro style, desktop, XBox, etc.
-     *
-     * @param targetPlatform Text value to set.
-     */
-    void addTargetPlatform(Text targetPlatform);
-
-    /**
      * Library file name, e.g., mscorlib.dll, system.web.dll.
      *
      * @return {@link Text}
@@ -79,6 +58,27 @@ public interface APIReference extends TechArticle {
     void addAssemblyVersion(Text assemblyVersion);
 
     /**
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getExecutableLibraryNameList();
+
+    /**
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     *
+     * @return {@link Text}
+     */
+    Text getExecutableLibraryName();
+
+    /**
+     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     *
+     * @param executableLibraryName Text value to set.
+     */
+    void addExecutableLibraryName(Text executableLibraryName);
+
+    /**
      * Indicates whether API is managed or unmanaged.
      *
      * @return {@link Text}
@@ -100,23 +100,23 @@ public interface APIReference extends TechArticle {
     void addProgrammingModel(Text programmingModel);
 
     /**
-     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     * Type of app development: phone, Metro style, desktop, XBox, etc.
      *
      * @return {@link Text}
      */
-    List<Text> getExecutableLibraryNameList();
+    List<Text> getTargetPlatformList();
 
     /**
-     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     * Type of app development: phone, Metro style, desktop, XBox, etc.
      *
      * @return {@link Text}
      */
-    Text getExecutableLibraryName();
+    Text getTargetPlatform();
 
     /**
-     * Library file name, e.g., mscorlib.dll, system.web.dll.
+     * Type of app development: phone, Metro style, desktop, XBox, etc.
      *
-     * @param executableLibraryName Text value to set.
+     * @param targetPlatform Text value to set.
      */
-    void addExecutableLibraryName(Text executableLibraryName);
+    void addTargetPlatform(Text targetPlatform);
 }

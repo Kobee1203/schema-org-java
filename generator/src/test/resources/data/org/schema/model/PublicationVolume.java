@@ -49,37 +49,6 @@ public interface PublicationVolume extends CreativeWork {
     void addPageEnd(Text pageEnd);
 
     /**
-     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
-     *
-     * @return {@link Text} or {@link Integer}
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
-     */
-    <T> List<T> getVolumeNumberList();
-
-    /**
-     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
-     *
-     * @return {@link Text} or {@link Integer}
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
-     */
-    <T> T getVolumeNumber();
-
-    /**
-     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
-     *
-     * @param volumeNumber Text value to set.
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
-     */
-    void addVolumeNumber(Text volumeNumber);
-    /**
-     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
-     *
-     * @param volumeNumber Integer value to set.
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
-     */
-    void addVolumeNumber(Integer volumeNumber);
-
-    /**
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @return {@link Text} or {@link Integer}
@@ -133,4 +102,35 @@ public interface PublicationVolume extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addPagination(Text pagination);
+
+    /**
+     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
+     *
+     * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     */
+    <T> List<T> getVolumeNumberList();
+
+    /**
+     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
+     *
+     * @return {@link Text} or {@link Integer}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     */
+    <T> T getVolumeNumber();
+
+    /**
+     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
+     *
+     * @param volumeNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     */
+    void addVolumeNumber(Text volumeNumber);
+    /**
+     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
+     *
+     * @param volumeNumber Integer value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     */
+    void addVolumeNumber(Integer volumeNumber);
 }

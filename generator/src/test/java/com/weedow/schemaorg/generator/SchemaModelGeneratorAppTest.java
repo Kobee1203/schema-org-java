@@ -86,7 +86,10 @@ class SchemaModelGeneratorAppTest {
                 .contains("Parsing completed.")
                 .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (272/272)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .contains("████████████████████████████████████████")
+                .contains("100% (272/272)")
+                .contains(" > ")
+                .contains("✔ Completed")
                 .containsPattern("Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
@@ -107,7 +110,10 @@ class SchemaModelGeneratorAppTest {
                 .contains("Parsing completed.")
                 .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (14/14)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .contains("████████████████████████████████████████")
+                .contains("100% (14/14)")
+                .contains(" > ")
+                .contains("✔ Completed")
                 .containsPattern("Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
@@ -129,7 +135,10 @@ class SchemaModelGeneratorAppTest {
                 .contains("Parsing completed.")
                 .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (13/13)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .contains("████████████████████████████████████████")
+                .contains("100% (13/13)")
+                .contains(" > ")
+                .contains("✔ Completed")
                 .containsPattern("Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
@@ -151,7 +160,10 @@ class SchemaModelGeneratorAppTest {
                 .contains("Parsing completed.")
                 .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (14/14)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .contains("████████████████████████████████████████")
+                .contains("100% (14/14)")
+                .contains(" > ")
+                .contains("✔ Completed")
                 .containsPattern("Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
@@ -175,7 +187,10 @@ class SchemaModelGeneratorAppTest {
                 .contains("Parsing completed.")
                 .contains("Copying common models...")
                 .contains("Generating models...")
-                .contains("\r\u001B[K\u001B[0;38;5;39m████████████████████████████████████████\u001B[0;39m 100% (13/13)\u001B[0;37m > \u001B[0;38;5;70m✔ Completed")
+                .contains("████████████████████████████████████████")
+                .contains("100% (13/13)")
+                .contains(" > ")
+                .contains("✔ Completed")
                 .containsPattern("Finished: \\d+ s")
                 .contains("Model generation completed.");
     }

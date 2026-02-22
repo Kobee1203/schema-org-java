@@ -23,7 +23,7 @@ public final class SchemaGeneratorUtils {
     }
 
     public static Set<String> getImports(String modelPackage, String dataTypePackage, Type type, List<String> additionalImports) {
-        final Set<String> imports = new LinkedHashSet<>(additionalImports);
+        final Set<String> imports = new TreeSet<>(additionalImports);
         type.getProperties()
                 .stream()
                 .flatMap(property -> property.getTypes().stream())
@@ -43,16 +43,17 @@ public final class SchemaGeneratorUtils {
                         .flatMap(parentType -> getAllImports(modelPackage, dataTypePackage, parentType).stream())
                         .forEach(imports::add);
             }
-            imports.add(resolveClassName(modelPackage, dataTypePackage, type));
+            //Optional.ofNullable(resolveClassName(modelPackage, dataTypePackage, type)).ifPresent(imports::add);
+            imports.add(resolveClassName(modelPackage, dataTypePackage, t));
             imports.add(JsonLdTypeName.class.getName());
-            if (type.getAllProperties().stream().anyMatch(property -> property.getTypes().size() > 1)) {
+            if (t.getAllProperties().stream().anyMatch(property -> property.getTypes().size() > 1)) {
                 imports.add(JsonLdFieldTypes.class.getName());
             }
             imports.add(java.util.List.class.getName());
             return imports;
         });
         // Copy the Set to prevent the modifications in the cached Set
-        return new LinkedHashSet<>(allImports);
+        return new TreeSet<>(allImports);
     }
 
     public static void clearCache() {

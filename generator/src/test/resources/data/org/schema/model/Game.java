@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Thing;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.URL;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.Thing;
+import org.schema.model.datatype.URL;
 
 /**
  * The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.
@@ -41,27 +41,6 @@ public interface Game extends CreativeWork {
     void addCharacterAttribute(Thing characterAttribute);
 
     /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getQuestList();
-
-    /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
-     *
-     * @return {@link Thing}
-     */
-    Thing getQuest();
-
-    /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
-     *
-     * @param quest Thing value to set.
-     */
-    void addQuest(Thing quest);
-
-    /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
      *
      * @return {@link Thing}
@@ -81,27 +60,6 @@ public interface Game extends CreativeWork {
      * @param gameItem Thing value to set.
      */
     void addGameItem(Thing gameItem);
-
-    /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
-     *
-     * @return {@link QuantitativeValue}
-     */
-    List<QuantitativeValue> getNumberOfPlayersList();
-
-    /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
-     *
-     * @return {@link QuantitativeValue}
-     */
-    QuantitativeValue getNumberOfPlayers();
-
-    /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
-     *
-     * @param numberOfPlayers QuantitativeValue value to set.
-     */
-    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
 
     /**
      * Real or fictional location of the game (or part of game).
@@ -135,4 +93,46 @@ public interface Game extends CreativeWork {
      * @param gameLocation PostalAddress value to set.
      */
     void addGameLocation(PostalAddress gameLocation);
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getNumberOfPlayersList();
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @return {@link QuantitativeValue}
+     */
+    QuantitativeValue getNumberOfPlayers();
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @param numberOfPlayers QuantitativeValue value to set.
+     */
+    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getQuestList();
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @return {@link Thing}
+     */
+    Thing getQuest();
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @param quest Thing value to set.
+     */
+    void addQuest(Thing quest);
 }

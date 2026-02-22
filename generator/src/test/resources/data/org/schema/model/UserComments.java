@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.CreativeWork;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.datatype.Date;
 import org.schema.model.datatype.DateTime;
-import org.schema.model.CreativeWork;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
@@ -21,6 +21,27 @@ import org.schema.model.datatype.URL;
  * @see <a href="https://schema.org/UserComments">https://schema.org/UserComments</a>
  */
 public interface UserComments extends UserInteraction {
+
+    /**
+     * The text of the UserComment.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCommentTextList();
+
+    /**
+     * The text of the UserComment.
+     *
+     * @return {@link Text}
+     */
+    Text getCommentText();
+
+    /**
+     * The text of the UserComment.
+     *
+     * @param commentText Text value to set.
+     */
+    void addCommentText(Text commentText);
 
     /**
      * The time at which the UserComment was made.
@@ -50,27 +71,6 @@ public interface UserComments extends UserInteraction {
     void addCommentTime(DateTime commentTime);
 
     /**
-     * Specifies the CreativeWork associated with the UserComment.
-     *
-     * @return {@link CreativeWork}
-     */
-    List<CreativeWork> getDiscussesList();
-
-    /**
-     * Specifies the CreativeWork associated with the UserComment.
-     *
-     * @return {@link CreativeWork}
-     */
-    CreativeWork getDiscusses();
-
-    /**
-     * Specifies the CreativeWork associated with the UserComment.
-     *
-     * @param discusses CreativeWork value to set.
-     */
-    void addDiscusses(CreativeWork discusses);
-
-    /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
      * @return {@link Person} or {@link Organization}
@@ -98,25 +98,25 @@ public interface UserComments extends UserInteraction {
     void addCreator(Organization creator);
 
     /**
-     * The text of the UserComment.
+     * Specifies the CreativeWork associated with the UserComment.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork}
      */
-    List<Text> getCommentTextList();
+    List<CreativeWork> getDiscussesList();
 
     /**
-     * The text of the UserComment.
+     * Specifies the CreativeWork associated with the UserComment.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork}
      */
-    Text getCommentText();
+    CreativeWork getDiscusses();
 
     /**
-     * The text of the UserComment.
+     * Specifies the CreativeWork associated with the UserComment.
      *
-     * @param commentText Text value to set.
+     * @param discusses CreativeWork value to set.
      */
-    void addCommentText(Text commentText);
+    void addDiscusses(CreativeWork discusses);
 
     /**
      * The URL at which a reply may be posted to the specified UserComment.

@@ -5,37 +5,37 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.RefundTypeEnumeration;
-import org.schema.model.Country;
-import org.schema.model.datatype.Text;
-import org.schema.model.ReturnMethodEnumeration;
-import org.schema.model.ReturnLabelSourceEnumeration;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.ReturnFeesEnumeration;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.MemberProgramTier;
-import org.schema.model.datatype.Number;
-import org.schema.model.PropertyValue;
-import org.schema.model.MerchantReturnEnumeration;
-import org.schema.model.MerchantReturnPolicySeasonalOverride;
-import org.schema.model.OfferItemCondition;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.datatype.URL;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.Country;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
 import org.schema.model.Intangible;
+import org.schema.model.MemberProgramTier;
+import org.schema.model.MerchantReturnEnumeration;
 import org.schema.model.MerchantReturnPolicy;
+import org.schema.model.MerchantReturnPolicySeasonalOverride;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.OfferItemCondition;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.RefundTypeEnumeration;
+import org.schema.model.ReturnFeesEnumeration;
+import org.schema.model.ReturnLabelSourceEnumeration;
+import org.schema.model.ReturnMethodEnumeration;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
@@ -47,1401 +47,661 @@ import org.schema.model.MerchantReturnPolicy;
 @JsonLdTypeName("MerchantReturnPolicy")
 public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MerchantReturnPolicy {
 
-    private List<RefundTypeEnumeration> refundType;
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @return {@link RefundTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public List<RefundTypeEnumeration> getRefundTypeList() {
-        return refundType;
-    }
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @return {@link RefundTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public RefundTypeEnumeration getRefundType() {
-        return getFirst(refundType);
-    }
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @param refundType RefundTypeEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addRefundType(RefundTypeEnumeration refundType) {
-        this.refundType = add(this.refundType, refundType);
-    }
-
-    @JsonLdFieldTypes({ Country.class, Text.class })
-    private List<Object> applicableCountry;
-
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    @Override
-    public <T> List<T> getApplicableCountryList() {
-        return (List<T>) applicableCountry;
-    }
-
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    @Override
-    public <T> T getApplicableCountry() {
-        return (T) getFirst(applicableCountry);
-    }
-
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @param applicableCountry Country value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    @Override
-    public void addApplicableCountry(Country applicableCountry) {
-        this.applicableCountry = add(this.applicableCountry, applicableCountry);
-    }
-    /**
-     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @param applicableCountry Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
-     */
-    @Override
-    public void addApplicableCountry(Text applicableCountry) {
-        this.applicableCountry = add(this.applicableCountry, applicableCountry);
-    }
-
-    private List<ReturnMethodEnumeration> returnMethod;
-
-    /**
-     * The type of return method offered, specified from an enumeration.
-     *
-     * @return {@link ReturnMethodEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<ReturnMethodEnumeration> getReturnMethodList() {
-        return returnMethod;
-    }
-
-    /**
-     * The type of return method offered, specified from an enumeration.
-     *
-     * @return {@link ReturnMethodEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public ReturnMethodEnumeration getReturnMethod() {
-        return getFirst(returnMethod);
-    }
-
-    /**
-     * The type of return method offered, specified from an enumeration.
-     *
-     * @param returnMethod ReturnMethodEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addReturnMethod(ReturnMethodEnumeration returnMethod) {
-        this.returnMethod = add(this.returnMethod, returnMethod);
-    }
-
-    private List<ReturnLabelSourceEnumeration> itemDefectReturnLabelSource;
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<ReturnLabelSourceEnumeration> getItemDefectReturnLabelSourceList() {
-        return itemDefectReturnLabelSource;
-    }
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public ReturnLabelSourceEnumeration getItemDefectReturnLabelSource() {
-        return getFirst(itemDefectReturnLabelSource);
-    }
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
-     *
-     * @param itemDefectReturnLabelSource ReturnLabelSourceEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addItemDefectReturnLabelSource(ReturnLabelSourceEnumeration itemDefectReturnLabelSource) {
-        this.itemDefectReturnLabelSource = add(this.itemDefectReturnLabelSource, itemDefectReturnLabelSource);
-    }
-
-    @JsonLdFieldTypes({ Date.class, Integer.class, DateTime.class })
-    private List<Object> merchantReturnDays;
-
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @return {@link Date} or {@link Integer} or {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> List<T> getMerchantReturnDaysList() {
-        return (List<T>) merchantReturnDays;
-    }
-
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @return {@link Date} or {@link Integer} or {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> T getMerchantReturnDays() {
-        return (T) getFirst(merchantReturnDays);
-    }
-
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @param merchantReturnDays Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addMerchantReturnDays(Date merchantReturnDays) {
-        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
-    }
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @param merchantReturnDays Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addMerchantReturnDays(Integer merchantReturnDays) {
-        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
-    }
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @param merchantReturnDays DateTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addMerchantReturnDays(DateTime merchantReturnDays) {
-        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
-    }
-
-    private List<ReturnFeesEnumeration> returnFees;
-
-    /**
-     * The type of return fees for purchased products (for any return reason).
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public List<ReturnFeesEnumeration> getReturnFeesList() {
-        return returnFees;
-    }
-
-    /**
-     * The type of return fees for purchased products (for any return reason).
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public ReturnFeesEnumeration getReturnFees() {
-        return getFirst(returnFees);
-    }
-
-    /**
-     * The type of return fees for purchased products (for any return reason).
-     *
-     * @param returnFees ReturnFeesEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addReturnFees(ReturnFeesEnumeration returnFees) {
-        this.returnFees = add(this.returnFees, returnFees);
-    }
-
-    private List<ReturnFeesEnumeration> customerRemorseReturnFees;
-
-    /**
-     * The type of return fees if the product is returned due to customer remorse.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<ReturnFeesEnumeration> getCustomerRemorseReturnFeesList() {
-        return customerRemorseReturnFees;
-    }
-
-    /**
-     * The type of return fees if the product is returned due to customer remorse.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public ReturnFeesEnumeration getCustomerRemorseReturnFees() {
-        return getFirst(customerRemorseReturnFees);
-    }
-
-    /**
-     * The type of return fees if the product is returned due to customer remorse.
-     *
-     * @param customerRemorseReturnFees ReturnFeesEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addCustomerRemorseReturnFees(ReturnFeesEnumeration customerRemorseReturnFees) {
-        this.customerRemorseReturnFees = add(this.customerRemorseReturnFees, customerRemorseReturnFees);
-    }
-
-    private List<MonetaryAmount> returnShippingFeesAmount;
-
-    /**
-     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<MonetaryAmount> getReturnShippingFeesAmountList() {
-        return returnShippingFeesAmount;
-    }
-
-    /**
-     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public MonetaryAmount getReturnShippingFeesAmount() {
-        return getFirst(returnShippingFeesAmount);
-    }
-
-    /**
-     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-     *
-     * @param returnShippingFeesAmount MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount) {
-        this.returnShippingFeesAmount = add(this.returnShippingFeesAmount, returnShippingFeesAmount);
-    }
-
-    private List<MonetaryAmount> customerRemorseReturnShippingFeesAmount;
-
-    /**
-     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<MonetaryAmount> getCustomerRemorseReturnShippingFeesAmountList() {
-        return customerRemorseReturnShippingFeesAmount;
-    }
-
-    /**
-     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public MonetaryAmount getCustomerRemorseReturnShippingFeesAmount() {
-        return getFirst(customerRemorseReturnShippingFeesAmount);
-    }
-
-    /**
-     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @param customerRemorseReturnShippingFeesAmount MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addCustomerRemorseReturnShippingFeesAmount(MonetaryAmount customerRemorseReturnShippingFeesAmount) {
-        this.customerRemorseReturnShippingFeesAmount = add(this.customerRemorseReturnShippingFeesAmount, customerRemorseReturnShippingFeesAmount);
-    }
-
-    private List<MonetaryAmount> itemDefectReturnShippingFeesAmount;
-
-    /**
-     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<MonetaryAmount> getItemDefectReturnShippingFeesAmountList() {
-        return itemDefectReturnShippingFeesAmount;
-    }
-
-    /**
-     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public MonetaryAmount getItemDefectReturnShippingFeesAmount() {
-        return getFirst(itemDefectReturnShippingFeesAmount);
-    }
-
-    /**
-     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
-     *
-     * @param itemDefectReturnShippingFeesAmount MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addItemDefectReturnShippingFeesAmount(MonetaryAmount itemDefectReturnShippingFeesAmount) {
-        this.itemDefectReturnShippingFeesAmount = add(this.itemDefectReturnShippingFeesAmount, itemDefectReturnShippingFeesAmount);
-    }
-
-    private List<MemberProgramTier> validForMemberTier;
-
-    /**
-     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
-     *
-     * @return {@link MemberProgramTier}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
-     */
-    @Override
-    public List<MemberProgramTier> getValidForMemberTierList() {
-        return validForMemberTier;
-    }
-
-    /**
-     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
-     *
-     * @return {@link MemberProgramTier}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
-     */
-    @Override
-    public MemberProgramTier getValidForMemberTier() {
-        return getFirst(validForMemberTier);
-    }
-
-    /**
-     * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
-     *
-     * @param validForMemberTier MemberProgramTier value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
-     */
-    @Override
-    public void addValidForMemberTier(MemberProgramTier validForMemberTier) {
-        this.validForMemberTier = add(this.validForMemberTier, validForMemberTier);
-    }
-
-    @JsonLdFieldTypes({ Number.class, MonetaryAmount.class })
-    private List<Object> restockingFee;
-
-    /**
-     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
-     *
-     * @return {@link Number} or {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public <T> List<T> getRestockingFeeList() {
-        return (List<T>) restockingFee;
-    }
-
-    /**
-     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
-     *
-     * @return {@link Number} or {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public <T> T getRestockingFee() {
-        return (T) getFirst(restockingFee);
-    }
-
-    /**
-     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
-     *
-     * @param restockingFee Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addRestockingFee(Number restockingFee) {
-        this.restockingFee = add(this.restockingFee, restockingFee);
-    }
-    /**
-     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
-     *
-     * @param restockingFee MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addRestockingFee(MonetaryAmount restockingFee) {
-        this.restockingFee = add(this.restockingFee, restockingFee);
-    }
-
     private List<PropertyValue> additionalProperty;
 
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
     @Override
     public List<PropertyValue> getAdditionalPropertyList() {
         return additionalProperty;
     }
 
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
     @Override
     public PropertyValue getAdditionalProperty() {
         return getFirst(additionalProperty);
     }
 
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @param additionalProperty PropertyValue value to set.
-     */
     @Override
     public void addAdditionalProperty(PropertyValue additionalProperty) {
         this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
-    private List<ReturnLabelSourceEnumeration> returnLabelSource;
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<ReturnLabelSourceEnumeration> getReturnLabelSourceList() {
-        return returnLabelSource;
-    }
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public ReturnLabelSourceEnumeration getReturnLabelSource() {
-        return getFirst(returnLabelSource);
-    }
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
-     *
-     * @param returnLabelSource ReturnLabelSourceEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addReturnLabelSource(ReturnLabelSourceEnumeration returnLabelSource) {
-        this.returnLabelSource = add(this.returnLabelSource, returnLabelSource);
-    }
-
-    private List<MerchantReturnEnumeration> returnPolicyCategory;
-
-    /**
-     * Specifies an applicable return policy (from an enumeration).
-     *
-     * @return {@link MerchantReturnEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public List<MerchantReturnEnumeration> getReturnPolicyCategoryList() {
-        return returnPolicyCategory;
-    }
-
-    /**
-     * Specifies an applicable return policy (from an enumeration).
-     *
-     * @return {@link MerchantReturnEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public MerchantReturnEnumeration getReturnPolicyCategory() {
-        return getFirst(returnPolicyCategory);
-    }
-
-    /**
-     * Specifies an applicable return policy (from an enumeration).
-     *
-     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory) {
-        this.returnPolicyCategory = add(this.returnPolicyCategory, returnPolicyCategory);
-    }
-
-    private List<MerchantReturnPolicySeasonalOverride> returnPolicySeasonalOverride;
-
-    /**
-     * Seasonal override of a return policy.
-     *
-     * @return {@link MerchantReturnPolicySeasonalOverride}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<MerchantReturnPolicySeasonalOverride> getReturnPolicySeasonalOverrideList() {
-        return returnPolicySeasonalOverride;
-    }
-
-    /**
-     * Seasonal override of a return policy.
-     *
-     * @return {@link MerchantReturnPolicySeasonalOverride}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public MerchantReturnPolicySeasonalOverride getReturnPolicySeasonalOverride() {
-        return getFirst(returnPolicySeasonalOverride);
-    }
-
-    /**
-     * Seasonal override of a return policy.
-     *
-     * @param returnPolicySeasonalOverride MerchantReturnPolicySeasonalOverride value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride) {
-        this.returnPolicySeasonalOverride = add(this.returnPolicySeasonalOverride, returnPolicySeasonalOverride);
-    }
-
-    private List<OfferItemCondition> itemCondition;
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public List<OfferItemCondition> getItemConditionList() {
-        return itemCondition;
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public OfferItemCondition getItemCondition() {
-        return getFirst(itemCondition);
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @param itemCondition OfferItemCondition value to set.
-     */
-    @Override
-    public void addItemCondition(OfferItemCondition itemCondition) {
-        this.itemCondition = add(this.itemCondition, itemCondition);
-    }
-
-    private List<Boolean> inStoreReturnsOffered;
-
-    /**
-     * Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public List<Boolean> getInStoreReturnsOfferedList() {
-        return inStoreReturnsOffered;
-    }
-
-    /**
-     * Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public Boolean getInStoreReturnsOffered() {
-        return getFirst(inStoreReturnsOffered);
-    }
-
-    /**
-     * Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
-     *
-     * @param inStoreReturnsOffered Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addInStoreReturnsOffered(Boolean inStoreReturnsOffered) {
-        this.inStoreReturnsOffered = add(this.inStoreReturnsOffered, inStoreReturnsOffered);
-    }
-
-    private List<URL> merchantReturnLink;
-
-    /**
-     * Specifies a Web page or service by URL, for product returns.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public List<URL> getMerchantReturnLinkList() {
-        return merchantReturnLink;
-    }
-
-    /**
-     * Specifies a Web page or service by URL, for product returns.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public URL getMerchantReturnLink() {
-        return getFirst(merchantReturnLink);
-    }
-
-    /**
-     * Specifies a Web page or service by URL, for product returns.
-     *
-     * @param merchantReturnLink URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addMerchantReturnLink(URL merchantReturnLink) {
-        this.merchantReturnLink = add(this.merchantReturnLink, merchantReturnLink);
-    }
-
-    @JsonLdFieldTypes({ Country.class, Text.class })
-    private List<Object> returnPolicyCountry;
-
-    /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public <T> List<T> getReturnPolicyCountryList() {
-        return (List<T>) returnPolicyCountry;
-    }
-
-    /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
-     *
-     * @return {@link Country} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public <T> T getReturnPolicyCountry() {
-        return (T) getFirst(returnPolicyCountry);
-    }
-
-    /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
-     *
-     * @param returnPolicyCountry Country value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addReturnPolicyCountry(Country returnPolicyCountry) {
-        this.returnPolicyCountry = add(this.returnPolicyCountry, returnPolicyCountry);
-    }
-    /**
-     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
-     *
-     * @param returnPolicyCountry Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addReturnPolicyCountry(Text returnPolicyCountry) {
-        this.returnPolicyCountry = add(this.returnPolicyCountry, returnPolicyCountry);
-    }
-
-    private List<ReturnFeesEnumeration> itemDefectReturnFees;
-
-    /**
-     * The type of return fees for returns of defect products.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<ReturnFeesEnumeration> getItemDefectReturnFeesList() {
-        return itemDefectReturnFees;
-    }
-
-    /**
-     * The type of return fees for returns of defect products.
-     *
-     * @return {@link ReturnFeesEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public ReturnFeesEnumeration getItemDefectReturnFees() {
-        return getFirst(itemDefectReturnFees);
-    }
-
-    /**
-     * The type of return fees for returns of defect products.
-     *
-     * @param itemDefectReturnFees ReturnFeesEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addItemDefectReturnFees(ReturnFeesEnumeration itemDefectReturnFees) {
-        this.itemDefectReturnFees = add(this.itemDefectReturnFees, itemDefectReturnFees);
-    }
-
-    private List<ReturnLabelSourceEnumeration> customerRemorseReturnLabelSource;
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public List<ReturnLabelSourceEnumeration> getCustomerRemorseReturnLabelSourceList() {
-        return customerRemorseReturnLabelSource;
-    }
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
-     *
-     * @return {@link ReturnLabelSourceEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public ReturnLabelSourceEnumeration getCustomerRemorseReturnLabelSource() {
-        return getFirst(customerRemorseReturnLabelSource);
-    }
-
-    /**
-     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
-     *
-     * @param customerRemorseReturnLabelSource ReturnLabelSourceEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    @Override
-    public void addCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration customerRemorseReturnLabelSource) {
-        this.customerRemorseReturnLabelSource = add(this.customerRemorseReturnLabelSource, customerRemorseReturnLabelSource);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ Country.class, Text.class })
+    private List<Object> applicableCountry;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getApplicableCountryList() {
+        return (List<T>) applicableCountry;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getApplicableCountry() {
+        return (T) getFirst(applicableCountry);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addApplicableCountry(Country applicableCountry) {
+        this.applicableCountry = add(this.applicableCountry, applicableCountry);
+    }
+    @Override
+    public void addApplicableCountry(Text applicableCountry) {
+        this.applicableCountry = add(this.applicableCountry, applicableCountry);
     }
 
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    private List<ReturnFeesEnumeration> customerRemorseReturnFees;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public List<ReturnFeesEnumeration> getCustomerRemorseReturnFeesList() {
+        return customerRemorseReturnFees;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public ReturnFeesEnumeration getCustomerRemorseReturnFees() {
+        return getFirst(customerRemorseReturnFees);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
+    public void addCustomerRemorseReturnFees(ReturnFeesEnumeration customerRemorseReturnFees) {
+        this.customerRemorseReturnFees = add(this.customerRemorseReturnFees, customerRemorseReturnFees);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
+
+    private List<ReturnLabelSourceEnumeration> customerRemorseReturnLabelSource;
+
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public List<ReturnLabelSourceEnumeration> getCustomerRemorseReturnLabelSourceList() {
+        return customerRemorseReturnLabelSource;
+    }
+
+    @Override
+    public ReturnLabelSourceEnumeration getCustomerRemorseReturnLabelSource() {
+        return getFirst(customerRemorseReturnLabelSource);
+    }
+
+    @Override
+    public void addCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration customerRemorseReturnLabelSource) {
+        this.customerRemorseReturnLabelSource = add(this.customerRemorseReturnLabelSource, customerRemorseReturnLabelSource);
+    }
+
+    private List<MonetaryAmount> customerRemorseReturnShippingFeesAmount;
+
+    @Override
+    public List<MonetaryAmount> getCustomerRemorseReturnShippingFeesAmountList() {
+        return customerRemorseReturnShippingFeesAmount;
+    }
+
+    @Override
+    public MonetaryAmount getCustomerRemorseReturnShippingFeesAmount() {
+        return getFirst(customerRemorseReturnShippingFeesAmount);
+    }
+
+    @Override
+    public void addCustomerRemorseReturnShippingFeesAmount(MonetaryAmount customerRemorseReturnShippingFeesAmount) {
+        this.customerRemorseReturnShippingFeesAmount = add(this.customerRemorseReturnShippingFeesAmount, customerRemorseReturnShippingFeesAmount);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Boolean> inStoreReturnsOffered;
+
+    @Override
+    public List<Boolean> getInStoreReturnsOfferedList() {
+        return inStoreReturnsOffered;
+    }
+
+    @Override
+    public Boolean getInStoreReturnsOffered() {
+        return getFirst(inStoreReturnsOffered);
+    }
+
+    @Override
+    public void addInStoreReturnsOffered(Boolean inStoreReturnsOffered) {
+        this.inStoreReturnsOffered = add(this.inStoreReturnsOffered, inStoreReturnsOffered);
+    }
+
+    private List<OfferItemCondition> itemCondition;
+
+    @Override
+    public List<OfferItemCondition> getItemConditionList() {
+        return itemCondition;
+    }
+
+    @Override
+    public OfferItemCondition getItemCondition() {
+        return getFirst(itemCondition);
+    }
+
+    @Override
+    public void addItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = add(this.itemCondition, itemCondition);
+    }
+
+    private List<ReturnFeesEnumeration> itemDefectReturnFees;
+
+    @Override
+    public List<ReturnFeesEnumeration> getItemDefectReturnFeesList() {
+        return itemDefectReturnFees;
+    }
+
+    @Override
+    public ReturnFeesEnumeration getItemDefectReturnFees() {
+        return getFirst(itemDefectReturnFees);
+    }
+
+    @Override
+    public void addItemDefectReturnFees(ReturnFeesEnumeration itemDefectReturnFees) {
+        this.itemDefectReturnFees = add(this.itemDefectReturnFees, itemDefectReturnFees);
+    }
+
+    private List<ReturnLabelSourceEnumeration> itemDefectReturnLabelSource;
+
+    @Override
+    public List<ReturnLabelSourceEnumeration> getItemDefectReturnLabelSourceList() {
+        return itemDefectReturnLabelSource;
+    }
+
+    @Override
+    public ReturnLabelSourceEnumeration getItemDefectReturnLabelSource() {
+        return getFirst(itemDefectReturnLabelSource);
+    }
+
+    @Override
+    public void addItemDefectReturnLabelSource(ReturnLabelSourceEnumeration itemDefectReturnLabelSource) {
+        this.itemDefectReturnLabelSource = add(this.itemDefectReturnLabelSource, itemDefectReturnLabelSource);
+    }
+
+    private List<MonetaryAmount> itemDefectReturnShippingFeesAmount;
+
+    @Override
+    public List<MonetaryAmount> getItemDefectReturnShippingFeesAmountList() {
+        return itemDefectReturnShippingFeesAmount;
+    }
+
+    @Override
+    public MonetaryAmount getItemDefectReturnShippingFeesAmount() {
+        return getFirst(itemDefectReturnShippingFeesAmount);
+    }
+
+    @Override
+    public void addItemDefectReturnShippingFeesAmount(MonetaryAmount itemDefectReturnShippingFeesAmount) {
+        this.itemDefectReturnShippingFeesAmount = add(this.itemDefectReturnShippingFeesAmount, itemDefectReturnShippingFeesAmount);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    @JsonLdFieldTypes({ Date.class, Integer.class, DateTime.class })
+    private List<Object> merchantReturnDays;
+
+    @Override
+    public <T> List<T> getMerchantReturnDaysList() {
+        return (List<T>) merchantReturnDays;
+    }
+
+    @Override
+    public <T> T getMerchantReturnDays() {
+        return (T) getFirst(merchantReturnDays);
+    }
+
+    @Override
+    public void addMerchantReturnDays(Date merchantReturnDays) {
+        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
+    }
+    @Override
+    public void addMerchantReturnDays(Integer merchantReturnDays) {
+        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
+    }
+    @Override
+    public void addMerchantReturnDays(DateTime merchantReturnDays) {
+        this.merchantReturnDays = add(this.merchantReturnDays, merchantReturnDays);
+    }
+
+    private List<URL> merchantReturnLink;
+
+    @Override
+    public List<URL> getMerchantReturnLinkList() {
+        return merchantReturnLink;
+    }
+
+    @Override
+    public URL getMerchantReturnLink() {
+        return getFirst(merchantReturnLink);
+    }
+
+    @Override
+    public void addMerchantReturnLink(URL merchantReturnLink) {
+        this.merchantReturnLink = add(this.merchantReturnLink, merchantReturnLink);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<RefundTypeEnumeration> refundType;
+
+    @Override
+    public List<RefundTypeEnumeration> getRefundTypeList() {
+        return refundType;
+    }
+
+    @Override
+    public RefundTypeEnumeration getRefundType() {
+        return getFirst(refundType);
+    }
+
+    @Override
+    public void addRefundType(RefundTypeEnumeration refundType) {
+        this.refundType = add(this.refundType, refundType);
+    }
+
+    @JsonLdFieldTypes({ Number.class, MonetaryAmount.class })
+    private List<Object> restockingFee;
+
+    @Override
+    public <T> List<T> getRestockingFeeList() {
+        return (List<T>) restockingFee;
+    }
+
+    @Override
+    public <T> T getRestockingFee() {
+        return (T) getFirst(restockingFee);
+    }
+
+    @Override
+    public void addRestockingFee(Number restockingFee) {
+        this.restockingFee = add(this.restockingFee, restockingFee);
+    }
+    @Override
+    public void addRestockingFee(MonetaryAmount restockingFee) {
+        this.restockingFee = add(this.restockingFee, restockingFee);
+    }
+
+    private List<ReturnFeesEnumeration> returnFees;
+
+    @Override
+    public List<ReturnFeesEnumeration> getReturnFeesList() {
+        return returnFees;
+    }
+
+    @Override
+    public ReturnFeesEnumeration getReturnFees() {
+        return getFirst(returnFees);
+    }
+
+    @Override
+    public void addReturnFees(ReturnFeesEnumeration returnFees) {
+        this.returnFees = add(this.returnFees, returnFees);
+    }
+
+    private List<ReturnLabelSourceEnumeration> returnLabelSource;
+
+    @Override
+    public List<ReturnLabelSourceEnumeration> getReturnLabelSourceList() {
+        return returnLabelSource;
+    }
+
+    @Override
+    public ReturnLabelSourceEnumeration getReturnLabelSource() {
+        return getFirst(returnLabelSource);
+    }
+
+    @Override
+    public void addReturnLabelSource(ReturnLabelSourceEnumeration returnLabelSource) {
+        this.returnLabelSource = add(this.returnLabelSource, returnLabelSource);
+    }
+
+    private List<ReturnMethodEnumeration> returnMethod;
+
+    @Override
+    public List<ReturnMethodEnumeration> getReturnMethodList() {
+        return returnMethod;
+    }
+
+    @Override
+    public ReturnMethodEnumeration getReturnMethod() {
+        return getFirst(returnMethod);
+    }
+
+    @Override
+    public void addReturnMethod(ReturnMethodEnumeration returnMethod) {
+        this.returnMethod = add(this.returnMethod, returnMethod);
+    }
+
+    private List<MerchantReturnEnumeration> returnPolicyCategory;
+
+    @Override
+    public List<MerchantReturnEnumeration> getReturnPolicyCategoryList() {
+        return returnPolicyCategory;
+    }
+
+    @Override
+    public MerchantReturnEnumeration getReturnPolicyCategory() {
+        return getFirst(returnPolicyCategory);
+    }
+
+    @Override
+    public void addReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory) {
+        this.returnPolicyCategory = add(this.returnPolicyCategory, returnPolicyCategory);
+    }
+
+    @JsonLdFieldTypes({ Country.class, Text.class })
+    private List<Object> returnPolicyCountry;
+
+    @Override
+    public <T> List<T> getReturnPolicyCountryList() {
+        return (List<T>) returnPolicyCountry;
+    }
+
+    @Override
+    public <T> T getReturnPolicyCountry() {
+        return (T) getFirst(returnPolicyCountry);
+    }
+
+    @Override
+    public void addReturnPolicyCountry(Country returnPolicyCountry) {
+        this.returnPolicyCountry = add(this.returnPolicyCountry, returnPolicyCountry);
+    }
+    @Override
+    public void addReturnPolicyCountry(Text returnPolicyCountry) {
+        this.returnPolicyCountry = add(this.returnPolicyCountry, returnPolicyCountry);
+    }
+
+    private List<MerchantReturnPolicySeasonalOverride> returnPolicySeasonalOverride;
+
+    @Override
+    public List<MerchantReturnPolicySeasonalOverride> getReturnPolicySeasonalOverrideList() {
+        return returnPolicySeasonalOverride;
+    }
+
+    @Override
+    public MerchantReturnPolicySeasonalOverride getReturnPolicySeasonalOverride() {
+        return getFirst(returnPolicySeasonalOverride);
+    }
+
+    @Override
+    public void addReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride) {
+        this.returnPolicySeasonalOverride = add(this.returnPolicySeasonalOverride, returnPolicySeasonalOverride);
+    }
+
+    private List<MonetaryAmount> returnShippingFeesAmount;
+
+    @Override
+    public List<MonetaryAmount> getReturnShippingFeesAmountList() {
+        return returnShippingFeesAmount;
+    }
+
+    @Override
+    public MonetaryAmount getReturnShippingFeesAmount() {
+        return getFirst(returnShippingFeesAmount);
+    }
+
+    @Override
+    public void addReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount) {
+        this.returnShippingFeesAmount = add(this.returnShippingFeesAmount, returnShippingFeesAmount);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
+    }
+
+    private List<MemberProgramTier> validForMemberTier;
+
+    @Override
+    public List<MemberProgramTier> getValidForMemberTierList() {
+        return validForMemberTier;
+    }
+
+    @Override
+    public MemberProgramTier getValidForMemberTier() {
+        return getFirst(validForMemberTier);
+    }
+
+    @Override
+    public void addValidForMemberTier(MemberProgramTier validForMemberTier) {
+        this.validForMemberTier = add(this.validForMemberTier, validForMemberTier);
     }
 }

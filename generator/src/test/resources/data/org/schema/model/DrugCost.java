@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.QualitativeValue;
-import org.schema.model.datatype.Number;
 import org.schema.model.AdministrativeArea;
 import org.schema.model.DrugCostCategory;
+import org.schema.model.QualitativeValue;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * The cost per unit of a medical drug. Note that this type is not meant to represent the price in an offer of a drug for sale; see the Offer type for that. This type will typically be used to tag wholesale or average retail cost of a drug, or maximum reimbursable cost. Costs of medical drugs vary widely depending on how and where they are paid for, so while this type captures some of the variables, costs should be used with caution by consumers of this schema's markup.
@@ -19,6 +19,54 @@ import org.schema.model.DrugCostCategory;
  * @see <a href="https://schema.org/DrugCost">https://schema.org/DrugCost</a>
  */
 public interface DrugCost extends MedicalEntity {
+
+    /**
+     * The location in which the status applies.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AdministrativeArea> getApplicableLocationList();
+
+    /**
+     * The location in which the status applies.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AdministrativeArea getApplicableLocation();
+
+    /**
+     * The location in which the status applies.
+     *
+     * @param applicableLocation AdministrativeArea value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addApplicableLocation(AdministrativeArea applicableLocation);
+
+    /**
+     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
+     *
+     * @return {@link DrugCostCategory}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<DrugCostCategory> getCostCategoryList();
+
+    /**
+     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
+     *
+     * @return {@link DrugCostCategory}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    DrugCostCategory getCostCategory();
+
+    /**
+     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
+     *
+     * @param costCategory DrugCostCategory value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addCostCategory(DrugCostCategory costCategory);
 
     /**
      * The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
@@ -43,6 +91,30 @@ public interface DrugCost extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addCostCurrency(Text costCurrency);
+
+    /**
+     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getCostOriginList();
+
+    /**
+     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getCostOrigin();
+
+    /**
+     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+     *
+     * @param costOrigin Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addCostOrigin(Text costOrigin);
 
     /**
      * The cost per unit of the drug.
@@ -81,78 +153,6 @@ public interface DrugCost extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addCostPerUnit(Number costPerUnit);
-
-    /**
-     * The location in which the status applies.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AdministrativeArea> getApplicableLocationList();
-
-    /**
-     * The location in which the status applies.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AdministrativeArea getApplicableLocation();
-
-    /**
-     * The location in which the status applies.
-     *
-     * @param applicableLocation AdministrativeArea value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addApplicableLocation(AdministrativeArea applicableLocation);
-
-    /**
-     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getCostOriginList();
-
-    /**
-     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getCostOrigin();
-
-    /**
-     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
-     *
-     * @param costOrigin Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addCostOrigin(Text costOrigin);
-
-    /**
-     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
-     *
-     * @return {@link DrugCostCategory}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<DrugCostCategory> getCostCategoryList();
-
-    /**
-     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
-     *
-     * @return {@link DrugCostCategory}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    DrugCostCategory getCostCategory();
-
-    /**
-     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
-     *
-     * @param costCategory DrugCostCategory value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addCostCategory(DrugCostCategory costCategory);
 
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.

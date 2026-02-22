@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Property;
 import spec_custom.model.Class;
 import spec_custom.model.Enumeration;
+import spec_custom.model.Property;
 
 /**
  * A class, also often called a 'Type'; equivalent to rdfs:Class.

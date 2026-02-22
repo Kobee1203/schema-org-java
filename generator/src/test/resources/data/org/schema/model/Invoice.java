@@ -6,21 +6,21 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.PriceSpecification;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.Text;
-import org.schema.model.PaymentStatusType;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Order;
-import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
-import org.schema.model.Thing;
-import org.schema.model.datatype.URL;
 import org.schema.model.Duration;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.Order;
+import org.schema.model.Organization;
 import org.schema.model.PaymentMethod;
+import org.schema.model.PaymentStatusType;
+import org.schema.model.Person;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.PriceSpecification;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A statement of the money due for goods or services; a bill.
@@ -30,97 +30,46 @@ import org.schema.model.PaymentMethod;
 public interface Invoice extends Intangible {
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The identifier for the account the payment will be applied to.
      *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Text}
      */
-    <T> List<T> getProviderList();
+    List<Text> getAccountIdList();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The identifier for the account the payment will be applied to.
      *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Text}
      */
-    <T> T getProvider();
+    Text getAccountId();
 
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The identifier for the account the payment will be applied to.
      *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param accountId Text value to set.
      */
-    void addProvider(Person provider);
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addProvider(Organization provider);
+    void addAccountId(Text accountId);
 
     /**
-     * The total amount due.
+     * The time interval used to compute the invoice.
      *
-     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     * @return {@link Duration}
      */
-    <T> List<T> getTotalPaymentDueList();
+    List<Duration> getBillingPeriodList();
 
     /**
-     * The total amount due.
+     * The time interval used to compute the invoice.
      *
-     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     * @return {@link Duration}
      */
-    <T> T getTotalPaymentDue();
+    Duration getBillingPeriod();
 
     /**
-     * The total amount due.
+     * The time interval used to compute the invoice.
      *
-     * @param totalPaymentDue PriceSpecification value to set.
+     * @param billingPeriod Duration value to set.
      */
-    void addTotalPaymentDue(PriceSpecification totalPaymentDue);
-    /**
-     * The total amount due.
-     *
-     * @param totalPaymentDue MonetaryAmount value to set.
-     */
-    void addTotalPaymentDue(MonetaryAmount totalPaymentDue);
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getCustomerList();
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getCustomer();
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Person value to set.
-     */
-    void addCustomer(Person customer);
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Organization value to set.
-     */
-    void addCustomer(Organization customer);
+    void addBillingPeriod(Duration billingPeriod);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -148,96 +97,6 @@ public interface Invoice extends Intangible {
      * @param broker Organization value to set.
      */
     void addBroker(Organization broker);
-
-    /**
-     * The date the invoice is scheduled to be paid.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getScheduledPaymentDateList();
-
-    /**
-     * The date the invoice is scheduled to be paid.
-     *
-     * @return {@link Date}
-     */
-    Date getScheduledPaymentDate();
-
-    /**
-     * The date the invoice is scheduled to be paid.
-     *
-     * @param scheduledPaymentDate Date value to set.
-     */
-    void addScheduledPaymentDate(Date scheduledPaymentDate);
-
-    /**
-     * The status of payment; whether the invoice has been paid or not.
-     *
-     * @return {@link Text} or {@link PaymentStatusType}
-     */
-    <T> List<T> getPaymentStatusList();
-
-    /**
-     * The status of payment; whether the invoice has been paid or not.
-     *
-     * @return {@link Text} or {@link PaymentStatusType}
-     */
-    <T> T getPaymentStatus();
-
-    /**
-     * The status of payment; whether the invoice has been paid or not.
-     *
-     * @param paymentStatus Text value to set.
-     */
-    void addPaymentStatus(Text paymentStatus);
-    /**
-     * The status of payment; whether the invoice has been paid or not.
-     *
-     * @param paymentStatus PaymentStatusType value to set.
-     */
-    void addPaymentStatus(PaymentStatusType paymentStatus);
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getPaymentDueList();
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getPaymentDue();
-
-    /**
-     * The date that payment is due.
-     *
-     * @param paymentDue DateTime value to set.
-     */
-    void addPaymentDue(DateTime paymentDue);
-
-    /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-     *
-     * @return {@link Order}
-     */
-    List<Order> getReferencesOrderList();
-
-    /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-     *
-     * @return {@link Order}
-     */
-    Order getReferencesOrder();
-
-    /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-     *
-     * @param referencesOrder Order value to set.
-     */
-    void addReferencesOrder(Order referencesOrder);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -299,46 +158,52 @@ public interface Invoice extends Intangible {
     void addCategory(URL category);
 
     /**
-     * The identifier for the account the payment will be applied to.
+     * A number that confirms the given order or payment has been received.
      *
      * @return {@link Text}
      */
-    List<Text> getAccountIdList();
+    List<Text> getConfirmationNumberList();
 
     /**
-     * The identifier for the account the payment will be applied to.
+     * A number that confirms the given order or payment has been received.
      *
      * @return {@link Text}
      */
-    Text getAccountId();
+    Text getConfirmationNumber();
 
     /**
-     * The identifier for the account the payment will be applied to.
+     * A number that confirms the given order or payment has been received.
      *
-     * @param accountId Text value to set.
+     * @param confirmationNumber Text value to set.
      */
-    void addAccountId(Text accountId);
+    void addConfirmationNumber(Text confirmationNumber);
 
     /**
-     * The time interval used to compute the invoice.
+     * Party placing the order or paying the invoice.
      *
-     * @return {@link Duration}
+     * @return {@link Person} or {@link Organization}
      */
-    List<Duration> getBillingPeriodList();
+    <T> List<T> getCustomerList();
 
     /**
-     * The time interval used to compute the invoice.
+     * Party placing the order or paying the invoice.
      *
-     * @return {@link Duration}
+     * @return {@link Person} or {@link Organization}
      */
-    Duration getBillingPeriod();
+    <T> T getCustomer();
 
     /**
-     * The time interval used to compute the invoice.
+     * Party placing the order or paying the invoice.
      *
-     * @param billingPeriod Duration value to set.
+     * @param customer Person value to set.
      */
-    void addBillingPeriod(Duration billingPeriod);
+    void addCustomer(Person customer);
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @param customer Organization value to set.
+     */
+    void addCustomer(Organization customer);
 
     /**
      * The minimum payment required at this time.
@@ -366,6 +231,54 @@ public interface Invoice extends Intangible {
      * @param minimumPaymentDue MonetaryAmount value to set.
      */
     void addMinimumPaymentDue(MonetaryAmount minimumPaymentDue);
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPaymentDueList();
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getPaymentDue();
+
+    /**
+     * The date that payment is due.
+     *
+     * @param paymentDue DateTime value to set.
+     */
+    void addPaymentDue(DateTime paymentDue);
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getPaymentDueDateList();
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> T getPaymentDueDate();
+
+    /**
+     * The date that payment is due.
+     *
+     * @param paymentDueDate DateTime value to set.
+     */
+    void addPaymentDueDate(DateTime paymentDueDate);
+    /**
+     * The date that payment is due.
+     *
+     * @param paymentDueDate Date value to set.
+     */
+    void addPaymentDueDate(Date paymentDueDate);
 
     /**
      * The name of the credit card or other method of payment for the order.
@@ -420,50 +333,137 @@ public interface Invoice extends Intangible {
     void addPaymentMethodId(Text paymentMethodId);
 
     /**
-     * The date that payment is due.
+     * The status of payment; whether the invoice has been paid or not.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Text} or {@link PaymentStatusType}
      */
-    <T> List<T> getPaymentDueDateList();
+    <T> List<T> getPaymentStatusList();
 
     /**
-     * The date that payment is due.
+     * The status of payment; whether the invoice has been paid or not.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link Text} or {@link PaymentStatusType}
      */
-    <T> T getPaymentDueDate();
+    <T> T getPaymentStatus();
 
     /**
-     * The date that payment is due.
+     * The status of payment; whether the invoice has been paid or not.
      *
-     * @param paymentDueDate DateTime value to set.
+     * @param paymentStatus Text value to set.
      */
-    void addPaymentDueDate(DateTime paymentDueDate);
+    void addPaymentStatus(Text paymentStatus);
     /**
-     * The date that payment is due.
+     * The status of payment; whether the invoice has been paid or not.
      *
-     * @param paymentDueDate Date value to set.
+     * @param paymentStatus PaymentStatusType value to set.
      */
-    void addPaymentDueDate(Date paymentDueDate);
+    void addPaymentStatus(PaymentStatusType paymentStatus);
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link Text}
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    List<Text> getConfirmationNumberList();
+    <T> List<T> getProviderList();
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link Text}
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    Text getConfirmationNumber();
+    <T> T getProvider();
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param confirmationNumber Text value to set.
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void addConfirmationNumber(Text confirmationNumber);
+    void addProvider(Person provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Organization provider);
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @return {@link Order}
+     */
+    List<Order> getReferencesOrderList();
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @return {@link Order}
+     */
+    Order getReferencesOrder();
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @param referencesOrder Order value to set.
+     */
+    void addReferencesOrder(Order referencesOrder);
+
+    /**
+     * The date the invoice is scheduled to be paid.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getScheduledPaymentDateList();
+
+    /**
+     * The date the invoice is scheduled to be paid.
+     *
+     * @return {@link Date}
+     */
+    Date getScheduledPaymentDate();
+
+    /**
+     * The date the invoice is scheduled to be paid.
+     *
+     * @param scheduledPaymentDate Date value to set.
+     */
+    void addScheduledPaymentDate(Date scheduledPaymentDate);
+
+    /**
+     * The total amount due.
+     *
+     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    <T> List<T> getTotalPaymentDueList();
+
+    /**
+     * The total amount due.
+     *
+     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    <T> T getTotalPaymentDue();
+
+    /**
+     * The total amount due.
+     *
+     * @param totalPaymentDue PriceSpecification value to set.
+     */
+    void addTotalPaymentDue(PriceSpecification totalPaymentDue);
+    /**
+     * The total amount due.
+     *
+     * @param totalPaymentDue MonetaryAmount value to set.
+     */
+    void addTotalPaymentDue(MonetaryAmount totalPaymentDue);
 }

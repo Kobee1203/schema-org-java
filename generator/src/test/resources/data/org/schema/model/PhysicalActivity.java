@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.SuperficialAnatomy;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
-import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.SuperficialAnatomy;
 import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
 /**
@@ -22,30 +22,6 @@ import org.schema.model.datatype.URL;
  * @see <a href="https://schema.org/PhysicalActivity">https://schema.org/PhysicalActivity</a>
  */
 public interface PhysicalActivity extends LifestyleModification {
-
-    /**
-     * The characteristics of associated patients, such as age, gender, race etc.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getEpidemiologyList();
-
-    /**
-     * The characteristics of associated patients, such as age, gender, race etc.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getEpidemiology();
-
-    /**
-     * The characteristics of associated patients, such as age, gender, race etc.
-     *
-     * @param epidemiology Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addEpidemiology(Text epidemiology);
 
     /**
      * The anatomy of the underlying organ system or structures associated with this entity.
@@ -143,6 +119,30 @@ public interface PhysicalActivity extends LifestyleModification {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     void addCategory(URL category);
+
+    /**
+     * The characteristics of associated patients, such as age, gender, race etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getEpidemiologyList();
+
+    /**
+     * The characteristics of associated patients, such as age, gender, race etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getEpidemiology();
+
+    /**
+     * The characteristics of associated patients, such as age, gender, race etc.
+     *
+     * @param epidemiology Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addEpidemiology(Text epidemiology);
 
     /**
      * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.

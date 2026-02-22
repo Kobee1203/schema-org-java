@@ -6,13 +6,13 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Text;
-import spec.model.BroadcastService;
 import spec.model.BroadcastChannel;
-import spec.model.Place;
-import spec.model.Language;
 import spec.model.BroadcastFrequencySpecification;
+import spec.model.BroadcastService;
+import spec.model.Language;
 import spec.model.Organization;
+import spec.model.Place;
+import spec.model.datatype.Text;
 
 /**
  * A delivery service through which content is provided via broadcast over the air or online.
@@ -20,6 +20,100 @@ import spec.model.Organization;
  * @see <a href="https://schema.org/BroadcastService">https://schema.org/BroadcastService</a>
  */
 public interface BroadcastService extends Service {
+
+    /**
+     * The area within which users can expect to reach the broadcast service.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getAreaList();
+
+    /**
+     * The area within which users can expect to reach the broadcast service.
+     *
+     * @return {@link Place}
+     */
+    Place getArea();
+
+    /**
+     * The area within which users can expect to reach the broadcast service.
+     *
+     * @param area Place value to set.
+     */
+    void addArea(Place area);
+
+    /**
+     * The media network(s) whose content is broadcast on this station.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getBroadcastAffiliateOfList();
+
+    /**
+     * The media network(s) whose content is broadcast on this station.
+     *
+     * @return {@link Organization}
+     */
+    Organization getBroadcastAffiliateOf();
+
+    /**
+     * The media network(s) whose content is broadcast on this station.
+     *
+     * @param broadcastAffiliateOf Organization value to set.
+     */
+    void addBroadcastAffiliateOf(Organization broadcastAffiliateOf);
+
+    /**
+     * The name displayed in the channel guide. For many US affiliates, it is the network name.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBroadcastDisplayNameList();
+
+    /**
+     * The name displayed in the channel guide. For many US affiliates, it is the network name.
+     *
+     * @return {@link Text}
+     */
+    Text getBroadcastDisplayName();
+
+    /**
+     * The name displayed in the channel guide. For many US affiliates, it is the network name.
+     *
+     * @param broadcastDisplayName Text value to set.
+     */
+    void addBroadcastDisplayName(Text broadcastDisplayName);
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link Text} or {@link BroadcastFrequencySpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> List<T> getBroadcastFrequencyList();
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link Text} or {@link BroadcastFrequencySpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> T getBroadcastFrequency();
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void addBroadcastFrequency(Text broadcastFrequency);
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
 
     /**
      * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts.
@@ -41,6 +135,109 @@ public interface BroadcastService extends Service {
      * @param broadcastTimezone Text value to set.
      */
     void addBroadcastTimezone(Text broadcastTimezone);
+
+    /**
+     * The organization owning or operating the broadcast service.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getBroadcasterList();
+
+    /**
+     * The organization owning or operating the broadcast service.
+     *
+     * @return {@link Organization}
+     */
+    Organization getBroadcaster();
+
+    /**
+     * The organization owning or operating the broadcast service.
+     *
+     * @param broadcaster Organization value to set.
+     */
+    void addBroadcaster(Organization broadcaster);
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    List<Text> getCallSignList();
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    Text getCallSign();
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @param callSign Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    void addCallSign(Text callSign);
+
+    /**
+     * A broadcast channel of a broadcast service.
+     *
+     * @return {@link BroadcastChannel}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    List<BroadcastChannel> getHasBroadcastChannelList();
+
+    /**
+     * A broadcast channel of a broadcast service.
+     *
+     * @return {@link BroadcastChannel}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    BroadcastChannel getHasBroadcastChannel();
+
+    /**
+     * A broadcast channel of a broadcast service.
+     *
+     * @param hasBroadcastChannel BroadcastChannel value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void addHasBroadcastChannel(BroadcastChannel hasBroadcastChannel);
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> List<T> getInLanguageList();
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> T getInLanguage();
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void addInLanguage(Language inLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void addInLanguage(Text inLanguage);
 
     /**
      * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
@@ -83,201 +280,4 @@ public interface BroadcastService extends Service {
      * @param videoFormat Text value to set.
      */
     void addVideoFormat(Text videoFormat);
-
-    /**
-     * A broadcast channel of a broadcast service.
-     *
-     * @return {@link BroadcastChannel}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    List<BroadcastChannel> getHasBroadcastChannelList();
-
-    /**
-     * A broadcast channel of a broadcast service.
-     *
-     * @return {@link BroadcastChannel}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    BroadcastChannel getHasBroadcastChannel();
-
-    /**
-     * A broadcast channel of a broadcast service.
-     *
-     * @param hasBroadcastChannel BroadcastChannel value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void addHasBroadcastChannel(BroadcastChannel hasBroadcastChannel);
-
-    /**
-     * The area within which users can expect to reach the broadcast service.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getAreaList();
-
-    /**
-     * The area within which users can expect to reach the broadcast service.
-     *
-     * @return {@link Place}
-     */
-    Place getArea();
-
-    /**
-     * The area within which users can expect to reach the broadcast service.
-     *
-     * @param area Place value to set.
-     */
-    void addArea(Place area);
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    <T> List<T> getInLanguageList();
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    <T> T getInLanguage();
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param inLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    void addInLanguage(Language inLanguage);
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param inLanguage Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    void addInLanguage(Text inLanguage);
-
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @return {@link Text} or {@link BroadcastFrequencySpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    <T> List<T> getBroadcastFrequencyList();
-
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @return {@link Text} or {@link BroadcastFrequencySpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    <T> T getBroadcastFrequency();
-
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @param broadcastFrequency Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void addBroadcastFrequency(Text broadcastFrequency);
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
-
-    /**
-     * The organization owning or operating the broadcast service.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getBroadcasterList();
-
-    /**
-     * The organization owning or operating the broadcast service.
-     *
-     * @return {@link Organization}
-     */
-    Organization getBroadcaster();
-
-    /**
-     * The organization owning or operating the broadcast service.
-     *
-     * @param broadcaster Organization value to set.
-     */
-    void addBroadcaster(Organization broadcaster);
-
-    /**
-     * The media network(s) whose content is broadcast on this station.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getBroadcastAffiliateOfList();
-
-    /**
-     * The media network(s) whose content is broadcast on this station.
-     *
-     * @return {@link Organization}
-     */
-    Organization getBroadcastAffiliateOf();
-
-    /**
-     * The media network(s) whose content is broadcast on this station.
-     *
-     * @param broadcastAffiliateOf Organization value to set.
-     */
-    void addBroadcastAffiliateOf(Organization broadcastAffiliateOf);
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    List<Text> getCallSignList();
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    Text getCallSign();
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @param callSign Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    void addCallSign(Text callSign);
-
-    /**
-     * The name displayed in the channel guide. For many US affiliates, it is the network name.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBroadcastDisplayNameList();
-
-    /**
-     * The name displayed in the channel guide. For many US affiliates, it is the network name.
-     *
-     * @return {@link Text}
-     */
-    Text getBroadcastDisplayName();
-
-    /**
-     * The name displayed in the channel guide. For many US affiliates, it is the network name.
-     *
-     * @param broadcastDisplayName Text value to set.
-     */
-    void addBroadcastDisplayName(Text broadcastDisplayName);
 }

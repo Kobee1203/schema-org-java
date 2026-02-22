@@ -7,9 +7,9 @@ package spec.model;
 
 import java.util.List;
 import spec.model.DigitalPlatformEnumeration;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
 import spec.model.SoftwareApplication;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * An entry point, within some Web-based protocol.
@@ -18,6 +18,27 @@ import spec.model.SoftwareApplication;
  * @see <a href="https://schema.org/EntryPoint">https://schema.org/EntryPoint</a>
  */
 public interface EntryPoint extends Intangible {
+
+    /**
+     * An application that can complete the request.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    List<SoftwareApplication> getActionApplicationList();
+
+    /**
+     * An application that can complete the request.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    SoftwareApplication getActionApplication();
+
+    /**
+     * An application that can complete the request.
+     *
+     * @param actionApplication SoftwareApplication value to set.
+     */
+    void addActionApplication(SoftwareApplication actionApplication);
 
     /**
      * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
@@ -53,69 +74,6 @@ public interface EntryPoint extends Intangible {
     void addActionPlatform(Text actionPlatform);
 
     /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getContentTypeList();
-
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @return {@link Text}
-     */
-    Text getContentType();
-
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @param contentType Text value to set.
-     */
-    void addContentType(Text contentType);
-
-    /**
-     * An application that can complete the request.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    List<SoftwareApplication> getActionApplicationList();
-
-    /**
-     * An application that can complete the request.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    SoftwareApplication getActionApplication();
-
-    /**
-     * An application that can complete the request.
-     *
-     * @param actionApplication SoftwareApplication value to set.
-     */
-    void addActionApplication(SoftwareApplication actionApplication);
-
-    /**
-     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getUrlTemplateList();
-
-    /**
-     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
-     *
-     * @return {@link Text}
-     */
-    Text getUrlTemplate();
-
-    /**
-     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
-     *
-     * @param urlTemplate Text value to set.
-     */
-    void addUrlTemplate(Text urlTemplate);
-
-    /**
      * An application that can complete the request.
      *
      * @return {@link SoftwareApplication}
@@ -135,6 +93,27 @@ public interface EntryPoint extends Intangible {
      * @param application SoftwareApplication value to set.
      */
     void addApplication(SoftwareApplication application);
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getContentTypeList();
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     * @return {@link Text}
+     */
+    Text getContentType();
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     * @param contentType Text value to set.
+     */
+    void addContentType(Text contentType);
 
     /**
      * The supported encoding type(s) for an EntryPoint request.
@@ -177,4 +156,25 @@ public interface EntryPoint extends Intangible {
      * @param httpMethod Text value to set.
      */
     void addHttpMethod(Text httpMethod);
+
+    /**
+     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getUrlTemplateList();
+
+    /**
+     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
+     *
+     * @return {@link Text}
+     */
+    Text getUrlTemplate();
+
+    /**
+     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
+     *
+     * @param urlTemplate Text value to set.
+     */
+    void addUrlTemplate(Text urlTemplate);
 }

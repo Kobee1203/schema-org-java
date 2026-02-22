@@ -12,8 +12,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.function.Supplier;
 
+import static com.weedow.schemaorg.generator.logging.ProgressTracker.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mockStatic;
 
@@ -44,11 +46,11 @@ class ProgressTrackerTest {
 
             new ProgressTracker(10);
 
-            assertThat(logCaptor.getInfoLogs())
-                    .hasSize(1)
-                    .first().asString()
-                    .contains("0% (0/10)")
-                    .endsWith("Initializing...");
+            List<String> infoLogs = logCaptor.getInfoLogs();
+            assertThat(infoLogs).hasSize(2);
+            assertThat(infoLogs).first().asString().isEqualTo(HIDE_CURSOR + "\n");
+            assertThat(infoLogs).element(1).asString()
+                    .isEqualTo(expectedMsg(0, 40, "0% (0/10)", DEFAULT_INIT.get(), TASK_COLOR));
         }
     }
 
@@ -62,11 +64,11 @@ class ProgressTrackerTest {
 
             new ProgressTracker(5, customInit, customCompleted);
 
-            assertThat(logCaptor.getInfoLogs())
-                    .hasSize(1)
-                    .first().asString()
-                    .contains("0% (0/5)")
-                    .endsWith("Custom init");
+            List<String> infoLogs = logCaptor.getInfoLogs();
+            assertThat(infoLogs).hasSize(2);
+            assertThat(infoLogs).first().asString().isEqualTo(HIDE_CURSOR + "\n");
+            assertThat(infoLogs).element(1).asString()
+                    .isEqualTo(expectedMsg(0, 40, "0% (0/5)", "Custom init", TASK_COLOR));
         }
     }
 
@@ -77,11 +79,11 @@ class ProgressTrackerTest {
 
             new ProgressTracker(5, null, null);
 
-            assertThat(logCaptor.getInfoLogs())
-                    .hasSize(1)
-                    .first().asString()
-                    .contains("0% (0/5)")
-                    .endsWith("Initializing...");
+            List<String> infoLogs = logCaptor.getInfoLogs();
+            assertThat(infoLogs).hasSize(2);
+            assertThat(infoLogs).first().asString().isEqualTo(HIDE_CURSOR + "\n");
+            assertThat(infoLogs).element(1).asString()
+                    .isEqualTo(expectedMsg(0, 40, "0% (0/5)", DEFAULT_INIT.get(), TASK_COLOR));
         }
     }
 
@@ -102,8 +104,7 @@ class ProgressTrackerTest {
             assertThat(logCaptor.getInfoLogs())
                     .isNotEmpty()
                     .first().asString()
-                    .contains("25% (1/4)")
-                    .endsWith("Step 1");
+                    .isEqualTo(expectedMsg(10, 30, "25% (1/4)", "Step 1", TASK_COLOR));
         }
     }
 
@@ -123,12 +124,12 @@ class ProgressTrackerTest {
                     .isNotEmpty()
                     .first().asString()
                     .doesNotContain(">")
-                    .endsWith("25% (1/4)");
+                    .isEqualTo(expectedMsg(10, 30, "25% (1/4)", currentTask, TASK_COLOR));
         }
     }
 
     @Test
-    void tick_lastStep_shouldLogCompletedMessageAndNewline() {
+    void tick_lastStep_shouldLogCompletedMessageAndShowCursorCodeWithNewline() {
         try (MockedStatic<SchemaModelGeneratorConstants> mocked = mockStatic(SchemaModelGeneratorConstants.class)) {
             mocked.when(SchemaModelGeneratorConstants::isVerbose).thenReturn(false);
 
@@ -141,17 +142,15 @@ class ProgressTrackerTest {
 
             assertThat(logCaptor.getInfoLogs())
                     .first().asString()
-                    .contains("100% (1/1)")
-                    .endsWith("Final step");
+                    .isEqualTo(expectedMsg(40, 0, "100% (1/1)", "Final step", TASK_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(1).asString()
-                    .contains("100% (1/1)")
-                    .endsWith("✔ Completed");
+                    .isEqualTo(expectedMsg(40, 0, "100% (1/1)", DEFAULT_COMPLETED.get(), COMPLETED_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(2).asString()
-                    .isEqualTo("\n");
+                    .isEqualTo(SHOW_CURSOR + "\n\n");
         }
     }
 
@@ -169,17 +168,15 @@ class ProgressTrackerTest {
 
             assertThat(logCaptor.getInfoLogs())
                     .first().asString()
-                    .contains("100% (1/1)")
-                    .endsWith("Last");
+                    .isEqualTo(expectedMsg(40, 0, "100% (1/1)", "Last", TASK_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(1).asString()
-                    .contains("100% (1/1)")
-                    .endsWith("Done!");
+                    .isEqualTo(expectedMsg(40, 0, "100% (1/1)", "Done!", COMPLETED_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(2).asString()
-                    .isEqualTo("\n");
+                    .isEqualTo(SHOW_CURSOR + "\n\n");
         }
     }
 
@@ -200,37 +197,31 @@ class ProgressTrackerTest {
 
             assertThat(logCaptor.getInfoLogs())
                     .first().asString()
-                    .contains("20% (1/5)")
-                    .endsWith("Step 1");
+                    .isEqualTo(expectedMsg(8, 32, "20% (1/5)", "Step 1", TASK_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(1).asString()
-                    .contains("40% (2/5)")
-                    .endsWith("Step 2");
+                    .isEqualTo(expectedMsg(16, 24, "40% (2/5)", "Step 2", TASK_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(2).asString()
-                    .contains("60% (3/5)")
-                    .endsWith("Step 3");
+                    .isEqualTo(expectedMsg(24, 16, "60% (3/5)", "Step 3", TASK_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(3).asString()
-                    .contains("80% (4/5)")
-                    .endsWith("Step 4");
+                    .isEqualTo(expectedMsg(32, 8, "80% (4/5)", "Step 4", TASK_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(4).asString()
-                    .contains("100% (5/5)")
-                    .endsWith("Step 5");
+                    .isEqualTo(expectedMsg(40, 0, "100% (5/5)", "Step 5", TASK_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(5).asString()
-                    .contains("100% (5/5)")
-                    .endsWith("✔ Completed");
+                    .isEqualTo(expectedMsg(40, 0, "100% (5/5)", DEFAULT_COMPLETED.get(), COMPLETED_COLOR));
 
             assertThat(logCaptor.getInfoLogs())
                     .element(6).asString()
-                    .isEqualTo("\n");
+                    .isEqualTo(SHOW_CURSOR + "\n\n");
         }
     }
 
@@ -258,13 +249,16 @@ class ProgressTrackerTest {
     // -------------------------------------------------------------------------
 
     @Test
-    void whenVerbose_init_shouldNotLog() {
+    void whenVerbose_init_shouldLogHideCursorCodeWithNewline() {
         try (MockedStatic<SchemaModelGeneratorConstants> mocked = mockStatic(SchemaModelGeneratorConstants.class)) {
             mocked.when(SchemaModelGeneratorConstants::isVerbose).thenReturn(true);
 
             new ProgressTracker(5);
 
-            assertThat(logCaptor.getInfoLogs()).isEmpty();
+            assertThat(logCaptor.getInfoLogs())
+                    .hasSize(1)
+                    .first().asString()
+                    .isEqualTo(HIDE_CURSOR + "\n");
         }
     }
 
@@ -285,7 +279,7 @@ class ProgressTrackerTest {
     }
 
     @Test
-    void whenVerbose_lastTick_shouldOnlyLogNewline() {
+    void whenVerbose_lastTick_shouldOnlyLogShowCursorCodeWithNewline() {
         try (MockedStatic<SchemaModelGeneratorConstants> mocked = mockStatic(SchemaModelGeneratorConstants.class)) {
             mocked.when(SchemaModelGeneratorConstants::isVerbose).thenReturn(true);
 
@@ -294,62 +288,11 @@ class ProgressTrackerTest {
 
             tracker.tick("Final");
 
-            // complete() logs "\n" unconditionally (outside printBar)
+            // complete() logs "\n\n" unconditionally (outside printBar)
             assertThat(logCaptor.getInfoLogs())
                     .hasSize(1)
-                    .containsExactly("\n");
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    // Bar content structure tests
-    // -------------------------------------------------------------------------
-
-    @Test
-    void printBar_shouldStartWithCarriageReturn() {
-        try (MockedStatic<SchemaModelGeneratorConstants> mocked = mockStatic(SchemaModelGeneratorConstants.class)) {
-            mocked.when(SchemaModelGeneratorConstants::isVerbose).thenReturn(false);
-
-            new ProgressTracker(10);
-
-            assertThat(logCaptor.getInfoLogs())
                     .first().asString()
-                    .startsWith("\r");
-        }
-    }
-
-    @Test
-    void printBar_shouldContainPercentCurrentAndTotal() {
-        try (MockedStatic<SchemaModelGeneratorConstants> mocked = mockStatic(SchemaModelGeneratorConstants.class)) {
-            mocked.when(SchemaModelGeneratorConstants::isVerbose).thenReturn(false);
-
-            ProgressTracker tracker = new ProgressTracker(10);
-            logCaptor.clearLogs();
-
-            tracker.tick("Task A");
-
-            assertThat(logCaptor.getInfoLogs())
-                    .first().asString()
-                    .contains("10%")
-                    .contains("1/10")
-                    .contains("Task A");
-        }
-    }
-
-    @Test
-    void printBar_separatorShouldBePresentWhenTaskIsProvided() {
-        try (MockedStatic<SchemaModelGeneratorConstants> mocked = mockStatic(SchemaModelGeneratorConstants.class)) {
-            mocked.when(SchemaModelGeneratorConstants::isVerbose).thenReturn(false);
-
-            ProgressTracker tracker = new ProgressTracker(10);
-            logCaptor.clearLogs();
-
-            tracker.tick("My Task");
-
-            assertThat(logCaptor.getInfoLogs())
-                    .first().asString()
-                    .contains(" > ")
-                    .contains("My Task");
+                    .isEqualTo(SHOW_CURSOR + "\n\n");
         }
     }
 
@@ -375,8 +318,22 @@ class ProgressTrackerTest {
             for (Thread t : threads) t.join();
 
             // No exception should have been thrown; and the completed message must appear
-            assertThat(logCaptor.getInfoLogs())
-                    .anySatisfy(log -> assertThat(log).contains("✔ Completed"));
+            List<String> infoLogs = logCaptor.getInfoLogs();
+            assertThat(infoLogs).hasSize(102);
+            assertThat(infoLogs).first().asString().isEqualTo(HIDE_CURSOR + "\n");
+            assertThat(infoLogs).last().asString().isEqualTo(SHOW_CURSOR + "\n\n");
+            assertThat(infoLogs).anySatisfy(log ->
+                    assertThat(log).isEqualTo(expectedMsg(40, 0, "100% (100/100)", DEFAULT_COMPLETED.get(), COMPLETED_COLOR)));
         }
+    }
+
+    private static String expectedMsg(int fgBarCount, int bgBarCount, String percentInfo, String task, String taskColor) {
+        return "\r\u001B[2K" +
+                "\u001B[0;38;5;39m" + "█".repeat(fgBarCount) +
+                (bgBarCount > 0 ? "\u001B[0;38;5;244m" + "▒".repeat(bgBarCount) : "") +
+                "\u001B[0;39m" +
+                "\u001B[0;39m " + percentInfo + "\u001B[0;39m" +
+                (task != null && !task.isEmpty() ? "\u001B[0;37m > \u001B[0;39m" + "\u001B[0;" + taskColor + "m" + task + "\u001B[0;39m" : "") +
+                " ";
     }
 }

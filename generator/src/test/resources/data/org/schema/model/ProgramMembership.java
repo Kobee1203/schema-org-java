@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
+import org.schema.model.MemberProgram;
 import org.schema.model.Organization;
 import org.schema.model.Person;
-import org.schema.model.MemberProgram;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
@@ -21,25 +21,79 @@ import org.schema.model.MemberProgram;
 public interface ProgramMembership extends Intangible {
 
     /**
-     * The program providing the membership. It is preferable to use [:program](https://schema.org/program) instead.
+     * The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
      *
-     * @return {@link Text}
+     * @return {@link Organization}
      */
-    List<Text> getProgramNameList();
+    List<Organization> getHostingOrganizationList();
 
     /**
-     * The program providing the membership. It is preferable to use [:program](https://schema.org/program) instead.
+     * The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
      *
-     * @return {@link Text}
+     * @return {@link Organization}
      */
-    Text getProgramName();
+    Organization getHostingOrganization();
 
     /**
-     * The program providing the membership. It is preferable to use [:program](https://schema.org/program) instead.
+     * The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
      *
-     * @param programName Text value to set.
+     * @param hostingOrganization Organization value to set.
      */
-    void addProgramName(Text programName);
+    void addHostingOrganization(Organization hostingOrganization);
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getMemberList();
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getMember();
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param member Organization value to set.
+     */
+    void addMember(Organization member);
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param member Person value to set.
+     */
+    void addMember(Person member);
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getMembersList();
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getMembers();
+
+    /**
+     * A member of this organization.
+     *
+     * @param members Person value to set.
+     */
+    void addMembers(Person members);
+    /**
+     * A member of this organization.
+     *
+     * @param members Organization value to set.
+     */
+    void addMembers(Organization members);
 
     /**
      * A unique identifier for the membership.
@@ -98,81 +152,6 @@ public interface ProgramMembership extends Intangible {
     void addMembershipPointsEarned(Number membershipPointsEarned);
 
     /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getMemberList();
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getMember();
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @param member Organization value to set.
-     */
-    void addMember(Organization member);
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @param member Person value to set.
-     */
-    void addMember(Person member);
-
-    /**
-     * The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getHostingOrganizationList();
-
-    /**
-     * The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
-     *
-     * @return {@link Organization}
-     */
-    Organization getHostingOrganization();
-
-    /**
-     * The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
-     *
-     * @param hostingOrganization Organization value to set.
-     */
-    void addHostingOrganization(Organization hostingOrganization);
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getMembersList();
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getMembers();
-
-    /**
-     * A member of this organization.
-     *
-     * @param members Person value to set.
-     */
-    void addMembers(Person members);
-    /**
-     * A member of this organization.
-     *
-     * @param members Organization value to set.
-     */
-    void addMembers(Organization members);
-
-    /**
      * The [MemberProgram](https://schema.org/MemberProgram) associated with a [ProgramMembership](https://schema.org/ProgramMembership).
      *
      * @return {@link MemberProgram}
@@ -195,4 +174,25 @@ public interface ProgramMembership extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
      */
     void addProgram(MemberProgram program);
+
+    /**
+     * The program providing the membership. It is preferable to use [:program](https://schema.org/program) instead.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getProgramNameList();
+
+    /**
+     * The program providing the membership. It is preferable to use [:program](https://schema.org/program) instead.
+     *
+     * @return {@link Text}
+     */
+    Text getProgramName();
+
+    /**
+     * The program providing the membership. It is preferable to use [:program](https://schema.org/program) instead.
+     *
+     * @param programName Text value to set.
+     */
+    void addProgramName(Text programName);
 }

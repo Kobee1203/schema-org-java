@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.Product;
-import spec_custom.model.Place;
 import spec_custom.model.AdministrativeArea;
+import spec_custom.model.ContactPointOption;
 import spec_custom.model.GeoShape;
 import spec_custom.model.Language;
-import spec_custom.model.ContactPointOption;
+import spec_custom.model.OpeningHoursSpecification;
+import spec_custom.model.Place;
+import spec_custom.model.Product;
+import spec_custom.model.datatype.Text;
 
 /**
  * A contact point&#x2014;for example, a Customer Complaints department.
@@ -21,54 +21,6 @@ import spec_custom.model.ContactPointOption;
  * @see <a href="https://schema.org/ContactPoint">https://schema.org/ContactPoint</a>
  */
 public interface ContactPoint extends StructuredValue {
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    List<OpeningHoursSpecification> getHoursAvailableList();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    OpeningHoursSpecification getHoursAvailable();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @param hoursAvailable OpeningHoursSpecification value to set.
-     */
-    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @return {@link Text} or {@link Product}
-     */
-    <T> List<T> getProductSupportedList();
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @return {@link Text} or {@link Product}
-     */
-    <T> T getProductSupported();
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @param productSupported Text value to set.
-     */
-    void addProductSupported(Text productSupported);
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @param productSupported Product value to set.
-     */
-    void addProductSupported(Product productSupported);
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -137,6 +89,138 @@ public interface ContactPoint extends StructuredValue {
     void addAvailableLanguage(Text availableLanguage);
 
     /**
+     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+     *
+     * @return {@link ContactPointOption}
+     */
+    List<ContactPointOption> getContactOptionList();
+
+    /**
+     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+     *
+     * @return {@link ContactPointOption}
+     */
+    ContactPointOption getContactOption();
+
+    /**
+     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+     *
+     * @param contactOption ContactPointOption value to set.
+     */
+    void addContactOption(ContactPointOption contactOption);
+
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getContactTypeList();
+
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     *
+     * @return {@link Text}
+     */
+    Text getContactType();
+
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     *
+     * @param contactType Text value to set.
+     */
+    void addContactType(Text contactType);
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEmailList();
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    Text getEmail();
+
+    /**
+     * Email address.
+     *
+     * @param email Text value to set.
+     */
+    void addEmail(Text email);
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFaxNumberList();
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    Text getFaxNumber();
+
+    /**
+     * The fax number.
+     *
+     * @param faxNumber Text value to set.
+     */
+    void addFaxNumber(Text faxNumber);
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    List<OpeningHoursSpecification> getHoursAvailableList();
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    OpeningHoursSpecification getHoursAvailable();
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @param hoursAvailable OpeningHoursSpecification value to set.
+     */
+    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @return {@link Text} or {@link Product}
+     */
+    <T> List<T> getProductSupportedList();
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @return {@link Text} or {@link Product}
+     */
+    <T> T getProductSupported();
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @param productSupported Text value to set.
+     */
+    void addProductSupported(Text productSupported);
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @param productSupported Product value to set.
+     */
+    void addProductSupported(Product productSupported);
+
+    /**
      * The geographic area where the service is provided.
      *
      * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
@@ -170,27 +254,6 @@ public interface ContactPoint extends StructuredValue {
     void addServiceArea(Place serviceArea);
 
     /**
-     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-     *
-     * @return {@link ContactPointOption}
-     */
-    List<ContactPointOption> getContactOptionList();
-
-    /**
-     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-     *
-     * @return {@link ContactPointOption}
-     */
-    ContactPointOption getContactOption();
-
-    /**
-     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-     *
-     * @param contactOption ContactPointOption value to set.
-     */
-    void addContactOption(ContactPointOption contactOption);
-
-    /**
      * The telephone number.
      *
      * @return {@link Text}
@@ -210,67 +273,4 @@ public interface ContactPoint extends StructuredValue {
      * @param telephone Text value to set.
      */
     void addTelephone(Text telephone);
-
-    /**
-     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getContactTypeList();
-
-    /**
-     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
-     *
-     * @return {@link Text}
-     */
-    Text getContactType();
-
-    /**
-     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
-     *
-     * @param contactType Text value to set.
-     */
-    void addContactType(Text contactType);
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getFaxNumberList();
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    Text getFaxNumber();
-
-    /**
-     * The fax number.
-     *
-     * @param faxNumber Text value to set.
-     */
-    void addFaxNumber(Text faxNumber);
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getEmailList();
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    Text getEmail();
-
-    /**
-     * Email address.
-     *
-     * @param email Text value to set.
-     */
-    void addEmail(Text email);
 }

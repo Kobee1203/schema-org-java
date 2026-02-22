@@ -20,33 +20,6 @@ import org.schema.model.datatype.Text;
 public interface ChemicalSubstance extends BioChemEntity {
 
     /**
-     * Intended use of the BioChemEntity by humans.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
-     */
-    List<DefinedTerm> getPotentialUseList();
-
-    /**
-     * Intended use of the BioChemEntity by humans.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
-     */
-    DefinedTerm getPotentialUse();
-
-    /**
-     * Intended use of the BioChemEntity by humans.
-     *
-     * @param potentialUse DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
-     */
-    void addPotentialUse(DefinedTerm potentialUse);
-
-    /**
      * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
      *
      * @return {@link Text}
@@ -99,4 +72,31 @@ public interface ChemicalSubstance extends BioChemEntity {
      * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
      */
     void addChemicalRole(DefinedTerm chemicalRole);
+
+    /**
+     * Intended use of the BioChemEntity by humans.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
+     */
+    List<DefinedTerm> getPotentialUseList();
+
+    /**
+     * Intended use of the BioChemEntity by humans.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
+     */
+    DefinedTerm getPotentialUse();
+
+    /**
+     * Intended use of the BioChemEntity by humans.
+     *
+     * @param potentialUse DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/ChemicalSubstance">http://www.bioschemas.org/ChemicalSubstance</a>
+     */
+    void addPotentialUse(DefinedTerm potentialUse);
 }

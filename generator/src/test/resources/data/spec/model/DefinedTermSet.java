@@ -19,33 +19,6 @@ import spec.model.Thing;
 public interface DefinedTermSet extends CreativeWork {
 
     /**
-     * A Defined Term contained in this term set.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    List<DefinedTerm> getHasDefinedTermList();
-
-    /**
-     * A Defined Term contained in this term set.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    DefinedTerm getHasDefinedTerm();
-
-    /**
-     * A Defined Term contained in this term set.
-     *
-     * @param hasDefinedTerm DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void addHasDefinedTerm(DefinedTerm hasDefinedTerm);
-
-    /**
      * The subject matter of an object.
      *
      * @return {@link Thing}
@@ -71,4 +44,31 @@ public interface DefinedTermSet extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     void addAbout(Thing about);
+
+    /**
+     * A Defined Term contained in this term set.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    List<DefinedTerm> getHasDefinedTermList();
+
+    /**
+     * A Defined Term contained in this term set.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    DefinedTerm getHasDefinedTerm();
+
+    /**
+     * A Defined Term contained in this term set.
+     *
+     * @param hasDefinedTerm DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    void addHasDefinedTerm(DefinedTerm hasDefinedTerm);
 }

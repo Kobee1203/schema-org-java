@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.ParcelDelivery;
-import org.schema.model.OrderStatus;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
-import org.schema.model.Service;
-import org.schema.model.Product;
 import org.schema.model.OrderItem;
+import org.schema.model.OrderStatus;
+import org.schema.model.ParcelDelivery;
+import org.schema.model.Product;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.Service;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * An order item is a line of an order. It includes the quantity and shipping details of a bought offer.
@@ -21,27 +21,6 @@ import org.schema.model.OrderItem;
  * @see <a href="https://schema.org/OrderItem">https://schema.org/OrderItem</a>
  */
 public interface OrderItem extends StructuredValue {
-
-    /**
-     * The identifier of the order item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getOrderItemNumberList();
-
-    /**
-     * The identifier of the order item.
-     *
-     * @return {@link Text}
-     */
-    Text getOrderItemNumber();
-
-    /**
-     * The identifier of the order item.
-     *
-     * @param orderItemNumber Text value to set.
-     */
-    void addOrderItemNumber(Text orderItemNumber);
 
     /**
      * The delivery of the parcel related to this order or order item.
@@ -63,6 +42,27 @@ public interface OrderItem extends StructuredValue {
      * @param orderDelivery ParcelDelivery value to set.
      */
     void addOrderDelivery(ParcelDelivery orderDelivery);
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOrderItemNumberList();
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    Text getOrderItemNumber();
+
+    /**
+     * The identifier of the order item.
+     *
+     * @param orderItemNumber Text value to set.
+     */
+    void addOrderItemNumber(Text orderItemNumber);
 
     /**
      * The current status of the order item.

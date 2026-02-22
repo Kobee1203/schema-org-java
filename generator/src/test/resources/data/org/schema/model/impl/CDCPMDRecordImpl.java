@@ -5,26 +5,26 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.Number;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Date;
-import org.schema.model.datatype.URL;
-import org.schema.model.PropertyValue;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Intangible;
-import org.schema.model.StructuredValue;
+import org.schema.model.Action;
 import org.schema.model.CDCPMDRecord;
+import org.schema.model.CreativeWork;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
+import org.schema.model.Intangible;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.StructuredValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A CDCPMDRecord is a data structure representing a record in a CDC tabular data format
@@ -39,469 +39,96 @@ import org.schema.model.CDCPMDRecord;
 @JsonLdTypeName("CDCPMDRecord")
 public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CDCPMDRecord {
 
-    private List<Number> cvdNumBedsOcc;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
 
-    /**
-     * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public List<Number> getCvdNumBedsOccList() {
-        return cvdNumBedsOcc;
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
     }
 
-    /**
-     * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public Number getCvdNumBedsOcc() {
-        return getFirst(cvdNumBedsOcc);
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
     }
 
-    /**
-     * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
-     *
-     * @param cvdNumBedsOcc Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public void addCvdNumBedsOcc(Number cvdNumBedsOcc) {
-        this.cvdNumBedsOcc = add(this.cvdNumBedsOcc, cvdNumBedsOcc);
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    private List<Text> alternateName;
+
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
+
+    @Override
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Text.class })
     private List<Object> cvdCollectionDate;
 
-    /**
-     * collectiondate - Date for which patient counts are reported.
-     *
-     * @return {@link DateTime} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public <T> List<T> getCvdCollectionDateList() {
         return (List<T>) cvdCollectionDate;
     }
 
-    /**
-     * collectiondate - Date for which patient counts are reported.
-     *
-     * @return {@link DateTime} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public <T> T getCvdCollectionDate() {
         return (T) getFirst(cvdCollectionDate);
     }
 
-    /**
-     * collectiondate - Date for which patient counts are reported.
-     *
-     * @param cvdCollectionDate DateTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public void addCvdCollectionDate(DateTime cvdCollectionDate) {
         this.cvdCollectionDate = add(this.cvdCollectionDate, cvdCollectionDate);
     }
-    /**
-     * collectiondate - Date for which patient counts are reported.
-     *
-     * @param cvdCollectionDate Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public void addCvdCollectionDate(Text cvdCollectionDate) {
         this.cvdCollectionDate = add(this.cvdCollectionDate, cvdCollectionDate);
     }
 
-    private List<Number> cvdNumC19MechVentPats;
-
-    /**
-     * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumC19MechVentPatsList() {
-        return cvdNumC19MechVentPats;
-    }
-
-    /**
-     * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19MechVentPats() {
-        return getFirst(cvdNumC19MechVentPats);
-    }
-
-    /**
-     * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
-     *
-     * @param cvdNumC19MechVentPats Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumC19MechVentPats(Number cvdNumC19MechVentPats) {
-        this.cvdNumC19MechVentPats = add(this.cvdNumC19MechVentPats, cvdNumC19MechVentPats);
-    }
-
-    private List<Number> cvdNumICUBeds;
-
-    /**
-     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumICUBedsList() {
-        return cvdNumICUBeds;
-    }
-
-    /**
-     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumICUBeds() {
-        return getFirst(cvdNumICUBeds);
-    }
-
-    /**
-     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
-     *
-     * @param cvdNumICUBeds Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumICUBeds(Number cvdNumICUBeds) {
-        this.cvdNumICUBeds = add(this.cvdNumICUBeds, cvdNumICUBeds);
-    }
-
-    private List<Number> cvdNumC19OFMechVentPats;
-
-    /**
-     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumC19OFMechVentPatsList() {
-        return cvdNumC19OFMechVentPats;
-    }
-
-    /**
-     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19OFMechVentPats() {
-        return getFirst(cvdNumC19OFMechVentPats);
-    }
-
-    /**
-     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
-     *
-     * @param cvdNumC19OFMechVentPats Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumC19OFMechVentPats(Number cvdNumC19OFMechVentPats) {
-        this.cvdNumC19OFMechVentPats = add(this.cvdNumC19OFMechVentPats, cvdNumC19OFMechVentPats);
-    }
-
-    private List<Number> cvdNumC19HOPats;
-
-    /**
-     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumC19HOPatsList() {
-        return cvdNumC19HOPats;
-    }
-
-    /**
-     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19HOPats() {
-        return getFirst(cvdNumC19HOPats);
-    }
-
-    /**
-     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
-     *
-     * @param cvdNumC19HOPats Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumC19HOPats(Number cvdNumC19HOPats) {
-        this.cvdNumC19HOPats = add(this.cvdNumC19HOPats, cvdNumC19HOPats);
-    }
-
-    private List<Number> cvdNumC19Died;
-
-    /**
-     * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumC19DiedList() {
-        return cvdNumC19Died;
-    }
-
-    /**
-     * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19Died() {
-        return getFirst(cvdNumC19Died);
-    }
-
-    /**
-     * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
-     *
-     * @param cvdNumC19Died Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumC19Died(Number cvdNumC19Died) {
-        this.cvdNumC19Died = add(this.cvdNumC19Died, cvdNumC19Died);
-    }
-
-    private List<Number> cvdNumVent;
-
-    /**
-     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumVentList() {
-        return cvdNumVent;
-    }
-
-    /**
-     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumVent() {
-        return getFirst(cvdNumVent);
-    }
-
-    /**
-     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
-     *
-     * @param cvdNumVent Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumVent(Number cvdNumVent) {
-        this.cvdNumVent = add(this.cvdNumVent, cvdNumVent);
-    }
-
-    private List<Number> cvdNumVentUse;
-
-    /**
-     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumVentUseList() {
-        return cvdNumVentUse;
-    }
-
-    /**
-     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumVentUse() {
-        return getFirst(cvdNumVentUse);
-    }
-
-    /**
-     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
-     *
-     * @param cvdNumVentUse Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumVentUse(Number cvdNumVentUse) {
-        this.cvdNumVentUse = add(this.cvdNumVentUse, cvdNumVentUse);
-    }
-
     private List<Text> cvdFacilityCounty;
 
-    /**
-     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public List<Text> getCvdFacilityCountyList() {
         return cvdFacilityCounty;
     }
 
-    /**
-     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public Text getCvdFacilityCounty() {
         return getFirst(cvdFacilityCounty);
     }
 
-    /**
-     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @param cvdFacilityCounty Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public void addCvdFacilityCounty(Text cvdFacilityCounty) {
         this.cvdFacilityCounty = add(this.cvdFacilityCounty, cvdFacilityCounty);
     }
 
-    private List<Number> cvdNumICUBedsOcc;
-
-    /**
-     * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public List<Number> getCvdNumICUBedsOccList() {
-        return cvdNumICUBedsOcc;
-    }
-
-    /**
-     * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumICUBedsOcc() {
-        return getFirst(cvdNumICUBedsOcc);
-    }
-
-    /**
-     * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
-     *
-     * @param cvdNumICUBedsOcc Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addCvdNumICUBedsOcc(Number cvdNumICUBedsOcc) {
-        this.cvdNumICUBedsOcc = add(this.cvdNumICUBedsOcc, cvdNumICUBedsOcc);
-    }
-
     private List<Text> cvdFacilityId;
 
-    /**
-     * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public List<Text> getCvdFacilityIdList() {
         return cvdFacilityId;
     }
 
-    /**
-     * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public Text getCvdFacilityId() {
         return getFirst(cvdFacilityId);
     }
 
-    /**
-     * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @param cvdFacilityId Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public void addCvdFacilityId(Text cvdFacilityId) {
         this.cvdFacilityId = add(this.cvdFacilityId, cvdFacilityId);
@@ -509,715 +136,465 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Number> cvdNumBeds;
 
-    /**
-     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public List<Number> getCvdNumBedsList() {
         return cvdNumBeds;
     }
 
-    /**
-     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public Number getCvdNumBeds() {
         return getFirst(cvdNumBeds);
     }
 
-    /**
-     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
-     *
-     * @param cvdNumBeds Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public void addCvdNumBeds(Number cvdNumBeds) {
         this.cvdNumBeds = add(this.cvdNumBeds, cvdNumBeds);
     }
 
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> datePosted;
+    private List<Number> cvdNumBedsOcc;
 
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public <T> List<T> getDatePostedList() {
-        return (List<T>) datePosted;
+    public List<Number> getCvdNumBedsOccList() {
+        return cvdNumBedsOcc;
     }
 
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public <T> T getDatePosted() {
-        return (T) getFirst(datePosted);
+    public Number getCvdNumBedsOcc() {
+        return getFirst(cvdNumBedsOcc);
     }
 
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public void addDatePosted(DateTime datePosted) {
-        this.datePosted = add(this.datePosted, datePosted);
-    }
-    /**
-     * Publication date of an online listing.
-     *
-     * @param datePosted Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void addDatePosted(Date datePosted) {
-        this.datePosted = add(this.datePosted, datePosted);
+    public void addCvdNumBedsOcc(Number cvdNumBedsOcc) {
+        this.cvdNumBedsOcc = add(this.cvdNumBedsOcc, cvdNumBedsOcc);
     }
 
-    private List<Number> cvdNumC19OverflowPats;
+    private List<Number> cvdNumC19Died;
 
-    /**
-     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public List<Number> getCvdNumC19OverflowPatsList() {
-        return cvdNumC19OverflowPats;
+    public List<Number> getCvdNumC19DiedList() {
+        return cvdNumC19Died;
     }
 
-    /**
-     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public Number getCvdNumC19OverflowPats() {
-        return getFirst(cvdNumC19OverflowPats);
+    public Number getCvdNumC19Died() {
+        return getFirst(cvdNumC19Died);
     }
 
-    /**
-     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
-     *
-     * @param cvdNumC19OverflowPats Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public void addCvdNumC19OverflowPats(Number cvdNumC19OverflowPats) {
-        this.cvdNumC19OverflowPats = add(this.cvdNumC19OverflowPats, cvdNumC19OverflowPats);
+    public void addCvdNumC19Died(Number cvdNumC19Died) {
+        this.cvdNumC19Died = add(this.cvdNumC19Died, cvdNumC19Died);
     }
 
-    private List<Number> cvdNumTotBeds;
+    private List<Number> cvdNumC19HOPats;
 
-    /**
-     * numtotbeds - ALL HOSPITAL BEDS: Total number of all inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public List<Number> getCvdNumTotBedsList() {
-        return cvdNumTotBeds;
+    public List<Number> getCvdNumC19HOPatsList() {
+        return cvdNumC19HOPats;
     }
 
-    /**
-     * numtotbeds - ALL HOSPITAL BEDS: Total number of all inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public Number getCvdNumTotBeds() {
-        return getFirst(cvdNumTotBeds);
+    public Number getCvdNumC19HOPats() {
+        return getFirst(cvdNumC19HOPats);
     }
 
-    /**
-     * numtotbeds - ALL HOSPITAL BEDS: Total number of all inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
-     *
-     * @param cvdNumTotBeds Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
-    public void addCvdNumTotBeds(Number cvdNumTotBeds) {
-        this.cvdNumTotBeds = add(this.cvdNumTotBeds, cvdNumTotBeds);
+    public void addCvdNumC19HOPats(Number cvdNumC19HOPats) {
+        this.cvdNumC19HOPats = add(this.cvdNumC19HOPats, cvdNumC19HOPats);
     }
 
     private List<Number> cvdNumC19HospPats;
 
-    /**
-     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public List<Number> getCvdNumC19HospPatsList() {
         return cvdNumC19HospPats;
     }
 
-    /**
-     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public Number getCvdNumC19HospPats() {
         return getFirst(cvdNumC19HospPats);
     }
 
-    /**
-     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
-     *
-     * @param cvdNumC19HospPats Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
     @Override
     public void addCvdNumC19HospPats(Number cvdNumC19HospPats) {
         this.cvdNumC19HospPats = add(this.cvdNumC19HospPats, cvdNumC19HospPats);
     }
 
-    private List<URL> sameAs;
+    private List<Number> cvdNumC19MechVentPats;
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public List<Number> getCvdNumC19MechVentPatsList() {
+        return cvdNumC19MechVentPats;
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public Number getCvdNumC19MechVentPats() {
+        return getFirst(cvdNumC19MechVentPats);
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addCvdNumC19MechVentPats(Number cvdNumC19MechVentPats) {
+        this.cvdNumC19MechVentPats = add(this.cvdNumC19MechVentPats, cvdNumC19MechVentPats);
     }
 
-    private List<Text> name;
+    private List<Number> cvdNumC19OFMechVentPats;
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
-    public List<Text> getNameList() {
-        return name;
+    public List<Number> getCvdNumC19OFMechVentPatsList() {
+        return cvdNumC19OFMechVentPats;
     }
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
-    public Text getName() {
-        return getFirst(name);
+    public Number getCvdNumC19OFMechVentPats() {
+        return getFirst(cvdNumC19OFMechVentPats);
     }
 
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public void addCvdNumC19OFMechVentPats(Number cvdNumC19OFMechVentPats) {
+        this.cvdNumC19OFMechVentPats = add(this.cvdNumC19OFMechVentPats, cvdNumC19OFMechVentPats);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
+    private List<Number> cvdNumC19OverflowPats;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
+    public List<Number> getCvdNumC19OverflowPatsList() {
+        return cvdNumC19OverflowPats;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
+    public Number getCvdNumC19OverflowPats() {
+        return getFirst(cvdNumC19OverflowPats);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addCvdNumC19OverflowPats(Number cvdNumC19OverflowPats) {
+        this.cvdNumC19OverflowPats = add(this.cvdNumC19OverflowPats, cvdNumC19OverflowPats);
     }
 
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
+    private List<Number> cvdNumICUBeds;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
+    public List<Number> getCvdNumICUBedsList() {
+        return cvdNumICUBeds;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
+    public Number getCvdNumICUBeds() {
+        return getFirst(cvdNumICUBeds);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
+    public void addCvdNumICUBeds(Number cvdNumICUBeds) {
+        this.cvdNumICUBeds = add(this.cvdNumICUBeds, cvdNumICUBeds);
     }
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
+    private List<Number> cvdNumICUBedsOcc;
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
+    public List<Number> getCvdNumICUBedsOccList() {
+        return cvdNumICUBedsOcc;
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
+    public Number getCvdNumICUBedsOcc() {
+        return getFirst(cvdNumICUBedsOcc);
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
+    public void addCvdNumICUBedsOcc(Number cvdNumICUBedsOcc) {
+        this.cvdNumICUBedsOcc = add(this.cvdNumICUBedsOcc, cvdNumICUBedsOcc);
     }
 
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
+    private List<Number> cvdNumTotBeds;
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
+    public List<Number> getCvdNumTotBedsList() {
+        return cvdNumTotBeds;
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
+    public Number getCvdNumTotBeds() {
+        return getFirst(cvdNumTotBeds);
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
+    public void addCvdNumTotBeds(Number cvdNumTotBeds) {
+        this.cvdNumTotBeds = add(this.cvdNumTotBeds, cvdNumTotBeds);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    private List<Number> cvdNumVent;
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public List<Number> getCvdNumVentList() {
+        return cvdNumVent;
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public Number getCvdNumVent() {
+        return getFirst(cvdNumVent);
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addCvdNumVent(Number cvdNumVent) {
+        this.cvdNumVent = add(this.cvdNumVent, cvdNumVent);
     }
 
-    private List<Action> potentialAction;
+    private List<Number> cvdNumVentUse;
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
+    public List<Number> getCvdNumVentUseList() {
+        return cvdNumVentUse;
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
+    public Number getCvdNumVentUse() {
+        return getFirst(cvdNumVentUse);
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
     @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
+    public void addCvdNumVentUse(Number cvdNumVentUse) {
+        this.cvdNumVentUse = add(this.cvdNumVentUse, cvdNumVentUse);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> datePosted;
+
+    @Override
+    public <T> List<T> getDatePostedList() {
+        return (List<T>) datePosted;
+    }
+
+    @Override
+    public <T> T getDatePosted() {
+        return (T) getFirst(datePosted);
+    }
+
+    @Override
+    public void addDatePosted(DateTime datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
+    }
+    @Override
+    public void addDatePosted(Date datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
     }
 
     @JsonLdFieldTypes({ TextObject.class, Text.class })
     private List<Object> description;
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> List<T> getDescriptionList() {
         return (List<T>) description;
     }
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> T getDescription() {
         return (T) getFirst(description);
     }
 
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
     @Override
     public void addDescription(TextObject description) {
         this.description = add(this.description, description);
     }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
     @Override
     public void addDescription(Text description) {
         this.description = add(this.description, description);
     }
 
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 }

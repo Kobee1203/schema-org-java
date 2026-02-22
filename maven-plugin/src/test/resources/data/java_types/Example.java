@@ -164,6 +164,33 @@ public interface Example extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * 
      *
+     * @return {@link java.lang.String} or {@link java.net.URL}
+     */
+    <T> List<T> getPathList();
+
+    /**
+     * 
+     *
+     * @return {@link java.lang.String} or {@link java.net.URL}
+     */
+    <T> T getPath();
+
+    /**
+     * 
+     *
+     * @param path java.lang.String value to set.
+     */
+    void addPath(java.lang.String path);
+    /**
+     * 
+     *
+     * @param path java.net.URL value to set.
+     */
+    void addPath(java.net.URL path);
+
+    /**
+     * 
+     *
      * @return {@link java.lang.String}
      */
     List<java.lang.String> getPronounceableTextList();
@@ -202,33 +229,6 @@ public interface Example extends com.weedow.schemaorg.commons.model.JsonLdNode {
      * @param text java.lang.String value to set.
      */
     void addText(java.lang.String text);
-
-    /**
-     * 
-     *
-     * @return {@link java.lang.String} or {@link java.net.URL}
-     */
-    <T> List<T> getPathList();
-
-    /**
-     * 
-     *
-     * @return {@link java.lang.String} or {@link java.net.URL}
-     */
-    <T> T getPath();
-
-    /**
-     * 
-     *
-     * @param path java.lang.String value to set.
-     */
-    void addPath(java.lang.String path);
-    /**
-     * 
-     *
-     * @param path java.net.URL value to set.
-     */
-    void addPath(java.net.URL path);
 
     /**
      * 

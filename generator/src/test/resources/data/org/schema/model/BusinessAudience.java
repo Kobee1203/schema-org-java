@@ -16,25 +16,25 @@ import org.schema.model.QuantitativeValue;
 public interface BusinessAudience extends Audience {
 
     /**
-     * The age of the business.
+     * The number of employees in an organization, e.g. business.
      *
      * @return {@link QuantitativeValue}
      */
-    List<QuantitativeValue> getYearsInOperationList();
+    List<QuantitativeValue> getNumberOfEmployeesList();
 
     /**
-     * The age of the business.
+     * The number of employees in an organization, e.g. business.
      *
      * @return {@link QuantitativeValue}
      */
-    QuantitativeValue getYearsInOperation();
+    QuantitativeValue getNumberOfEmployees();
 
     /**
-     * The age of the business.
+     * The number of employees in an organization, e.g. business.
      *
-     * @param yearsInOperation QuantitativeValue value to set.
+     * @param numberOfEmployees QuantitativeValue value to set.
      */
-    void addYearsInOperation(QuantitativeValue yearsInOperation);
+    void addNumberOfEmployees(QuantitativeValue numberOfEmployees);
 
     /**
      * The size of the business in annual revenue.
@@ -58,23 +58,23 @@ public interface BusinessAudience extends Audience {
     void addYearlyRevenue(QuantitativeValue yearlyRevenue);
 
     /**
-     * The number of employees in an organization, e.g. business.
+     * The age of the business.
      *
      * @return {@link QuantitativeValue}
      */
-    List<QuantitativeValue> getNumberOfEmployeesList();
+    List<QuantitativeValue> getYearsInOperationList();
 
     /**
-     * The number of employees in an organization, e.g. business.
+     * The age of the business.
      *
      * @return {@link QuantitativeValue}
      */
-    QuantitativeValue getNumberOfEmployees();
+    QuantitativeValue getYearsInOperation();
 
     /**
-     * The number of employees in an organization, e.g. business.
+     * The age of the business.
      *
-     * @param numberOfEmployees QuantitativeValue value to set.
+     * @param yearsInOperation QuantitativeValue value to set.
      */
-    void addNumberOfEmployees(QuantitativeValue numberOfEmployees);
+    void addYearsInOperation(QuantitativeValue yearsInOperation);
 }

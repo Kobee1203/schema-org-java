@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Number;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.UnitPriceSpecification;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
 
 /**
  * A structured value representing exchange rate.
@@ -44,6 +44,36 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
     void addCurrency(Text currency);
+
+    /**
+     * The current price of a currency.
+     *
+     * @return {@link UnitPriceSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     */
+    List<UnitPriceSpecification> getCurrentExchangeRateList();
+
+    /**
+     * The current price of a currency.
+     *
+     * @return {@link UnitPriceSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     */
+    UnitPriceSpecification getCurrentExchangeRate();
+
+    /**
+     * The current price of a currency.
+     *
+     * @param currentExchangeRate UnitPriceSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     */
+    void addCurrentExchangeRate(UnitPriceSpecification currentExchangeRate);
 
     /**
      * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
@@ -83,34 +113,4 @@ public interface ExchangeRateSpecification extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addExchangeRateSpread(MonetaryAmount exchangeRateSpread);
-
-    /**
-     * The current price of a currency.
-     *
-     * @return {@link UnitPriceSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     */
-    List<UnitPriceSpecification> getCurrentExchangeRateList();
-
-    /**
-     * The current price of a currency.
-     *
-     * @return {@link UnitPriceSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     */
-    UnitPriceSpecification getCurrentExchangeRate();
-
-    /**
-     * The current price of a currency.
-     *
-     * @param currentExchangeRate UnitPriceSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     */
-    void addCurrentExchangeRate(UnitPriceSpecification currentExchangeRate);
 }

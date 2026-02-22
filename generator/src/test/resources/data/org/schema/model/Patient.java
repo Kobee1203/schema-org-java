@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalCondition;
 import org.schema.model.Drug;
+import org.schema.model.MedicalCondition;
 
 /**
  * A patient is any person recipient of health care services.
@@ -16,30 +16,6 @@ import org.schema.model.Drug;
  * @see <a href="https://schema.org/Patient">https://schema.org/Patient</a>
  */
 public interface Patient extends MedicalAudience, Person {
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalCondition> getHealthConditionList();
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalCondition getHealthCondition();
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @param healthCondition MedicalCondition value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addHealthCondition(MedicalCondition healthCondition);
 
     /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
@@ -88,4 +64,28 @@ public interface Patient extends MedicalAudience, Person {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addDrug(Drug drug);
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getHealthConditionList();
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalCondition getHealthCondition();
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @param healthCondition MedicalCondition value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addHealthCondition(MedicalCondition healthCondition);
 }

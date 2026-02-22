@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalSpecialty;
-import org.schema.model.datatype.Text;
-import org.schema.model.Hospital;
 import org.schema.model.CategoryCode;
+import org.schema.model.Hospital;
 import org.schema.model.MedicalProcedure;
+import org.schema.model.MedicalSpecialty;
 import org.schema.model.MedicalTest;
 import org.schema.model.MedicalTherapy;
+import org.schema.model.datatype.Text;
 
 /**
  * An individual physician or a physician's office considered as a [[MedicalOrganization]].
@@ -22,58 +22,42 @@ import org.schema.model.MedicalTherapy;
 public interface Physician extends MedicalOrganization, MedicalBusiness {
 
     /**
-     * A medical specialty of the provider.
+     * A medical service available from this provider.
      *
-     * @return {@link MedicalSpecialty}
+     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<MedicalSpecialty> getMedicalSpecialtyList();
+    <T> List<T> getAvailableServiceList();
 
     /**
-     * A medical specialty of the provider.
+     * A medical service available from this provider.
      *
-     * @return {@link MedicalSpecialty}
+     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    MedicalSpecialty getMedicalSpecialty();
+    <T> T getAvailableService();
 
     /**
-     * A medical specialty of the provider.
+     * A medical service available from this provider.
      *
-     * @param medicalSpecialty MedicalSpecialty value to set.
+     * @param availableService MedicalProcedure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
-
+    void addAvailableService(MedicalProcedure availableService);
     /**
-     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
-     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
+     * A medical service available from this provider.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     * @param availableService MedicalTest value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getUsNPIList();
-
+    void addAvailableService(MedicalTest availableService);
     /**
-     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
-     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
+     * A medical service available from this provider.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
+     * @param availableService MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getUsNPI();
-
-    /**
-     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
-     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
-     *
-     * @param usNPI Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
-     */
-    void addUsNPI(Text usNPI);
+    void addAvailableService(MedicalTherapy availableService);
 
     /**
      * A hospital with which the physician or office is affiliated.
@@ -98,6 +82,30 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addHospitalAffiliation(Hospital hospitalAffiliation);
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSpecialty> getMedicalSpecialtyList();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalSpecialty getMedicalSpecialty();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @param medicalSpecialty MedicalSpecialty value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -155,40 +163,32 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     void addOccupationalCategory(CategoryCode occupationalCategory);
 
     /**
-     * A medical service available from this provider.
+     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
+     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
      *
-     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
      */
-    <T> List<T> getAvailableServiceList();
+    List<Text> getUsNPIList();
 
     /**
-     * A medical service available from this provider.
+     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
+     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
      *
-     * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
      */
-    <T> T getAvailableService();
+    Text getUsNPI();
 
     /**
-     * A medical service available from this provider.
+     * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
+     *     is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
      *
-     * @param availableService MedicalProcedure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @param usNPI Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
      */
-    void addAvailableService(MedicalProcedure availableService);
-    /**
-     * A medical service available from this provider.
-     *
-     * @param availableService MedicalTest value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAvailableService(MedicalTest availableService);
-    /**
-     * A medical service available from this provider.
-     *
-     * @param availableService MedicalTherapy value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAvailableService(MedicalTherapy availableService);
+    void addUsNPI(Text usNPI);
 }

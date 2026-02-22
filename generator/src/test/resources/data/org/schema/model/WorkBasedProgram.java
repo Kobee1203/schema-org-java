@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.CategoryCode;
 import org.schema.model.MonetaryAmountDistribution;
 import org.schema.model.datatype.Text;
-import org.schema.model.CategoryCode;
 
 /**
  * A program with both an educational and employment component. Typically based at a workplace and structured around work-based learning, with the aim of instilling competencies related to an occupation. WorkBasedProgram is used to distinguish programs such as apprenticeships from school, college or other classroom based educational programs.
@@ -18,36 +18,6 @@ import org.schema.model.CategoryCode;
  * @see <a href="https://schema.org/WorkBasedProgram">https://schema.org/WorkBasedProgram</a>
  */
 public interface WorkBasedProgram extends EducationalOccupationalProgram {
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    List<MonetaryAmountDistribution> getTrainingSalaryList();
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    MonetaryAmountDistribution getTrainingSalary();
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @param trainingSalary MonetaryAmountDistribution value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addTrainingSalary(MonetaryAmountDistribution trainingSalary);
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -103,4 +73,34 @@ public interface WorkBasedProgram extends EducationalOccupationalProgram {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
      */
     void addOccupationalCategory(CategoryCode occupationalCategory);
+
+    /**
+     * The estimated salary earned while in the program.
+     *
+     * @return {@link MonetaryAmountDistribution}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    List<MonetaryAmountDistribution> getTrainingSalaryList();
+
+    /**
+     * The estimated salary earned while in the program.
+     *
+     * @return {@link MonetaryAmountDistribution}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    MonetaryAmountDistribution getTrainingSalary();
+
+    /**
+     * The estimated salary earned while in the program.
+     *
+     * @param trainingSalary MonetaryAmountDistribution value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addTrainingSalary(MonetaryAmountDistribution trainingSalary);
 }

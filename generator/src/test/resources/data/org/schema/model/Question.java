@@ -6,12 +6,12 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Integer;
-import org.schema.model.ItemList;
 import org.schema.model.Answer;
-import org.schema.model.CreativeWork;
 import org.schema.model.Comment;
+import org.schema.model.CreativeWork;
+import org.schema.model.ItemList;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
 
 /**
  * A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.
@@ -20,81 +20,6 @@ import org.schema.model.Comment;
  * @see <a href="https://schema.org/Question">https://schema.org/Question</a>
  */
 public interface Question extends Comment {
-
-    /**
-     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
-     */
-    List<Text> getEduQuestionTypeList();
-
-    /**
-     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
-     */
-    Text getEduQuestionType();
-
-    /**
-     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
-     *
-     * @param eduQuestionType Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
-     */
-    void addEduQuestionType(Text eduQuestionType);
-
-    /**
-     * The number of answers this question has received.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getAnswerCountList();
-
-    /**
-     * The number of answers this question has received.
-     *
-     * @return {@link Integer}
-     */
-    Integer getAnswerCount();
-
-    /**
-     * The number of answers this question has received.
-     *
-     * @param answerCount Integer value to set.
-     */
-    void addAnswerCount(Integer answerCount);
-
-    /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @return {@link ItemList} or {@link Answer}
-     */
-    <T> List<T> getSuggestedAnswerList();
-
-    /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @return {@link ItemList} or {@link Answer}
-     */
-    <T> T getSuggestedAnswer();
-
-    /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @param suggestedAnswer ItemList value to set.
-     */
-    void addSuggestedAnswer(ItemList suggestedAnswer);
-    /**
-     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-     *
-     * @param suggestedAnswer Answer value to set.
-     */
-    void addSuggestedAnswer(Answer suggestedAnswer);
 
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
@@ -124,6 +49,54 @@ public interface Question extends Comment {
     void addAcceptedAnswer(ItemList acceptedAnswer);
 
     /**
+     * The number of answers this question has received.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getAnswerCountList();
+
+    /**
+     * The number of answers this question has received.
+     *
+     * @return {@link Integer}
+     */
+    Integer getAnswerCount();
+
+    /**
+     * The number of answers this question has received.
+     *
+     * @param answerCount Integer value to set.
+     */
+    void addAnswerCount(Integer answerCount);
+
+    /**
+     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
+    List<Text> getEduQuestionTypeList();
+
+    /**
+     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
+    Text getEduQuestionType();
+
+    /**
+     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
+     *
+     * @param eduQuestionType Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
+    void addEduQuestionType(Text eduQuestionType);
+
+    /**
      * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
      *
      * @return {@link CreativeWork} or {@link Comment}
@@ -149,4 +122,31 @@ public interface Question extends Comment {
      * @param parentItem Comment value to set.
      */
     void addParentItem(Comment parentItem);
+
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @return {@link ItemList} or {@link Answer}
+     */
+    <T> List<T> getSuggestedAnswerList();
+
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @return {@link ItemList} or {@link Answer}
+     */
+    <T> T getSuggestedAnswer();
+
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @param suggestedAnswer ItemList value to set.
+     */
+    void addSuggestedAnswer(ItemList suggestedAnswer);
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @param suggestedAnswer Answer value to set.
+     */
+    void addSuggestedAnswer(Answer suggestedAnswer);
 }

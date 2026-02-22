@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Comment;
-import org.schema.model.WebContent;
 import org.schema.model.CreativeWork;
+import org.schema.model.WebContent;
 
 /**
  * An answer offered to a question; perhaps correct, perhaps opinionated or wrong.

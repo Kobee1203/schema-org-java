@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.QuantitativeValue;
 import spec_custom.model.datatype.Number;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.QuantitativeValue;
 
 /**
  * An item used as either a tool or supply when performing the instructions for how to achieve a result.

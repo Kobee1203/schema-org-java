@@ -6,13 +6,13 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.QualitativeValue;
-import spec.model.StructuredValue;
 import spec.model.DefinedTerm;
-import spec.model.PropertyValue;
-import spec.model.QuantitativeValue;
 import spec.model.Enumeration;
 import spec.model.MeasurementTypeEnumeration;
+import spec.model.PropertyValue;
+import spec.model.QualitativeValue;
+import spec.model.QuantitativeValue;
+import spec.model.StructuredValue;
 import spec.model.datatype.Text;
 
 /**
@@ -24,28 +24,121 @@ import spec.model.datatype.Text;
 public interface QualitativeValue extends Enumeration {
 
     /**
-     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    List<PropertyValue> getAdditionalPropertyList();
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    PropertyValue getAdditionalProperty();
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @param additionalProperty PropertyValue value to set.
+     */
+    void addAdditionalProperty(PropertyValue additionalProperty);
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
      * @return {@link QualitativeValue}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<QualitativeValue> getNonEqualList();
+    List<QualitativeValue> getEqualList();
 
     /**
-     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
      * @return {@link QualitativeValue}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    QualitativeValue getNonEqual();
+    QualitativeValue getEqual();
 
     /**
-     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
-     * @param nonEqual QualitativeValue value to set.
+     * @param equal QualitativeValue value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addNonEqual(QualitativeValue nonEqual);
+    void addEqual(QualitativeValue equal);
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<QualitativeValue> getGreaterList();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    QualitativeValue getGreater();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
+     *
+     * @param greater QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addGreater(QualitativeValue greater);
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<QualitativeValue> getGreaterOrEqualList();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    QualitativeValue getGreaterOrEqual();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+     *
+     * @param greaterOrEqual QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addGreaterOrEqual(QualitativeValue greaterOrEqual);
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<QualitativeValue> getLesserList();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    QualitativeValue getLesser();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+     *
+     * @param lesser QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addLesser(QualitativeValue lesser);
 
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
@@ -70,6 +163,30 @@ public interface QualitativeValue extends Enumeration {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addLesserOrEqual(QualitativeValue lesserOrEqual);
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<QualitativeValue> getNonEqualList();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    QualitativeValue getNonEqual();
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     *
+     * @param nonEqual QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addNonEqual(QualitativeValue nonEqual);
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -143,121 +260,4 @@ public interface QualitativeValue extends Enumeration {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(QualitativeValue valueReference);
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    List<PropertyValue> getAdditionalPropertyList();
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    PropertyValue getAdditionalProperty();
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @param additionalProperty PropertyValue value to set.
-     */
-    void addAdditionalProperty(PropertyValue additionalProperty);
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is equal to the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<QualitativeValue> getEqualList();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is equal to the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    QualitativeValue getEqual();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is equal to the object.
-     *
-     * @param equal QualitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addEqual(QualitativeValue equal);
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<QualitativeValue> getGreaterOrEqualList();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    QualitativeValue getGreaterOrEqual();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-     *
-     * @param greaterOrEqual QualitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addGreaterOrEqual(QualitativeValue greaterOrEqual);
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<QualitativeValue> getGreaterList();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    QualitativeValue getGreater();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than the object.
-     *
-     * @param greater QualitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addGreater(QualitativeValue greater);
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<QualitativeValue> getLesserList();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    QualitativeValue getLesser();
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-     *
-     * @param lesser QualitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addLesser(QualitativeValue lesser);
 }

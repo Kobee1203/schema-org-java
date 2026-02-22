@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Place;
 import org.schema.model.FoodEstablishment;
 import org.schema.model.FoodEvent;
+import org.schema.model.Place;
 import org.schema.model.Recipe;
 
 /**

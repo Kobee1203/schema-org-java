@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
-import org.schema.model.QuantitativeValue;
 
 /**
  * An item used as either a tool or supply when performing the instructions for how to achieve a result.

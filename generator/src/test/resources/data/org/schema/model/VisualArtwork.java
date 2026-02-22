@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Mass;
-import org.schema.model.QuantitativeValue;
 import org.schema.model.Distance;
+import org.schema.model.Mass;
 import org.schema.model.Person;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Integer;
 
 /**
  * A work of art that is primarily visual in character.
@@ -22,121 +22,85 @@ import org.schema.model.datatype.Integer;
 public interface VisualArtwork extends CreativeWork {
 
     /**
-     * The weight of the product or person.
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
      *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Text} or {@link Integer}
      */
-    <T> List<T> getWeightList();
+    <T> List<T> getArtEditionList();
 
     /**
-     * The weight of the product or person.
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
      *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Text} or {@link Integer}
      */
-    <T> T getWeight();
+    <T> T getArtEdition();
 
     /**
-     * The weight of the product or person.
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
      *
-     * @param weight Mass value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param artEdition Text value to set.
      */
-    void addWeight(Mass weight);
+    void addArtEdition(Text artEdition);
     /**
-     * The weight of the product or person.
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
      *
-     * @param weight QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param artEdition Integer value to set.
      */
-    void addWeight(QuantitativeValue weight);
+    void addArtEdition(Integer artEdition);
 
     /**
-     * The height of the item.
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @return {@link URL} or {@link Text}
      */
-    <T> List<T> getHeightList();
+    <T> List<T> getArtMediumList();
 
     /**
-     * The height of the item.
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @return {@link URL} or {@link Text}
      */
-    <T> T getHeight();
+    <T> T getArtMedium();
 
     /**
-     * The height of the item.
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
-     * @param height QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @param artMedium URL value to set.
      */
-    void addHeight(QuantitativeValue height);
+    void addArtMedium(URL artMedium);
     /**
-     * The height of the item.
+     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
-     * @param height Distance value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @param artMedium Text value to set.
      */
-    void addHeight(Distance height);
+    void addArtMedium(Text artMedium);
 
     /**
-     * The individual who adds color to inked drawings.
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
      *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @return {@link URL} or {@link Text}
      */
-    List<Person> getColoristList();
+    <T> List<T> getArtformList();
 
     /**
-     * The individual who adds color to inked drawings.
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
      *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @return {@link URL} or {@link Text}
      */
-    Person getColorist();
+    <T> T getArtform();
 
     /**
-     * The individual who adds color to inked drawings.
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
      *
-     * @param colorist Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     * @param artform URL value to set.
      */
-    void addColorist(Person colorist);
-
+    void addArtform(URL artform);
     /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
      *
-     * @return {@link Text} or {@link URL}
+     * @param artform Text value to set.
      */
-    <T> List<T> getArtworkSurfaceList();
-
-    /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    <T> T getArtworkSurface();
-
-    /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @param artworkSurface Text value to set.
-     */
-    void addArtworkSurface(Text artworkSurface);
-    /**
-     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
-     *
-     * @param artworkSurface URL value to set.
-     */
-    void addArtworkSurface(URL artworkSurface);
+    void addArtform(Text artform);
 
     /**
      * The primary artist for a work
@@ -169,58 +133,55 @@ public interface VisualArtwork extends CreativeWork {
     void addArtist(Person artist);
 
     /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getArtformList();
-
-    /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getArtform();
-
-    /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
-     *
-     * @param artform URL value to set.
-     */
-    void addArtform(URL artform);
-    /**
-     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
-     *
-     * @param artform Text value to set.
-     */
-    void addArtform(Text artform);
-
-    /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @return {@link Text} or {@link URL}
      */
-    <T> List<T> getSurfaceList();
+    <T> List<T> getArtworkSurfaceList();
 
     /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @return {@link Text} or {@link URL}
      */
-    <T> T getSurface();
+    <T> T getArtworkSurface();
 
     /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
-     * @param surface Text value to set.
+     * @param artworkSurface Text value to set.
      */
-    void addSurface(Text surface);
+    void addArtworkSurface(Text artworkSurface);
     /**
-     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
-     * @param surface URL value to set.
+     * @param artworkSurface URL value to set.
      */
-    void addSurface(URL surface);
+    void addArtworkSurface(URL artworkSurface);
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getColoristList();
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getColorist();
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @param colorist Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addColorist(Person colorist);
 
     /**
      * The depth of the item.
@@ -258,31 +219,169 @@ public interface VisualArtwork extends CreativeWork {
     void addDepth(QuantitativeValue depth);
 
     /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     * The height of the item.
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    <T> List<T> getArtEditionList();
+    <T> List<T> getHeightList();
 
     /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     * The height of the item.
      *
-     * @return {@link Text} or {@link Integer}
+     * @return {@link QuantitativeValue} or {@link Distance}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    <T> T getArtEdition();
+    <T> T getHeight();
 
     /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     * The height of the item.
      *
-     * @param artEdition Text value to set.
+     * @param height QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    void addArtEdition(Text artEdition);
+    void addHeight(QuantitativeValue height);
     /**
-     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     * The height of the item.
      *
-     * @param artEdition Integer value to set.
+     * @param height Distance value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
-    void addArtEdition(Integer artEdition);
+    void addHeight(Distance height);
+
+    /**
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getInkerList();
+
+    /**
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getInker();
+
+    /**
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     *
+     * @param inker Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addInker(Person inker);
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getLettererList();
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getLetterer();
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @param letterer Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addLetterer(Person letterer);
+
+    /**
+     * The individual who draws the primary narrative artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getPencilerList();
+
+    /**
+     * The individual who draws the primary narrative artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getPenciler();
+
+    /**
+     * The individual who draws the primary narrative artwork.
+     *
+     * @param penciler Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addPenciler(Person penciler);
+
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getSurfaceList();
+
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> T getSurface();
+
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param surface Text value to set.
+     */
+    void addSurface(Text surface);
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param surface URL value to set.
+     */
+    void addSurface(URL surface);
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getWeightList();
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getWeight();
+
+    /**
+     * The weight of the product or person.
+     *
+     * @param weight Mass value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addWeight(Mass weight);
+    /**
+     * The weight of the product or person.
+     *
+     * @param weight QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addWeight(QuantitativeValue weight);
 
     /**
      * The width of the item.
@@ -314,103 +413,4 @@ public interface VisualArtwork extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addWidth(Distance width);
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getLettererList();
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getLetterer();
-
-    /**
-     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-     *
-     * @param letterer Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addLetterer(Person letterer);
-
-    /**
-     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> List<T> getArtMediumList();
-
-    /**
-     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    <T> T getArtMedium();
-
-    /**
-     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
-     *
-     * @param artMedium URL value to set.
-     */
-    void addArtMedium(URL artMedium);
-    /**
-     * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
-     *
-     * @param artMedium Text value to set.
-     */
-    void addArtMedium(Text artMedium);
-
-    /**
-     * The individual who draws the primary narrative artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getPencilerList();
-
-    /**
-     * The individual who draws the primary narrative artwork.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getPenciler();
-
-    /**
-     * The individual who draws the primary narrative artwork.
-     *
-     * @param penciler Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addPenciler(Person penciler);
-
-    /**
-     * The individual who traces over the pencil drawings in ink after pencils are complete.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getInkerList();
-
-    /**
-     * The individual who traces over the pencil drawings in ink after pencils are complete.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getInker();
-
-    /**
-     * The individual who traces over the pencil drawings in ink after pencils are complete.
-     *
-     * @param inker Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addInker(Person inker);
 }

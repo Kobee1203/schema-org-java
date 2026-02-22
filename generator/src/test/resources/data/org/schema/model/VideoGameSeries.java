@@ -6,22 +6,22 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.CreativeWorkSeason;
-import org.schema.model.MusicGroup;
-import org.schema.model.Person;
-import org.schema.model.PerformingGroup;
-import org.schema.model.datatype.Integer;
-import org.schema.model.Thing;
 import org.schema.model.CreativeWork;
+import org.schema.model.CreativeWorkSeason;
 import org.schema.model.Episode;
-import org.schema.model.VideoObject;
-import org.schema.model.datatype.URL;
 import org.schema.model.GamePlayMode;
+import org.schema.model.MusicGroup;
 import org.schema.model.Organization;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Text;
+import org.schema.model.PerformingGroup;
+import org.schema.model.Person;
 import org.schema.model.Place;
 import org.schema.model.PostalAddress;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.Thing;
+import org.schema.model.VideoObject;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A video game series.
@@ -29,75 +29,6 @@ import org.schema.model.PostalAddress;
  * @see <a href="https://schema.org/VideoGameSeries">https://schema.org/VideoGameSeries</a>
  */
 public interface VideoGameSeries extends CreativeWorkSeries {
-
-    /**
-     * A season that is part of the media series.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    List<CreativeWorkSeason> getContainsSeasonList();
-
-    /**
-     * A season that is part of the media series.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    CreativeWorkSeason getContainsSeason();
-
-    /**
-     * A season that is part of the media series.
-     *
-     * @param containsSeason CreativeWorkSeason value to set.
-     */
-    void addContainsSeason(CreativeWorkSeason containsSeason);
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    List<CreativeWorkSeason> getSeasonsList();
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link CreativeWorkSeason}
-     */
-    CreativeWorkSeason getSeasons();
-
-    /**
-     * A season in a media series.
-     *
-     * @param seasons CreativeWorkSeason value to set.
-     */
-    void addSeasons(CreativeWorkSeason seasons);
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link MusicGroup} or {@link Person}
-     */
-    <T> List<T> getMusicByList();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link MusicGroup} or {@link Person}
-     */
-    <T> T getMusicBy();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy MusicGroup value to set.
-     */
-    void addMusicBy(MusicGroup musicBy);
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy Person value to set.
-     */
-    void addMusicBy(Person musicBy);
 
     /**
      * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -127,25 +58,25 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     void addActor(Person actor);
 
     /**
-     * The number of seasons in this series.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Integer}
+     * @return {@link Person}
      */
-    List<Integer> getNumberOfSeasonsList();
+    List<Person> getActorsList();
 
     /**
-     * The number of seasons in this series.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Integer}
+     * @return {@link Person}
      */
-    Integer getNumberOfSeasons();
+    Person getActors();
 
     /**
-     * The number of seasons in this series.
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param numberOfSeasons Integer value to set.
+     * @param actors Person value to set.
      */
-    void addNumberOfSeasons(Integer numberOfSeasons);
+    void addActors(Person actors);
 
     /**
      * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
@@ -190,178 +121,46 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     void addCheatCode(CreativeWork cheatCode);
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * A season that is part of the media series.
      *
-     * @return {@link Episode}
+     * @return {@link CreativeWorkSeason}
      */
-    List<Episode> getEpisodeList();
+    List<CreativeWorkSeason> getContainsSeasonList();
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * A season that is part of the media series.
      *
-     * @return {@link Episode}
+     * @return {@link CreativeWorkSeason}
      */
-    Episode getEpisode();
+    CreativeWorkSeason getContainsSeason();
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * A season that is part of the media series.
      *
-     * @param episode Episode value to set.
+     * @param containsSeason CreativeWorkSeason value to set.
      */
-    void addEpisode(Episode episode);
+    void addContainsSeason(CreativeWorkSeason containsSeason);
 
     /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Thing}
+     * @return {@link Person}
      */
-    List<Thing> getQuestList();
+    List<Person> getDirectorList();
 
     /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link Thing}
+     * @return {@link Person}
      */
-    Thing getQuest();
+    Person getDirector();
 
     /**
-     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param quest Thing value to set.
+     * @param director Person value to set.
      */
-    void addQuest(Thing quest);
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    List<VideoObject> getTrailerList();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    VideoObject getTrailer();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @param trailer VideoObject value to set.
-     */
-    void addTrailer(VideoObject trailer);
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link CreativeWorkSeason} or {@link URL}
-     */
-    <T> List<T> getSeasonList();
-
-    /**
-     * A season in a media series.
-     *
-     * @return {@link CreativeWorkSeason} or {@link URL}
-     */
-    <T> T getSeason();
-
-    /**
-     * A season in a media series.
-     *
-     * @param season CreativeWorkSeason value to set.
-     */
-    void addSeason(CreativeWorkSeason season);
-    /**
-     * A season in a media series.
-     *
-     * @param season URL value to set.
-     */
-    void addSeason(URL season);
-
-    /**
-     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
-     *
-     * @return {@link GamePlayMode}
-     */
-    List<GamePlayMode> getPlayModeList();
-
-    /**
-     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
-     *
-     * @return {@link GamePlayMode}
-     */
-    GamePlayMode getPlayMode();
-
-    /**
-     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
-     *
-     * @param playMode GamePlayMode value to set.
-     */
-    void addPlayMode(GamePlayMode playMode);
-
-    /**
-     * The number of episodes in this season or series.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getNumberOfEpisodesList();
-
-    /**
-     * The number of episodes in this season or series.
-     *
-     * @return {@link Integer}
-     */
-    Integer getNumberOfEpisodes();
-
-    /**
-     * The number of episodes in this season or series.
-     *
-     * @param numberOfEpisodes Integer value to set.
-     */
-    void addNumberOfEpisodes(Integer numberOfEpisodes);
-
-    /**
-     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getGameItemList();
-
-    /**
-     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
-     *
-     * @return {@link Thing}
-     */
-    Thing getGameItem();
-
-    /**
-     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
-     *
-     * @param gameItem Thing value to set.
-     */
-    void addGameItem(Thing gameItem);
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getProductionCompanyList();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    Organization getProductionCompany();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @param productionCompany Organization value to set.
-     */
-    void addProductionCompany(Organization productionCompany);
+    void addDirector(Person director);
 
     /**
      * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -385,79 +184,67 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     void addDirectors(Person directors);
 
     /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
+     * An episode of a TV, radio or game media within a series or season.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Episode}
      */
-    List<QuantitativeValue> getNumberOfPlayersList();
+    List<Episode> getEpisodeList();
 
     /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
+     * An episode of a TV, radio or game media within a series or season.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Episode}
      */
-    QuantitativeValue getNumberOfPlayers();
+    Episode getEpisode();
 
     /**
-     * Indicate how many people can play this game (minimum, maximum, or range).
+     * An episode of a TV, radio or game media within a series or season.
      *
-     * @param numberOfPlayers QuantitativeValue value to set.
+     * @param episode Episode value to set.
      */
-    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
+    void addEpisode(Episode episode);
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * An episode of a TV/radio series or season.
      *
-     * @return {@link Person}
+     * @return {@link Episode}
      */
-    List<Person> getActorsList();
+    List<Episode> getEpisodesList();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * An episode of a TV/radio series or season.
      *
-     * @return {@link Person}
+     * @return {@link Episode}
      */
-    Person getActors();
+    Episode getEpisodes();
 
     /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     * An episode of a TV/radio series or season.
      *
-     * @param actors Person value to set.
+     * @param episodes Episode value to set.
      */
-    void addActors(Person actors);
+    void addEpisodes(Episode episodes);
 
     /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
      *
-     * @return {@link Text} or {@link Thing} or {@link URL}
+     * @return {@link Thing}
      */
-    <T> List<T> getGamePlatformList();
+    List<Thing> getGameItemList();
 
     /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
      *
-     * @return {@link Text} or {@link Thing} or {@link URL}
+     * @return {@link Thing}
      */
-    <T> T getGamePlatform();
+    Thing getGameItem();
 
     /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
      *
-     * @param gamePlatform Text value to set.
+     * @param gameItem Thing value to set.
      */
-    void addGamePlatform(Text gamePlatform);
-    /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-     *
-     * @param gamePlatform Thing value to set.
-     */
-    void addGamePlatform(Thing gamePlatform);
-    /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-     *
-     * @param gamePlatform URL value to set.
-     */
-    void addGamePlatform(URL gamePlatform);
+    void addGameItem(Thing gameItem);
 
     /**
      * Real or fictional location of the game (or part of game).
@@ -493,44 +280,257 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     void addGameLocation(PostalAddress gameLocation);
 
     /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
-     * @return {@link Person}
+     * @return {@link Text} or {@link Thing} or {@link URL}
      */
-    List<Person> getDirectorList();
+    <T> List<T> getGamePlatformList();
 
     /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
-     * @return {@link Person}
+     * @return {@link Text} or {@link Thing} or {@link URL}
      */
-    Person getDirector();
+    <T> T getGamePlatform();
 
     /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
-     * @param director Person value to set.
+     * @param gamePlatform Text value to set.
      */
-    void addDirector(Person director);
+    void addGamePlatform(Text gamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param gamePlatform Thing value to set.
+     */
+    void addGamePlatform(Thing gamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param gamePlatform URL value to set.
+     */
+    void addGamePlatform(URL gamePlatform);
 
     /**
-     * An episode of a TV/radio series or season.
+     * The composer of the soundtrack.
      *
-     * @return {@link Episode}
+     * @return {@link MusicGroup} or {@link Person}
      */
-    List<Episode> getEpisodesList();
+    <T> List<T> getMusicByList();
 
     /**
-     * An episode of a TV/radio series or season.
+     * The composer of the soundtrack.
      *
-     * @return {@link Episode}
+     * @return {@link MusicGroup} or {@link Person}
      */
-    Episode getEpisodes();
+    <T> T getMusicBy();
 
     /**
-     * An episode of a TV/radio series or season.
+     * The composer of the soundtrack.
      *
-     * @param episodes Episode value to set.
+     * @param musicBy MusicGroup value to set.
      */
-    void addEpisodes(Episode episodes);
+    void addMusicBy(MusicGroup musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy Person value to set.
+     */
+    void addMusicBy(Person musicBy);
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfEpisodesList();
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @return {@link Integer}
+     */
+    Integer getNumberOfEpisodes();
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @param numberOfEpisodes Integer value to set.
+     */
+    void addNumberOfEpisodes(Integer numberOfEpisodes);
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getNumberOfPlayersList();
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @return {@link QuantitativeValue}
+     */
+    QuantitativeValue getNumberOfPlayers();
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @param numberOfPlayers QuantitativeValue value to set.
+     */
+    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
+
+    /**
+     * The number of seasons in this series.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfSeasonsList();
+
+    /**
+     * The number of seasons in this series.
+     *
+     * @return {@link Integer}
+     */
+    Integer getNumberOfSeasons();
+
+    /**
+     * The number of seasons in this series.
+     *
+     * @param numberOfSeasons Integer value to set.
+     */
+    void addNumberOfSeasons(Integer numberOfSeasons);
+
+    /**
+     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
+     *
+     * @return {@link GamePlayMode}
+     */
+    List<GamePlayMode> getPlayModeList();
+
+    /**
+     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
+     *
+     * @return {@link GamePlayMode}
+     */
+    GamePlayMode getPlayMode();
+
+    /**
+     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
+     *
+     * @param playMode GamePlayMode value to set.
+     */
+    void addPlayMode(GamePlayMode playMode);
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    Organization getProductionCompany();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @param productionCompany Organization value to set.
+     */
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getQuestList();
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @return {@link Thing}
+     */
+    Thing getQuest();
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @param quest Thing value to set.
+     */
+    void addQuest(Thing quest);
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason} or {@link URL}
+     */
+    <T> List<T> getSeasonList();
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason} or {@link URL}
+     */
+    <T> T getSeason();
+
+    /**
+     * A season in a media series.
+     *
+     * @param season CreativeWorkSeason value to set.
+     */
+    void addSeason(CreativeWorkSeason season);
+    /**
+     * A season in a media series.
+     *
+     * @param season URL value to set.
+     */
+    void addSeason(URL season);
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getSeasonsList();
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    CreativeWorkSeason getSeasons();
+
+    /**
+     * A season in a media series.
+     *
+     * @param seasons CreativeWorkSeason value to set.
+     */
+    void addSeasons(CreativeWorkSeason seasons);
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    VideoObject getTrailer();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @param trailer VideoObject value to set.
+     */
+    void addTrailer(VideoObject trailer);
 }

@@ -7,8 +7,8 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.OpeningHoursSpecification;
-import spec_custom.model.datatype.DateTime;
 import spec_custom.model.datatype.Date;
+import spec_custom.model.datatype.DateTime;
 
 /**
  * Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.

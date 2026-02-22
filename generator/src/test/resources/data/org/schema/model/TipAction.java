@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.Audience;
+import org.schema.model.ContactPoint;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * The act of giving money voluntarily to a beneficiary in recognition of services rendered.

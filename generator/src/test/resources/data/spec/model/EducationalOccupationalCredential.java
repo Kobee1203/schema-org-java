@@ -8,10 +8,10 @@ package spec.model;
 import java.util.List;
 import spec.model.AdministrativeArea;
 import spec.model.DefinedTerm;
-import spec.model.datatype.URL;
-import spec.model.datatype.Text;
-import spec.model.Organization;
 import spec.model.Duration;
+import spec.model.Organization;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * An educational or occupational credential. A diploma, academic degree, certification, qualification, badge, etc., that may be awarded to a person or other entity that meets the requirements defined by the credentialer.
@@ -21,30 +21,6 @@ import spec.model.Duration;
  * @see <a href="https://schema.org/EducationalOccupationalCredential">https://schema.org/EducationalOccupationalCredential</a>
  */
 public interface EducationalOccupationalCredential extends CreativeWork {
-
-    /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    List<AdministrativeArea> getValidInList();
-
-    /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    AdministrativeArea getValidIn();
-
-    /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
-     *
-     * @param validIn AdministrativeArea value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void addValidIn(AdministrativeArea validIn);
 
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
@@ -88,33 +64,6 @@ public interface EducationalOccupationalCredential extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     void addCompetencyRequired(Text competencyRequired);
-
-    /**
-     * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    List<Organization> getRecognizedByList();
-
-    /**
-     * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    Organization getRecognizedBy();
-
-    /**
-     * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
-     *
-     * @param recognizedBy Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void addRecognizedBy(Organization recognizedBy);
 
     /**
      * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
@@ -203,6 +152,33 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     void addEducationalLevel(Text educationalLevel);
 
     /**
+     * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    List<Organization> getRecognizedByList();
+
+    /**
+     * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    Organization getRecognizedBy();
+
+    /**
+     * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
+     *
+     * @param recognizedBy Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void addRecognizedBy(Organization recognizedBy);
+
+    /**
      * The duration of validity of a permit or similar thing.
      *
      * @return {@link Duration}
@@ -225,4 +201,28 @@ public interface EducationalOccupationalCredential extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     void addValidFor(Duration validFor);
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    List<AdministrativeArea> getValidInList();
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    AdministrativeArea getValidIn();
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @param validIn AdministrativeArea value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void addValidIn(AdministrativeArea validIn);
 }

@@ -6,10 +6,10 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Boolean;
-import spec.model.datatype.Text;
 import spec.model.MediaObject;
 import spec.model.PropertyValue;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Text;
 
 /**
  * An image file.
@@ -17,27 +17,6 @@ import spec.model.PropertyValue;
  * @see <a href="https://schema.org/ImageObject">https://schema.org/ImageObject</a>
  */
 public interface ImageObject extends MediaObject {
-
-    /**
-     * Indicates whether this image is representative of the content of the page.
-     *
-     * @return {@link Boolean}
-     */
-    List<Boolean> getRepresentativeOfPageList();
-
-    /**
-     * Indicates whether this image is representative of the content of the page.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getRepresentativeOfPage();
-
-    /**
-     * Indicates whether this image is representative of the content of the page.
-     *
-     * @param representativeOfPage Boolean value to set.
-     */
-    void addRepresentativeOfPage(Boolean representativeOfPage);
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -119,4 +98,25 @@ public interface ImageObject extends MediaObject {
      * @param exifData Text value to set.
      */
     void addExifData(Text exifData);
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getRepresentativeOfPageList();
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getRepresentativeOfPage();
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @param representativeOfPage Boolean value to set.
+     */
+    void addRepresentativeOfPage(Boolean representativeOfPage);
 }
