@@ -37,331 +37,446 @@ import org.schema.model.datatype.URL;
 @JsonLdTypeName("ParcelDelivery")
 public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ParcelDelivery {
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> provider;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
 
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
     }
 
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
     }
 
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private List<Order> partOfOrder;
+    private List<Text> alternateName;
 
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @return {@link Order}
-     */
     @Override
-    public List<Order> getPartOfOrderList() {
-        return partOfOrder;
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @return {@link Order}
-     */
     @Override
-    public Order getPartOfOrder() {
-        return getFirst(partOfOrder);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
     }
 
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @param partOfOrder Order value to set.
-     */
     @Override
-    public void addPartOfOrder(Order partOfOrder) {
-        this.partOfOrder = add(this.partOfOrder, partOfOrder);
-    }
-
-    private List<Product> itemShipped;
-
-    /**
-     * Item(s) being shipped.
-     *
-     * @return {@link Product}
-     */
-    @Override
-    public List<Product> getItemShippedList() {
-        return itemShipped;
-    }
-
-    /**
-     * Item(s) being shipped.
-     *
-     * @return {@link Product}
-     */
-    @Override
-    public Product getItemShipped() {
-        return getFirst(itemShipped);
-    }
-
-    /**
-     * Item(s) being shipped.
-     *
-     * @param itemShipped Product value to set.
-     */
-    @Override
-    public void addItemShipped(Product itemShipped) {
-        this.itemShipped = add(this.itemShipped, itemShipped);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> expectedArrivalFrom;
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> List<T> getExpectedArrivalFromList() {
-        return (List<T>) expectedArrivalFrom;
-    }
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> T getExpectedArrivalFrom() {
-        return (T) getFirst(expectedArrivalFrom);
-    }
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @param expectedArrivalFrom DateTime value to set.
-     */
-    @Override
-    public void addExpectedArrivalFrom(DateTime expectedArrivalFrom) {
-        this.expectedArrivalFrom = add(this.expectedArrivalFrom, expectedArrivalFrom);
-    }
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @param expectedArrivalFrom Date value to set.
-     */
-    @Override
-    public void addExpectedArrivalFrom(Date expectedArrivalFrom) {
-        this.expectedArrivalFrom = add(this.expectedArrivalFrom, expectedArrivalFrom);
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     private List<Organization> carrier;
 
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public List<Organization> getCarrierList() {
         return carrier;
     }
 
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public Organization getCarrier() {
         return getFirst(carrier);
     }
 
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @param carrier Organization value to set.
-     */
     @Override
     public void addCarrier(Organization carrier) {
         this.carrier = add(this.carrier, carrier);
     }
 
-    @JsonLdFieldTypes({ Date.class, DateTime.class })
-    private List<Object> expectedArrivalUntil;
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    @Override
-    public <T> List<T> getExpectedArrivalUntilList() {
-        return (List<T>) expectedArrivalUntil;
-    }
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    @Override
-    public <T> T getExpectedArrivalUntil() {
-        return (T) getFirst(expectedArrivalUntil);
-    }
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @param expectedArrivalUntil Date value to set.
-     */
-    @Override
-    public void addExpectedArrivalUntil(Date expectedArrivalUntil) {
-        this.expectedArrivalUntil = add(this.expectedArrivalUntil, expectedArrivalUntil);
-    }
-    /**
-     * The latest date the package may arrive.
-     *
-     * @param expectedArrivalUntil DateTime value to set.
-     */
-    @Override
-    public void addExpectedArrivalUntil(DateTime expectedArrivalUntil) {
-        this.expectedArrivalUntil = add(this.expectedArrivalUntil, expectedArrivalUntil);
-    }
-
     private List<PostalAddress> deliveryAddress;
 
-    /**
-     * Destination address.
-     *
-     * @return {@link PostalAddress}
-     */
     @Override
     public List<PostalAddress> getDeliveryAddressList() {
         return deliveryAddress;
     }
 
-    /**
-     * Destination address.
-     *
-     * @return {@link PostalAddress}
-     */
     @Override
     public PostalAddress getDeliveryAddress() {
         return getFirst(deliveryAddress);
     }
 
-    /**
-     * Destination address.
-     *
-     * @param deliveryAddress PostalAddress value to set.
-     */
     @Override
     public void addDeliveryAddress(PostalAddress deliveryAddress) {
         this.deliveryAddress = add(this.deliveryAddress, deliveryAddress);
     }
 
+    private List<DeliveryEvent> deliveryStatus;
+
+    @Override
+    public List<DeliveryEvent> getDeliveryStatusList() {
+        return deliveryStatus;
+    }
+
+    @Override
+    public DeliveryEvent getDeliveryStatus() {
+        return getFirst(deliveryStatus);
+    }
+
+    @Override
+    public void addDeliveryStatus(DeliveryEvent deliveryStatus) {
+        this.deliveryStatus = add(this.deliveryStatus, deliveryStatus);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> expectedArrivalFrom;
+
+    @Override
+    public <T> List<T> getExpectedArrivalFromList() {
+        return (List<T>) expectedArrivalFrom;
+    }
+
+    @Override
+    public <T> T getExpectedArrivalFrom() {
+        return (T) getFirst(expectedArrivalFrom);
+    }
+
+    @Override
+    public void addExpectedArrivalFrom(DateTime expectedArrivalFrom) {
+        this.expectedArrivalFrom = add(this.expectedArrivalFrom, expectedArrivalFrom);
+    }
+    @Override
+    public void addExpectedArrivalFrom(Date expectedArrivalFrom) {
+        this.expectedArrivalFrom = add(this.expectedArrivalFrom, expectedArrivalFrom);
+    }
+
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> expectedArrivalUntil;
+
+    @Override
+    public <T> List<T> getExpectedArrivalUntilList() {
+        return (List<T>) expectedArrivalUntil;
+    }
+
+    @Override
+    public <T> T getExpectedArrivalUntil() {
+        return (T) getFirst(expectedArrivalUntil);
+    }
+
+    @Override
+    public void addExpectedArrivalUntil(Date expectedArrivalUntil) {
+        this.expectedArrivalUntil = add(this.expectedArrivalUntil, expectedArrivalUntil);
+    }
+    @Override
+    public void addExpectedArrivalUntil(DateTime expectedArrivalUntil) {
+        this.expectedArrivalUntil = add(this.expectedArrivalUntil, expectedArrivalUntil);
+    }
+
     private List<DeliveryMethod> hasDeliveryMethod;
 
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @return {@link DeliveryMethod}
-     */
     @Override
     public List<DeliveryMethod> getHasDeliveryMethodList() {
         return hasDeliveryMethod;
     }
 
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @return {@link DeliveryMethod}
-     */
     @Override
     public DeliveryMethod getHasDeliveryMethod() {
         return getFirst(hasDeliveryMethod);
     }
 
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @param hasDeliveryMethod DeliveryMethod value to set.
-     */
     @Override
     public void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod) {
         this.hasDeliveryMethod = add(this.hasDeliveryMethod, hasDeliveryMethod);
     }
 
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Product> itemShipped;
+
+    @Override
+    public List<Product> getItemShippedList() {
+        return itemShipped;
+    }
+
+    @Override
+    public Product getItemShipped() {
+        return getFirst(itemShipped);
+    }
+
+    @Override
+    public void addItemShipped(Product itemShipped) {
+        this.itemShipped = add(this.itemShipped, itemShipped);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<PostalAddress> originAddress;
+
+    @Override
+    public List<PostalAddress> getOriginAddressList() {
+        return originAddress;
+    }
+
+    @Override
+    public PostalAddress getOriginAddress() {
+        return getFirst(originAddress);
+    }
+
+    @Override
+    public void addOriginAddress(PostalAddress originAddress) {
+        this.originAddress = add(this.originAddress, originAddress);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Order> partOfOrder;
+
+    @Override
+    public List<Order> getPartOfOrderList() {
+        return partOfOrder;
+    }
+
+    @Override
+    public Order getPartOfOrder() {
+        return getFirst(partOfOrder);
+    }
+
+    @Override
+    public void addPartOfOrder(Order partOfOrder) {
+        this.partOfOrder = add(this.partOfOrder, partOfOrder);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> provider;
+
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
     private List<Text> trackingNumber;
 
-    /**
-     * Shipper tracking number.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getTrackingNumberList() {
         return trackingNumber;
     }
 
-    /**
-     * Shipper tracking number.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getTrackingNumber() {
         return getFirst(trackingNumber);
     }
 
-    /**
-     * Shipper tracking number.
-     *
-     * @param trackingNumber Text value to set.
-     */
     @Override
     public void addTrackingNumber(Text trackingNumber) {
         this.trackingNumber = add(this.trackingNumber, trackingNumber);
@@ -369,609 +484,35 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
 
     private List<URL> trackingUrl;
 
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getTrackingUrlList() {
         return trackingUrl;
     }
 
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getTrackingUrl() {
         return getFirst(trackingUrl);
     }
 
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @param trackingUrl URL value to set.
-     */
     @Override
     public void addTrackingUrl(URL trackingUrl) {
         this.trackingUrl = add(this.trackingUrl, trackingUrl);
     }
 
-    private List<PostalAddress> originAddress;
-
-    /**
-     * Shipper's address.
-     *
-     * @return {@link PostalAddress}
-     */
-    @Override
-    public List<PostalAddress> getOriginAddressList() {
-        return originAddress;
-    }
-
-    /**
-     * Shipper's address.
-     *
-     * @return {@link PostalAddress}
-     */
-    @Override
-    public PostalAddress getOriginAddress() {
-        return getFirst(originAddress);
-    }
-
-    /**
-     * Shipper's address.
-     *
-     * @param originAddress PostalAddress value to set.
-     */
-    @Override
-    public void addOriginAddress(PostalAddress originAddress) {
-        this.originAddress = add(this.originAddress, originAddress);
-    }
-
-    private List<DeliveryEvent> deliveryStatus;
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @return {@link DeliveryEvent}
-     */
-    @Override
-    public List<DeliveryEvent> getDeliveryStatusList() {
-        return deliveryStatus;
-    }
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @return {@link DeliveryEvent}
-     */
-    @Override
-    public DeliveryEvent getDeliveryStatus() {
-        return getFirst(deliveryStatus);
-    }
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @param deliveryStatus DeliveryEvent value to set.
-     */
-    @Override
-    public void addDeliveryStatus(DeliveryEvent deliveryStatus) {
-        this.deliveryStatus = add(this.deliveryStatus, deliveryStatus);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
     private List<URL> url;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getUrlList() {
         return url;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getUrl() {
         return getFirst(url);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> disambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
-    @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 }

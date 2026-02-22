@@ -61,59 +61,24 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Text.class, LoanOrCredit.class, PaymentMethod.class })
     private List<Object> acceptedPaymentMethod;
 
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public <T> List<T> getAcceptedPaymentMethodList() {
         return (List<T>) acceptedPaymentMethod;
     }
 
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public <T> T getAcceptedPaymentMethod() {
         return (T) getFirst(acceptedPaymentMethod);
     }
 
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @param acceptedPaymentMethod Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addAcceptedPaymentMethod(Text acceptedPaymentMethod) {
         this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
     }
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @param acceptedPaymentMethod LoanOrCredit value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
         this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
     }
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @param acceptedPaymentMethod PaymentMethod value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
         this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
@@ -122,52 +87,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> actionableFeedbackPolicy;
 
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getActionableFeedbackPolicyList() {
         return (List<T>) actionableFeedbackPolicy;
     }
 
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getActionableFeedbackPolicy() {
         return (T) getFirst(actionableFeedbackPolicy);
     }
 
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @param actionableFeedbackPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
         this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
     }
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @param actionableFeedbackPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
         this.actionableFeedbackPolicy = add(this.actionableFeedbackPolicy, actionableFeedbackPolicy);
@@ -176,44 +109,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
@@ -222,40 +131,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ PostalAddress.class, Text.class })
     private List<Object> address;
 
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
     @Override
     public <T> List<T> getAddressList() {
         return (List<T>) address;
     }
 
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
     @Override
     public <T> T getAddress() {
         return (T) getFirst(address);
     }
 
-    /**
-     * Physical address of the item.
-     *
-     * @param address PostalAddress value to set.
-     */
     @Override
     public void addAddress(PostalAddress address) {
         this.address = add(this.address, address);
     }
-    /**
-     * Physical address of the item.
-     *
-     * @param address Text value to set.
-     */
     @Override
     public void addAddress(Text address) {
         this.address = add(this.address, address);
@@ -263,37 +152,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<InteractionCounter> agentInteractionStatistic;
 
-    /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
-     */
     @Override
     public List<InteractionCounter> getAgentInteractionStatisticList() {
         return agentInteractionStatistic;
     }
 
-    /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
-     */
     @Override
     public InteractionCounter getAgentInteractionStatistic() {
         return getFirst(agentInteractionStatistic);
     }
 
-    /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
-     *
-     * @param agentInteractionStatistic InteractionCounter value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
-     */
     @Override
     public void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic) {
         this.agentInteractionStatistic = add(this.agentInteractionStatistic, agentInteractionStatistic);
@@ -301,31 +169,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<AggregateRating> aggregateRating;
 
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
     @Override
     public List<AggregateRating> getAggregateRatingList() {
         return aggregateRating;
     }
 
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
     @Override
     public AggregateRating getAggregateRating() {
         return getFirst(aggregateRating);
     }
 
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
     @Override
     public void addAggregateRating(AggregateRating aggregateRating) {
         this.aggregateRating = add(this.aggregateRating, aggregateRating);
@@ -333,31 +186,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
@@ -365,31 +203,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Person> alumni;
 
-    /**
-     * Alumni of an organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public List<Person> getAlumniList() {
         return alumni;
     }
 
-    /**
-     * Alumni of an organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public Person getAlumni() {
         return getFirst(alumni);
     }
 
-    /**
-     * Alumni of an organization.
-     *
-     * @param alumni Person value to set.
-     */
     @Override
     public void addAlumni(Person alumni) {
         this.alumni = add(this.alumni, alumni);
@@ -398,58 +221,28 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
     private List<Object> areaServed;
 
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
     @Override
     public <T> List<T> getAreaServedList() {
         return (List<T>) areaServed;
     }
 
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
     @Override
     public <T> T getAreaServed() {
         return (T) getFirst(areaServed);
     }
 
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Place value to set.
-     */
     @Override
     public void addAreaServed(Place areaServed) {
         this.areaServed = add(this.areaServed, areaServed);
     }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed AdministrativeArea value to set.
-     */
     @Override
     public void addAreaServed(AdministrativeArea areaServed) {
         this.areaServed = add(this.areaServed, areaServed);
     }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed GeoShape value to set.
-     */
     @Override
     public void addAreaServed(GeoShape areaServed) {
         this.areaServed = add(this.areaServed, areaServed);
     }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
     @Override
     public void addAreaServed(Text areaServed) {
         this.areaServed = add(this.areaServed, areaServed);
@@ -457,31 +250,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> award;
 
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAwardList() {
         return award;
     }
 
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAward() {
         return getFirst(award);
     }
 
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
     @Override
     public void addAward(Text award) {
         this.award = add(this.award, award);
@@ -489,31 +267,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> awards;
 
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAwardsList() {
         return awards;
     }
 
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAwards() {
         return getFirst(awards);
     }
 
-    /**
-     * Awards won by or for this item.
-     *
-     * @param awards Text value to set.
-     */
     @Override
     public void addAwards(Text awards) {
         this.awards = add(this.awards, awards);
@@ -522,40 +285,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Brand.class, Organization.class })
     private List<Object> brand;
 
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
     @Override
     public <T> List<T> getBrandList() {
         return (List<T>) brand;
     }
 
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
     @Override
     public <T> T getBrand() {
         return (T) getFirst(brand);
     }
 
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Brand value to set.
-     */
     @Override
     public void addBrand(Brand brand) {
         this.brand = add(this.brand, brand);
     }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
     @Override
     public void addBrand(Organization brand) {
         this.brand = add(this.brand, brand);
@@ -563,31 +306,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Certification> companyRegistration;
 
-    /**
-     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
-     *
-     * @return {@link Certification}
-     */
     @Override
     public List<Certification> getCompanyRegistrationList() {
         return companyRegistration;
     }
 
-    /**
-     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
-     *
-     * @return {@link Certification}
-     */
     @Override
     public Certification getCompanyRegistration() {
         return getFirst(companyRegistration);
     }
 
-    /**
-     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
-     *
-     * @param companyRegistration Certification value to set.
-     */
     @Override
     public void addCompanyRegistration(Certification companyRegistration) {
         this.companyRegistration = add(this.companyRegistration, companyRegistration);
@@ -595,31 +323,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<ContactPoint> contactPoint;
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
     @Override
     public List<ContactPoint> getContactPointList() {
         return contactPoint;
     }
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
     @Override
     public ContactPoint getContactPoint() {
         return getFirst(contactPoint);
     }
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoint ContactPoint value to set.
-     */
     @Override
     public void addContactPoint(ContactPoint contactPoint) {
         this.contactPoint = add(this.contactPoint, contactPoint);
@@ -627,31 +340,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<ContactPoint> contactPoints;
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
     @Override
     public List<ContactPoint> getContactPointsList() {
         return contactPoints;
     }
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
     @Override
     public ContactPoint getContactPoints() {
         return getFirst(contactPoints);
     }
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoints ContactPoint value to set.
-     */
     @Override
     public void addContactPoints(ContactPoint contactPoints) {
         this.contactPoints = add(this.contactPoints, contactPoints);
@@ -660,52 +358,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private List<Object> correctionsPolicy;
 
-    /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getCorrectionsPolicyList() {
         return (List<T>) correctionsPolicy;
     }
 
-    /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getCorrectionsPolicy() {
         return (T) getFirst(correctionsPolicy);
     }
 
-    /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
-     *
-     * @param correctionsPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addCorrectionsPolicy(URL correctionsPolicy) {
         this.correctionsPolicy = add(this.correctionsPolicy, correctionsPolicy);
     }
-    /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
-     *
-     * @param correctionsPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addCorrectionsPolicy(CreativeWork correctionsPolicy) {
         this.correctionsPolicy = add(this.correctionsPolicy, correctionsPolicy);
@@ -713,31 +379,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Organization> department;
 
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public List<Organization> getDepartmentList() {
         return department;
     }
 
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public Organization getDepartment() {
         return getFirst(department);
     }
 
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @param department Organization value to set.
-     */
     @Override
     public void addDepartment(Organization department) {
         this.department = add(this.department, department);
@@ -746,40 +397,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ TextObject.class, Text.class })
     private List<Object> description;
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> List<T> getDescriptionList() {
         return (List<T>) description;
     }
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> T getDescription() {
         return (T) getFirst(description);
     }
 
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
     @Override
     public void addDescription(TextObject description) {
         this.description = add(this.description, description);
     }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
     @Override
     public void addDescription(Text description) {
         this.description = add(this.description, description);
@@ -787,31 +418,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
@@ -819,31 +435,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Date> dissolutionDate;
 
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @return {@link Date}
-     */
     @Override
     public List<Date> getDissolutionDateList() {
         return dissolutionDate;
     }
 
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @return {@link Date}
-     */
     @Override
     public Date getDissolutionDate() {
         return getFirst(dissolutionDate);
     }
 
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @param dissolutionDate Date value to set.
-     */
     @Override
     public void addDissolutionDate(Date dissolutionDate) {
         this.dissolutionDate = add(this.dissolutionDate, dissolutionDate);
@@ -852,52 +453,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> diversityPolicy;
 
-    /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getDiversityPolicyList() {
         return (List<T>) diversityPolicy;
     }
 
-    /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getDiversityPolicy() {
         return (T) getFirst(diversityPolicy);
     }
 
-    /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
-     *
-     * @param diversityPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addDiversityPolicy(CreativeWork diversityPolicy) {
         this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
     }
-    /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
-     *
-     * @param diversityPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addDiversityPolicy(URL diversityPolicy) {
         this.diversityPolicy = add(this.diversityPolicy, diversityPolicy);
@@ -906,52 +475,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ URL.class, Article.class })
     private List<Object> diversityStaffingReport;
 
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link URL} or {@link Article}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getDiversityStaffingReportList() {
         return (List<T>) diversityStaffingReport;
     }
 
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link URL} or {@link Article}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getDiversityStaffingReport() {
         return (T) getFirst(diversityStaffingReport);
     }
 
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addDiversityStaffingReport(URL diversityStaffingReport) {
         this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
     }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport Article value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addDiversityStaffingReport(Article diversityStaffingReport) {
         this.diversityStaffingReport = add(this.diversityStaffingReport, diversityStaffingReport);
@@ -959,34 +496,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> duns;
 
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Text> getDunsList() {
         return duns;
     }
 
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Text getDuns() {
         return getFirst(duns);
     }
 
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @param duns Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addDuns(Text duns) {
         this.duns = add(this.duns, duns);
@@ -994,31 +513,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> email;
 
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getEmailList() {
         return email;
     }
 
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getEmail() {
         return getFirst(email);
     }
 
-    /**
-     * Email address.
-     *
-     * @param email Text value to set.
-     */
     @Override
     public void addEmail(Text email) {
         this.email = add(this.email, email);
@@ -1026,31 +530,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Person> employee;
 
-    /**
-     * Someone working for this organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public List<Person> getEmployeeList() {
         return employee;
     }
 
-    /**
-     * Someone working for this organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public Person getEmployee() {
         return getFirst(employee);
     }
 
-    /**
-     * Someone working for this organization.
-     *
-     * @param employee Person value to set.
-     */
     @Override
     public void addEmployee(Person employee) {
         this.employee = add(this.employee, employee);
@@ -1058,31 +547,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Person> employees;
 
-    /**
-     * People working for this organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public List<Person> getEmployeesList() {
         return employees;
     }
 
-    /**
-     * People working for this organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public Person getEmployees() {
         return getFirst(employees);
     }
 
-    /**
-     * People working for this organization.
-     *
-     * @param employees Person value to set.
-     */
     @Override
     public void addEmployees(Person employees) {
         this.employees = add(this.employees, employees);
@@ -1091,48 +565,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> ethicsPolicy;
 
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
     @Override
     public <T> List<T> getEthicsPolicyList() {
         return (List<T>) ethicsPolicy;
     }
 
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
     @Override
     public <T> T getEthicsPolicy() {
         return (T) getFirst(ethicsPolicy);
     }
 
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @param ethicsPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
     @Override
     public void addEthicsPolicy(CreativeWork ethicsPolicy) {
         this.ethicsPolicy = add(this.ethicsPolicy, ethicsPolicy);
     }
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @param ethicsPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
     @Override
     public void addEthicsPolicy(URL ethicsPolicy) {
         this.ethicsPolicy = add(this.ethicsPolicy, ethicsPolicy);
@@ -1140,31 +586,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Event> event;
 
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
     @Override
     public List<Event> getEventList() {
         return event;
     }
 
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
     @Override
     public Event getEvent() {
         return getFirst(event);
     }
 
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @param event Event value to set.
-     */
     @Override
     public void addEvent(Event event) {
         this.event = add(this.event, event);
@@ -1172,31 +603,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Event> events;
 
-    /**
-     * Upcoming or past events associated with this place or organization.
-     *
-     * @return {@link Event}
-     */
     @Override
     public List<Event> getEventsList() {
         return events;
     }
 
-    /**
-     * Upcoming or past events associated with this place or organization.
-     *
-     * @return {@link Event}
-     */
     @Override
     public Event getEvents() {
         return getFirst(events);
     }
 
-    /**
-     * Upcoming or past events associated with this place or organization.
-     *
-     * @param events Event value to set.
-     */
     @Override
     public void addEvents(Event events) {
         this.events = add(this.events, events);
@@ -1204,31 +620,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> faxNumber;
 
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getFaxNumberList() {
         return faxNumber;
     }
 
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getFaxNumber() {
         return getFirst(faxNumber);
     }
 
-    /**
-     * The fax number.
-     *
-     * @param faxNumber Text value to set.
-     */
     @Override
     public void addFaxNumber(Text faxNumber) {
         this.faxNumber = add(this.faxNumber, faxNumber);
@@ -1237,40 +638,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Organization.class, Person.class })
     private List<Object> founder;
 
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> List<T> getFounderList() {
         return (List<T>) founder;
     }
 
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> T getFounder() {
         return (T) getFirst(founder);
     }
 
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @param founder Organization value to set.
-     */
     @Override
     public void addFounder(Organization founder) {
         this.founder = add(this.founder, founder);
     }
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @param founder Person value to set.
-     */
     @Override
     public void addFounder(Person founder) {
         this.founder = add(this.founder, founder);
@@ -1278,31 +659,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Person> founders;
 
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public List<Person> getFoundersList() {
         return founders;
     }
 
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
     @Override
     public Person getFounders() {
         return getFirst(founders);
     }
 
-    /**
-     * A person who founded this organization.
-     *
-     * @param founders Person value to set.
-     */
     @Override
     public void addFounders(Person founders) {
         this.founders = add(this.founders, founders);
@@ -1310,31 +676,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Date> foundingDate;
 
-    /**
-     * The date that this organization was founded.
-     *
-     * @return {@link Date}
-     */
     @Override
     public List<Date> getFoundingDateList() {
         return foundingDate;
     }
 
-    /**
-     * The date that this organization was founded.
-     *
-     * @return {@link Date}
-     */
     @Override
     public Date getFoundingDate() {
         return getFirst(foundingDate);
     }
 
-    /**
-     * The date that this organization was founded.
-     *
-     * @param foundingDate Date value to set.
-     */
     @Override
     public void addFoundingDate(Date foundingDate) {
         this.foundingDate = add(this.foundingDate, foundingDate);
@@ -1342,31 +693,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Place> foundingLocation;
 
-    /**
-     * The place where the Organization was founded.
-     *
-     * @return {@link Place}
-     */
     @Override
     public List<Place> getFoundingLocationList() {
         return foundingLocation;
     }
 
-    /**
-     * The place where the Organization was founded.
-     *
-     * @return {@link Place}
-     */
     @Override
     public Place getFoundingLocation() {
         return getFirst(foundingLocation);
     }
 
-    /**
-     * The place where the Organization was founded.
-     *
-     * @param foundingLocation Place value to set.
-     */
     @Override
     public void addFoundingLocation(Place foundingLocation) {
         this.foundingLocation = add(this.foundingLocation, foundingLocation);
@@ -1375,40 +711,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Organization.class, Person.class })
     private List<Object> funder;
 
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> List<T> getFunderList() {
         return (List<T>) funder;
     }
 
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> T getFunder() {
         return (T) getFirst(funder);
     }
 
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Organization value to set.
-     */
     @Override
     public void addFunder(Organization funder) {
         this.funder = add(this.funder, funder);
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Person value to set.
-     */
     @Override
     public void addFunder(Person funder) {
         this.funder = add(this.funder, funder);
@@ -1416,40 +732,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Grant> funding;
 
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public List<Grant> getFundingList() {
         return funding;
     }
 
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public Grant getFunding() {
         return getFirst(funding);
     }
 
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addFunding(Grant funding) {
         this.funding = add(this.funding, funding);
@@ -1457,34 +749,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> globalLocationNumber;
 
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Text> getGlobalLocationNumberList() {
         return globalLocationNumber;
     }
 
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Text getGlobalLocationNumber() {
         return getFirst(globalLocationNumber);
     }
 
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @param globalLocationNumber Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addGlobalLocationNumber(Text globalLocationNumber) {
         this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
@@ -1492,34 +766,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Certification> hasCertification;
 
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
     @Override
     public List<Certification> getHasCertificationList() {
         return hasCertification;
     }
 
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
     @Override
     public Certification getHasCertification() {
         return getFirst(hasCertification);
     }
 
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @param hasCertification Certification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
     @Override
     public void addHasCertification(Certification hasCertification) {
         this.hasCertification = add(this.hasCertification, hasCertification);
@@ -1527,37 +783,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<EducationalOccupationalCredential> hasCredential;
 
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public List<EducationalOccupationalCredential> getHasCredentialList() {
         return hasCredential;
     }
 
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public EducationalOccupationalCredential getHasCredential() {
         return getFirst(hasCredential);
     }
 
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @param hasCredential EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public void addHasCredential(EducationalOccupationalCredential hasCredential) {
         this.hasCredential = add(this.hasCredential, hasCredential);
@@ -1565,37 +800,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<URL> hasGS1DigitalLink;
 
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
     @Override
     public List<URL> getHasGS1DigitalLinkList() {
         return hasGS1DigitalLink;
     }
 
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
     @Override
     public URL getHasGS1DigitalLink() {
         return getFirst(hasGS1DigitalLink);
     }
 
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @param hasGS1DigitalLink URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
     @Override
     public void addHasGS1DigitalLink(URL hasGS1DigitalLink) {
         this.hasGS1DigitalLink = add(this.hasGS1DigitalLink, hasGS1DigitalLink);
@@ -1603,34 +817,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<MemberProgram> hasMemberProgram;
 
-    /**
-     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
-     *
-     * @return {@link MemberProgram}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
-     */
     @Override
     public List<MemberProgram> getHasMemberProgramList() {
         return hasMemberProgram;
     }
 
-    /**
-     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
-     *
-     * @return {@link MemberProgram}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
-     */
     @Override
     public MemberProgram getHasMemberProgram() {
         return getFirst(hasMemberProgram);
     }
 
-    /**
-     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
-     *
-     * @param hasMemberProgram MemberProgram value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
-     */
     @Override
     public void addHasMemberProgram(MemberProgram hasMemberProgram) {
         this.hasMemberProgram = add(this.hasMemberProgram, hasMemberProgram);
@@ -1638,37 +834,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
 
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
     @Override
     public List<MerchantReturnPolicy> getHasMerchantReturnPolicyList() {
         return hasMerchantReturnPolicy;
     }
 
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
         return getFirst(hasMerchantReturnPolicy);
     }
 
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
     @Override
     public void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
         this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
@@ -1676,31 +851,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<OfferCatalog> hasOfferCatalog;
 
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
     @Override
     public List<OfferCatalog> getHasOfferCatalogList() {
         return hasOfferCatalog;
     }
 
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
     @Override
     public OfferCatalog getHasOfferCatalog() {
         return getFirst(hasOfferCatalog);
     }
 
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @param hasOfferCatalog OfferCatalog value to set.
-     */
     @Override
     public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
         this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
@@ -1708,34 +868,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Place> hasPOS;
 
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Place> getHasPOSList() {
         return hasPOS;
     }
 
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Place getHasPOS() {
         return getFirst(hasPOS);
     }
 
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @param hasPOS Place value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addHasPOS(Place hasPOS) {
         this.hasPOS = add(this.hasPOS, hasPOS);
@@ -1743,37 +885,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<ShippingService> hasShippingService;
 
-    /**
-     * Specification of a shipping service offered by the organization.
-     *
-     * @return {@link ShippingService}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
     @Override
     public List<ShippingService> getHasShippingServiceList() {
         return hasShippingService;
     }
 
-    /**
-     * Specification of a shipping service offered by the organization.
-     *
-     * @return {@link ShippingService}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
     @Override
     public ShippingService getHasShippingService() {
         return getFirst(hasShippingService);
     }
 
-    /**
-     * Specification of a shipping service offered by the organization.
-     *
-     * @param hasShippingService ShippingService value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
     @Override
     public void addHasShippingService(ShippingService hasShippingService) {
         this.hasShippingService = add(this.hasShippingService, hasShippingService);
@@ -1782,54 +903,24 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
     private List<Object> identifier;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> List<T> getIdentifierList() {
         return (List<T>) identifier;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
     public void addIdentifier(URL identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
     @Override
     public void addIdentifier(PropertyValue identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
     @Override
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
@@ -1838,40 +929,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ ImageObject.class, URL.class })
     private List<Object> image;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> List<T> getImageList() {
         return (List<T>) image;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> T getImage() {
         return (T) getFirst(image);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
     public void addImage(ImageObject image) {
         this.image = add(this.image, image);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
     public void addImage(URL image) {
         this.image = add(this.image, image);
@@ -1879,34 +950,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<InteractionCounter> interactionStatistic;
 
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
     @Override
     public List<InteractionCounter> getInteractionStatisticList() {
         return interactionStatistic;
     }
 
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
     @Override
     public InteractionCounter getInteractionStatistic() {
         return getFirst(interactionStatistic);
     }
 
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @param interactionStatistic InteractionCounter value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
     @Override
     public void addInteractionStatistic(InteractionCounter interactionStatistic) {
         this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
@@ -1914,34 +967,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> isicV4;
 
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Text> getIsicV4List() {
         return isicV4;
     }
 
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Text getIsicV4() {
         return getFirst(isicV4);
     }
 
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @param isicV4 Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addIsicV4(Text isicV4) {
         this.isicV4 = add(this.isicV4, isicV4);
@@ -1949,37 +984,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> iso6523Code;
 
-    /**
-     * An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
-     */
     @Override
     public List<Text> getIso6523CodeList() {
         return iso6523Code;
     }
 
-    /**
-     * An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
-     */
     @Override
     public Text getIso6523Code() {
         return getFirst(iso6523Code);
     }
 
-    /**
-     * An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.
-     *
-     * @param iso6523Code Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
-     */
     @Override
     public void addIso6523Code(Text iso6523Code) {
         this.iso6523Code = add(this.iso6523Code, iso6523Code);
@@ -1988,49 +1002,24 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Text.class, DefinedTerm.class, URL.class })
     private List<Object> keywords;
 
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
     @Override
     public <T> List<T> getKeywordsList() {
         return (List<T>) keywords;
     }
 
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
     @Override
     public <T> T getKeywords() {
         return (T) getFirst(keywords);
     }
 
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
     @Override
     public void addKeywords(Text keywords) {
         this.keywords = add(this.keywords, keywords);
     }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
     @Override
     public void addKeywords(DefinedTerm keywords) {
         this.keywords = add(this.keywords, keywords);
     }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
     @Override
     public void addKeywords(URL keywords) {
         this.keywords = add(this.keywords, keywords);
@@ -2039,64 +1028,24 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Text.class, Thing.class, URL.class })
     private List<Object> knowsAbout;
 
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @return {@link Text} or {@link Thing} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getKnowsAboutList() {
         return (List<T>) knowsAbout;
     }
 
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @return {@link Text} or {@link Thing} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getKnowsAbout() {
         return (T) getFirst(knowsAbout);
     }
 
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addKnowsAbout(Text knowsAbout) {
         this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout Thing value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addKnowsAbout(Thing knowsAbout) {
         this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addKnowsAbout(URL knowsAbout) {
         this.knowsAbout = add(this.knowsAbout, knowsAbout);
@@ -2105,52 +1054,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Language.class, Text.class })
     private List<Object> knowsLanguage;
 
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getKnowsLanguageList() {
         return (List<T>) knowsLanguage;
     }
 
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getKnowsLanguage() {
         return (T) getFirst(knowsLanguage);
     }
 
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @param knowsLanguage Language value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addKnowsLanguage(Language knowsLanguage) {
         this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
     }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @param knowsLanguage Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addKnowsLanguage(Text knowsLanguage) {
         this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
@@ -2158,31 +1075,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<PostalAddress> legalAddress;
 
-    /**
-     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
-     *
-     * @return {@link PostalAddress}
-     */
     @Override
     public List<PostalAddress> getLegalAddressList() {
         return legalAddress;
     }
 
-    /**
-     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
-     *
-     * @return {@link PostalAddress}
-     */
     @Override
     public PostalAddress getLegalAddress() {
         return getFirst(legalAddress);
     }
 
-    /**
-     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
-     *
-     * @param legalAddress PostalAddress value to set.
-     */
     @Override
     public void addLegalAddress(PostalAddress legalAddress) {
         this.legalAddress = add(this.legalAddress, legalAddress);
@@ -2190,34 +1092,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> legalName;
 
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Text> getLegalNameList() {
         return legalName;
     }
 
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Text getLegalName() {
         return getFirst(legalName);
     }
 
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @param legalName Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addLegalName(Text legalName) {
         this.legalName = add(this.legalName, legalName);
@@ -2225,31 +1109,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Person> legalRepresentative;
 
-    /**
-     * One or multiple persons who represent this organization legally such as CEO or sole administrator.
-     *
-     * @return {@link Person}
-     */
     @Override
     public List<Person> getLegalRepresentativeList() {
         return legalRepresentative;
     }
 
-    /**
-     * One or multiple persons who represent this organization legally such as CEO or sole administrator.
-     *
-     * @return {@link Person}
-     */
     @Override
     public Person getLegalRepresentative() {
         return getFirst(legalRepresentative);
     }
 
-    /**
-     * One or multiple persons who represent this organization legally such as CEO or sole administrator.
-     *
-     * @param legalRepresentative Person value to set.
-     */
     @Override
     public void addLegalRepresentative(Person legalRepresentative) {
         this.legalRepresentative = add(this.legalRepresentative, legalRepresentative);
@@ -2257,37 +1126,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> leiCode;
 
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
-     */
     @Override
     public List<Text> getLeiCodeList() {
         return leiCode;
     }
 
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
-     */
     @Override
     public Text getLeiCode() {
         return getFirst(leiCode);
     }
 
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @param leiCode Text value to set.
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
-     */
     @Override
     public void addLeiCode(Text leiCode) {
         this.leiCode = add(this.leiCode, leiCode);
@@ -2296,58 +1144,28 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Text.class, VirtualLocation.class, Place.class, PostalAddress.class })
     private List<Object> location;
 
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
-     */
     @Override
     public <T> List<T> getLocationList() {
         return (List<T>) location;
     }
 
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
-     */
     @Override
     public <T> T getLocation() {
         return (T) getFirst(location);
     }
 
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
     @Override
     public void addLocation(Text location) {
         this.location = add(this.location, location);
     }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
     @Override
     public void addLocation(VirtualLocation location) {
         this.location = add(this.location, location);
     }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
     @Override
     public void addLocation(Place location) {
         this.location = add(this.location, location);
     }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
     @Override
     public void addLocation(PostalAddress location) {
         this.location = add(this.location, location);
@@ -2356,44 +1174,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private List<Object> logo;
 
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public <T> List<T> getLogoList() {
         return (List<T>) logo;
     }
 
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public <T> T getLogo() {
         return (T) getFirst(logo);
     }
 
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addLogo(URL logo) {
         this.logo = add(this.logo, logo);
     }
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addLogo(ImageObject logo) {
         this.logo = add(this.logo, logo);
@@ -2402,40 +1196,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> mainEntityOfPage;
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> List<T> getMainEntityOfPageList() {
         return (List<T>) mainEntityOfPage;
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> T getMainEntityOfPage() {
         return (T) getFirst(mainEntityOfPage);
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
     @Override
     public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
     @Override
     public void addMainEntityOfPage(URL mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
@@ -2443,34 +1217,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Offer> makesOffer;
 
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Offer> getMakesOfferList() {
         return makesOffer;
     }
 
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Offer getMakesOffer() {
         return getFirst(makesOffer);
     }
 
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @param makesOffer Offer value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addMakesOffer(Offer makesOffer) {
         this.makesOffer = add(this.makesOffer, makesOffer);
@@ -2479,40 +1235,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Organization.class, Person.class })
     private List<Object> member;
 
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> List<T> getMemberList() {
         return (List<T>) member;
     }
 
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> T getMember() {
         return (T) getFirst(member);
     }
 
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @param member Organization value to set.
-     */
     @Override
     public void addMember(Organization member) {
         this.member = add(this.member, member);
     }
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @param member Person value to set.
-     */
     @Override
     public void addMember(Person member) {
         this.member = add(this.member, member);
@@ -2521,49 +1257,24 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ ProgramMembership.class, Organization.class, MemberProgramTier.class })
     private List<Object> memberOf;
 
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
     @Override
     public <T> List<T> getMemberOfList() {
         return (List<T>) memberOf;
     }
 
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
     @Override
     public <T> T getMemberOf() {
         return (T) getFirst(memberOf);
     }
 
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf ProgramMembership value to set.
-     */
     @Override
     public void addMemberOf(ProgramMembership memberOf) {
         this.memberOf = add(this.memberOf, memberOf);
     }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf Organization value to set.
-     */
     @Override
     public void addMemberOf(Organization memberOf) {
         this.memberOf = add(this.memberOf, memberOf);
     }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf MemberProgramTier value to set.
-     */
     @Override
     public void addMemberOf(MemberProgramTier memberOf) {
         this.memberOf = add(this.memberOf, memberOf);
@@ -2572,40 +1283,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> members;
 
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
     @Override
     public <T> List<T> getMembersList() {
         return (List<T>) members;
     }
 
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
     @Override
     public <T> T getMembers() {
         return (T) getFirst(members);
     }
 
-    /**
-     * A member of this organization.
-     *
-     * @param members Person value to set.
-     */
     @Override
     public void addMembers(Person members) {
         this.members = add(this.members, members);
     }
-    /**
-     * A member of this organization.
-     *
-     * @param members Organization value to set.
-     */
     @Override
     public void addMembers(Organization members) {
         this.members = add(this.members, members);
@@ -2613,34 +1304,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> naics;
 
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Text> getNaicsList() {
         return naics;
     }
 
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Text getNaics() {
         return getFirst(naics);
     }
 
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @param naics Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addNaics(Text naics) {
         this.naics = add(this.naics, naics);
@@ -2648,31 +1321,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> name;
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getNameList() {
         return name;
     }
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getName() {
         return getFirst(name);
     }
 
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
     @Override
     public void addName(Text name) {
         this.name = add(this.name, name);
@@ -2680,37 +1338,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<NonprofitType> nonprofitStatus;
 
-    /**
-     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @return {@link NonprofitType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
     @Override
     public List<NonprofitType> getNonprofitStatusList() {
         return nonprofitStatus;
     }
 
-    /**
-     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @return {@link NonprofitType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
     @Override
     public NonprofitType getNonprofitStatus() {
         return getFirst(nonprofitStatus);
     }
 
-    /**
-     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @param nonprofitStatus NonprofitType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
     @Override
     public void addNonprofitStatus(NonprofitType nonprofitStatus) {
         this.nonprofitStatus = add(this.nonprofitStatus, nonprofitStatus);
@@ -2718,31 +1355,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<QuantitativeValue> numberOfEmployees;
 
-    /**
-     * The number of employees in an organization, e.g. business.
-     *
-     * @return {@link QuantitativeValue}
-     */
     @Override
     public List<QuantitativeValue> getNumberOfEmployeesList() {
         return numberOfEmployees;
     }
 
-    /**
-     * The number of employees in an organization, e.g. business.
-     *
-     * @return {@link QuantitativeValue}
-     */
     @Override
     public QuantitativeValue getNumberOfEmployees() {
         return getFirst(numberOfEmployees);
     }
 
-    /**
-     * The number of employees in an organization, e.g. business.
-     *
-     * @param numberOfEmployees QuantitativeValue value to set.
-     */
     @Override
     public void addNumberOfEmployees(QuantitativeValue numberOfEmployees) {
         this.numberOfEmployees = add(this.numberOfEmployees, numberOfEmployees);
@@ -2751,44 +1373,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> owner;
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> List<T> getOwnerList() {
         return (List<T>) owner;
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> T getOwner() {
         return (T) getFirst(owner);
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Person owner) {
         this.owner = add(this.owner, owner);
     }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Organization owner) {
         this.owner = add(this.owner, owner);
@@ -2797,76 +1395,28 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ CreativeWork.class, URL.class, AboutPage.class, Text.class })
     private List<Object> ownershipFundingInfo;
 
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getOwnershipFundingInfoList() {
         return (List<T>) ownershipFundingInfo;
     }
 
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @return {@link CreativeWork} or {@link URL} or {@link AboutPage} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getOwnershipFundingInfo() {
         return (T) getFirst(ownershipFundingInfo);
     }
 
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
         this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
     }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addOwnershipFundingInfo(URL ownershipFundingInfo) {
         this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
     }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo AboutPage value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
         this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
     }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param ownershipFundingInfo Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addOwnershipFundingInfo(Text ownershipFundingInfo) {
         this.ownershipFundingInfo = add(this.ownershipFundingInfo, ownershipFundingInfo);
@@ -2874,37 +1424,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Thing> owns;
 
-    /**
-     * Things owned by the organization or person.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Thing> getOwnsList() {
         return owns;
     }
 
-    /**
-     * Things owned by the organization or person.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Thing getOwns() {
         return getFirst(owns);
     }
 
-    /**
-     * Things owned by the organization or person.
-     *
-     * @param owns Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addOwns(Thing owns) {
         this.owns = add(this.owns, owns);
@@ -2912,31 +1441,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Organization> parentOrganization;
 
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public List<Organization> getParentOrganizationList() {
         return parentOrganization;
     }
 
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public Organization getParentOrganization() {
         return getFirst(parentOrganization);
     }
 
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @param parentOrganization Organization value to set.
-     */
     @Override
     public void addParentOrganization(Organization parentOrganization) {
         this.parentOrganization = add(this.parentOrganization, parentOrganization);
@@ -2944,31 +1458,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Action> potentialAction;
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public List<Action> getPotentialActionList() {
         return potentialAction;
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public Action getPotentialAction() {
         return getFirst(potentialAction);
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
     @Override
     public void addPotentialAction(Action potentialAction) {
         this.potentialAction = add(this.potentialAction, potentialAction);
@@ -2977,48 +1476,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> publishingPrinciples;
 
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> List<T> getPublishingPrinciplesList() {
         return (List<T>) publishingPrinciples;
     }
 
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> T getPublishingPrinciples() {
         return (T) getFirst(publishingPrinciples);
     }
 
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples CreativeWork value to set.
-     */
     @Override
     public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
         this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples URL value to set.
-     */
     @Override
     public void addPublishingPrinciples(URL publishingPrinciples) {
         this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
@@ -3026,31 +1497,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Review> review;
 
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
     @Override
     public List<Review> getReviewList() {
         return review;
     }
 
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
     @Override
     public Review getReview() {
         return getFirst(review);
     }
 
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
     @Override
     public void addReview(Review review) {
         this.review = add(this.review, review);
@@ -3058,31 +1514,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Review> reviews;
 
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
     @Override
     public List<Review> getReviewsList() {
         return reviews;
     }
 
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
     @Override
     public Review getReviews() {
         return getFirst(reviews);
     }
 
-    /**
-     * Review of the item.
-     *
-     * @param reviews Review value to set.
-     */
     @Override
     public void addReviews(Review reviews) {
         this.reviews = add(this.reviews, reviews);
@@ -3090,31 +1531,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<URL> sameAs;
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getSameAsList() {
         return sameAs;
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getSameAs() {
         return getFirst(sameAs);
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
     @Override
     public void addSameAs(URL sameAs) {
         this.sameAs = add(this.sameAs, sameAs);
@@ -3122,34 +1548,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Demand> seeks;
 
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Demand> getSeeksList() {
         return seeks;
     }
 
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Demand getSeeks() {
         return getFirst(seeks);
     }
 
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @param seeks Demand value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addSeeks(Demand seeks) {
         this.seeks = add(this.seeks, seeks);
@@ -3158,49 +1566,24 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Place.class })
     private List<Object> serviceArea;
 
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
-     */
     @Override
     public <T> List<T> getServiceAreaList() {
         return (List<T>) serviceArea;
     }
 
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
-     */
     @Override
     public <T> T getServiceArea() {
         return (T) getFirst(serviceArea);
     }
 
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea AdministrativeArea value to set.
-     */
     @Override
     public void addServiceArea(AdministrativeArea serviceArea) {
         this.serviceArea = add(this.serviceArea, serviceArea);
     }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea GeoShape value to set.
-     */
     @Override
     public void addServiceArea(GeoShape serviceArea) {
         this.serviceArea = add(this.serviceArea, serviceArea);
     }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea Place value to set.
-     */
     @Override
     public void addServiceArea(Place serviceArea) {
         this.serviceArea = add(this.serviceArea, serviceArea);
@@ -3209,48 +1592,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private List<Object> skills;
 
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
     @Override
     public <T> List<T> getSkillsList() {
         return (List<T>) skills;
     }
 
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
     @Override
     public <T> T getSkills() {
         return (T) getFirst(skills);
     }
 
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @param skills Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
     @Override
     public void addSkills(Text skills) {
         this.skills = add(this.skills, skills);
     }
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @param skills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
     @Override
     public void addSkills(DefinedTerm skills) {
         this.skills = add(this.skills, skills);
@@ -3258,31 +1613,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> slogan;
 
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getSloganList() {
         return slogan;
     }
 
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getSlogan() {
         return getFirst(slogan);
     }
 
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param slogan Text value to set.
-     */
     @Override
     public void addSlogan(Text slogan) {
         this.slogan = add(this.slogan, slogan);
@@ -3291,40 +1631,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> sponsor;
 
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
     @Override
     public <T> List<T> getSponsorList() {
         return (List<T>) sponsor;
     }
 
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
     @Override
     public <T> T getSponsor() {
         return (T) getFirst(sponsor);
     }
 
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Person value to set.
-     */
     @Override
     public void addSponsor(Person sponsor) {
         this.sponsor = add(this.sponsor, sponsor);
     }
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Organization value to set.
-     */
     @Override
     public void addSponsor(Organization sponsor) {
         this.sponsor = add(this.sponsor, sponsor);
@@ -3332,31 +1652,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Organization> subOrganization;
 
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public List<Organization> getSubOrganizationList() {
         return subOrganization;
     }
 
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     * @return {@link Organization}
-     */
     @Override
     public Organization getSubOrganization() {
         return getFirst(subOrganization);
     }
 
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     * @param subOrganization Organization value to set.
-     */
     @Override
     public void addSubOrganization(Organization subOrganization) {
         this.subOrganization = add(this.subOrganization, subOrganization);
@@ -3365,44 +1670,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private List<Object> subjectOf;
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> List<T> getSubjectOfList() {
         return (List<T>) subjectOf;
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> T getSubjectOf() {
         return (T) getFirst(subjectOf);
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(Event subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(CreativeWork subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
@@ -3410,34 +1691,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> taxID;
 
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Text> getTaxIDList() {
         return taxID;
     }
 
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Text getTaxID() {
         return getFirst(taxID);
     }
 
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     *
-     * @param taxID Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addTaxID(Text taxID) {
         this.taxID = add(this.taxID, taxID);
@@ -3445,31 +1708,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> telephone;
 
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getTelephoneList() {
         return telephone;
     }
 
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getTelephone() {
         return getFirst(telephone);
     }
 
-    /**
-     * The telephone number.
-     *
-     * @param telephone Text value to set.
-     */
     @Override
     public void addTelephone(Text telephone) {
         this.telephone = add(this.telephone, telephone);
@@ -3478,52 +1726,20 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> unnamedSourcesPolicy;
 
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> List<T> getUnnamedSourcesPolicyList() {
         return (List<T>) unnamedSourcesPolicy;
     }
 
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public <T> T getUnnamedSourcesPolicy() {
         return (T) getFirst(unnamedSourcesPolicy);
     }
 
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @param unnamedSourcesPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
         this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
     }
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @param unnamedSourcesPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
         this.unnamedSourcesPolicy = add(this.unnamedSourcesPolicy, unnamedSourcesPolicy);
@@ -3531,31 +1747,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<URL> url;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getUrlList() {
         return url;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getUrl() {
         return getFirst(url);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
@@ -3563,34 +1764,16 @@ public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdN
 
     private List<Text> vatID;
 
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public List<Text> getVatIDList() {
         return vatID;
     }
 
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public Text getVatID() {
         return getFirst(vatID);
     }
 
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @param vatID Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
     @Override
     public void addVatID(Text vatID) {
         this.vatID = add(this.vatID, vatID);

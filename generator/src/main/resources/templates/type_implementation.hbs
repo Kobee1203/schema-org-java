@@ -18,13 +18,11 @@ public class {{this.name}}Impl{{#if this.baseParent}} extends {{this.baseParent.
     private {{&this.field.fieldTypeAsList}} {{this.field.fieldName}};
 
 {{#with this.accessor}}
-    {{> templates/fragment/javadoc_getter}}
     @Override
     public {{&this.returnFieldTypeAsList}} {{this.getterMethod}}() {
         return {{#if this.castAsList}}{{&this.castAsList}} {{/if}}{{../this.field.fieldName}};
     }
 
-    {{> templates/fragment/javadoc_getter}}
     @Override
     public {{&this.returnFieldType}} {{this.firstGetterMethod}}() {
         return {{#if this.cast}}{{&this.cast}} {{/if}}getFirst({{../this.field.fieldName}});
@@ -32,7 +30,6 @@ public class {{this.name}}Impl{{#if this.baseParent}} extends {{this.baseParent.
 {{/with}}
 
 {{#each this.mutators}}
-    {{> templates/fragment/javadoc_setter}}
     @Override
     public void {{this.addMethod}}({{this.paramType}} {{../this.field.fieldName}}) {
         this.{{../this.field.fieldName}} = add(this.{{../this.field.fieldName}}, {{this.paramValue}});

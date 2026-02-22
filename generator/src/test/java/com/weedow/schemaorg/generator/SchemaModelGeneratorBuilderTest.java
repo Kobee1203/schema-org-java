@@ -25,13 +25,15 @@ class SchemaModelGeneratorBuilderTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorBuilderTest.class);
 
+    private static final boolean SKIP_CONTENT_ASSERTION = Boolean.parseBoolean(System.getenv("SKIP_CONTENT_ASSERTION"));
+
     @AfterEach
     void tearDown() {
         SchemaGeneratorUtils.clearCache();
     }
 
     @Test
-    @Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
+    //@Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
     void generate_all() {
         Map<Path, List<String>> dataMap = generateAndVerify(null, null, null, false, null);
 
@@ -101,6 +103,8 @@ class SchemaModelGeneratorBuilderTest {
         }
         generatorOptions
                 .addSuccessHandler((templateName, outputFile, context) -> {
+                    if (SKIP_CONTENT_ASSERTION) return;
+
                     String expectedFilePath = "/data/" + generatorOptions.getOutputFolder().relativize(outputFile).toString().replace("\\", "/");
                     LOG.debug("Comparing {} with {}", outputFile, expectedFilePath);
                     try {

@@ -18,27 +18,6 @@ import org.schema.model.datatype.Integer;
 public interface Comment extends CreativeWork {
 
     /**
-     * The number of upvotes this question, answer or comment has received from the community.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getUpvoteCountList();
-
-    /**
-     * The number of upvotes this question, answer or comment has received from the community.
-     *
-     * @return {@link Integer}
-     */
-    Integer getUpvoteCount();
-
-    /**
-     * The number of upvotes this question, answer or comment has received from the community.
-     *
-     * @param upvoteCount Integer value to set.
-     */
-    void addUpvoteCount(Integer upvoteCount);
-
-    /**
      * The number of downvotes this question, answer or comment has received from the community.
      *
      * @return {@link Integer}
@@ -58,27 +37,6 @@ public interface Comment extends CreativeWork {
      * @param downvoteCount Integer value to set.
      */
     void addDownvoteCount(Integer downvoteCount);
-
-    /**
-     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
-     *
-     * @return {@link CreativeWork}
-     */
-    List<CreativeWork> getSharedContentList();
-
-    /**
-     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
-     *
-     * @return {@link CreativeWork}
-     */
-    CreativeWork getSharedContent();
-
-    /**
-     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
-     *
-     * @param sharedContent CreativeWork value to set.
-     */
-    void addSharedContent(CreativeWork sharedContent);
 
     /**
      * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
@@ -106,4 +64,46 @@ public interface Comment extends CreativeWork {
      * @param parentItem Comment value to set.
      */
     void addParentItem(Comment parentItem);
+
+    /**
+     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getSharedContentList();
+
+    /**
+     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getSharedContent();
+
+    /**
+     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
+     *
+     * @param sharedContent CreativeWork value to set.
+     */
+    void addSharedContent(CreativeWork sharedContent);
+
+    /**
+     * The number of upvotes this question, answer or comment has received from the community.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getUpvoteCountList();
+
+    /**
+     * The number of upvotes this question, answer or comment has received from the community.
+     *
+     * @return {@link Integer}
+     */
+    Integer getUpvoteCount();
+
+    /**
+     * The number of upvotes this question, answer or comment has received from the community.
+     *
+     * @param upvoteCount Integer value to set.
+     */
+    void addUpvoteCount(Integer upvoteCount);
 }

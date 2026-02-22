@@ -24,6 +24,54 @@ import org.schema.model.datatype.URL;
 public interface RadioSeries extends CreativeWorkSeries {
 
     /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> List<T> getActorList();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> T getActor();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor Person value to set.
+     */
+    void addActor(Person actor);
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getActors();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actors Person value to set.
+     */
+    void addActors(Person actors);
+
+    /**
      * A season that is part of the media series.
      *
      * @return {@link CreativeWorkSeason}
@@ -45,25 +93,88 @@ public interface RadioSeries extends CreativeWorkSeries {
     void addContainsSeason(CreativeWorkSeason containsSeason);
 
     /**
-     * A season in a media series.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link CreativeWorkSeason}
+     * @return {@link Person}
      */
-    List<CreativeWorkSeason> getSeasonsList();
+    List<Person> getDirectorList();
 
     /**
-     * A season in a media series.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @return {@link CreativeWorkSeason}
+     * @return {@link Person}
      */
-    CreativeWorkSeason getSeasons();
+    Person getDirector();
 
     /**
-     * A season in a media series.
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param seasons CreativeWorkSeason value to set.
+     * @param director Person value to set.
      */
-    void addSeasons(CreativeWorkSeason seasons);
+    void addDirector(Person director);
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirectors();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param directors Person value to set.
+     */
+    void addDirectors(Person directors);
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodeList();
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    Episode getEpisode();
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @param episode Episode value to set.
+     */
+    void addEpisode(Episode episode);
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodesList();
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    Episode getEpisodes();
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @param episodes Episode value to set.
+     */
+    void addEpisodes(Episode episodes);
 
     /**
      * The composer of the soundtrack.
@@ -93,31 +204,25 @@ public interface RadioSeries extends CreativeWorkSeries {
     void addMusicBy(Person musicBy);
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The number of episodes in this season or series.
      *
-     * @return {@link PerformingGroup} or {@link Person}
+     * @return {@link Integer}
      */
-    <T> List<T> getActorList();
+    List<Integer> getNumberOfEpisodesList();
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The number of episodes in this season or series.
      *
-     * @return {@link PerformingGroup} or {@link Person}
+     * @return {@link Integer}
      */
-    <T> T getActor();
+    Integer getNumberOfEpisodes();
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The number of episodes in this season or series.
      *
-     * @param actor PerformingGroup value to set.
+     * @param numberOfEpisodes Integer value to set.
      */
-    void addActor(PerformingGroup actor);
-    /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actor Person value to set.
-     */
-    void addActor(Person actor);
+    void addNumberOfEpisodes(Integer numberOfEpisodes);
 
     /**
      * The number of seasons in this series.
@@ -141,46 +246,25 @@ public interface RadioSeries extends CreativeWorkSeries {
     void addNumberOfSeasons(Integer numberOfSeasons);
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @return {@link Episode}
+     * @return {@link Organization}
      */
-    List<Episode> getEpisodeList();
+    List<Organization> getProductionCompanyList();
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @return {@link Episode}
+     * @return {@link Organization}
      */
-    Episode getEpisode();
+    Organization getProductionCompany();
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @param episode Episode value to set.
+     * @param productionCompany Organization value to set.
      */
-    void addEpisode(Episode episode);
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    List<VideoObject> getTrailerList();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    VideoObject getTrailer();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @param trailer VideoObject value to set.
-     */
-    void addTrailer(VideoObject trailer);
+    void addProductionCompany(Organization productionCompany);
 
     /**
      * A season in a media series.
@@ -210,128 +294,44 @@ public interface RadioSeries extends CreativeWorkSeries {
     void addSeason(URL season);
 
     /**
-     * The number of episodes in this season or series.
+     * A season in a media series.
      *
-     * @return {@link Integer}
+     * @return {@link CreativeWorkSeason}
      */
-    List<Integer> getNumberOfEpisodesList();
+    List<CreativeWorkSeason> getSeasonsList();
 
     /**
-     * The number of episodes in this season or series.
+     * A season in a media series.
      *
-     * @return {@link Integer}
+     * @return {@link CreativeWorkSeason}
      */
-    Integer getNumberOfEpisodes();
+    CreativeWorkSeason getSeasons();
 
     /**
-     * The number of episodes in this season or series.
+     * A season in a media series.
      *
-     * @param numberOfEpisodes Integer value to set.
+     * @param seasons CreativeWorkSeason value to set.
      */
-    void addNumberOfEpisodes(Integer numberOfEpisodes);
+    void addSeasons(CreativeWorkSeason seasons);
 
     /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     * The trailer of a movie or TV/radio series, season, episode, etc.
      *
-     * @return {@link Organization}
+     * @return {@link VideoObject}
      */
-    List<Organization> getProductionCompanyList();
+    List<VideoObject> getTrailerList();
 
     /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     * The trailer of a movie or TV/radio series, season, episode, etc.
      *
-     * @return {@link Organization}
+     * @return {@link VideoObject}
      */
-    Organization getProductionCompany();
+    VideoObject getTrailer();
 
     /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     * The trailer of a movie or TV/radio series, season, episode, etc.
      *
-     * @param productionCompany Organization value to set.
+     * @param trailer VideoObject value to set.
      */
-    void addProductionCompany(Organization productionCompany);
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorsList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirectors();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param directors Person value to set.
-     */
-    void addDirectors(Person directors);
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorsList();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActors();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actors Person value to set.
-     */
-    void addActors(Person actors);
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirector();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    void addDirector(Person director);
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @return {@link Episode}
-     */
-    List<Episode> getEpisodesList();
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @return {@link Episode}
-     */
-    Episode getEpisodes();
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @param episodes Episode value to set.
-     */
-    void addEpisodes(Episode episodes);
+    void addTrailer(VideoObject trailer);
 }

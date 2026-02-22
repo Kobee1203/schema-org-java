@@ -35,6 +35,165 @@ import org.schema.model.datatype.URL;
 public interface Observation extends Intangible, QuantitativeValue {
 
     /**
+     * A [[marginOfError]] for an [[Observation]].
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    List<QuantitativeValue> getMarginOfErrorList();
+
+    /**
+     * A [[marginOfError]] for an [[Observation]].
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    QuantitativeValue getMarginOfError();
+
+    /**
+     * A [[marginOfError]] for an [[Observation]].
+     *
+     * @param marginOfError QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    void addMarginOfError(QuantitativeValue marginOfError);
+
+    /**
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     *
+     * @return {@link Property}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    List<Property> getMeasuredPropertyList();
+
+    /**
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     *
+     * @return {@link Property}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    Property getMeasuredProperty();
+
+    /**
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     *
+     * @param measuredProperty Property value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    void addMeasuredProperty(Property measuredProperty);
+
+    /**
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     *
+     * @return {@link StatisticalVariable}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    List<StatisticalVariable> getMeasurementDenominatorList();
+
+    /**
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     *
+     * @return {@link StatisticalVariable}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    StatisticalVariable getMeasurementDenominator();
+
+    /**
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     *
+     * @param measurementDenominator StatisticalVariable value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    void addMeasurementDenominator(StatisticalVariable measurementDenominator);
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    <T> List<T> getMeasurementMethodList();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    <T> T getMeasurementMethod();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(Text measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod MeasurementMethodEnum value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(DefinedTerm measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(URL measurementMethod);
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @return {@link Enumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    List<Enumeration> getMeasurementQualifierList();
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @return {@link Enumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    Enumeration getMeasurementQualifier();
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @param measurementQualifier Enumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    void addMeasurementQualifier(Enumeration measurementQualifier);
+
+    /**
      * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
      *     
      * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
@@ -122,111 +281,6 @@ public interface Observation extends Intangible, QuantitativeValue {
     void addMeasurementTechnique(Text measurementTechnique);
 
     /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> List<T> getMeasurementMethodList();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> T getMeasurementMethod();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(Text measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod MeasurementMethodEnum value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(DefinedTerm measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(URL measurementMethod);
-
-    /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
-     *
-     * @return {@link StatisticalVariable}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    List<StatisticalVariable> getMeasurementDenominatorList();
-
-    /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
-     *
-     * @return {@link StatisticalVariable}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    StatisticalVariable getMeasurementDenominator();
-
-    /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
-     *
-     * @param measurementDenominator StatisticalVariable value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    void addMeasurementDenominator(StatisticalVariable measurementDenominator);
-
-    /**
-     * A [[marginOfError]] for an [[Observation]].
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    List<QuantitativeValue> getMarginOfErrorList();
-
-    /**
-     * A [[marginOfError]] for an [[Observation]].
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    QuantitativeValue getMarginOfError();
-
-    /**
-     * A [[marginOfError]] for an [[Observation]].
-     *
-     * @param marginOfError QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    void addMarginOfError(QuantitativeValue marginOfError);
-
-    /**
      * The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].
      *
      * @return {@link Place} or {@link Thing}
@@ -262,58 +316,66 @@ public interface Observation extends Intangible, QuantitativeValue {
     void addObservationAbout(Thing observationAbout);
 
     /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     * The observationDate of an [[Observation]].
      *
-     * @return {@link Enumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    List<Enumeration> getMeasurementQualifierList();
-
-    /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
-     *
-     * @return {@link Enumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    Enumeration getMeasurementQualifier();
-
-    /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
-     *
-     * @param measurementQualifier Enumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    void addMeasurementQualifier(Enumeration measurementQualifier);
-
-    /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
-     *
-     * @return {@link Property}
+     * @return {@link Date} or {@link DateTime}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    List<Property> getMeasuredPropertyList();
+    <T> List<T> getObservationDateList();
 
     /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * The observationDate of an [[Observation]].
      *
-     * @return {@link Property}
+     * @return {@link Date} or {@link DateTime}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    Property getMeasuredProperty();
+    <T> T getObservationDate();
 
     /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     * The observationDate of an [[Observation]].
      *
-     * @param measuredProperty Property value to set.
+     * @param observationDate Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void addMeasuredProperty(Property measuredProperty);
+    void addObservationDate(Date observationDate);
+    /**
+     * The observationDate of an [[Observation]].
+     *
+     * @param observationDate DateTime value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    void addObservationDate(DateTime observationDate);
+
+    /**
+     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    List<Text> getObservationPeriodList();
+
+    /**
+     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    Text getObservationPeriod();
+
+    /**
+     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
+     *
+     * @param observationPeriod Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    void addObservationPeriod(Text observationPeriod);
 
     /**
      * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
@@ -365,66 +427,4 @@ public interface Observation extends Intangible, QuantitativeValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
      */
     void addVariableMeasured(StatisticalVariable variableMeasured);
-
-    /**
-     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    List<Text> getObservationPeriodList();
-
-    /**
-     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    Text getObservationPeriod();
-
-    /**
-     * The length of time an Observation took place over. The format follows `P[0-9]*[Y|M|D|h|m|s]`. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
-     *
-     * @param observationPeriod Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    void addObservationPeriod(Text observationPeriod);
-
-    /**
-     * The observationDate of an [[Observation]].
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    <T> List<T> getObservationDateList();
-
-    /**
-     * The observationDate of an [[Observation]].
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    <T> T getObservationDate();
-
-    /**
-     * The observationDate of an [[Observation]].
-     *
-     * @param observationDate Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    void addObservationDate(Date observationDate);
-    /**
-     * The observationDate of an [[Observation]].
-     *
-     * @param observationDate DateTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    void addObservationDate(DateTime observationDate);
 }

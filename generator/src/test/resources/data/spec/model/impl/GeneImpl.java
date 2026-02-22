@@ -41,44 +41,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
@@ -86,31 +62,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
@@ -118,37 +79,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Gene> alternativeOf;
 
-    /**
-     * Another gene which is a variation of this one.
-     *
-     * @return {@link Gene}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public List<Gene> getAlternativeOfList() {
         return alternativeOf;
     }
 
-    /**
-     * Another gene which is a variation of this one.
-     *
-     * @return {@link Gene}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public Gene getAlternativeOf() {
         return getFirst(alternativeOf);
     }
 
-    /**
-     * Another gene which is a variation of this one.
-     *
-     * @param alternativeOf Gene value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addAlternativeOf(Gene alternativeOf) {
         this.alternativeOf = add(this.alternativeOf, alternativeOf);
@@ -157,59 +97,24 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ MedicalCondition.class, URL.class, PropertyValue.class })
     private List<Object> associatedDisease;
 
-    /**
-     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
-     *
-     * @return {@link MedicalCondition} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> List<T> getAssociatedDiseaseList() {
         return (List<T>) associatedDisease;
     }
 
-    /**
-     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
-     *
-     * @return {@link MedicalCondition} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> T getAssociatedDisease() {
         return (T) getFirst(associatedDisease);
     }
 
-    /**
-     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
-     *
-     * @param associatedDisease MedicalCondition value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addAssociatedDisease(MedicalCondition associatedDisease) {
         this.associatedDisease = add(this.associatedDisease, associatedDisease);
     }
-    /**
-     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
-     *
-     * @param associatedDisease URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addAssociatedDisease(URL associatedDisease) {
         this.associatedDisease = add(this.associatedDisease, associatedDisease);
     }
-    /**
-     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
-     *
-     * @param associatedDisease PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addAssociatedDisease(PropertyValue associatedDisease) {
         this.associatedDisease = add(this.associatedDisease, associatedDisease);
@@ -217,37 +122,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<BioChemEntity> bioChemInteraction;
 
-    /**
-     * A BioChemEntity that is known to interact with this item.
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public List<BioChemEntity> getBioChemInteractionList() {
         return bioChemInteraction;
     }
 
-    /**
-     * A BioChemEntity that is known to interact with this item.
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public BioChemEntity getBioChemInteraction() {
         return getFirst(bioChemInteraction);
     }
 
-    /**
-     * A BioChemEntity that is known to interact with this item.
-     *
-     * @param bioChemInteraction BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addBioChemInteraction(BioChemEntity bioChemInteraction) {
         this.bioChemInteraction = add(this.bioChemInteraction, bioChemInteraction);
@@ -255,37 +139,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<BioChemEntity> bioChemSimilarity;
 
-    /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public List<BioChemEntity> getBioChemSimilarityList() {
         return bioChemSimilarity;
     }
 
-    /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public BioChemEntity getBioChemSimilarity() {
         return getFirst(bioChemSimilarity);
     }
 
-    /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-     *
-     * @param bioChemSimilarity BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addBioChemSimilarity(BioChemEntity bioChemSimilarity) {
         this.bioChemSimilarity = add(this.bioChemSimilarity, bioChemSimilarity);
@@ -293,37 +156,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<DefinedTerm> biologicalRole;
 
-    /**
-     * A role played by the BioChemEntity within a biological context.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public List<DefinedTerm> getBiologicalRoleList() {
         return biologicalRole;
     }
 
-    /**
-     * A role played by the BioChemEntity within a biological context.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public DefinedTerm getBiologicalRole() {
         return getFirst(biologicalRole);
     }
 
-    /**
-     * A role played by the BioChemEntity within a biological context.
-     *
-     * @param biologicalRole DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addBiologicalRole(DefinedTerm biologicalRole) {
         this.biologicalRole = add(this.biologicalRole, biologicalRole);
@@ -332,40 +174,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ TextObject.class, Text.class })
     private List<Object> description;
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> List<T> getDescriptionList() {
         return (List<T>) description;
     }
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> T getDescription() {
         return (T) getFirst(description);
     }
 
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
     @Override
     public void addDescription(TextObject description) {
         this.description = add(this.description, description);
     }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
     @Override
     public void addDescription(Text description) {
         this.description = add(this.description, description);
@@ -373,31 +195,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
@@ -405,37 +212,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<BioChemEntity> encodesBioChemEntity;
 
-    /**
-     * Another BioChemEntity encoded by this one. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public List<BioChemEntity> getEncodesBioChemEntityList() {
         return encodesBioChemEntity;
     }
 
-    /**
-     * Another BioChemEntity encoded by this one. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public BioChemEntity getEncodesBioChemEntity() {
         return getFirst(encodesBioChemEntity);
     }
 
-    /**
-     * Another BioChemEntity encoded by this one. 
-     *
-     * @param encodesBioChemEntity BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addEncodesBioChemEntity(BioChemEntity encodesBioChemEntity) {
         this.encodesBioChemEntity = add(this.encodesBioChemEntity, encodesBioChemEntity);
@@ -444,70 +230,28 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ DefinedTerm.class, AnatomicalSystem.class, BioChemEntity.class, AnatomicalStructure.class })
     private List<Object> expressedIn;
 
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @return {@link DefinedTerm} or {@link AnatomicalSystem} or {@link BioChemEntity} or {@link AnatomicalStructure}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public <T> List<T> getExpressedInList() {
         return (List<T>) expressedIn;
     }
 
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @return {@link DefinedTerm} or {@link AnatomicalSystem} or {@link BioChemEntity} or {@link AnatomicalStructure}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public <T> T getExpressedIn() {
         return (T) getFirst(expressedIn);
     }
 
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @param expressedIn DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addExpressedIn(DefinedTerm expressedIn) {
         this.expressedIn = add(this.expressedIn, expressedIn);
     }
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @param expressedIn AnatomicalSystem value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addExpressedIn(AnatomicalSystem expressedIn) {
         this.expressedIn = add(this.expressedIn, expressedIn);
     }
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @param expressedIn BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addExpressedIn(BioChemEntity expressedIn) {
         this.expressedIn = add(this.expressedIn, expressedIn);
     }
-    /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-     *
-     * @param expressedIn AnatomicalStructure value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addExpressedIn(AnatomicalStructure expressedIn) {
         this.expressedIn = add(this.expressedIn, expressedIn);
@@ -515,40 +259,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Grant> funding;
 
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public List<Grant> getFundingList() {
         return funding;
     }
 
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public Grant getFunding() {
         return getFirst(funding);
     }
 
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
     @Override
     public void addFunding(Grant funding) {
         this.funding = add(this.funding, funding);
@@ -556,37 +276,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<BioChemEntity> hasBioChemEntityPart;
 
-    /**
-     * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public List<BioChemEntity> getHasBioChemEntityPartList() {
         return hasBioChemEntityPart;
     }
 
-    /**
-     * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public BioChemEntity getHasBioChemEntityPart() {
         return getFirst(hasBioChemEntityPart);
     }
 
-    /**
-     * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
-     *
-     * @param hasBioChemEntityPart BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addHasBioChemEntityPart(BioChemEntity hasBioChemEntityPart) {
         this.hasBioChemEntityPart = add(this.hasBioChemEntityPart, hasBioChemEntityPart);
@@ -594,37 +293,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Text> hasBioPolymerSequence;
 
-    /**
-     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public List<Text> getHasBioPolymerSequenceList() {
         return hasBioPolymerSequence;
     }
 
-    /**
-     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public Text getHasBioPolymerSequence() {
         return getFirst(hasBioPolymerSequence);
     }
 
-    /**
-     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
-     *
-     * @param hasBioPolymerSequence Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addHasBioPolymerSequence(Text hasBioPolymerSequence) {
         this.hasBioPolymerSequence = add(this.hasBioPolymerSequence, hasBioPolymerSequence);
@@ -633,59 +311,24 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ DefinedTerm.class, URL.class, PropertyValue.class })
     private List<Object> hasMolecularFunction;
 
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> List<T> getHasMolecularFunctionList() {
         return (List<T>) hasMolecularFunction;
     }
 
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> T getHasMolecularFunction() {
         return (T) getFirst(hasMolecularFunction);
     }
 
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @param hasMolecularFunction DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addHasMolecularFunction(DefinedTerm hasMolecularFunction) {
         this.hasMolecularFunction = add(this.hasMolecularFunction, hasMolecularFunction);
     }
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @param hasMolecularFunction URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addHasMolecularFunction(URL hasMolecularFunction) {
         this.hasMolecularFunction = add(this.hasMolecularFunction, hasMolecularFunction);
     }
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @param hasMolecularFunction PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addHasMolecularFunction(PropertyValue hasMolecularFunction) {
         this.hasMolecularFunction = add(this.hasMolecularFunction, hasMolecularFunction);
@@ -694,59 +337,24 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ Text.class, URL.class, PropertyValue.class })
     private List<Object> hasRepresentation;
 
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @return {@link Text} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public <T> List<T> getHasRepresentationList() {
         return (List<T>) hasRepresentation;
     }
 
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @return {@link Text} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public <T> T getHasRepresentation() {
         return (T) getFirst(hasRepresentation);
     }
 
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @param hasRepresentation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addHasRepresentation(Text hasRepresentation) {
         this.hasRepresentation = add(this.hasRepresentation, hasRepresentation);
     }
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @param hasRepresentation URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addHasRepresentation(URL hasRepresentation) {
         this.hasRepresentation = add(this.hasRepresentation, hasRepresentation);
     }
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @param hasRepresentation PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addHasRepresentation(PropertyValue hasRepresentation) {
         this.hasRepresentation = add(this.hasRepresentation, hasRepresentation);
@@ -755,54 +363,24 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
     private List<Object> identifier;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> List<T> getIdentifierList() {
         return (List<T>) identifier;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
     public void addIdentifier(URL identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
     @Override
     public void addIdentifier(PropertyValue identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
     @Override
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
@@ -811,40 +389,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ ImageObject.class, URL.class })
     private List<Object> image;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> List<T> getImageList() {
         return (List<T>) image;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> T getImage() {
         return (T) getFirst(image);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
     public void addImage(ImageObject image) {
         this.image = add(this.image, image);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
     public void addImage(URL image) {
         this.image = add(this.image, image);
@@ -852,37 +410,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Gene> isEncodedByBioChemEntity;
 
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @return {@link Gene}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public List<Gene> getIsEncodedByBioChemEntityList() {
         return isEncodedByBioChemEntity;
     }
 
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @return {@link Gene}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public Gene getIsEncodedByBioChemEntity() {
         return getFirst(isEncodedByBioChemEntity);
     }
 
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @param isEncodedByBioChemEntity Gene value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
     @Override
     public void addIsEncodedByBioChemEntity(Gene isEncodedByBioChemEntity) {
         this.isEncodedByBioChemEntity = add(this.isEncodedByBioChemEntity, isEncodedByBioChemEntity);
@@ -891,59 +428,24 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ DefinedTerm.class, URL.class, PropertyValue.class })
     private List<Object> isInvolvedInBiologicalProcess;
 
-    /**
-     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> List<T> getIsInvolvedInBiologicalProcessList() {
         return (List<T>) isInvolvedInBiologicalProcess;
     }
 
-    /**
-     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> T getIsInvolvedInBiologicalProcess() {
         return (T) getFirst(isInvolvedInBiologicalProcess);
     }
 
-    /**
-     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isInvolvedInBiologicalProcess DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addIsInvolvedInBiologicalProcess(DefinedTerm isInvolvedInBiologicalProcess) {
         this.isInvolvedInBiologicalProcess = add(this.isInvolvedInBiologicalProcess, isInvolvedInBiologicalProcess);
     }
-    /**
-     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isInvolvedInBiologicalProcess URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addIsInvolvedInBiologicalProcess(URL isInvolvedInBiologicalProcess) {
         this.isInvolvedInBiologicalProcess = add(this.isInvolvedInBiologicalProcess, isInvolvedInBiologicalProcess);
     }
-    /**
-     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isInvolvedInBiologicalProcess PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addIsInvolvedInBiologicalProcess(PropertyValue isInvolvedInBiologicalProcess) {
         this.isInvolvedInBiologicalProcess = add(this.isInvolvedInBiologicalProcess, isInvolvedInBiologicalProcess);
@@ -952,59 +454,24 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ DefinedTerm.class, URL.class, PropertyValue.class })
     private List<Object> isLocatedInSubcellularLocation;
 
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> List<T> getIsLocatedInSubcellularLocationList() {
         return (List<T>) isLocatedInSubcellularLocation;
     }
 
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public <T> T getIsLocatedInSubcellularLocation() {
         return (T) getFirst(isLocatedInSubcellularLocation);
     }
 
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isLocatedInSubcellularLocation DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addIsLocatedInSubcellularLocation(DefinedTerm isLocatedInSubcellularLocation) {
         this.isLocatedInSubcellularLocation = add(this.isLocatedInSubcellularLocation, isLocatedInSubcellularLocation);
     }
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isLocatedInSubcellularLocation URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addIsLocatedInSubcellularLocation(URL isLocatedInSubcellularLocation) {
         this.isLocatedInSubcellularLocation = add(this.isLocatedInSubcellularLocation, isLocatedInSubcellularLocation);
     }
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isLocatedInSubcellularLocation PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
     @Override
     public void addIsLocatedInSubcellularLocation(PropertyValue isLocatedInSubcellularLocation) {
         this.isLocatedInSubcellularLocation = add(this.isLocatedInSubcellularLocation, isLocatedInSubcellularLocation);
@@ -1012,37 +479,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<BioChemEntity> isPartOfBioChemEntity;
 
-    /**
-     * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public List<BioChemEntity> getIsPartOfBioChemEntityList() {
         return isPartOfBioChemEntity;
     }
 
-    /**
-     * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public BioChemEntity getIsPartOfBioChemEntity() {
         return getFirst(isPartOfBioChemEntity);
     }
 
-    /**
-     * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
-     *
-     * @param isPartOfBioChemEntity BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addIsPartOfBioChemEntity(BioChemEntity isPartOfBioChemEntity) {
         this.isPartOfBioChemEntity = add(this.isPartOfBioChemEntity, isPartOfBioChemEntity);
@@ -1051,40 +497,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> mainEntityOfPage;
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> List<T> getMainEntityOfPageList() {
         return (List<T>) mainEntityOfPage;
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> T getMainEntityOfPage() {
         return (T) getFirst(mainEntityOfPage);
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
     @Override
     public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
     @Override
     public void addMainEntityOfPage(URL mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
@@ -1092,31 +518,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Text> name;
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getNameList() {
         return name;
     }
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getName() {
         return getFirst(name);
     }
 
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
     @Override
     public void addName(Text name) {
         this.name = add(this.name, name);
@@ -1125,44 +536,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> owner;
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> List<T> getOwnerList() {
         return (List<T>) owner;
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> T getOwner() {
         return (T) getFirst(owner);
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Person owner) {
         this.owner = add(this.owner, owner);
     }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Organization owner) {
         this.owner = add(this.owner, owner);
@@ -1170,31 +557,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<Action> potentialAction;
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public List<Action> getPotentialActionList() {
         return potentialAction;
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public Action getPotentialAction() {
         return getFirst(potentialAction);
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
     @Override
     public void addPotentialAction(Action potentialAction) {
         this.potentialAction = add(this.potentialAction, potentialAction);
@@ -1202,31 +574,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<URL> sameAs;
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getSameAsList() {
         return sameAs;
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getSameAs() {
         return getFirst(sameAs);
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
     @Override
     public void addSameAs(URL sameAs) {
         this.sameAs = add(this.sameAs, sameAs);
@@ -1235,44 +592,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private List<Object> subjectOf;
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> List<T> getSubjectOfList() {
         return (List<T>) subjectOf;
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> T getSubjectOf() {
         return (T) getFirst(subjectOf);
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(Event subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(CreativeWork subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
@@ -1281,70 +614,28 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     @JsonLdFieldTypes({ Taxon.class, DefinedTerm.class, URL.class, Text.class })
     private List<Object> taxonomicRange;
 
-    /**
-     * The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
-     *
-     * @return {@link Taxon} or {@link DefinedTerm} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public <T> List<T> getTaxonomicRangeList() {
         return (List<T>) taxonomicRange;
     }
 
-    /**
-     * The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
-     *
-     * @return {@link Taxon} or {@link DefinedTerm} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public <T> T getTaxonomicRange() {
         return (T) getFirst(taxonomicRange);
     }
 
-    /**
-     * The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
-     *
-     * @param taxonomicRange Taxon value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addTaxonomicRange(Taxon taxonomicRange) {
         this.taxonomicRange = add(this.taxonomicRange, taxonomicRange);
     }
-    /**
-     * The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
-     *
-     * @param taxonomicRange DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addTaxonomicRange(DefinedTerm taxonomicRange) {
         this.taxonomicRange = add(this.taxonomicRange, taxonomicRange);
     }
-    /**
-     * The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
-     *
-     * @param taxonomicRange URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addTaxonomicRange(URL taxonomicRange) {
         this.taxonomicRange = add(this.taxonomicRange, taxonomicRange);
     }
-    /**
-     * The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
-     *
-     * @param taxonomicRange Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
     @Override
     public void addTaxonomicRange(Text taxonomicRange) {
         this.taxonomicRange = add(this.taxonomicRange, taxonomicRange);
@@ -1352,31 +643,16 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
 
     private List<URL> url;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getUrlList() {
         return url;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getUrl() {
         return getFirst(url);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);

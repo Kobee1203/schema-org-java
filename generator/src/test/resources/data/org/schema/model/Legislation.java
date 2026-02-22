@@ -28,90 +28,138 @@ import org.schema.model.datatype.URL;
 public interface Legislation extends CreativeWork {
 
     /**
-     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link AdministrativeArea} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    <T> List<T> getLegislationPassedByList();
+    <T> List<T> getJurisdictionList();
 
     /**
-     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link AdministrativeArea} or {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    <T> T getLegislationPassedBy();
+    <T> T getJurisdiction();
 
     /**
-     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
-     * @param legislationPassedBy Organization value to set.
+     * @param jurisdiction AdministrativeArea value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void addLegislationPassedBy(Organization legislationPassedBy);
+    void addJurisdiction(AdministrativeArea jurisdiction);
     /**
-     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
-     * @param legislationPassedBy Person value to set.
+     * @param jurisdiction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void addLegislationPassedBy(Person legislationPassedBy);
+    void addJurisdiction(Text jurisdiction);
 
     /**
-     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     * Another legislation that this legislation amends, introducing legal changes.
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link Legislation}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    <T> List<T> getLegislationIdentifierList();
+    List<Legislation> getLegislationAmendsList();
 
     /**
-     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     * Another legislation that this legislation amends, introducing legal changes.
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link Legislation}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    <T> T getLegislationIdentifier();
+    Legislation getLegislationAmends();
 
     /**
-     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     * Another legislation that this legislation amends, introducing legal changes.
      *
-     * @param legislationIdentifier Text value to set.
+     * @param legislationAmends Legislation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationIdentifier(Text legislationIdentifier);
+    void addLegislationAmends(Legislation legislationAmends);
+
     /**
-     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
      *
-     * @param legislationIdentifier URL value to set.
+     * @return {@link Legislation}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationIdentifier(URL legislationIdentifier);
+    List<Legislation> getLegislationAppliesList();
+
+    /**
+     * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
+     *
+     * @return {@link Legislation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    Legislation getLegislationApplies();
+
+    /**
+     * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
+     *
+     * @param legislationApplies Legislation value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationApplies(Legislation legislationApplies);
+
+    /**
+     * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
+     *
+     * @return {@link Legislation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    List<Legislation> getLegislationChangesList();
+
+    /**
+     * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
+     *
+     * @return {@link Legislation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    Legislation getLegislationChanges();
+
+    /**
+     * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
+     *
+     * @param legislationChanges Legislation value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationChanges(Legislation legislationChanges);
 
     /**
      * Another legislation that this one sets into force.
@@ -180,80 +228,113 @@ public interface Legislation extends CreativeWork {
     void addLegislationConsolidates(Legislation legislationConsolidates);
 
     /**
-     * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
+     * Another legislation in which this one introduces textual changes, like correction of spelling mistakes, with no legal impact (for modifications that have legal impact, use <a href="/legislationAmends">legislationAmends</a>).
      *
      * @return {@link Legislation}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    List<Legislation> getLegislationTransposesList();
+    List<Legislation> getLegislationCorrectsList();
 
     /**
-     * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
+     * Another legislation in which this one introduces textual changes, like correction of spelling mistakes, with no legal impact (for modifications that have legal impact, use <a href="/legislationAmends">legislationAmends</a>).
      *
      * @return {@link Legislation}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    Legislation getLegislationTransposes();
+    Legislation getLegislationCorrects();
 
     /**
-     * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
+     * Another legislation in which this one introduces textual changes, like correction of spelling mistakes, with no legal impact (for modifications that have legal impact, use <a href="/legislationAmends">legislationAmends</a>).
      *
-     * @param legislationTransposes Legislation value to set.
+     * @param legislationCorrects Legislation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationTransposes(Legislation legislationTransposes);
+    void addLegislationCorrects(Legislation legislationCorrects);
 
     /**
-     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
+     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
      *
-     * @return {@link Text} or {@link CategoryCode}
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    <T> List<T> getLegislationTypeList();
+    <T> List<T> getLegislationCountersignedByList();
 
     /**
-     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
+     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
      *
-     * @return {@link Text} or {@link CategoryCode}
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    <T> T getLegislationType();
+    <T> T getLegislationCountersignedBy();
 
     /**
-     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
+     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
      *
-     * @param legislationType Text value to set.
+     * @param legislationCountersignedBy Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationType(Text legislationType);
+    void addLegislationCountersignedBy(Person legislationCountersignedBy);
     /**
-     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
+     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
      *
-     * @param legislationType CategoryCode value to set.
+     * @param legislationCountersignedBy Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationCountersignedBy(Organization legislationCountersignedBy);
+
+    /**
+     * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
+     *
+     * @return {@link Date}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationType(CategoryCode legislationType);
+    List<Date> getLegislationDateList();
+
+    /**
+     * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    Date getLegislationDate();
+
+    /**
+     * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
+     *
+     * @param legislationDate Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationDate(Date legislationDate);
 
     /**
      * The date at which the Legislation becomes applicable. This can sometimes be distinct from the date of entry into force : a text may come in force today, and state it will become applicable in 3 months.
@@ -287,6 +368,115 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationDateOfApplicability(Date legislationDateOfApplicability);
+
+    /**
+     * The point-in-time at which the provided description of the legislation is valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    List<Date> getLegislationDateVersionList();
+
+    /**
+     * The point-in-time at which the provided description of the legislation is valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    Date getLegislationDateVersion();
+
+    /**
+     * The point-in-time at which the provided description of the legislation is valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
+     *
+     * @param legislationDateVersion Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationDateVersion(Date legislationDateVersion);
+
+    /**
+     * Indicates that this Legislation ensures the implementation of another Legislation, for example by modifying national legislations so that they do not contradict to an EU regulation or decision. This implies a legal meaning. Transpositions of EU Directive should be captured with <a href="/legislationTransposes">legislationTransposes</a>.
+     *
+     * @return {@link Legislation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    List<Legislation> getLegislationEnsuresImplementationOfList();
+
+    /**
+     * Indicates that this Legislation ensures the implementation of another Legislation, for example by modifying national legislations so that they do not contradict to an EU regulation or decision. This implies a legal meaning. Transpositions of EU Directive should be captured with <a href="/legislationTransposes">legislationTransposes</a>.
+     *
+     * @return {@link Legislation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    Legislation getLegislationEnsuresImplementationOf();
+
+    /**
+     * Indicates that this Legislation ensures the implementation of another Legislation, for example by modifying national legislations so that they do not contradict to an EU regulation or decision. This implies a legal meaning. Transpositions of EU Directive should be captured with <a href="/legislationTransposes">legislationTransposes</a>.
+     *
+     * @param legislationEnsuresImplementationOf Legislation value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationEnsuresImplementationOf(Legislation legislationEnsuresImplementationOf);
+
+    /**
+     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    <T> List<T> getLegislationIdentifierList();
+
+    /**
+     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    <T> T getLegislationIdentifier();
+
+    /**
+     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     *
+     * @param legislationIdentifier Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationIdentifier(Text legislationIdentifier);
+    /**
+     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     *
+     * @param legislationIdentifier URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationIdentifier(URL legislationIdentifier);
 
     /**
      * The jurisdiction from which the legislation originates.
@@ -365,37 +555,47 @@ public interface Legislation extends CreativeWork {
     void addLegislationLegalForce(LegalForceStatus legislationLegalForce);
 
     /**
-     * The point-in-time at which the provided description of the legislation is valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
+     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
      *
-     * @return {@link Date}
+     * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    List<Date> getLegislationDateVersionList();
+    <T> List<T> getLegislationPassedByList();
 
     /**
-     * The point-in-time at which the provided description of the legislation is valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
+     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
      *
-     * @return {@link Date}
+     * @return {@link Organization} or {@link Person}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    Date getLegislationDateVersion();
+    <T> T getLegislationPassedBy();
 
     /**
-     * The point-in-time at which the provided description of the legislation is valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
+     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
      *
-     * @param legislationDateVersion Date value to set.
+     * @param legislationPassedBy Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationDateVersion(Date legislationDateVersion);
+    void addLegislationPassedBy(Organization legislationPassedBy);
+    /**
+     * The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
+     *
+     * @param legislationPassedBy Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
+     */
+    void addLegislationPassedBy(Person legislationPassedBy);
 
     /**
      * Another legislation that this legislation repeals (cancels, abrogates).
@@ -429,150 +629,6 @@ public interface Legislation extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
     void addLegislationRepeals(Legislation legislationRepeals);
-
-    /**
-     * Indicates that this Legislation ensures the implementation of another Legislation, for example by modifying national legislations so that they do not contradict to an EU regulation or decision. This implies a legal meaning. Transpositions of EU Directive should be captured with <a href="/legislationTransposes">legislationTransposes</a>.
-     *
-     * @return {@link Legislation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    List<Legislation> getLegislationEnsuresImplementationOfList();
-
-    /**
-     * Indicates that this Legislation ensures the implementation of another Legislation, for example by modifying national legislations so that they do not contradict to an EU regulation or decision. This implies a legal meaning. Transpositions of EU Directive should be captured with <a href="/legislationTransposes">legislationTransposes</a>.
-     *
-     * @return {@link Legislation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    Legislation getLegislationEnsuresImplementationOf();
-
-    /**
-     * Indicates that this Legislation ensures the implementation of another Legislation, for example by modifying national legislations so that they do not contradict to an EU regulation or decision. This implies a legal meaning. Transpositions of EU Directive should be captured with <a href="/legislationTransposes">legislationTransposes</a>.
-     *
-     * @param legislationEnsuresImplementationOf Legislation value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    void addLegislationEnsuresImplementationOf(Legislation legislationEnsuresImplementationOf);
-
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @return {@link AdministrativeArea} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    <T> List<T> getJurisdictionList();
-
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @return {@link AdministrativeArea} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    <T> T getJurisdiction();
-
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @param jurisdiction AdministrativeArea value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    void addJurisdiction(AdministrativeArea jurisdiction);
-    /**
-     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-     *
-     * @param jurisdiction Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
-     */
-    void addJurisdiction(Text jurisdiction);
-
-    /**
-     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    <T> List<T> getLegislationCountersignedByList();
-
-    /**
-     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    <T> T getLegislationCountersignedBy();
-
-    /**
-     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
-     *
-     * @param legislationCountersignedBy Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    void addLegislationCountersignedBy(Person legislationCountersignedBy);
-    /**
-     * The person or organization that countersigned the legislation. Depending on the legal context, a countersignature can indicate that the signed authority undertakes to assume responsibility for texts emanating from a person who is inviolable and irresponsible, (for example a King, Grand Duc or President), or that the authority is in charge of the implementation of the text.
-     *
-     * @param legislationCountersignedBy Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    void addLegislationCountersignedBy(Organization legislationCountersignedBy);
-
-    /**
-     * Another legislation in which this one introduces textual changes, like correction of spelling mistakes, with no legal impact (for modifications that have legal impact, use <a href="/legislationAmends">legislationAmends</a>).
-     *
-     * @return {@link Legislation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    List<Legislation> getLegislationCorrectsList();
-
-    /**
-     * Another legislation in which this one introduces textual changes, like correction of spelling mistakes, with no legal impact (for modifications that have legal impact, use <a href="/legislationAmends">legislationAmends</a>).
-     *
-     * @return {@link Legislation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    Legislation getLegislationCorrects();
-
-    /**
-     * Another legislation in which this one introduces textual changes, like correction of spelling mistakes, with no legal impact (for modifications that have legal impact, use <a href="/legislationAmends">legislationAmends</a>).
-     *
-     * @param legislationCorrects Legislation value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    void addLegislationCorrects(Legislation legislationCorrects);
 
     /**
      * An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.
@@ -618,134 +674,78 @@ public interface Legislation extends CreativeWork {
     void addLegislationResponsible(Organization legislationResponsible);
 
     /**
-     * Another legislation that this legislation amends, introducing legal changes.
+     * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
      *
      * @return {@link Legislation}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    List<Legislation> getLegislationAmendsList();
+    List<Legislation> getLegislationTransposesList();
 
     /**
-     * Another legislation that this legislation amends, introducing legal changes.
+     * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
      *
      * @return {@link Legislation}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    Legislation getLegislationAmends();
+    Legislation getLegislationTransposes();
 
     /**
-     * Another legislation that this legislation amends, introducing legal changes.
+     * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
      *
-     * @param legislationAmends Legislation value to set.
+     * @param legislationTransposes Legislation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2698">https://github.com/schemaorg/schemaorg/issues/2698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationAmends(Legislation legislationAmends);
+    void addLegislationTransposes(Legislation legislationTransposes);
 
     /**
-     * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
+     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
      *
-     * @return {@link Date}
+     * @return {@link Text} or {@link CategoryCode}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    List<Date> getLegislationDateList();
+    <T> List<T> getLegislationTypeList();
 
     /**
-     * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
+     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
      *
-     * @return {@link Date}
+     * @return {@link Text} or {@link CategoryCode}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    Date getLegislationDate();
+    <T> T getLegislationType();
 
     /**
-     * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
+     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
      *
-     * @param legislationDate Date value to set.
+     * @param legislationType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    void addLegislationDate(Date legislationDate);
-
+    void addLegislationType(Text legislationType);
     /**
-     * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
+     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
      *
-     * @return {@link Legislation}
+     * @param legislationType CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
      * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
      */
-    List<Legislation> getLegislationAppliesList();
-
-    /**
-     * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
-     *
-     * @return {@link Legislation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    Legislation getLegislationApplies();
-
-    /**
-     * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
-     *
-     * @param legislationApplies Legislation value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    void addLegislationApplies(Legislation legislationApplies);
-
-    /**
-     * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
-     *
-     * @return {@link Legislation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    List<Legislation> getLegislationChangesList();
-
-    /**
-     * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
-     *
-     * @return {@link Legislation}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    Legislation getLegislationChanges();
-
-    /**
-     * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
-     *
-     * @param legislationChanges Legislation value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
-     * @see <a href="https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli">https://op.europa.eu/en/web/eu-vocabularies/model/-/resource/dataset/eli</a>
-     * @see <a href="https://schema.org/docs/collab/ELI">https://schema.org/docs/collab/ELI</a>
-     */
-    void addLegislationChanges(Legislation legislationChanges);
+    void addLegislationType(CategoryCode legislationType);
 }

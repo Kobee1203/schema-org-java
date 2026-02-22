@@ -17,6 +17,27 @@ import org.schema.model.datatype.DateTime;
 public interface LiveBlogPosting extends BlogPosting {
 
     /**
+     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getCoverageEndTimeList();
+
+    /**
+     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getCoverageEndTime();
+
+    /**
+     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+     *
+     * @param coverageEndTime DateTime value to set.
+     */
+    void addCoverageEndTime(DateTime coverageEndTime);
+
+    /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
      *
      * @return {@link DateTime}
@@ -57,25 +78,4 @@ public interface LiveBlogPosting extends BlogPosting {
      * @param liveBlogUpdate BlogPosting value to set.
      */
     void addLiveBlogUpdate(BlogPosting liveBlogUpdate);
-
-    /**
-     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getCoverageEndTimeList();
-
-    /**
-     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getCoverageEndTime();
-
-    /**
-     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
-     *
-     * @param coverageEndTime DateTime value to set.
-     */
-    void addCoverageEndTime(DateTime coverageEndTime);
 }

@@ -18,33 +18,6 @@ import org.schema.model.WarrantyPromise;
 public interface BuyAction extends TradeAction {
 
     /**
-     * 'vendor' is an earlier term for 'seller'.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getVendorList();
-
-    /**
-     * 'vendor' is an earlier term for 'seller'.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getVendor();
-
-    /**
-     * 'vendor' is an earlier term for 'seller'.
-     *
-     * @param vendor Organization value to set.
-     */
-    void addVendor(Organization vendor);
-    /**
-     * 'vendor' is an earlier term for 'seller'.
-     *
-     * @param vendor Person value to set.
-     */
-    void addVendor(Person vendor);
-
-    /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @return {@link Person} or {@link Organization}
@@ -70,6 +43,33 @@ public interface BuyAction extends TradeAction {
      * @param seller Organization value to set.
      */
     void addSeller(Organization seller);
+
+    /**
+     * 'vendor' is an earlier term for 'seller'.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getVendorList();
+
+    /**
+     * 'vendor' is an earlier term for 'seller'.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getVendor();
+
+    /**
+     * 'vendor' is an earlier term for 'seller'.
+     *
+     * @param vendor Organization value to set.
+     */
+    void addVendor(Organization vendor);
+    /**
+     * 'vendor' is an earlier term for 'seller'.
+     *
+     * @param vendor Person value to set.
+     */
+    void addVendor(Person vendor);
 
     /**
      * The warranty promise(s) included in the offer.

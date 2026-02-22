@@ -58,6 +58,30 @@ public interface QuantitativeValueDistribution extends StructuredValue {
     void addDuration(QuantitativeValue duration);
 
     /**
+     * The median value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Number> getMedianList();
+
+    /**
+     * The median value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    Number getMedian();
+
+    /**
+     * The median value.
+     *
+     * @param median Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addMedian(Number median);
+
+    /**
      * The 10th percentile value.
      *
      * @return {@link Number}
@@ -80,6 +104,30 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     void addPercentile10(Number percentile10);
+
+    /**
+     * The 25th percentile value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Number> getPercentile25List();
+
+    /**
+     * The 25th percentile value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    Number getPercentile25();
+
+    /**
+     * The 25th percentile value.
+     *
+     * @param percentile25 Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addPercentile25(Number percentile25);
 
     /**
      * The 75th percentile value.
@@ -128,52 +176,4 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     void addPercentile90(Number percentile90);
-
-    /**
-     * The 25th percentile value.
-     *
-     * @return {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    List<Number> getPercentile25List();
-
-    /**
-     * The 25th percentile value.
-     *
-     * @return {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    Number getPercentile25();
-
-    /**
-     * The 25th percentile value.
-     *
-     * @param percentile25 Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addPercentile25(Number percentile25);
-
-    /**
-     * The median value.
-     *
-     * @return {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    List<Number> getMedianList();
-
-    /**
-     * The median value.
-     *
-     * @return {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    Number getMedian();
-
-    /**
-     * The median value.
-     *
-     * @param median Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addMedian(Number median);
 }

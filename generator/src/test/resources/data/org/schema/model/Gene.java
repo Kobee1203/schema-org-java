@@ -23,31 +23,31 @@ import org.schema.model.datatype.Text;
 public interface Gene extends BioChemEntity {
 
     /**
-     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     * Another gene which is a variation of this one.
      *
-     * @return {@link Text}
+     * @return {@link Gene}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
      */
-    List<Text> getHasBioPolymerSequenceList();
+    List<Gene> getAlternativeOfList();
 
     /**
-     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     * Another gene which is a variation of this one.
      *
-     * @return {@link Text}
+     * @return {@link Gene}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
      */
-    Text getHasBioPolymerSequence();
+    Gene getAlternativeOf();
 
     /**
-     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     * Another gene which is a variation of this one.
      *
-     * @param hasBioPolymerSequence Text value to set.
+     * @param alternativeOf Gene value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
      */
-    void addHasBioPolymerSequence(Text hasBioPolymerSequence);
+    void addAlternativeOf(Gene alternativeOf);
 
     /**
      * Another BioChemEntity encoded by this one. 
@@ -128,29 +128,29 @@ public interface Gene extends BioChemEntity {
     void addExpressedIn(AnatomicalStructure expressedIn);
 
     /**
-     * Another gene which is a variation of this one.
+     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
-     * @return {@link Gene}
+     * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
      */
-    List<Gene> getAlternativeOfList();
+    List<Text> getHasBioPolymerSequenceList();
 
     /**
-     * Another gene which is a variation of this one.
+     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
-     * @return {@link Gene}
+     * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
      */
-    Gene getAlternativeOf();
+    Text getHasBioPolymerSequence();
 
     /**
-     * Another gene which is a variation of this one.
+     * A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
-     * @param alternativeOf Gene value to set.
+     * @param hasBioPolymerSequence Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
      */
-    void addAlternativeOf(Gene alternativeOf);
+    void addHasBioPolymerSequence(Text hasBioPolymerSequence);
 }

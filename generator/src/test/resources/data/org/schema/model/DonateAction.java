@@ -74,6 +74,30 @@ public interface DonateAction extends TransferAction {
     void addPriceCurrency(Text priceCurrency);
 
     /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<PriceSpecification> getPriceSpecificationList();
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    PriceSpecification getPriceSpecification();
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @param priceSpecification PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addPriceSpecification(PriceSpecification priceSpecification);
+
+    /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
@@ -111,28 +135,4 @@ public interface DonateAction extends TransferAction {
      * @param recipient Audience value to set.
      */
     void addRecipient(Audience recipient);
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<PriceSpecification> getPriceSpecificationList();
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    PriceSpecification getPriceSpecification();
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @param priceSpecification PriceSpecification value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addPriceSpecification(PriceSpecification priceSpecification);
 }

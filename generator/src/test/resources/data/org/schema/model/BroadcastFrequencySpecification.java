@@ -20,6 +20,37 @@ import org.schema.model.datatype.Text;
 public interface BroadcastFrequencySpecification extends Intangible {
 
     /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> List<T> getBroadcastFrequencyValueList();
+
+    /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> T getBroadcastFrequencyValue();
+
+    /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @param broadcastFrequencyValue QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void addBroadcastFrequencyValue(QuantitativeValue broadcastFrequencyValue);
+    /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @param broadcastFrequencyValue Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void addBroadcastFrequencyValue(Number broadcastFrequencyValue);
+
+    /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
      *
      * @return {@link QualitativeValue} or {@link Text}
@@ -53,37 +84,6 @@ public interface BroadcastFrequencySpecification extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
     void addBroadcastSignalModulation(Text broadcastSignalModulation);
-
-    /**
-     * The frequency in MHz for a particular broadcast.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    <T> List<T> getBroadcastFrequencyValueList();
-
-    /**
-     * The frequency in MHz for a particular broadcast.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    <T> T getBroadcastFrequencyValue();
-
-    /**
-     * The frequency in MHz for a particular broadcast.
-     *
-     * @param broadcastFrequencyValue QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void addBroadcastFrequencyValue(QuantitativeValue broadcastFrequencyValue);
-    /**
-     * The frequency in MHz for a particular broadcast.
-     *
-     * @param broadcastFrequencyValue Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void addBroadcastFrequencyValue(Number broadcastFrequencyValue);
 
     /**
      * The subchannel used for the broadcast.

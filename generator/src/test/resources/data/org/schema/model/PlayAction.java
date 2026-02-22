@@ -17,27 +17,6 @@ import org.schema.model.Event;
 public interface PlayAction extends Action {
 
     /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    List<Event> getEventList();
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    Event getEvent();
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @param event Event value to set.
-     */
-    void addEvent(Event event);
-
-    /**
      * An intended audience, i.e. a group for whom something was created.
      *
      * @return {@link Audience}
@@ -57,4 +36,25 @@ public interface PlayAction extends Action {
      * @param audience Audience value to set.
      */
     void addAudience(Audience audience);
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventList();
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    Event getEvent();
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @param event Event value to set.
+     */
+    void addEvent(Event event);
 }

@@ -19,30 +19,6 @@ import org.schema.model.QuantitativeValue;
 public interface Audiobook extends AudioObject, Book {
 
     /**
-     * A person who reads (performs) the audiobook.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    List<Person> getReadByList();
-
-    /**
-     * A person who reads (performs) the audiobook.
-     *
-     * @return {@link Person}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    Person getReadBy();
-
-    /**
-     * A person who reads (performs) the audiobook.
-     *
-     * @param readBy Person value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void addReadBy(Person readBy);
-
-    /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return {@link Duration} or {@link QuantitativeValue}
@@ -80,4 +56,28 @@ public interface Audiobook extends AudioObject, Book {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addDuration(QuantitativeValue duration);
+
+    /**
+     * A person who reads (performs) the audiobook.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getReadByList();
+
+    /**
+     * A person who reads (performs) the audiobook.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    Person getReadBy();
+
+    /**
+     * A person who reads (performs) the audiobook.
+     *
+     * @param readBy Person value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void addReadBy(Person readBy);
 }

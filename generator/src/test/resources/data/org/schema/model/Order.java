@@ -32,115 +32,46 @@ import org.schema.model.datatype.URL;
 public interface Order extends Intangible {
 
     /**
-     * Indicates whether the offer was accepted as a gift for someone other than the buyer.
+     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
      *
-     * @return {@link Boolean}
+     * @return {@link Offer}
      */
-    List<Boolean> getIsGiftList();
+    List<Offer> getAcceptedOfferList();
 
     /**
-     * Indicates whether the offer was accepted as a gift for someone other than the buyer.
+     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
      *
-     * @return {@link Boolean}
+     * @return {@link Offer}
      */
-    Boolean getIsGift();
+    Offer getAcceptedOffer();
 
     /**
-     * Indicates whether the offer was accepted as a gift for someone other than the buyer.
+     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
      *
-     * @param isGift Boolean value to set.
+     * @param acceptedOffer Offer value to set.
      */
-    void addIsGift(Boolean isGift);
+    void addAcceptedOffer(Offer acceptedOffer);
 
     /**
-     * The URL for sending a payment.
+     * The billing address for the order.
      *
-     * @return {@link URL}
+     * @return {@link PostalAddress}
      */
-    List<URL> getPaymentUrlList();
+    List<PostalAddress> getBillingAddressList();
 
     /**
-     * The URL for sending a payment.
+     * The billing address for the order.
      *
-     * @return {@link URL}
+     * @return {@link PostalAddress}
      */
-    URL getPaymentUrl();
+    PostalAddress getBillingAddress();
 
     /**
-     * The URL for sending a payment.
+     * The billing address for the order.
      *
-     * @param paymentUrl URL value to set.
+     * @param billingAddress PostalAddress value to set.
      */
-    void addPaymentUrl(URL paymentUrl);
-
-    /**
-     * The identifier of the transaction.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getOrderNumberList();
-
-    /**
-     * The identifier of the transaction.
-     *
-     * @return {@link Text}
-     */
-    Text getOrderNumber();
-
-    /**
-     * The identifier of the transaction.
-     *
-     * @param orderNumber Text value to set.
-     */
-    void addOrderNumber(Text orderNumber);
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getCustomerList();
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getCustomer();
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Person value to set.
-     */
-    void addCustomer(Person customer);
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @param customer Organization value to set.
-     */
-    void addCustomer(Organization customer);
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    List<ParcelDelivery> getOrderDeliveryList();
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    ParcelDelivery getOrderDelivery();
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @param orderDelivery ParcelDelivery value to set.
-     */
-    void addOrderDelivery(ParcelDelivery orderDelivery);
+    void addBillingAddress(PostalAddress billingAddress);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -170,67 +101,142 @@ public interface Order extends Intangible {
     void addBroker(Organization broker);
 
     /**
-     * The order is being paid as part of the referenced Invoice.
+     * A number that confirms the given order or payment has been received.
      *
-     * @return {@link Invoice}
+     * @return {@link Text}
      */
-    List<Invoice> getPartOfInvoiceList();
+    List<Text> getConfirmationNumberList();
 
     /**
-     * The order is being paid as part of the referenced Invoice.
+     * A number that confirms the given order or payment has been received.
      *
-     * @return {@link Invoice}
+     * @return {@link Text}
      */
-    Invoice getPartOfInvoice();
+    Text getConfirmationNumber();
 
     /**
-     * The order is being paid as part of the referenced Invoice.
+     * A number that confirms the given order or payment has been received.
      *
-     * @param partOfInvoice Invoice value to set.
+     * @param confirmationNumber Text value to set.
      */
-    void addPartOfInvoice(Invoice partOfInvoice);
+    void addConfirmationNumber(Text confirmationNumber);
 
     /**
-     * The date that payment is due.
+     * Party placing the order or paying the invoice.
      *
-     * @return {@link DateTime}
+     * @return {@link Person} or {@link Organization}
      */
-    List<DateTime> getPaymentDueList();
+    <T> List<T> getCustomerList();
 
     /**
-     * The date that payment is due.
+     * Party placing the order or paying the invoice.
      *
-     * @return {@link DateTime}
+     * @return {@link Person} or {@link Organization}
      */
-    DateTime getPaymentDue();
+    <T> T getCustomer();
 
     /**
-     * The date that payment is due.
+     * Party placing the order or paying the invoice.
      *
-     * @param paymentDue DateTime value to set.
+     * @param customer Person value to set.
      */
-    void addPaymentDue(DateTime paymentDue);
+    void addCustomer(Person customer);
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @param customer Organization value to set.
+     */
+    void addCustomer(Organization customer);
 
     /**
-     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+     * Any discount applied (to an Order).
      *
-     * @return {@link Offer}
+     * @return {@link Number} or {@link Text}
      */
-    List<Offer> getAcceptedOfferList();
+    <T> List<T> getDiscountList();
 
     /**
-     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+     * Any discount applied (to an Order).
      *
-     * @return {@link Offer}
+     * @return {@link Number} or {@link Text}
      */
-    Offer getAcceptedOffer();
+    <T> T getDiscount();
 
     /**
-     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+     * Any discount applied (to an Order).
      *
-     * @param acceptedOffer Offer value to set.
+     * @param discount Number value to set.
      */
-    void addAcceptedOffer(Offer acceptedOffer);
+    void addDiscount(Number discount);
+    /**
+     * Any discount applied (to an Order).
+     *
+     * @param discount Text value to set.
+     */
+    void addDiscount(Text discount);
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDiscountCodeList();
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @return {@link Text}
+     */
+    Text getDiscountCode();
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @param discountCode Text value to set.
+     */
+    void addDiscountCode(Text discountCode);
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDiscountCurrencyList();
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    Text getDiscountCurrency();
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @param discountCurrency Text value to set.
+     */
+    void addDiscountCurrency(Text discountCurrency);
+
+    /**
+     * Indicates whether the offer was accepted as a gift for someone other than the buyer.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsGiftList();
+
+    /**
+     * Indicates whether the offer was accepted as a gift for someone other than the buyer.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getIsGift();
+
+    /**
+     * Indicates whether the offer was accepted as a gift for someone other than the buyer.
+     *
+     * @param isGift Boolean value to set.
+     */
+    void addIsGift(Boolean isGift);
 
     /**
      * 'merchant' is an out-dated term for 'seller'.
@@ -287,6 +293,48 @@ public interface Order extends Intangible {
     void addOrderDate(Date orderDate);
 
     /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    List<ParcelDelivery> getOrderDeliveryList();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    ParcelDelivery getOrderDelivery();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @param orderDelivery ParcelDelivery value to set.
+     */
+    void addOrderDelivery(ParcelDelivery orderDelivery);
+
+    /**
+     * The identifier of the transaction.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOrderNumberList();
+
+    /**
+     * The identifier of the transaction.
+     *
+     * @return {@link Text}
+     */
+    Text getOrderNumber();
+
+    /**
+     * The identifier of the transaction.
+     *
+     * @param orderNumber Text value to set.
+     */
+    void addOrderNumber(Text orderNumber);
+
+    /**
      * The current status of the order.
      *
      * @return {@link OrderStatus}
@@ -306,133 +354,6 @@ public interface Order extends Intangible {
      * @param orderStatus OrderStatus value to set.
      */
     void addOrderStatus(OrderStatus orderStatus);
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getSellerList();
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getSeller();
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Person value to set.
-     */
-    void addSeller(Person seller);
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Organization value to set.
-     */
-    void addSeller(Organization seller);
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    <T> List<T> getDiscountList();
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    <T> T getDiscount();
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param discount Number value to set.
-     */
-    void addDiscount(Number discount);
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param discount Text value to set.
-     */
-    void addDiscount(Text discount);
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @return {@link PaymentMethod} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     */
-    <T> List<T> getPaymentMethodList();
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @return {@link PaymentMethod} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     */
-    <T> T getPaymentMethod();
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @param paymentMethod PaymentMethod value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     */
-    void addPaymentMethod(PaymentMethod paymentMethod);
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @param paymentMethod Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     */
-    void addPaymentMethod(Text paymentMethod);
-
-    /**
-     * Code used to redeem a discount.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getDiscountCodeList();
-
-    /**
-     * Code used to redeem a discount.
-     *
-     * @return {@link Text}
-     */
-    Text getDiscountCode();
-
-    /**
-     * Code used to redeem a discount.
-     *
-     * @param discountCode Text value to set.
-     */
-    void addDiscountCode(Text discountCode);
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPaymentMethodIdList();
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @return {@link Text}
-     */
-    Text getPaymentMethodId();
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @param paymentMethodId Text value to set.
-     */
-    void addPaymentMethodId(Text paymentMethodId);
 
     /**
      * The item ordered.
@@ -468,6 +389,48 @@ public interface Order extends Intangible {
     void addOrderedItem(OrderItem orderedItem);
 
     /**
+     * The order is being paid as part of the referenced Invoice.
+     *
+     * @return {@link Invoice}
+     */
+    List<Invoice> getPartOfInvoiceList();
+
+    /**
+     * The order is being paid as part of the referenced Invoice.
+     *
+     * @return {@link Invoice}
+     */
+    Invoice getPartOfInvoice();
+
+    /**
+     * The order is being paid as part of the referenced Invoice.
+     *
+     * @param partOfInvoice Invoice value to set.
+     */
+    void addPartOfInvoice(Invoice partOfInvoice);
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPaymentDueList();
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getPaymentDue();
+
+    /**
+     * The date that payment is due.
+     *
+     * @param paymentDue DateTime value to set.
+     */
+    void addPaymentDue(DateTime paymentDue);
+
+    /**
      * The date that payment is due.
      *
      * @return {@link DateTime} or {@link Date}
@@ -495,65 +458,102 @@ public interface Order extends Intangible {
     void addPaymentDueDate(Date paymentDueDate);
 
     /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    <T> List<T> getPaymentMethodList();
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    <T> T getPaymentMethod();
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @param paymentMethod PaymentMethod value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    void addPaymentMethod(PaymentMethod paymentMethod);
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @param paymentMethod Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     */
+    void addPaymentMethod(Text paymentMethod);
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      *
      * @return {@link Text}
      */
-    List<Text> getDiscountCurrencyList();
+    List<Text> getPaymentMethodIdList();
 
     /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      *
      * @return {@link Text}
      */
-    Text getDiscountCurrency();
+    Text getPaymentMethodId();
 
     /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      *
-     * @param discountCurrency Text value to set.
+     * @param paymentMethodId Text value to set.
      */
-    void addDiscountCurrency(Text discountCurrency);
+    void addPaymentMethodId(Text paymentMethodId);
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The URL for sending a payment.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
-    List<Text> getConfirmationNumberList();
+    List<URL> getPaymentUrlList();
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The URL for sending a payment.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
-    Text getConfirmationNumber();
+    URL getPaymentUrl();
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The URL for sending a payment.
      *
-     * @param confirmationNumber Text value to set.
+     * @param paymentUrl URL value to set.
      */
-    void addConfirmationNumber(Text confirmationNumber);
+    void addPaymentUrl(URL paymentUrl);
 
     /**
-     * The billing address for the order.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @return {@link PostalAddress}
+     * @return {@link Person} or {@link Organization}
      */
-    List<PostalAddress> getBillingAddressList();
+    <T> List<T> getSellerList();
 
     /**
-     * The billing address for the order.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @return {@link PostalAddress}
+     * @return {@link Person} or {@link Organization}
      */
-    PostalAddress getBillingAddress();
+    <T> T getSeller();
 
     /**
-     * The billing address for the order.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param billingAddress PostalAddress value to set.
+     * @param seller Person value to set.
      */
-    void addBillingAddress(PostalAddress billingAddress);
+    void addSeller(Person seller);
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Organization value to set.
+     */
+    void addSeller(Organization seller);
 }

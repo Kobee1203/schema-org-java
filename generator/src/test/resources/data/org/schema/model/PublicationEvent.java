@@ -19,25 +19,25 @@ import org.schema.model.datatype.Boolean;
 public interface PublicationEvent extends Event {
 
     /**
-     * A broadcast service associated with the publication event.
+     * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @return {@link BroadcastService}
+     * @return {@link Boolean}
      */
-    List<BroadcastService> getPublishedOnList();
+    List<Boolean> getFreeList();
 
     /**
-     * A broadcast service associated with the publication event.
+     * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @return {@link BroadcastService}
+     * @return {@link Boolean}
      */
-    BroadcastService getPublishedOn();
+    Boolean getFree();
 
     /**
-     * A broadcast service associated with the publication event.
+     * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @param publishedOn BroadcastService value to set.
+     * @param free Boolean value to set.
      */
-    void addPublishedOn(BroadcastService publishedOn);
+    void addFree(Boolean free);
 
     /**
      * An agent associated with the publication event.
@@ -71,23 +71,23 @@ public interface PublicationEvent extends Event {
     void addPublishedBy(Organization publishedBy);
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * A broadcast service associated with the publication event.
      *
-     * @return {@link Boolean}
+     * @return {@link BroadcastService}
      */
-    List<Boolean> getFreeList();
+    List<BroadcastService> getPublishedOnList();
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * A broadcast service associated with the publication event.
      *
-     * @return {@link Boolean}
+     * @return {@link BroadcastService}
      */
-    Boolean getFree();
+    BroadcastService getPublishedOn();
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * A broadcast service associated with the publication event.
      *
-     * @param free Boolean value to set.
+     * @param publishedOn BroadcastService value to set.
      */
-    void addFree(Boolean free);
+    void addPublishedOn(BroadcastService publishedOn);
 }

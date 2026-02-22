@@ -18,30 +18,6 @@ import org.schema.model.datatype.Text;
 public interface MedicalOrganization extends Organization {
 
     /**
-     * A medical specialty of the provider.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalSpecialty> getMedicalSpecialtyList();
-
-    /**
-     * A medical specialty of the provider.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalSpecialty getMedicalSpecialty();
-
-    /**
-     * A medical specialty of the provider.
-     *
-     * @param medicalSpecialty MedicalSpecialty value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
-
-    /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans.)
      *
      * @return {@link Text}
@@ -94,4 +70,28 @@ public interface MedicalOrganization extends Organization {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addIsAcceptingNewPatients(Boolean isAcceptingNewPatients);
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSpecialty> getMedicalSpecialtyList();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalSpecialty getMedicalSpecialty();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @param medicalSpecialty MedicalSpecialty value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 }

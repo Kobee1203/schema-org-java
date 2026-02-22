@@ -18,27 +18,6 @@ import org.schema.model.RealEstateAgent;
 public interface RentAction extends TradeAction {
 
     /**
-     * A sub property of participant. The real estate agent involved in the action.
-     *
-     * @return {@link RealEstateAgent}
-     */
-    List<RealEstateAgent> getRealEstateAgentList();
-
-    /**
-     * A sub property of participant. The real estate agent involved in the action.
-     *
-     * @return {@link RealEstateAgent}
-     */
-    RealEstateAgent getRealEstateAgent();
-
-    /**
-     * A sub property of participant. The real estate agent involved in the action.
-     *
-     * @param realEstateAgent RealEstateAgent value to set.
-     */
-    void addRealEstateAgent(RealEstateAgent realEstateAgent);
-
-    /**
      * A sub property of participant. The owner of the real estate property.
      *
      * @return {@link Organization} or {@link Person}
@@ -64,4 +43,25 @@ public interface RentAction extends TradeAction {
      * @param landlord Person value to set.
      */
     void addLandlord(Person landlord);
+
+    /**
+     * A sub property of participant. The real estate agent involved in the action.
+     *
+     * @return {@link RealEstateAgent}
+     */
+    List<RealEstateAgent> getRealEstateAgentList();
+
+    /**
+     * A sub property of participant. The real estate agent involved in the action.
+     *
+     * @return {@link RealEstateAgent}
+     */
+    RealEstateAgent getRealEstateAgent();
+
+    /**
+     * A sub property of participant. The real estate agent involved in the action.
+     *
+     * @param realEstateAgent RealEstateAgent value to set.
+     */
+    void addRealEstateAgent(RealEstateAgent realEstateAgent);
 }

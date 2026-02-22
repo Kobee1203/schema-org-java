@@ -20,30 +20,6 @@ import org.schema.model.SuperficialAnatomy;
 public interface Nerve extends AnatomicalStructure {
 
     /**
-     * The neurological pathway that originates the neurons.
-     *
-     * @return {@link BrainStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<BrainStructure> getSourcedFromList();
-
-    /**
-     * The neurological pathway that originates the neurons.
-     *
-     * @return {@link BrainStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    BrainStructure getSourcedFrom();
-
-    /**
-     * The neurological pathway that originates the neurons.
-     *
-     * @param sourcedFrom BrainStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSourcedFrom(BrainStructure sourcedFrom);
-
-    /**
      * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
      *
      * @return {@link AnatomicalStructure}
@@ -121,4 +97,28 @@ public interface Nerve extends AnatomicalStructure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addSensoryUnit(AnatomicalStructure sensoryUnit);
+
+    /**
+     * The neurological pathway that originates the neurons.
+     *
+     * @return {@link BrainStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<BrainStructure> getSourcedFromList();
+
+    /**
+     * The neurological pathway that originates the neurons.
+     *
+     * @return {@link BrainStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    BrainStructure getSourcedFrom();
+
+    /**
+     * The neurological pathway that originates the neurons.
+     *
+     * @param sourcedFrom BrainStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addSourcedFrom(BrainStructure sourcedFrom);
 }

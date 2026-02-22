@@ -65,4597 +65,2125 @@ import org.schema.model.datatype.URL;
 @JsonLdTypeName("Vehicle")
 public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Vehicle {
 
-    private List<Text> vehicleConfiguration;
-
-    /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Text> getVehicleConfigurationList() {
-        return vehicleConfiguration;
-    }
-
-    /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Text getVehicleConfiguration() {
-        return getFirst(vehicleConfiguration);
-    }
-
-    /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-     *
-     * @param vehicleConfiguration Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleConfiguration(Text vehicleConfiguration) {
-        this.vehicleConfiguration = add(this.vehicleConfiguration, vehicleConfiguration);
-    }
-
-    private List<QuantitativeValue> weightTotal;
-
-    /**
-     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getWeightTotalList() {
-        return weightTotal;
-    }
-
-    /**
-     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getWeightTotal() {
-        return getFirst(weightTotal);
-    }
-
-    /**
-     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param weightTotal QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addWeightTotal(QuantitativeValue weightTotal) {
-        this.weightTotal = add(this.weightTotal, weightTotal);
-    }
-
-    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
-    private List<Object> numberOfForwardGears;
-
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getNumberOfForwardGearsList() {
-        return (List<T>) numberOfForwardGears;
-    }
-
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfForwardGears() {
-        return (T) getFirst(numberOfForwardGears);
-    }
-
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfForwardGears Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfForwardGears(Number numberOfForwardGears) {
-        this.numberOfForwardGears = add(this.numberOfForwardGears, numberOfForwardGears);
-    }
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfForwardGears QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfForwardGears(QuantitativeValue numberOfForwardGears) {
-        this.numberOfForwardGears = add(this.numberOfForwardGears, numberOfForwardGears);
-    }
-
-    @JsonLdFieldTypes({ Text.class, QualitativeValue.class, URL.class })
-    private List<Object> vehicleTransmission;
-
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getVehicleTransmissionList() {
-        return (List<T>) vehicleTransmission;
-    }
-
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getVehicleTransmission() {
-        return (T) getFirst(vehicleTransmission);
-    }
-
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param vehicleTransmission Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleTransmission(Text vehicleTransmission) {
-        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
-    }
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param vehicleTransmission QualitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleTransmission(QualitativeValue vehicleTransmission) {
-        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
-    }
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param vehicleTransmission URL value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleTransmission(URL vehicleTransmission) {
-        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
-    }
-
-    private List<Text> knownVehicleDamages;
-
-    /**
-     * A textual description of known damages, both repaired and unrepaired.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Text> getKnownVehicleDamagesList() {
-        return knownVehicleDamages;
-    }
-
-    /**
-     * A textual description of known damages, both repaired and unrepaired.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Text getKnownVehicleDamages() {
-        return getFirst(knownVehicleDamages);
-    }
-
-    /**
-     * A textual description of known damages, both repaired and unrepaired.
-     *
-     * @param knownVehicleDamages Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addKnownVehicleDamages(Text knownVehicleDamages) {
-        this.knownVehicleDamages = add(this.knownVehicleDamages, knownVehicleDamages);
-    }
-
-    private List<SteeringPositionValue> steeringPosition;
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @return {@link SteeringPositionValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<SteeringPositionValue> getSteeringPositionList() {
-        return steeringPosition;
-    }
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @return {@link SteeringPositionValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public SteeringPositionValue getSteeringPosition() {
-        return getFirst(steeringPosition);
-    }
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @param steeringPosition SteeringPositionValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addSteeringPosition(SteeringPositionValue steeringPosition) {
-        this.steeringPosition = add(this.steeringPosition, steeringPosition);
-    }
-
-    private List<Number> emissionsCO2;
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @return {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Number> getEmissionsCO2List() {
-        return emissionsCO2;
-    }
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @return {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Number getEmissionsCO2() {
-        return getFirst(emissionsCO2);
-    }
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @param emissionsCO2 Number value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addEmissionsCO2(Number emissionsCO2) {
-        this.emissionsCO2 = add(this.emissionsCO2, emissionsCO2);
-    }
-
-    private List<Text> vehicleInteriorType;
-
-    /**
-     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Text> getVehicleInteriorTypeList() {
-        return vehicleInteriorType;
-    }
-
-    /**
-     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Text getVehicleInteriorType() {
-        return getFirst(vehicleInteriorType);
-    }
-
-    /**
-     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-     *
-     * @param vehicleInteriorType Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleInteriorType(Text vehicleInteriorType) {
-        this.vehicleInteriorType = add(this.vehicleInteriorType, vehicleInteriorType);
-    }
-
-    private List<QuantitativeValue> payload;
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getPayloadList() {
-        return payload;
-    }
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getPayload() {
-        return getFirst(payload);
-    }
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param payload QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addPayload(QuantitativeValue payload) {
-        this.payload = add(this.payload, payload);
-    }
-
     private List<QuantitativeValue> accelerationTime;
 
-    /**
-     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
     @Override
     public List<QuantitativeValue> getAccelerationTimeList() {
         return accelerationTime;
     }
 
-    /**
-     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
     @Override
     public QuantitativeValue getAccelerationTime() {
         return getFirst(accelerationTime);
     }
 
-    /**
-     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
-     *
-     * @param accelerationTime QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
     @Override
     public void addAccelerationTime(QuantitativeValue accelerationTime) {
         this.accelerationTime = add(this.accelerationTime, accelerationTime);
     }
 
-    @JsonLdFieldTypes({ Text.class, QualitativeValue.class, URL.class })
-    private List<Object> meetsEmissionStandard;
-
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getMeetsEmissionStandardList() {
-        return (List<T>) meetsEmissionStandard;
-    }
-
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getMeetsEmissionStandard() {
-        return (T) getFirst(meetsEmissionStandard);
-    }
-
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param meetsEmissionStandard Text value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addMeetsEmissionStandard(Text meetsEmissionStandard) {
-        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
-    }
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param meetsEmissionStandard QualitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addMeetsEmissionStandard(QualitativeValue meetsEmissionStandard) {
-        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
-    }
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param meetsEmissionStandard URL value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addMeetsEmissionStandard(URL meetsEmissionStandard) {
-        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
-    private List<Object> seatingCapacity;
-
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getSeatingCapacityList() {
-        return (List<T>) seatingCapacity;
-    }
-
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getSeatingCapacity() {
-        return (T) getFirst(seatingCapacity);
-    }
-
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param seatingCapacity QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addSeatingCapacity(QuantitativeValue seatingCapacity) {
-        this.seatingCapacity = add(this.seatingCapacity, seatingCapacity);
-    }
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param seatingCapacity Number value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addSeatingCapacity(Number seatingCapacity) {
-        this.seatingCapacity = add(this.seatingCapacity, seatingCapacity);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
-    private List<Object> numberOfDoors;
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getNumberOfDoorsList() {
-        return (List<T>) numberOfDoors;
-    }
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfDoors() {
-        return (T) getFirst(numberOfDoors);
-    }
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfDoors QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfDoors(QuantitativeValue numberOfDoors) {
-        this.numberOfDoors = add(this.numberOfDoors, numberOfDoors);
-    }
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfDoors Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfDoors(Number numberOfDoors) {
-        this.numberOfDoors = add(this.numberOfDoors, numberOfDoors);
-    }
-
-    @JsonLdFieldTypes({ Text.class, CarUsageType.class })
-    private List<Object> vehicleSpecialUsage;
-
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @return {@link Text} or {@link CarUsageType}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getVehicleSpecialUsageList() {
-        return (List<T>) vehicleSpecialUsage;
-    }
-
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @return {@link Text} or {@link CarUsageType}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getVehicleSpecialUsage() {
-        return (T) getFirst(vehicleSpecialUsage);
-    }
-
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @param vehicleSpecialUsage Text value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleSpecialUsage(Text vehicleSpecialUsage) {
-        this.vehicleSpecialUsage = add(this.vehicleSpecialUsage, vehicleSpecialUsage);
-    }
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @param vehicleSpecialUsage CarUsageType value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleSpecialUsage(CarUsageType vehicleSpecialUsage) {
-        this.vehicleSpecialUsage = add(this.vehicleSpecialUsage, vehicleSpecialUsage);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
-    private List<Object> vehicleSeatingCapacity;
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getVehicleSeatingCapacityList() {
-        return (List<T>) vehicleSeatingCapacity;
-    }
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getVehicleSeatingCapacity() {
-        return (T) getFirst(vehicleSeatingCapacity);
-    }
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param vehicleSeatingCapacity QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity) {
-        this.vehicleSeatingCapacity = add(this.vehicleSeatingCapacity, vehicleSeatingCapacity);
-    }
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param vehicleSeatingCapacity Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleSeatingCapacity(Number vehicleSeatingCapacity) {
-        this.vehicleSeatingCapacity = add(this.vehicleSeatingCapacity, vehicleSeatingCapacity);
-    }
-
-    private List<QuantitativeValue> mileageFromOdometer;
-
-    /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getMileageFromOdometerList() {
-        return mileageFromOdometer;
-    }
-
-    /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getMileageFromOdometer() {
-        return getFirst(mileageFromOdometer);
-    }
-
-    /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
-     *
-     * @param mileageFromOdometer QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addMileageFromOdometer(QuantitativeValue mileageFromOdometer) {
-        this.mileageFromOdometer = add(this.mileageFromOdometer, mileageFromOdometer);
-    }
-
-    private List<Date> purchaseDate;
-
-    /**
-     * The date the item, e.g. vehicle, was purchased by the current owner.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Date> getPurchaseDateList() {
-        return purchaseDate;
-    }
-
-    /**
-     * The date the item, e.g. vehicle, was purchased by the current owner.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getPurchaseDate() {
-        return getFirst(purchaseDate);
-    }
-
-    /**
-     * The date the item, e.g. vehicle, was purchased by the current owner.
-     *
-     * @param purchaseDate Date value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addPurchaseDate(Date purchaseDate) {
-        this.purchaseDate = add(this.purchaseDate, purchaseDate);
-    }
-
-    private List<QuantitativeValue> fuelCapacity;
-
-    /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getFuelCapacityList() {
-        return fuelCapacity;
-    }
-
-    /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getFuelCapacity() {
-        return getFirst(fuelCapacity);
-    }
-
-    /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
-     *
-     * @param fuelCapacity QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addFuelCapacity(QuantitativeValue fuelCapacity) {
-        this.fuelCapacity = add(this.fuelCapacity, fuelCapacity);
-    }
-
-    private List<QuantitativeValue> trailerWeight;
-
-    /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getTrailerWeightList() {
-        return trailerWeight;
-    }
-
-    /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getTrailerWeight() {
-        return getFirst(trailerWeight);
-    }
-
-    /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param trailerWeight QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addTrailerWeight(QuantitativeValue trailerWeight) {
-        this.trailerWeight = add(this.trailerWeight, trailerWeight);
-    }
-
-    private List<Date> modelDate;
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @return {@link Date}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Date> getModelDateList() {
-        return modelDate;
-    }
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @return {@link Date}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getModelDate() {
-        return getFirst(modelDate);
-    }
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @param modelDate Date value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addModelDate(Date modelDate) {
-        this.modelDate = add(this.modelDate, modelDate);
-    }
-
-    private List<QuantitativeValue> tongueWeight;
-
-    /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getTongueWeightList() {
-        return tongueWeight;
-    }
-
-    /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getTongueWeight() {
-        return getFirst(tongueWeight);
-    }
-
-    /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param tongueWeight QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addTongueWeight(QuantitativeValue tongueWeight) {
-        this.tongueWeight = add(this.tongueWeight, tongueWeight);
-    }
-
-    private List<Text> vehicleIdentificationNumber;
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Text> getVehicleIdentificationNumberList() {
-        return vehicleIdentificationNumber;
-    }
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Text getVehicleIdentificationNumber() {
-        return getFirst(vehicleIdentificationNumber);
-    }
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @param vehicleIdentificationNumber Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleIdentificationNumber(Text vehicleIdentificationNumber) {
-        this.vehicleIdentificationNumber = add(this.vehicleIdentificationNumber, vehicleIdentificationNumber);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
-    private List<Object> numberOfPreviousOwners;
-
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getNumberOfPreviousOwnersList() {
-        return (List<T>) numberOfPreviousOwners;
-    }
-
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfPreviousOwners() {
-        return (T) getFirst(numberOfPreviousOwners);
-    }
-
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfPreviousOwners QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners) {
-        this.numberOfPreviousOwners = add(this.numberOfPreviousOwners, numberOfPreviousOwners);
-    }
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfPreviousOwners Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfPreviousOwners(Number numberOfPreviousOwners) {
-        this.numberOfPreviousOwners = add(this.numberOfPreviousOwners, numberOfPreviousOwners);
-    }
-
-    private List<QuantitativeValue> wheelbase;
-
-    /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getWheelbaseList() {
-        return wheelbase;
-    }
-
-    /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getWheelbase() {
-        return getFirst(wheelbase);
-    }
-
-    /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
-     *
-     * @param wheelbase QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addWheelbase(QuantitativeValue wheelbase) {
-        this.wheelbase = add(this.wheelbase, wheelbase);
-    }
-
-    private List<EngineSpecification> vehicleEngine;
-
-    /**
-     * Information about the engine or engines of the vehicle.
-     *
-     * @return {@link EngineSpecification}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<EngineSpecification> getVehicleEngineList() {
-        return vehicleEngine;
-    }
-
-    /**
-     * Information about the engine or engines of the vehicle.
-     *
-     * @return {@link EngineSpecification}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public EngineSpecification getVehicleEngine() {
-        return getFirst(vehicleEngine);
-    }
-
-    /**
-     * Information about the engine or engines of the vehicle.
-     *
-     * @param vehicleEngine EngineSpecification value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleEngine(EngineSpecification vehicleEngine) {
-        this.vehicleEngine = add(this.vehicleEngine, vehicleEngine);
-    }
-
-    @JsonLdFieldTypes({ Text.class, QualitativeValue.class, URL.class })
-    private List<Object> bodyType;
-
-    /**
-     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getBodyTypeList() {
-        return (List<T>) bodyType;
-    }
-
-    /**
-     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getBodyType() {
-        return (T) getFirst(bodyType);
-    }
-
-    /**
-     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-     *
-     * @param bodyType Text value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addBodyType(Text bodyType) {
-        this.bodyType = add(this.bodyType, bodyType);
-    }
-    /**
-     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-     *
-     * @param bodyType QualitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addBodyType(QualitativeValue bodyType) {
-        this.bodyType = add(this.bodyType, bodyType);
-    }
-    /**
-     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-     *
-     * @param bodyType URL value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addBodyType(URL bodyType) {
-        this.bodyType = add(this.bodyType, bodyType);
-    }
-
-    @JsonLdFieldTypes({ Number.class, Text.class })
-    private List<Object> numberOfAirbags;
-
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @return {@link Number} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getNumberOfAirbagsList() {
-        return (List<T>) numberOfAirbags;
-    }
-
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @return {@link Number} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfAirbags() {
-        return (T) getFirst(numberOfAirbags);
-    }
-
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @param numberOfAirbags Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfAirbags(Number numberOfAirbags) {
-        this.numberOfAirbags = add(this.numberOfAirbags, numberOfAirbags);
-    }
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @param numberOfAirbags Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfAirbags(Text numberOfAirbags) {
-        this.numberOfAirbags = add(this.numberOfAirbags, numberOfAirbags);
-    }
-
-    private List<QuantitativeValue> cargoVolume;
-
-    /**
-     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getCargoVolumeList() {
-        return cargoVolume;
-    }
-
-    /**
-     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getCargoVolume() {
-        return getFirst(cargoVolume);
-    }
-
-    /**
-     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param cargoVolume QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addCargoVolume(QuantitativeValue cargoVolume) {
-        this.cargoVolume = add(this.cargoVolume, cargoVolume);
-    }
-
-    private List<Date> productionDate;
-
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Date> getProductionDateList() {
-        return productionDate;
-    }
-
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getProductionDate() {
-        return getFirst(productionDate);
-    }
-
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @param productionDate Date value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addProductionDate(Date productionDate) {
-        this.productionDate = add(this.productionDate, productionDate);
-    }
-
-    private List<QuantitativeValue> fuelConsumption;
-
-    /**
-     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getFuelConsumptionList() {
-        return fuelConsumption;
-    }
-
-    /**
-     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getFuelConsumption() {
-        return getFirst(fuelConsumption);
-    }
-
-    /**
-     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
-     *
-     * @param fuelConsumption QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addFuelConsumption(QuantitativeValue fuelConsumption) {
-        this.fuelConsumption = add(this.fuelConsumption, fuelConsumption);
-    }
-
-    private List<Date> dateVehicleFirstRegistered;
-
-    /**
-     * The date of the first registration of the vehicle with the respective public authorities.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Date> getDateVehicleFirstRegisteredList() {
-        return dateVehicleFirstRegistered;
-    }
-
-    /**
-     * The date of the first registration of the vehicle with the respective public authorities.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getDateVehicleFirstRegistered() {
-        return getFirst(dateVehicleFirstRegistered);
-    }
-
-    /**
-     * The date of the first registration of the vehicle with the respective public authorities.
-     *
-     * @param dateVehicleFirstRegistered Date value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addDateVehicleFirstRegistered(Date dateVehicleFirstRegistered) {
-        this.dateVehicleFirstRegistered = add(this.dateVehicleFirstRegistered, dateVehicleFirstRegistered);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class, QualitativeValue.class })
-    private List<Object> fuelType;
-
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @return {@link URL} or {@link Text} or {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getFuelTypeList() {
-        return (List<T>) fuelType;
-    }
-
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @return {@link URL} or {@link Text} or {@link QualitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getFuelType() {
-        return (T) getFirst(fuelType);
-    }
-
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @param fuelType URL value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addFuelType(URL fuelType) {
-        this.fuelType = add(this.fuelType, fuelType);
-    }
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @param fuelType Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addFuelType(Text fuelType) {
-        this.fuelType = add(this.fuelType, fuelType);
-    }
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @param fuelType QualitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addFuelType(QualitativeValue fuelType) {
-        this.fuelType = add(this.fuelType, fuelType);
-    }
-
-    private List<QuantitativeValue> speed;
-
-    /**
-     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getSpeedList() {
-        return speed;
-    }
-
-    /**
-     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getSpeed() {
-        return getFirst(speed);
-    }
-
-    /**
-     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
-     *
-     * @param speed QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addSpeed(QuantitativeValue speed) {
-        this.speed = add(this.speed, speed);
-    }
-
-    private List<Text> vehicleInteriorColor;
-
-    /**
-     * The color or color combination of the interior of the vehicle.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Text> getVehicleInteriorColorList() {
-        return vehicleInteriorColor;
-    }
-
-    /**
-     * The color or color combination of the interior of the vehicle.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Text getVehicleInteriorColor() {
-        return getFirst(vehicleInteriorColor);
-    }
-
-    /**
-     * The color or color combination of the interior of the vehicle.
-     *
-     * @param vehicleInteriorColor Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleInteriorColor(Text vehicleInteriorColor) {
-        this.vehicleInteriorColor = add(this.vehicleInteriorColor, vehicleInteriorColor);
-    }
-
-    private List<QuantitativeValue> fuelEfficiency;
-
-    /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<QuantitativeValue> getFuelEfficiencyList() {
-        return fuelEfficiency;
-    }
-
-    /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getFuelEfficiency() {
-        return getFirst(fuelEfficiency);
-    }
-
-    /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
-     *
-     * @param fuelEfficiency QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addFuelEfficiency(QuantitativeValue fuelEfficiency) {
-        this.fuelEfficiency = add(this.fuelEfficiency, fuelEfficiency);
-    }
-
-    private List<Date> vehicleModelDate;
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public List<Date> getVehicleModelDateList() {
-        return vehicleModelDate;
-    }
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getVehicleModelDate() {
-        return getFirst(vehicleModelDate);
-    }
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @param vehicleModelDate Date value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addVehicleModelDate(Date vehicleModelDate) {
-        this.vehicleModelDate = add(this.vehicleModelDate, vehicleModelDate);
-    }
-
-    @JsonLdFieldTypes({ Text.class, DriveWheelConfigurationValue.class })
-    private List<Object> driveWheelConfiguration;
-
-    /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
-     *
-     * @return {@link Text} or {@link DriveWheelConfigurationValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getDriveWheelConfigurationList() {
-        return (List<T>) driveWheelConfiguration;
-    }
-
-    /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
-     *
-     * @return {@link Text} or {@link DriveWheelConfigurationValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getDriveWheelConfiguration() {
-        return (T) getFirst(driveWheelConfiguration);
-    }
-
-    /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
-     *
-     * @param driveWheelConfiguration Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addDriveWheelConfiguration(Text driveWheelConfiguration) {
-        this.driveWheelConfiguration = add(this.driveWheelConfiguration, driveWheelConfiguration);
-    }
-    /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
-     *
-     * @param driveWheelConfiguration DriveWheelConfigurationValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration) {
-        this.driveWheelConfiguration = add(this.driveWheelConfiguration, driveWheelConfiguration);
-    }
-
-    private List<Text> callSign;
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    @Override
-    public List<Text> getCallSignList() {
-        return callSign;
-    }
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    @Override
-    public Text getCallSign() {
-        return getFirst(callSign);
-    }
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @param callSign Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    @Override
-    public void addCallSign(Text callSign) {
-        this.callSign = add(this.callSign, callSign);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
-    private List<Object> numberOfAxles;
-
-    /**
-     * The number of axles.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> List<T> getNumberOfAxlesList() {
-        return (List<T>) numberOfAxles;
-    }
-
-    /**
-     * The number of axles.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfAxles() {
-        return (T) getFirst(numberOfAxles);
-    }
-
-    /**
-     * The number of axles.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfAxles QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfAxles(QuantitativeValue numberOfAxles) {
-        this.numberOfAxles = add(this.numberOfAxles, numberOfAxles);
-    }
-    /**
-     * The number of axles.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfAxles Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void addNumberOfAxles(Number numberOfAxles) {
-        this.numberOfAxles = add(this.numberOfAxles, numberOfAxles);
-    }
-
-    private List<Grant> funding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    @Override
-    public List<Grant> getFundingList() {
-        return funding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return getFirst(funding);
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    @Override
-    public void addFunding(Grant funding) {
-        this.funding = add(this.funding, funding);
-    }
-
-    private List<QuantitativeValue> hasMeasurement;
-
-    /**
-     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public List<QuantitativeValue> getHasMeasurementList() {
-        return hasMeasurement;
-    }
-
-    /**
-     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public QuantitativeValue getHasMeasurement() {
-        return getFirst(hasMeasurement);
-    }
-
-    /**
-     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @param hasMeasurement QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void addHasMeasurement(QuantitativeValue hasMeasurement) {
-        this.hasMeasurement = add(this.hasMeasurement, hasMeasurement);
-    }
-
-    @JsonLdFieldTypes({ Mass.class, QuantitativeValue.class })
-    private List<Object> weight;
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getWeightList() {
-        return (List<T>) weight;
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getWeight() {
-        return (T) getFirst(weight);
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight Mass value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addWeight(Mass weight) {
-        this.weight = add(this.weight, weight);
-    }
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addWeight(QuantitativeValue weight) {
-        this.weight = add(this.weight, weight);
-    }
-
-    private List<Text> awards;
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAwardsList() {
-        return awards;
-    }
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAwards() {
-        return getFirst(awards);
-    }
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @param awards Text value to set.
-     */
-    @Override
-    public void addAwards(Text awards) {
-        this.awards = add(this.awards, awards);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
-    private List<Object> height;
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public <T> List<T> getHeightList() {
-        return (List<T>) height;
-    }
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public <T> T getHeight() {
-        return (T) getFirst(height);
-    }
-
-    /**
-     * The height of the item.
-     *
-     * @param height QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public void addHeight(QuantitativeValue height) {
-        this.height = add(this.height, height);
-    }
-    /**
-     * The height of the item.
-     *
-     * @param height Distance value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public void addHeight(Distance height) {
-        this.height = add(this.height, height);
-    }
-
-    private List<Place> displayLocation;
-
-    /**
-     * The location at which an item can be viewed or experienced in-person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
-     */
-    @Override
-    public List<Place> getDisplayLocationList() {
-        return displayLocation;
-    }
-
-    /**
-     * The location at which an item can be viewed or experienced in-person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
-     */
-    @Override
-    public Place getDisplayLocation() {
-        return getFirst(displayLocation);
-    }
-
-    /**
-     * The location at which an item can be viewed or experienced in-person.
-     *
-     * @param displayLocation Place value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4513">https://github.com/schemaorg/schemaorg/issues/4513</a>
-     */
-    @Override
-    public void addDisplayLocation(Place displayLocation) {
-        this.displayLocation = add(this.displayLocation, displayLocation);
-    }
-
-    @JsonLdFieldTypes({ Text.class, URL.class })
-    private List<Object> gtin;
-
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
-     * 
-     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
-     * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
-     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
-     * 
-     * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
-     *
-     * @return {@link Text} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> List<T> getGtinList() {
-        return (List<T>) gtin;
-    }
-
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
-     * 
-     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
-     * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
-     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
-     * 
-     * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
-     *
-     * @return {@link Text} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> T getGtin() {
-        return (T) getFirst(gtin);
-    }
-
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
-     * 
-     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
-     * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
-     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
-     * 
-     * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
-     *
-     * @param gtin Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addGtin(Text gtin) {
-        this.gtin = add(this.gtin, gtin);
-    }
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
-     * 
-     * A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
-     * 
-     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
-     * Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
-     * 
-     * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
-     *
-     * @param gtin URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addGtin(URL gtin) {
-        this.gtin = add(this.gtin, gtin);
-    }
-
-    private List<Review> reviews;
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public List<Review> getReviewsList() {
-        return reviews;
-    }
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReviews() {
-        return getFirst(reviews);
-    }
-
-    /**
-     * Review of the item.
-     *
-     * @param reviews Review value to set.
-     */
-    @Override
-    public void addReviews(Review reviews) {
-        this.reviews = add(this.reviews, reviews);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> logo;
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getLogoList() {
-        return (List<T>) logo;
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getLogo() {
-        return (T) getFirst(logo);
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(URL logo) {
-        this.logo = add(this.logo, logo);
-    }
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(ImageObject logo) {
-        this.logo = add(this.logo, logo);
-    }
-
-    private List<Text> gtin12;
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getGtin12List() {
-        return gtin12;
-    }
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getGtin12() {
-        return getFirst(gtin12);
-    }
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param gtin12 Text value to set.
-     */
-    @Override
-    public void addGtin12(Text gtin12) {
-        this.gtin12 = add(this.gtin12, gtin12);
-    }
-
-    @JsonLdFieldTypes({ Service.class, Product.class })
-    private List<Object> isRelatedTo;
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getIsRelatedToList() {
-        return (List<T>) isRelatedTo;
-    }
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsRelatedTo() {
-        return (T) getFirst(isRelatedTo);
-    }
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Service value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsRelatedTo(Service isRelatedTo) {
-        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsRelatedTo(Product isRelatedTo) {
-        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
-    }
-
-    @JsonLdFieldTypes({ Text.class, DefinedTerm.class, URL.class })
-    private List<Object> keywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getKeywordsList() {
-        return (List<T>) keywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) getFirst(keywords);
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    @Override
-    public void addKeywords(Text keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    @Override
-    public void addKeywords(DefinedTerm keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    @Override
-    public void addKeywords(URL keywords) {
-        this.keywords = add(this.keywords, keywords);
-    }
-
-    private List<Text> slogan;
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getSloganList() {
-        return slogan;
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getSlogan() {
-        return getFirst(slogan);
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param slogan Text value to set.
-     */
-    @Override
-    public void addSlogan(Text slogan) {
-        this.slogan = add(this.slogan, slogan);
-    }
-
-    private List<Text> productID;
-
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getProductIDList() {
-        return productID;
-    }
-
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getProductID() {
-        return getFirst(productID);
-    }
-
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     * @param productID Text value to set.
-     */
-    @Override
-    public void addProductID(Text productID) {
-        this.productID = add(this.productID, productID);
-    }
-
-    private List<Text> countryOfLastProcessing;
-
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public List<Text> getCountryOfLastProcessingList() {
-        return countryOfLastProcessing;
-    }
-
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public Text getCountryOfLastProcessing() {
-        return getFirst(countryOfLastProcessing);
-    }
-
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @param countryOfLastProcessing Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public void addCountryOfLastProcessing(Text countryOfLastProcessing) {
-        this.countryOfLastProcessing = add(this.countryOfLastProcessing, countryOfLastProcessing);
-    }
-
-    private List<Text> mobileUrl;
-
-    /**
-     * The [[mobileUrl]] property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated 'mobile site'.
-     * 
-     * To discourage over-use, and reflecting intial usecases, the property is expected only on [[Product]] and [[Offer]], rather than [[Thing]]. The general trend in web technology is towards [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established [[url]] property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all [[url]] markup to use [[mobileUrl]] for more mobile-oriented pages. The property is intended for the case when items (primarily [[Product]] and [[Offer]]) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.
-     *     
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3134">https://github.com/schemaorg/schemaorg/issues/3134</a>
-     */
-    @Override
-    public List<Text> getMobileUrlList() {
-        return mobileUrl;
-    }
-
-    /**
-     * The [[mobileUrl]] property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated 'mobile site'.
-     * 
-     * To discourage over-use, and reflecting intial usecases, the property is expected only on [[Product]] and [[Offer]], rather than [[Thing]]. The general trend in web technology is towards [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established [[url]] property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all [[url]] markup to use [[mobileUrl]] for more mobile-oriented pages. The property is intended for the case when items (primarily [[Product]] and [[Offer]]) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.
-     *     
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3134">https://github.com/schemaorg/schemaorg/issues/3134</a>
-     */
-    @Override
-    public Text getMobileUrl() {
-        return getFirst(mobileUrl);
-    }
-
-    /**
-     * The [[mobileUrl]] property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated 'mobile site'.
-     * 
-     * To discourage over-use, and reflecting intial usecases, the property is expected only on [[Product]] and [[Offer]], rather than [[Thing]]. The general trend in web technology is towards [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established [[url]] property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all [[url]] markup to use [[mobileUrl]] for more mobile-oriented pages. The property is intended for the case when items (primarily [[Product]] and [[Offer]]) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.
-     *     
-     *
-     * @param mobileUrl Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3134">https://github.com/schemaorg/schemaorg/issues/3134</a>
-     */
-    @Override
-    public void addMobileUrl(Text mobileUrl) {
-        this.mobileUrl = add(this.mobileUrl, mobileUrl);
-    }
-
-    private List<AggregateRating> aggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public List<AggregateRating> getAggregateRatingList() {
-        return aggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return getFirst(aggregateRating);
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    @Override
-    public void addAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = add(this.aggregateRating, aggregateRating);
-    }
-
-    @JsonLdFieldTypes({ Product.class, URL.class, Text.class })
-    private List<Object> material;
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Product} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getMaterialList() {
-        return (List<T>) material;
-    }
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Product} or {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getMaterial() {
-        return (T) getFirst(material);
-    }
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material Product value to set.
-     */
-    @Override
-    public void addMaterial(Product material) {
-        this.material = add(this.material, material);
-    }
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material URL value to set.
-     */
-    @Override
-    public void addMaterial(URL material) {
-        this.material = add(this.material, material);
-    }
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param material Text value to set.
-     */
-    @Override
-    public void addMaterial(Text material) {
-        this.material = add(this.material, material);
-    }
-
-    private List<Text> countryOfAssembly;
-
-    /**
-     * The place where the product was assembled.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public List<Text> getCountryOfAssemblyList() {
-        return countryOfAssembly;
-    }
-
-    /**
-     * The place where the product was assembled.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public Text getCountryOfAssembly() {
-        return getFirst(countryOfAssembly);
-    }
-
-    /**
-     * The place where the product was assembled.
-     *
-     * @param countryOfAssembly Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public void addCountryOfAssembly(Text countryOfAssembly) {
-        this.countryOfAssembly = add(this.countryOfAssembly, countryOfAssembly);
-    }
-
-    private List<Text> gtin14;
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getGtin14List() {
-        return gtin14;
-    }
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin14() {
-        return getFirst(gtin14);
-    }
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param gtin14 Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addGtin14(Text gtin14) {
-        this.gtin14 = add(this.gtin14, gtin14);
-    }
-
-    @JsonLdFieldTypes({ Brand.class, Organization.class })
-    private List<Object> brand;
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getBrandList() {
-        return (List<T>) brand;
-    }
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    @Override
-    public <T> T getBrand() {
-        return (T) getFirst(brand);
-    }
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Brand value to set.
-     */
-    @Override
-    public void addBrand(Brand brand) {
-        this.brand = add(this.brand, brand);
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
-    @Override
-    public void addBrand(Organization brand) {
-        this.brand = add(this.brand, brand);
-    }
-
-    private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public List<MerchantReturnPolicy> getHasMerchantReturnPolicyList() {
-        return hasMerchantReturnPolicy;
-    }
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return getFirst(hasMerchantReturnPolicy);
-    }
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
-        this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
-    }
-
-    private List<AdultOrientedEnumeration> hasAdultConsideration;
-
-    /**
-     * Used to tag an item to be intended or suitable for consumption or use by adults only.
-     *
-     * @return {@link AdultOrientedEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
-     */
-    @Override
-    public List<AdultOrientedEnumeration> getHasAdultConsiderationList() {
-        return hasAdultConsideration;
-    }
-
-    /**
-     * Used to tag an item to be intended or suitable for consumption or use by adults only.
-     *
-     * @return {@link AdultOrientedEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
-     */
-    @Override
-    public AdultOrientedEnumeration getHasAdultConsideration() {
-        return getFirst(hasAdultConsideration);
-    }
-
-    /**
-     * Used to tag an item to be intended or suitable for consumption or use by adults only.
-     *
-     * @param hasAdultConsideration AdultOrientedEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
-     */
-    @Override
-    public void addHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
-        this.hasAdultConsideration = add(this.hasAdultConsideration, hasAdultConsideration);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class, DefinedTerm.class, SizeSpecification.class })
-    private List<Object> size;
-
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @return {@link QuantitativeValue} or {@link Text} or {@link DefinedTerm} or {@link SizeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> List<T> getSizeList() {
-        return (List<T>) size;
-    }
-
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @return {@link QuantitativeValue} or {@link Text} or {@link DefinedTerm} or {@link SizeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> T getSize() {
-        return (T) getFirst(size);
-    }
-
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @param size QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addSize(QuantitativeValue size) {
-        this.size = add(this.size, size);
-    }
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @param size Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addSize(Text size) {
-        this.size = add(this.size, size);
-    }
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @param size DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addSize(DefinedTerm size) {
-        this.size = add(this.size, size);
-    }
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @param size SizeSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addSize(SizeSpecification size) {
-        this.size = add(this.size, size);
-    }
-
-    private List<Review> review;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public List<Review> getReviewList() {
-        return review;
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return getFirst(review);
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    @Override
-    public void addReview(Review review) {
-        this.review = add(this.review, review);
-    }
-
-    private List<Text> gtin8;
-
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getGtin8List() {
-        return gtin8;
-    }
-
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin8() {
-        return getFirst(gtin8);
-    }
-
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param gtin8 Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addGtin8(Text gtin8) {
-        this.gtin8 = add(this.gtin8, gtin8);
-    }
-
-    private List<Text> sku;
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getSkuList() {
-        return sku;
-    }
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getSku() {
-        return getFirst(sku);
-    }
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @param sku Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addSku(Text sku) {
-        this.sku = add(this.sku, sku);
-    }
-
-    @JsonLdFieldTypes({ Text.class, PhysicalActivityCategory.class, CategoryCode.class, Thing.class, URL.class })
-    private List<Object> category;
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public <T> List<T> getCategoryList() {
-        return (List<T>) category;
-    }
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public <T> T getCategory() {
-        return (T) getFirst(category);
-    }
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(Text category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category PhysicalActivityCategory value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(PhysicalActivityCategory category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(CategoryCode category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(Thing category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category URL value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(URL category) {
-        this.category = add(this.category, category);
-    }
-
-    private List<Text> gtin13;
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getGtin13List() {
-        return gtin13;
-    }
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin13() {
-        return getFirst(gtin13);
-    }
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param gtin13 Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addGtin13(Text gtin13) {
-        this.gtin13 = add(this.gtin13, gtin13);
-    }
-
-    @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private List<Object> offers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getOffersList() {
-        return (List<T>) offers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) getFirst(offers);
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Offer offers) {
-        this.offers = add(this.offers, offers);
-    }
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Demand offers) {
-        this.offers = add(this.offers, offers);
-    }
-
-    private List<Boolean> isFamilyFriendly;
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public List<Boolean> getIsFamilyFriendlyList() {
-        return isFamilyFriendly;
-    }
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsFamilyFriendly() {
-        return getFirst(isFamilyFriendly);
-    }
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @param isFamilyFriendly Boolean value to set.
-     */
-    @Override
-    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
-        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
-    }
-
-    private List<EnergyConsumptionDetails> hasEnergyConsumptionDetails;
-
-    /**
-     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
-     *
-     * @return {@link EnergyConsumptionDetails}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    @Override
-    public List<EnergyConsumptionDetails> getHasEnergyConsumptionDetailsList() {
-        return hasEnergyConsumptionDetails;
-    }
-
-    /**
-     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
-     *
-     * @return {@link EnergyConsumptionDetails}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    @Override
-    public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
-        return getFirst(hasEnergyConsumptionDetails);
-    }
-
-    /**
-     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
-     *
-     * @param hasEnergyConsumptionDetails EnergyConsumptionDetails value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    @Override
-    public void addHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
-        this.hasEnergyConsumptionDetails = add(this.hasEnergyConsumptionDetails, hasEnergyConsumptionDetails);
-    }
-
-    @JsonLdFieldTypes({ ListItem.class, Text.class, WebContent.class, ItemList.class })
-    private List<Object> positiveNotes;
-
-    /**
-     * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
-     *
-     * @return {@link ListItem} or {@link Text} or {@link WebContent} or {@link ItemList}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public <T> List<T> getPositiveNotesList() {
-        return (List<T>) positiveNotes;
-    }
-
-    /**
-     * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
-     *
-     * @return {@link ListItem} or {@link Text} or {@link WebContent} or {@link ItemList}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public <T> T getPositiveNotes() {
-        return (T) getFirst(positiveNotes);
-    }
-
-    /**
-     * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
-     *
-     * @param positiveNotes ListItem value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addPositiveNotes(ListItem positiveNotes) {
-        this.positiveNotes = add(this.positiveNotes, positiveNotes);
-    }
-    /**
-     * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
-     *
-     * @param positiveNotes Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addPositiveNotes(Text positiveNotes) {
-        this.positiveNotes = add(this.positiveNotes, positiveNotes);
-    }
-    /**
-     * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
-     *
-     * @param positiveNotes WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addPositiveNotes(WebContent positiveNotes) {
-        this.positiveNotes = add(this.positiveNotes, positiveNotes);
-    }
-    /**
-     * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
-     *
-     * @param positiveNotes ItemList value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addPositiveNotes(ItemList positiveNotes) {
-        this.positiveNotes = add(this.positiveNotes, positiveNotes);
-    }
-
-    private List<Organization> manufacturer;
-
-    /**
-     * The manufacturer of the product.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getManufacturerList() {
-        return manufacturer;
-    }
-
-    /**
-     * The manufacturer of the product.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getManufacturer() {
-        return getFirst(manufacturer);
-    }
-
-    /**
-     * The manufacturer of the product.
-     *
-     * @param manufacturer Organization value to set.
-     */
-    @Override
-    public void addManufacturer(Organization manufacturer) {
-        this.manufacturer = add(this.manufacturer, manufacturer);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> colorSwatch;
-
-    /**
-     * A color swatch image, visualizing the color of a [[Product]]. Should match the textual description specified in the [[color]] property. This can be a URL or a fully described ImageObject.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3423">https://github.com/schemaorg/schemaorg/issues/3423</a>
-     */
-    @Override
-    public <T> List<T> getColorSwatchList() {
-        return (List<T>) colorSwatch;
-    }
-
-    /**
-     * A color swatch image, visualizing the color of a [[Product]]. Should match the textual description specified in the [[color]] property. This can be a URL or a fully described ImageObject.
-     *
-     * @return {@link ImageObject} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3423">https://github.com/schemaorg/schemaorg/issues/3423</a>
-     */
-    @Override
-    public <T> T getColorSwatch() {
-        return (T) getFirst(colorSwatch);
-    }
-
-    /**
-     * A color swatch image, visualizing the color of a [[Product]]. Should match the textual description specified in the [[color]] property. This can be a URL or a fully described ImageObject.
-     *
-     * @param colorSwatch ImageObject value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3423">https://github.com/schemaorg/schemaorg/issues/3423</a>
-     */
-    @Override
-    public void addColorSwatch(ImageObject colorSwatch) {
-        this.colorSwatch = add(this.colorSwatch, colorSwatch);
-    }
-    /**
-     * A color swatch image, visualizing the color of a [[Product]]. Should match the textual description specified in the [[color]] property. This can be a URL or a fully described ImageObject.
-     *
-     * @param colorSwatch URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3423">https://github.com/schemaorg/schemaorg/issues/3423</a>
-     */
-    @Override
-    public void addColorSwatch(URL colorSwatch) {
-        this.colorSwatch = add(this.colorSwatch, colorSwatch);
-    }
-
-    private List<Certification> hasCertification;
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public List<Certification> getHasCertificationList() {
-        return hasCertification;
-    }
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public Certification getHasCertification() {
-        return getFirst(hasCertification);
-    }
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @param hasCertification Certification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public void addHasCertification(Certification hasCertification) {
-        this.hasCertification = add(this.hasCertification, hasCertification);
-    }
-
-    @JsonLdFieldTypes({ ItemList.class, ListItem.class, Text.class, WebContent.class })
-    private List<Object> negativeNotes;
-
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @return {@link ItemList} or {@link ListItem} or {@link Text} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public <T> List<T> getNegativeNotesList() {
-        return (List<T>) negativeNotes;
-    }
-
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @return {@link ItemList} or {@link ListItem} or {@link Text} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public <T> T getNegativeNotes() {
-        return (T) getFirst(negativeNotes);
-    }
-
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @param negativeNotes ItemList value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addNegativeNotes(ItemList negativeNotes) {
-        this.negativeNotes = add(this.negativeNotes, negativeNotes);
-    }
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @param negativeNotes ListItem value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addNegativeNotes(ListItem negativeNotes) {
-        this.negativeNotes = add(this.negativeNotes, negativeNotes);
-    }
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @param negativeNotes Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addNegativeNotes(Text negativeNotes) {
-        this.negativeNotes = add(this.negativeNotes, negativeNotes);
-    }
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @param negativeNotes WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    @Override
-    public void addNegativeNotes(WebContent negativeNotes) {
-        this.negativeNotes = add(this.negativeNotes, negativeNotes);
-    }
-
     private List<PropertyValue> additionalProperty;
 
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
     @Override
     public List<PropertyValue> getAdditionalPropertyList() {
         return additionalProperty;
     }
 
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
     @Override
     public PropertyValue getAdditionalProperty() {
         return getFirst(additionalProperty);
     }
 
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @param additionalProperty PropertyValue value to set.
-     */
     @Override
     public void addAdditionalProperty(PropertyValue additionalProperty) {
         this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
-    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
-    private List<Object> depth;
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getDepthList() {
-        return (List<T>) depth;
-    }
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getDepth() {
-        return (T) getFirst(depth);
-    }
-
-    /**
-     * The depth of the item.
-     *
-     * @param depth Distance value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addDepth(Distance depth) {
-        this.depth = add(this.depth, depth);
-    }
-    /**
-     * The depth of the item.
-     *
-     * @param depth QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addDepth(QuantitativeValue depth) {
-        this.depth = add(this.depth, depth);
-    }
-
-    private List<Text> inProductGroupWithID;
-
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public List<Text> getInProductGroupWithIDList() {
-        return inProductGroupWithID;
-    }
-
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public Text getInProductGroupWithID() {
-        return getFirst(inProductGroupWithID);
-    }
-
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @param inProductGroupWithID Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addInProductGroupWithID(Text inProductGroupWithID) {
-        this.inProductGroupWithID = add(this.inProductGroupWithID, inProductGroupWithID);
-    }
-
-    private List<Audience> audience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public List<Audience> getAudienceList() {
-        return audience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return getFirst(audience);
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    @Override
-    public void addAudience(Audience audience) {
-        this.audience = add(this.audience, audience);
-    }
-
-    private List<Text> color;
-
-    /**
-     * The color of the product.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getColorList() {
-        return color;
-    }
-
-    /**
-     * The color of the product.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getColor() {
-        return getFirst(color);
-    }
-
-    /**
-     * The color of the product.
-     *
-     * @param color Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addColor(Text color) {
-        this.color = add(this.color, color);
-    }
-
-    private List<OfferItemCondition> itemCondition;
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public List<OfferItemCondition> getItemConditionList() {
-        return itemCondition;
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public OfferItemCondition getItemCondition() {
-        return getFirst(itemCondition);
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @param itemCondition OfferItemCondition value to set.
-     */
-    @Override
-    public void addItemCondition(OfferItemCondition itemCondition) {
-        this.itemCondition = add(this.itemCondition, itemCondition);
-    }
-
-    @JsonLdFieldTypes({ ProductModel.class, ProductGroup.class })
-    private List<Object> isVariantOf;
-
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @return {@link ProductModel} or {@link ProductGroup}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getIsVariantOfList() {
-        return (List<T>) isVariantOf;
-    }
-
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @return {@link ProductModel} or {@link ProductGroup}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsVariantOf() {
-        return (T) getFirst(isVariantOf);
-    }
-
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @param isVariantOf ProductModel value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsVariantOf(ProductModel isVariantOf) {
-        this.isVariantOf = add(this.isVariantOf, isVariantOf);
-    }
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @param isVariantOf ProductGroup value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsVariantOf(ProductGroup isVariantOf) {
-        this.isVariantOf = add(this.isVariantOf, isVariantOf);
-    }
-
-    @JsonLdFieldTypes({ Service.class, Product.class })
-    private List<Object> isSimilarTo;
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getIsSimilarToList() {
-        return (List<T>) isSimilarTo;
-    }
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsSimilarTo() {
-        return (T) getFirst(isSimilarTo);
-    }
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @param isSimilarTo Service value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsSimilarTo(Service isSimilarTo) {
-        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @param isSimilarTo Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsSimilarTo(Product isSimilarTo) {
-        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
-    }
-
-    private List<Text> mpn;
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getMpnList() {
-        return mpn;
-    }
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getMpn() {
-        return getFirst(mpn);
-    }
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @param mpn Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addMpn(Text mpn) {
-        this.mpn = add(this.mpn, mpn);
-    }
-
-    private List<Text> award;
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAwardList() {
-        return award;
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAward() {
-        return getFirst(award);
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    @Override
-    public void addAward(Text award) {
-        this.award = add(this.award, award);
-    }
-
-    @JsonLdFieldTypes({ Text.class, ProductModel.class })
-    private List<Object> model;
-
-    /**
-     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
-     *
-     * @return {@link Text} or {@link ProductModel}
-     */
-    @Override
-    public <T> List<T> getModelList() {
-        return (List<T>) model;
-    }
-
-    /**
-     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
-     *
-     * @return {@link Text} or {@link ProductModel}
-     */
-    @Override
-    public <T> T getModel() {
-        return (T) getFirst(model);
-    }
-
-    /**
-     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
-     *
-     * @param model Text value to set.
-     */
-    @Override
-    public void addModel(Text model) {
-        this.model = add(this.model, model);
-    }
-    /**
-     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
-     *
-     * @param model ProductModel value to set.
-     */
-    @Override
-    public void addModel(ProductModel model) {
-        this.model = add(this.model, model);
-    }
-
-    private List<Text> nsn;
-
-    /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
-     */
-    @Override
-    public List<Text> getNsnList() {
-        return nsn;
-    }
-
-    /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
-     */
-    @Override
-    public Text getNsn() {
-        return getFirst(nsn);
-    }
-
-    /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
-     *
-     * @param nsn Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
-     */
-    @Override
-    public void addNsn(Text nsn) {
-        this.nsn = add(this.nsn, nsn);
-    }
-
-    private List<Country> countryOfOrigin;
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    @Override
-    public List<Country> getCountryOfOriginList() {
-        return countryOfOrigin;
-    }
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    @Override
-    public Country getCountryOfOrigin() {
-        return getFirst(countryOfOrigin);
-    }
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @param countryOfOrigin Country value to set.
-     */
-    @Override
-    public void addCountryOfOrigin(Country countryOfOrigin) {
-        this.countryOfOrigin = add(this.countryOfOrigin, countryOfOrigin);
-    }
-
-    private List<Product> isConsumableFor;
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is a consumable.
-     *
-     * @return {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Product> getIsConsumableForList() {
-        return isConsumableFor;
-    }
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is a consumable.
-     *
-     * @return {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Product getIsConsumableFor() {
-        return getFirst(isConsumableFor);
-    }
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is a consumable.
-     *
-     * @param isConsumableFor Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsConsumableFor(Product isConsumableFor) {
-        this.isConsumableFor = add(this.isConsumableFor, isConsumableFor);
-    }
-
-    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
-    private List<Object> width;
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public <T> List<T> getWidthList() {
-        return (List<T>) width;
-    }
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public <T> T getWidth() {
-        return (T) getFirst(width);
-    }
-
-    /**
-     * The width of the item.
-     *
-     * @param width QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public void addWidth(QuantitativeValue width) {
-        this.width = add(this.width, width);
-    }
-    /**
-     * The width of the item.
-     *
-     * @param width Distance value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    @Override
-    public void addWidth(Distance width) {
-        this.width = add(this.width, width);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> pattern;
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> List<T> getPatternList() {
-        return (List<T>) pattern;
-    }
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> T getPattern() {
-        return (T) getFirst(pattern);
-    }
-
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param pattern DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addPattern(DefinedTerm pattern) {
-        this.pattern = add(this.pattern, pattern);
-    }
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param pattern Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void addPattern(Text pattern) {
-        this.pattern = add(this.pattern, pattern);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> asin;
-
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> List<T> getAsinList() {
-        return (List<T>) asin;
-    }
-
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> T getAsin() {
-        return (T) getFirst(asin);
-    }
-
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @param asin URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addAsin(URL asin) {
-        this.asin = add(this.asin, asin);
-    }
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @param asin Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addAsin(Text asin) {
-        this.asin = add(this.asin, asin);
-    }
-
-    private List<Product> isAccessoryOrSparePartFor;
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
-     *
-     * @return {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Product> getIsAccessoryOrSparePartForList() {
-        return isAccessoryOrSparePartFor;
-    }
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
-     *
-     * @return {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Product getIsAccessoryOrSparePartFor() {
-        return getFirst(isAccessoryOrSparePartFor);
-    }
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
-     *
-     * @param isAccessoryOrSparePartFor Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
-        this.isAccessoryOrSparePartFor = add(this.isAccessoryOrSparePartFor, isAccessoryOrSparePartFor);
-    }
-
-    private List<URL> hasGS1DigitalLink;
-
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
-    @Override
-    public List<URL> getHasGS1DigitalLinkList() {
-        return hasGS1DigitalLink;
-    }
-
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
-    @Override
-    public URL getHasGS1DigitalLink() {
-        return getFirst(hasGS1DigitalLink);
-    }
-
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @param hasGS1DigitalLink URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
-    @Override
-    public void addHasGS1DigitalLink(URL hasGS1DigitalLink) {
-        this.hasGS1DigitalLink = add(this.hasGS1DigitalLink, hasGS1DigitalLink);
-    }
-
-    private List<Date> releaseDate;
-
-    /**
-     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Date> getReleaseDateList() {
-        return releaseDate;
-    }
-
-    /**
-     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Date getReleaseDate() {
-        return getFirst(releaseDate);
-    }
-
-    /**
-     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
-     *
-     * @param releaseDate Date value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addReleaseDate(Date releaseDate) {
-        this.releaseDate = add(this.releaseDate, releaseDate);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
+    private List<AggregateRating> aggregateRating;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
+    public AggregateRating getAggregateRating() {
+        return getFirst(aggregateRating);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> asin;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getAsinList() {
+        return (List<T>) asin;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getAsin() {
+        return (T) getFirst(asin);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addAsin(URL asin) {
+        this.asin = add(this.asin, asin);
+    }
+    @Override
+    public void addAsin(Text asin) {
+        this.asin = add(this.asin, asin);
+    }
+
+    private List<Audience> audience;
+
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
+
+    @Override
+    public Audience getAudience() {
+        return getFirst(audience);
+    }
+
+    @Override
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
+    }
+
+    private List<Text> award;
+
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
+
+    @Override
+    public Text getAward() {
+        return getFirst(award);
+    }
+
+    @Override
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
+    }
+
+    private List<Text> awards;
+
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
+
+    @Override
+    public Text getAwards() {
+        return getFirst(awards);
+    }
+
+    @Override
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
+    }
+
+    @JsonLdFieldTypes({ Text.class, QualitativeValue.class, URL.class })
+    private List<Object> bodyType;
+
+    @Override
+    public <T> List<T> getBodyTypeList() {
+        return (List<T>) bodyType;
+    }
+
+    @Override
+    public <T> T getBodyType() {
+        return (T) getFirst(bodyType);
+    }
+
+    @Override
+    public void addBodyType(Text bodyType) {
+        this.bodyType = add(this.bodyType, bodyType);
+    }
+    @Override
+    public void addBodyType(QualitativeValue bodyType) {
+        this.bodyType = add(this.bodyType, bodyType);
+    }
+    @Override
+    public void addBodyType(URL bodyType) {
+        this.bodyType = add(this.bodyType, bodyType);
+    }
+
+    @JsonLdFieldTypes({ Brand.class, Organization.class })
+    private List<Object> brand;
+
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
+
+    @Override
+    public <T> T getBrand() {
+        return (T) getFirst(brand);
+    }
+
+    @Override
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
+    }
+    @Override
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
+    }
+
+    private List<Text> callSign;
+
+    @Override
+    public List<Text> getCallSignList() {
+        return callSign;
+    }
+
+    @Override
+    public Text getCallSign() {
+        return getFirst(callSign);
+    }
+
+    @Override
+    public void addCallSign(Text callSign) {
+        this.callSign = add(this.callSign, callSign);
+    }
+
+    private List<QuantitativeValue> cargoVolume;
+
+    @Override
+    public List<QuantitativeValue> getCargoVolumeList() {
+        return cargoVolume;
+    }
+
+    @Override
+    public QuantitativeValue getCargoVolume() {
+        return getFirst(cargoVolume);
+    }
+
+    @Override
+    public void addCargoVolume(QuantitativeValue cargoVolume) {
+        this.cargoVolume = add(this.cargoVolume, cargoVolume);
+    }
+
+    @JsonLdFieldTypes({ Text.class, PhysicalActivityCategory.class, CategoryCode.class, Thing.class, URL.class })
+    private List<Object> category;
+
+    @Override
+    public <T> List<T> getCategoryList() {
+        return (List<T>) category;
+    }
+
+    @Override
+    public <T> T getCategory() {
+        return (T) getFirst(category);
+    }
+
+    @Override
+    public void addCategory(Text category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(PhysicalActivityCategory category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(CategoryCode category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(Thing category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(URL category) {
+        this.category = add(this.category, category);
+    }
+
+    private List<Text> color;
+
+    @Override
+    public List<Text> getColorList() {
+        return color;
+    }
+
+    @Override
+    public Text getColor() {
+        return getFirst(color);
+    }
+
+    @Override
+    public void addColor(Text color) {
+        this.color = add(this.color, color);
     }
 
     @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    private List<Object> colorSwatch;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getColorSwatchList() {
+        return (List<T>) colorSwatch;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getColorSwatch() {
+        return (T) getFirst(colorSwatch);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
+    public void addColorSwatch(ImageObject colorSwatch) {
+        this.colorSwatch = add(this.colorSwatch, colorSwatch);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addColorSwatch(URL colorSwatch) {
+        this.colorSwatch = add(this.colorSwatch, colorSwatch);
+    }
+
+    private List<Text> countryOfAssembly;
+
+    @Override
+    public List<Text> getCountryOfAssemblyList() {
+        return countryOfAssembly;
+    }
+
+    @Override
+    public Text getCountryOfAssembly() {
+        return getFirst(countryOfAssembly);
+    }
+
+    @Override
+    public void addCountryOfAssembly(Text countryOfAssembly) {
+        this.countryOfAssembly = add(this.countryOfAssembly, countryOfAssembly);
+    }
+
+    private List<Text> countryOfLastProcessing;
+
+    @Override
+    public List<Text> getCountryOfLastProcessingList() {
+        return countryOfLastProcessing;
+    }
+
+    @Override
+    public Text getCountryOfLastProcessing() {
+        return getFirst(countryOfLastProcessing);
+    }
+
+    @Override
+    public void addCountryOfLastProcessing(Text countryOfLastProcessing) {
+        this.countryOfLastProcessing = add(this.countryOfLastProcessing, countryOfLastProcessing);
+    }
+
+    private List<Country> countryOfOrigin;
+
+    @Override
+    public List<Country> getCountryOfOriginList() {
+        return countryOfOrigin;
+    }
+
+    @Override
+    public Country getCountryOfOrigin() {
+        return getFirst(countryOfOrigin);
+    }
+
+    @Override
+    public void addCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = add(this.countryOfOrigin, countryOfOrigin);
+    }
+
+    private List<Date> dateVehicleFirstRegistered;
+
+    @Override
+    public List<Date> getDateVehicleFirstRegisteredList() {
+        return dateVehicleFirstRegistered;
+    }
+
+    @Override
+    public Date getDateVehicleFirstRegistered() {
+        return getFirst(dateVehicleFirstRegistered);
+    }
+
+    @Override
+    public void addDateVehicleFirstRegistered(Date dateVehicleFirstRegistered) {
+        this.dateVehicleFirstRegistered = add(this.dateVehicleFirstRegistered, dateVehicleFirstRegistered);
+    }
+
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
+    private List<Object> depth;
+
+    @Override
+    public <T> List<T> getDepthList() {
+        return (List<T>) depth;
+    }
+
+    @Override
+    public <T> T getDepth() {
+        return (T) getFirst(depth);
+    }
+
+    @Override
+    public void addDepth(Distance depth) {
+        this.depth = add(this.depth, depth);
+    }
+    @Override
+    public void addDepth(QuantitativeValue depth) {
+        this.depth = add(this.depth, depth);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    private List<Place> displayLocation;
+
+    @Override
+    public List<Place> getDisplayLocationList() {
+        return displayLocation;
+    }
+
+    @Override
+    public Place getDisplayLocation() {
+        return getFirst(displayLocation);
+    }
+
+    @Override
+    public void addDisplayLocation(Place displayLocation) {
+        this.displayLocation = add(this.displayLocation, displayLocation);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DriveWheelConfigurationValue.class })
+    private List<Object> driveWheelConfiguration;
+
+    @Override
+    public <T> List<T> getDriveWheelConfigurationList() {
+        return (List<T>) driveWheelConfiguration;
+    }
+
+    @Override
+    public <T> T getDriveWheelConfiguration() {
+        return (T) getFirst(driveWheelConfiguration);
+    }
+
+    @Override
+    public void addDriveWheelConfiguration(Text driveWheelConfiguration) {
+        this.driveWheelConfiguration = add(this.driveWheelConfiguration, driveWheelConfiguration);
+    }
+    @Override
+    public void addDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration) {
+        this.driveWheelConfiguration = add(this.driveWheelConfiguration, driveWheelConfiguration);
+    }
+
+    private List<Number> emissionsCO2;
+
+    @Override
+    public List<Number> getEmissionsCO2List() {
+        return emissionsCO2;
+    }
+
+    @Override
+    public Number getEmissionsCO2() {
+        return getFirst(emissionsCO2);
+    }
+
+    @Override
+    public void addEmissionsCO2(Number emissionsCO2) {
+        this.emissionsCO2 = add(this.emissionsCO2, emissionsCO2);
+    }
+
+    private List<QuantitativeValue> fuelCapacity;
+
+    @Override
+    public List<QuantitativeValue> getFuelCapacityList() {
+        return fuelCapacity;
+    }
+
+    @Override
+    public QuantitativeValue getFuelCapacity() {
+        return getFirst(fuelCapacity);
+    }
+
+    @Override
+    public void addFuelCapacity(QuantitativeValue fuelCapacity) {
+        this.fuelCapacity = add(this.fuelCapacity, fuelCapacity);
+    }
+
+    private List<QuantitativeValue> fuelConsumption;
+
+    @Override
+    public List<QuantitativeValue> getFuelConsumptionList() {
+        return fuelConsumption;
+    }
+
+    @Override
+    public QuantitativeValue getFuelConsumption() {
+        return getFirst(fuelConsumption);
+    }
+
+    @Override
+    public void addFuelConsumption(QuantitativeValue fuelConsumption) {
+        this.fuelConsumption = add(this.fuelConsumption, fuelConsumption);
+    }
+
+    private List<QuantitativeValue> fuelEfficiency;
+
+    @Override
+    public List<QuantitativeValue> getFuelEfficiencyList() {
+        return fuelEfficiency;
+    }
+
+    @Override
+    public QuantitativeValue getFuelEfficiency() {
+        return getFirst(fuelEfficiency);
+    }
+
+    @Override
+    public void addFuelEfficiency(QuantitativeValue fuelEfficiency) {
+        this.fuelEfficiency = add(this.fuelEfficiency, fuelEfficiency);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class, QualitativeValue.class })
+    private List<Object> fuelType;
+
+    @Override
+    public <T> List<T> getFuelTypeList() {
+        return (List<T>) fuelType;
+    }
+
+    @Override
+    public <T> T getFuelType() {
+        return (T) getFirst(fuelType);
+    }
+
+    @Override
+    public void addFuelType(URL fuelType) {
+        this.fuelType = add(this.fuelType, fuelType);
+    }
+    @Override
+    public void addFuelType(Text fuelType) {
+        this.fuelType = add(this.fuelType, fuelType);
+    }
+    @Override
+    public void addFuelType(QualitativeValue fuelType) {
+        this.fuelType = add(this.fuelType, fuelType);
+    }
+
+    private List<Grant> funding;
+
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
+
+    @Override
+    public Grant getFunding() {
+        return getFirst(funding);
+    }
+
+    @Override
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
+    }
+
+    @JsonLdFieldTypes({ Text.class, URL.class })
+    private List<Object> gtin;
+
+    @Override
+    public <T> List<T> getGtinList() {
+        return (List<T>) gtin;
+    }
+
+    @Override
+    public <T> T getGtin() {
+        return (T) getFirst(gtin);
+    }
+
+    @Override
+    public void addGtin(Text gtin) {
+        this.gtin = add(this.gtin, gtin);
+    }
+    @Override
+    public void addGtin(URL gtin) {
+        this.gtin = add(this.gtin, gtin);
+    }
+
+    private List<Text> gtin12;
+
+    @Override
+    public List<Text> getGtin12List() {
+        return gtin12;
+    }
+
+    @Override
+    public Text getGtin12() {
+        return getFirst(gtin12);
+    }
+
+    @Override
+    public void addGtin12(Text gtin12) {
+        this.gtin12 = add(this.gtin12, gtin12);
+    }
+
+    private List<Text> gtin13;
+
+    @Override
+    public List<Text> getGtin13List() {
+        return gtin13;
+    }
+
+    @Override
+    public Text getGtin13() {
+        return getFirst(gtin13);
+    }
+
+    @Override
+    public void addGtin13(Text gtin13) {
+        this.gtin13 = add(this.gtin13, gtin13);
+    }
+
+    private List<Text> gtin14;
+
+    @Override
+    public List<Text> getGtin14List() {
+        return gtin14;
+    }
+
+    @Override
+    public Text getGtin14() {
+        return getFirst(gtin14);
+    }
+
+    @Override
+    public void addGtin14(Text gtin14) {
+        this.gtin14 = add(this.gtin14, gtin14);
+    }
+
+    private List<Text> gtin8;
+
+    @Override
+    public List<Text> getGtin8List() {
+        return gtin8;
+    }
+
+    @Override
+    public Text getGtin8() {
+        return getFirst(gtin8);
+    }
+
+    @Override
+    public void addGtin8(Text gtin8) {
+        this.gtin8 = add(this.gtin8, gtin8);
+    }
+
+    private List<AdultOrientedEnumeration> hasAdultConsideration;
+
+    @Override
+    public List<AdultOrientedEnumeration> getHasAdultConsiderationList() {
+        return hasAdultConsideration;
+    }
+
+    @Override
+    public AdultOrientedEnumeration getHasAdultConsideration() {
+        return getFirst(hasAdultConsideration);
+    }
+
+    @Override
+    public void addHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
+        this.hasAdultConsideration = add(this.hasAdultConsideration, hasAdultConsideration);
+    }
+
+    private List<Certification> hasCertification;
+
+    @Override
+    public List<Certification> getHasCertificationList() {
+        return hasCertification;
+    }
+
+    @Override
+    public Certification getHasCertification() {
+        return getFirst(hasCertification);
+    }
+
+    @Override
+    public void addHasCertification(Certification hasCertification) {
+        this.hasCertification = add(this.hasCertification, hasCertification);
+    }
+
+    private List<EnergyConsumptionDetails> hasEnergyConsumptionDetails;
+
+    @Override
+    public List<EnergyConsumptionDetails> getHasEnergyConsumptionDetailsList() {
+        return hasEnergyConsumptionDetails;
+    }
+
+    @Override
+    public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
+        return getFirst(hasEnergyConsumptionDetails);
+    }
+
+    @Override
+    public void addHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
+        this.hasEnergyConsumptionDetails = add(this.hasEnergyConsumptionDetails, hasEnergyConsumptionDetails);
+    }
+
+    private List<URL> hasGS1DigitalLink;
+
+    @Override
+    public List<URL> getHasGS1DigitalLinkList() {
+        return hasGS1DigitalLink;
+    }
+
+    @Override
+    public URL getHasGS1DigitalLink() {
+        return getFirst(hasGS1DigitalLink);
+    }
+
+    @Override
+    public void addHasGS1DigitalLink(URL hasGS1DigitalLink) {
+        this.hasGS1DigitalLink = add(this.hasGS1DigitalLink, hasGS1DigitalLink);
+    }
+
+    private List<QuantitativeValue> hasMeasurement;
+
+    @Override
+    public List<QuantitativeValue> getHasMeasurementList() {
+        return hasMeasurement;
+    }
+
+    @Override
+    public QuantitativeValue getHasMeasurement() {
+        return getFirst(hasMeasurement);
+    }
+
+    @Override
+    public void addHasMeasurement(QuantitativeValue hasMeasurement) {
+        this.hasMeasurement = add(this.hasMeasurement, hasMeasurement);
+    }
+
+    private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
+
+    @Override
+    public List<MerchantReturnPolicy> getHasMerchantReturnPolicyList() {
+        return hasMerchantReturnPolicy;
+    }
+
+    @Override
+    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
+        return getFirst(hasMerchantReturnPolicy);
+    }
+
+    @Override
+    public void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
+    private List<Object> height;
+
+    @Override
+    public <T> List<T> getHeightList() {
+        return (List<T>) height;
+    }
+
+    @Override
+    public <T> T getHeight() {
+        return (T) getFirst(height);
+    }
+
+    @Override
+    public void addHeight(QuantitativeValue height) {
+        this.height = add(this.height, height);
+    }
+    @Override
+    public void addHeight(Distance height) {
+        this.height = add(this.height, height);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<Text> inProductGroupWithID;
+
+    @Override
+    public List<Text> getInProductGroupWithIDList() {
+        return inProductGroupWithID;
+    }
+
+    @Override
+    public Text getInProductGroupWithID() {
+        return getFirst(inProductGroupWithID);
+    }
+
+    @Override
+    public void addInProductGroupWithID(Text inProductGroupWithID) {
+        this.inProductGroupWithID = add(this.inProductGroupWithID, inProductGroupWithID);
+    }
+
+    private List<Product> isAccessoryOrSparePartFor;
+
+    @Override
+    public List<Product> getIsAccessoryOrSparePartForList() {
+        return isAccessoryOrSparePartFor;
+    }
+
+    @Override
+    public Product getIsAccessoryOrSparePartFor() {
+        return getFirst(isAccessoryOrSparePartFor);
+    }
+
+    @Override
+    public void addIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
+        this.isAccessoryOrSparePartFor = add(this.isAccessoryOrSparePartFor, isAccessoryOrSparePartFor);
+    }
+
+    private List<Product> isConsumableFor;
+
+    @Override
+    public List<Product> getIsConsumableForList() {
+        return isConsumableFor;
+    }
+
+    @Override
+    public Product getIsConsumableFor() {
+        return getFirst(isConsumableFor);
+    }
+
+    @Override
+    public void addIsConsumableFor(Product isConsumableFor) {
+        this.isConsumableFor = add(this.isConsumableFor, isConsumableFor);
+    }
+
+    private List<Boolean> isFamilyFriendly;
+
+    @Override
+    public List<Boolean> getIsFamilyFriendlyList() {
+        return isFamilyFriendly;
+    }
+
+    @Override
+    public Boolean getIsFamilyFriendly() {
+        return getFirst(isFamilyFriendly);
+    }
+
+    @Override
+    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
+    }
+
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isRelatedTo;
+
+    @Override
+    public <T> List<T> getIsRelatedToList() {
+        return (List<T>) isRelatedTo;
+    }
+
+    @Override
+    public <T> T getIsRelatedTo() {
+        return (T) getFirst(isRelatedTo);
+    }
+
+    @Override
+    public void addIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
+    }
+    @Override
+    public void addIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
+    }
+
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isSimilarTo;
+
+    @Override
+    public <T> List<T> getIsSimilarToList() {
+        return (List<T>) isSimilarTo;
+    }
+
+    @Override
+    public <T> T getIsSimilarTo() {
+        return (T) getFirst(isSimilarTo);
+    }
+
+    @Override
+    public void addIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
+    }
+    @Override
+    public void addIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
+    }
+
+    @JsonLdFieldTypes({ ProductModel.class, ProductGroup.class })
+    private List<Object> isVariantOf;
+
+    @Override
+    public <T> List<T> getIsVariantOfList() {
+        return (List<T>) isVariantOf;
+    }
+
+    @Override
+    public <T> T getIsVariantOf() {
+        return (T) getFirst(isVariantOf);
+    }
+
+    @Override
+    public void addIsVariantOf(ProductModel isVariantOf) {
+        this.isVariantOf = add(this.isVariantOf, isVariantOf);
+    }
+    @Override
+    public void addIsVariantOf(ProductGroup isVariantOf) {
+        this.isVariantOf = add(this.isVariantOf, isVariantOf);
+    }
+
+    private List<OfferItemCondition> itemCondition;
+
+    @Override
+    public List<OfferItemCondition> getItemConditionList() {
+        return itemCondition;
+    }
+
+    @Override
+    public OfferItemCondition getItemCondition() {
+        return getFirst(itemCondition);
+    }
+
+    @Override
+    public void addItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = add(this.itemCondition, itemCondition);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class, URL.class })
+    private List<Object> keywords;
+
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
+
+    @Override
+    public <T> T getKeywords() {
+        return (T) getFirst(keywords);
+    }
+
+    @Override
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    @Override
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+    @Override
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
+    }
+
+    private List<Text> knownVehicleDamages;
+
+    @Override
+    public List<Text> getKnownVehicleDamagesList() {
+        return knownVehicleDamages;
+    }
+
+    @Override
+    public Text getKnownVehicleDamages() {
+        return getFirst(knownVehicleDamages);
+    }
+
+    @Override
+    public void addKnownVehicleDamages(Text knownVehicleDamages) {
+        this.knownVehicleDamages = add(this.knownVehicleDamages, knownVehicleDamages);
+    }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> logo;
+
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
+
+    @Override
+    public <T> T getLogo() {
+        return (T) getFirst(logo);
+    }
+
+    @Override
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
+    }
+    @Override
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Organization> manufacturer;
+
+    @Override
+    public List<Organization> getManufacturerList() {
+        return manufacturer;
+    }
+
+    @Override
+    public Organization getManufacturer() {
+        return getFirst(manufacturer);
+    }
+
+    @Override
+    public void addManufacturer(Organization manufacturer) {
+        this.manufacturer = add(this.manufacturer, manufacturer);
+    }
+
+    @JsonLdFieldTypes({ Product.class, URL.class, Text.class })
+    private List<Object> material;
+
+    @Override
+    public <T> List<T> getMaterialList() {
+        return (List<T>) material;
+    }
+
+    @Override
+    public <T> T getMaterial() {
+        return (T) getFirst(material);
+    }
+
+    @Override
+    public void addMaterial(Product material) {
+        this.material = add(this.material, material);
+    }
+    @Override
+    public void addMaterial(URL material) {
+        this.material = add(this.material, material);
+    }
+    @Override
+    public void addMaterial(Text material) {
+        this.material = add(this.material, material);
+    }
+
+    @JsonLdFieldTypes({ Text.class, QualitativeValue.class, URL.class })
+    private List<Object> meetsEmissionStandard;
+
+    @Override
+    public <T> List<T> getMeetsEmissionStandardList() {
+        return (List<T>) meetsEmissionStandard;
+    }
+
+    @Override
+    public <T> T getMeetsEmissionStandard() {
+        return (T) getFirst(meetsEmissionStandard);
+    }
+
+    @Override
+    public void addMeetsEmissionStandard(Text meetsEmissionStandard) {
+        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
+    }
+    @Override
+    public void addMeetsEmissionStandard(QualitativeValue meetsEmissionStandard) {
+        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
+    }
+    @Override
+    public void addMeetsEmissionStandard(URL meetsEmissionStandard) {
+        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
+    }
+
+    private List<QuantitativeValue> mileageFromOdometer;
+
+    @Override
+    public List<QuantitativeValue> getMileageFromOdometerList() {
+        return mileageFromOdometer;
+    }
+
+    @Override
+    public QuantitativeValue getMileageFromOdometer() {
+        return getFirst(mileageFromOdometer);
+    }
+
+    @Override
+    public void addMileageFromOdometer(QuantitativeValue mileageFromOdometer) {
+        this.mileageFromOdometer = add(this.mileageFromOdometer, mileageFromOdometer);
+    }
+
+    private List<Text> mobileUrl;
+
+    @Override
+    public List<Text> getMobileUrlList() {
+        return mobileUrl;
+    }
+
+    @Override
+    public Text getMobileUrl() {
+        return getFirst(mobileUrl);
+    }
+
+    @Override
+    public void addMobileUrl(Text mobileUrl) {
+        this.mobileUrl = add(this.mobileUrl, mobileUrl);
+    }
+
+    @JsonLdFieldTypes({ Text.class, ProductModel.class })
+    private List<Object> model;
+
+    @Override
+    public <T> List<T> getModelList() {
+        return (List<T>) model;
+    }
+
+    @Override
+    public <T> T getModel() {
+        return (T) getFirst(model);
+    }
+
+    @Override
+    public void addModel(Text model) {
+        this.model = add(this.model, model);
+    }
+    @Override
+    public void addModel(ProductModel model) {
+        this.model = add(this.model, model);
+    }
+
+    private List<Date> modelDate;
+
+    @Override
+    public List<Date> getModelDateList() {
+        return modelDate;
+    }
+
+    @Override
+    public Date getModelDate() {
+        return getFirst(modelDate);
+    }
+
+    @Override
+    public void addModelDate(Date modelDate) {
+        this.modelDate = add(this.modelDate, modelDate);
+    }
+
+    private List<Text> mpn;
+
+    @Override
+    public List<Text> getMpnList() {
+        return mpn;
+    }
+
+    @Override
+    public Text getMpn() {
+        return getFirst(mpn);
+    }
+
+    @Override
+    public void addMpn(Text mpn) {
+        this.mpn = add(this.mpn, mpn);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ ItemList.class, ListItem.class, Text.class, WebContent.class })
+    private List<Object> negativeNotes;
+
+    @Override
+    public <T> List<T> getNegativeNotesList() {
+        return (List<T>) negativeNotes;
+    }
+
+    @Override
+    public <T> T getNegativeNotes() {
+        return (T) getFirst(negativeNotes);
+    }
+
+    @Override
+    public void addNegativeNotes(ItemList negativeNotes) {
+        this.negativeNotes = add(this.negativeNotes, negativeNotes);
+    }
+    @Override
+    public void addNegativeNotes(ListItem negativeNotes) {
+        this.negativeNotes = add(this.negativeNotes, negativeNotes);
+    }
+    @Override
+    public void addNegativeNotes(Text negativeNotes) {
+        this.negativeNotes = add(this.negativeNotes, negativeNotes);
+    }
+    @Override
+    public void addNegativeNotes(WebContent negativeNotes) {
+        this.negativeNotes = add(this.negativeNotes, negativeNotes);
+    }
+
+    private List<Text> nsn;
+
+    @Override
+    public List<Text> getNsnList() {
+        return nsn;
+    }
+
+    @Override
+    public Text getNsn() {
+        return getFirst(nsn);
+    }
+
+    @Override
+    public void addNsn(Text nsn) {
+        this.nsn = add(this.nsn, nsn);
+    }
+
+    @JsonLdFieldTypes({ Number.class, Text.class })
+    private List<Object> numberOfAirbags;
+
+    @Override
+    public <T> List<T> getNumberOfAirbagsList() {
+        return (List<T>) numberOfAirbags;
+    }
+
+    @Override
+    public <T> T getNumberOfAirbags() {
+        return (T) getFirst(numberOfAirbags);
+    }
+
+    @Override
+    public void addNumberOfAirbags(Number numberOfAirbags) {
+        this.numberOfAirbags = add(this.numberOfAirbags, numberOfAirbags);
+    }
+    @Override
+    public void addNumberOfAirbags(Text numberOfAirbags) {
+        this.numberOfAirbags = add(this.numberOfAirbags, numberOfAirbags);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfAxles;
+
+    @Override
+    public <T> List<T> getNumberOfAxlesList() {
+        return (List<T>) numberOfAxles;
+    }
+
+    @Override
+    public <T> T getNumberOfAxles() {
+        return (T) getFirst(numberOfAxles);
+    }
+
+    @Override
+    public void addNumberOfAxles(QuantitativeValue numberOfAxles) {
+        this.numberOfAxles = add(this.numberOfAxles, numberOfAxles);
+    }
+    @Override
+    public void addNumberOfAxles(Number numberOfAxles) {
+        this.numberOfAxles = add(this.numberOfAxles, numberOfAxles);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfDoors;
+
+    @Override
+    public <T> List<T> getNumberOfDoorsList() {
+        return (List<T>) numberOfDoors;
+    }
+
+    @Override
+    public <T> T getNumberOfDoors() {
+        return (T) getFirst(numberOfDoors);
+    }
+
+    @Override
+    public void addNumberOfDoors(QuantitativeValue numberOfDoors) {
+        this.numberOfDoors = add(this.numberOfDoors, numberOfDoors);
+    }
+    @Override
+    public void addNumberOfDoors(Number numberOfDoors) {
+        this.numberOfDoors = add(this.numberOfDoors, numberOfDoors);
+    }
+
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
+    private List<Object> numberOfForwardGears;
+
+    @Override
+    public <T> List<T> getNumberOfForwardGearsList() {
+        return (List<T>) numberOfForwardGears;
+    }
+
+    @Override
+    public <T> T getNumberOfForwardGears() {
+        return (T) getFirst(numberOfForwardGears);
+    }
+
+    @Override
+    public void addNumberOfForwardGears(Number numberOfForwardGears) {
+        this.numberOfForwardGears = add(this.numberOfForwardGears, numberOfForwardGears);
+    }
+    @Override
+    public void addNumberOfForwardGears(QuantitativeValue numberOfForwardGears) {
+        this.numberOfForwardGears = add(this.numberOfForwardGears, numberOfForwardGears);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfPreviousOwners;
+
+    @Override
+    public <T> List<T> getNumberOfPreviousOwnersList() {
+        return (List<T>) numberOfPreviousOwners;
+    }
+
+    @Override
+    public <T> T getNumberOfPreviousOwners() {
+        return (T) getFirst(numberOfPreviousOwners);
+    }
+
+    @Override
+    public void addNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners) {
+        this.numberOfPreviousOwners = add(this.numberOfPreviousOwners, numberOfPreviousOwners);
+    }
+    @Override
+    public void addNumberOfPreviousOwners(Number numberOfPreviousOwners) {
+        this.numberOfPreviousOwners = add(this.numberOfPreviousOwners, numberOfPreviousOwners);
+    }
+
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
+
+    @Override
+    public <T> T getOffers() {
+        return (T) getFirst(offers);
+    }
+
+    @Override
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
+    }
+    @Override
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
+    private List<Object> pattern;
+
+    @Override
+    public <T> List<T> getPatternList() {
+        return (List<T>) pattern;
+    }
+
+    @Override
+    public <T> T getPattern() {
+        return (T) getFirst(pattern);
+    }
+
+    @Override
+    public void addPattern(DefinedTerm pattern) {
+        this.pattern = add(this.pattern, pattern);
+    }
+    @Override
+    public void addPattern(Text pattern) {
+        this.pattern = add(this.pattern, pattern);
+    }
+
+    private List<QuantitativeValue> payload;
+
+    @Override
+    public List<QuantitativeValue> getPayloadList() {
+        return payload;
+    }
+
+    @Override
+    public QuantitativeValue getPayload() {
+        return getFirst(payload);
+    }
+
+    @Override
+    public void addPayload(QuantitativeValue payload) {
+        this.payload = add(this.payload, payload);
+    }
+
+    @JsonLdFieldTypes({ ListItem.class, Text.class, WebContent.class, ItemList.class })
+    private List<Object> positiveNotes;
+
+    @Override
+    public <T> List<T> getPositiveNotesList() {
+        return (List<T>) positiveNotes;
+    }
+
+    @Override
+    public <T> T getPositiveNotes() {
+        return (T) getFirst(positiveNotes);
+    }
+
+    @Override
+    public void addPositiveNotes(ListItem positiveNotes) {
+        this.positiveNotes = add(this.positiveNotes, positiveNotes);
+    }
+    @Override
+    public void addPositiveNotes(Text positiveNotes) {
+        this.positiveNotes = add(this.positiveNotes, positiveNotes);
+    }
+    @Override
+    public void addPositiveNotes(WebContent positiveNotes) {
+        this.positiveNotes = add(this.positiveNotes, positiveNotes);
+    }
+    @Override
+    public void addPositiveNotes(ItemList positiveNotes) {
+        this.positiveNotes = add(this.positiveNotes, positiveNotes);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<Text> productID;
+
+    @Override
+    public List<Text> getProductIDList() {
+        return productID;
+    }
+
+    @Override
+    public Text getProductID() {
+        return getFirst(productID);
+    }
+
+    @Override
+    public void addProductID(Text productID) {
+        this.productID = add(this.productID, productID);
+    }
+
+    private List<Date> productionDate;
+
+    @Override
+    public List<Date> getProductionDateList() {
+        return productionDate;
+    }
+
+    @Override
+    public Date getProductionDate() {
+        return getFirst(productionDate);
+    }
+
+    @Override
+    public void addProductionDate(Date productionDate) {
+        this.productionDate = add(this.productionDate, productionDate);
+    }
+
+    private List<Date> purchaseDate;
+
+    @Override
+    public List<Date> getPurchaseDateList() {
+        return purchaseDate;
+    }
+
+    @Override
+    public Date getPurchaseDate() {
+        return getFirst(purchaseDate);
+    }
+
+    @Override
+    public void addPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = add(this.purchaseDate, purchaseDate);
+    }
+
+    private List<Date> releaseDate;
+
+    @Override
+    public List<Date> getReleaseDateList() {
+        return releaseDate;
+    }
+
+    @Override
+    public Date getReleaseDate() {
+        return getFirst(releaseDate);
+    }
+
+    @Override
+    public void addReleaseDate(Date releaseDate) {
+        this.releaseDate = add(this.releaseDate, releaseDate);
+    }
+
+    private List<Review> review;
+
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
+
+    @Override
+    public Review getReview() {
+        return getFirst(review);
+    }
+
+    @Override
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
+    }
+
+    private List<Review> reviews;
+
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
+
+    @Override
+    public Review getReviews() {
+        return getFirst(reviews);
+    }
+
+    @Override
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> seatingCapacity;
+
+    @Override
+    public <T> List<T> getSeatingCapacityList() {
+        return (List<T>) seatingCapacity;
+    }
+
+    @Override
+    public <T> T getSeatingCapacity() {
+        return (T) getFirst(seatingCapacity);
+    }
+
+    @Override
+    public void addSeatingCapacity(QuantitativeValue seatingCapacity) {
+        this.seatingCapacity = add(this.seatingCapacity, seatingCapacity);
+    }
+    @Override
+    public void addSeatingCapacity(Number seatingCapacity) {
+        this.seatingCapacity = add(this.seatingCapacity, seatingCapacity);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class, DefinedTerm.class, SizeSpecification.class })
+    private List<Object> size;
+
+    @Override
+    public <T> List<T> getSizeList() {
+        return (List<T>) size;
+    }
+
+    @Override
+    public <T> T getSize() {
+        return (T) getFirst(size);
+    }
+
+    @Override
+    public void addSize(QuantitativeValue size) {
+        this.size = add(this.size, size);
+    }
+    @Override
+    public void addSize(Text size) {
+        this.size = add(this.size, size);
+    }
+    @Override
+    public void addSize(DefinedTerm size) {
+        this.size = add(this.size, size);
+    }
+    @Override
+    public void addSize(SizeSpecification size) {
+        this.size = add(this.size, size);
+    }
+
+    private List<Text> sku;
+
+    @Override
+    public List<Text> getSkuList() {
+        return sku;
+    }
+
+    @Override
+    public Text getSku() {
+        return getFirst(sku);
+    }
+
+    @Override
+    public void addSku(Text sku) {
+        this.sku = add(this.sku, sku);
+    }
+
+    private List<Text> slogan;
+
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
+    }
+
+    @Override
+    public Text getSlogan() {
+        return getFirst(slogan);
+    }
+
+    @Override
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
+    }
+
+    private List<QuantitativeValue> speed;
+
+    @Override
+    public List<QuantitativeValue> getSpeedList() {
+        return speed;
+    }
+
+    @Override
+    public QuantitativeValue getSpeed() {
+        return getFirst(speed);
+    }
+
+    @Override
+    public void addSpeed(QuantitativeValue speed) {
+        this.speed = add(this.speed, speed);
+    }
+
+    private List<SteeringPositionValue> steeringPosition;
+
+    @Override
+    public List<SteeringPositionValue> getSteeringPositionList() {
+        return steeringPosition;
+    }
+
+    @Override
+    public SteeringPositionValue getSteeringPosition() {
+        return getFirst(steeringPosition);
+    }
+
+    @Override
+    public void addSteeringPosition(SteeringPositionValue steeringPosition) {
+        this.steeringPosition = add(this.steeringPosition, steeringPosition);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<QuantitativeValue> tongueWeight;
+
+    @Override
+    public List<QuantitativeValue> getTongueWeightList() {
+        return tongueWeight;
+    }
+
+    @Override
+    public QuantitativeValue getTongueWeight() {
+        return getFirst(tongueWeight);
+    }
+
+    @Override
+    public void addTongueWeight(QuantitativeValue tongueWeight) {
+        this.tongueWeight = add(this.tongueWeight, tongueWeight);
+    }
+
+    private List<QuantitativeValue> trailerWeight;
+
+    @Override
+    public List<QuantitativeValue> getTrailerWeightList() {
+        return trailerWeight;
+    }
+
+    @Override
+    public QuantitativeValue getTrailerWeight() {
+        return getFirst(trailerWeight);
+    }
+
+    @Override
+    public void addTrailerWeight(QuantitativeValue trailerWeight) {
+        this.trailerWeight = add(this.trailerWeight, trailerWeight);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
+    }
+
+    private List<Text> vehicleConfiguration;
+
+    @Override
+    public List<Text> getVehicleConfigurationList() {
+        return vehicleConfiguration;
+    }
+
+    @Override
+    public Text getVehicleConfiguration() {
+        return getFirst(vehicleConfiguration);
+    }
+
+    @Override
+    public void addVehicleConfiguration(Text vehicleConfiguration) {
+        this.vehicleConfiguration = add(this.vehicleConfiguration, vehicleConfiguration);
+    }
+
+    private List<EngineSpecification> vehicleEngine;
+
+    @Override
+    public List<EngineSpecification> getVehicleEngineList() {
+        return vehicleEngine;
+    }
+
+    @Override
+    public EngineSpecification getVehicleEngine() {
+        return getFirst(vehicleEngine);
+    }
+
+    @Override
+    public void addVehicleEngine(EngineSpecification vehicleEngine) {
+        this.vehicleEngine = add(this.vehicleEngine, vehicleEngine);
+    }
+
+    private List<Text> vehicleIdentificationNumber;
+
+    @Override
+    public List<Text> getVehicleIdentificationNumberList() {
+        return vehicleIdentificationNumber;
+    }
+
+    @Override
+    public Text getVehicleIdentificationNumber() {
+        return getFirst(vehicleIdentificationNumber);
+    }
+
+    @Override
+    public void addVehicleIdentificationNumber(Text vehicleIdentificationNumber) {
+        this.vehicleIdentificationNumber = add(this.vehicleIdentificationNumber, vehicleIdentificationNumber);
+    }
+
+    private List<Text> vehicleInteriorColor;
+
+    @Override
+    public List<Text> getVehicleInteriorColorList() {
+        return vehicleInteriorColor;
+    }
+
+    @Override
+    public Text getVehicleInteriorColor() {
+        return getFirst(vehicleInteriorColor);
+    }
+
+    @Override
+    public void addVehicleInteriorColor(Text vehicleInteriorColor) {
+        this.vehicleInteriorColor = add(this.vehicleInteriorColor, vehicleInteriorColor);
+    }
+
+    private List<Text> vehicleInteriorType;
+
+    @Override
+    public List<Text> getVehicleInteriorTypeList() {
+        return vehicleInteriorType;
+    }
+
+    @Override
+    public Text getVehicleInteriorType() {
+        return getFirst(vehicleInteriorType);
+    }
+
+    @Override
+    public void addVehicleInteriorType(Text vehicleInteriorType) {
+        this.vehicleInteriorType = add(this.vehicleInteriorType, vehicleInteriorType);
+    }
+
+    private List<Date> vehicleModelDate;
+
+    @Override
+    public List<Date> getVehicleModelDateList() {
+        return vehicleModelDate;
+    }
+
+    @Override
+    public Date getVehicleModelDate() {
+        return getFirst(vehicleModelDate);
+    }
+
+    @Override
+    public void addVehicleModelDate(Date vehicleModelDate) {
+        this.vehicleModelDate = add(this.vehicleModelDate, vehicleModelDate);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> vehicleSeatingCapacity;
+
+    @Override
+    public <T> List<T> getVehicleSeatingCapacityList() {
+        return (List<T>) vehicleSeatingCapacity;
+    }
+
+    @Override
+    public <T> T getVehicleSeatingCapacity() {
+        return (T) getFirst(vehicleSeatingCapacity);
+    }
+
+    @Override
+    public void addVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity) {
+        this.vehicleSeatingCapacity = add(this.vehicleSeatingCapacity, vehicleSeatingCapacity);
+    }
+    @Override
+    public void addVehicleSeatingCapacity(Number vehicleSeatingCapacity) {
+        this.vehicleSeatingCapacity = add(this.vehicleSeatingCapacity, vehicleSeatingCapacity);
+    }
+
+    @JsonLdFieldTypes({ Text.class, CarUsageType.class })
+    private List<Object> vehicleSpecialUsage;
+
+    @Override
+    public <T> List<T> getVehicleSpecialUsageList() {
+        return (List<T>) vehicleSpecialUsage;
+    }
+
+    @Override
+    public <T> T getVehicleSpecialUsage() {
+        return (T) getFirst(vehicleSpecialUsage);
+    }
+
+    @Override
+    public void addVehicleSpecialUsage(Text vehicleSpecialUsage) {
+        this.vehicleSpecialUsage = add(this.vehicleSpecialUsage, vehicleSpecialUsage);
+    }
+    @Override
+    public void addVehicleSpecialUsage(CarUsageType vehicleSpecialUsage) {
+        this.vehicleSpecialUsage = add(this.vehicleSpecialUsage, vehicleSpecialUsage);
+    }
+
+    @JsonLdFieldTypes({ Text.class, QualitativeValue.class, URL.class })
+    private List<Object> vehicleTransmission;
+
+    @Override
+    public <T> List<T> getVehicleTransmissionList() {
+        return (List<T>) vehicleTransmission;
+    }
+
+    @Override
+    public <T> T getVehicleTransmission() {
+        return (T) getFirst(vehicleTransmission);
+    }
+
+    @Override
+    public void addVehicleTransmission(Text vehicleTransmission) {
+        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
+    }
+    @Override
+    public void addVehicleTransmission(QualitativeValue vehicleTransmission) {
+        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
+    }
+    @Override
+    public void addVehicleTransmission(URL vehicleTransmission) {
+        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
+    }
+
+    @JsonLdFieldTypes({ Mass.class, QuantitativeValue.class })
+    private List<Object> weight;
+
+    @Override
+    public <T> List<T> getWeightList() {
+        return (List<T>) weight;
+    }
+
+    @Override
+    public <T> T getWeight() {
+        return (T) getFirst(weight);
+    }
+
+    @Override
+    public void addWeight(Mass weight) {
+        this.weight = add(this.weight, weight);
+    }
+    @Override
+    public void addWeight(QuantitativeValue weight) {
+        this.weight = add(this.weight, weight);
+    }
+
+    private List<QuantitativeValue> weightTotal;
+
+    @Override
+    public List<QuantitativeValue> getWeightTotalList() {
+        return weightTotal;
+    }
+
+    @Override
+    public QuantitativeValue getWeightTotal() {
+        return getFirst(weightTotal);
+    }
+
+    @Override
+    public void addWeightTotal(QuantitativeValue weightTotal) {
+        this.weightTotal = add(this.weightTotal, weightTotal);
+    }
+
+    private List<QuantitativeValue> wheelbase;
+
+    @Override
+    public List<QuantitativeValue> getWheelbaseList() {
+        return wheelbase;
+    }
+
+    @Override
+    public QuantitativeValue getWheelbase() {
+        return getFirst(wheelbase);
+    }
+
+    @Override
+    public void addWheelbase(QuantitativeValue wheelbase) {
+        this.wheelbase = add(this.wheelbase, wheelbase);
+    }
+
+    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
+    private List<Object> width;
+
+    @Override
+    public <T> List<T> getWidthList() {
+        return (List<T>) width;
+    }
+
+    @Override
+    public <T> T getWidth() {
+        return (T) getFirst(width);
+    }
+
+    @Override
+    public void addWidth(QuantitativeValue width) {
+        this.width = add(this.width, width);
+    }
+    @Override
+    public void addWidth(Distance width) {
+        this.width = add(this.width, width);
     }
 }

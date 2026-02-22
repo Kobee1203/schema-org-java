@@ -25,6 +25,54 @@ import org.schema.model.datatype.Text;
 public interface HowTo extends CreativeWork {
 
     /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @return {@link MonetaryAmount} or {@link Text}
+     */
+    <T> List<T> getEstimatedCostList();
+
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @return {@link MonetaryAmount} or {@link Text}
+     */
+    <T> T getEstimatedCost();
+
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @param estimatedCost MonetaryAmount value to set.
+     */
+    void addEstimatedCost(MonetaryAmount estimatedCost);
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @param estimatedCost Text value to set.
+     */
+    void addEstimatedCost(Text estimatedCost);
+
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getPerformTimeList();
+
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    Duration getPerformTime();
+
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param performTime Duration value to set.
+     */
+    void addPerformTime(Duration performTime);
+
+    /**
      * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return {@link Duration}
@@ -44,33 +92,6 @@ public interface HowTo extends CreativeWork {
      * @param prepTime Duration value to set.
      */
     void addPrepTime(Duration prepTime);
-
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     *
-     * @return {@link HowToTool} or {@link Text}
-     */
-    <T> List<T> getToolList();
-
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     *
-     * @return {@link HowToTool} or {@link Text}
-     */
-    <T> T getTool();
-
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     *
-     * @param tool HowToTool value to set.
-     */
-    void addTool(HowToTool tool);
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     *
-     * @param tool Text value to set.
-     */
-    void addTool(Text tool);
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
@@ -112,60 +133,6 @@ public interface HowTo extends CreativeWork {
     void addStep(CreativeWork step);
 
     /**
-     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
-     *
-     * @return {@link QuantitativeValue} or {@link Text}
-     */
-    <T> List<T> getYieldList();
-
-    /**
-     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
-     *
-     * @return {@link QuantitativeValue} or {@link Text}
-     */
-    <T> T getYield();
-
-    /**
-     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
-     *
-     * @param yield QuantitativeValue value to set.
-     */
-    void addYield(QuantitativeValue yield);
-    /**
-     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
-     *
-     * @param yield Text value to set.
-     */
-    void addYield(Text yield);
-
-    /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-     *
-     * @return {@link Text} or {@link HowToSupply}
-     */
-    <T> List<T> getSupplyList();
-
-    /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-     *
-     * @return {@link Text} or {@link HowToSupply}
-     */
-    <T> T getSupply();
-
-    /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-     *
-     * @param supply Text value to set.
-     */
-    void addSupply(Text supply);
-    /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-     *
-     * @param supply HowToSupply value to set.
-     */
-    void addSupply(HowToSupply supply);
-
-    /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
      * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
@@ -199,31 +166,58 @@ public interface HowTo extends CreativeWork {
     void addSteps(Text steps);
 
     /**
-     * The estimated cost of the supply or supplies consumed when performing instructions.
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
-     * @return {@link MonetaryAmount} or {@link Text}
+     * @return {@link Text} or {@link HowToSupply}
      */
-    <T> List<T> getEstimatedCostList();
+    <T> List<T> getSupplyList();
 
     /**
-     * The estimated cost of the supply or supplies consumed when performing instructions.
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
-     * @return {@link MonetaryAmount} or {@link Text}
+     * @return {@link Text} or {@link HowToSupply}
      */
-    <T> T getEstimatedCost();
+    <T> T getSupply();
 
     /**
-     * The estimated cost of the supply or supplies consumed when performing instructions.
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
-     * @param estimatedCost MonetaryAmount value to set.
+     * @param supply Text value to set.
      */
-    void addEstimatedCost(MonetaryAmount estimatedCost);
+    void addSupply(Text supply);
     /**
-     * The estimated cost of the supply or supplies consumed when performing instructions.
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
-     * @param estimatedCost Text value to set.
+     * @param supply HowToSupply value to set.
      */
-    void addEstimatedCost(Text estimatedCost);
+    void addSupply(HowToSupply supply);
+
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @return {@link HowToTool} or {@link Text}
+     */
+    <T> List<T> getToolList();
+
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @return {@link HowToTool} or {@link Text}
+     */
+    <T> T getTool();
+
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @param tool HowToTool value to set.
+     */
+    void addTool(HowToTool tool);
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @param tool Text value to set.
+     */
+    void addTool(Text tool);
 
     /**
      * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -247,23 +241,29 @@ public interface HowTo extends CreativeWork {
     void addTotalTime(Duration totalTime);
 
     /**
-     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      *
-     * @return {@link Duration}
+     * @return {@link QuantitativeValue} or {@link Text}
      */
-    List<Duration> getPerformTimeList();
+    <T> List<T> getYieldList();
 
     /**
-     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      *
-     * @return {@link Duration}
+     * @return {@link QuantitativeValue} or {@link Text}
      */
-    Duration getPerformTime();
+    <T> T getYield();
 
     /**
-     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      *
-     * @param performTime Duration value to set.
+     * @param yield QuantitativeValue value to set.
      */
-    void addPerformTime(Duration performTime);
+    void addYield(QuantitativeValue yield);
+    /**
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+     *
+     * @param yield Text value to set.
+     */
+    void addYield(Text yield);
 }

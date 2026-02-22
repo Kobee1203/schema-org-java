@@ -19,6 +19,27 @@ import org.schema.model.MediaObject;
 public interface HyperToc extends CreativeWork {
 
     /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getAssociatedMediaList();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    MediaObject getAssociatedMedia();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @param associatedMedia MediaObject value to set.
+     */
+    void addAssociatedMedia(MediaObject associatedMedia);
+
+    /**
      * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
      *
      * @return {@link HyperTocEntry}
@@ -44,25 +65,4 @@ public interface HyperToc extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
     void addTocEntry(HyperTocEntry tocEntry);
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @return {@link MediaObject}
-     */
-    List<MediaObject> getAssociatedMediaList();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @return {@link MediaObject}
-     */
-    MediaObject getAssociatedMedia();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @param associatedMedia MediaObject value to set.
-     */
-    void addAssociatedMedia(MediaObject associatedMedia);
 }

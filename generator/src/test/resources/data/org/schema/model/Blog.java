@@ -17,28 +17,25 @@ import org.schema.model.datatype.Text;
 public interface Blog extends CreativeWork {
 
     /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     * A posting that is part of this blog.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     * @return {@link BlogPosting}
      */
-    List<Text> getIssnList();
+    List<BlogPosting> getBlogPostList();
 
     /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     * A posting that is part of this blog.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     * @return {@link BlogPosting}
      */
-    Text getIssn();
+    BlogPosting getBlogPost();
 
     /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     * A posting that is part of this blog.
      *
-     * @param issn Text value to set.
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     * @param blogPost BlogPosting value to set.
      */
-    void addIssn(Text issn);
+    void addBlogPost(BlogPosting blogPost);
 
     /**
      * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
@@ -62,23 +59,26 @@ public interface Blog extends CreativeWork {
     void addBlogPosts(BlogPosting blogPosts);
 
     /**
-     * A posting that is part of this blog.
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
-     * @return {@link BlogPosting}
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
-    List<BlogPosting> getBlogPostList();
+    List<Text> getIssnList();
 
     /**
-     * A posting that is part of this blog.
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
-     * @return {@link BlogPosting}
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
-    BlogPosting getBlogPost();
+    Text getIssn();
 
     /**
-     * A posting that is part of this blog.
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
-     * @param blogPost BlogPosting value to set.
+     * @param issn Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
-    void addBlogPost(BlogPosting blogPost);
+    void addIssn(Text issn);
 }

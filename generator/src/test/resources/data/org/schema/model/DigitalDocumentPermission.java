@@ -20,27 +20,6 @@ import org.schema.model.Person;
 public interface DigitalDocumentPermission extends Intangible {
 
     /**
-     * The type of permission granted the person, organization, or audience.
-     *
-     * @return {@link DigitalDocumentPermissionType}
-     */
-    List<DigitalDocumentPermissionType> getPermissionTypeList();
-
-    /**
-     * The type of permission granted the person, organization, or audience.
-     *
-     * @return {@link DigitalDocumentPermissionType}
-     */
-    DigitalDocumentPermissionType getPermissionType();
-
-    /**
-     * The type of permission granted the person, organization, or audience.
-     *
-     * @param permissionType DigitalDocumentPermissionType value to set.
-     */
-    void addPermissionType(DigitalDocumentPermissionType permissionType);
-
-    /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
      * @return {@link Audience} or {@link ContactPoint} or {@link Person} or {@link Organization}
@@ -78,4 +57,25 @@ public interface DigitalDocumentPermission extends Intangible {
      * @param grantee Organization value to set.
      */
     void addGrantee(Organization grantee);
+
+    /**
+     * The type of permission granted the person, organization, or audience.
+     *
+     * @return {@link DigitalDocumentPermissionType}
+     */
+    List<DigitalDocumentPermissionType> getPermissionTypeList();
+
+    /**
+     * The type of permission granted the person, organization, or audience.
+     *
+     * @return {@link DigitalDocumentPermissionType}
+     */
+    DigitalDocumentPermissionType getPermissionType();
+
+    /**
+     * The type of permission granted the person, organization, or audience.
+     *
+     * @param permissionType DigitalDocumentPermissionType value to set.
+     */
+    void addPermissionType(DigitalDocumentPermissionType permissionType);
 }

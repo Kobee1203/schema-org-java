@@ -26,6 +26,207 @@ import org.schema.model.datatype.URL;
 public interface ParcelDelivery extends Intangible {
 
     /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getCarrierList();
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    Organization getCarrier();
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @param carrier Organization value to set.
+     */
+    void addCarrier(Organization carrier);
+
+    /**
+     * Destination address.
+     *
+     * @return {@link PostalAddress}
+     */
+    List<PostalAddress> getDeliveryAddressList();
+
+    /**
+     * Destination address.
+     *
+     * @return {@link PostalAddress}
+     */
+    PostalAddress getDeliveryAddress();
+
+    /**
+     * Destination address.
+     *
+     * @param deliveryAddress PostalAddress value to set.
+     */
+    void addDeliveryAddress(PostalAddress deliveryAddress);
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @return {@link DeliveryEvent}
+     */
+    List<DeliveryEvent> getDeliveryStatusList();
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @return {@link DeliveryEvent}
+     */
+    DeliveryEvent getDeliveryStatus();
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @param deliveryStatus DeliveryEvent value to set.
+     */
+    void addDeliveryStatus(DeliveryEvent deliveryStatus);
+
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getExpectedArrivalFromList();
+
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> T getExpectedArrivalFrom();
+
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param expectedArrivalFrom DateTime value to set.
+     */
+    void addExpectedArrivalFrom(DateTime expectedArrivalFrom);
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param expectedArrivalFrom Date value to set.
+     */
+    void addExpectedArrivalFrom(Date expectedArrivalFrom);
+
+    /**
+     * The latest date the package may arrive.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getExpectedArrivalUntilList();
+
+    /**
+     * The latest date the package may arrive.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> T getExpectedArrivalUntil();
+
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param expectedArrivalUntil Date value to set.
+     */
+    void addExpectedArrivalUntil(Date expectedArrivalUntil);
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param expectedArrivalUntil DateTime value to set.
+     */
+    void addExpectedArrivalUntil(DateTime expectedArrivalUntil);
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getHasDeliveryMethodList();
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    DeliveryMethod getHasDeliveryMethod();
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @param hasDeliveryMethod DeliveryMethod value to set.
+     */
+    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
+
+    /**
+     * Item(s) being shipped.
+     *
+     * @return {@link Product}
+     */
+    List<Product> getItemShippedList();
+
+    /**
+     * Item(s) being shipped.
+     *
+     * @return {@link Product}
+     */
+    Product getItemShipped();
+
+    /**
+     * Item(s) being shipped.
+     *
+     * @param itemShipped Product value to set.
+     */
+    void addItemShipped(Product itemShipped);
+
+    /**
+     * Shipper's address.
+     *
+     * @return {@link PostalAddress}
+     */
+    List<PostalAddress> getOriginAddressList();
+
+    /**
+     * Shipper's address.
+     *
+     * @return {@link PostalAddress}
+     */
+    PostalAddress getOriginAddress();
+
+    /**
+     * Shipper's address.
+     *
+     * @param originAddress PostalAddress value to set.
+     */
+    void addOriginAddress(PostalAddress originAddress);
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @return {@link Order}
+     */
+    List<Order> getPartOfOrderList();
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @return {@link Order}
+     */
+    Order getPartOfOrder();
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @param partOfOrder Order value to set.
+     */
+    void addPartOfOrder(Order partOfOrder);
+
+    /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
      * @return {@link Person} or {@link Organization}
@@ -63,165 +264,6 @@ public interface ParcelDelivery extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     void addProvider(Organization provider);
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @return {@link Order}
-     */
-    List<Order> getPartOfOrderList();
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @return {@link Order}
-     */
-    Order getPartOfOrder();
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @param partOfOrder Order value to set.
-     */
-    void addPartOfOrder(Order partOfOrder);
-
-    /**
-     * Item(s) being shipped.
-     *
-     * @return {@link Product}
-     */
-    List<Product> getItemShippedList();
-
-    /**
-     * Item(s) being shipped.
-     *
-     * @return {@link Product}
-     */
-    Product getItemShipped();
-
-    /**
-     * Item(s) being shipped.
-     *
-     * @param itemShipped Product value to set.
-     */
-    void addItemShipped(Product itemShipped);
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getExpectedArrivalFromList();
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getExpectedArrivalFrom();
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @param expectedArrivalFrom DateTime value to set.
-     */
-    void addExpectedArrivalFrom(DateTime expectedArrivalFrom);
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @param expectedArrivalFrom Date value to set.
-     */
-    void addExpectedArrivalFrom(Date expectedArrivalFrom);
-
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getCarrierList();
-
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @return {@link Organization}
-     */
-    Organization getCarrier();
-
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @param carrier Organization value to set.
-     */
-    void addCarrier(Organization carrier);
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> List<T> getExpectedArrivalUntilList();
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> T getExpectedArrivalUntil();
-
-    /**
-     * The latest date the package may arrive.
-     *
-     * @param expectedArrivalUntil Date value to set.
-     */
-    void addExpectedArrivalUntil(Date expectedArrivalUntil);
-    /**
-     * The latest date the package may arrive.
-     *
-     * @param expectedArrivalUntil DateTime value to set.
-     */
-    void addExpectedArrivalUntil(DateTime expectedArrivalUntil);
-
-    /**
-     * Destination address.
-     *
-     * @return {@link PostalAddress}
-     */
-    List<PostalAddress> getDeliveryAddressList();
-
-    /**
-     * Destination address.
-     *
-     * @return {@link PostalAddress}
-     */
-    PostalAddress getDeliveryAddress();
-
-    /**
-     * Destination address.
-     *
-     * @param deliveryAddress PostalAddress value to set.
-     */
-    void addDeliveryAddress(PostalAddress deliveryAddress);
-
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    List<DeliveryMethod> getHasDeliveryMethodList();
-
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    DeliveryMethod getHasDeliveryMethod();
-
-    /**
-     * Method used for delivery or shipping.
-     *
-     * @param hasDeliveryMethod DeliveryMethod value to set.
-     */
-    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
 
     /**
      * Shipper tracking number.
@@ -264,46 +306,4 @@ public interface ParcelDelivery extends Intangible {
      * @param trackingUrl URL value to set.
      */
     void addTrackingUrl(URL trackingUrl);
-
-    /**
-     * Shipper's address.
-     *
-     * @return {@link PostalAddress}
-     */
-    List<PostalAddress> getOriginAddressList();
-
-    /**
-     * Shipper's address.
-     *
-     * @return {@link PostalAddress}
-     */
-    PostalAddress getOriginAddress();
-
-    /**
-     * Shipper's address.
-     *
-     * @param originAddress PostalAddress value to set.
-     */
-    void addOriginAddress(PostalAddress originAddress);
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @return {@link DeliveryEvent}
-     */
-    List<DeliveryEvent> getDeliveryStatusList();
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @return {@link DeliveryEvent}
-     */
-    DeliveryEvent getDeliveryStatus();
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @param deliveryStatus DeliveryEvent value to set.
-     */
-    void addDeliveryStatus(DeliveryEvent deliveryStatus);
 }

@@ -21,35 +21,35 @@ import org.schema.model.datatype.DateTime;
 public interface OwnershipInfo extends StructuredValue {
 
     /**
-     * The product that this structured value is referring to.
+     * The organization or person from which the product was acquired.
      *
-     * @return {@link Service} or {@link Product}
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> List<T> getTypeOfGoodList();
+    <T> List<T> getAcquiredFromList();
 
     /**
-     * The product that this structured value is referring to.
+     * The organization or person from which the product was acquired.
      *
-     * @return {@link Service} or {@link Product}
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> T getTypeOfGood();
+    <T> T getAcquiredFrom();
 
     /**
-     * The product that this structured value is referring to.
+     * The organization or person from which the product was acquired.
      *
-     * @param typeOfGood Service value to set.
+     * @param acquiredFrom Person value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addTypeOfGood(Service typeOfGood);
+    void addAcquiredFrom(Person acquiredFrom);
     /**
-     * The product that this structured value is referring to.
+     * The organization or person from which the product was acquired.
      *
-     * @param typeOfGood Product value to set.
+     * @param acquiredFrom Organization value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addTypeOfGood(Product typeOfGood);
+    void addAcquiredFrom(Organization acquiredFrom);
 
     /**
      * The date and time of obtaining the product.
@@ -100,33 +100,33 @@ public interface OwnershipInfo extends StructuredValue {
     void addOwnedThrough(DateTime ownedThrough);
 
     /**
-     * The organization or person from which the product was acquired.
+     * The product that this structured value is referring to.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Service} or {@link Product}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> List<T> getAcquiredFromList();
+    <T> List<T> getTypeOfGoodList();
 
     /**
-     * The organization or person from which the product was acquired.
+     * The product that this structured value is referring to.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Service} or {@link Product}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> T getAcquiredFrom();
+    <T> T getTypeOfGood();
 
     /**
-     * The organization or person from which the product was acquired.
+     * The product that this structured value is referring to.
      *
-     * @param acquiredFrom Person value to set.
+     * @param typeOfGood Service value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addAcquiredFrom(Person acquiredFrom);
+    void addTypeOfGood(Service typeOfGood);
     /**
-     * The organization or person from which the product was acquired.
+     * The product that this structured value is referring to.
      *
-     * @param acquiredFrom Organization value to set.
+     * @param typeOfGood Product value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addAcquiredFrom(Organization acquiredFrom);
+    void addTypeOfGood(Product typeOfGood);
 }

@@ -22,28 +22,91 @@ import org.schema.model.datatype.DateTime;
 public interface Permit extends Intangible {
 
     /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Organization}
      */
-    List<AdministrativeArea> getValidInList();
+    List<Organization> getIssuedByList();
 
     /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @return {@link Organization}
      */
-    AdministrativeArea getValidIn();
+    Organization getIssuedBy();
 
     /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
-     * @param validIn AdministrativeArea value to set.
+     * @param issuedBy Organization value to set.
+     */
+    void addIssuedBy(Organization issuedBy);
+
+    /**
+     * The service through which the permit was granted.
+     *
+     * @return {@link Service}
+     */
+    List<Service> getIssuedThroughList();
+
+    /**
+     * The service through which the permit was granted.
+     *
+     * @return {@link Service}
+     */
+    Service getIssuedThrough();
+
+    /**
+     * The service through which the permit was granted.
+     *
+     * @param issuedThrough Service value to set.
+     */
+    void addIssuedThrough(Service issuedThrough);
+
+    /**
+     * The target audience for this permit.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getPermitAudienceList();
+
+    /**
+     * The target audience for this permit.
+     *
+     * @return {@link Audience}
+     */
+    Audience getPermitAudience();
+
+    /**
+     * The target audience for this permit.
+     *
+     * @param permitAudience Audience value to set.
+     */
+    void addPermitAudience(Audience permitAudience);
+
+    /**
+     * The duration of validity of a permit or similar thing.
+     *
+     * @return {@link Duration}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void addValidIn(AdministrativeArea validIn);
+    List<Duration> getValidForList();
+
+    /**
+     * The duration of validity of a permit or similar thing.
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    Duration getValidFor();
+
+    /**
+     * The duration of validity of a permit or similar thing.
+     *
+     * @param validFor Duration value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void addValidFor(Duration validFor);
 
     /**
      * The date when the item becomes valid.
@@ -77,46 +140,28 @@ public interface Permit extends Intangible {
     void addValidFrom(Date validFrom);
 
     /**
-     * The target audience for this permit.
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
      *
-     * @return {@link Audience}
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    List<Audience> getPermitAudienceList();
+    List<AdministrativeArea> getValidInList();
 
     /**
-     * The target audience for this permit.
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
      *
-     * @return {@link Audience}
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    Audience getPermitAudience();
+    AdministrativeArea getValidIn();
 
     /**
-     * The target audience for this permit.
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
      *
-     * @param permitAudience Audience value to set.
+     * @param validIn AdministrativeArea value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void addPermitAudience(Audience permitAudience);
-
-    /**
-     * The service through which the permit was granted.
-     *
-     * @return {@link Service}
-     */
-    List<Service> getIssuedThroughList();
-
-    /**
-     * The service through which the permit was granted.
-     *
-     * @return {@link Service}
-     */
-    Service getIssuedThrough();
-
-    /**
-     * The service through which the permit was granted.
-     *
-     * @param issuedThrough Service value to set.
-     */
-    void addIssuedThrough(Service issuedThrough);
+    void addValidIn(AdministrativeArea validIn);
 
     /**
      * The date when the item is no longer valid.
@@ -138,49 +183,4 @@ public interface Permit extends Intangible {
      * @param validUntil Date value to set.
      */
     void addValidUntil(Date validUntil);
-
-    /**
-     * The duration of validity of a permit or similar thing.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    List<Duration> getValidForList();
-
-    /**
-     * The duration of validity of a permit or similar thing.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    Duration getValidFor();
-
-    /**
-     * The duration of validity of a permit or similar thing.
-     *
-     * @param validFor Duration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void addValidFor(Duration validFor);
-
-    /**
-     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getIssuedByList();
-
-    /**
-     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
-     *
-     * @return {@link Organization}
-     */
-    Organization getIssuedBy();
-
-    /**
-     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
-     *
-     * @param issuedBy Organization value to set.
-     */
-    void addIssuedBy(Organization issuedBy);
 }

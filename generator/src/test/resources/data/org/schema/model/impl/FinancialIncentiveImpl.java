@@ -52,1559 +52,553 @@ import org.schema.model.datatype.URL;
 @JsonLdTypeName("FinancialIncentive")
 public class FinancialIncentiveImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FinancialIncentive {
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> provider;
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
-    }
-
-    private List<IncentiveQualifiedExpenseType> qualifiedExpense;
-
-    /**
-     * Optional. The types of expenses that are covered by the incentive. For example some incentives are only for the goods (tangible items) but the services (labor) are excluded.
-     *
-     * @return {@link IncentiveQualifiedExpenseType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public List<IncentiveQualifiedExpenseType> getQualifiedExpenseList() {
-        return qualifiedExpense;
-    }
-
-    /**
-     * Optional. The types of expenses that are covered by the incentive. For example some incentives are only for the goods (tangible items) but the services (labor) are excluded.
-     *
-     * @return {@link IncentiveQualifiedExpenseType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public IncentiveQualifiedExpenseType getQualifiedExpense() {
-        return getFirst(qualifiedExpense);
-    }
-
-    /**
-     * Optional. The types of expenses that are covered by the incentive. For example some incentives are only for the goods (tangible items) but the services (labor) are excluded.
-     *
-     * @param qualifiedExpense IncentiveQualifiedExpenseType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addQualifiedExpense(IncentiveQualifiedExpenseType qualifiedExpense) {
-        this.qualifiedExpense = add(this.qualifiedExpense, qualifiedExpense);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> publisher;
-
-    /**
-     * The publisher of the article in question.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getPublisherList() {
-        return (List<T>) publisher;
-    }
-
-    /**
-     * The publisher of the article in question.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getPublisher() {
-        return (T) getFirst(publisher);
-    }
-
-    /**
-     * The publisher of the article in question.
-     *
-     * @param publisher Person value to set.
-     */
-    @Override
-    public void addPublisher(Person publisher) {
-        this.publisher = add(this.publisher, publisher);
-    }
-    /**
-     * The publisher of the article in question.
-     *
-     * @param publisher Organization value to set.
-     */
-    @Override
-    public void addPublisher(Organization publisher) {
-        this.publisher = add(this.publisher, publisher);
-    }
-
-    @JsonLdFieldTypes({ MonetaryAmount.class, Text.class })
-    private List<Object> incomeLimit;
-
-    /**
-     * Optional. Income limit for which the incentive is applicable for.
-     *     
-     * <p>If MonetaryAmount is specified, this should be based on annualized income (e.g. if an incentive is limited to those making <$114,000 annually):</p>
-     *     {
-     *         "@type": "MonetaryAmount",
-     *         "maxValue": 114000,
-     *         "currency": "USD",
-     *     }
-     * 
-     * Use Text for incentives that are limited based on other criteria, for example if an incentive is only available to recipients making 120% of the median poverty income in their area.
-     *
-     * @return {@link MonetaryAmount} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public <T> List<T> getIncomeLimitList() {
-        return (List<T>) incomeLimit;
-    }
-
-    /**
-     * Optional. Income limit for which the incentive is applicable for.
-     *     
-     * <p>If MonetaryAmount is specified, this should be based on annualized income (e.g. if an incentive is limited to those making <$114,000 annually):</p>
-     *     {
-     *         "@type": "MonetaryAmount",
-     *         "maxValue": 114000,
-     *         "currency": "USD",
-     *     }
-     * 
-     * Use Text for incentives that are limited based on other criteria, for example if an incentive is only available to recipients making 120% of the median poverty income in their area.
-     *
-     * @return {@link MonetaryAmount} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public <T> T getIncomeLimit() {
-        return (T) getFirst(incomeLimit);
-    }
-
-    /**
-     * Optional. Income limit for which the incentive is applicable for.
-     *     
-     * <p>If MonetaryAmount is specified, this should be based on annualized income (e.g. if an incentive is limited to those making <$114,000 annually):</p>
-     *     {
-     *         "@type": "MonetaryAmount",
-     *         "maxValue": 114000,
-     *         "currency": "USD",
-     *     }
-     * 
-     * Use Text for incentives that are limited based on other criteria, for example if an incentive is only available to recipients making 120% of the median poverty income in their area.
-     *
-     * @param incomeLimit MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncomeLimit(MonetaryAmount incomeLimit) {
-        this.incomeLimit = add(this.incomeLimit, incomeLimit);
-    }
-    /**
-     * Optional. Income limit for which the incentive is applicable for.
-     *     
-     * <p>If MonetaryAmount is specified, this should be based on annualized income (e.g. if an incentive is limited to those making <$114,000 annually):</p>
-     *     {
-     *         "@type": "MonetaryAmount",
-     *         "maxValue": 114000,
-     *         "currency": "USD",
-     *     }
-     * 
-     * Use Text for incentives that are limited based on other criteria, for example if an incentive is only available to recipients making 120% of the median poverty income in their area.
-     *
-     * @param incomeLimit Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncomeLimit(Text incomeLimit) {
-        this.incomeLimit = add(this.incomeLimit, incomeLimit);
-    }
-
-    private List<Organization> eligibleWithSupplier;
-
-    /**
-     * The supplier of the incentivized item/service for which the incentive is valid for such as a utility company, merchant, or contractor.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public List<Organization> getEligibleWithSupplierList() {
-        return eligibleWithSupplier;
-    }
-
-    /**
-     * The supplier of the incentivized item/service for which the incentive is valid for such as a utility company, merchant, or contractor.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public Organization getEligibleWithSupplier() {
-        return getFirst(eligibleWithSupplier);
-    }
-
-    /**
-     * The supplier of the incentivized item/service for which the incentive is valid for such as a utility company, merchant, or contractor.
-     *
-     * @param eligibleWithSupplier Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addEligibleWithSupplier(Organization eligibleWithSupplier) {
-        this.eligibleWithSupplier = add(this.eligibleWithSupplier, eligibleWithSupplier);
-    }
-
-    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
-    private List<Object> areaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAreaServedList() {
-        return (List<T>) areaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) getFirst(areaServed);
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Place value to set.
-     */
-    @Override
-    public void addAreaServed(Place areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed AdministrativeArea value to set.
-     */
-    @Override
-    public void addAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed GeoShape value to set.
-     */
-    @Override
-    public void addAreaServed(GeoShape areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
-    @Override
-    public void addAreaServed(Text areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-
-    private List<PurchaseType> purchaseType;
-
-    /**
-     * Optional. The type of purchase the consumer must make in order to qualify for this incentive.
-     *
-     * @return {@link PurchaseType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public List<PurchaseType> getPurchaseTypeList() {
-        return purchaseType;
-    }
-
-    /**
-     * Optional. The type of purchase the consumer must make in order to qualify for this incentive.
-     *
-     * @return {@link PurchaseType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public PurchaseType getPurchaseType() {
-        return getFirst(purchaseType);
-    }
-
-    /**
-     * Optional. The type of purchase the consumer must make in order to qualify for this incentive.
-     *
-     * @param purchaseType PurchaseType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addPurchaseType(PurchaseType purchaseType) {
-        this.purchaseType = add(this.purchaseType, purchaseType);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> validFrom;
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getValidFromList() {
-        return (List<T>) validFrom;
-    }
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getValidFrom() {
-        return (T) getFirst(validFrom);
-    }
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom DateTime value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidFrom(DateTime validFrom) {
-        this.validFrom = add(this.validFrom, validFrom);
-    }
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom Date value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidFrom(Date validFrom) {
-        this.validFrom = add(this.validFrom, validFrom);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Product.class })
-    private List<Object> incentivizedItem;
-
-    /**
-     * The type or specific product(s) and/or service(s) being incentivized.
-     * <p>DefinedTermSets are used for product and service categories such as the United Nations Standard Products and Services Code:</p>
-     *     {
-     *         "@type": "DefinedTerm",
-     *         "inDefinedTermSet": "https://www.unspsc.org/",
-     *         "termCode": "261315XX",
-     *         "name": "Photovoltaic module"
-     *     }
-     * 
-     * <p>For a specific product or service, use the Product type:</p>
-     *     {
-     *         "@type": "Product",
-     *         "name": "Kenmore White 17" Microwave",
-     *     }
-     * For multiple different incentivized items, use multiple [[DefinedTerm]] or [[Product]].
-     *
-     * @return {@link DefinedTerm} or {@link Product}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public <T> List<T> getIncentivizedItemList() {
-        return (List<T>) incentivizedItem;
-    }
-
-    /**
-     * The type or specific product(s) and/or service(s) being incentivized.
-     * <p>DefinedTermSets are used for product and service categories such as the United Nations Standard Products and Services Code:</p>
-     *     {
-     *         "@type": "DefinedTerm",
-     *         "inDefinedTermSet": "https://www.unspsc.org/",
-     *         "termCode": "261315XX",
-     *         "name": "Photovoltaic module"
-     *     }
-     * 
-     * <p>For a specific product or service, use the Product type:</p>
-     *     {
-     *         "@type": "Product",
-     *         "name": "Kenmore White 17" Microwave",
-     *     }
-     * For multiple different incentivized items, use multiple [[DefinedTerm]] or [[Product]].
-     *
-     * @return {@link DefinedTerm} or {@link Product}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public <T> T getIncentivizedItem() {
-        return (T) getFirst(incentivizedItem);
-    }
-
-    /**
-     * The type or specific product(s) and/or service(s) being incentivized.
-     * <p>DefinedTermSets are used for product and service categories such as the United Nations Standard Products and Services Code:</p>
-     *     {
-     *         "@type": "DefinedTerm",
-     *         "inDefinedTermSet": "https://www.unspsc.org/",
-     *         "termCode": "261315XX",
-     *         "name": "Photovoltaic module"
-     *     }
-     * 
-     * <p>For a specific product or service, use the Product type:</p>
-     *     {
-     *         "@type": "Product",
-     *         "name": "Kenmore White 17" Microwave",
-     *     }
-     * For multiple different incentivized items, use multiple [[DefinedTerm]] or [[Product]].
-     *
-     * @param incentivizedItem DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncentivizedItem(DefinedTerm incentivizedItem) {
-        this.incentivizedItem = add(this.incentivizedItem, incentivizedItem);
-    }
-    /**
-     * The type or specific product(s) and/or service(s) being incentivized.
-     * <p>DefinedTermSets are used for product and service categories such as the United Nations Standard Products and Services Code:</p>
-     *     {
-     *         "@type": "DefinedTerm",
-     *         "inDefinedTermSet": "https://www.unspsc.org/",
-     *         "termCode": "261315XX",
-     *         "name": "Photovoltaic module"
-     *     }
-     * 
-     * <p>For a specific product or service, use the Product type:</p>
-     *     {
-     *         "@type": "Product",
-     *         "name": "Kenmore White 17" Microwave",
-     *     }
-     * For multiple different incentivized items, use multiple [[DefinedTerm]] or [[Product]].
-     *
-     * @param incentivizedItem Product value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncentivizedItem(Product incentivizedItem) {
-        this.incentivizedItem = add(this.incentivizedItem, incentivizedItem);
-    }
-
-    private List<IncentiveType> incentiveType;
-
-    /**
-     * The type of incentive offered (tax credit/rebate, tax deduction, tax waiver, subsidies, etc.).
-     *
-     * @return {@link IncentiveType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public List<IncentiveType> getIncentiveTypeList() {
-        return incentiveType;
-    }
-
-    /**
-     * The type of incentive offered (tax credit/rebate, tax deduction, tax waiver, subsidies, etc.).
-     *
-     * @return {@link IncentiveType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public IncentiveType getIncentiveType() {
-        return getFirst(incentiveType);
-    }
-
-    /**
-     * The type of incentive offered (tax credit/rebate, tax deduction, tax waiver, subsidies, etc.).
-     *
-     * @param incentiveType IncentiveType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncentiveType(IncentiveType incentiveType) {
-        this.incentiveType = add(this.incentiveType, incentiveType);
-    }
-
-    private List<MonetaryAmount> purchasePriceLimit;
-
-    /**
-     * Optional. The maximum price the item can have and still qualify for this offer.
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public List<MonetaryAmount> getPurchasePriceLimitList() {
-        return purchasePriceLimit;
-    }
-
-    /**
-     * Optional. The maximum price the item can have and still qualify for this offer.
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public MonetaryAmount getPurchasePriceLimit() {
-        return getFirst(purchasePriceLimit);
-    }
-
-    /**
-     * Optional. The maximum price the item can have and still qualify for this offer.
-     *
-     * @param purchasePriceLimit MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addPurchasePriceLimit(MonetaryAmount purchasePriceLimit) {
-        this.purchasePriceLimit = add(this.purchasePriceLimit, purchasePriceLimit);
-    }
-
-    private List<IncentiveStatus> incentiveStatus;
-
-    /**
-     * The status of the incentive (active, on hold, retired, etc.).
-     *
-     * @return {@link IncentiveStatus}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public List<IncentiveStatus> getIncentiveStatusList() {
-        return incentiveStatus;
-    }
-
-    /**
-     * The status of the incentive (active, on hold, retired, etc.).
-     *
-     * @return {@link IncentiveStatus}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public IncentiveStatus getIncentiveStatus() {
-        return getFirst(incentiveStatus);
-    }
-
-    /**
-     * The status of the incentive (active, on hold, retired, etc.).
-     *
-     * @param incentiveStatus IncentiveStatus value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncentiveStatus(IncentiveStatus incentiveStatus) {
-        this.incentiveStatus = add(this.incentiveStatus, incentiveStatus);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> validThrough;
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getValidThroughList() {
-        return (List<T>) validThrough;
-    }
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getValidThrough() {
-        return (T) getFirst(validThrough);
-    }
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough DateTime value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidThrough(DateTime validThrough) {
-        this.validThrough = add(this.validThrough, validThrough);
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough Date value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidThrough(Date validThrough) {
-        this.validThrough = add(this.validThrough, validThrough);
-    }
-
-    @JsonLdFieldTypes({ LoanOrCredit.class, UnitPriceSpecification.class, QuantitativeValue.class })
-    private List<Object> incentiveAmount;
-
-    /**
-     * Describes the amount that can be redeemed from this incentive.
-     *     
-     * <p>[[QuantitativeValue]]: Use this for incentives based on price (either raw amount or percentage-based). For a raw amount example, "You can claim $2,500 - $7,500 from the total cost of installation" would be represented as the following:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         “minValue”: 2500,
-     *         “maxValue”: 7500,
-     *         "unitCode": "USD"
-     *     }
-     * <p>[[QuantitivateValue]] can also be used for percentage amounts. In such cases, value is used to represent the incentive’s percentage, while maxValue represents a limit (if one exists) to that incentive. The unitCode should be 'P1' and the unitText should be '%', while valueReference should be used for holding the currency type. For example, "You can claim up to 30% of the total cost of installation, up to a maximum of $7,500" would be:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         "value": 30,
-     *         "unitCode": "P1",
-     *         "unitText": "%",
-     *         “maxValue”: 7500,
-     *         “valueReference”: “USD”
-     *     }
-     * <p>[[UnitPriceSpecification]]: Use this for incentives that are based on amounts rather than price. For example, a net metering rebate that pays $10/kWh, up to $1,000:</p>
-     *     {
-     *         "@type": "UnitPriceSpecification",
-     *         "price": 10,
-     *         "priceCurrency": "USD",
-     *         "referenceQuantity": 1,
-     *         "unitCode": "DO3",
-     *         "unitText": "kw/h",
-     *         "maxPrice": 1000,
-     *         "description": "$10 / kwh up to $1000"
-     *     }
-     * <p>[[LoanOrCredit]]: Use for incentives that are loan based. For example, a loan of $4,000 - $50,000 with a repayment term of 10 years, interest free would look like:</p>
-     *     {
-     *         "@type": "LoanOrCredit",
-     *         "loanTerm": {
-     *                 "@type":"QuantitativeValue",
-     *                 "value":"10",
-     *                 "unitCode": "ANN"
-     *             },
-     *         "amount":[
-     *             {
-     *                 "@type": "QuantitativeValue",
-     *                 "Name":"fixed interest rate",
-     *                 "value":"0",
-     *             },
-     *         ],
-     *         "amount":[
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"min loan amount",
-     *                 "value":"4000",
-     *                 "currency":"CAD"
-     *             },
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"max loan amount",
-     *                 "value":"50000",
-     *                 "currency":"CAD"
-     *             }
-     *         ],
-     *     }
-     * 
-     * In summary: <ul><li>Use [[QuantitativeValue]] for absolute/percentage-based incentives applied on the price of a good/service.</li>
-     * <li>Use [[UnitPriceSpecification]] for incentives based on a per-unit basis (e.g. net metering).</li>
-     * <li>Use [[LoanOrCredit]] for loans/credits.</li>
-     * </ul>.
-     *
-     * @return {@link LoanOrCredit} or {@link UnitPriceSpecification} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public <T> List<T> getIncentiveAmountList() {
-        return (List<T>) incentiveAmount;
-    }
-
-    /**
-     * Describes the amount that can be redeemed from this incentive.
-     *     
-     * <p>[[QuantitativeValue]]: Use this for incentives based on price (either raw amount or percentage-based). For a raw amount example, "You can claim $2,500 - $7,500 from the total cost of installation" would be represented as the following:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         “minValue”: 2500,
-     *         “maxValue”: 7500,
-     *         "unitCode": "USD"
-     *     }
-     * <p>[[QuantitivateValue]] can also be used for percentage amounts. In such cases, value is used to represent the incentive’s percentage, while maxValue represents a limit (if one exists) to that incentive. The unitCode should be 'P1' and the unitText should be '%', while valueReference should be used for holding the currency type. For example, "You can claim up to 30% of the total cost of installation, up to a maximum of $7,500" would be:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         "value": 30,
-     *         "unitCode": "P1",
-     *         "unitText": "%",
-     *         “maxValue”: 7500,
-     *         “valueReference”: “USD”
-     *     }
-     * <p>[[UnitPriceSpecification]]: Use this for incentives that are based on amounts rather than price. For example, a net metering rebate that pays $10/kWh, up to $1,000:</p>
-     *     {
-     *         "@type": "UnitPriceSpecification",
-     *         "price": 10,
-     *         "priceCurrency": "USD",
-     *         "referenceQuantity": 1,
-     *         "unitCode": "DO3",
-     *         "unitText": "kw/h",
-     *         "maxPrice": 1000,
-     *         "description": "$10 / kwh up to $1000"
-     *     }
-     * <p>[[LoanOrCredit]]: Use for incentives that are loan based. For example, a loan of $4,000 - $50,000 with a repayment term of 10 years, interest free would look like:</p>
-     *     {
-     *         "@type": "LoanOrCredit",
-     *         "loanTerm": {
-     *                 "@type":"QuantitativeValue",
-     *                 "value":"10",
-     *                 "unitCode": "ANN"
-     *             },
-     *         "amount":[
-     *             {
-     *                 "@type": "QuantitativeValue",
-     *                 "Name":"fixed interest rate",
-     *                 "value":"0",
-     *             },
-     *         ],
-     *         "amount":[
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"min loan amount",
-     *                 "value":"4000",
-     *                 "currency":"CAD"
-     *             },
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"max loan amount",
-     *                 "value":"50000",
-     *                 "currency":"CAD"
-     *             }
-     *         ],
-     *     }
-     * 
-     * In summary: <ul><li>Use [[QuantitativeValue]] for absolute/percentage-based incentives applied on the price of a good/service.</li>
-     * <li>Use [[UnitPriceSpecification]] for incentives based on a per-unit basis (e.g. net metering).</li>
-     * <li>Use [[LoanOrCredit]] for loans/credits.</li>
-     * </ul>.
-     *
-     * @return {@link LoanOrCredit} or {@link UnitPriceSpecification} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public <T> T getIncentiveAmount() {
-        return (T) getFirst(incentiveAmount);
-    }
-
-    /**
-     * Describes the amount that can be redeemed from this incentive.
-     *     
-     * <p>[[QuantitativeValue]]: Use this for incentives based on price (either raw amount or percentage-based). For a raw amount example, "You can claim $2,500 - $7,500 from the total cost of installation" would be represented as the following:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         “minValue”: 2500,
-     *         “maxValue”: 7500,
-     *         "unitCode": "USD"
-     *     }
-     * <p>[[QuantitivateValue]] can also be used for percentage amounts. In such cases, value is used to represent the incentive’s percentage, while maxValue represents a limit (if one exists) to that incentive. The unitCode should be 'P1' and the unitText should be '%', while valueReference should be used for holding the currency type. For example, "You can claim up to 30% of the total cost of installation, up to a maximum of $7,500" would be:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         "value": 30,
-     *         "unitCode": "P1",
-     *         "unitText": "%",
-     *         “maxValue”: 7500,
-     *         “valueReference”: “USD”
-     *     }
-     * <p>[[UnitPriceSpecification]]: Use this for incentives that are based on amounts rather than price. For example, a net metering rebate that pays $10/kWh, up to $1,000:</p>
-     *     {
-     *         "@type": "UnitPriceSpecification",
-     *         "price": 10,
-     *         "priceCurrency": "USD",
-     *         "referenceQuantity": 1,
-     *         "unitCode": "DO3",
-     *         "unitText": "kw/h",
-     *         "maxPrice": 1000,
-     *         "description": "$10 / kwh up to $1000"
-     *     }
-     * <p>[[LoanOrCredit]]: Use for incentives that are loan based. For example, a loan of $4,000 - $50,000 with a repayment term of 10 years, interest free would look like:</p>
-     *     {
-     *         "@type": "LoanOrCredit",
-     *         "loanTerm": {
-     *                 "@type":"QuantitativeValue",
-     *                 "value":"10",
-     *                 "unitCode": "ANN"
-     *             },
-     *         "amount":[
-     *             {
-     *                 "@type": "QuantitativeValue",
-     *                 "Name":"fixed interest rate",
-     *                 "value":"0",
-     *             },
-     *         ],
-     *         "amount":[
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"min loan amount",
-     *                 "value":"4000",
-     *                 "currency":"CAD"
-     *             },
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"max loan amount",
-     *                 "value":"50000",
-     *                 "currency":"CAD"
-     *             }
-     *         ],
-     *     }
-     * 
-     * In summary: <ul><li>Use [[QuantitativeValue]] for absolute/percentage-based incentives applied on the price of a good/service.</li>
-     * <li>Use [[UnitPriceSpecification]] for incentives based on a per-unit basis (e.g. net metering).</li>
-     * <li>Use [[LoanOrCredit]] for loans/credits.</li>
-     * </ul>.
-     *
-     * @param incentiveAmount LoanOrCredit value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncentiveAmount(LoanOrCredit incentiveAmount) {
-        this.incentiveAmount = add(this.incentiveAmount, incentiveAmount);
-    }
-    /**
-     * Describes the amount that can be redeemed from this incentive.
-     *     
-     * <p>[[QuantitativeValue]]: Use this for incentives based on price (either raw amount or percentage-based). For a raw amount example, "You can claim $2,500 - $7,500 from the total cost of installation" would be represented as the following:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         “minValue”: 2500,
-     *         “maxValue”: 7500,
-     *         "unitCode": "USD"
-     *     }
-     * <p>[[QuantitivateValue]] can also be used for percentage amounts. In such cases, value is used to represent the incentive’s percentage, while maxValue represents a limit (if one exists) to that incentive. The unitCode should be 'P1' and the unitText should be '%', while valueReference should be used for holding the currency type. For example, "You can claim up to 30% of the total cost of installation, up to a maximum of $7,500" would be:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         "value": 30,
-     *         "unitCode": "P1",
-     *         "unitText": "%",
-     *         “maxValue”: 7500,
-     *         “valueReference”: “USD”
-     *     }
-     * <p>[[UnitPriceSpecification]]: Use this for incentives that are based on amounts rather than price. For example, a net metering rebate that pays $10/kWh, up to $1,000:</p>
-     *     {
-     *         "@type": "UnitPriceSpecification",
-     *         "price": 10,
-     *         "priceCurrency": "USD",
-     *         "referenceQuantity": 1,
-     *         "unitCode": "DO3",
-     *         "unitText": "kw/h",
-     *         "maxPrice": 1000,
-     *         "description": "$10 / kwh up to $1000"
-     *     }
-     * <p>[[LoanOrCredit]]: Use for incentives that are loan based. For example, a loan of $4,000 - $50,000 with a repayment term of 10 years, interest free would look like:</p>
-     *     {
-     *         "@type": "LoanOrCredit",
-     *         "loanTerm": {
-     *                 "@type":"QuantitativeValue",
-     *                 "value":"10",
-     *                 "unitCode": "ANN"
-     *             },
-     *         "amount":[
-     *             {
-     *                 "@type": "QuantitativeValue",
-     *                 "Name":"fixed interest rate",
-     *                 "value":"0",
-     *             },
-     *         ],
-     *         "amount":[
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"min loan amount",
-     *                 "value":"4000",
-     *                 "currency":"CAD"
-     *             },
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"max loan amount",
-     *                 "value":"50000",
-     *                 "currency":"CAD"
-     *             }
-     *         ],
-     *     }
-     * 
-     * In summary: <ul><li>Use [[QuantitativeValue]] for absolute/percentage-based incentives applied on the price of a good/service.</li>
-     * <li>Use [[UnitPriceSpecification]] for incentives based on a per-unit basis (e.g. net metering).</li>
-     * <li>Use [[LoanOrCredit]] for loans/credits.</li>
-     * </ul>.
-     *
-     * @param incentiveAmount UnitPriceSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncentiveAmount(UnitPriceSpecification incentiveAmount) {
-        this.incentiveAmount = add(this.incentiveAmount, incentiveAmount);
-    }
-    /**
-     * Describes the amount that can be redeemed from this incentive.
-     *     
-     * <p>[[QuantitativeValue]]: Use this for incentives based on price (either raw amount or percentage-based). For a raw amount example, "You can claim $2,500 - $7,500 from the total cost of installation" would be represented as the following:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         “minValue”: 2500,
-     *         “maxValue”: 7500,
-     *         "unitCode": "USD"
-     *     }
-     * <p>[[QuantitivateValue]] can also be used for percentage amounts. In such cases, value is used to represent the incentive’s percentage, while maxValue represents a limit (if one exists) to that incentive. The unitCode should be 'P1' and the unitText should be '%', while valueReference should be used for holding the currency type. For example, "You can claim up to 30% of the total cost of installation, up to a maximum of $7,500" would be:</p>
-     *     {
-     *         "@type": "QuantitativeValue",
-     *         "value": 30,
-     *         "unitCode": "P1",
-     *         "unitText": "%",
-     *         “maxValue”: 7500,
-     *         “valueReference”: “USD”
-     *     }
-     * <p>[[UnitPriceSpecification]]: Use this for incentives that are based on amounts rather than price. For example, a net metering rebate that pays $10/kWh, up to $1,000:</p>
-     *     {
-     *         "@type": "UnitPriceSpecification",
-     *         "price": 10,
-     *         "priceCurrency": "USD",
-     *         "referenceQuantity": 1,
-     *         "unitCode": "DO3",
-     *         "unitText": "kw/h",
-     *         "maxPrice": 1000,
-     *         "description": "$10 / kwh up to $1000"
-     *     }
-     * <p>[[LoanOrCredit]]: Use for incentives that are loan based. For example, a loan of $4,000 - $50,000 with a repayment term of 10 years, interest free would look like:</p>
-     *     {
-     *         "@type": "LoanOrCredit",
-     *         "loanTerm": {
-     *                 "@type":"QuantitativeValue",
-     *                 "value":"10",
-     *                 "unitCode": "ANN"
-     *             },
-     *         "amount":[
-     *             {
-     *                 "@type": "QuantitativeValue",
-     *                 "Name":"fixed interest rate",
-     *                 "value":"0",
-     *             },
-     *         ],
-     *         "amount":[
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"min loan amount",
-     *                 "value":"4000",
-     *                 "currency":"CAD"
-     *             },
-     *             {
-     *                 "@type": "MonetaryAmount",
-     *                 "Name":"max loan amount",
-     *                 "value":"50000",
-     *                 "currency":"CAD"
-     *             }
-     *         ],
-     *     }
-     * 
-     * In summary: <ul><li>Use [[QuantitativeValue]] for absolute/percentage-based incentives applied on the price of a good/service.</li>
-     * <li>Use [[UnitPriceSpecification]] for incentives based on a per-unit basis (e.g. net metering).</li>
-     * <li>Use [[LoanOrCredit]] for loans/credits.</li>
-     * </ul>.
-     *
-     * @param incentiveAmount QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3572">https://github.com/schemaorg/schemaorg/issues/3572</a>
-     */
-    @Override
-    public void addIncentiveAmount(QuantitativeValue incentiveAmount) {
-        this.incentiveAmount = add(this.incentiveAmount, incentiveAmount);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
+    private List<Object> areaServed;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getAreaServed() {
+        return (T) getFirst(areaServed);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    @Override
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    @Override
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    @Override
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
 
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getDescription() {
+        return (T) getFirst(description);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    private List<Organization> eligibleWithSupplier;
+
+    @Override
+    public List<Organization> getEligibleWithSupplierList() {
+        return eligibleWithSupplier;
+    }
+
+    @Override
+    public Organization getEligibleWithSupplier() {
+        return getFirst(eligibleWithSupplier);
+    }
+
+    @Override
+    public void addEligibleWithSupplier(Organization eligibleWithSupplier) {
+        this.eligibleWithSupplier = add(this.eligibleWithSupplier, eligibleWithSupplier);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ LoanOrCredit.class, UnitPriceSpecification.class, QuantitativeValue.class })
+    private List<Object> incentiveAmount;
+
+    @Override
+    public <T> List<T> getIncentiveAmountList() {
+        return (List<T>) incentiveAmount;
+    }
+
+    @Override
+    public <T> T getIncentiveAmount() {
+        return (T) getFirst(incentiveAmount);
+    }
+
+    @Override
+    public void addIncentiveAmount(LoanOrCredit incentiveAmount) {
+        this.incentiveAmount = add(this.incentiveAmount, incentiveAmount);
+    }
+    @Override
+    public void addIncentiveAmount(UnitPriceSpecification incentiveAmount) {
+        this.incentiveAmount = add(this.incentiveAmount, incentiveAmount);
+    }
+    @Override
+    public void addIncentiveAmount(QuantitativeValue incentiveAmount) {
+        this.incentiveAmount = add(this.incentiveAmount, incentiveAmount);
+    }
+
+    private List<IncentiveStatus> incentiveStatus;
+
+    @Override
+    public List<IncentiveStatus> getIncentiveStatusList() {
+        return incentiveStatus;
+    }
+
+    @Override
+    public IncentiveStatus getIncentiveStatus() {
+        return getFirst(incentiveStatus);
+    }
+
+    @Override
+    public void addIncentiveStatus(IncentiveStatus incentiveStatus) {
+        this.incentiveStatus = add(this.incentiveStatus, incentiveStatus);
+    }
+
+    private List<IncentiveType> incentiveType;
+
+    @Override
+    public List<IncentiveType> getIncentiveTypeList() {
+        return incentiveType;
+    }
+
+    @Override
+    public IncentiveType getIncentiveType() {
+        return getFirst(incentiveType);
+    }
+
+    @Override
+    public void addIncentiveType(IncentiveType incentiveType) {
+        this.incentiveType = add(this.incentiveType, incentiveType);
+    }
+
+    @JsonLdFieldTypes({ DefinedTerm.class, Product.class })
+    private List<Object> incentivizedItem;
+
+    @Override
+    public <T> List<T> getIncentivizedItemList() {
+        return (List<T>) incentivizedItem;
+    }
+
+    @Override
+    public <T> T getIncentivizedItem() {
+        return (T) getFirst(incentivizedItem);
+    }
+
+    @Override
+    public void addIncentivizedItem(DefinedTerm incentivizedItem) {
+        this.incentivizedItem = add(this.incentivizedItem, incentivizedItem);
+    }
+    @Override
+    public void addIncentivizedItem(Product incentivizedItem) {
+        this.incentivizedItem = add(this.incentivizedItem, incentivizedItem);
+    }
+
+    @JsonLdFieldTypes({ MonetaryAmount.class, Text.class })
+    private List<Object> incomeLimit;
+
+    @Override
+    public <T> List<T> getIncomeLimitList() {
+        return (List<T>) incomeLimit;
+    }
+
+    @Override
+    public <T> T getIncomeLimit() {
+        return (T) getFirst(incomeLimit);
+    }
+
+    @Override
+    public void addIncomeLimit(MonetaryAmount incomeLimit) {
+        this.incomeLimit = add(this.incomeLimit, incomeLimit);
+    }
+    @Override
+    public void addIncomeLimit(Text incomeLimit) {
+        this.incomeLimit = add(this.incomeLimit, incomeLimit);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> provider;
+
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> publisher;
+
+    @Override
+    public <T> List<T> getPublisherList() {
+        return (List<T>) publisher;
+    }
+
+    @Override
+    public <T> T getPublisher() {
+        return (T) getFirst(publisher);
+    }
+
+    @Override
+    public void addPublisher(Person publisher) {
+        this.publisher = add(this.publisher, publisher);
+    }
+    @Override
+    public void addPublisher(Organization publisher) {
+        this.publisher = add(this.publisher, publisher);
+    }
+
+    private List<MonetaryAmount> purchasePriceLimit;
+
+    @Override
+    public List<MonetaryAmount> getPurchasePriceLimitList() {
+        return purchasePriceLimit;
+    }
+
+    @Override
+    public MonetaryAmount getPurchasePriceLimit() {
+        return getFirst(purchasePriceLimit);
+    }
+
+    @Override
+    public void addPurchasePriceLimit(MonetaryAmount purchasePriceLimit) {
+        this.purchasePriceLimit = add(this.purchasePriceLimit, purchasePriceLimit);
+    }
+
+    private List<PurchaseType> purchaseType;
+
+    @Override
+    public List<PurchaseType> getPurchaseTypeList() {
+        return purchaseType;
+    }
+
+    @Override
+    public PurchaseType getPurchaseType() {
+        return getFirst(purchaseType);
+    }
+
+    @Override
+    public void addPurchaseType(PurchaseType purchaseType) {
+        this.purchaseType = add(this.purchaseType, purchaseType);
+    }
+
+    private List<IncentiveQualifiedExpenseType> qualifiedExpense;
+
+    @Override
+    public List<IncentiveQualifiedExpenseType> getQualifiedExpenseList() {
+        return qualifiedExpense;
+    }
+
+    @Override
+    public IncentiveQualifiedExpenseType getQualifiedExpense() {
+        return getFirst(qualifiedExpense);
+    }
+
+    @Override
+    public void addQualifiedExpense(IncentiveQualifiedExpenseType qualifiedExpense) {
+        this.qualifiedExpense = add(this.qualifiedExpense, qualifiedExpense);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> validFrom;
+
+    @Override
+    public <T> List<T> getValidFromList() {
+        return (List<T>) validFrom;
+    }
+
+    @Override
+    public <T> T getValidFrom() {
+        return (T) getFirst(validFrom);
+    }
+
+    @Override
+    public void addValidFrom(DateTime validFrom) {
+        this.validFrom = add(this.validFrom, validFrom);
+    }
+    @Override
+    public void addValidFrom(Date validFrom) {
+        this.validFrom = add(this.validFrom, validFrom);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> validThrough;
+
+    @Override
+    public <T> List<T> getValidThroughList() {
+        return (List<T>) validThrough;
+    }
+
+    @Override
+    public <T> T getValidThrough() {
+        return (T) getFirst(validThrough);
+    }
+
+    @Override
+    public void addValidThrough(DateTime validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
+    }
+    @Override
+    public void addValidThrough(Date validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
     }
 }

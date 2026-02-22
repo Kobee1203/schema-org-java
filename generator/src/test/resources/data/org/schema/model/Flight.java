@@ -24,25 +24,94 @@ import org.schema.model.datatype.Text;
 public interface Flight extends Trip {
 
     /**
-     * The time when a passenger can check into the flight online.
+     * The kind of aircraft (e.g., "Boeing 747").
      *
-     * @return {@link DateTime}
+     * @return {@link Vehicle} or {@link Text}
      */
-    List<DateTime> getWebCheckinTimeList();
+    <T> List<T> getAircraftList();
 
     /**
-     * The time when a passenger can check into the flight online.
+     * The kind of aircraft (e.g., "Boeing 747").
      *
-     * @return {@link DateTime}
+     * @return {@link Vehicle} or {@link Text}
      */
-    DateTime getWebCheckinTime();
+    <T> T getAircraft();
 
     /**
-     * The time when a passenger can check into the flight online.
+     * The kind of aircraft (e.g., "Boeing 747").
      *
-     * @param webCheckinTime DateTime value to set.
+     * @param aircraft Vehicle value to set.
      */
-    void addWebCheckinTime(DateTime webCheckinTime);
+    void addAircraft(Vehicle aircraft);
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @param aircraft Text value to set.
+     */
+    void addAircraft(Text aircraft);
+
+    /**
+     * The airport where the flight terminates.
+     *
+     * @return {@link Airport}
+     */
+    List<Airport> getArrivalAirportList();
+
+    /**
+     * The airport where the flight terminates.
+     *
+     * @return {@link Airport}
+     */
+    Airport getArrivalAirport();
+
+    /**
+     * The airport where the flight terminates.
+     *
+     * @param arrivalAirport Airport value to set.
+     */
+    void addArrivalAirport(Airport arrivalAirport);
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getArrivalGateList();
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @return {@link Text}
+     */
+    Text getArrivalGate();
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @param arrivalGate Text value to set.
+     */
+    void addArrivalGate(Text arrivalGate);
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getArrivalTerminalList();
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @return {@link Text}
+     */
+    Text getArrivalTerminal();
+
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @param arrivalTerminal Text value to set.
+     */
+    void addArrivalTerminal(Text arrivalTerminal);
 
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -64,6 +133,90 @@ public interface Flight extends Trip {
      * @param boardingPolicy BoardingPolicyType value to set.
      */
     void addBoardingPolicy(BoardingPolicyType boardingPolicy);
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getCarrierList();
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    Organization getCarrier();
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @param carrier Organization value to set.
+     */
+    void addCarrier(Organization carrier);
+
+    /**
+     * The airport where the flight originates.
+     *
+     * @return {@link Airport}
+     */
+    List<Airport> getDepartureAirportList();
+
+    /**
+     * The airport where the flight originates.
+     *
+     * @return {@link Airport}
+     */
+    Airport getDepartureAirport();
+
+    /**
+     * The airport where the flight originates.
+     *
+     * @param departureAirport Airport value to set.
+     */
+    void addDepartureAirport(Airport departureAirport);
+
+    /**
+     * Identifier of the flight's departure gate.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDepartureGateList();
+
+    /**
+     * Identifier of the flight's departure gate.
+     *
+     * @return {@link Text}
+     */
+    Text getDepartureGate();
+
+    /**
+     * Identifier of the flight's departure gate.
+     *
+     * @param departureGate Text value to set.
+     */
+    void addDepartureGate(Text departureGate);
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDepartureTerminalList();
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @return {@link Text}
+     */
+    Text getDepartureTerminal();
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @param departureTerminal Text value to set.
+     */
+    void addDepartureTerminal(Text departureTerminal);
 
     /**
      * The estimated time the flight will take.
@@ -93,25 +246,31 @@ public interface Flight extends Trip {
     void addEstimatedFlightDuration(Duration estimatedFlightDuration);
 
     /**
-     * Identifier of the flight's departure gate.
+     * The distance of the flight.
      *
-     * @return {@link Text}
+     * @return {@link Distance} or {@link Text}
      */
-    List<Text> getDepartureGateList();
+    <T> List<T> getFlightDistanceList();
 
     /**
-     * Identifier of the flight's departure gate.
+     * The distance of the flight.
      *
-     * @return {@link Text}
+     * @return {@link Distance} or {@link Text}
      */
-    Text getDepartureGate();
+    <T> T getFlightDistance();
 
     /**
-     * Identifier of the flight's departure gate.
+     * The distance of the flight.
      *
-     * @param departureGate Text value to set.
+     * @param flightDistance Distance value to set.
      */
-    void addDepartureGate(Text departureGate);
+    void addFlightDistance(Distance flightDistance);
+    /**
+     * The distance of the flight.
+     *
+     * @param flightDistance Text value to set.
+     */
+    void addFlightDistance(Text flightDistance);
 
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
@@ -135,25 +294,25 @@ public interface Flight extends Trip {
     void addFlightNumber(Text flightNumber);
 
     /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     * Description of the meals that will be provided or available for purchase.
      *
-     * @return {@link Organization}
+     * @return {@link Text}
      */
-    List<Organization> getCarrierList();
+    List<Text> getMealServiceList();
 
     /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     * Description of the meals that will be provided or available for purchase.
      *
-     * @return {@link Organization}
+     * @return {@link Text}
      */
-    Organization getCarrier();
+    Text getMealService();
 
     /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     * Description of the meals that will be provided or available for purchase.
      *
-     * @param carrier Organization value to set.
+     * @param mealService Text value to set.
      */
-    void addCarrier(Organization carrier);
+    void addMealService(Text mealService);
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -183,182 +342,23 @@ public interface Flight extends Trip {
     void addSeller(Organization seller);
 
     /**
-     * Identifier of the flight's arrival terminal.
+     * The time when a passenger can check into the flight online.
      *
-     * @return {@link Text}
+     * @return {@link DateTime}
      */
-    List<Text> getArrivalTerminalList();
+    List<DateTime> getWebCheckinTimeList();
 
     /**
-     * Identifier of the flight's arrival terminal.
+     * The time when a passenger can check into the flight online.
      *
-     * @return {@link Text}
+     * @return {@link DateTime}
      */
-    Text getArrivalTerminal();
+    DateTime getWebCheckinTime();
 
     /**
-     * Identifier of the flight's arrival terminal.
+     * The time when a passenger can check into the flight online.
      *
-     * @param arrivalTerminal Text value to set.
+     * @param webCheckinTime DateTime value to set.
      */
-    void addArrivalTerminal(Text arrivalTerminal);
-
-    /**
-     * The airport where the flight originates.
-     *
-     * @return {@link Airport}
-     */
-    List<Airport> getDepartureAirportList();
-
-    /**
-     * The airport where the flight originates.
-     *
-     * @return {@link Airport}
-     */
-    Airport getDepartureAirport();
-
-    /**
-     * The airport where the flight originates.
-     *
-     * @param departureAirport Airport value to set.
-     */
-    void addDepartureAirport(Airport departureAirport);
-
-    /**
-     * The distance of the flight.
-     *
-     * @return {@link Distance} or {@link Text}
-     */
-    <T> List<T> getFlightDistanceList();
-
-    /**
-     * The distance of the flight.
-     *
-     * @return {@link Distance} or {@link Text}
-     */
-    <T> T getFlightDistance();
-
-    /**
-     * The distance of the flight.
-     *
-     * @param flightDistance Distance value to set.
-     */
-    void addFlightDistance(Distance flightDistance);
-    /**
-     * The distance of the flight.
-     *
-     * @param flightDistance Text value to set.
-     */
-    void addFlightDistance(Text flightDistance);
-
-    /**
-     * The airport where the flight terminates.
-     *
-     * @return {@link Airport}
-     */
-    List<Airport> getArrivalAirportList();
-
-    /**
-     * The airport where the flight terminates.
-     *
-     * @return {@link Airport}
-     */
-    Airport getArrivalAirport();
-
-    /**
-     * The airport where the flight terminates.
-     *
-     * @param arrivalAirport Airport value to set.
-     */
-    void addArrivalAirport(Airport arrivalAirport);
-
-    /**
-     * Description of the meals that will be provided or available for purchase.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getMealServiceList();
-
-    /**
-     * Description of the meals that will be provided or available for purchase.
-     *
-     * @return {@link Text}
-     */
-    Text getMealService();
-
-    /**
-     * Description of the meals that will be provided or available for purchase.
-     *
-     * @param mealService Text value to set.
-     */
-    void addMealService(Text mealService);
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @return {@link Vehicle} or {@link Text}
-     */
-    <T> List<T> getAircraftList();
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @return {@link Vehicle} or {@link Text}
-     */
-    <T> T getAircraft();
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @param aircraft Vehicle value to set.
-     */
-    void addAircraft(Vehicle aircraft);
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @param aircraft Text value to set.
-     */
-    void addAircraft(Text aircraft);
-
-    /**
-     * Identifier of the flight's arrival gate.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getArrivalGateList();
-
-    /**
-     * Identifier of the flight's arrival gate.
-     *
-     * @return {@link Text}
-     */
-    Text getArrivalGate();
-
-    /**
-     * Identifier of the flight's arrival gate.
-     *
-     * @param arrivalGate Text value to set.
-     */
-    void addArrivalGate(Text arrivalGate);
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getDepartureTerminalList();
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     * @return {@link Text}
-     */
-    Text getDepartureTerminal();
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     * @param departureTerminal Text value to set.
-     */
-    void addDepartureTerminal(Text departureTerminal);
+    void addWebCheckinTime(DateTime webCheckinTime);
 }

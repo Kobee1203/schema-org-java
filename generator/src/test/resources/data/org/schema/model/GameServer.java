@@ -18,6 +18,27 @@ import org.schema.model.datatype.Integer;
 public interface GameServer extends Intangible {
 
     /**
+     * Video game which is played on this server.
+     *
+     * @return {@link VideoGame}
+     */
+    List<VideoGame> getGameList();
+
+    /**
+     * Video game which is played on this server.
+     *
+     * @return {@link VideoGame}
+     */
+    VideoGame getGame();
+
+    /**
+     * Video game which is played on this server.
+     *
+     * @param game VideoGame value to set.
+     */
+    void addGame(VideoGame game);
+
+    /**
      * Number of players on the server.
      *
      * @return {@link Integer}
@@ -58,25 +79,4 @@ public interface GameServer extends Intangible {
      * @param serverStatus GameServerStatus value to set.
      */
     void addServerStatus(GameServerStatus serverStatus);
-
-    /**
-     * Video game which is played on this server.
-     *
-     * @return {@link VideoGame}
-     */
-    List<VideoGame> getGameList();
-
-    /**
-     * Video game which is played on this server.
-     *
-     * @return {@link VideoGame}
-     */
-    VideoGame getGame();
-
-    /**
-     * Video game which is played on this server.
-     *
-     * @param game VideoGame value to set.
-     */
-    void addGame(VideoGame game);
 }

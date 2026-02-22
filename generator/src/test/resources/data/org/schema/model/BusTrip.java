@@ -18,27 +18,6 @@ import org.schema.model.datatype.Text;
 public interface BusTrip extends Trip {
 
     /**
-     * The unique identifier for the bus.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBusNumberList();
-
-    /**
-     * The unique identifier for the bus.
-     *
-     * @return {@link Text}
-     */
-    Text getBusNumber();
-
-    /**
-     * The unique identifier for the bus.
-     *
-     * @param busNumber Text value to set.
-     */
-    void addBusNumber(Text busNumber);
-
-    /**
      * The stop or station from which the bus arrives.
      *
      * @return {@link BusStop} or {@link BusStation}
@@ -85,6 +64,27 @@ public interface BusTrip extends Trip {
      * @param busName Text value to set.
      */
     void addBusName(Text busName);
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBusNumberList();
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @return {@link Text}
+     */
+    Text getBusNumber();
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @param busNumber Text value to set.
+     */
+    void addBusNumber(Text busNumber);
 
     /**
      * The stop or station from which the bus departs.

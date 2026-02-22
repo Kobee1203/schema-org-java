@@ -20,25 +20,31 @@ import org.schema.model.datatype.Text;
 public interface GeoShape extends StructuredValue {
 
     /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     * Physical address of the item.
      *
-     * @return {@link Text}
+     * @return {@link PostalAddress} or {@link Text}
      */
-    List<Text> getPolygonList();
+    <T> List<T> getAddressList();
 
     /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     * Physical address of the item.
      *
-     * @return {@link Text}
+     * @return {@link PostalAddress} or {@link Text}
      */
-    Text getPolygon();
+    <T> T getAddress();
 
     /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     * Physical address of the item.
      *
-     * @param polygon Text value to set.
+     * @param address PostalAddress value to set.
      */
-    void addPolygon(Text polygon);
+    void addAddress(PostalAddress address);
+    /**
+     * Physical address of the item.
+     *
+     * @param address Text value to set.
+     */
+    void addAddress(Text address);
 
     /**
      * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
@@ -72,31 +78,46 @@ public interface GeoShape extends StructuredValue {
     void addAddressCountry(Text addressCountry);
 
     /**
-     * Physical address of the item.
+     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
      *
-     * @return {@link PostalAddress} or {@link Text}
+     * @return {@link Text}
      */
-    <T> List<T> getAddressList();
+    List<Text> getBoxList();
 
     /**
-     * Physical address of the item.
+     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
      *
-     * @return {@link PostalAddress} or {@link Text}
+     * @return {@link Text}
      */
-    <T> T getAddress();
+    Text getBox();
 
     /**
-     * Physical address of the item.
+     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
      *
-     * @param address PostalAddress value to set.
+     * @param box Text value to set.
      */
-    void addAddress(PostalAddress address);
+    void addBox(Text box);
+
     /**
-     * Physical address of the item.
+     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
      *
-     * @param address Text value to set.
+     * @return {@link Text}
      */
-    void addAddress(Text address);
+    List<Text> getCircleList();
+
+    /**
+     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     *
+     * @return {@link Text}
+     */
+    Text getCircle();
+
+    /**
+     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+     *
+     * @param circle Text value to set.
+     */
+    void addCircle(Text circle);
 
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
@@ -126,27 +147,6 @@ public interface GeoShape extends StructuredValue {
     void addElevation(Text elevation);
 
     /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getCircleList();
-
-    /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
-     *
-     * @return {@link Text}
-     */
-    Text getCircle();
-
-    /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
-     *
-     * @param circle Text value to set.
-     */
-    void addCircle(Text circle);
-
-    /**
      * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      *
      * @return {@link Text}
@@ -168,25 +168,25 @@ public interface GeoShape extends StructuredValue {
     void addLine(Text line);
 
     /**
-     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
      *
      * @return {@link Text}
      */
-    List<Text> getBoxList();
+    List<Text> getPolygonList();
 
     /**
-     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
      *
      * @return {@link Text}
      */
-    Text getBox();
+    Text getPolygon();
 
     /**
-     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
      *
-     * @param box Text value to set.
+     * @param polygon Text value to set.
      */
-    void addBox(Text box);
+    void addPolygon(Text polygon);
 
     /**
      * The postal code. For example, 94043.

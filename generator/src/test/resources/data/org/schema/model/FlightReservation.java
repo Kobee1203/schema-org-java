@@ -17,6 +17,27 @@ import org.schema.model.datatype.Text;
 public interface FlightReservation extends Reservation {
 
     /**
+     * The airline-specific indicator of boarding order / preference.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBoardingGroupList();
+
+    /**
+     * The airline-specific indicator of boarding order / preference.
+     *
+     * @return {@link Text}
+     */
+    Text getBoardingGroup();
+
+    /**
+     * The airline-specific indicator of boarding order / preference.
+     *
+     * @param boardingGroup Text value to set.
+     */
+    void addBoardingGroup(Text boardingGroup);
+
+    /**
      * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
      *
      * @return {@link Text} or {@link QualitativeValue}
@@ -44,48 +65,6 @@ public interface FlightReservation extends Reservation {
     void addPassengerPriorityStatus(QualitativeValue passengerPriorityStatus);
 
     /**
-     * The type of security screening the passenger is subject to.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSecurityScreeningList();
-
-    /**
-     * The type of security screening the passenger is subject to.
-     *
-     * @return {@link Text}
-     */
-    Text getSecurityScreening();
-
-    /**
-     * The type of security screening the passenger is subject to.
-     *
-     * @param securityScreening Text value to set.
-     */
-    void addSecurityScreening(Text securityScreening);
-
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBoardingGroupList();
-
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @return {@link Text}
-     */
-    Text getBoardingGroup();
-
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @param boardingGroup Text value to set.
-     */
-    void addBoardingGroup(Text boardingGroup);
-
-    /**
      * The passenger's sequence number as assigned by the airline.
      *
      * @return {@link Text}
@@ -105,4 +84,25 @@ public interface FlightReservation extends Reservation {
      * @param passengerSequenceNumber Text value to set.
      */
     void addPassengerSequenceNumber(Text passengerSequenceNumber);
+
+    /**
+     * The type of security screening the passenger is subject to.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSecurityScreeningList();
+
+    /**
+     * The type of security screening the passenger is subject to.
+     *
+     * @return {@link Text}
+     */
+    Text getSecurityScreening();
+
+    /**
+     * The type of security screening the passenger is subject to.
+     *
+     * @param securityScreening Text value to set.
+     */
+    void addSecurityScreening(Text securityScreening);
 }

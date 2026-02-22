@@ -16,27 +16,6 @@ import org.schema.model.datatype.Number;
 public interface ParentAudience extends PeopleAudience {
 
     /**
-     * Minimal age of the child.
-     *
-     * @return {@link Number}
-     */
-    List<Number> getChildMinAgeList();
-
-    /**
-     * Minimal age of the child.
-     *
-     * @return {@link Number}
-     */
-    Number getChildMinAge();
-
-    /**
-     * Minimal age of the child.
-     *
-     * @param childMinAge Number value to set.
-     */
-    void addChildMinAge(Number childMinAge);
-
-    /**
      * Maximal age of the child.
      *
      * @return {@link Number}
@@ -56,4 +35,25 @@ public interface ParentAudience extends PeopleAudience {
      * @param childMaxAge Number value to set.
      */
     void addChildMaxAge(Number childMaxAge);
+
+    /**
+     * Minimal age of the child.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getChildMinAgeList();
+
+    /**
+     * Minimal age of the child.
+     *
+     * @return {@link Number}
+     */
+    Number getChildMinAge();
+
+    /**
+     * Minimal age of the child.
+     *
+     * @param childMinAge Number value to set.
+     */
+    void addChildMinAge(Number childMinAge);
 }

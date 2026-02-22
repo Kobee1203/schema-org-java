@@ -38,44 +38,20 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
@@ -83,31 +59,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
@@ -115,37 +76,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<URL> benefitsSummaryUrl;
 
-    /**
-     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<URL> getBenefitsSummaryUrlList() {
         return benefitsSummaryUrl;
     }
 
-    /**
-     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public URL getBenefitsSummaryUrl() {
         return getFirst(benefitsSummaryUrl);
     }
 
-    /**
-     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
-     *
-     * @param benefitsSummaryUrl URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addBenefitsSummaryUrl(URL benefitsSummaryUrl) {
         this.benefitsSummaryUrl = add(this.benefitsSummaryUrl, benefitsSummaryUrl);
@@ -153,31 +93,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<ContactPoint> contactPoint;
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
     @Override
     public List<ContactPoint> getContactPointList() {
         return contactPoint;
     }
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
     @Override
     public ContactPoint getContactPoint() {
         return getFirst(contactPoint);
     }
 
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoint ContactPoint value to set.
-     */
     @Override
     public void addContactPoint(ContactPoint contactPoint) {
         this.contactPoint = add(this.contactPoint, contactPoint);
@@ -186,40 +111,20 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ TextObject.class, Text.class })
     private List<Object> description;
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> List<T> getDescriptionList() {
         return (List<T>) description;
     }
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> T getDescription() {
         return (T) getFirst(description);
     }
 
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
     @Override
     public void addDescription(TextObject description) {
         this.description = add(this.description, description);
     }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
     @Override
     public void addDescription(Text description) {
         this.description = add(this.description, description);
@@ -227,31 +132,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
@@ -259,37 +149,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<Text> healthPlanDrugOption;
 
-    /**
-     * TODO.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<Text> getHealthPlanDrugOptionList() {
         return healthPlanDrugOption;
     }
 
-    /**
-     * TODO.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public Text getHealthPlanDrugOption() {
         return getFirst(healthPlanDrugOption);
     }
 
-    /**
-     * TODO.
-     *
-     * @param healthPlanDrugOption Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addHealthPlanDrugOption(Text healthPlanDrugOption) {
         this.healthPlanDrugOption = add(this.healthPlanDrugOption, healthPlanDrugOption);
@@ -297,37 +166,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<Text> healthPlanDrugTier;
 
-    /**
-     * The tier(s) of drugs offered by this formulary or insurance plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<Text> getHealthPlanDrugTierList() {
         return healthPlanDrugTier;
     }
 
-    /**
-     * The tier(s) of drugs offered by this formulary or insurance plan.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public Text getHealthPlanDrugTier() {
         return getFirst(healthPlanDrugTier);
     }
 
-    /**
-     * The tier(s) of drugs offered by this formulary or insurance plan.
-     *
-     * @param healthPlanDrugTier Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addHealthPlanDrugTier(Text healthPlanDrugTier) {
         this.healthPlanDrugTier = add(this.healthPlanDrugTier, healthPlanDrugTier);
@@ -335,37 +183,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<Text> healthPlanId;
 
-    /**
-     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<Text> getHealthPlanIdList() {
         return healthPlanId;
     }
 
-    /**
-     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public Text getHealthPlanId() {
         return getFirst(healthPlanId);
     }
 
-    /**
-     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-     *
-     * @param healthPlanId Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addHealthPlanId(Text healthPlanId) {
         this.healthPlanId = add(this.healthPlanId, healthPlanId);
@@ -373,37 +200,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<URL> healthPlanMarketingUrl;
 
-    /**
-     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<URL> getHealthPlanMarketingUrlList() {
         return healthPlanMarketingUrl;
     }
 
-    /**
-     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public URL getHealthPlanMarketingUrl() {
         return getFirst(healthPlanMarketingUrl);
     }
 
-    /**
-     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-     *
-     * @param healthPlanMarketingUrl URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addHealthPlanMarketingUrl(URL healthPlanMarketingUrl) {
         this.healthPlanMarketingUrl = add(this.healthPlanMarketingUrl, healthPlanMarketingUrl);
@@ -412,54 +218,24 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
     private List<Object> identifier;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> List<T> getIdentifierList() {
         return (List<T>) identifier;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
     public void addIdentifier(URL identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
     @Override
     public void addIdentifier(PropertyValue identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
     @Override
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
@@ -468,40 +244,20 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ ImageObject.class, URL.class })
     private List<Object> image;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> List<T> getImageList() {
         return (List<T>) image;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> T getImage() {
         return (T) getFirst(image);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
     public void addImage(ImageObject image) {
         this.image = add(this.image, image);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
     public void addImage(URL image) {
         this.image = add(this.image, image);
@@ -509,37 +265,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<HealthPlanFormulary> includesHealthPlanFormulary;
 
-    /**
-     * Formularies covered by this plan.
-     *
-     * @return {@link HealthPlanFormulary}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<HealthPlanFormulary> getIncludesHealthPlanFormularyList() {
         return includesHealthPlanFormulary;
     }
 
-    /**
-     * Formularies covered by this plan.
-     *
-     * @return {@link HealthPlanFormulary}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public HealthPlanFormulary getIncludesHealthPlanFormulary() {
         return getFirst(includesHealthPlanFormulary);
     }
 
-    /**
-     * Formularies covered by this plan.
-     *
-     * @param includesHealthPlanFormulary HealthPlanFormulary value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addIncludesHealthPlanFormulary(HealthPlanFormulary includesHealthPlanFormulary) {
         this.includesHealthPlanFormulary = add(this.includesHealthPlanFormulary, includesHealthPlanFormulary);
@@ -547,37 +282,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<HealthPlanNetwork> includesHealthPlanNetwork;
 
-    /**
-     * Networks covered by this plan.
-     *
-     * @return {@link HealthPlanNetwork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<HealthPlanNetwork> getIncludesHealthPlanNetworkList() {
         return includesHealthPlanNetwork;
     }
 
-    /**
-     * Networks covered by this plan.
-     *
-     * @return {@link HealthPlanNetwork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public HealthPlanNetwork getIncludesHealthPlanNetwork() {
         return getFirst(includesHealthPlanNetwork);
     }
 
-    /**
-     * Networks covered by this plan.
-     *
-     * @param includesHealthPlanNetwork HealthPlanNetwork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addIncludesHealthPlanNetwork(HealthPlanNetwork includesHealthPlanNetwork) {
         this.includesHealthPlanNetwork = add(this.includesHealthPlanNetwork, includesHealthPlanNetwork);
@@ -586,40 +300,20 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> mainEntityOfPage;
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> List<T> getMainEntityOfPageList() {
         return (List<T>) mainEntityOfPage;
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> T getMainEntityOfPage() {
         return (T) getFirst(mainEntityOfPage);
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
     @Override
     public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
     @Override
     public void addMainEntityOfPage(URL mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
@@ -627,31 +321,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<Text> name;
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getNameList() {
         return name;
     }
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getName() {
         return getFirst(name);
     }
 
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
     @Override
     public void addName(Text name) {
         this.name = add(this.name, name);
@@ -660,44 +339,20 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> owner;
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> List<T> getOwnerList() {
         return (List<T>) owner;
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> T getOwner() {
         return (T) getFirst(owner);
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Person owner) {
         this.owner = add(this.owner, owner);
     }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Organization owner) {
         this.owner = add(this.owner, owner);
@@ -705,31 +360,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<Action> potentialAction;
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public List<Action> getPotentialActionList() {
         return potentialAction;
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public Action getPotentialAction() {
         return getFirst(potentialAction);
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
     @Override
     public void addPotentialAction(Action potentialAction) {
         this.potentialAction = add(this.potentialAction, potentialAction);
@@ -737,31 +377,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<URL> sameAs;
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getSameAsList() {
         return sameAs;
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getSameAs() {
         return getFirst(sameAs);
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
     @Override
     public void addSameAs(URL sameAs) {
         this.sameAs = add(this.sameAs, sameAs);
@@ -770,44 +395,20 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private List<Object> subjectOf;
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> List<T> getSubjectOfList() {
         return (List<T>) subjectOf;
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> T getSubjectOf() {
         return (T) getFirst(subjectOf);
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(Event subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(CreativeWork subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
@@ -815,31 +416,16 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
 
     private List<URL> url;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getUrlList() {
         return url;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getUrl() {
         return getFirst(url);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
@@ -848,48 +434,20 @@ public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> usesHealthPlanIdStandard;
 
-    /**
-     * The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public <T> List<T> getUsesHealthPlanIdStandardList() {
         return (List<T>) usesHealthPlanIdStandard;
     }
 
-    /**
-     * The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public <T> T getUsesHealthPlanIdStandard() {
         return (T) getFirst(usesHealthPlanIdStandard);
     }
 
-    /**
-     * The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
-     *
-     * @param usesHealthPlanIdStandard URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addUsesHealthPlanIdStandard(URL usesHealthPlanIdStandard) {
         this.usesHealthPlanIdStandard = add(this.usesHealthPlanIdStandard, usesHealthPlanIdStandard);
     }
-    /**
-     * The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
-     *
-     * @param usesHealthPlanIdStandard Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addUsesHealthPlanIdStandard(Text usesHealthPlanIdStandard) {
         this.usesHealthPlanIdStandard = add(this.usesHealthPlanIdStandard, usesHealthPlanIdStandard);

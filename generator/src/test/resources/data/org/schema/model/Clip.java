@@ -25,6 +25,123 @@ import org.schema.model.datatype.Text;
 public interface Clip extends CreativeWork {
 
     /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> List<T> getActorList();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> T getActor();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor Person value to set.
+     */
+    void addActor(Person actor);
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getActors();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actors Person value to set.
+     */
+    void addActors(Person actors);
+
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> List<T> getClipNumberList();
+
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> T getClipNumber();
+
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @param clipNumber Text value to set.
+     */
+    void addClipNumber(Text clipNumber);
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @param clipNumber Integer value to set.
+     */
+    void addClipNumber(Integer clipNumber);
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirector();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    void addDirector(Person director);
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirectors();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param directors Person value to set.
+     */
+    void addDirectors(Person directors);
+
+    /**
      * The end time of the clip expressed as the number of seconds from the beginning of the work.
      *
      * @return {@link HyperTocEntry} or {@link Number}
@@ -87,6 +204,27 @@ public interface Clip extends CreativeWork {
     void addMusicBy(Person musicBy);
 
     /**
+     * The episode to which this clip belongs.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getPartOfEpisodeList();
+
+    /**
+     * The episode to which this clip belongs.
+     *
+     * @return {@link Episode}
+     */
+    Episode getPartOfEpisode();
+
+    /**
+     * The episode to which this clip belongs.
+     *
+     * @param partOfEpisode Episode value to set.
+     */
+    void addPartOfEpisode(Episode partOfEpisode);
+
+    /**
      * The season to which this episode belongs.
      *
      * @return {@link CreativeWorkSeason}
@@ -108,60 +246,6 @@ public interface Clip extends CreativeWork {
     void addPartOfSeason(CreativeWorkSeason partOfSeason);
 
     /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    <T> List<T> getClipNumberList();
-
-    /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @return {@link Text} or {@link Integer}
-     */
-    <T> T getClipNumber();
-
-    /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @param clipNumber Text value to set.
-     */
-    void addClipNumber(Text clipNumber);
-    /**
-     * Position of the clip within an ordered group of clips.
-     *
-     * @param clipNumber Integer value to set.
-     */
-    void addClipNumber(Integer clipNumber);
-
-    /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link PerformingGroup} or {@link Person}
-     */
-    <T> List<T> getActorList();
-
-    /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link PerformingGroup} or {@link Person}
-     */
-    <T> T getActor();
-
-    /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actor PerformingGroup value to set.
-     */
-    void addActor(PerformingGroup actor);
-    /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actor Person value to set.
-     */
-    void addActor(Person actor);
-
-    /**
      * The series to which this episode or season belongs.
      *
      * @return {@link CreativeWorkSeries}
@@ -181,48 +265,6 @@ public interface Clip extends CreativeWork {
      * @param partOfSeries CreativeWorkSeries value to set.
      */
     void addPartOfSeries(CreativeWorkSeries partOfSeries);
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorsList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirectors();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param directors Person value to set.
-     */
-    void addDirectors(Person directors);
-
-    /**
-     * The episode to which this clip belongs.
-     *
-     * @return {@link Episode}
-     */
-    List<Episode> getPartOfEpisodeList();
-
-    /**
-     * The episode to which this clip belongs.
-     *
-     * @return {@link Episode}
-     */
-    Episode getPartOfEpisode();
-
-    /**
-     * The episode to which this clip belongs.
-     *
-     * @param partOfEpisode Episode value to set.
-     */
-    void addPartOfEpisode(Episode partOfEpisode);
 
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
@@ -258,46 +300,4 @@ public interface Clip extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
     void addStartOffset(Number startOffset);
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorsList();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActors();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actors Person value to set.
-     */
-    void addActors(Person actors);
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirector();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    void addDirector(Person director);
 }

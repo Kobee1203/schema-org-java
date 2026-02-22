@@ -17,46 +17,25 @@ import org.schema.model.datatype.DateTime;
 public interface RentalCarReservation extends Reservation {
 
     /**
-     * When a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getPickupTimeList();
-
-    /**
-     * When a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getPickupTime();
-
-    /**
-     * When a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @param pickupTime DateTime value to set.
-     */
-    void addPickupTime(DateTime pickupTime);
-
-    /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     * Where a rental car can be dropped off.
      *
      * @return {@link Place}
      */
-    List<Place> getPickupLocationList();
+    List<Place> getDropoffLocationList();
 
     /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     * Where a rental car can be dropped off.
      *
      * @return {@link Place}
      */
-    Place getPickupLocation();
+    Place getDropoffLocation();
 
     /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     * Where a rental car can be dropped off.
      *
-     * @param pickupLocation Place value to set.
+     * @param dropoffLocation Place value to set.
      */
-    void addPickupLocation(Place pickupLocation);
+    void addDropoffLocation(Place dropoffLocation);
 
     /**
      * When a rental car can be dropped off.
@@ -80,23 +59,44 @@ public interface RentalCarReservation extends Reservation {
     void addDropoffTime(DateTime dropoffTime);
 
     /**
-     * Where a rental car can be dropped off.
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
      *
      * @return {@link Place}
      */
-    List<Place> getDropoffLocationList();
+    List<Place> getPickupLocationList();
 
     /**
-     * Where a rental car can be dropped off.
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
      *
      * @return {@link Place}
      */
-    Place getDropoffLocation();
+    Place getPickupLocation();
 
     /**
-     * Where a rental car can be dropped off.
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
      *
-     * @param dropoffLocation Place value to set.
+     * @param pickupLocation Place value to set.
      */
-    void addDropoffLocation(Place dropoffLocation);
+    void addPickupLocation(Place pickupLocation);
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPickupTimeList();
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getPickupTime();
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @param pickupTime DateTime value to set.
+     */
+    void addPickupTime(DateTime pickupTime);
 }

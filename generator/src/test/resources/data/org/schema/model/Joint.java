@@ -18,30 +18,6 @@ import org.schema.model.datatype.Text;
 public interface Joint extends AnatomicalStructure {
 
     /**
-     * The name given to how bone physically connects to each other.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getStructuralClassList();
-
-    /**
-     * The name given to how bone physically connects to each other.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getStructuralClass();
-
-    /**
-     * The name given to how bone physically connects to each other.
-     *
-     * @param structuralClass Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStructuralClass(Text structuralClass);
-
-    /**
      * The biomechanical properties of the bone.
      *
      * @return {@link Text}
@@ -95,4 +71,28 @@ public interface Joint extends AnatomicalStructure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addFunctionalClass(Text functionalClass);
+
+    /**
+     * The name given to how bone physically connects to each other.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getStructuralClassList();
+
+    /**
+     * The name given to how bone physically connects to each other.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getStructuralClass();
+
+    /**
+     * The name given to how bone physically connects to each other.
+     *
+     * @param structuralClass Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStructuralClass(Text structuralClass);
 }

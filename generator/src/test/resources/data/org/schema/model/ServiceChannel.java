@@ -23,6 +23,117 @@ import org.schema.model.datatype.URL;
 public interface ServiceChannel extends Intangible {
 
     /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    <T> List<T> getAvailableLanguageList();
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    <T> T getAvailableLanguage();
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Language value to set.
+     */
+    void addAvailableLanguage(Language availableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Text value to set.
+     */
+    void addAvailableLanguage(Text availableLanguage);
+
+    /**
+     * Estimated processing time for the service using this channel.
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getProcessingTimeList();
+
+    /**
+     * Estimated processing time for the service using this channel.
+     *
+     * @return {@link Duration}
+     */
+    Duration getProcessingTime();
+
+    /**
+     * Estimated processing time for the service using this channel.
+     *
+     * @param processingTime Duration value to set.
+     */
+    void addProcessingTime(Duration processingTime);
+
+    /**
+     * The service provided by this channel.
+     *
+     * @return {@link Service}
+     */
+    List<Service> getProvidesServiceList();
+
+    /**
+     * The service provided by this channel.
+     *
+     * @return {@link Service}
+     */
+    Service getProvidesService();
+
+    /**
+     * The service provided by this channel.
+     *
+     * @param providesService Service value to set.
+     */
+    void addProvidesService(Service providesService);
+
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getServiceLocationList();
+
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     *
+     * @return {@link Place}
+     */
+    Place getServiceLocation();
+
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     *
+     * @param serviceLocation Place value to set.
+     */
+    void addServiceLocation(Place serviceLocation);
+
+    /**
+     * The phone number to use to access the service.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getServicePhoneList();
+
+    /**
+     * The phone number to use to access the service.
+     *
+     * @return {@link ContactPoint}
+     */
+    ContactPoint getServicePhone();
+
+    /**
+     * The phone number to use to access the service.
+     *
+     * @param servicePhone ContactPoint value to set.
+     */
+    void addServicePhone(ContactPoint servicePhone);
+
+    /**
      * The address for accessing the service by mail.
      *
      * @return {@link PostalAddress}
@@ -65,48 +176,6 @@ public interface ServiceChannel extends Intangible {
     void addServiceSmsNumber(ContactPoint serviceSmsNumber);
 
     /**
-     * The service provided by this channel.
-     *
-     * @return {@link Service}
-     */
-    List<Service> getProvidesServiceList();
-
-    /**
-     * The service provided by this channel.
-     *
-     * @return {@link Service}
-     */
-    Service getProvidesService();
-
-    /**
-     * The service provided by this channel.
-     *
-     * @param providesService Service value to set.
-     */
-    void addProvidesService(Service providesService);
-
-    /**
-     * The phone number to use to access the service.
-     *
-     * @return {@link ContactPoint}
-     */
-    List<ContactPoint> getServicePhoneList();
-
-    /**
-     * The phone number to use to access the service.
-     *
-     * @return {@link ContactPoint}
-     */
-    ContactPoint getServicePhone();
-
-    /**
-     * The phone number to use to access the service.
-     *
-     * @param servicePhone ContactPoint value to set.
-     */
-    void addServicePhone(ContactPoint servicePhone);
-
-    /**
      * The website to access the service.
      *
      * @return {@link URL}
@@ -126,73 +195,4 @@ public interface ServiceChannel extends Intangible {
      * @param serviceUrl URL value to set.
      */
     void addServiceUrl(URL serviceUrl);
-
-    /**
-     * Estimated processing time for the service using this channel.
-     *
-     * @return {@link Duration}
-     */
-    List<Duration> getProcessingTimeList();
-
-    /**
-     * Estimated processing time for the service using this channel.
-     *
-     * @return {@link Duration}
-     */
-    Duration getProcessingTime();
-
-    /**
-     * Estimated processing time for the service using this channel.
-     *
-     * @param processingTime Duration value to set.
-     */
-    void addProcessingTime(Duration processingTime);
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     */
-    <T> List<T> getAvailableLanguageList();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     */
-    <T> T getAvailableLanguage();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Language value to set.
-     */
-    void addAvailableLanguage(Language availableLanguage);
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Text value to set.
-     */
-    void addAvailableLanguage(Text availableLanguage);
-
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getServiceLocationList();
-
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     *
-     * @return {@link Place}
-     */
-    Place getServiceLocation();
-
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     *
-     * @param serviceLocation Place value to set.
-     */
-    void addServiceLocation(Place serviceLocation);
 }

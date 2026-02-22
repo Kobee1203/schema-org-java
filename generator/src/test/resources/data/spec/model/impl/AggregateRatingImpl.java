@@ -37,44 +37,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
@@ -82,31 +58,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
@@ -115,40 +76,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ Organization.class, Person.class })
     private List<Object> author;
 
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> List<T> getAuthorList() {
         return (List<T>) author;
     }
 
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
     @Override
     public <T> T getAuthor() {
         return (T) getFirst(author);
     }
 
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @param author Organization value to set.
-     */
     @Override
     public void addAuthor(Organization author) {
         this.author = add(this.author, author);
     }
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @param author Person value to set.
-     */
     @Override
     public void addAuthor(Person author) {
         this.author = add(this.author, author);
@@ -157,40 +98,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ Text.class, Number.class })
     private List<Object> bestRating;
 
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @return {@link Text} or {@link Number}
-     */
     @Override
     public <T> List<T> getBestRatingList() {
         return (List<T>) bestRating;
     }
 
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @return {@link Text} or {@link Number}
-     */
     @Override
     public <T> T getBestRating() {
         return (T) getFirst(bestRating);
     }
 
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @param bestRating Text value to set.
-     */
     @Override
     public void addBestRating(Text bestRating) {
         this.bestRating = add(this.bestRating, bestRating);
     }
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @param bestRating Number value to set.
-     */
     @Override
     public void addBestRating(Number bestRating) {
         this.bestRating = add(this.bestRating, bestRating);
@@ -199,40 +120,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ TextObject.class, Text.class })
     private List<Object> description;
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> List<T> getDescriptionList() {
         return (List<T>) description;
     }
 
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
     @Override
     public <T> T getDescription() {
         return (T) getFirst(description);
     }
 
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
     @Override
     public void addDescription(TextObject description) {
         this.description = add(this.description, description);
     }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
     @Override
     public void addDescription(Text description) {
         this.description = add(this.description, description);
@@ -240,31 +141,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
@@ -273,54 +159,24 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
     private List<Object> identifier;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> List<T> getIdentifierList() {
         return (List<T>) identifier;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
     public void addIdentifier(URL identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
     @Override
     public void addIdentifier(PropertyValue identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
     @Override
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
@@ -329,40 +185,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ ImageObject.class, URL.class })
     private List<Object> image;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> List<T> getImageList() {
         return (List<T>) image;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> T getImage() {
         return (T) getFirst(image);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
     public void addImage(ImageObject image) {
         this.image = add(this.image, image);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
     public void addImage(URL image) {
         this.image = add(this.image, image);
@@ -370,31 +206,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Thing> itemReviewed;
 
-    /**
-     * The item that is being reviewed/rated.
-     *
-     * @return {@link Thing}
-     */
     @Override
     public List<Thing> getItemReviewedList() {
         return itemReviewed;
     }
 
-    /**
-     * The item that is being reviewed/rated.
-     *
-     * @return {@link Thing}
-     */
     @Override
     public Thing getItemReviewed() {
         return getFirst(itemReviewed);
     }
 
-    /**
-     * The item that is being reviewed/rated.
-     *
-     * @param itemReviewed Thing value to set.
-     */
     @Override
     public void addItemReviewed(Thing itemReviewed) {
         this.itemReviewed = add(this.itemReviewed, itemReviewed);
@@ -403,40 +224,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> mainEntityOfPage;
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> List<T> getMainEntityOfPageList() {
         return (List<T>) mainEntityOfPage;
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
     @Override
     public <T> T getMainEntityOfPage() {
         return (T) getFirst(mainEntityOfPage);
     }
 
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
     @Override
     public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
     @Override
     public void addMainEntityOfPage(URL mainEntityOfPage) {
         this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
@@ -444,31 +245,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Text> name;
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getNameList() {
         return name;
     }
 
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getName() {
         return getFirst(name);
     }
 
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
     @Override
     public void addName(Text name) {
         this.name = add(this.name, name);
@@ -477,44 +263,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> owner;
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> List<T> getOwnerList() {
         return (List<T>) owner;
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public <T> T getOwner() {
         return (T) getFirst(owner);
     }
 
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Person owner) {
         this.owner = add(this.owner, owner);
     }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
     @Override
     public void addOwner(Organization owner) {
         this.owner = add(this.owner, owner);
@@ -522,31 +284,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Action> potentialAction;
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public List<Action> getPotentialActionList() {
         return potentialAction;
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
     @Override
     public Action getPotentialAction() {
         return getFirst(potentialAction);
     }
 
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
     @Override
     public void addPotentialAction(Action potentialAction) {
         this.potentialAction = add(this.potentialAction, potentialAction);
@@ -554,31 +301,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Integer> ratingCount;
 
-    /**
-     * The count of total number of ratings.
-     *
-     * @return {@link Integer}
-     */
     @Override
     public List<Integer> getRatingCountList() {
         return ratingCount;
     }
 
-    /**
-     * The count of total number of ratings.
-     *
-     * @return {@link Integer}
-     */
     @Override
     public Integer getRatingCount() {
         return getFirst(ratingCount);
     }
 
-    /**
-     * The count of total number of ratings.
-     *
-     * @param ratingCount Integer value to set.
-     */
     @Override
     public void addRatingCount(Integer ratingCount) {
         this.ratingCount = add(this.ratingCount, ratingCount);
@@ -586,37 +318,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Text> ratingExplanation;
 
-    /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
-     */
     @Override
     public List<Text> getRatingExplanationList() {
         return ratingExplanation;
     }
 
-    /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
-     */
     @Override
     public Text getRatingExplanation() {
         return getFirst(ratingExplanation);
     }
 
-    /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-     *
-     * @param ratingExplanation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
-     */
     @Override
     public void addRatingExplanation(Text ratingExplanation) {
         this.ratingExplanation = add(this.ratingExplanation, ratingExplanation);
@@ -625,40 +336,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ Number.class, Text.class })
     private List<Object> ratingValue;
 
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link Number} or {@link Text}
-     */
     @Override
     public <T> List<T> getRatingValueList() {
         return (List<T>) ratingValue;
     }
 
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link Number} or {@link Text}
-     */
     @Override
     public <T> T getRatingValue() {
         return (T) getFirst(ratingValue);
     }
 
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param ratingValue Number value to set.
-     */
     @Override
     public void addRatingValue(Number ratingValue) {
         this.ratingValue = add(this.ratingValue, ratingValue);
     }
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param ratingValue Text value to set.
-     */
     @Override
     public void addRatingValue(Text ratingValue) {
         this.ratingValue = add(this.ratingValue, ratingValue);
@@ -667,44 +358,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ Text.class, StructuredValue.class })
     private List<Object> reviewAspect;
 
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @return {@link Text} or {@link StructuredValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
     @Override
     public <T> List<T> getReviewAspectList() {
         return (List<T>) reviewAspect;
     }
 
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @return {@link Text} or {@link StructuredValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
     @Override
     public <T> T getReviewAspect() {
         return (T) getFirst(reviewAspect);
     }
 
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @param reviewAspect Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
     @Override
     public void addReviewAspect(Text reviewAspect) {
         this.reviewAspect = add(this.reviewAspect, reviewAspect);
     }
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @param reviewAspect StructuredValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
     @Override
     public void addReviewAspect(StructuredValue reviewAspect) {
         this.reviewAspect = add(this.reviewAspect, reviewAspect);
@@ -712,31 +379,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<Integer> reviewCount;
 
-    /**
-     * The count of total number of reviews.
-     *
-     * @return {@link Integer}
-     */
     @Override
     public List<Integer> getReviewCountList() {
         return reviewCount;
     }
 
-    /**
-     * The count of total number of reviews.
-     *
-     * @return {@link Integer}
-     */
     @Override
     public Integer getReviewCount() {
         return getFirst(reviewCount);
     }
 
-    /**
-     * The count of total number of reviews.
-     *
-     * @param reviewCount Integer value to set.
-     */
     @Override
     public void addReviewCount(Integer reviewCount) {
         this.reviewCount = add(this.reviewCount, reviewCount);
@@ -744,31 +396,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<URL> sameAs;
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getSameAsList() {
         return sameAs;
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getSameAs() {
         return getFirst(sameAs);
     }
 
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
     @Override
     public void addSameAs(URL sameAs) {
         this.sameAs = add(this.sameAs, sameAs);
@@ -777,44 +414,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private List<Object> subjectOf;
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> List<T> getSubjectOfList() {
         return (List<T>) subjectOf;
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public <T> T getSubjectOf() {
         return (T) getFirst(subjectOf);
     }
 
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(Event subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
     @Override
     public void addSubjectOf(CreativeWork subjectOf) {
         this.subjectOf = add(this.subjectOf, subjectOf);
@@ -822,31 +435,16 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
 
     private List<URL> url;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public List<URL> getUrlList() {
         return url;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
     public URL getUrl() {
         return getFirst(url);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
@@ -855,40 +453,20 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
     @JsonLdFieldTypes({ Text.class, Number.class })
     private List<Object> worstRating;
 
-    /**
-     * The lowest value allowed in this rating system.
-     *
-     * @return {@link Text} or {@link Number}
-     */
     @Override
     public <T> List<T> getWorstRatingList() {
         return (List<T>) worstRating;
     }
 
-    /**
-     * The lowest value allowed in this rating system.
-     *
-     * @return {@link Text} or {@link Number}
-     */
     @Override
     public <T> T getWorstRating() {
         return (T) getFirst(worstRating);
     }
 
-    /**
-     * The lowest value allowed in this rating system.
-     *
-     * @param worstRating Text value to set.
-     */
     @Override
     public void addWorstRating(Text worstRating) {
         this.worstRating = add(this.worstRating, worstRating);
     }
-    /**
-     * The lowest value allowed in this rating system.
-     *
-     * @param worstRating Number value to set.
-     */
     @Override
     public void addWorstRating(Number worstRating) {
         this.worstRating = add(this.worstRating, worstRating);

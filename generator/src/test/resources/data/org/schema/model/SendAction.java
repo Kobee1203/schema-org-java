@@ -20,6 +20,27 @@ import org.schema.model.Person;
 public interface SendAction extends TransferAction {
 
     /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getDeliveryMethodList();
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    DeliveryMethod getDeliveryMethod();
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @param deliveryMethod DeliveryMethod value to set.
+     */
+    void addDeliveryMethod(DeliveryMethod deliveryMethod);
+
+    /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @return {@link ContactPoint} or {@link Person} or {@link Organization} or {@link Audience}
@@ -57,25 +78,4 @@ public interface SendAction extends TransferAction {
      * @param recipient Audience value to set.
      */
     void addRecipient(Audience recipient);
-
-    /**
-     * A sub property of instrument. The method of delivery.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    List<DeliveryMethod> getDeliveryMethodList();
-
-    /**
-     * A sub property of instrument. The method of delivery.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    DeliveryMethod getDeliveryMethod();
-
-    /**
-     * A sub property of instrument. The method of delivery.
-     *
-     * @param deliveryMethod DeliveryMethod value to set.
-     */
-    void addDeliveryMethod(DeliveryMethod deliveryMethod);
 }

@@ -21,30 +21,6 @@ import org.schema.model.MedicalTherapy;
 public interface Hospital extends CivicStructure, EmergencyService, MedicalOrganization {
 
     /**
-     * A medical specialty of the provider.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalSpecialty> getMedicalSpecialtyList();
-
-    /**
-     * A medical specialty of the provider.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalSpecialty getMedicalSpecialty();
-
-    /**
-     * A medical specialty of the provider.
-     *
-     * @param medicalSpecialty MedicalSpecialty value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
-
-    /**
      * A medical service available from this provider.
      *
      * @return {@link MedicalProcedure} or {@link MedicalTest} or {@link MedicalTherapy}
@@ -116,4 +92,28 @@ public interface Hospital extends CivicStructure, EmergencyService, MedicalOrgan
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     void addHealthcareReportingData(CDCPMDRecord healthcareReportingData);
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSpecialty> getMedicalSpecialtyList();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalSpecialty getMedicalSpecialty();
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @param medicalSpecialty MedicalSpecialty value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 }

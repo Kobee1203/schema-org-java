@@ -23,27 +23,6 @@ import org.schema.model.datatype.Text;
 public interface OrderItem extends StructuredValue {
 
     /**
-     * The identifier of the order item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getOrderItemNumberList();
-
-    /**
-     * The identifier of the order item.
-     *
-     * @return {@link Text}
-     */
-    Text getOrderItemNumber();
-
-    /**
-     * The identifier of the order item.
-     *
-     * @param orderItemNumber Text value to set.
-     */
-    void addOrderItemNumber(Text orderItemNumber);
-
-    /**
      * The delivery of the parcel related to this order or order item.
      *
      * @return {@link ParcelDelivery}
@@ -63,6 +42,27 @@ public interface OrderItem extends StructuredValue {
      * @param orderDelivery ParcelDelivery value to set.
      */
     void addOrderDelivery(ParcelDelivery orderDelivery);
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOrderItemNumberList();
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    Text getOrderItemNumber();
+
+    /**
+     * The identifier of the order item.
+     *
+     * @param orderItemNumber Text value to set.
+     */
+    void addOrderItemNumber(Text orderItemNumber);
 
     /**
      * The current status of the order item.

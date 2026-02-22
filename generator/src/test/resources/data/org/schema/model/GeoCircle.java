@@ -22,6 +22,27 @@ import org.schema.model.datatype.Text;
 public interface GeoCircle extends GeoShape {
 
     /**
+     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+     *
+     * @return {@link GeoCoordinates}
+     */
+    List<GeoCoordinates> getGeoMidpointList();
+
+    /**
+     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+     *
+     * @return {@link GeoCoordinates}
+     */
+    GeoCoordinates getGeoMidpoint();
+
+    /**
+     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+     *
+     * @param geoMidpoint GeoCoordinates value to set.
+     */
+    void addGeoMidpoint(GeoCoordinates geoMidpoint);
+
+    /**
      * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
      *
      * @return {@link Number} or {@link Distance} or {@link Text}
@@ -53,25 +74,4 @@ public interface GeoCircle extends GeoShape {
      * @param geoRadius Text value to set.
      */
     void addGeoRadius(Text geoRadius);
-
-    /**
-     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
-     *
-     * @return {@link GeoCoordinates}
-     */
-    List<GeoCoordinates> getGeoMidpointList();
-
-    /**
-     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
-     *
-     * @return {@link GeoCoordinates}
-     */
-    GeoCoordinates getGeoMidpoint();
-
-    /**
-     * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
-     *
-     * @param geoMidpoint GeoCoordinates value to set.
-     */
-    void addGeoMidpoint(GeoCoordinates geoMidpoint);
 }

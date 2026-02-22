@@ -61,27 +61,6 @@ public interface BroadcastEvent extends PublicationEvent {
     void addIsLiveBroadcast(Boolean isLiveBroadcast);
 
     /**
-     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getVideoFormatList();
-
-    /**
-     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-     *
-     * @return {@link Text}
-     */
-    Text getVideoFormat();
-
-    /**
-     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-     *
-     * @param videoFormat Text value to set.
-     */
-    void addVideoFormat(Text videoFormat);
-
-    /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
      * @return {@link Text} or {@link Language}
@@ -115,4 +94,25 @@ public interface BroadcastEvent extends PublicationEvent {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
     void addSubtitleLanguage(Language subtitleLanguage);
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getVideoFormatList();
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @return {@link Text}
+     */
+    Text getVideoFormat();
+
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @param videoFormat Text value to set.
+     */
+    void addVideoFormat(Text videoFormat);
 }

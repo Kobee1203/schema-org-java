@@ -24,27 +24,6 @@ import org.schema.model.datatype.URL;
 public interface Ticket extends Intangible {
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPriceCurrencyList();
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    Text getPriceCurrency();
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @param priceCurrency Text value to set.
-     */
-    void addPriceCurrency(Text priceCurrency);
-
-    /**
      * The date the ticket was issued.
      *
      * @return {@link DateTime} or {@link Date}
@@ -70,6 +49,69 @@ public interface Ticket extends Intangible {
      * @param dateIssued Date value to set.
      */
     void addDateIssued(Date dateIssued);
+
+    /**
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getIssuedByList();
+
+    /**
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
+     *
+     * @return {@link Organization}
+     */
+    Organization getIssuedBy();
+
+    /**
+     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
+     *
+     * @param issuedBy Organization value to set.
+     */
+    void addIssuedBy(Organization issuedBy);
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPriceCurrencyList();
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    Text getPriceCurrency();
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @param priceCurrency Text value to set.
+     */
+    void addPriceCurrency(Text priceCurrency);
+
+    /**
+     * The unique identifier for the ticket.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTicketNumberList();
+
+    /**
+     * The unique identifier for the ticket.
+     *
+     * @return {@link Text}
+     */
+    Text getTicketNumber();
+
+    /**
+     * The unique identifier for the ticket.
+     *
+     * @param ticketNumber Text value to set.
+     */
+    void addTicketNumber(Text ticketNumber);
 
     /**
      * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
@@ -99,54 +141,6 @@ public interface Ticket extends Intangible {
     void addTicketToken(Text ticketToken);
 
     /**
-     * The unique identifier for the ticket.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTicketNumberList();
-
-    /**
-     * The unique identifier for the ticket.
-     *
-     * @return {@link Text}
-     */
-    Text getTicketNumber();
-
-    /**
-     * The unique identifier for the ticket.
-     *
-     * @param ticketNumber Text value to set.
-     */
-    void addTicketNumber(Text ticketNumber);
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getUnderNameList();
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getUnderName();
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @param underName Person value to set.
-     */
-    void addUnderName(Person underName);
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @param underName Organization value to set.
-     */
-    void addUnderName(Organization underName);
-
-    /**
      * The seat associated with the ticket.
      *
      * @return {@link Seat}
@@ -166,27 +160,6 @@ public interface Ticket extends Intangible {
      * @param ticketedSeat Seat value to set.
      */
     void addTicketedSeat(Seat ticketedSeat);
-
-    /**
-     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getIssuedByList();
-
-    /**
-     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
-     *
-     * @return {@link Organization}
-     */
-    Organization getIssuedBy();
-
-    /**
-     * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
-     *
-     * @param issuedBy Organization value to set.
-     */
-    void addIssuedBy(Organization issuedBy);
 
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -220,4 +193,31 @@ public interface Ticket extends Intangible {
      * @param totalPrice PriceSpecification value to set.
      */
     void addTotalPrice(PriceSpecification totalPrice);
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getUnderNameList();
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getUnderName();
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Person value to set.
+     */
+    void addUnderName(Person underName);
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Organization value to set.
+     */
+    void addUnderName(Organization underName);
 }

@@ -26,6 +26,54 @@ import org.schema.model.datatype.URL;
 public interface TVSeries extends CreativeWork, CreativeWorkSeries {
 
     /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> List<T> getActorList();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> T getActor();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor Person value to set.
+     */
+    void addActor(Person actor);
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getActors();
+
+    /**
+     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actors Person value to set.
+     */
+    void addActors(Person actors);
+
+    /**
      * A season that is part of the media series.
      *
      * @return {@link CreativeWorkSeason}
@@ -47,25 +95,121 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addContainsSeason(CreativeWorkSeason containsSeason);
 
     /**
-     * A season in a media series.
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
-     * @return {@link CreativeWorkSeason}
+     * @return {@link Country}
      */
-    List<CreativeWorkSeason> getSeasonsList();
+    List<Country> getCountryOfOriginList();
 
     /**
-     * A season in a media series.
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
-     * @return {@link CreativeWorkSeason}
+     * @return {@link Country}
      */
-    CreativeWorkSeason getSeasons();
+    Country getCountryOfOrigin();
 
     /**
-     * A season in a media series.
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
-     * @param seasons CreativeWorkSeason value to set.
+     * @param countryOfOrigin Country value to set.
      */
-    void addSeasons(CreativeWorkSeason seasons);
+    void addCountryOfOrigin(Country countryOfOrigin);
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirector();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    void addDirector(Person director);
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirectors();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param directors Person value to set.
+     */
+    void addDirectors(Person directors);
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodeList();
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    Episode getEpisode();
+
+    /**
+     * An episode of a TV, radio or game media within a series or season.
+     *
+     * @param episode Episode value to set.
+     */
+    void addEpisode(Episode episode);
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodesList();
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    Episode getEpisodes();
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @param episodes Episode value to set.
+     */
+    void addEpisodes(Episode episodes);
 
     /**
      * The composer of the soundtrack.
@@ -95,31 +239,25 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addMusicBy(Person musicBy);
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The number of episodes in this season or series.
      *
-     * @return {@link PerformingGroup} or {@link Person}
+     * @return {@link Integer}
      */
-    <T> List<T> getActorList();
+    List<Integer> getNumberOfEpisodesList();
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The number of episodes in this season or series.
      *
-     * @return {@link PerformingGroup} or {@link Person}
+     * @return {@link Integer}
      */
-    <T> T getActor();
+    Integer getNumberOfEpisodes();
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * The number of episodes in this season or series.
      *
-     * @param actor PerformingGroup value to set.
+     * @param numberOfEpisodes Integer value to set.
      */
-    void addActor(PerformingGroup actor);
-    /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actor Person value to set.
-     */
-    void addActor(Person actor);
+    void addNumberOfEpisodes(Integer numberOfEpisodes);
 
     /**
      * The number of seasons in this series.
@@ -143,46 +281,25 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addNumberOfSeasons(Integer numberOfSeasons);
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @return {@link Episode}
+     * @return {@link Organization}
      */
-    List<Episode> getEpisodeList();
+    List<Organization> getProductionCompanyList();
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @return {@link Episode}
+     * @return {@link Organization}
      */
-    Episode getEpisode();
+    Organization getProductionCompany();
 
     /**
-     * An episode of a TV, radio or game media within a series or season.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @param episode Episode value to set.
+     * @param productionCompany Organization value to set.
      */
-    void addEpisode(Episode episode);
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    List<VideoObject> getTrailerList();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    VideoObject getTrailer();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @param trailer VideoObject value to set.
-     */
-    void addTrailer(VideoObject trailer);
+    void addProductionCompany(Organization productionCompany);
 
     /**
      * A season in a media series.
@@ -210,6 +327,27 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
      * @param season URL value to set.
      */
     void addSeason(URL season);
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getSeasonsList();
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    CreativeWorkSeason getSeasons();
+
+    /**
+     * A season in a media series.
+     *
+     * @param seasons CreativeWorkSeason value to set.
+     */
+    void addSeasons(CreativeWorkSeason seasons);
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
@@ -263,161 +401,23 @@ public interface TVSeries extends CreativeWork, CreativeWorkSeries {
     void addTitleEIDR(Text titleEIDR);
 
     /**
-     * The number of episodes in this season or series.
+     * The trailer of a movie or TV/radio series, season, episode, etc.
      *
-     * @return {@link Integer}
+     * @return {@link VideoObject}
      */
-    List<Integer> getNumberOfEpisodesList();
+    List<VideoObject> getTrailerList();
 
     /**
-     * The number of episodes in this season or series.
+     * The trailer of a movie or TV/radio series, season, episode, etc.
      *
-     * @return {@link Integer}
+     * @return {@link VideoObject}
      */
-    Integer getNumberOfEpisodes();
+    VideoObject getTrailer();
 
     /**
-     * The number of episodes in this season or series.
+     * The trailer of a movie or TV/radio series, season, episode, etc.
      *
-     * @param numberOfEpisodes Integer value to set.
+     * @param trailer VideoObject value to set.
      */
-    void addNumberOfEpisodes(Integer numberOfEpisodes);
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getProductionCompanyList();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    Organization getProductionCompany();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @param productionCompany Organization value to set.
-     */
-    void addProductionCompany(Organization productionCompany);
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorsList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirectors();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param directors Person value to set.
-     */
-    void addDirectors(Person directors);
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    List<Country> getCountryOfOriginList();
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    Country getCountryOfOrigin();
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @param countryOfOrigin Country value to set.
-     */
-    void addCountryOfOrigin(Country countryOfOrigin);
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getActorsList();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getActors();
-
-    /**
-     * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param actors Person value to set.
-     */
-    void addActors(Person actors);
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirector();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    void addDirector(Person director);
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @return {@link Episode}
-     */
-    List<Episode> getEpisodesList();
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @return {@link Episode}
-     */
-    Episode getEpisodes();
-
-    /**
-     * An episode of a TV/radio series or season.
-     *
-     * @param episodes Episode value to set.
-     */
-    void addEpisodes(Episode episodes);
+    void addTrailer(VideoObject trailer);
 }

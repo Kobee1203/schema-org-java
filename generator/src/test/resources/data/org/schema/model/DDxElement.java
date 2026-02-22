@@ -18,30 +18,6 @@ import org.schema.model.MedicalSignOrSymptom;
 public interface DDxElement extends MedicalIntangible {
 
     /**
-     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
-     *
-     * @return {@link MedicalSignOrSymptom}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalSignOrSymptom> getDistinguishingSignList();
-
-    /**
-     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
-     *
-     * @return {@link MedicalSignOrSymptom}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalSignOrSymptom getDistinguishingSign();
-
-    /**
-     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
-     *
-     * @param distinguishingSign MedicalSignOrSymptom value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addDistinguishingSign(MedicalSignOrSymptom distinguishingSign);
-
-    /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
      *
      * @return {@link MedicalCondition}
@@ -64,4 +40,28 @@ public interface DDxElement extends MedicalIntangible {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addDiagnosis(MedicalCondition diagnosis);
+
+    /**
+     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
+     *
+     * @return {@link MedicalSignOrSymptom}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSignOrSymptom> getDistinguishingSignList();
+
+    /**
+     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
+     *
+     * @return {@link MedicalSignOrSymptom}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalSignOrSymptom getDistinguishingSign();
+
+    /**
+     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
+     *
+     * @param distinguishingSign MedicalSignOrSymptom value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addDistinguishingSign(MedicalSignOrSymptom distinguishingSign);
 }
